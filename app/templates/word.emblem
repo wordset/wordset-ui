@@ -1,0 +1,9 @@
+= name
+
+= outlet
+
+ul.meanings
+  each meanings
+    li
+      = pos
+      p = def
