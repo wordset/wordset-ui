@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource("word", function() {});
+  this.resource("word", {path: "/word/:word_id"}, function() {});
 });
 
 export default Router;
