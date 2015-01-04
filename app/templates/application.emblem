@@ -1,7 +1,7 @@
 .header
   h2#title WordSet
   .search
-    = input type=text value=searchTerm
+    = input type=text value=searchTerm placeholder="Search"
 
   if showSearchList
     ul.wordList

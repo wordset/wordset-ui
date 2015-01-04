@@ -1,4 +1,5 @@
-= name
+.word
+  = name
 
 = outlet
 
