@@ -1,13 +1,12 @@
 .header
   h2#title WordSet
   .search
-    = input type=text action=updateSearchTerm on=key-press value=searchTerm
+    = input type=text value=searchTerm
 
-  if searchTerm
+  if showSearchList
     ul.wordList
       = each
-        li = link-to name 'word' this
-
-
+        li
+          a{action 'clickWordFromList' this} = name
 
 .content = outlet
