@@ -1,0 +1,24 @@
+.word {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.meanings {
+  font-size: 20px;
+  li {
+    margin-bottom: 40px;
+  }
+}
+
+.index, .type, .definition {
+  display: inline-block;
+}
+
+.index, .type {
+  margin-right: 10px;
+}
+
+.type {
+  color: #AAA;
+  font-style: italic;
+}

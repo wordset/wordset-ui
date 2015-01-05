@@ -1,0 +1,13 @@
+.wordList {
+  margin-top: -30px;
+  a {
+    background: lighten($header-background, 10%);
+    border-bottom: 1px solid #FFF;
+    cursor: pointer;
+    display: block;
+    padding: 20px;
+    &:hover {
+      background: lighten($header-background, 5%);
+    }
+  }
+}

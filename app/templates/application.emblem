@@ -1,12 +1,15 @@
 .header
   h2#title WordSet
   .search
-    = input type=text value=searchTerm placeholder="Search"
+    = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
+  .sign-buttons
+    button.signin Sign In
+    button.signup Sign Up
 
-  if showSearchList
-    ul.wordList
-      = each
-        li
-          a{action 'clickWordFromList' this} = name
+if showSearchList
+  ul.wordList
+    = each
+      li
+        a{action 'clickWordFromList' this} = name
 
 .content = outlet

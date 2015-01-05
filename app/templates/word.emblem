@@ -6,5 +6,6 @@
 ul.meanings
   each meanings
     li
-      = pos
-      p = def
+      .index {{_view.contentIndex}}.
+      .type = pos
+      .definition = def
