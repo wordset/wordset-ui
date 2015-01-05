@@ -21,13 +21,25 @@
       cursor: pointer;
       font-size: 30px;
       position: absolute;
-      right: 7px;
+      right: 25px;
       top: 6px;
     }
+    @media screen and (max-width: $medium) {
+      padding: 0px;
+      input {
+        margin-top: 20px;
+      }
+      span {
+        right: 5px;
+        top: 64px;
+      }
+    }
   }
-  .sign-buttons {
+  .signButtons {
     cursor: pointer;
     float: right;
+    font-size: 18px;
+    margin-right: 20px;
     margin-top: -30px;
     a {
       margin-left: 20px;
@@ -35,5 +47,11 @@
     .signin {
       color: $green;
     }
+    @media screen and (max-width: $medium) {
+      margin-top: -87px;
+    }
+  }
+  @media screen and (max-width: $small) {
+    padding: 10px;
   }
 }

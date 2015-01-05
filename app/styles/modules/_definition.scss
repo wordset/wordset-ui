@@ -1,6 +1,6 @@
 .word {
   font-size: 30px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .meanings {
@@ -11,15 +11,34 @@
   }
 }
 
-.index, .type, .definition {
+.index, .info {
   display: inline-block;
+  line-height: 1.4em;
 }
 
 .index, .type {
   margin-right: 10px;
 }
 
+.index {
+  vertical-align: top;
+  width: 3%;
+}
+
+.info {
+  width: 90%;
+}
+
+.type, .definition {
+  display: inline;
+}
+
 .type {
   color: #AAA;
   font-style: italic;
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 10px;
 }

@@ -7,5 +7,10 @@ ul.meanings
   each meanings
     li
       .index {{_view.contentIndex}}.
-      .type = pos
-      .definition = def
+      .info
+        .type = pos
+        .definition = def
+        .quote
+          span.quotemark “
+          quote
+          span.quotemark ”

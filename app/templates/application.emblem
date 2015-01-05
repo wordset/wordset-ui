@@ -4,14 +4,15 @@
   .search
     = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
     span.ion-close-circled
-  .sign-buttons
+  .signButtons
     a.signin Sign In
     a.signup Sign Up
 
 if showSearchList
-  ul.wordList
-    = each
-      li
-        a{action 'clickWordFromList' this} = name
+  .wordListWrapper
+    ul.wordList
+      = each
+        li
+          a{action 'clickWordFromList' this} = name
 
 .content = outlet
