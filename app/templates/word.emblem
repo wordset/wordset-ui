@@ -1,5 +1,7 @@
-.word
-  = name
+.wordWrap
+  .word
+    = name
+  a.edit add definition
 
 = outlet
 
@@ -8,9 +10,14 @@ ul.meanings
     li
       .index {{_view.contentIndex}}.
       .info
-        .type = pos
-        .definition = def
-        .quote
-          span.quotemark “
-          quote
-          span.quotemark ”
+        .definitionWrap
+          .definition
+            .type = pos
+            .def = def
+          a.edit edit definition
+        .quoteWrap
+          .quote
+            span.quotemark “
+            quote
+            span.quotemark ”
+          a.edit edit quote

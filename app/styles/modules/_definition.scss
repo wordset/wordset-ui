@@ -29,7 +29,38 @@
   width: 90%;
 }
 
-.type, .definition {
+.word, .definition, .quote {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.word {
+  width: 78%;
+  @media screen and (max-width: $medium) {
+    width: 65%;
+  }
+}
+
+.definition, .quote {
+  width: 82%;
+}
+
+.edit {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  @media screen and (max-width: $medium) {
+    float: right;
+  }
+}
+
+.quoteWrap, .wordWrap {
+  .edit {
+    margin-top: 12px;
+  }
+}
+
+.type, .def {
   display: inline;
 }
 
