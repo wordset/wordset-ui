@@ -1,5 +1,6 @@
 .header
-  h2#title WordSet
+  a href="/"
+    img src="assets/images/logo.png"
   .search
     = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
     span.ion-close-circled

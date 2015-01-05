@@ -5,6 +5,10 @@ body {
 
 a {
   text-decoration: underline;
+  &:hover {
+
+  }
+  @include transition();
 }
 
 .search, .wordList, .content {

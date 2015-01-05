@@ -1,5 +1,5 @@
 $serif: Garamond, serif;
-$sans-serif: "Avenir", sans-serif;
+$sans-serif: "Avenir Next", sans-serif;
 
 
 $black: #100B00;
@@ -10,3 +10,9 @@ $green: #25A877;
 
 $header-color: #FFF;
 $header-background: $teal;
+
+
+@mixin transition($time: 0.5s, $type: all) {
+  -webkit-transition: $type $time;
+  transition: $type $time;
+}
