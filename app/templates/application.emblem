@@ -2,9 +2,10 @@
   h2#title WordSet
   .search
     = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
+    span.ion-close-circled
   .sign-buttons
-    button.signin Sign In
-    button.signup Sign Up
+    a.signin Sign In
+    a.signup Sign Up
 
 if showSearchList
   ul.wordList

@@ -2,10 +2,12 @@
   margin-top: -30px;
   a {
     background: lighten($header-background, 10%);
-    border-bottom: 1px solid #FFF;
+    border-bottom: 1px solid lighten($header-background, 20%);
+    color: $header-color;
     cursor: pointer;
     display: block;
     padding: 20px;
+    text-decoration: none;
     &:hover {
       background: lighten($header-background, 5%);
     }

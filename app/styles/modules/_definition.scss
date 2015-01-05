@@ -6,7 +6,8 @@
 .meanings {
   font-size: 20px;
   li {
-    margin-bottom: 40px;
+    border-top: 1px solid lighten($grey, 70%);
+    padding: 40px 0px;
   }
 }
 
