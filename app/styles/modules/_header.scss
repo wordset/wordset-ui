@@ -1,5 +1,6 @@
 .header {
   background: $header-background;
+  box-shadow: 0px 1px 1px #DDD;
   color: $header-color;
   padding: 30px;
   a:visited, a:active {
@@ -13,6 +14,7 @@
   .search {
     position: relative;
     input {
+      border: 0;
       font-size: 20px;
       padding: 10px;
       width: 100%;
@@ -22,8 +24,8 @@
       cursor: pointer;
       font-size: 30px;
       position: absolute;
-      right: 25px;
-      top: 6px;
+      right: 28px;
+      top: 8px;
     }
     @media screen and (max-width: $medium) {
       padding: 0px;

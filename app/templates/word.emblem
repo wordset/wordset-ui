@@ -5,10 +5,9 @@
 
 = outlet
 
-ul.meanings
+ol.meanings
   each meanings
     li
-      .index {{_view.contentIndex}}.
       .info
         .definitionWrap
           .definition

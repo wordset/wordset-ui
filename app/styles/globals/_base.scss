@@ -4,10 +4,13 @@ body {
 }
 
 a {
-  color: $teal;
+  @include transition();
+  color: $anchor-color;
   cursor: pointer;
   text-decoration: underline;
-  @include transition();
+  &:hover {
+    color: darken($anchor-color, 10%);
+  }
 }
 
 input {
@@ -15,13 +18,19 @@ input {
 }
 
 button {
+  @include transition();
   background: $teal;
   border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 1px lighten($teal, 15%), 0px 1px 1px #DDD;
   color: #FFF;
   cursor: pointer;
   display: block;
   font-size: 18px;
   padding: 10px 20px;
+  &:hover {
+    background: lighten($teal, 5%);
+  }
 }
 
 .search, .wordList, .content {
@@ -47,3 +56,34 @@ button {
     width: 90%;
   }
 }
+
+// Sticky Footer thing
+
+body  {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+// html, body {
+//   height: 100%;
+// }
+//
+// .ember-view {
+//   min-height: 100%;
+//   position: relative;
+// }
+//
+// .content {
+//   padding-bottom: 60px;
+// }
+//
+// .footer {
+//   position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// }
