@@ -2,10 +2,10 @@
   h3 Sign In
   .email
     label E-mail
-    = input type=email autofocus="autofocus"
+    = input type="email" autofocus="autofocus"
   .password
     label Password
-    = input type=password
+    = input type="password"
 
   button Sign In
 
