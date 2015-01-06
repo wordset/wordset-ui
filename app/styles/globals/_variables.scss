@@ -17,6 +17,9 @@ $light-grey: lighten($grey, 70%);
 $header-color: #FFF;
 $header-background: $teal;
 
+$footer-color: #FFF;
+$footer-background: $teal;
+
 
 @mixin transition($time: 0.5s, $type: all) {
   -webkit-transition: $type $time;

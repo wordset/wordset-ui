@@ -1,0 +1,16 @@
+.sign-module
+  h3 Sign Up
+  .email
+    label E-mail
+    = input type=email autofocus="autofocus"
+  .password
+    label Password
+    = input type=password
+  .password
+    label Confirm password
+    = input type=password
+
+  button Sign Up
+
+  .aside
+    | Already have an account? Sign in #{link-to 'sign-in' | here}.

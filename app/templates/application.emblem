@@ -5,8 +5,8 @@
     = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
     span.ion-close-circled
   .signButtons
-    a.signin Sign In
-    a.signup Sign Up
+    a.signin href="/sign-in" Sign In
+    a.signup href="/sign-up" Sign Up
 
 if showSearchList
   .wordListWrapper
@@ -16,3 +16,6 @@ if showSearchList
           a{action 'clickWordFromList' this} = name
 
 .content = outlet
+
+.footer
+  .copyright Copyright 2015 – Made by rarebit

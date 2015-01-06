@@ -4,12 +4,24 @@ body {
 }
 
 a {
+  color: $teal;
   cursor: pointer;
   text-decoration: underline;
-  &:hover {
-
-  }
   @include transition();
+}
+
+input {
+  box-sizing: border-box;
+}
+
+button {
+  background: $teal;
+  border: 0;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  padding: 10px 20px;
 }
 
 .search, .wordList, .content {
