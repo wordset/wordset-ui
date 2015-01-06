@@ -2,6 +2,20 @@
   background: $footer-background;
   color: $footer-color;
   margin-top: 60px;
-  padding: 40px;
+  padding: 40px 0px;
   text-align: center;
+  width: 100%;
+  a {
+    color: $footer-color;
+    &:hover {
+      color: lighten($teal, 50%);
+    }
+  }
+  .social {
+    font-size: 18px;
+    margin-bottom: 20px;
+    a {
+      margin-right: 20px;
+    }
+  }
 }

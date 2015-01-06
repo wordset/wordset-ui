@@ -2,20 +2,30 @@
   a href="/"
     img src="assets/images/logo.png"
   .search
-    = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
-    span.ion-close-circled
+    .searchBar
+      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
+      span.ion-close-circled
+    if showSearchList
+      .wordListWrapper
+        ul.wordList
+          = each
+            li
+              a{action 'clickWordFromList' this} = name
+
+
   .signButtons
     a.signin href="/sign-in" Sign In
     a.signup href="/sign-up" Sign Up
 
-if showSearchList
-  .wordListWrapper
-    ul.wordList
-      = each
-        li
-          a{action 'clickWordFromList' this} = name
-
 .content = outlet
 
 .footer
-  .copyright Copyright 2015 – Made by rarebit
+  .social
+    a href="http://twitter.com"
+      span.ion-social-twitter
+    a href="http://facebook.com"
+      span.ion-social-facebook
+  .copyright
+    | Copyright 2015 – Made by
+    a href="http://teamrarebit.com" rarebit
+    | .
