@@ -1,6 +1,17 @@
 body {
   color: $black;
   font-family: $sans-serif;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+p {
+  line-height: 1.4em;
+  margin-bottom: 20px;
 }
 
 a {
@@ -9,7 +20,7 @@ a {
   cursor: pointer;
   text-decoration: underline;
   &:hover {
-    color: darken($anchor-color, 10%);
+    color: lighten($anchor-color, 10%);
   }
 }
 
@@ -59,15 +70,15 @@ button {
 
 // Sticky Footer thing
 
-body  {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.content {
-  flex: 1;
-}
+// body  {
+//   display: flex;
+//   min-height: 100vh;
+//   flex-direction: column;
+// }
+//
+// .content {
+//   flex: 1;
+// }
 
 // html, body {
 //   height: 100%;

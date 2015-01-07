@@ -17,15 +17,16 @@
     a.signin href="/sign-in" Sign In
     a.signup href="/sign-up" Sign Up
 
+
 .content = outlet
 
 .footer
   .social
-    a href="http://twitter.com"
+    a href="http://twitter.com/thewordset" target="_blank"
       span.ion-social-twitter
-    a href="http://facebook.com"
+    a href="http://facebook.com" target="_blank"
       span.ion-social-facebook
   .copyright
-    | Copyright 2015 – Made by
-    a href="http://teamrarebit.com" rarebit
+    | Copyright 2015 – Made by&#160;
+    a href="http://teamrarebit.com" target="_blank" rarebit
     | .

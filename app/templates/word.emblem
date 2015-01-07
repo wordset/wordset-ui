@@ -11,7 +11,7 @@ ol.meanings
       .info
         .definitionWrap
           .definition
-            .type = pos
+            .pos = pos
             .def = def
           a.edit edit definition
         .quoteWrap
