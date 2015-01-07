@@ -9,7 +9,7 @@
   a {
     color: $footer-color;
     &:hover {
-      color: lighten($teal, 50%);
+      color: $footer-hover-color;
     }
   }
   .social {

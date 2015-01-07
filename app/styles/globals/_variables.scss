@@ -5,22 +5,33 @@ $large: 1200px;
 $medium: 940px;
 $small: 550px;
 
-
 $black: #100B00;
-$teal: #0B5351;
-$grey: #293935;
-$maroon: #510D0A;
-$green: #25A877;
+$lime: #81C14B;
+$dark-green: #3E5641;
+$mint: #AFE0A1;
+$yellow: #EEE82C;
+$taupe: #5B654E;
+$light-grey: #ECECEC;
 
-$light-grey: lighten($grey, 70%);
+$header-color: $dark-green;
+$header-background: $light-grey;
+$sign-in-color: $lime;
 
-$header-color: #FFF;
-$header-background: $teal;
+$text-color: $black;
 
-$anchor-color: $teal;
+$anchor-color: $lime;
+$anchor-hover-color: darken($lime, 10%);
 
-$footer-color: #FFF;
-$footer-background: $teal;
+$button-background: $lime;
+$button-hover-background: darken($lime, 10%);
+
+$module-border: $dark-green;
+
+$dropdown-anchor-color: $dark-green;
+
+$footer-color: $dark-green;
+$footer-hover-color: lighten($dark-green, 10%);
+$footer-background: $light-grey;
 
 
 @mixin transition($time: 0.5s, $type: all) {

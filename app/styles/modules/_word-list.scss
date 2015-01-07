@@ -4,7 +4,7 @@
   }
 }
 .wordList {
-  border: 1px solid $teal;
+  border: 1px solid $header-background;
   box-shadow: 0px 1px 3px #DDD;
   left: 19px;
   position: absolute;
@@ -14,13 +14,13 @@
   }
   a {
     background: #FFF;
-    color: $teal;
+    color: $dropdown-anchor-color;
     cursor: pointer;
     display: block;
     padding: 20px;
     text-decoration: none;
     &:hover {
-      background: $light-grey;
+      background: #F3F3F3;
     }
   }
   @media screen and (max-width: $medium) {

@@ -1,5 +1,5 @@
 body {
-  color: $black;
+  color: $text-color;
   font-family: $sans-serif;
   font-size: 18px;
 }
@@ -20,7 +20,7 @@ a {
   cursor: pointer;
   text-decoration: underline;
   &:hover {
-    color: lighten($anchor-color, 10%);
+    color: $anchor-hover-color;
   }
 }
 
@@ -30,17 +30,18 @@ input {
 
 button {
   @include transition();
-  background: $teal;
+  background: $button-background;
   border: 0;
   border-radius: 2px;
-  box-shadow: inset 0px 1px 1px lighten($teal, 15%), 0px 1px 1px #DDD;
+  box-shadow: inset 0px 1px 1px lighten($button-background, 15%), 0px 1px 1px #DDD;
   color: #FFF;
   cursor: pointer;
   display: block;
   font-size: 18px;
   padding: 10px 20px;
+  text-shadow: 0px 1px 0px $button-hover-background;
   &:hover {
-    background: lighten($teal, 5%);
+    background: $button-hover-background;
   }
 }
 
