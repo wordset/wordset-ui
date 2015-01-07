@@ -5,18 +5,23 @@
 
 = outlet
 
-ol.meanings
-  each meanings
-    li
-      .info
-        .definitionWrap
-          .definition
-            .pos = pos
-            .def = def
-          a.edit edit definition
-        .quoteWrap
-          .quote
-            span.quotemark “
-            quote
-            span.quotemark ”
-          a.edit edit quote
+ul.entries
+  each entries
+    .pos = pos
+    ol.meanings
+      each meanings
+        li
+          .info
+            .definitionWrap
+              .definition
+
+                .def = def
+              a.edit edit definition
+            if quotes
+              .quoteWrap
+                each quotes
+                  .quote
+                    span.quotemark “
+                    text
+                    span.quotemark ”
+                  a.edit edit this
