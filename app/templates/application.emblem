@@ -8,9 +8,9 @@
     if showSearchList
       .wordListWrapper
         ul.wordList
-          = each
+          = each wordList.results
             li
-              a{action 'clickWordFromList' this} = name
+              a{action 'clickWordFromList' word_id} = name
 
 
   .signButtons
