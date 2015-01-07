@@ -3,74 +3,56 @@
   margin-bottom: 20px;
 }
 
-.meanings {
+.meanings, .edit-meanings {
   font-size: 20px;
   list-style-position: inside;
+  margin-bottom: 30px;
   li {
-    border-top: 1px solid $light-grey;
-    padding: 40px 0px;
+    padding: 20px 0px;
+  }
+  .info {
+    display: inline-block;
+    vertical-align: text-top;
   }
 }
 
-.pos {
-  margin-right: 10px;
-}
 
-.index {
-  vertical-align: top;
-  width: 3%;
-}
-
-.info {
-  display: inline-block;
-  line-height: 1.4em;
-  vertical-align: text-top;
-  width: 90%;
-}
-
-.word, .definition, .quote {
-  display: inline-block;
-  padding-right: 20px;
-}
-
-.word {
-  width: 78%;
-  @media screen and (max-width: $medium) {
-    width: 65%;
+.meanings {
+  .index {
+    vertical-align: top;
+    width: 3%;
   }
-}
+  .info {
+    display: inline-block;
+    left: 10px;
+    line-height: 1.4em;
+    position: relative;
+    vertical-align: text-top;
+  }
 
-.definition, .quote {
-  width: 82%;
+  .word, .definition, .quote {
+    display: inline-block;
+  }
+
+  .def {
+    display: inline;
+  }
+  .quote {
+    font-style: italic;
+    margin-top: 5px;
+  }
 }
 
 .edit {
   display: inline-block;
+  float: right;
   font-size: 14px;
   vertical-align: top;
-  @media screen and (max-width: $medium) {
-    float: right;
-  }
-}
-
-.quoteWrap, .wordWrap {
-  .edit {
-    margin-top: 12px;
-  }
-}
-
-.pos, .def {
-  display: inline;
 }
 
 .pos {
-  color: #AAA;
+  border-bottom: 1px solid $lime;
+  // color: #999;
   font-style: italic;
   margin-left: 5px;
-}
-
-.quote {
-  font-style: italic;
-  margin-top: 10px;
-
 }

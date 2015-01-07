@@ -1,6 +1,6 @@
 .wordWrap
   .word
-    = name
+    input value=name
   .edit
     a.edit make suggestion
 
@@ -9,16 +9,15 @@
 ul.entries
   each entries
     .pos = pos
-    ol.meanings
+    ol.edit-meanings
       each meanings
         li
           .info
             .definition
-              .def = def
+              .def
+                input value=def
             if quotes
               .quoteWrap
                 each quotes
                   .quote
-                    span.quotemark “
-                    text
-                    span.quotemark ”
+                    input value=text
