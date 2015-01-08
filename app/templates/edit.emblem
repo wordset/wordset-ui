@@ -2,7 +2,7 @@
   .word
     input value=name
   .edit
-    a.edit make suggestion
+    a.edit cancel
 
 = outlet
 
@@ -20,4 +20,6 @@ ul.entries
               .quoteWrap
                 each quotes
                   .quote
+                    span.quotemark “
                     input value=text
+                    span.quotemark ”

@@ -17,9 +17,19 @@
   }
   .quote {
     margin-top: 10px;
-    &:before, &:after {
-      content: '"';
-      color: red;
+    position: relative;
+    input {
+      padding: 5px 14px;
+    }
+    .quotemark {
+      position: absolute;
+      top: 10px;
+      &:first-child {
+        left: 5px;
+      }
+      &:last-child {
+        right: 5px;
+      }
     }
   }
 }

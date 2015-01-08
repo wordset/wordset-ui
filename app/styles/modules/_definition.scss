@@ -3,6 +3,21 @@
   margin-bottom: 20px;
 }
 
+.edit {
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  margin-top: -17px;
+  vertical-align: top;
+}
+
+.pos {
+  border-bottom: 1px solid $lime;
+  // color: #999;
+  font-style: italic;
+  margin-left: 5px;
+}
+
 .meanings, .edit-meanings {
   font-size: 20px;
   list-style-position: inside;
@@ -13,15 +28,12 @@
   .info {
     display: inline-block;
     vertical-align: text-top;
+    width: 93%;
   }
 }
 
 
 .meanings {
-  .index {
-    vertical-align: top;
-    width: 3%;
-  }
   .info {
     display: inline-block;
     left: 10px;
@@ -41,18 +53,4 @@
     font-style: italic;
     margin-top: 5px;
   }
-}
-
-.edit {
-  display: inline-block;
-  float: right;
-  font-size: 14px;
-  vertical-align: top;
-}
-
-.pos {
-  border-bottom: 1px solid $lime;
-  // color: #999;
-  font-style: italic;
-  margin-left: 5px;
 }
