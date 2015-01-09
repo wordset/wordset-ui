@@ -1,20 +1,30 @@
-.suggestion {
-  border: 1px solid #eee;
+.suggestion, .submit-suggestion {
+  border: 2px solid $module-border;
+  box-shadow: 0px 1px 4px #DDD;
   padding: 20px;
-  .reason {
+  .word, .reason {
     span {
+      font-style: italic;
       margin-right: 10px;
     }
   }
   .old, .new {
+    color: $text-color;
     display: inline-block;
     margin: 20px 0px;
+    padding: 20px 0px;
     text-align: center;
-    width: 45%;
+    text-decoration: none;
+    width: 48%;
+    @media screen and (max-width: $small) {
+      width: 100%;
+    }
 
   }
   .old {
-    border-right: 1px solid #EEE;
+    @media screen and (min-width: $small) {
+      border-right: 1px solid #EEE;
+    }
   }
   button {
     margin: auto;
@@ -22,5 +32,20 @@
   .dont-care {
     @extend a;
     text-align: center;
+  }
+  input {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+}
+
+.suggestion {
+  .old, .new {
+    &:hover {
+      background: #F6F6F6;
+    }
   }
 }

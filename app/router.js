@@ -12,6 +12,7 @@ Router.map(function() {
   this.resource("sign-in");
   this.resource("sign-up");
   this.resource("suggestions");
+  this.resource("submit-suggestion");
 });
 
 export default Router;

@@ -1,16 +1,18 @@
 h1 List of suggestions
 
 .suggestion
-  .word Hit
+  .word
+    span Word:
+    | Hit
   .reason
     span Reason for change:
     | There was a typo in the definition.
-  .old
+  a.old
     h4 Old:
     p To smurgh something
-    button.negative Keep old version
-  .new
+    button.negative Vote
+  a.new
     h4 New:
     p To smash something
-    button Make change
+    button Vote
   .dont-care I don't have an opinion.
