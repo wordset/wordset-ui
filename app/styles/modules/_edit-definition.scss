@@ -3,8 +3,8 @@
   padding: 5px;
 }
 
-.definition, .quote {
-  input {
+.definition {
+  textarea {
     font-size: 20px;
     padding: 5px;
     width: 100%;
@@ -18,8 +18,10 @@
   .quote {
     margin-top: 10px;
     position: relative;
-    input {
+    textarea {
+      font-size: 20px;
       padding: 5px 14px;
+      width: 97%;
     }
     .quotemark {
       position: absolute;
@@ -32,4 +34,19 @@
       }
     }
   }
+  .add-quote {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    span {
+      margin-right: 5px;
+    }
+  }
+}
+
+.save-suggestion {
+  position: fixed;
+  text-decoration: none;
+  right: 20px;
+  top: 40%;
 }

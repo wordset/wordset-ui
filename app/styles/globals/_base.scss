@@ -29,6 +29,11 @@ input {
   font-family: $sans-serif;
 }
 
+textarea {
+  border: 1px solid #999;
+  box-shadow: inset 0px 1px 1px #DDD;
+}
+
 button {
   @include transition();
   background: $button-background;

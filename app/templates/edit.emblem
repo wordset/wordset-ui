@@ -6,6 +6,10 @@
 
 = outlet
 
+button.save-suggestion
+  | Save Suggestion
+  span.ion-chevron-right
+
 ul.entries
   each entries
     .pos = pos
@@ -15,11 +19,16 @@ ul.entries
           .info
             .definition
               .def
-                input value=def
+                = textarea value=def
             if quotes
               .quoteWrap
                 each quotes
                   .quote
                     span.quotemark “
-                    input value=text
+                    = textarea value=text
                     span.quotemark ”
+            else
+              .quoteWrap
+                a.add-quote
+                  span.ion-plus-circled
+                  | Add quote
