@@ -30,24 +30,32 @@ input {
 }
 
 textarea {
-  border: 1px solid #999;
+  border: 1px solid #CCC;
   box-shadow: inset 0px 1px 1px #DDD;
 }
 
 button {
   @include transition();
-  background: $button-background;
+  background: $button-background-positive;
   border: 0;
   border-radius: 2px;
-  box-shadow: inset 0px 1px 1px lighten($button-background, 15%), 0px 1px 1px #DDD;
+  box-shadow: inset 0px 1px 1px lighten($button-background-positive, 15%), 0px 1px 1px #DDD;
   color: #FFF;
   cursor: pointer;
   display: block;
   font-size: 18px;
   padding: 10px 20px;
-  text-shadow: 0px 1px 0px $button-hover-background;
+  text-shadow: 0px 1px 0px $button-hover-background-positive;
   &:hover {
-    background: $button-hover-background;
+    background: $button-hover-background-positive;
+  }
+  &.negative {
+    background: $button-background-negative;
+    box-shadow: inset 0px 1px 1px lighten($button-background-negative, 15%), 0px 1px 1px #DDD; 
+    text-shadow: 0px 1px 0px $button-hover-background-negative;
+    &:hover {
+      background: $button-hover-background-negative;
+    }
   }
 }
 

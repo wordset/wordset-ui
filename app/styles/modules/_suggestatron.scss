@@ -1,0 +1,26 @@
+.suggestion {
+  border: 1px solid #eee;
+  padding: 20px;
+  .reason {
+    span {
+      margin-right: 10px;
+    }
+  }
+  .old, .new {
+    display: inline-block;
+    margin: 20px 0px;
+    text-align: center;
+    width: 45%;
+
+  }
+  .old {
+    border-right: 1px solid #EEE;
+  }
+  button {
+    margin: auto;
+  }
+  .dont-care {
+    @extend a;
+    text-align: center;
+  }
+}

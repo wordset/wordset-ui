@@ -22,8 +22,11 @@ $text-color: $black;
 $anchor-color: $lime;
 $anchor-hover-color: darken($lime, 10%);
 
-$button-background: $lime;
-$button-hover-background: darken($lime, 10%);
+$button-background-positive: $lime;
+$button-hover-background-positive: darken($lime, 10%);
+
+$button-background-negative: $dark-green;
+$button-hover-background-negative: darken($dark-green, 10%);
 
 $module-border: $dark-green;
 
