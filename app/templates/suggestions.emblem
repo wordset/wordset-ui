@@ -2,10 +2,10 @@ h1 List of suggestions
 
 .suggestion
   .word
-    span Word:
+    .label Word:
     | Hit
   .reason
-    span Reason for change:
+    .label Reason:
     | There was a typo in the definition.
   a.old
     h4 Old:

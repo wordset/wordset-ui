@@ -51,7 +51,7 @@ button {
   }
   &.negative {
     background: $button-background-negative;
-    box-shadow: inset 0px 1px 1px lighten($button-background-negative, 15%), 0px 1px 1px #DDD; 
+    box-shadow: inset 0px 1px 1px lighten($button-background-negative, 15%), 0px 1px 1px #DDD;
     text-shadow: 0px 1px 0px $button-hover-background-negative;
     &:hover {
       background: $button-hover-background-negative;
@@ -85,31 +85,18 @@ button {
 
 // Sticky Footer thing
 
-// body  {
-//   display: flex;
-//   min-height: 100vh;
-//   flex-direction: column;
-// }
-//
-// .content {
-//   flex: 1;
-// }
-
-// html, body {
-//   height: 100%;
-// }
-//
-// .ember-view {
-//   min-height: 100%;
-//   position: relative;
-// }
-//
-// .content {
-//   padding-bottom: 60px;
-// }
-//
-// .footer {
-//   position: absolute;
-// 	bottom: 0;
-// 	left: 0;
-// }
+html, body, .ember-view {
+  height: 100%;
+}
+.content {
+  min-height: 90%;
+  /* equal to footer height */
+  margin-bottom: -120px;
+}
+.content:after {
+  content: "";
+  display: block;
+}
+.footer, .content:after {
+  height: 120px;
+}

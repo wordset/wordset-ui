@@ -1,11 +1,16 @@
 .suggestion, .submit-suggestion {
   border: 2px solid $module-border;
   box-shadow: 0px 1px 4px #DDD;
-  padding: 20px;
+  padding: 30px;
+  .word {
+    font-size: 20px;
+  }
   .word, .reason {
-    span {
+    .label {
+      display: inline-block;
       font-style: italic;
       margin-right: 10px;
+      width: 70px;
     }
   }
   .old, .new {
