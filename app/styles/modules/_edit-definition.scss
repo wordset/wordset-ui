@@ -11,44 +11,18 @@
   }
 }
 
-.edit-meanings {
-  .info {
-    width: 90%;
-  }
-  .quote {
-    margin-top: 10px;
-    position: relative;
-    textarea {
-      font-size: 20px;
-      padding: 5px 14px;
-      width: 97%;
-    }
-    .quotemark {
-      position: absolute;
-      top: 10px;
-      &:first-child {
-        left: 5px;
-      }
-      &:last-child {
-        right: 5px;
-      }
-    }
-  }
-  .add-quote {
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 10px;
-    span {
-      margin-right: 5px;
-    }
-  }
+.json, .reason-input input {
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.reason-input label {
+  margin-bottom: 5px;
 }
 
 .save-suggestion {
-  position: fixed;
   text-decoration: none;
-  right: 20px;
-  top: 40%;
   span {
     font-size: 16px;
     margin-left: 10px;

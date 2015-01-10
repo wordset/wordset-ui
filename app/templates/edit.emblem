@@ -1,35 +1,18 @@
 .wrapper
   .wordWrap
     .word
-      input value=name
+      = name
     .edit
       a.edit cancel
 
   = outlet
 
+  textarea.json
+
+  .reason-input
+    label for="reason" Reason
+    input id="reason"
+
   button.save-suggestion
     | Save Suggestion
     span.ion-chevron-right
-
-  ul.entries
-    each entries
-      .pos = pos
-      ol.edit-meanings
-        each meanings
-          li
-            .info
-              .definition
-                .def
-                  = textarea value=def
-              if quotes
-                .quoteWrap
-                  each quotes
-                    .quote
-                      span.quotemark “
-                      = textarea value=text
-                      span.quotemark ”
-              else
-                .quoteWrap
-                  a.add-quote
-                    span.ion-plus-circled
-                    | Add quote

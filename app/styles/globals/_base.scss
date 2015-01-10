@@ -32,6 +32,8 @@ input {
 textarea {
   border: 1px solid #CCC;
   box-shadow: inset 0px 1px 1px #DDD;
+  box-sizing: border-box;
+  font-family: $sans-serif;
 }
 
 button {
