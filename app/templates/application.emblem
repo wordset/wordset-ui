@@ -1,6 +1,6 @@
 .header
   a href="/"
-    img src="assets/images/full-logo.png"
+    img src="assets/images/full-logo-2.png"
   .search
     .searchBar
       = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
