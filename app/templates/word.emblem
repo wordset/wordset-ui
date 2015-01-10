@@ -1,24 +1,25 @@
-.wordWrap
-  .word
-    = name
-  .edit
-    a.edit make suggestion
+.wrapper
+  .wordWrap
+    .word
+      = name
+    .edit
+      a.edit make suggestion
 
-= outlet
+  = outlet
 
-ul.entries
-  each entries
-    .pos = pos
-    ol.meanings
-      each meanings
-        li
-          .info
-            .definition
-              .def = def
-            if quotes
-              .quoteWrap
-                each quotes
-                  .quote
-                    span.quotemark “
-                    text
-                    span.quotemark ”
+  ul.entries
+    each entries
+      .pos = pos
+      ol.meanings
+        each meanings
+          li
+            .info
+              .definition
+                .def = def
+              if quotes
+                .quoteWrap
+                  each quotes
+                    .quote
+                      span.quotemark “
+                      text
+                      span.quotemark ”

@@ -1,18 +1,15 @@
 h1 List of suggestions
 
-.suggestion
-  .word
-    .label Word:
-    | Hit
-  .reason
-    .label Reason:
-    | There was a typo in the definition.
-  a.old
-    h4 Old:
-    p To smurgh something
-    button.negative Vote
-  a.new
-    h4 New:
-    p To smash something
-    button Vote
-  .dont-care I don't have an opinion.
+.suggestion-box
+  .word sushi
+  .pos noun
+  ol.suggestion
+    li
+      .info
+        .definition
+          .def rice (with raw fish) wrapped in seaweed
+        .quoteWrap
+          .quote.new
+            span.quotemark “
+            | Sushi is a delicacy from Japan.
+            span.quotemark ”

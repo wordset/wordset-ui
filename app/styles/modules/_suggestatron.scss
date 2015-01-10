@@ -1,4 +1,4 @@
-.suggestion, .submit-suggestion {
+.submit-suggestion {
   border: 2px solid $module-border;
   box-shadow: 0px 1px 4px #DDD;
   padding: 30px;
@@ -18,11 +18,13 @@
     display: inline-block;
     margin: 20px 0px;
     padding: 20px 0px;
-    text-align: center;
     text-decoration: none;
     width: 48%;
     @media screen and (max-width: $small) {
       width: 100%;
+    }
+    p {
+
     }
 
   }
@@ -47,10 +49,11 @@
   }
 }
 
-.suggestion {
-  .old, .new {
-    &:hover {
-      background: #F6F6F6;
-    }
+.suggestion-box {
+  border: 2px solid $module-border;
+  box-shadow: 0px 1px 4px #DDD;
+  padding: 30px;
+  .new {
+    color: $dark-green;
   }
 }

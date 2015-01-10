@@ -59,7 +59,7 @@ button {
   }
 }
 
-.search, .wordList, .content {
+.search, .wordList, .wrapper {
   margin: auto;
   @media screen and (min-width: $large) {
     max-width: 740px;
@@ -72,11 +72,11 @@ button {
   }
 }
 
-.search, .content {
+.search, .wrapper {
   padding: 0px 20px;
 }
 
-.content {
+.wrapper {
   padding-top: 40px;
   @media screen and (max-width: $small) {
     width: 90%;

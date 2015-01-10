@@ -13,12 +13,11 @@
 
 .pos {
   border-bottom: 1px solid $lime;
-  // color: #999;
   font-style: italic;
   margin-left: 5px;
 }
 
-.meanings, .edit-meanings {
+.meanings, .edit-meanings, .suggestion {
   font-size: 20px;
   list-style-position: inside;
   margin-bottom: 30px;
@@ -33,7 +32,7 @@
 }
 
 
-.meanings {
+.meanings, .suggestion {
   .info {
     display: inline-block;
     left: 10px;
