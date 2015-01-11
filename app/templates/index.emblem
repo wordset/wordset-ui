@@ -1,9 +1,10 @@
-h1 Welcome to the first collaborative, structured dictionary.
+.wrapper
+  h1 Welcome to the first collaborative, structured dictionary.
 
-p WordSet is the first dictionary that you can edit that uses the highly-structured syntax necessary for a usable set of definitions.
+  p WordSet is the first dictionary that you can edit that uses the highly-structured syntax necessary for a usable set of definitions.
 
-p Search for a word above to find a definition.
+  p Search for a word above to find a definition.
 
-p If you want to help collaborate on the dictionary, #{link-to 'sign-up' | create an account}. We're always looking for suggestions of new words, changes to definitions, or sample quotes.
+  p If you want to help collaborate on the dictionary, #{link-to 'sign-up' | create an account}. We're always looking for suggestions of new words, changes to definitions, or sample quotes.
 
-p We're a team who thinks that most dictionaries are lacking something – the relevance that comes from community input.
+  p We're a team who thinks that most dictionaries are lacking something – the relevance that comes from community input. We also believe that a dictionary, in order to be useful, needs to have a highly-structured layout backed by an API. We've brought these ideas together to form WordSet.

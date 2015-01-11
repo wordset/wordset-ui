@@ -3,23 +3,28 @@
   padding: 5px;
 }
 
-.definition, .quote {
-  input {
+.definition {
+  textarea {
     font-size: 20px;
     padding: 5px;
     width: 100%;
   }
 }
 
-.edit-meanings {
-  .info {
-    width: 90%;
-  }
-  .quote {
-    margin-top: 10px;
-    &:before, &:after {
-      content: '"';
-      color: red;
-    }
+.json, .reason-input input {
+  font-size: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.reason-input label {
+  margin-bottom: 5px;
+}
+
+.save-suggestion {
+  text-decoration: none;
+  span {
+    font-size: 16px;
+    margin-left: 10px;
   }
 }

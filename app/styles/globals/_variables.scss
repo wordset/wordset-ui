@@ -10,8 +10,10 @@ $lime: #81C14B;
 $dark-green: #3E5641;
 $mint: #AFE0A1;
 $yellow: #EEE82C;
-$taupe: #5B654E;
+$taupe: #929487;
 $light-grey: #ECECEC;
+
+$brown: #6B6054;
 
 $header-color: $dark-green;
 $header-background: $light-grey;
@@ -22,8 +24,11 @@ $text-color: $black;
 $anchor-color: $lime;
 $anchor-hover-color: darken($lime, 10%);
 
-$button-background: $lime;
-$button-hover-background: darken($lime, 10%);
+$button-background-positive: $lime;
+$button-hover-background-positive: darken($lime, 10%);
+
+$button-background-negative: $dark-green;
+$button-hover-background-negative: darken($dark-green, 10%);
 
 $module-border: $dark-green;
 

@@ -1,0 +1,70 @@
+.submit-suggestion {
+  border: 2px solid $module-border;
+  box-shadow: 0px 1px 4px #DDD;
+  padding: 30px;
+  .word {
+    font-size: 20px;
+  }
+  .word, .reason {
+    .label {
+      display: inline-block;
+      font-style: italic;
+      margin-right: 10px;
+      width: 70px;
+    }
+  }
+  .old, .new {
+    color: $text-color;
+    display: inline-block;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    text-decoration: none;
+    width: 48%;
+    @media screen and (max-width: $small) {
+      width: 100%;
+    }
+    p {
+
+    }
+
+  }
+  .old {
+    @media screen and (min-width: $small) {
+      border-right: 1px solid #EEE;
+    }
+  }
+  button {
+    margin: auto;
+  }
+  .dont-care {
+    @extend a;
+    text-align: center;
+  }
+  input {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+}
+
+.proposed-change, .reason-explanation {
+  font-size: 20px;
+  margin: 20px 35px;
+  span {
+    margin-right: 10px;
+  }
+}
+
+.suggestion {
+  display: inline-block;
+  padding: 20px 35px;
+  width: 42%;
+  &.original .highlight {
+    color: #999;
+  }
+  &.change .highlight {
+    color: $lime;
+  }
+}
