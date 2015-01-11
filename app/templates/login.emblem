@@ -11,4 +11,4 @@ form submit="authenticate"
     button type=submit Sign In
 
     .aside
-      | Don't have an account? Register #{link-to 'sign-up' | here}.
+      | Don't have an account? Register #{link-to 'register' | here}.
