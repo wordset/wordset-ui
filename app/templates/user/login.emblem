@@ -1,6 +1,9 @@
 form submit="authenticate"
   .sign-module
     h3 Sign In
+    if errorMessage
+      .login-error
+        = errorMessage
     .username
       label Username
       = input value=identification type="text" autofocus="autofocus"
@@ -11,4 +14,4 @@ form submit="authenticate"
     button type=submit Sign In
 
     .aside
-      | Don't have an account? Register #{link-to 'register' | here}.
+      | Don't have an account? Register #{link-to 'user.new' | here}.

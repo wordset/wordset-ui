@@ -21,11 +21,12 @@
       a click='invalidateSession' Logout
     else
       .signButtons
-        link-to .signin "login" | Sign In
-        link-to .signup "register" | Sign Up
+        link-to .signin "user.login" | Sign In
+        link-to .signup "user.new" | Sign Up
 
-
-.content = outlet
+= flash-message
+.content
+  = outlet
 
 .footer
   .social

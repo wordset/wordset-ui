@@ -10,7 +10,10 @@ Router.map(function() {
   this.resource("word", {path: "/word/:word_id"}, function() {});
   this.resource("edit", {path: "/edit/:word_id"}, function() {});
   this.route("login");
-  this.route("register");
+  this.resource("user", function() {
+    this.route("new");
+    this.route("login");
+  });
   this.resource("suggestions");
   this.resource("submit-suggestion");
 

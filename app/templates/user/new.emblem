@@ -1,14 +1,24 @@
 .sign-module
   h3 Sign Up
+  if isError
+    h2 Error!
   .username
     label Username
     = input type="text" autofocus="autofocus" value=username
+    each error in errors.username
+      p = error.message
   .email
     label E-mail
     = input type="email" value=email
+    each error in errors.email
+      p.error
+        | Email #{error.message}
   .password
     label Password
     = input type="password" value=password
+    each error in errors.password
+      p.error
+        | Password #{error.message}
   .password
     label Confirm password
     = input type="password" value=password_confirmation
@@ -16,4 +26,4 @@
   button click="register" Sign Up
 
   .aside
-    | Already have an account? Sign in #{link-to 'login' | here}.
+    | Already have an account? Sign in #{link-to 'user.login' | here}.

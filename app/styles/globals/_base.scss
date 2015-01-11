@@ -87,7 +87,7 @@ button {
 
 // Sticky Footer thing
 
-html, body, .ember-view {
+html, body, body > div {
   height: 100%;
 }
 .content {
