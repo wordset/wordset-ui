@@ -1,7 +1,7 @@
 form submit="authenticate"
   .sign-module
     h3 Sign In
-    .email
+    .username
       label Username
       = input value=identification type="text" autofocus="autofocus"
     .password
