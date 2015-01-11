@@ -1,6 +1,6 @@
 .header
   a href="/"
-    img src="assets/images/full-logo-2.png"
+    img src="assets/images/full-logo.png"
   .search
     .searchBar
       = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
@@ -21,8 +21,8 @@
       a click='invalidateSession' Logout
     else
       .signButtons
-        link-to "login" | Sign In
-        link-to "register" | Sign Up
+        link-to .signin "login" | Sign In
+        link-to .signup "register" | Sign Up
 
 
 .content = outlet

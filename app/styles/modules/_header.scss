@@ -47,7 +47,7 @@
     a {
       margin-left: 20px;
     }
-    .signin {
+    .signin, .signin:visited, .signin:active {
       color: $sign-in-color;
     }
     @media screen and (max-width: $medium) {
