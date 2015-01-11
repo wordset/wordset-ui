@@ -11,6 +11,7 @@ Router.map(function() {
   this.resource("edit", {path: "/edit/:word_id"}, function() {});
   this.resource("sign-in");
   this.resource("sign-up");
+  this.route("login")
 });
 
 export default Router;

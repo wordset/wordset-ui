@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     apiHost: 'http://localhost:3000',
+    apiPrefix: '/api/v1',
 
 
     EmberENV: {
@@ -28,6 +29,10 @@ module.exports = function(environment) {
       'img-src': "'self'",
       'style-src': "'self'",
       'media-src': "'self'"
+    },
+    "simple-auth": {
+      store: 'simple-auth-session-store:local-storage',
+      authorizer: 'authorizer:api'
     }
   };
 

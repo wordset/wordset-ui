@@ -13,9 +13,12 @@
               a{action 'clickWordFromList' word_id} = name
 
 
-  .signButtons
-    a.signin href="/sign-in" Sign In
-    a.signup href="/sign-up" Sign Up
+  if session.isAuthenticated
+    a click='invalidateSession' Logout
+  else
+    .signButtons
+      link-to "login" | Sign In
+      link-to "sign-up" | Sign Up
 
 
 .content = outlet

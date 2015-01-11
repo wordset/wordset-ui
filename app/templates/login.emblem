@@ -1,0 +1,14 @@
+form submit="authenticate"
+  .sign-module
+    h3 Sign In
+    .email
+      label Username
+      = input value=identification type="text" autofocus="autofocus"
+    .password
+      label Password
+      = input type="password" value=password
+
+    button type=submit Sign In
+
+    .aside
+      | Don't have an account? Register #{link-to 'sign-up' | here}.
