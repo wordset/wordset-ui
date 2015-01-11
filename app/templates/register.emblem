@@ -1,0 +1,19 @@
+.sign-module
+  h3 Sign Up
+  .username
+    label Username
+    = input type="text" autofocus="autofocus" value=username
+  .email
+    label E-mail
+    = input type="email" value=email
+  .password
+    label Password
+    = input type="password" value=password
+  .password
+    label Confirm password
+    = input type="password" value=password_confirmation
+
+  button click="register" Sign Up
+
+  .aside
+    | Already have an account? Sign in #{link-to 'login' | here}.
