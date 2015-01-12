@@ -1,19 +1,10 @@
-.wrapper
-  .wordWrap
-    .word
-      = name
-    .edit
-      a.edit cancel
+ul.definition
+  = textarea value=entries
 
-  = outlet
+.reason-input
+  label for="reason" Reason
+  input id="reason"
 
-  ul
-    = textarea value=entries
-
-  .reason-input
-    label for="reason" Reason
-    input id="reason"
-
-  button.save-suggestion
-    | Save Suggestion
-    span.ion-chevron-right
+button.save-suggestion
+  | Save Suggestion
+  span.ion-chevron-right

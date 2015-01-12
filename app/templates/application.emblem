@@ -15,10 +15,9 @@
 
   .nav
     if session.isAuthenticated
-      h2
+      .welcomeMessage
         | Welcome #{session.username}!
-
-      a click='invalidateSession' Logout
+        a click='invalidateSession' Logout
     else
       .signButtons
         link-to .signin "user.login" | Sign In

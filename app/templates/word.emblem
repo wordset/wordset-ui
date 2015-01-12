@@ -6,20 +6,3 @@
       a.edit make suggestion
 
   = outlet
-
-  ul.entries
-    each entries
-      .pos = pos
-      ol.meanings
-        each meanings
-          li
-            .info
-              .definition
-                .def = def
-              if quotes
-                .quoteWrap
-                  each quotes
-                    .quote
-                      span.quotemark “
-                      text
-                      span.quotemark ”

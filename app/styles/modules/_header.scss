@@ -16,6 +16,7 @@
     input {
       border: 0;
       font-size: 20px;
+      margin-top: 0px;
       padding: 10px;
       width: 100%;
     }
@@ -38,13 +39,28 @@
       }
     }
   }
-  .signButtons {
-    cursor: pointer;
+  .welcomeMessage, .signButtons {
     float: right;
     font-size: 18px;
     margin-right: 20px;
+  }
+  .welcomeMessage {
+    margin-top: -45px;
+    @media screen and (max-width: $medium) {
+      font-size: 14px;
+      margin-top: -97px;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+  .signButtons {
+    cursor: pointer;
     margin-top: -30px;
     a {
+      color: $header-color;
       margin-left: 20px;
     }
     .signin, .signin:visited, .signin:active {
