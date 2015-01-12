@@ -1,23 +1,25 @@
 .sign-module
   h3 Sign Up
   if isError
-    h2 Error!
+    .login-error
+      span.ion-android-alert
+      | There was an error signing up
   .username
     label Username
     = input type="text" autofocus="autofocus" value=username
     each error in errors.username
-      p = error.message
+      .error = error.message
   .email
     label E-mail
     = input type="email" value=email
     each error in errors.email
-      p.error
+      .error
         | Email #{error.message}
   .password
     label Password
     = input type="password" value=password
     each error in errors.password
-      p.error
+      .error
         | Password #{error.message}
   .password
     label Confirm password

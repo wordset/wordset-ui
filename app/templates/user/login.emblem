@@ -3,6 +3,7 @@ form submit="authenticate"
     h3 Sign In
     if errorMessage
       .login-error
+        span.ion-android-alert
         = errorMessage
     .username
       label Username
