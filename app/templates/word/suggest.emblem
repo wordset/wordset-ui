@@ -1,3 +1,5 @@
+= link-to "word.index" class="edit" | cancel
+
 ul.definition
   = textarea value=entries
 

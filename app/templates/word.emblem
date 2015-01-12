@@ -2,7 +2,5 @@
   .wordWrap
     .word
       = name
-    .edit
-      a.edit make suggestion
 
   = outlet

@@ -1,3 +1,5 @@
+= link-to "word.suggest" class="edit" | make suggestion
+
 ul.entries
   each entries
     .pos = pos
