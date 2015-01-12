@@ -1,4 +1,7 @@
-= link-to "word.suggest" class="edit" | make suggestion
+if session.isAuthenticated
+  = link-to "word.suggest" class="edit" | make suggestion
+else
+  = link-to "user.login" class="edit" | sign in to contribute
 
 ul.entries
   each entries
