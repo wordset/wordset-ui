@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #ECECEC;
+  color: #100B00;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 18px; }
+
+.wrapper {
+  display: block;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px; }
+
+img {
+  margin-bottom: 50px;
+  width: 100%; }
+
+h2 {
+  color: #929487;
+  font-size: 30px;
+  margin-bottom: 30px; }
+
+p {
+  line-height: 1.4em;
+  margin-bottom: 20px; }
+
+a {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #81C14B;
+  cursor: pointer;
+  text-decoration: underline; }
+  a:hover {
+    color: #68a138; }
+
+input {
+  box-sizing: border-box;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 16px;
+  margin: 10px 0px;
+  padding: 5px;
+  width: 100%; }
+
+button {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background: #81C14B;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: inset 0px 1px 1px #a9d584, 0px 1px 1px #DDD;
+  color: #FFF;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  margin: auto;
+  padding: 10px 20px;
+  text-shadow: 0px 1px 0px #68a138; }
+  button:hover {
+    background: #68a138; }
+  button.negative {
+    background: #3E5641;
+    box-shadow: inset 0px 1px 1px #5e8263, 0px 1px 1px #DDD;
+    text-shadow: 0px 1px 0px #29382b; }
+    button.negative:hover {
+      background: #29382b; }
+
+html, body, body > div {
+  height: 100%; }
+
+.content {
+  min-height: 90%;
+  /* equal to footer height */
+  margin-bottom: -120px; }
+
+.content:after {
+  content: "";
+  display: block; }
+
+.footer, .content:after {
+  height: 120px; }
+
+/*# sourceMappingURL=styles.css.map */
