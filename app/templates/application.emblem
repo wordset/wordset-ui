@@ -3,8 +3,8 @@
     img src="assets/images/full-logo.png"
   .search
     .searchBar
-      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus"
-      span.ion-close-circled
+      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord"
+      span.ion-close-circled{action 'clear'}
     if showSearchList
       .wordListWrapper
         ul.wordList

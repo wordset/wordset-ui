@@ -17,6 +17,11 @@ export default Ember.ObjectController.extend({
     clickWordFromList: function(word) {
       this.set("showSearchList", false);
       this.transitionToRoute("word", word);
+    },
+    clear: function() {
+      var input = document.getElementById("searchForWord");
+      input.value = '';
+      input.focus();
     }
   }
 });
