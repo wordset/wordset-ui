@@ -23,6 +23,12 @@
     &:hover {
       background: #F3F3F3;
     }
+    &.empty {
+      cursor: inherit;
+      &:hover {
+        background: #FFF;
+      }
+    }
   }
   @media screen and (max-width: $medium) {
     left: -1px;
