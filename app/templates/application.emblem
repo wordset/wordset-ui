@@ -35,8 +35,8 @@
   .social
     a href="http://twitter.com/thewordset" target="_blank"
       span.ion-social-twitter
-    a href="http://facebook.com" target="_blank"
-      span.ion-social-facebook
+    a href="mailto:contact@teamrarebit.com" target="_blank"
+      span.ion-email
   .copyright
     | Copyright 2015 – Made by&#160;
     a href="http://teamrarebit.com" target="_blank" rarebit
