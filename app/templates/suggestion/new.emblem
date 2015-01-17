@@ -4,7 +4,7 @@ if error
   strong = error
 
 ul.definition
-  = textarea value=jsonText
+  = auto-textarea value=jsonText
 
 .reason-input
   label for="reason" Reason
