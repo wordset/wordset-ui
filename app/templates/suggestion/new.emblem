@@ -1,12 +1,15 @@
 = link-to "word.index" class="edit" | cancel
 
+if error
+  strong = error
+
 ul.definition
-  = textarea value=entries
+  = textarea value=jsonText
 
 .reason-input
   label for="reason" Reason
   input id="reason"
 
-button.save-suggestion
+button.save-suggestion click=save disabled=hasErrors
   | Save Suggestion
   span.ion-chevron-right
