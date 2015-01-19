@@ -100,12 +100,12 @@ html, body, body > div {
 .content {
   min-height: 90%;
   /* equal to footer height */
-  margin-bottom: -120px;
+  margin-bottom: -70px;
 }
 .content:after {
   content: "";
   display: block;
 }
 .footer, .content:after {
-  height: 120px;
+  height: 70px;
 }
