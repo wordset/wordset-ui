@@ -19,6 +19,7 @@ Router.map(function() {
   });
   this.resource("suggestions");
   this.resource("submit-suggestion");
+  this.resource("faqs");
 
 });
 

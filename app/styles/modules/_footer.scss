@@ -11,9 +11,11 @@
       color: $footer-hover-color;
     }
   }
+  .links, .social {
+    margin-bottom: 20px;
+  }
   .social {
     font-size: 18px;
-    margin-bottom: 20px;
     a {
       margin-right: 20px;
     }
