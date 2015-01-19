@@ -1,5 +1,5 @@
 if session.isAuthenticated
-  = link-to "suggestion.new" class="edit" | make suggestion
+  = link-to "suggestions" class="edit" | make suggestion
 else
   = link-to "user.login" class="edit" | sign in to contribute
 

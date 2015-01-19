@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 var Word = DS.Model.extend({
   name: DS.attr('string'),
-  entries: DS.attr()
+  entries: DS.hasMany('entries')
 });
 
 Word.reopenClass({
