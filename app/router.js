@@ -8,9 +8,6 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource("index", {path: "/"});
   this.resource("word", {path: "/word/:word_id"}, function() {
-    this.resource("suggestion", function() {
-      this.route("new");
-    });
   });
   this.route("login");
   this.resource("user", function() {
@@ -18,8 +15,9 @@ Router.map(function() {
     this.route("login");
   });
   this.resource("suggestions");
-  this.resource("submit-suggestion");
   this.resource("faqs");
+
+  //this.resource("submit-suggestion");
 
 });
 
