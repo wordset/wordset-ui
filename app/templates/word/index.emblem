@@ -7,14 +7,20 @@ ul.entries
   each entries
     .pos = pos
     ol.meanings
-      each meanings
+      each meaning in meanings itemController="suggest_field"
         li
           .info
             .definition
-              .def = def
+
+              if meaning.isEditing
+                input value=meaning.def
+                button click=submitSuggestion Suggest
+              else
+                .def = meaning.def
+                a click=editMeaning Edit
             if quotes
               .quoteWrap
-                each quotes
+                each meaning.quotes
                   .quote
                     span.quotemark “
                     text

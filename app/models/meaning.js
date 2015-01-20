@@ -1,7 +1,17 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+var Meaning = DS.Model.extend({
   def: DS.attr("string"),
   entries: DS.belongsTo("entry"),
-  quotes: DS.hasMany("quotes")
+  quotes: DS.hasMany("quotes"),
+
+  suggestableType: "meaning",
+  suggestableFields: ["def"],
+  suggestableChildren: ["quotes"],
 });
+
+Meaning.reopenClass({
+
+});
+
+export default Meaning;
