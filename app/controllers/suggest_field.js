@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  needs: ["word"],
+  post: Ember.computed.alias("controllers.word"),
   isEditing: false,
   actions: {
     editMeaning: function() {

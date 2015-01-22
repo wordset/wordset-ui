@@ -3,4 +3,7 @@
     .word
       = name
 
-  = outlet
+  if !session.isAuthenticated
+    = link-to "user.login" class="edit" | sign in to contribute
+
+  word-display word=this action=submitSuggestion

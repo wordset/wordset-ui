@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Route.extend({
   actions: {
     commitSuggestion: function() {
-      console.log("Controller got it");
+      console.log("Router notified");
     }
   }
 });

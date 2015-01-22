@@ -1,0 +1,13 @@
+{{#if displayEdit}}
+  {{input value=field}}
+  {{textarea value=reason}}
+  <button {{action "submitSuggestion"}}>Suggest</button>
+  <button {{action "cancel"}}>Cancel</button>
+{{else}}
+  {{yield}}
+  {{#if canEdit}}
+    {{edit-button action='editMode'}}
+  {{else}}
+    {{locked-icon}}
+  {{/if}}
+{{/if}}
