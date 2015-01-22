@@ -5,7 +5,7 @@ var Suggestion = DS.Model.extend({
   targetType: DS.attr("string"),
   targetId: DS.attr("string"),
   action: DS.attr("string"),
-  changes: DS.attr(),
+  delta: DS.attr(),
   status: DS.attr("string"),
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word"),
@@ -13,16 +13,16 @@ var Suggestion = DS.Model.extend({
 
 Suggestion.reopen({
   changeModel: function(model) {
-    var data = Ember.Object.create();
+    var delta = Ember.Object.create();
     this.set("targetId", model.id);
     this.set("targetType", model.suggestableType);
     for(var i = 0; i < model.suggestableFields.length; i++) {
       var name = model.suggestableFields[i];
-      data.set(name, model.get(name));
+      delta.set(name, model.get(name));
     }
-    this.set("word", model.word())
+    this.set("word", model.word());
     this.set("action", "change");
-    this.set("changes", data);
+    this.set("delta", delta);
   }
 });
 
