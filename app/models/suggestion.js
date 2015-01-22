@@ -8,6 +8,7 @@ var Suggestion = DS.Model.extend({
   changes: DS.attr(),
   status: DS.attr("string"),
   user: DS.belongsTo("user"),
+  word: DS.belongsTo("word"),
 });
 
 Suggestion.reopen({
@@ -19,6 +20,7 @@ Suggestion.reopen({
       var name = model.suggestableFields[i];
       data.set(name, model.get(name));
     }
+    this.set("word", model.word())
     this.set("action", "change");
     this.set("changes", data);
   }
