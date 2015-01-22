@@ -11,10 +11,8 @@ export default Base.extend({
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(propertiesObject.get("username")) && !Ember.isEmpty(propertiesObject.get("auth_key"))) {
-        console.log("RESTORED OK!");
         resolve(properties);
       } else {
-        console.log("REJECTED SESSION");
         reject();
       }
     });
@@ -43,7 +41,7 @@ export default Base.extend({
   },
   makeRequest: function(data) {
     return Ember.$.ajax({
-      url:        ENV.apiHost + ENV.apiPrefix + '/users/login',
+      url:        ENV.apiHost + ENV.apiPrefix + '/login',
       type:       'POST',
       data:       data,
       dataType:   'json',

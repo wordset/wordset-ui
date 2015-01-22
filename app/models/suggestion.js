@@ -6,7 +6,8 @@ var Suggestion = DS.Model.extend({
   targetId: DS.attr("string"),
   action: DS.attr("string"),
   changes: DS.attr(),
-  status: DS.attr("string")
+  status: DS.attr("string"),
+  user: DS.belongsTo("user"),
 });
 
 Suggestion.reopen({

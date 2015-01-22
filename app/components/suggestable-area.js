@@ -11,12 +11,11 @@ export default Ember.Component.extend({
   actions: {
     editMode: function() {
       this.set("mode", "edit");
-      console.log("chaning mode");
     },
     submitSuggestion: function() {
       this.set("mode", "locked");
-      this.sendAction("action", this.get('model'));
-      console.error("IMPLEMENT SUGGESTING OR SOME SHIT");
+      this.sendAction("action", this.get('model'), this.get('reason'));
+      //console.error("IMPLEMENT SUGGESTING OR SOME SHIT");
     },
     cancel: function() {
       this.get("model").rollback();
