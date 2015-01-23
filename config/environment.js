@@ -58,7 +58,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiHost = 'http://wordset-data.herokuapp.com';
+    ENV.apiHost = 'http://api.wordset.org';
   }
 
 
