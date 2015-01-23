@@ -3,11 +3,18 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   displayEdit: (function() {
-    return (this.get("mode") === "edit");
+    if(this.get("mode") === "edit") {
+      return true;
+    }
+    return false;
   }).property("mode"),
   canEdit: (function() {
-    return (this.get("mode") != "locked");
-  }).property("mode"),
+    if(this.get("mode") == "locked") {
+      return false;
+    } else {
+      return !this.get("model").get("locked");
+    }
+  }).property("model", "mode"),
   actions: {
     editMode: function() {
       this.set("mode", "edit");

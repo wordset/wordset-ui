@@ -6,9 +6,11 @@ var Suggestion = DS.Model.extend({
   targetId: DS.attr("string"),
   action: DS.attr("string"),
   delta: DS.attr(),
-  status: DS.attr("string"),
+  state: DS.attr("string"),
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word"),
+  meaning: DS.belongsTo("meaning"),
+  quote: DS.belongsTo("quote"),
 });
 
 Suggestion.reopen({
@@ -22,6 +24,8 @@ Suggestion.reopen({
     }
     this.set("word", model.word());
     this.set("action", "change");
+    this.set("state", "new");
+    this.set(model.get("suggestableType"), model);
     this.set("delta", delta);
   }
 });

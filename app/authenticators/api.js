@@ -4,10 +4,7 @@ import ENV from 'wordset/config/environment';
 
 export default Base.extend({
   restore: function(properties) {
-    //var _this            = this;
-    console.log("ATTEMPTING RESTORE");
     var propertiesObject = Ember.Object.create(properties);
-    console.log(propertiesObject);
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(propertiesObject.get("username")) && !Ember.isEmpty(propertiesObject.get("auth_key"))) {
