@@ -3,21 +3,13 @@
   margin-bottom: 20px;
 }
 
-.edit {
-  display: inline-block;
-  float: right;
-  font-size: 14px;
-  margin-top: -34px;
-  vertical-align: top;
-}
-
 .pos {
   border-bottom: 1px solid $lime;
   font-style: italic;
   margin-left: 5px;
 }
 
-.meanings, .edit-meanings, .suggestion {
+.meanings {
   font-size: 20px;
   list-style-position: inside;
   margin-bottom: 30px;
@@ -26,23 +18,29 @@
   }
   .info {
     display: inline-block;
-    vertical-align: text-top;
-    width: 93%;
-  }
-}
-
-
-.meanings, .suggestion {
-  .info {
-    display: inline-block;
     left: 10px;
     line-height: 1.4em;
     position: relative;
     vertical-align: text-top;
+        width: 93%;
   }
 
-  .word, .meaning, .quote {
+  .edit-link, .locked {
+    @include transition();
     display: inline-block;
+    float: right;
+    margin-top: -30px;
+    opacity: 0;
+    text-decoration: none;
+    vertical-align: top;
+  }
+  .defWrap, .quoteWrap {
+    @include transition();
+  }
+  .defWrap:hover, .quoteWrap:hover {
+    .edit-link, .locked {
+      opacity: 1;
+    }
   }
 
   .def {

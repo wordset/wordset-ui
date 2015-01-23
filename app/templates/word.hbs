@@ -5,9 +5,5 @@
     </div>
   </div>
 
-  {{#unless session.isAuthenticated}}
-    {{#link-to "user.login" class="edit"}}sign in to contribute{{/link-to}}
-  {{/unless}}
-
   {{word-display word=this action="submitSuggestion"}}
 </div>

@@ -1,8 +1,11 @@
 {{#if displayEdit}}
-  {{input value=field}}
-  {{textarea value=reason}}
-  <button {{action "submitSuggestion"}}>Suggest</button>
-  <button {{action "cancel"}}>Cancel</button>
+  <div class="editableArea">
+    {{input value=field}}
+    <label>Reason for change</label>
+    {{textarea value=reason}}
+    <button class="submitSuggestion" {{action "submitSuggestion"}}>Suggest</button>
+    <button class="negative" {{action "cancel"}}>Cancel</button>
+  </div>
 {{else}}
   {{yield}}
   {{#if canEdit}}

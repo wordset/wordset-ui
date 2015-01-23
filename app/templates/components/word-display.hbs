@@ -6,9 +6,11 @@
         <li>
           <div class="info">
             <div class="meaning">
-              {{#suggestable-area model=meaning field=meaning.def action="submitSuggestion"}}
-              <div class="def">{{meaning.def}}</div>
-              {{/suggestable-area}}
+              <div class="defWrap">
+                {{#suggestable-area model=meaning field=meaning.def action="submitSuggestion"}}
+                <div class="def">{{meaning.def}}</div>
+                {{/suggestable-area}}
+              </div>
 
               {{#if meaning.quotes}}
               <div class="quoteWrap">
