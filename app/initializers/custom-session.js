@@ -20,4 +20,4 @@ export default {
       }.observes('user_id')
     });
   }
-}
+};

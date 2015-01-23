@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     return false;
   }).property("mode"),
   canEdit: (function() {
-    if(this.get("mode") == "locked") {
+    if(this.get("mode") === "locked") {
       return false;
     } else {
       return !this.get("model").get("locked");
