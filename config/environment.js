@@ -21,11 +21,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com",
       'font-src': "'self'",
       'connect-src': "'self' http://localhost:3000 http://wordnet-data.herokuapp.com",
-      'img-src': "'self'",
-      'style-src': "'self'",
+      'img-src': "'self' http://www.google-analytics.com",
+      'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },
     "simple-auth": {
