@@ -1,10 +1,11 @@
 // app/initializers/custom-session.js
 import Session from 'simple-auth/session';
+import Ember from 'ember';
 
 export default {
   name: 'custom-session',
   before: 'simple-auth',
-  initialize: function(app, container) {
+  initialize: function() {  //(container, app) {
     Session.reopen({
       setCurrentUser: function() {
 
