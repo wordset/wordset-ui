@@ -6,7 +6,7 @@
       | There was an error signing up
   .username
     label Username
-    = input type="text" autofocus="autofocus" value=username
+    = input type="text" autofocus="autofocus" value=id
     each error in errors.username
       .error = error.message
   .email
