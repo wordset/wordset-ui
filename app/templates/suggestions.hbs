@@ -1,0 +1,11 @@
+
+
+<div class="suggestions">
+  {{#each suggestion in model}}
+    <div class="suggestion">
+      <div class="word">{{#link-to "word" suggestion.word}}{{suggestion.word.name}}{{/link-to}}</div>
+      {{suggestion.delta}}
+      <div class="user">{{suggestion.user.id}}</div>
+    </div>
+  {{/each}}
+</div>
