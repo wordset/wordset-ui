@@ -34,12 +34,15 @@
     text-decoration: none;
     vertical-align: top;
   }
+  .locked {
+    color: #BBB;
+  }
   .defWrap, .quoteWrap {
     div {
       display: inline-block;
     }
   }
-  .defWrap:hover, .quoteWrap:hover {
+  .info:hover{
     .edit-link, .locked {
       opacity: 1;
     }
