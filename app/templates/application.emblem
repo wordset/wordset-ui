@@ -11,8 +11,6 @@
           = each wordList.results
             li
               a{action 'clickWordFromList' word_id} = name
-          if wordList.results
-            li
           else
             li
               a.empty No results found
