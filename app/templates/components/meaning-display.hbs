@@ -1,17 +1,19 @@
 <li>
   <div class="info">
     {{#if displayEdit}}
-      <label>Definition</label>
-      {{inline-errors errors=errors.def}}
-      {{textarea value=meaning.def}}
-      <label>Example Sentence</label>
-      {{inline-errors errors=errors.example}}
-      {{textarea value=meaning.example}}
-      <label>Reason for change</label>
-      {{inline-errors errors=errors.reason}}
-      {{textarea value=reason}}
-      <button class="submitSuggestion" {{action "submitSuggestion"}}>Suggest</button>
-      <button class="negative" {{action "cancel"}}>Cancel</button>
+     <div class="editDefinition">
+        <label for="definition">Definition</label>
+        {{inline-errors errors=errors.def}}
+        {{textarea value=meaning.def id="definition"}}
+        <label for="sentence">Example Sentence</label>
+        {{inline-errors errors=errors.example}}
+        {{textarea value=meaning.example id="sentence"}}
+        <label for="reason">Reason for change</label>
+        {{inline-errors errors=errors.reason}}
+        {{textarea value=reason id="reason"}}
+        <button class="submitSuggestion" {{action "submitSuggestion"}}>Suggest</button>
+        <button class="negative" {{action "cancel"}}>Cancel</button>
+      </div>
     {{else}}
       <div class="meaning">
         <div class="defWrap">
