@@ -1,5 +1,5 @@
 .header
-  a href="/"
+  link-to "index"
     img src="assets/images/full-logo.png"
   .search
     .searchBar
