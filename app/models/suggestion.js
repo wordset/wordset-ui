@@ -25,7 +25,6 @@ Suggestion.reopen({
     this.set("action", "change");
     this.set("state", "new");
     this.set(model.get("suggestableType"), model);
-    model.get("suggestions").pushObject(this);
     this.set("delta", delta);
   }
 });
