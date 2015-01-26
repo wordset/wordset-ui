@@ -2,13 +2,13 @@ import DS from 'ember-data';
 
 var Meaning = DS.Model.extend({
   def: DS.attr("string"),
+  example: DS.attr("string"),
   entry: DS.belongsTo("entry"),
-  quotes: DS.hasMany("quotes"),
   suggestions: DS.hasMany("suggestions"),
 
   suggestableType: "meaning",
-  suggestableFields: ["def"],
-  suggestableChildren: ["quotes"],
+  suggestableFields: ["def", "example"],
+
   word: function() {
     return this.get("entry").get("word");
   },

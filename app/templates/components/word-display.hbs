@@ -3,33 +3,7 @@
     <div class="pos">{{entry.pos}}</div>
     <ol class="meanings">
       {{#each meaning in entry.meanings}}
-        <li>
-          <div class="info">
-            <div class="meaning">
-              <div class="defWrap">
-                <div class="def">
-                  {{#suggestable-area model=meaning field=meaning.def action="submitSuggestion"}}
-                  {{meaning.def}}
-                  {{/suggestable-area}}
-                </div>
-              </div>
-
-              {{#if meaning.quotes}}
-              <div class="quoteWrap">
-                {{#each quote in meaning.quotes}}
-                  <div class="quote">
-                    {{#suggestable-area model=quote field=quote.text action="submitSuggestion"}}
-                    <span class="quotemark">“</span>
-                    {{quote.text}}
-                    <span class="quotemark">”</span>
-                    {{/suggestable-area}}
-                  </div>
-                {{/each}}
-              </div>
-              {{/if}}
-            </div>
-          </div>
-        </li>
+        {{meaning-display meaning=meaning action="submitSuggestion" recentlySuggestedModels=recentlySuggestedModels}}
       {{/each}}
     </ol>
   {{/each}}

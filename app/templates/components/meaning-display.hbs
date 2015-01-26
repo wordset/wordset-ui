@@ -1,0 +1,41 @@
+<li>
+  <div class="info">
+    {{#if displayEdit}}
+      <label>Definition</label>
+      {{inline-errors errors=errors.def}}
+      {{textarea value=meaning.def}}
+      <label>Example Sentence</label>
+      {{inline-errors errors=errors.example}}
+      {{textarea value=meaning.example}}
+      <label>Reason for change</label>
+      {{inline-errors errors=errors.reason}}
+      {{textarea value=reason}}
+      <button class="submitSuggestion" {{action "submitSuggestion"}}>Suggest</button>
+      <button class="negative" {{action "cancel"}}>Cancel</button>
+    {{else}}
+      <div class="meaning">
+        <div class="defWrap">
+          <div class="def">
+            {{meaning.def}}
+            {{#if canEdit}}
+              {{edit-button action="startEditing"}}
+            {{else}}
+              {{locked-icon}}
+            {{/if}}
+          </div>
+        </div>
+
+        {{#if meaning.example}}
+        <div class="quoteWrap">
+          <div class="quote">
+            <span class="quotemark">“</span>
+            {{meaning.example}}
+            <span class="quotemark">”</span>
+          </div>
+        </div>
+        {{/if}}
+
+      </div>
+    {{/if}}
+  </div>
+</li>
