@@ -13,7 +13,7 @@
               a{action 'clickWordFromList' word_id} = name
           else
             li
-              a.empty No results found
+              link-to "words.new" | No results found. Add word?
 
   .nav
     if session.isAuthenticated
