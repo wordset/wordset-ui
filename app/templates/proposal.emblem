@@ -1,38 +1,59 @@
 .proposed-change
   span Proposed change to:
   model.word.name
+.action
+  span Action:
+  model.action
 .reason-explanation
   span Reason:
   if model.reason
     model.reason
   else
-    em No reason given
+    if model.wordnet
+      em Imported from Wordnet 3.0
+    else
+      em No reason given
 
-.proposal.original
-  .word
-    model.meaning.word.name
-  .pos
-    model.meaning.entry.pos
-  ol
-    li
-      .info
-        .definition
-          .def
-            model.meaning.def
-        .quoteWrap
-          if meaning.example
-            .quote.highlight
-              span.quotemark “
-              meaning.example
-              span.quotemark ”
-          else
-            em No example
+if model.proposal
+  .proposal.original
+    .word
+      model.word.name
+    .by
+      link-to "proposal" model.proposal.id
+        | View this Proposal
+      | by
+      if model.proposal.wordnet
+        | Wordnet 3.0
+      else
+        model.proposal.user.id
+    .pos
+      model.meaning.entry.pos
+    ol
+      li
+        .info
+          .definition
+            .def
+              model.proposal.delta.def
+          .quoteWrap
+            if model.proposal.delta.example
+              .quote.highlight
+                span.quotemark “
+                model.proposal.delta.example
+                span.quotemark ”
+            else
+              em No example
 
 .proposal.change
   .word
     meaning.word.name
+  .by
+    | by
+    if model.wordnet
+      | Wordnet 3.0
+    else
+      model.user.id
   .pos
-    meaning.entry.pos
+    model.meaning.entry.pos
   ol
     li
       .info

@@ -2,14 +2,16 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 var Proposal = DS.Model.extend({
+  user: DS.belongsTo("user", {async: true}),
+  word: DS.belongsTo("word", {async: true}),
+  proposal: DS.belongsTo("proposal", {async: true}),
+  meaning: DS.belongsTo("meaning"),
+
   targetType: DS.attr("string"),
   targetId: DS.attr("string"),
   action: DS.attr("string"),
   delta: DS.attr(),
   state: DS.attr("string"),
-  user: DS.belongsTo("user"),
-  word: DS.belongsTo("word", {async: true}),
-  meaning: DS.belongsTo("meaning", {async: true}),
   wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
 });
