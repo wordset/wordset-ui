@@ -4,9 +4,18 @@ body {
   font-size: 18px;
 }
 
+h1, h2, h3 {
+  color: $header-color;
+}
+
 h1 {
   font-size: 30px;
   margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
 p {
