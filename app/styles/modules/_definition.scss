@@ -42,7 +42,9 @@
       display: inline-block;
     }
   }
-  .info:hover{
+  // The edit link should appear when you hover
+  // over the whole meaning (info class)
+  .info:hover {
     .edit-link, .locked {
       opacity: 1;
     }

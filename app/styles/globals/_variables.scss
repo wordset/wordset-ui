@@ -1,9 +1,13 @@
 $serif: Garamond, serif;
 $sans-serif: "Avenir Next", sans-serif;
 
+// Screen sizes
+
 $large: 1200px;
 $medium: 940px;
 $small: 550px;
+
+// Colours
 
 $black: #100B00;
 $lime: #81C14B;
@@ -15,6 +19,8 @@ $light-grey: #ECECEC;
 $red: #BF2719;
 
 $brown: #6B6054;
+
+// Colour Uses
 
 $header-color: $dark-green;
 $header-background: $light-grey;
@@ -41,6 +47,8 @@ $footer-color: $dark-green;
 $footer-hover-color: lighten($dark-green, 10%);
 $footer-background: $light-grey;
 
+
+// Mixins
 
 @mixin transition($time: 0.5s, $type: all) {
   -webkit-transition: $type $time;
