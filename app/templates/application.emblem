@@ -37,6 +37,7 @@
       span.ion-email
   .links
     link-to "faqs" | FAQs
+    link-to "guidelines" | Contributing Guidelines
   .copyright
     | Copyright 2015 – Made by&#160;
     a href="http://teamrarebit.com" target="_blank" rarebit

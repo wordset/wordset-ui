@@ -1,9 +1,13 @@
 .wrapper.guidelines
   h1 Guidelines
-  p WordSet is a structured dictionary. As such, we try to
+  p WordSet is a structured dictionary. As such, we try to follow these guidelines to create a standardized resource. Our overall goal is usability.
+  h2 Overall
+  ul
+    li Be civil. We will not accept harassing behavior from anyone.
   h2 Meanings
   ul
-    li If a meaning is chiefly regional, add a parenthetical note to the meaning – e.g. "(chiefly Northeast US)"
+    li Try to give a reference (e.g. a link to a newspaper article) for a new meaning. This makes your argument for its inclusion more powerful.
+    li If a meaning is chiefly regional, add a parenthetical note to the meaning illustrating it as such – e.g. "(chiefly Northeast US)"
   h2 Example Sentences
   ul
-    li Avoid the use of gendered pronouns. Use the first person or the singular "they"
+    li Avoid the use of gendered pronouns. Use the first person or the singular "they" – e.g. "They tried sushi for the first time."
