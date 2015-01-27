@@ -10,12 +10,12 @@
         <label>
           Example sentence
           {{inline-errors errors=errors.example}}
-          {{textarea value=meaning.example id=sentence}}
+          {{textarea value=meaning.example}}
         </label>
         <label>
           Reason for change
           {{inline-errors errors=errors.reason}}
-          {{textarea value=reason id=reason}}
+          {{textarea value=reason}}
         </label>
         <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
         <button class="negative" {{action "cancel"}}>Cancel</button>

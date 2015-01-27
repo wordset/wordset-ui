@@ -8,3 +8,28 @@
     </ol>
   {{/each}}
 </ul>
+
+<a class="addMeaningLink">
+  <span class="ion-plus-circled"></span> Add Meaning
+</a>
+
+<div class="addMeaning">
+  <label>
+    Part of speech
+    {{view "select" content=[this, that]}}
+  </label>
+  <label>
+    Definition
+    {{textarea value=meaning.def}}
+  </label>
+  <label>
+    Example sentence
+    {{textarea value=meaning.example}}
+  </label>
+  <label>
+    Reason and sources for addition
+    {{textarea value=reason}}
+  </label>
+  <button class="submitSuggestion" {{action "submitSuggestion"}}>Suggest</button>
+  <button class="negative" {{action "cancel"}}>Cancel</button>
+</div>
