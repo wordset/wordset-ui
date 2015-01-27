@@ -2,14 +2,14 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   actions: {
-    submitSuggestion: function(model, reason, ok, error) {
+    submitProposal: function(model, reason, ok, error) {
       var _this = this;
-      var suggestion = this.store.createRecord("suggestion", {
+      var proposal = this.store.createRecord("proposal", {
         reason: reason,
         user: this.session.get("currentUser"),
       });
-      suggestion.changeModel(model);
-      suggestion.save().then(function(sug) {
+      proposal.changeModel(model);
+      proposal.save().then(function(sug) {
         ok(sug);
       },
       function(errors) {

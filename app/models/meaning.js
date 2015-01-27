@@ -4,20 +4,20 @@ var Meaning = DS.Model.extend({
   def: DS.attr("string"),
   example: DS.attr("string"),
   entry: DS.belongsTo("entry"),
-  suggestions: DS.hasMany("suggestions"),
+  proposals: DS.hasMany("proposals"),
 
-  suggestableType: "meaning",
-  suggestableFields: ["def", "example"],
+  proposableType: "meaning",
+  proposableFields: ["def", "example"],
 
   word: function() {
     return this.get("entry").get("word");
   },
-  activeSuggestions: function() {
-    return this.get('suggestions').filterBy("state", "new");
-  }.property('suggestions.@each'),
+  activeProposals: function() {
+    return this.get('proposals').filterBy("state", "new");
+  }.property('proposals.@each'),
   locked: function() {
-    return (this.get('activeSuggestions').length > 0);
-  }.property("suggestions.@each")
+    return (this.get('activeProposals').length > 0);
+  }.property("proposals.@each")
 });
 
 

@@ -3,7 +3,7 @@
     <div class="pos">{{entry.pos}}</div>
     <ol class="meanings">
       {{#each meaning in entry.meanings}}
-        {{meaning-display meaning=meaning action="submitSuggestion" recentlySuggestedModels=recentlySuggestedModels}}
+        {{meaning-display meaning=meaning action="submitProposal" recentlySuggestedModels=recentlySuggestedModels}}
       {{/each}}
     </ol>
   {{/each}}

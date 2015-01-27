@@ -8,7 +8,7 @@
   else
     em No reason given
 
-.suggestion.original
+.proposal.original
   .word
     model.meaning.word.name
   .pos
@@ -28,7 +28,7 @@
           else
             em No example
 
-.suggestion.change
+.proposal.change
   .word
     meaning.word.name
   .pos

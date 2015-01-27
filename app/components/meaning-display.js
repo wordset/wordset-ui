@@ -12,7 +12,7 @@ export default Ember.Component.extend({
             !this.get("locked"));
   }.property("canEdit", "editing", "locked"),
   actions: {
-    submitSuggestion: function() {
+    submitProposal: function() {
       var _this = this;
       var ok = function() {
         console.log("OKAY!")

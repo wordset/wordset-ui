@@ -1,6 +1,6 @@
-h1 Submit your suggestion
+h1 Submit your proposal
 
-.submit-suggestion
+.submit-proposal
   .word
     .label Word:
     | Hit
@@ -14,4 +14,4 @@ h1 Submit your suggestion
   .reason
     label for="reason" Reason for your change:
     input id="reason"
-  button Submit suggestion
+  button Submit proposal

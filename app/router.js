@@ -14,11 +14,11 @@ Router.map(function() {
     this.route("new");
     this.route("login");
   });
-  this.resource("suggestions");
-  this.resource("suggestion", {path: "/suggestion/:suggestion_id"});
+  this.resource("proposals");
+  this.resource("proposal", {path: "/proposal/:proposal_id"});
   this.resource("faqs");
 
-  //this.resource("submit-suggestion");
+  //this.resource("submit-proposal");
 
 });
 

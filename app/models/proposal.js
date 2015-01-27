@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
-var Suggestion = DS.Model.extend({
+var Proposal = DS.Model.extend({
   targetType: DS.attr("string"),
   targetId: DS.attr("string"),
   action: DS.attr("string"),
@@ -10,25 +10,25 @@ var Suggestion = DS.Model.extend({
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word", {async: true}),
   meaning: DS.belongsTo("meaning", {async: true}),
-  wordnetImported: DS.attr(),
+  wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
 });
 
-Suggestion.reopen({
+Proposal.reopen({
   changeModel: function(model) {
     var delta = Ember.Object.create();
     this.set("targetId", model.id);
-    this.set("targetType", model.suggestableType);
-    for(var i = 0; i < model.suggestableFields.length; i++) {
-      var name = model.suggestableFields[i];
+    this.set("targetType", model.proposableType);
+    for(var i = 0; i < model.proposableFields.length; i++) {
+      var name = model.proposableFields[i];
       delta.set(name, model.get(name));
     }
     this.set("word", model.word());
     this.set("action", "change");
     this.set("state", "new");
-    this.set(model.get("suggestableType"), model);
+    this.set(model.get("proposableType"), model);
     this.set("delta", delta);
   }
 });
 
-export default Suggestion;
+export default Proposal;

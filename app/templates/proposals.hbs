@@ -1,0 +1,18 @@
+
+
+<div class="proposals">
+  {{#each proposal in model}}
+    <div class="proposal">
+      <div class="word">{{#link-to "word" proposal.word}}{{proposal.word.name}}{{/link-to}}</div>
+      <div class="when">{{proposal.createdAt}}</div>
+      <div class="user">
+        {{#if proposal.wordnetImported}}
+          Wordnet
+        {{else}}
+          by {{proposal.user.id}}</div>
+        {{/if}}
+      <div {{bind-attr class="proposal.state :state"}}>{{proposal.state}}</div>
+      <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
+    </div>
+  {{/each}}
+</div>
