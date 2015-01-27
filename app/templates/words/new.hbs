@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <h1>Add a new word</h1>
+  <p>If you are unsure of how to format your new definition, please check out our <a href="/guidelines">guidelines</a>.</p>
+  <div class="newWord">
+    <label>
+      Word
+      {{input}}
+    </label>
+    <label>
+      Part of speech
+      {{view "select" content=[this, that]}}
+    </label>
+    <label>
+      Definition
+      {{inline-errors errors=errors.def}}
+      {{textarea value=meaning.def}}
+    </label>
+    <label>
+      Example sentence
+      {{inline-errors errors=errors.example}}
+      {{textarea value=meaning.example}}
+    </label>
+    <label>
+      Reason and sources for addition
+      {{inline-errors errors=errors.reason}}
+      {{textarea value=reason}}
+    </label>
+    <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
+    <button class="negative" {{action "cancel"}}>Cancel</button>
+  </div>
+</div>

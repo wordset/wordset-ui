@@ -14,9 +14,13 @@ Router.map(function() {
     this.route("new");
     this.route("login");
   });
+  this.resource("words", function() {
+    this.route("new");
+  });
   this.resource("proposals");
   this.resource("proposal", {path: "/proposal/:proposal_id"});
   this.resource("faqs");
+  this.resource("guidelines");
 
   //this.resource("submit-proposal");
 

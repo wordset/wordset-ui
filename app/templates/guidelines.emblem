@@ -1,0 +1,9 @@
+.wrapper.guidelines
+  h1 Guidelines
+  p WordSet is a structured dictionary. As such, we try to
+  h2 Meanings
+  ul
+    li If a meaning is chiefly regional, add a parenthetical note to the meaning – e.g. "(chiefly Northeast US)"
+  h2 Example Sentences
+  ul
+    li Avoid the use of gendered pronouns. Use the first person or the singular "they"
