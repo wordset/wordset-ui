@@ -8,8 +8,10 @@ var Suggestion = DS.Model.extend({
   delta: DS.attr(),
   state: DS.attr("string"),
   user: DS.belongsTo("user"),
-  word: DS.belongsTo("word"),
-  meaning: DS.belongsTo("meaning"),
+  word: DS.belongsTo("word", {async: true}),
+  meaning: DS.belongsTo("meaning", {async: true}),
+  wordnetImported: DS.attr(),
+  createdAt: DS.attr("date"),
 });
 
 Suggestion.reopen({

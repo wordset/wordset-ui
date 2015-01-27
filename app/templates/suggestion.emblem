@@ -1,0 +1,46 @@
+.proposed-change
+  span Proposed change to:
+  model.word.name
+.reason-explanation
+  span Reason:
+  if model.reason
+    model.reason
+  else
+    em No reason given
+
+.suggestion.original
+  .word
+    model.meaning.word.name
+  .pos
+    model.meaning.entry.pos
+  ol
+    li
+      .info
+        .definition
+          .def
+            model.meaning.def
+        .quoteWrap
+          if meaning.example
+            .quote.highlight
+              span.quotemark “
+              meaning.example
+              span.quotemark ”
+          else
+            em No example
+
+.suggestion.change
+  .word
+    meaning.word.name
+  .pos
+    meaning.entry.pos
+  ol
+    li
+      .info
+        .definition
+          .def
+            model.delta.def
+        .quoteWrap
+          .quote.highlight
+            span.quotemark “
+            model.delta.example
+            span.quotemark ”

@@ -15,6 +15,7 @@ Router.map(function() {
     this.route("login");
   });
   this.resource("suggestions");
+  this.resource("suggestion", {path: "/suggestion/:suggestion_id"});
   this.resource("faqs");
 
   //this.resource("submit-suggestion");
