@@ -5,6 +5,11 @@
     padding: 5px;
     width: 100%;
   }
+  select {
+    display: block;
+    margin-bottom: 5px;
+    max-width: 300px;
+  }
   label {
     font-size: 14px;
     margin-top: 5px;
