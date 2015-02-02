@@ -2,11 +2,12 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 var Proposal = DS.Model.extend({
-  user: DS.belongsTo("user", {async: true}),
+  user: DS.belongsTo("user"),
   word: DS.belongsTo("word", {async: true}),
-  proposal: DS.belongsTo("proposal", {async: true}),
-  meaning: DS.belongsTo("meaning"),
+  //parent: DS.belongsTo("proposal", {async: true}),
+  meaning: DS.belongsTo("meaning", {async: true}),
 
+  parentId: DS.attr("string"),
   targetType: DS.attr("string"),
   targetId: DS.attr("string"),
   action: DS.attr("string"),
@@ -14,6 +15,12 @@ var Proposal = DS.Model.extend({
   state: DS.attr("string"),
   wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
+
+  //prefetched display-shit
+  original: DS.attr(),
+  pos: DS.attr("string"),
+  wordName: DS.attr("string"),
+  originalUser: DS.attr("string"),
 });
 
 Proposal.reopen({
