@@ -10,6 +10,8 @@
         <label>
           Edit example sentence
           {{inline-errors errors=errors.example}}
+          <!-- Ember doesn't allow area-required="true" to be
+          set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
           {{textarea value=meaning.example}}
         </label>
         <label>
