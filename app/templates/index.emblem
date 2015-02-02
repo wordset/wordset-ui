@@ -1,8 +1,6 @@
 .wrapper
   h1 Welcome to the first collaborative, structured dictionary.
 
-  p WordSet is the first dictionary that you can edit that uses the highly-structured syntax necessary for a usable set of definitions.
-
   p Search for a word above to find a definition.
 
   p If you want to help collaborate on the dictionary, #{link-to 'user.new' | create an account}. We're always looking for proposals of new words, changes to definitions, or sample quotes.
