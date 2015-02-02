@@ -1,6 +1,6 @@
 .proposed-change
   span Proposed change to:
-  model.word.name
+  model.wordName
 .action
   span Action:
   model.action
@@ -14,38 +14,39 @@
     else
       em No reason given
 
-if model.proposal
+if model.original
   .proposal.original
     .word
       model.word.name
     .by
-      link-to "proposal" model.proposal.id
+      link-to "proposal" model.parentId
         | View this Proposal
       | by
-      if model.proposal.wordnet
-        | Wordnet 3.0
+      if model.originalUser
+        model.originalUser
       else
-        model.proposal.user.id
+        | Wordnet 3.0
+
     .pos
-      model.meaning.entry.pos
+      model.pos
     ol
       li
         .info
           .definition
             .def
-              model.proposal.delta.def
+              model.original.def
           .quoteWrap
             if model.proposal.delta.example
               .quote.highlight
                 span.quotemark “
-                model.proposal.delta.example
+                model.original.example
                 span.quotemark ”
             else
               em No example
 
 .proposal.change
   .word
-    meaning.word.name
+    model.wordName
   .by
     | by
     if model.wordnet
@@ -53,7 +54,7 @@ if model.proposal
     else
       model.user.id
   .pos
-    model.meaning.entry.pos
+    model.pos
   ol
     li
       .info
