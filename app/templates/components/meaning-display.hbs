@@ -1,14 +1,14 @@
 <li>
-  <div class="info">
+  <div class="info" tabindex="0">
     {{#if displayEdit}}
-     <div class="editDefinition">
+     <div class="editDefinition" aria-live="polite">
         <label>
-          Definition
+          Edit definition of word
           {{inline-errors errors=errors.def}}
           {{textarea value=meaning.def}}
         </label>
         <label>
-          Example sentence
+          Edit example sentence
           {{inline-errors errors=errors.example}}
           {{textarea value=meaning.example}}
         </label>
