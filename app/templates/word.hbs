@@ -5,5 +5,12 @@
     </div>
   </div>
 
-  {{word-display word=this action="submitProposal" recentlySuggestedModels=recentlySuggestedModels}}
+  {{partial "word/entries"}}
+
+  {{#link-to 'word.new-meaning' model}}
+    Propose New Meaning<span class="ion-plus-circled"></span>
+  {{/link-to}}
+
+  {{outlet}}
+
 </div>

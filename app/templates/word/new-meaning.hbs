@@ -1,0 +1,23 @@
+<div class="addMeaning">
+  {{#each error in errors.messages}}
+    {{error}}
+  {{/each}}
+  <label>
+    Part of speech
+    {{view "select" content=posList value=pos}}
+  </label>
+  <label>
+    Definition
+    {{textarea value=proposalDelta.def}}
+  </label>
+  <label>
+    Example sentence
+    {{textarea value=proposalDelta.example}}
+  </label>
+  <label>
+    Reason and sources
+    {{textarea value=reason}}
+  </label>
+  <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
+  <button class="negative" {{action "cancel"}}>Cancel</button>
+</div>

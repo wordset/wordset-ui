@@ -16,9 +16,6 @@ var Meaning = DS.Model.extend({
   activeProposals: function() {
     return this.get('proposals').filterBy("state", "new");
   }.property('proposals.@each'),
-  locked: function() {
-    return (this.get('activeProposals').length > 0);
-  }.property("proposals.@each")
 });
 
 

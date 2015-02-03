@@ -11,10 +11,12 @@ var Proposal = DS.Model.extend({
   targetType: DS.attr("string"),
   targetId: DS.attr("string"),
   action: DS.attr("string"),
+  reason: DS.attr("string"),
   delta: DS.attr(),
   state: DS.attr("string"),
   wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
+  createClassName: DS.attr("string"),
 
   //prefetched display-shit
   original: DS.attr(),
