@@ -16,12 +16,13 @@
 
 if model.original
   .proposal.original
+    h2 Original
     .word
       model.word.name
     .by
       link-to "proposal" model.parentId
         | View this Proposal
-      | by
+      | by&nbsp;
       if model.originalUser
         model.originalUser
       else
@@ -42,13 +43,14 @@ if model.original
                 model.original.example
                 span.quotemark ”
             else
-              em No example
+              em No example previously
 
 .proposal.change
+  h2 New
   .word
     model.wordName
   .by
-    | by
+    | by&nbsp;
     if model.wordnet
       | Wordnet 3.0
     else

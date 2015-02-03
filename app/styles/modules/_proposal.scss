@@ -53,7 +53,9 @@
   font-size: 20px;
   margin: 20px 35px;
   span {
-    margin-right: 10px;
+    color: #888;
+    display: inline-block;
+    width: 20%;
   }
 }
 
@@ -62,6 +64,7 @@
   list-style-position: inside;
   margin-bottom: 30px;
   padding: 20px 35px;
+  position: relative;
   width: 42%;
   &.original .highlight {
     color: #999;
@@ -79,5 +82,15 @@
     position: relative;
     vertical-align: text-top;
     width: 93%;
+  }
+  .by {
+    position: absolute;
+    right: 35px;
+    text-align: center;
+    top: 33px;
+    a {
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 }
