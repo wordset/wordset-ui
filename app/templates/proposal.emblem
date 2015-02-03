@@ -36,7 +36,7 @@ if model.original
             .def
               model.original.def
           .quoteWrap
-            if model.proposal.delta.example
+            if model.original.example
               .quote.highlight
                 span.quotemark “
                 model.original.example
@@ -60,9 +60,9 @@ if model.original
       .info
         .definition
           .def
-            model.delta.def
+            def
         .quoteWrap
           .quote.highlight
             span.quotemark “
-            model.delta.example
+            example
             span.quotemark ”

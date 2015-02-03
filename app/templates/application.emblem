@@ -24,6 +24,7 @@
       .signButtons
         link-to .signin "user.login" | Sign In
         link-to .signup "user.new" | Sign Up
+    link-to .proposalLink "proposals" | Proposals
 
 = flash-message
 .content
