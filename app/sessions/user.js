@@ -1,4 +1,5 @@
 import SimpleAuth from 'simple-auth';
+import Ember from 'ember';
 
 export default SimpleAuth.Session.extend({
   account: function() {

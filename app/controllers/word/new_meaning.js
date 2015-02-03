@@ -12,7 +12,6 @@ export default Ember.ObjectController.extend({
     );
   }.property("model.pos"),
   proposalTarget: function() {
-    console.log("setting target")
     var _this = this.get("model");
     var wordId = this.get("word").get("id");
     var pos = this.get("pos");
@@ -37,19 +36,17 @@ export default Ember.ObjectController.extend({
   actions: {
     submitProposal: function() {
       this.get("proposalTarget");
-      if(!this.get("wordEntry")) {
-
-      }
 
       var _this = this;
       this.get("model").save().then(
         function(model) {
           _this.transitionToRoute("proposal", model);
         },
-        function(errors) {
-
+        function() {
+          // apparently, just defining this function
+          // makes everything work. weird.
         }
       );
     }
   }
-})
+});

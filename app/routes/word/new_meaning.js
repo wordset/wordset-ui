@@ -8,4 +8,4 @@ export default Ember.Route.extend({
       delta: Ember.Object.create(),
     });
   }
-})
+});

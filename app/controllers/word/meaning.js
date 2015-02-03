@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   errors: [],
   canEdit: function() {
-    return !this.get("model").get("hasProposal")
+    return !this.get("model").get("hasProposal");
   }.property("hasProposal"),
   displayEdit: function() {
     return (this.get("canEdit") &&
@@ -18,7 +18,7 @@ export default Ember.ObjectController.extend({
         user: this.session.get("currentUser"),
       });
       proposal.changeModel(this.get("model"));
-      proposal.save().then(function(sug) {
+      proposal.save().then(function() {
         _this.set("hasProposal", true);
         _this.set("errors", []);
       },
