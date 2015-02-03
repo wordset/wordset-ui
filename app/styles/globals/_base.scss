@@ -90,6 +90,7 @@ button {
 
 .wrapper {
   padding-top: 40px;
+  position: relative;
   @media screen and (max-width: $small) {
     width: 90%;
   }

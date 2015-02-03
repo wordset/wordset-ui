@@ -1,0 +1,26 @@
+.proposals {
+  .item {
+    margin-bottom: 20px;
+    &.accepted {
+      color: #888;
+    }
+  }
+
+  .word, .action, .user, .state, .view {
+    display: inline-block;
+  }
+  .word {
+    font-size: 18px;
+    margin-bottom: 0px;
+    width: 25%;
+  }
+  .action {
+    width: 12%;
+  }
+  .user {
+    width: 20%;
+  }
+  .state {
+    width: 18%;
+  }
+}

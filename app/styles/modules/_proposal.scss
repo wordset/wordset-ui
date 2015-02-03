@@ -49,7 +49,7 @@
   }
 }
 
-.proposed-change, .reason-explanation {
+.proposed-change, .reason-explanation, .action-change {
   font-size: 20px;
   margin: 20px 35px;
   span {
@@ -59,6 +59,8 @@
 
 .proposal {
   display: inline-block;
+  list-style-position: inside;
+  margin-bottom: 30px;
   padding: 20px 35px;
   width: 42%;
   &.original .highlight {
@@ -66,5 +68,16 @@
   }
   &.change .highlight {
     color: $lime;
+  }
+  li {
+    padding: 20px 0px;
+  }
+  .info {
+    display: inline-block;
+    left: 10px;
+    line-height: 1.4em;
+    position: relative;
+    vertical-align: text-top;
+    width: 93%;
   }
 }

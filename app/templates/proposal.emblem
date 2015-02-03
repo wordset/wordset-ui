@@ -1,7 +1,7 @@
 .proposed-change
   span Proposed change to:
   model.wordName
-.action
+.action-change
   span Action:
   model.action
 .reason-explanation

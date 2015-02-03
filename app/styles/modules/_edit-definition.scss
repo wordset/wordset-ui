@@ -33,13 +33,14 @@
 }
 
 .addMeaningLink {
+  border: 2px solid $lime;
+  border-radius: 2px;
   color: #666;
-  float: right;
-  padding-right: 20px;
-  position: relative;
-  span {
-    position: absolute;
-    right: 0px;
-    top: -1px;
+  padding: 10px 20px;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  &.active {
+    display: none;
   }
 }
