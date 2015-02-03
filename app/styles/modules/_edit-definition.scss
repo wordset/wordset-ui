@@ -27,10 +27,19 @@
   }
 }
 
+.edit-link span {
+  font-size: 1px;
+  opacity: 0;
+}
+
 .addMeaningLink {
+  color: #666;
   float: right;
+  padding-right: 20px;
+  position: relative;
   span {
-    font-size: 16px;
-    margin-left: 5px;
+    position: absolute;
+    right: 0px;
+    top: -1px;
   }
 }

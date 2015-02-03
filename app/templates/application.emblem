@@ -3,14 +3,14 @@
     img src="assets/images/full-logo.png"
   .search
     .searchBar
-      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord"
+      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord" title="Search for word"
       span.ion-close-circled{action 'clear'}
     if showSearchList
       .wordListWrapper
         ul.wordList
           = each wordList.results
             li
-              a{action 'clickWordFromList' word_id} = name
+              a{action 'clickWordFromList' word_id} href="" tabindex="0" = name
           else
             li
               link-to "words.new" | No results found. Add word?

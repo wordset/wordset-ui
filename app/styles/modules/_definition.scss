@@ -44,10 +44,13 @@
   }
   // The edit link should appear when you hover
   // over the whole meaning (info class)
-  .info:hover {
+  .info:hover, .info:focus {
     .edit-link, .locked {
       opacity: 1;
     }
+  }
+  .edit-link:focus, .locked:focus {
+    opacity: 1;
   }
 
   .def {

@@ -1,15 +1,17 @@
 <li>
-  <div class="info">
+  <div class="info" tabindex="0">
     {{#if displayEdit}}
-     <div class="editDefinition">
+     <div class="editDefinition" aria-live="polite">
         <label>
-          Definition
+          Edit definition of word
           {{inline-errors errors=errors.def}}
           {{textarea value=meaning.def}}
         </label>
         <label>
-          Example sentence
+          Edit example sentence
           {{inline-errors errors=errors.example}}
+          <!-- Ember doesn't allow area-required="true" to be
+          set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
           {{textarea value=meaning.example}}
         </label>
         <label>

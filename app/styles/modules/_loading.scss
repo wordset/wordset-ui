@@ -1,0 +1,43 @@
+// Taken from http://stackoverflow.com/questions/13014808/is-there-anyway-to-animate-an-ellipsis-with-css-animations
+
+.loading {
+  color: #999;
+  font-size: 30px;
+  text-align: center;
+}
+
+.ellipsis-one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.0s;
+}
+
+.ellipsis-two {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.2s;
+      animation: dot 1.3s infinite;
+      animation-delay: 0.2s;
+}
+
+.ellipsis-three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+     animation: dot 1.3s infinite;
+     animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}
