@@ -13,10 +13,13 @@ export default Ember.ObjectController.extend({
   actions: {
     submitProposal: function() {
       var _this = this;
-      var proposal = this.store.createRecord("proposal", {
-        reason: this.get("reason"),
-        user: this.session.get("currentUser"),
-      });
+      var proposal = this.get("proposal");
+      if(!proposal) {
+        proposal = this.store.createRecord("proposal");
+        this.set("proposal", proposal);
+      }
+      this.set("status", "draft")
+      proposal.set("reason", this.get("reason"));
       proposal.changeModel(this.get("model"));
       proposal.save().then(function() {
         _this.set("hasProposal", true);
