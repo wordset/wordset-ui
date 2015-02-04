@@ -53,12 +53,18 @@
   color: #FFF;
   padding: 20px 35px 10px;
   &.open {
-    background: $dark-green;
+    background: $blue;
     span {
-      color: $lime;
+      color: lighten($blue, 30%);
     }
   }
   &.accepted {
+    background: $dark-green;
+    span {
+      color: lighten($dark-green, 50%);
+    }
+  }
+  &.rejected {
     background: $taupe;
     span {
       color: $light-grey;
