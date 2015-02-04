@@ -1,13 +1,13 @@
 .details class=model.state
   .title
-    span Proposal to alter:&nbsp;
+    span Proposal to&nbsp;
+    span
+      model.action
+      |:&nbsp;
     model.wordName
   .action-change
     span Status:
     model.state
-  .action-change
-    span Action:
-    model.action
   .action-change
     span Reason:
     if model.reason
