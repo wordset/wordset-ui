@@ -1,18 +1,22 @@
-.proposed-change
-  span Proposed change to:
-  model.wordName
-.action-change
-  span Action:
-  model.action
-.reason-explanation
-  span Reason:
-  if model.reason
-    model.reason
-  else
-    if model.wordnet
-      em Imported from Wordnet 3.0
+.details class=model.state
+  .title
+    span Proposal to alter:&nbsp;
+    model.wordName
+  .action-change
+    span Status:
+    model.state
+  .action-change
+    span Action:
+    model.action
+  .action-change
+    span Reason:
+    if model.reason
+      model.reason
     else
-      em No reason given
+      if model.wordnet
+        em Imported from Wordnet 3.0
+      else
+        em No reason given
 
 if model.original
   .proposal.original
