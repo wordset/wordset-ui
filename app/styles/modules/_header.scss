@@ -3,7 +3,7 @@
   box-shadow: 0px 1px 1px #DDD;
   color: $header-color;
   padding: 30px;
-  a:visited, a:active {
+  a, a:visited, a:active {
     color: $header-color;
   }
   img {
@@ -38,36 +38,20 @@
         top: 64px;
       }
     }
+    @media screen and (max-width: $small) {
+      display: inline-block;
+      span {
+        top: 28px;
+      }
+    }
   }
-  .welcomeMessage, .signButtons {
+  .nav-toggler, {
     float: right;
     font-size: 18px;
     margin-right: 20px;
-  }
-  .welcomeMessage {
-    margin-top: -45px;
-    @media screen and (max-width: $medium) {
-      font-size: 14px;
-      margin-top: -97px;
-    }
-    a {
-      display: block;
-      margin-top: 10px;
-      text-align: center;
-    }
-  }
-  .signButtons {
-    cursor: pointer;
-    margin-top: -30px;
-    a {
-      color: $header-color;
-      margin-left: 20px;
-    }
-    .signin, .signin:visited, .signin:active {
-      color: $sign-in-color;
-    }
-    @media screen and (max-width: $medium) {
-      margin-top: -87px;
+    margin-top: -90px;
+    @media screen and (min-width: $medium) {
+      margin-top: -30px;
     }
   }
   @media screen and (max-width: $small) {

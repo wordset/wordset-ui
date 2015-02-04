@@ -1,45 +1,59 @@
-.header
-  link-to "index"
-    img src="assets/images/full-logo.png"
-  .search
-    .searchBar
-      = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord" title="Search for word"
-      span.ion-close-circled{action 'clear'}
-    if showSearchList
-      .wordListWrapper
-        ul.wordList
-          = each wordList.results
-            li
-              a{action 'clickWordFromList' word_id} href="" tabindex="0" = name
-          else
-            li
-              link-to "words.new" | No results found. Add word?
 
-  .nav
+nav.menu.slide-menu-right
+  ul
+    li
+      link-to .proposalLink "proposals"
+        .ionicon.ion-android-create
+        | Proposals
     if session.isAuthenticated
-      .welcomeMessage
-        | Welcome #{session.username}!
-        a click='invalidateSession' Logout
+      li
+        a click='invalidateSession'
+          .ionicon.ion-android-exit
+          | Logout
     else
-      .signButtons
-        link-to .signin "user.login" | Sign In
-        link-to .signup "user.new" | Sign Up
-    link-to .proposalLink "proposals" | Proposals
+      li
+        link-to .signin "user.login"
+          .ionicon.ion-log-in
+          | Sign In
+      li
+        link-to .signup "user.new"
+          .ionicon.ion-wand
+          | Register
 
-= flash-message
-.content
-  = outlet
+.main-content
+  .header
+    link-to "index"
+      img src="assets/images/full-logo.png"
+    .search
+      .searchBar
+        = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord" title="Search for word"
+        span.ion-close-circled{action 'clear'}
+      if showSearchList
+        .wordListWrapper
+          ul.wordList
+            = each wordList.results
+              li
+                a{action 'clickWordFromList' word_id} href="" tabindex="0" = name
+            else
+              li
+                link-to "words.new" | No results found. Add word?
+    a{action 'openmenu'} class="nav-toggler toggle-slide-right"
+      | Menu
 
-.footer
-  .social
-    a href="http://twitter.com/thewordset" target="_blank"
-      span.ion-social-twitter
-    a href="mailto:contact@teamrarebit.com" target="_blank"
-      span.ion-email
-  .links
-    link-to "faqs" | FAQs
-    link-to "guidelines" | Contributing Guidelines
-  .copyright
-    | Copyright 2015 – Made by&#160;
-    a href="http://teamrarebit.com" target="_blank" rarebit
-    | .
+  = flash-message
+  .content
+    = outlet
+
+  .footer
+    .social
+      a href="http://twitter.com/thewordset" target="_blank"
+        span.ion-social-twitter
+      a href="mailto:contact@teamrarebit.com" target="_blank"
+        span.ion-email
+    .links
+      link-to "faqs" | FAQs
+      link-to "guidelines" | Contributing Guidelines
+    .copyright
+      | Copyright 2015 – Made by&#160;
+      a href="http://teamrarebit.com" target="_blank" rarebit
+      | .
