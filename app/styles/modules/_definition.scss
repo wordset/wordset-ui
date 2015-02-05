@@ -4,7 +4,8 @@
 }
 
 .wordWrap {
-  border-bottom: 1px solid $dark-green;
+  border-bottom: 2px solid $taupe;
+  box-shadow: inset 0px -5px 7px -5px #DDD;
   margin-bottom: 20px;
   position: relative;
   .word, .tabs {
@@ -15,24 +16,28 @@
     right: 0px;
     top: 19px;
     a {
-      background: #F9F9F9;
-      border: 1px solid $dark-green;
+      // background: #F9F9F9;
+      border: 2px solid $taupe;
+      // border-top: none;
       border-radius: 2px 2px 0px 0px;
+      color: $dark-green;
       padding: 5px 10px 0px;
       margin-right: 20px;
       text-decoration: none;
       &.active {
-        border-bottom: 1px solid #FFF;
+        border-bottom: 2px solid #FFF;
         background: #FFF;
+        box-shadow: none;
       }
     }
   }
 }
 
 .pos {
-  // border-bottom: 1px solid $lime;
+  border-bottom: 1px solid $lime;
   font-style: italic;
-  margin-left: 5px;
+  margin-left: 0px;
+
 }
 
 .meanings {
