@@ -1,0 +1,37 @@
+
+{{#if showMenu}}
+  <div class="mask" {{action "toggleMenu"}}></div>
+{{/if}}
+
+
+<nav {{bind-attr class=":menu showMenu:open:closed"}}>
+  <ul>
+    <li>
+      {{#link-to "proposals" class="proposalLink"}}
+        <div class="ionicon ion-android-create"></div>
+        Proposals
+      {{/link-to}}
+    </li>
+    {{#if session.isAuthenticated}}
+      <li>
+        <a {{action "invalidateSession"}}>
+          <div class="ionicon ion-android-exit"></div>
+          Logout
+        </a>
+      </li>
+    {{else}}
+      <li>
+        {{#link-to "user.login" class="signin"}}
+          <div class="ionicon ion-log-in"></div>
+          Sign In
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to "user.new" class="signup"}}
+          <div class="ionicon ion-wand"></div>
+          Register
+        {{/link-to}}
+      </li>
+    {{/if}}
+  </ul>
+</nav>

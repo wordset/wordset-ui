@@ -37,9 +37,6 @@ nav.menu {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-nav.slide-menu-right {
   top: 0;
   width: 300px;
   height: 100%;
@@ -51,7 +48,7 @@ nav.slide-menu-right {
       border-top: none;
     }
     &:last-child {
-    border-bottom: none;
+      border-bottom: none;
     }
   }
   a {
@@ -68,6 +65,7 @@ nav.slide-menu-right {
   }
   right: -300px
 }
-body.smr-open nav.slide-menu-right {
+
+nav.menu.open {
   right: 0
 }

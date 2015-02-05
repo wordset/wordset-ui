@@ -1,24 +1,4 @@
-
-nav.menu.slide-menu-right
-  ul
-    li
-      link-to .proposalLink "proposals"
-        .ionicon.ion-android-create
-        | Proposals
-    if session.isAuthenticated
-      li
-        a click='invalidateSession'
-          .ionicon.ion-android-exit
-          | Logout
-    else
-      li
-        link-to .signin "user.login"
-          .ionicon.ion-log-in
-          | Sign In
-      li
-        link-to .signup "user.new"
-          .ionicon.ion-wand
-          | Register
+partial "menu"
 
 .main-content
   .header
@@ -37,8 +17,8 @@ nav.menu.slide-menu-right
             else
               li
                 link-to "words.new" | No results found. Add word?
-    a{action 'openmenu'} class="nav-toggler toggle-slide-right"
-      | Menu
+    a{action 'toggleMenu'} class="nav-toggler" alt="Menu"
+      span.ion-android-apps
 
   = flash-message
   .content

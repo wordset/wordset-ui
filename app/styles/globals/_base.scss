@@ -104,18 +104,18 @@ button {
 
 // Sticky Footer thing
 
-html, body, body > div {
+html, body, body > div, .main-content {
   height: 100%;
 }
 .content {
   min-height: 90%;
   /* equal to footer height */
-  margin-bottom: -70px;
+  margin-bottom: -100px;
 }
 .content:after {
   content: "";
   display: block;
 }
 .footer, .content:after {
-  height: 70px;
+  height: 100px;
 }

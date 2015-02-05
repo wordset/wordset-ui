@@ -10,5 +10,10 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       'page': this.get('url'),
       'title': this.get('url')
     });
-  }.on('didTransition')
+  }.on('didTransition'),
+  actions: {
+    willTransition: function(transition) {
+      this.controller.set("showMenu", false);
+    }
+  }
 });

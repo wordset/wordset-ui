@@ -1,5 +1,5 @@
 .sign-module
-  h3 Sign Up
+  h3 Register
   if isError
     .login-error
       span.ion-android-alert
