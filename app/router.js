@@ -10,6 +10,7 @@ Router.map(function() {
   this.resource("word", {path: "/word/:word_id"}, function() {
     this.route("proposals");
     this.route("new-meaning");
+
   });
   this.route("login");
   this.resource("user", function() {
@@ -20,7 +21,11 @@ Router.map(function() {
     this.route("new");
   });
   this.resource("proposals");
-  this.resource("proposal", {path: "/proposal/:proposal_id"});
+  this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
+    this.route("new-word");
+    this.route("new-meaning");
+    this.route("meaning-change");
+  });
   this.resource("faqs");
   this.resource("guidelines");
 

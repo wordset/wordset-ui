@@ -7,9 +7,6 @@ var Meaning = DS.Model.extend({
   proposals: DS.hasMany("proposals", {async: true}),
   hasProposal: DS.attr("boolean"),
 
-  proposableType: "meaning",
-  proposableFields: ["def", "example"],
-
   word: function() {
     return this.get("entry").get("word");
   },

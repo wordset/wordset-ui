@@ -2,44 +2,31 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 var Proposal = DS.Model.extend({
+  type: DS.attr("string"),
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word", {async: true}),
-  //parent: DS.belongsTo("proposal", {async: true}),
-  meaning: DS.belongsTo("meaning", {async: true}),
-
-  parentId: DS.attr("string"),
-  targetType: DS.attr("string"),
-  targetId: DS.attr("string"),
-  action: DS.attr("string"),
+  wordName: DS.attr("string"),
   reason: DS.attr("string"),
-  delta: DS.attr(),
   state: DS.attr("string"),
   wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
-  createClassName: DS.attr("string"),
 
-  //prefetched display-shit
+  // NewWord
+  meanings: DS.attr(),
+
+  // MeaningLike
+  def: DS.attr("string"),
+  example: DS.attr("string"),
+
+  // ChangeMeaning
+  meaning: DS.belongsTo("meaning"),
   original: DS.attr(),
-  pos: DS.attr("string"),
-  wordName: DS.attr("string"),
-  originalUser: DS.attr("string"),
-});
+  parentId: DS.attr(),
 
-Proposal.reopen({
-  changeModel: function(model) {
-    var delta = Ember.Object.create();
-    this.set("targetId", model.id);
-    this.set("targetType", model.proposableType);
-    for(var i = 0; i < model.proposableFields.length; i++) {
-      var name = model.proposableFields[i];
-      delta.set(name, model.get(name));
-    }
-    this.set("word", model.word());
-    this.set("action", "change");
-    this.set("state", "new");
-    this.set(model.get("proposableType"), model);
-    this.set("delta", delta);
-  }
+  // NewMeaning
+  pos: DS.attr("string"),
+
+  types: ["NewWord", "NewMeaning", "MeaningChange"],
 });
 
 export default Proposal;

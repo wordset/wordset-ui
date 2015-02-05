@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
+    var word = this.modelFor("word");
     return this.store.createRecord("proposal", {
-      word: this.modelFor("word"),
-      action: "create",
-      delta: Ember.Object.create(),
+      word: word,
+      type: "NewMeaning",
     });
   }
 });
