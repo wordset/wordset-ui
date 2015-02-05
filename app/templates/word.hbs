@@ -1,12 +1,11 @@
-<div class="tabs">
-  {{#link-to "word.index"}}Definition{{/link-to}}
-  {{#link-to "word.proposals"}}Proposals{{/link-to}}
-</div>
-
 <div class="wrapper">
   <div class="wordWrap">
     <div class="word">
       {{name}}
+    </div>
+    <div class="tabs">
+      {{#link-to "word.index" class="active"}}Definition{{/link-to}}
+      {{#link-to "word.proposals"}}Proposals{{/link-to}}
     </div>
   </div>
 
