@@ -1,0 +1,24 @@
+<div class="proposals">
+  <div class="item">
+    <div class="action">Action</div>
+    <div class="user">User</div>
+    <div class="state">Status</div>
+  </div>
+  {{#each proposal in proposals}}
+    <div {{bind-attr class="proposal.state :item"}}>
+      <div class="action">
+        {{proposal.action}}
+      </div>
+      <div class="user">
+        {{#if proposal.wordnet}}
+          Wordnet
+        {{else}}
+          {{proposal.user.id}}
+        {{/if}}
+      </div>
+      <div {{bind-attr class="proposal.state :state"}}>
+        {{proposal.state}}
+      </div>
+      <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
+    </div>
+  {{/each}}

@@ -1,15 +1,14 @@
+<div class="tabs">
+  {{#link-to "word.index"}}Definition{{/link-to}}
+  {{#link-to "word.proposals"}}Proposals{{/link-to}}
+</div>
+
 <div class="wrapper">
   <div class="wordWrap">
     <div class="word">
       {{name}}
     </div>
   </div>
-
-  {{partial "word/entries"}}
-
-  {{#link-to 'word.new-meaning' model class="addMeaningLink"}}
-    Propose New Meaning
-  {{/link-to}}
 
   {{outlet}}
 
