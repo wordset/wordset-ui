@@ -48,11 +48,12 @@
   .nav-toggler {
     float: right;
     font-size: 40px;
-    margin-right: 30px;
+    margin-right: 0px;
     margin-top: -102px;
     @media screen and (min-width: $medium) {
       font-size: 55px;
       margin-top: -50px;
+      margin-right: 0px;
     }
   }
   @media screen and (max-width: $small) {
