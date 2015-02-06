@@ -6,10 +6,31 @@
   a, a:visited, a:active {
     color: $header-color;
   }
-  img {
+  .logo {
     float: left;
-    margin-top: 2px;
-    width: 190px;
+
+    @media screen and (min-width: $medium) {
+      background: url("/assets/images/full-logo.png");
+      background-size: 195px 36px;
+      height: 36px;
+      margin-top: 4px;
+      width: 195px;
+    }
+    @media screen and (max-width: $medium) {
+      background: url("/assets/images/logo-single.png");
+      background-size: 52px 36px;
+      height: 36px;
+      margin-top: 4px;
+      width: 52px;
+    }
+    @media screen and (max-width: $med-small) {
+      background: url("/assets/images/full-logo.png");
+      background-size: 165px 30px;
+      height: 30px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      width: 165px;
+    }
   }
   .search {
     position: relative;
@@ -30,33 +51,30 @@
     }
     @media screen and (max-width: $medium) {
       padding: 0px;
-      input {
-        margin-top: 20px;
-      }
       span {
         right: 5px;
-        top: 64px;
       }
     }
-    @media screen and (max-width: $small) {
+    @media screen and (max-width: $med-small) {
       display: inline-block;
-      span {
-        top: 28px;
-      }
     }
   }
   .nav-toggler {
     float: right;
     font-size: 40px;
     margin-right: 0px;
-    margin-top: -102px;
+    margin-top: -44px;
     @media screen and (min-width: $medium) {
       font-size: 55px;
       margin-top: -50px;
       margin-right: 0px;
     }
+    @media screen and (max-width: $med-small) {
+      margin-top: -93px;
+      margin-right: 10px;
+    }
   }
-  @media screen and (max-width: $small) {
+  @media screen and (max-width: $med-small) {
     padding: 10px;
   }
 }

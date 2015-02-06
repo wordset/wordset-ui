@@ -3,7 +3,7 @@ partial "menu"
 .main-content
   .header
     link-to "index"
-      img src="assets/images/full-logo.png"
+      .logo
     .search
       .searchBar
         = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord" title="Search for word"
