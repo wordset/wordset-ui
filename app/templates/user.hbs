@@ -1,17 +1,16 @@
 <div class="wrapper">
-  {{#link-to "users"}}
-    <span class="ion-chevron-left"></span>See Top Contributors
-  {{/link-to}}
+  <div class="user">
+    <div class="bio">
+      <h2>{{id}}</h2>
+      <img {{bind-attr src="imageUrl"}} class="avatar" />
 
-  <h2>{{id}}</h2>
-  <img {{bind-attr src="imageUrl"}} />
-
-  Points: {{points}}
-
+      Points: {{points}}
+    </div>
 
 
-  {{createdAt}}
+    {{createdAt}}
 
 
-  {{outlet}}
+    {{outlet}}
+  </div>
 </div>
