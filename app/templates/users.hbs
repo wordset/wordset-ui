@@ -1,11 +1,13 @@
-<h1>Top Contributors</h1>
+<div class="wrapper">
+  <h2>Top Contributors</h2>
 
-<ol>
-{{#each user in model}}
-  <li>
-    <img {{bind-attr src="user.imageUrl"}} />
-    {{#link-to "user" user.id}} {{user.id}} {{/link-to}}
-    ({{user.points}})
-  </li>
-{{/each}}
-</ol>
+  <ol class="users">
+  {{#each user in model}}
+    <li>
+      <img {{bind-attr src="user.imageUrl"}} />
+      {{#link-to "user" user.id}} {{user.id}} {{/link-to}}
+      ({{user.points}})
+    </li>
+  {{/each}}
+  </ol>
+</div>

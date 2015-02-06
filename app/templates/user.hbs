@@ -1,14 +1,16 @@
-{{#link-to "users"}}
-  See Top Contributors
-{{/link-to}}
+<div class="wrapper">
+  {{#link-to "users"}}
+    See Top Contributors
+  {{/link-to}}
 
-<h2>{{id}}</h2>
+  <h2>{{id}}</h2>
 
-Points: {{points}}
+  Points: {{points}}
 
-<img {{bind-attr src="imageUrl"}} />
+  <img {{bind-attr src="imageUrl"}} />
 
-{{createdAt}}
+  {{createdAt}}
 
 
-{{outlet}}
+  {{outlet}}
+</div>
