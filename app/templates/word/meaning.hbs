@@ -27,10 +27,20 @@
         <div class="defWrap">
           <div class="def">
             {{meaning.def}}
-            {{#if canEdit}}
-              {{edit-button action="startEditing"}}
+
+            {{#if meaning.openProposal}}
+              <div class="openProposal">!</div>
+              <small>
+                This definition has an
+                {{#link-to "proposal" meaning.openProposal}}
+                  open proposal
+                {{/link-to}}
+                which we'd love your help with
+              </small>
             {{else}}
-              {{locked-icon}}
+              {{#if session.isAuthenticated}}
+                {{edit-button action="startEditing"}}
+              {{/if}}
             {{/if}}
           </div>
         </div>

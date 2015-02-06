@@ -34,7 +34,12 @@ export default Ember.ObjectController.extend({
     },
     startEditing: function() {
       console.log("Start editing");
-      this.set("editing", true);
+      if(this.get("session").get("isAuthenticated")) {
+        this.set("editing", true);
+      } else {
+        this.flash.notice("You must login to propose changes!")
+      }
+
     },
     cancel: function() {
       this.get("model").rollback();
