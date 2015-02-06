@@ -34,7 +34,7 @@ var Proposal = DS.Model.extend({
     } else if(this.get("type") === "NewMeaning") {
       return "New Meaning";
     } else if(this.get("type") === "MeaningChange") {
-      return "Meaning Change";
+      return "Change";
     }
   }.property("type"),
 

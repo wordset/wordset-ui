@@ -9,7 +9,8 @@
     </div>
     {{#each proposal in model}}
       <div {{bind-attr class="proposal.state :item"}}>
-        <div class="word">{{#link-to "word" proposal.word.id}}{{proposal.wordName}}{{/link-to}}
+        <div class="word">
+          {{proposal.wordName}}
         </div>
         <div class="action">
           {{proposal.typeName}}

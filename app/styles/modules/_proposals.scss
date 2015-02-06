@@ -1,13 +1,22 @@
 .proposals {
   .item {
-    margin-bottom: 20px;
+    margin-bottom: 2px;
+    padding: 18px 0px 18px 5px;
+    &.open {
+      background: lighten($blue, 38%);
+      color: darken($blue, 30%);
+    }
     &.accepted {
-      color: #888;
+      background: lighten($dark-green, 69%);
+      color: lighten($dark-green, 20%);
     }
   }
 
   .word, .action, .user, .state, .view {
     display: inline-block;
+    @media screen and (max-width: $medium) {
+
+    }
   }
   .word {
     font-size: 18px;
