@@ -1,0 +1,10 @@
+
+<h3>Their Proposals</h3>
+
+{{#each proposal in model}}
+  {{#link-to 'proposal' proposal}}
+    {{proposal.wordName}}
+  {{/link-to}}
+{{else}}
+  This User hasn't proposed anything!
+{{/each}}

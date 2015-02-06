@@ -12,6 +12,12 @@
         Proposals
       {{/link-to}}
     </li>
+    <li>
+      {{#link-to "users" class="contributorLink"}}
+        <div class="ionicon ion-trophy"></div>
+        Top Contributors
+      {{/link-to}}
+    </li>
     {{#if session.isAuthenticated}}
       <li>
         <a {{action "invalidateSession"}}>

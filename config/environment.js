@@ -24,7 +24,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com",
       'font-src': "'self'",
       'connect-src': "'self' http://localhost:3000 http://wordnet-data.herokuapp.com",
-      'img-src': "'self' http://www.google-analytics.com",
+      'img-src': "'self' http://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },

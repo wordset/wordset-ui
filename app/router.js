@@ -26,6 +26,11 @@ Router.map(function() {
     this.route("new-meaning");
     this.route("meaning-change");
   });
+
+  this.resource("users");
+  this.resource("user", {path: "/user/:user_id"}, function() {
+    this.route("proposals", {path: "/"});
+  });
   this.resource("faqs");
   this.resource("guidelines");
 

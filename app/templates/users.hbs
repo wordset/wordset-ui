@@ -1,0 +1,11 @@
+<h1>Top Contributors</h1>
+
+<ol>
+{{#each user in model}}
+  <li>
+    <img {{bind-attr src="user.imageUrl"}} />
+    {{#link-to "user" user.id}} {{user.id}} {{/link-to}}
+    ({{user.points}})
+  </li>
+{{/each}}
+</ol>
