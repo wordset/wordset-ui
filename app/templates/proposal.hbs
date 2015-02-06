@@ -1,0 +1,30 @@
+<div {{bind-attr class=":details state"}}>
+  <div class="title">
+    <span>Word:</span>
+    {{wordName}}
+  </div>
+  <div class="action-change">
+    <span>Change:</span>
+    {{typeName}}
+  </div>
+  <div class="action-change">
+    <span>Status:</span>
+    {{state}}
+    {{#if canApprove}}
+      <a {{action "approveProposal"}}>Approve</a>
+    {{/if}}
+  </div>
+  <div class="action-change">
+    <span> Reason:</span>
+    {{#if reason}}
+      {{reason}}
+    {{else}}
+      {{#if wordnet}}
+        <em>Imported from Wordnet 3.0</em>
+      {{else}}
+        <em>No reason given</em>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
+{{outlet}}
