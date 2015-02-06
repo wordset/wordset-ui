@@ -7,4 +7,9 @@ export default DS.Model.extend({
   points: DS.attr(),
   imageUrl: DS.attr("string"),
   createdAt: DS.attr('date'),
+  rank: DS.attr("string"),
+
+  isAdmin: function() {
+    return (this.get("rank") === "Admin");
+  }.property("rank"),
 });

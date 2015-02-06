@@ -22,6 +22,9 @@ export default Ember.ObjectController.extend({
         });
     }
   }.observes('searchTerm'),
+  isAdmin: function() {
+    return this.get("session").get("currentUser").get("isAdmin");
+  }.property("session.currentUser"),
   actions: {
     clickWordFromList: function(word) {
       this.set("showSearchList", false);
