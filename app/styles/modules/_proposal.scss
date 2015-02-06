@@ -119,6 +119,12 @@
   li {
     padding: 20px 0px;
   }
+  .prevProposal {
+    font-size: 14px;
+    position: absolute;
+    left: 150px;
+    top: 28px;
+  }
   .info {
     display: inline-block;
     left: 10px;
@@ -126,6 +132,10 @@
     position: relative;
     vertical-align: text-top;
     width: 93%;
+  }
+  &.novel .info {
+    display: block;
+    left: 0px;
   }
   .by {
     position: absolute;
