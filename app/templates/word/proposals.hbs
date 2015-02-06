@@ -4,10 +4,10 @@
     <div class="user">User</div>
     <div class="state">Status</div>
   </div>
-  {{#each proposal in proposals}}
+  {{#each proposal in model}}
     <div {{bind-attr class="proposal.state :item"}}>
       <div class="action">
-        {{proposal.action}}
+        {{proposal.type}}
       </div>
       <div class="user">
         {{#if proposal.wordnet}}
@@ -22,3 +22,4 @@
       <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
     </div>
   {{/each}}
+</div>
