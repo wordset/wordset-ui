@@ -1,9 +1,27 @@
-<h1>New Word Proposal</h1>
+<h2>New Word Proposal</h2>
 
 {{name}}
 
-{{#each meaning in meanings}}
-  {{meaning.pos}}
-  {{meaning.def}}
-  {{meaning.example}}
-{{/each}}
+<div class="wrapper">
+  <div class="proposal">
+    {{#each meaning in meanings}}
+      <div class="pos">
+        {{meaning.pos}}
+      </div>
+      <div class="info">
+        <div class="definition">
+          <div class="def">
+            {{meaning.def}}
+          </div>
+        </div>
+        <div class="quoteWrap">
+          <div class="quote highlight">
+            <span class="quotemark"> “ </span>
+            {{meaning.example}}
+            <span class="quotemark"> ” </span>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

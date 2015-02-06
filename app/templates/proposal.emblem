@@ -1,9 +1,6 @@
 .details class=model.state
   .title
-    span Proposal to&nbsp;
-    span
-      model.action
-      |:&nbsp;
+    span Word:
     model.wordName
   .action-change
     span Status:

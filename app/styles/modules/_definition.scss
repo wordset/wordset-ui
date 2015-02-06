@@ -5,7 +5,7 @@
 
 .wordWrap {
   border-bottom: 2px solid $taupe;
-  box-shadow: inset 0px -5px 7px -5px #DDD;
+  box-shadow: inset 0px -3px 4px -5px #DDD;
   margin-bottom: 20px;
   position: relative;
   .word, .tabs {
@@ -34,7 +34,8 @@
 }
 
 .pos {
-  border-bottom: 1px solid $lime;
+  border-bottom: 2px solid $lime;
+  display: inline-block;
   font-style: italic;
   margin-left: 0px;
 

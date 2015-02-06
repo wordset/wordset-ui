@@ -74,7 +74,9 @@
     font-weight: 700;
     margin-bottom: 10px;
     span {
+      display: inline-block;
       font-weight: 400;
+      width: 70px;
     }
   }
   .action-change {
