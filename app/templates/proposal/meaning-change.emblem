@@ -3,11 +3,11 @@
 if model.original
   .proposal.original
     h2 Original
+    link-to "proposal" model.parentId class="prevProposal"
+      | View this Proposal
     .word
       model.word.name
     .by
-      link-to "proposal" model.parentId
-        | View this Proposal
       | by&nbsp;
       if model.originalUser
         model.originalUser

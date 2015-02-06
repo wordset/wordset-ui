@@ -4,7 +4,7 @@
     model.wordName
   .action-change
     span Change:
-    model.type
+    model.typeName
   .action-change
     span Status:
     model.state

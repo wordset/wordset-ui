@@ -27,6 +27,17 @@ var Proposal = DS.Model.extend({
   pos: DS.attr("string"),
 
   types: ["NewWord", "NewMeaning", "MeaningChange"],
+
+  typeName: function() {
+    if(this.get("type") === "NewWord") {
+      return "New Word";
+    } else if(this.get("type") === "NewMeaning") {
+      return "New Meaning";
+    } else if(this.get("type") === "MeaningChange") {
+      return "Change";
+    }
+  }.property("type"),
+
 });
 
 export default Proposal;
