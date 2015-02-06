@@ -1,13 +1,14 @@
 <div class="wrapper">
   {{#link-to "users"}}
-    See Top Contributors
+    <span class="ion-chevron-left"></span>See Top Contributors
   {{/link-to}}
 
   <h2>{{id}}</h2>
+  <img {{bind-attr src="imageUrl"}} />
 
   Points: {{points}}
 
-  <img {{bind-attr src="imageUrl"}} />
+
 
   {{createdAt}}
 
