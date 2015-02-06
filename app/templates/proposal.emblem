@@ -3,6 +3,9 @@
     span Word:
     model.wordName
   .action-change
+    span Change:
+    model.type
+  .action-change
     span Status:
     model.state
   .action-change

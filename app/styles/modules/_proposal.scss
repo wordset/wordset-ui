@@ -104,6 +104,9 @@
   @media screen and (min-width: $medium) {
     width: 42%;
   }
+  &.novel {
+    width: 100%;
+  }
   &.original .highlight {
     color: #999;
   }
