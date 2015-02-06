@@ -9,16 +9,16 @@
 @import "modules/footer";
 @import "modules/errors";
 
-@import "modules/loading";
+@import "pages/loading";
 
 @import "modules/word-list";
-@import "modules/definition";
+@import "pages/definition";
 @import "modules/edit-definition";
 @import "modules/new-word";
 
-@import "modules/sign-in-up";
-@import "modules/proposals";
-@import "modules/proposal";
+@import "pages/sign-in-up";
+@import "pages/proposals";
+@import "pages/proposal";
 
-@import "modules/faqs";
-@import "modules/guidelines";
+@import "pages/faqs";
+@import "pages/guidelines";
