@@ -4,7 +4,15 @@
       <h2>{{id}}</h2>
       <img {{bind-attr src="imageUrl"}} class="avatar" />
 
-      Points: {{points}}
+      <div class="info">
+        <div class="points">
+          <span>Points: </span>
+          {{points}}
+        </div>
+        <div class="rank">
+          {{rank}}
+        </div>
+      </div>
     </div>
 
 

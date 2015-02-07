@@ -1,6 +1,17 @@
 .user {
   .bio {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .info {
+    display: inline-block;
+    margin-left: 20px;
+    .points {
+      margin-bottom: 10px;
+      span {
+        color: #555;
+        width: 70px;
+      }
+    }
   }
   h3 {
     margin-bottom: 5px;

@@ -7,12 +7,6 @@ if model.original
       | View this Proposal
     .word
       model.word.name
-    .by
-      | by&nbsp;
-      if model.originalUser
-        model.originalUser
-      else
-        | Wordnet 3.0
 
     .pos
       model.pos
@@ -35,12 +29,6 @@ if model.original
   h2 New
   .word
     model.wordName
-  .by
-    | by&nbsp;
-    if model.wordnet
-      | Wordnet 3.0
-    else
-      model.user.id
   .pos
     model.pos
   ol
