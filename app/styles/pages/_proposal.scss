@@ -96,6 +96,7 @@
 
 .proposal {
   display: inline-block;
+  float: left;
   list-style-position: inside;
   margin-bottom: 30px;
   padding: 20px 35px;
@@ -104,12 +105,9 @@
   @media screen and (min-width: $medium) {
     width: 42%;
   }
-  &.novel {
-    padding: 0px;
-    width: 40%;
-    .pos {
-      margin-bottom: 20px;
-    }
+
+  .pos {
+    margin-bottom: 20px;
   }
   &.original .highlight {
     color: #999;
@@ -131,24 +129,21 @@
     top: 28px;
   }
   .info {
-    display: inline-block;
-    left: 10px;
+    display: block;
+    left: 0px;
     line-height: 1.4em;
     position: relative;
     vertical-align: text-top;
     width: 93%;
-  }
-  &.novel .info {
-    display: block;
-    left: 0px;
   }
 }
 
 .votes-sidebar {
   background: #EEE;
   display: inline-block;
-  padding: 20px;
+  padding: 20px 35px;
   vertical-align: top;
+  float: right;
   width: 40%;
   h4 {
     color: #AAA;
@@ -172,7 +167,9 @@
     margin-bottom: 10px;
   }
   .title {
-    font-style: italic;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
   }
   .name, .value {
     display: inline-block;

@@ -29,7 +29,15 @@
   </div>
 </div>
 
-{{render "proposal/new-meaning" model}}
+{{#if isNewMeaning}}
+  {{render "proposal/new-meaning" model}}
+{{/if}}
+{{#if isNewWord}}
+  {{render "proposal/new-word" model}}
+{{/if}}
+{{#if isMeaningChange}}
+  {{render "proposal/meaning-change" model}}
+{{/if}}
 
 <div class="votes-sidebar">
   <h4>Tally</h4>

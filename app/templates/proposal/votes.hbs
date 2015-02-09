@@ -1,22 +1,38 @@
 <h4>Vote</h4>
-<div class="new-vote">
-  <button><span class="ion-thumbsup"></span>Yae</button>
-  <button class="negative"><span class="ion-thumbsdown"></span>Nay</button>
-  <button class="flag"><span class="ion-flag"></span>Flag</button>
-</div>
+{{#if isOpen}}
+  {{#if currentUser}}
+    {{#if myVote}}
+      <p>You've already voted.</p>
+    {{else}}
+      <div class="new-vote">
+        <button {{action "voteYae"}}><span class="ion-thumbsup"></span>Yae</button>
+        <button {{action "voteNay"}} class="negative"><span class="ion-thumbsdown"></span>Nay</button>
+        <button {{action "voteFlag"}} class="flag"><span class="ion-flag"></span>Flag</button>
+      </div>
+    {{/if}}
+  {{else}}
+    <p>{{#link-to user.new}}Sign up to vote.{{/link-to}}</p>
+  {{/if}}
+{{else}}
+<p>Voting is closed.</p>
+{{/if}}
 
 <h4>Voting History</h4>
-<div class="title">
-  <div class="name">Name</div>
-  <div class="value">Vote</div>
-</div>
-{{#each vote in model}}
-  <div class="vote">
-    <div class="name">
-      {{vote.user.id}}
-    </div>
-    <div class="value">
-      {{vote.value}}
-    </div>
+{{#if firstObject}}
+  <div class="title">
+    <div class="name">Name</div>
+    <div class="value">Vote</div>
   </div>
-{{/each}}
+  {{#each vote in model}}
+    <div class="vote">
+      <div class="name">
+        {{vote.user.id}}
+      </div>
+      <div class="value">
+        {{vote.value}}
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <p>No votes yet.</p>
+{{/if}}
