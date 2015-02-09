@@ -1,0 +1,44 @@
+.progress-bar {
+  margin-bottom: 30px;
+  width: 100%;
+  .progress-positive, .progress-negative {
+    background: #DDD;
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 48%;
+    .bar {
+      height: 20px;
+      position: absolute;
+    }
+  }
+  .progress-positive {
+    .bar {
+      background: $lime;
+      left: 0px;
+    }
+  }
+  .progress-negative {
+    .bar {
+      background: $red;
+      right: 0px;
+    }
+  }
+  .numbers {
+    color: #666;
+    font-size: 14px;
+    position: relative;
+    .min, .mid, .max {
+      position: absolute;
+    }
+    .min {
+      left: -10px;
+    }
+    .mid {
+      left: 48%;
+    }
+    .max {
+      left: 94%;
+    }
+  }
+}

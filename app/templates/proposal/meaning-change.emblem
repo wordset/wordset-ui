@@ -1,4 +1,5 @@
-
+a click="hello"
+  | hihihih
 
 if model.original
   .proposal.original

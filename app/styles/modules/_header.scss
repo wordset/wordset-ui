@@ -8,7 +8,6 @@
   }
   .logo {
     float: left;
-
     @media screen and (min-width: $medium) {
       background: url("/assets/images/full-logo.png");
       background-size: 195px 36px;
@@ -60,6 +59,7 @@
     }
   }
   .nav-toggler {
+    color: $taupe;
     float: right;
     font-size: 40px;
     margin-right: 0px;

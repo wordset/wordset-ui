@@ -8,6 +8,7 @@ export default DS.Model.extend({
   imageUrl: DS.attr("string"),
   createdAt: DS.attr('date'),
   rank: DS.attr("string"),
+  votes: DS.hasMany("votes"),
 
   isAdmin: function() {
     return (this.get("rank") === "Admin");

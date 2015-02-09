@@ -10,6 +10,8 @@ var Proposal = DS.Model.extend({
   state: DS.attr("string"),
   wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
+  tally: DS.attr("number"),
+  votes: DS.hasMany("vote"),
 
   // NewWord
   meanings: DS.attr(),

@@ -106,7 +106,7 @@
   }
   &.novel {
     padding: 0px;
-    width: 100%;
+    width: 40%;
     .pos {
       margin-bottom: 20px;
     }
@@ -141,5 +141,41 @@
   &.novel .info {
     display: block;
     left: 0px;
+  }
+}
+
+.votes-sidebar {
+  background: #EEE;
+  display: inline-block;
+  padding: 20px;
+  vertical-align: top;
+  width: 40%;
+  h4 {
+    color: #AAA;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .new-vote {
+    button {
+      display: inline-block;
+      margin-bottom: 20px;
+      min-width: 150px;
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+  .title, .vote {
+    margin-bottom: 10px;
+  }
+  .title {
+    font-style: italic;
+  }
+  .name, .value {
+    display: inline-block;
+    width: 40%;
   }
 }

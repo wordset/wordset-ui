@@ -1,0 +1,22 @@
+<h4>Vote</h4>
+<div class="new-vote">
+  <button><span class="ion-thumbsup"></span>Yae</button>
+  <button class="negative"><span class="ion-thumbsdown"></span>Nay</button>
+  <button class="flag"><span class="ion-flag"></span>Flag</button>
+</div>
+
+<h4>Voting History</h4>
+<div class="title">
+  <div class="name">Name</div>
+  <div class="value">Vote</div>
+</div>
+{{#each vote in model}}
+  <div class="vote">
+    <div class="name">
+      {{vote.user.id}}
+    </div>
+    <div class="value">
+      {{vote.value}}
+    </div>
+  </div>
+{{/each}}

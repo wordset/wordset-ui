@@ -69,6 +69,14 @@ button {
       background: $button-hover-background-negative;
     }
   }
+  &.flag {
+    background: $button-background-flag;
+    box-shadow: inset 0px 1px 1px lighten($button-background-flag, 15%), 0px 1px 1px #DDD;
+    text-shadow: 0px 1px 0px $button-hover-background-flag;
+    &:hover {
+      background: $button-hover-background-flag;
+    }
+  }
 }
 
 .search, .wordList, .wrapper {
