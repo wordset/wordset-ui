@@ -2,41 +2,38 @@
 
 
 <div class="proposal">
-  {{#link-to "proposal" model.parentId class="prevProposal"}} View this Proposal  {{/link-to}}
+  {{#link-to "proposal" model.parentId class="prevProposal"}} View previous proposal  {{/link-to}}
   <div class="word">
     {{model.word.name}}
   </div>
   <div class="pos">
     {{model.original.pos}}
   </div>
-  <ol>
-    <li>
-      <div class="info">
-        <div class="definition">
-          <div class="def">
-            {{model.original.def}}
-          </div>
-          <div class="def">
-            {{def}}
-          </div>
-        </div>
-        <div class="quoteWrap">
-          {{#if model.original.example}}
-            <div class="quote highlight">
-              <span class="quotemark"> “ </span>
-              {{model.original.example}}
-              <span class="quotemark"> ” </span>
-            </div>
-          {{else}}
-            <em> No example previously </em>
-          {{/if}}
-          <div class="quote highlight">
-            <span class="quotemark"> “ </span>
-            {{example}}
-            <span class="quotemark"> ” </span>
-          </div>
-        </div>
+
+  <div class="info">
+    <div class="definition">
+      <div class="def">
+        {{model.original.def}}
       </div>
-    </li>
-  </ol>
+      <div class="def">
+        {{def}}
+      </div>
+    </div>
+    <div class="quoteWrap">
+      {{#if model.original.example}}
+        <div class="quote highlight">
+          <span class="quotemark"> “ </span>
+          {{model.original.example}}
+          <span class="quotemark"> ” </span>
+        </div>
+      {{else}}
+        <em> No example previously </em>
+      {{/if}}
+      <div class="quote highlight">
+        <span class="quotemark"> “ </span>
+        {{example}}
+        <span class="quotemark"> ” </span>
+      </div>
+    </div>
+  </div>
 </div>
