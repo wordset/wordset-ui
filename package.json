@@ -37,7 +37,8 @@
     "ember-export-application-global": "^1.0.0",
     "ember-flash-message": "^0.1.0",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "jsdiff": "^1.1.1"
   },
   "dependencies": {
     "ember-flash-message": "^0.1.0"
