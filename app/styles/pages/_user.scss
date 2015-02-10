@@ -1,6 +1,9 @@
 .user {
   .bio {
     margin-bottom: 40px;
+    img {
+      vertical-align: top;
+    }
   }
   .info {
     display: inline-block;
