@@ -25,7 +25,8 @@ export default Ember.ArrayController.extend({
     var v = _this.store.createRecord("vote", {
       proposal: p,
       yae: yae,
-      flagged: flagged
+      flagged: flagged,
+      comment: _this.get("comment")
     });
     v.save().then(function(newVote) {
       p.reload();

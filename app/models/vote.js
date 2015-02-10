@@ -5,5 +5,6 @@ export default DS.Model.extend({
   user: DS.belongsTo("user"),
   yae: DS.attr("boolean"),
   value: DS.attr("number"),
-  flagged: DS.attr("boolean")
+  flagged: DS.attr("boolean"),
+  comment: DS.attr("string")
 });

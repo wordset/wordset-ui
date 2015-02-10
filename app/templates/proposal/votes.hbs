@@ -9,6 +9,8 @@
         <button {{action "voteNay"}} class="negative"><span class="ion-thumbsdown"></span>Nay</button>
         <button {{action "voteFlag"}} class="flag"><span class="ion-flag"></span>Flag</button>
       </div>
+      Comment:
+      {{textarea value=comment}}
     {{/if}}
   {{else}}
     <p>{{#link-to user.new}}Sign up to vote.{{/link-to}}</p>
@@ -31,6 +33,7 @@
       <div class="value">
         {{vote.value}}
       </div>
+      {{vote.comment}}
     </div>
   {{/each}}
 {{else}}
