@@ -85,13 +85,6 @@
   .pos {
     margin-bottom: 20px;
   }
-  &.original .highlight {
-    color: #999;
-  }
-  &.change .highlight {
-    color: $lime;
-    font-weight: 700;
-  }
   h2 {
     text-transform: uppercase;
   }
@@ -118,6 +111,18 @@
       font-weight: 700;
       margin-bottom: 5px;
     }
+  }
+  // For the diff in meaning change
+  del, ins {
+    text-decoration: none;
+  }
+  del {
+    color: $red;
+    opacity: 0.6;
+  }
+  ins {
+    color: darken($lime, 20%);
+    font-weight: 500;
   }
 }
 

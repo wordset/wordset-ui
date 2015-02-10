@@ -31,7 +31,7 @@ partial "menu"
       a href="mailto:contact@teamrarebit.com" target="_blank"
         span.ion-email
     .links
-      link-to "faqs" | FAQs
+      link-to "help" | Help
       link-to "guidelines" | Contributing Guidelines
     .copyright
       | Copyright 2015 – Made by&#160;
