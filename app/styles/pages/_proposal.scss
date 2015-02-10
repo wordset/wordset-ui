@@ -20,6 +20,12 @@
       color: $light-grey;
     }
   }
+  &.flagged {
+    background: #CCC;
+    span {
+      color: $light-grey;
+    }
+  }
   .title {
     font-weight: 700;
     margin-bottom: 10px;

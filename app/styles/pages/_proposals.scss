@@ -10,6 +10,10 @@
       background: lighten($dark-green, 69%);
       color: lighten($dark-green, 20%);
     }
+    &.flagged {
+      background: #EEE;
+      color: #CCC;
+    }
   }
 
   .word, .action, .user, .state, .view {
