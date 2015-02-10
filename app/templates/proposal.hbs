@@ -1,7 +1,9 @@
 <div {{bind-attr class=":details state"}}>
   <div class="title">
     <span>Word:</span>
-    {{wordName}}
+    {{#link-to "word" model.word}}
+      {{wordName}}
+    {{/link-to}}
   </div>
   <div class="action-change">
     <span>Change:</span>
@@ -14,9 +16,22 @@
   <div class="action-change">
     <span>User:</span>
     {{user.id}}
+    <img {{bind-attr src="user.imageUrl"}} class="avatar" />
   </div>
-  <div class="action-change">
-    <span> Reason:</span>
+</div>
+
+<div class="proposal">
+  {{#if isNewMeaning}}
+    {{render "proposal/new-meaning" model}}
+  {{/if}}
+  {{#if isNewWord}}
+    {{render "proposal/new-word" model}}
+  {{/if}}
+  {{#if isMeaningChange}}
+    {{render "proposal/meaning-change" model}}
+  {{/if}}
+  <div class="reason">
+    <h4> Reason:</h4>
     {{#if reason}}
       {{reason}}
     {{else}}
@@ -28,16 +43,6 @@
     {{/if}}
   </div>
 </div>
-
-{{#if isNewMeaning}}
-  {{render "proposal/new-meaning" model}}
-{{/if}}
-{{#if isNewWord}}
-  {{render "proposal/new-word" model}}
-{{/if}}
-{{#if isMeaningChange}}
-  {{render "proposal/meaning-change" model}}
-{{/if}}
 
 <div class="votes-sidebar">
   <h4>Tally</h4>

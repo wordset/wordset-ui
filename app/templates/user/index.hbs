@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="user">
+    <div class="bio">
+      <h2>{{id}}</h2>
+      <img {{bind-attr src="imageUrl"}} class="avatar" />
+
+      <div class="info">
+        <div class="points">
+          <span>Points: </span>
+          {{points}}
+        </div>
+        <div class="rank">
+          {{rank}}
+        </div>
+      </div>
+    </div>
+
+    {{createdAt}}
+
+    <h3>Their Proposals</h3>
+
+    <div class="proposals">
+    {{#each proposal in model.proposals}}
+      <div {{bind-attr class="proposal.state :item"}}>
+        <div class="word">
+          {{#link-to 'proposal' proposal}}
+            {{proposal.wordName}}
+          {{/link-to}}
+        </div>
+        <div class="action">
+          {{proposal.typeName}}
+        </div>
+        <div class="state">
+          {{proposal.state}}
+        </div>
+      </div>
+    {{else}}
+      This User hasn't proposed anything yet.
+    {{/each}}
+    </div>
+  </div>
+</div>

@@ -13,9 +13,10 @@ Router.map(function() {
 
   });
   this.route("login");
-  this.resource("user", function() {
+  this.route("user", {}, function() {
     this.route("new");
     this.route("login");
+    this.route("index", {path: "/:user_id"});
   });
   this.resource("words", function() {
     this.route("new");
@@ -28,9 +29,6 @@ Router.map(function() {
   });
 
   this.resource("users");
-  this.resource("user", {path: "/user/:user_id"}, function() {
-    this.route("proposals", {path: "/"});
-  });
   this.resource("faqs");
   this.resource("guidelines");
 

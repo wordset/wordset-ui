@@ -1,54 +1,4 @@
-.submit-proposal {
-  border: 2px solid $module-border;
-  box-shadow: 0px 1px 4px #DDD;
-  padding: 30px;
-  .word {
-    font-size: 20px;
-  }
-  .word, .reason {
-    .label {
-      display: inline-block;
-      font-style: italic;
-      margin-right: 10px;
-      width: 70px;
-    }
-  }
-  .old, .new {
-    color: $text-color;
-    display: inline-block;
-    margin: 20px 0px;
-    padding: 20px 0px;
-    text-decoration: none;
-    width: 48%;
-    @media screen and (max-width: $small) {
-      width: 100%;
-    }
-    p {
-
-    }
-
-  }
-  .old {
-    @media screen and (min-width: $small) {
-      border-right: 1px solid #EEE;
-    }
-  }
-  button {
-    margin: auto;
-  }
-  .dont-care {
-    @extend a;
-    text-align: center;
-  }
-  input {
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    padding: 5px 10px;
-    width: 100%;
-  }
-}
-
+// Banner at the top
 .details {
   color: #FFF;
   padding: 20px 35px 10px;
@@ -73,6 +23,10 @@
   .title {
     font-weight: 700;
     margin-bottom: 10px;
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
     span {
       display: inline-block;
       font-weight: 400;
@@ -105,7 +59,6 @@
   @media screen and (min-width: $medium) {
     width: 42%;
   }
-
   .pos {
     margin-bottom: 20px;
   }
@@ -136,17 +89,23 @@
     vertical-align: text-top;
     width: 93%;
   }
+  .reason {
+
+  }
 }
 
 .votes-sidebar {
-  background: #EEE;
+  background: $header-background;
   display: inline-block;
   padding: 20px 35px;
   vertical-align: top;
-  float: right;
-  width: 40%;
+  width: 85%;
+  @media screen and (min-width: $medium) {
+    float: right;
+    width: 40%;
+  }
   h4 {
-    color: #AAA;
+    color: darken($header-background, 30%);
     margin-bottom: 10px;
     text-transform: uppercase;
   }
