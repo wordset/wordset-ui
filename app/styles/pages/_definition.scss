@@ -96,3 +96,16 @@
   color: #666;
   font-size: 14px;
 }
+
+.word-proposals {
+  @extend .proposals;
+  .action {
+    width: 32%;
+  }
+  .user {
+    width: 30%;
+  }
+  .state {
+    width: 22%;
+  }
+}

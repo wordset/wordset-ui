@@ -1,4 +1,4 @@
-<div class="proposals">
+<div class="word-proposals">
   <div class="item">
     <div class="action">Action</div>
     <div class="user">User</div>
@@ -7,7 +7,7 @@
   {{#each proposal in model}}
     <div {{bind-attr class="proposal.state :item"}}>
       <div class="action">
-        {{proposal.type}}
+        {{proposal.typeName}}
       </div>
       <div class="user">
         {{#if proposal.wordnet}}
