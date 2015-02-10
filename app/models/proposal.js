@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
 var Proposal = DS.Model.extend({
   type: DS.attr("string"),
