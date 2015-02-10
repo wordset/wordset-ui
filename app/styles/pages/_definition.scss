@@ -4,8 +4,8 @@
 }
 
 .wordWrap {
-  border-bottom: 2px solid $taupe;
-  box-shadow: inset 0px -3px 4px -5px #DDD;
+  border-bottom: 1px solid $taupe;
+  box-shadow: inset 0px -4px 4px -5px #CCC;
   margin-bottom: 20px;
   position: relative;
   .word, .tabs {
@@ -16,9 +16,7 @@
     right: 0px;
     top: 19px;
     a {
-      // background: #F9F9F9;
-      border: 2px solid $taupe;
-      // border-top: none;
+      border: 1px solid $taupe;
       border-radius: 2px 2px 0px 0px;
       color: $dark-green;
       padding: 5px 10px 0px;
