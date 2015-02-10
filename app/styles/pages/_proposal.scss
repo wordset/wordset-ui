@@ -139,14 +139,14 @@
 }
 
 .votes-sidebar {
-  background: #EEE;
+  background: $header-background;
   display: inline-block;
   padding: 20px 35px;
   vertical-align: top;
   float: right;
   width: 40%;
   h4 {
-    color: #AAA;
+    color: darken($header-background, 30%);
     margin-bottom: 10px;
     text-transform: uppercase;
   }

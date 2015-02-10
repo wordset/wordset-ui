@@ -29,14 +29,14 @@
             {{meaning.def}}
 
             {{#if meaning.openProposal}}
-              <div class="openProposal">!</div>
-              <small>
+              <div class="openProposal">
+                <span class="ion-help-buoy"></span>
                 This definition has an
                 {{#link-to "proposal" meaning.openProposal}}
                   open proposal
                 {{/link-to}}
-                which we'd love your help with
-              </small>
+                which we'd love your help with.
+              </div>
             {{else}}
               {{#if session.isAuthenticated}}
                 {{edit-button action="startEditing"}}
