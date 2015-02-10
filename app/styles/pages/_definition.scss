@@ -96,3 +96,17 @@
   color: #666;
   font-size: 14px;
 }
+
+// Styles for the word proposal tab
+.word-proposals {
+  @extend .proposals;
+  .action {
+    width: 32%;
+  }
+  .user {
+    width: 30%;
+  }
+  .state {
+    width: 22%;
+  }
+}

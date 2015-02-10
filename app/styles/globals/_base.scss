@@ -104,6 +104,18 @@ button {
   }
 }
 
+.table-wrapper {
+  margin: auto;
+  padding-top: 40px;
+  position: relative;
+  @media screen and (min-width: $large) {
+    max-width: 740px;
+  }
+  @media screen and (max-width: $large) {
+    max-width: 90%;
+  }
+}
+
 .animated {
   -webkit-transition: height 0.2s;
   -moz-transition: height 0.2s;

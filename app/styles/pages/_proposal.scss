@@ -30,7 +30,10 @@
     span {
       display: inline-block;
       font-weight: 400;
-      width: 75px;
+      margin-right: 10px;
+      @media screen and (max-width: $medium) {
+        width: 150px;
+      }
     }
   }
   .action-change {
@@ -38,12 +41,32 @@
     &:not(:last-of-type) {
       margin-right: 40px;
     }
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
     span {
       display: inline-block;
-      width: 75px;
+      margin-right: 10px;
+      @media screen and (max-width: $medium) {
+        width: 150px;
+      }
     }
     @media screen and (min-width: $medium) {
       display: inline-block;
+    }
+  }
+  .user {
+    @media screen and (max-width: $medium) {
+      margin-left: 165px;
+    }
+    @media screen and (min-width: $medium) {
+      float: right;
+      margin-top: -27px;
+    }
+    img {
+      height: 50px;
+      width: 50px;
     }
   }
 }
@@ -90,7 +113,11 @@
     width: 93%;
   }
   .reason {
-
+    margin-top: 40px;
+    h4 {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -107,13 +134,12 @@
   h4 {
     color: darken($header-background, 30%);
     margin-bottom: 10px;
-    text-transform: uppercase;
   }
   .new-vote {
     button {
       display: inline-block;
       margin-bottom: 20px;
-      min-width: 150px;
+      min-width: 120px;
       &:not(:last-of-type) {
         margin-right: 20px;
       }

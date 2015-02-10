@@ -6,7 +6,7 @@
     {{/link-to}}
   </div>
   <div class="action-change">
-    <span>Change:</span>
+    <span>Proposal Type:</span>
     {{typeName}}
   </div>
   <div class="action-change">
@@ -15,8 +15,14 @@
   </div>
   <div class="action-change">
     <span>User:</span>
-    {{user.id}}
-    <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+    {{#link-to "user" model.user}}
+      {{user.id}}
+    {{/link-to}}
+  </div>
+  <div class="user">
+    {{#link-to "user" model.user}}
+      <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+    {{/link-to}}
   </div>
 </div>
 
@@ -31,7 +37,7 @@
     {{render "proposal/meaning-change" model}}
   {{/if}}
   <div class="reason">
-    <h4> Reason:</h4>
+    <h4> Reason for change:</h4>
     {{#if reason}}
       {{reason}}
     {{else}}
