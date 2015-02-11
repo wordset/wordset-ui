@@ -8,14 +8,14 @@
   }
   .logo {
     float: left;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: 1000px) {
       background: url("/assets/images/full-logo.png");
       background-size: 195px 36px;
       height: 36px;
       margin-top: 4px;
       width: 195px;
     }
-    @media screen and (max-width: $medium) {
+    @media screen and (max-width: 1000px) {
       background: url("/assets/images/logo-single.png");
       background-size: 52px 36px;
       height: 36px;
