@@ -7,10 +7,10 @@
       color: darken($blue, 30%);
     }
     &.accepted {
-      background: lighten($dark-green, 69%);
-      color: lighten($dark-green, 20%);
+      background: $positive-background;
+      color: $positive-color;
     }
-    &.flagged {
+    &.rejected {
       background: #EEE;
       color: #CCC;
     }
