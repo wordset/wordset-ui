@@ -6,15 +6,40 @@
 </div>
 <div class="info">
   <div class="definition">
-    <div class="def">
+    <ins class="def">
       {{def}}
-    </div>
+    </ins>
   </div>
   <div class="quoteWrap">
-    <div class="quote highlight">
+    <ins class="quote highlight">
       <span class="quotemark"> “ </span>
       {{example}}
       <span class="quotemark"> ” </span>
-    </div>
+    </ins>
   </div>
 </div>
+
+
+<h3>Existing Meanings</h3>
+<ol>
+  {{#each meaning in original.meanings}}
+    <li>
+      <div class="info">
+        <div class="definition">
+          <div class="def">
+            {{meaning.def}}
+          </div>
+        </div>
+        {{#if meaning.example}}
+        <div class="quoteWrap">
+          <div class="quote highlight">
+            <span class="quotemark"> “ </span>
+            {{meaning.example}}
+            <span class="quotemark"> ” </span>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </li>
+  {{/each}}
+</ol>
