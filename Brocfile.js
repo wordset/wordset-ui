@@ -2,7 +2,11 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  vendorFiles: {
+    'handlebars.js': null
+  }
+});
 
 app.import("bower_components/jquery-autosize/jquery.autosize.js");
 app.import("bower_components/jsdiff/diff.js");
