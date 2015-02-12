@@ -9,6 +9,10 @@
         <button {{action "voteNay"}} class="negative"><span class="ion-thumbsdown"></span>Nay</button>
         <button {{action "voteFlag"}} class="flag"><span class="ion-flag"></span>Flag</button>
       </div>
+      <div class="comment-box">
+        <div>Comment</div>
+        {{textarea value=comment}}
+      </div>
     {{/if}}
   {{else}}
     <p>{{#link-to user.new}}Sign up to vote.{{/link-to}}</p>
@@ -22,14 +26,18 @@
   <div class="title">
     <div class="name">Name</div>
     <div class="value">Vote</div>
+    <div class="comment">Comment</div>
   </div>
   {{#each vote in model}}
-    <div class="vote">
+    <div {{bind-attr class=":vote vote.yae:yae:nay"}}>
       <div class="name">
         {{vote.user.id}}
       </div>
       <div class="value">
         {{vote.value}}
+      </div>
+      <div class="comment">
+        {{vote.comment}}
       </div>
     </div>
   {{/each}}

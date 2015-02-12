@@ -29,7 +29,7 @@ Router.map(function() {
   });
 
   this.resource("users");
-  this.resource("faqs");
+  this.resource("help");
   this.resource("guidelines");
 
   //this.resource("submit-proposal");
