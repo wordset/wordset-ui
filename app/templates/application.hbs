@@ -1,39 +1,65 @@
-partial "menu"
+{{partial "menu"}}
 
-.main-content
-  .header
-    link-to "index"
-      .logo
-    .search
-      .searchBar
-        = input type=text value=searchTerm placeholder="Search" autofocus="autofocus" id="searchForWord" title="Search for word"
-        span.ion-close-circled{action 'clear'}
-      if showSearchList
-        .wordListWrapper
-          ul.wordList
-            = each wordList.results
-              li
-                a{action 'clickWordFromList' word_id} href="" tabindex="0" = name
-            else
-              li
-                link-to "words.new" | No results found. Add word?
-    a{action 'toggleMenu'} class="nav-toggler" alt="Menu"
-      span.ion-android-apps
+<div class="main-content">
+  <div class="header">
+    {{#link-to "index"}}
+      <div class="logo"></div>
+    {{/link-to}}
+    <div class="search">
+      <div class="searchBar">
+        {{input type=text value=searchTerm placeholder="Search" autofocus="autofocus" title="Search for word"}}
+        <span class="ion-close-circled" {{action 'clear'}}></span>
+      </div>
+      {{#if showSearchList}}
+        <div class="wordListWrapper">
+          <ul class="wordList">
+            {{#each wordList.results}}
+              <li>
+                <a {{action 'clickWordFromList' word_id}} href="" tabindex="0">
+                  {{name}}
+                </a>
+              </li>
+            {{else}}
+              <li>
+                {{#link-to "words.new"}}
+                  No results found. Add word?
+                {{/link-to}}
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+    </div>
+    <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
+      <span class="ion-android-apps"></span>
+    </a>
+  </div>
 
-  = flash-message
-  .content
-    = outlet
+   {{flash-message}}
 
-  .footer
-    .social
-      a href="http://twitter.com/thewordset" target="_blank"
-        span.ion-social-twitter
-      a href="mailto:contact@teamrarebit.com" target="_blank"
-        span.ion-email
-    .links
-      link-to "help" | Help
-      link-to "guidelines" | Contributing Guidelines
-    .copyright
-      | Copyright 2015 – Made by&#160;
-      a href="http://teamrarebit.com" target="_blank" rarebit
-      | .
+  <div class="content">
+    {{outlet}}
+  </div>
+
+  <div class="footer">
+    <div class="social">
+      <a href="http://twitter.com/thewordset" target="_blank">
+        <span class="ion-social-twitter"></span>
+      </a>
+      <a href="mailto:contact@teamrarebit.com" target="_blank">
+        <span class="ion-email"></span>
+      </a>
+    </div>
+    <div class="links">
+      {{#link-to "help"}} Help {{/link-to}}
+      {{#link-to "guidelines"}} Contributing Guidelines {{/link-to}}
+    </div>
+    <div class="copyright">
+      Copyright 2015 – Made by&#160;
+      <a href="http://teamrarebit.com" target="_blank">
+        rarebit
+      </a>
+      .
+    </div>
+  </div>
+</div>

@@ -31,9 +31,7 @@ export default Ember.ObjectController.extend({
       this.transitionToRoute("word", word);
     },
     clear: function() {
-      var input = document.getElementById("searchForWord");
-      input.value = '';
-      input.focus();
+      this.set("searchTerm", "");
     },
     toggleMenu: function() {
       this.toggleProperty("showMenu");

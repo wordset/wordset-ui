@@ -1,0 +1,45 @@
+<div class="sign-module">
+  <h3>Register</h3>
+  {{#if isError}}
+    <div class="login-error">
+      <span class="ion-android-alert"></span>
+      There was an error signing up
+    </div>
+  {{/if}}
+  <div class="username">
+    <label>Username</label>
+    {{input type="text" autofocus="autofocus" value=id}}
+    {{#each error in errors.username}}
+      <div class="error">
+        {{error.message}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="email">
+    <label>E-mail</label>
+    {{input type="email" value=email}}
+    {{#each error in errors.email}}
+      <div class="error">
+        E-mail {{error.message}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="password">
+    <label>Password</label>
+    {{input type="password" value=password}}
+    {{#each error in errors.password}}
+      <div class="error">
+        Password{{error.message}}
+      </div>
+    {{/each}}
+  </div>
+  <div class="password">
+    <label> Confirm password</label>
+    {{input type="password" value=password_confirmation}}
+  </div>
+  <button {{action "register"}}>Register</button>
+
+  <div class="aside">
+    Already have an account? Sign in {{#link-to 'user.login'}} here {{/link-to}}.
+  </div>
+</div>
