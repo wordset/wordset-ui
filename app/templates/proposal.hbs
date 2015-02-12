@@ -1,32 +1,19 @@
-<div {{bind-attr class=":details state"}}>
-  <div class="title">
-    <span>Word:</span>
-    {{#link-to "word" model.word}}
-      {{wordName}}
-    {{/link-to}}
-  </div>
-  <div class="action-change">
-    <span>Proposal Type:</span>
-    {{typeName}}
-  </div>
-  <div class="action-change">
-    <span>Status:</span>
-    {{state}}
-  </div>
-  <div class="action-change">
-    <span>User:</span>
-    {{#link-to "user" model.user}}
-      {{user.id}}
-    {{/link-to}}
-  </div>
-  <div class="user">
-    {{#link-to "user" model.user}}
-      <img {{bind-attr src="user.imageUrl"}} class="avatar" />
-    {{/link-to}}
-  </div>
-</div>
-
 <div class="proposal">
+  <div class="details">
+    {{#if wordnet}}
+      Wordnet
+    {{else}}
+      {{#link-to "user" model.user}}
+        <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+      {{/link-to}}
+      {{#link-to "user" model.user}}
+        {{user.id}}
+      {{/link-to}}
+    {{/if}}
+    proposed a
+    {{typeName}}.
+  </div>
+
   {{#if isNewMeaning}}
     {{render "proposal/new-meaning" model}}
   {{/if}}
@@ -36,8 +23,11 @@
   {{#if isMeaningChange}}
     {{render "proposal/meaning-change" model}}
   {{/if}}
+</div>
+
+<div class="votes-sidebar">
+  <h4> Reason</h4>
   <div class="reason">
-    <h4> Reason for change:</h4>
     {{#if reason}}
       {{reason}}
     {{else}}
@@ -48,9 +38,6 @@
       {{/if}}
     {{/if}}
   </div>
-</div>
-
-<div class="votes-sidebar">
   <h4>Tally</h4>
   <div class="progress-bar">
     <div class="progress-negative">

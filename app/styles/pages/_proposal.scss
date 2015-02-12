@@ -1,79 +1,14 @@
-// Banner at the top
 .details {
-  color: #FFF;
-  padding: 20px 35px 10px;
-  &.open {
-    background: $blue;
-    span {
-      color: lighten($blue, 30%);
-    }
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
   }
-  &.accepted {
-    background: $dark-green;
-    span {
-      color: lighten($dark-green, 50%);
-    }
-  }
-  &.rejected {
-    background: $taupe;
-    span {
-      color: $light-grey;
-    }
-  }
-  &.flagged {
-    background: #CCC;
-    span {
-      color: $light-grey;
-    }
-  }
-  .title {
-    font-weight: 700;
-    margin-bottom: 10px;
-    a {
-      color: #FFF;
-      text-decoration: none;
-    }
-    span {
-      display: inline-block;
-      font-weight: 400;
-      margin-right: 10px;
-      @media screen and (max-width: $medium) {
-        width: 150px;
-      }
-    }
-  }
-  .action-change {
-    margin-bottom: 10px;
-    &:not(:last-of-type) {
-      margin-right: 40px;
-    }
-    a {
-      color: #FFF;
-      text-decoration: none;
-    }
-    span {
-      display: inline-block;
-      margin-right: 10px;
-      @media screen and (max-width: $medium) {
-        width: 150px;
-      }
-    }
-    @media screen and (min-width: $medium) {
-      display: inline-block;
-    }
-  }
-  .user {
-    @media screen and (max-width: $medium) {
-      margin-left: 165px;
-    }
-    @media screen and (min-width: $medium) {
-      float: right;
-      margin-top: -27px;
-    }
-    img {
-      height: 50px;
-      width: 50px;
-    }
+  a {
+    display: inline-block;
   }
 }
 
@@ -114,13 +49,6 @@
     vertical-align: text-top;
     width: 93%;
   }
-  .reason {
-    margin-top: 40px;
-    h4 {
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-  }
   // For the diff in meaning change
   del, ins {
     text-decoration: none;
@@ -149,11 +77,15 @@
     color: darken($header-background, 30%);
     margin-bottom: 10px;
   }
+  .reason {
+    margin-bottom: 20px;
+  }
   .new-vote {
     button {
       display: inline-block;
       margin-bottom: 20px;
-      min-width: 120px;
+      min-width: 80px;
+      width: 30%;
       @media screen and (max-width: $medium) {
         width: 100%;
       }
@@ -173,7 +105,6 @@
       margin-bottom: 5px;
     }
     textarea {
-      max-width: 420px;
       padding: 5px;
       vertical-align: top;
       width: 100%;
@@ -188,14 +119,16 @@
     text-transform: uppercase;
   }
   .vote {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     &:nth-child(odd) {
-      background: #FFF;
+      background: #FDFDFD;
     }
-    // padding: 8px 4px;
+    &:nth-child(even) {
+      background: #F3F3F3;
+    }
+    padding: 8px 4px;
   }
   .vote.yae {
-    // background: $positive-background;
     .value {
       color: $positive-color;
     }
