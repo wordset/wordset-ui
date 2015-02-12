@@ -6,30 +6,18 @@
   <div class="newWord">
     <label>
       Word
-      {{input value=name}}
+      {{input value=model.wordName}}
     </label>
-    <label>
-      Part of speech
-      {{view "select" content=posList value=pos}}
-    </label>
-    <label>
-      Definition
-      {{inline-errors errors=errors.def}}
-      {{textarea value=def}}
-    </label>
-    <label>
-      Example sentence
-      {{inline-errors errors=errors.example}}
-      {{textarea value=example}}
-    </label>
-    <label>
-      Sources
-      <p>This is a pretty critical part of proposing a new word be
-        added. Please, please checkout the {{#link-to "guidelines"}}guidelines{{/link-to}}.
-        We will reject improperly-sourced word submissions!</p>
-      {{inline-errors errors=errors.reason}}
-      {{textarea value=reason}}
-    </label>
+
+    {{#each meaning in model.meanings}}
+      {{render "words/new_word_submeaning" meaning}}
+      {{#if canRemove}}
+        <a {{action "removeMeaning" meaning}}>Remove Meaning</a>
+      {{/if}}
+    {{/each}}
+
+    <a {{action "addMeaning"}}>Add New Meaning</a>
+
     <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
     <button class="negative" {{action "cancel"}}>Cancel</button>
   </div>

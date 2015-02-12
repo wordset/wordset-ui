@@ -1,0 +1,22 @@
+<label>
+  Part of speech
+  {{view "select" content=posList value=pos}}
+</label>
+<label>
+  Definition
+  {{inline-errors errors=errors.def}}
+  {{textarea value=def}}
+</label>
+<label>
+  Example sentence
+  {{inline-errors errors=errors.example}}
+  {{textarea value=example}}
+</label>
+<label>
+  Sources
+  <p>This is a pretty critical part of proposing a new word be
+    added. Please, please checkout the {{#link-to "guidelines"}}guidelines{{/link-to}}.
+    We will reject improperly-sourced word submissions!</p>
+  {{inline-errors errors=errors.reason}}
+  {{textarea value=reason}}
+</label>
