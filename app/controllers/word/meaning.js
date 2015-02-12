@@ -37,7 +37,7 @@ export default Ember.ObjectController.extend({
       if(this.get("session").get("isAuthenticated")) {
         this.set("editing", true);
       } else {
-        this.flash.notice("You must login to propose changes!")
+        this.flash.notice("You must login to propose changes!");
       }
 
     },

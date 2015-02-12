@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+/* global ga */
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   activate: function() {
@@ -12,7 +13,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     });
   }.on('didTransition'),
   actions: {
-    willTransition: function(transition) {
+    willTransition: function() {
       this.controller.set("showMenu", false);
     }
   }

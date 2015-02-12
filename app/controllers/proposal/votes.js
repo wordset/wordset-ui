@@ -28,9 +28,9 @@ export default Ember.ArrayController.extend({
       flagged: flagged,
       comment: _this.get("comment")
     });
-    v.save().then(function(newVote) {
+    v.save().then(function() {
       p.reload();
-    }, function(resp) {
+    }, function() {
       v.deleteRecord();
       p.reload();
       _this.flash.notice("We were unable to accept your vote.");
