@@ -25,6 +25,10 @@ export default Ember.ObjectController.extend({
           // makes everything work. weird.
         }
       );
+    },
+    cancel: function() {
+      this.get("model").destroy();
+      this.transitionToRoute("word.index", this.get("word"));
     }
   }
 });
