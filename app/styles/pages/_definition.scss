@@ -16,6 +16,7 @@
     right: 0px;
     top: 19px;
     a {
+      @include transition(0s);
       border: 1px solid $taupe;
       border-radius: 2px 2px 0px 0px;
       color: $dark-green;
