@@ -13,10 +13,10 @@
       {{#if showSearchList}}
         <div class="wordListWrapper">
           <ul class="wordList">
-            {{#each wordList.results}}
+            {{#each word in wordList.results}}
               <li>
-                <a {{action 'clickWordFromList' word_id}} href="" tabindex="0">
-                  {{name}}
+                <a {{action 'clickWordFromList' word}} href="" tabindex="0">
+                  {{word}}
                 </a>
               </li>
             {{else}}
