@@ -8,12 +8,14 @@
       </div>
     {{/if}}
     <div class="username">
-      <label> Username </label>
+      <label> Username
       {{input value=identification type="text" autofocus="autofocus"}}
+      </label>
     </div>
     <div class="password">
-      <label> Password </label>
+      <label> Password
       {{input type="password" value=password}}
+      </label>
     </div>
     <button {{action "authenticate"}}> Sign In </button>
 

@@ -2,8 +2,15 @@
 // a new meaning proposal
 
 import Ember from "ember";
+import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(EmberValidations.Mixin, {
+  validations: {
+    wordName: {
+      presence: true,
+      length: { minimum: 1 }
+    },
+  },
   posList: ["adv", "adj", "verb", "noun"],
 
   canRemove: function() {

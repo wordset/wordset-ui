@@ -4,13 +4,11 @@
 </label>
 <label>
   Definition
-  {{inline-errors errors=errors.def}}
-  {{textarea value=def}}
+  {{validated-textarea value=def errors=errors.def}}
 </label>
 <label>
   Example sentence
-  {{inline-errors errors=errors.example}}
-  {{textarea value=example}}
+  {{validated-textarea value=example errors=errors.example}}
 </label>
 <label>
   Sources

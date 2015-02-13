@@ -78,6 +78,13 @@ button {
       background: $button-hover-background-flag;
     }
   }
+  &[disabled] {
+    background: #CCC;
+    box-shadow: none;
+    color: #AAA;
+    cursor: inherit;
+    text-shadow: none;
+  }
 }
 
 .search, .wordList, .wrapper {

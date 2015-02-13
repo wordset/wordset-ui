@@ -4,22 +4,19 @@
      <div class="editDefinition" aria-live="polite">
         <label>
           Edit definition of word
-          {{inline-errors errors=errors.def}}
-          {{textarea value=meaning.def}}
+          {{validated-textarea value=model.def errors=errors.def}}
         </label>
         <label>
           Edit example sentence
-          {{inline-errors errors=errors.example}}
           <!-- Ember doesn't allow area-required="true" to be
           set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
-          {{textarea value=meaning.example}}
+          {{validated-textarea value=model.example errors=errors.example}}
         </label>
         <label>
           Reason for change
-          {{inline-errors errors=errors.reason}}
           {{textarea value=reason}}
         </label>
-        <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
+        <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
         <button class="negative" {{action "cancel"}}>Cancel</button>
       </div>
     {{else}}

@@ -1,4 +1,5 @@
 <div class="addMeaning">
+
   {{#each error in errors.messages}}
     <div class="error">
       {{error}}
@@ -10,16 +11,16 @@
   </label>
   <label>
     Definition
-    {{textarea value=def}}
+    {{validated-textarea value=def errors=errors.def}}
   </label>
   <label>
     Example sentence
-    {{textarea value=example}}
+    {{validated-textarea value=example errors=errors.example}}
   </label>
   <label>
     Reason and sources
     {{textarea value=reason}}
   </label>
-  <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
   <button class="negative" {{action "cancel"}}>Cancel</button>
 </div>

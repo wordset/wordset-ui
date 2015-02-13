@@ -6,7 +6,7 @@
   <div class="newWord">
     <label>
       Word
-      {{input value=model.wordName}}
+      {{validated-input value=model.wordName errors=errors.wordName}}
     </label>
 
     {{#each meaning in model.meanings}}
@@ -18,7 +18,7 @@
 
     <a {{action "addMeaning"}}>Add New Meaning</a>
 
-    <button class="submitProposal" {{action "submitProposal"}}>Suggest</button>
+    <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
     <button class="negative" {{action "cancel"}}>Cancel</button>
   </div>
 </div>
