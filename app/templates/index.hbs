@@ -1,10 +1,15 @@
-<div class="wrapper">
-  <ul class="links">
-    <li>{{#link-to "info.get-started"}} Get Started {{/link-to}}</li>
-    <li>{{#link-to "info.guidelines"}} Contribution Guidelines {{/link-to}}</li>
-    <li>{{#link-to "info.faqs"}} FAQs {{/link-to}}</li>
-    <li>{{#link-to "info.legal"}} Legal {{/link-to}}</li>
-  </ul>
+<div class="wrapper home">
+  <h1>The collaborative dictionary.</h1>
+  <p>Search for a word above to get started, or get a {{#link-to "words.random"}}random word{{/link-to}}.</p>
+  <h2>Get involved</h2>
+  <div class="links">
+    {{#link-to "info.get-started"}}
+      <div class="ionicon ion-asterisk"></div>Contributing {{/link-to}}
+    {{#link-to "info.guidelines"}}
+      <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
+    {{#link-to "info.faqs"}}
+      <div class="ionicon ion-help"></div>FAQs {{/link-to}}
+  </div>
 
   <h2>Contact</h2>
   <ul class="contact">

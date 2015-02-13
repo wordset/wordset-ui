@@ -15,9 +15,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   actions: {
     willTransition: function() {
       this.controller.set("showMenu", false);
+      Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     }
-  },
-  afterModel: function(model) {
-    Ember.$(document).attr('title', 'Wordset');
   }
 });

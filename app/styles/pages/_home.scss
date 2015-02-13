@@ -1,5 +1,27 @@
+.home p {
+  margin-bottom: 40px;
+}
+
 .links {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  a {
+    border: 1px solid #DDD;
+    border-radius: 2px;
+    color: lighten($dark-green, 20%);
+    display: inline-block;
+    margin: 10px;
+    min-width: 100px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background: #FAFAFA;
+    }
+  }
+  .ionicon {
+    font-size: 35px;
+    margin-bottom: 5px;
+  }
 }
 
 .contact {

@@ -20,6 +20,7 @@ Router.map(function() {
   });
   this.resource("words", function() {
     this.route("new");
+    this.route("random");
   });
   this.resource("proposals");
   this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
@@ -36,8 +37,6 @@ Router.map(function() {
     this.route("get-started");
     this.route("legal");
   });
-
-  this.resource("headquarters");
 
   //this.resource("submit-proposal");
 
