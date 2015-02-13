@@ -34,6 +34,7 @@ Router.map(function() {
     this.route("faqs");
     this.route("guidelines");
     this.route("get-started");
+    this.route("legal");
   });
 
   this.resource("headquarters");
