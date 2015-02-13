@@ -2,7 +2,7 @@ import Ember from 'ember';
 /* global JsDiff */
 
 export function diffText(o, n) {
-  var diff = JsDiff.diffWords(o, n);
+  var diff = JsDiff.diffWordsWithSpace(o, n);
   var output = "";
   diff.forEach(function(part) {
     var tag = part.added ? 'ins' :
