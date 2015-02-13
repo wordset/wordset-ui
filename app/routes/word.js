@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
 
   afterModel: function(model) {
-    // var artistName = this.modelFor('word').get('name');
-    // $(document).attr('title', artistName + ' songs - Rock & Roll');
+    var word = this.modelFor('word').get('id');
+    Ember.$(document).attr('title', word + ' – definition from Wordset');
   }
 });

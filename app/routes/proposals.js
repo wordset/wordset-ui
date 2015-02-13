@@ -5,5 +5,8 @@ export default Ember.Route.extend({
     return this.store.filter('proposal', { flagged: false }, function(proposal) {
       return !proposal.get('flagged');
     });
+  },
+  afterModel: function(model) {
+    Ember.$(document).attr('title', 'Proposals from Wordset');
   }
 });

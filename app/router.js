@@ -29,8 +29,14 @@ Router.map(function() {
   });
 
   this.resource("users");
-  this.resource("help");
-  this.resource("guidelines");
+
+  this.route("info", function() {
+    this.route("faqs");
+    this.route("guidelines");
+    this.route("get-started");
+  });
+
+  this.resource("headquarters");
 
   //this.resource("submit-proposal");
 

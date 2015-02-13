@@ -16,5 +16,8 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     willTransition: function() {
       this.controller.set("showMenu", false);
     }
+  },
+  afterModel: function(model) {
+    Ember.$(document).attr('title', 'Wordset');
   }
 });
