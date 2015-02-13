@@ -12,16 +12,4 @@
       color: $footer-hover-color;
     }
   }
-  .links, .social {
-    margin-bottom: 20px;
-    a:not(:last-of-type) {
-      margin-right: 20px;
-    }
-  }
-  .social {
-    font-size: 18px;
-    a {
-      text-decoration: none;
-    }
-  }
 }
