@@ -22,6 +22,15 @@
   .username, .email, .password {
     margin-bottom: 10px;
   }
+  .tos {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: -5px;
+    input {
+      display: inline-block;
+      width: 15px;
+    }
+  }
   button {
     margin: 30px auto 40px;
   }

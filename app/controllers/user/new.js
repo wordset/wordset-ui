@@ -6,7 +6,8 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
   validations: {
     id: {
       presence: true,
-      length: { minimum: 1 }
+      length: { minimum: 1,
+                maximum: 16 }
     },
     email: {
       presence: true,
@@ -16,10 +17,11 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
     },
     password: {
       presence: true,
-      length: { minimum: 8 }
+      length: { minimum: 8 },
+      confirmation: true,
     },
-    password_confirmation: {
-      presence: true,
+    acceptTos: {
+      acceptance: true,
     }
   },
   actions: {

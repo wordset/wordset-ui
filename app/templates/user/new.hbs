@@ -18,7 +18,13 @@
     </div>
     <div class="password">
       <label> Confirm password
-      {{validated-input type="password" value=password_confirmation errors=errors.password_confirmation}}
+      {{validated-input type="password" value=passwordConfirmation errors=errors.passwordConfirmation}}
+      </label>
+    </div>
+    <div class="tos">
+      <label>
+        {{input type="checkbox" checked=acceptTos}}
+        I accept the {{#link-to "info.legal"}}terms and conditions{{/link-to}}.
       </label>
     </div>
     <button  {{bind-attr disabled=isInvalid}} {{action "register"}}>Register</button>
