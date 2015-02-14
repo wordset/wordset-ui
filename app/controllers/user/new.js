@@ -1,6 +1,27 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend({
+
+export default Ember.ObjectController.extend( EmberValidations.Mixin, {
+  validations: {
+    id: {
+      presence: true,
+      length: { minimum: 1 }
+    },
+    email: {
+      presence: true,
+      length: { minimum: 10 },
+      format: { with: /^\S+@\S+\.\S+$/,
+                message: "must be a valid e-mail"}
+    },
+    password: {
+      presence: true,
+      length: { minimum: 8 }
+    },
+    password_confirmation: {
+      presence: true,
+    }
+  },
   actions: {
     register: function() {
       var _this = this;
@@ -10,6 +31,7 @@ export default Ember.ObjectController.extend({
       }, function(errors) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);
+        _this.set("errors", errors);
         _this.flash.notice('Oops! Looks like something was amiss.');
         console.log(errors);
       });

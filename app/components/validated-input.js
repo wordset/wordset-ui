@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
   actions: {
     showErrors: function() {
-      console.log("whe")
       this.set("showError", true);
     }
   }
