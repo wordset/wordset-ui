@@ -28,7 +28,13 @@
     margin-left: -5px;
     input {
       display: inline-block;
-      width: 15px;
+      float: left;
+      width: 18px;
+    }
+    span {
+      display: inline-block;
+      margin-top: 5px;
+      width: 85%;
     }
   }
   button {

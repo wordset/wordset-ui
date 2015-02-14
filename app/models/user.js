@@ -10,6 +10,10 @@ export default DS.Model.extend({
   rank: DS.attr("string"),
   votes: DS.hasMany("votes"),
 
+  // Only for registration purposes
+  emailOptIn: DS.attr("boolean"),
+  acceptTos: DS.attr("boolean"),
+
   isAdmin: function() {
     return (this.get("rank") === "Admin");
   }.property("rank"),
