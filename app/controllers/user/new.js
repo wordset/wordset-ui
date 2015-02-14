@@ -28,10 +28,11 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
       this.get("model").save().then(function(){
         _this.flash.success('Welcome! Now just log in to begin!');
         _this.transitionToRoute('user.login');
-      }, function(errors) {
+      }, function(resp) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);
-        _this.set("errors", errors);
+        resp.errors.id = resp.errors.username;
+        _this.set("errors", resp.errors);
         _this.flash.notice('Oops! Looks like something was amiss.');
         console.log(errors);
       });

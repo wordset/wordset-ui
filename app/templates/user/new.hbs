@@ -1,22 +1,10 @@
 <form {{submit "register"}}>
   <div class="sign-module">
     <h3>Register</h3>
-    {{#if isError}}
-      <div class="login-error">
-        <span class="ion-android-alert"></span>
-        There was an error signing up:
-        {{errors.message}}
-      </div>
-    {{/if}}
     <div class="username">
       <label>Username
       {{validated-input type="text" autofocus="autofocus" value=id errors=errors.id}}
       </label>
-      {{#each error in errors.username}}
-        <div class="error">
-          {{error.message}}
-        </div>
-      {{/each}}
     </div>
     <div class="email">
       <label>E-mail
@@ -27,11 +15,6 @@
       <label>Password
       {{validated-input type="password" value=password errors=errors.password}}
       </label>
-      {{#each error in errors.password}}
-        <div class="error">
-          <!-- Password{{error.message}} -->
-        </div>
-      {{/each}}
     </div>
     <div class="password">
       <label> Confirm password
