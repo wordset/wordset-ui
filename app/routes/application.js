@@ -13,13 +13,12 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       'title': this.get('url')
     });
   }.on('didTransition'),
-  didTransition: function(paths){
-    this._super(paths);
+  notifyMixpanel: function(){
     Ember.run.next(function(){
       path = window.location.href;
       mixpanel.track("pageview", {"url": path });
     });
-  },
+  }.on('didTransition'),
   actions: {
     willTransition: function() {
       this.controller.set("showMenu", false);
