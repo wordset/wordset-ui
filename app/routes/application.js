@@ -14,10 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     });
   }.on('didTransition'),
   notifyMixpanel: function(){
-    Ember.run.next(function(){
-      path = window.location.href;
-      mixpanel.track("pageview", {"url": path });
-    });
+    mixpanel.track("pageview", {"url": this.get('url') });
   }.on('didTransition'),
   actions: {
     willTransition: function() {
