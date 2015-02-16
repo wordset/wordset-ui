@@ -7,7 +7,7 @@
       <div class="user">User</div>
       <div class="state">Status</div>
     </div>
-    {{#each proposal in model}}
+    {{#each proposal in controller}}
       <div {{bind-attr class="proposal.state :item"}}>
         <div class="word">
           {{proposal.wordName}}
