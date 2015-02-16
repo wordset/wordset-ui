@@ -1,5 +1,7 @@
 <div class="word">
-  {{model.wordName}}
+  {{#link-to "word.index" model.word}}
+    {{model.wordName}}
+  {{/link-to}}
 </div>
 <div class="pos">
   {{pos}}

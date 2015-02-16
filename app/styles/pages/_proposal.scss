@@ -23,6 +23,10 @@
   @media screen and (min-width: $medium) {
     width: 42%;
   }
+  .word a {
+    color: $text-color;
+    text-decoration: none;
+  }
   .pos {
     margin-bottom: 20px;
   }
