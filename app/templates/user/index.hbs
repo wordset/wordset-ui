@@ -18,7 +18,7 @@
     <h3>Their Proposals</h3>
 
     <div class="word-proposals">
-    {{#each proposal in model.proposals}}
+    {{#each proposal in controller.proposals}}
       <div {{bind-attr class="proposal.state :item"}}>
         <div class="word">
           {{proposal.wordName}}
