@@ -21,9 +21,9 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com",
+      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com http://cdn.mxpnl.com",
       'font-src': "'self'",
-      'connect-src': "'self' http://localhost:3000 http://wordnet-data.herokuapp.com",
+      'connect-src': "'self' http://localhost:3000 http://wordnet-data.herokuapp.com http://api.mixpanel.com",
       'img-src': "'self' http://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
