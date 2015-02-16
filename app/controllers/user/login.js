@@ -6,7 +6,9 @@ export default Ember.Controller.extend(LoginControllerMixin, {
   actions: {
     authenticate: function() {
       var _this = this;
-      this._super().then(null, function() {
+      this._super().then(function() {
+        
+      }, function() {
         _this.set('errorMessage', 'Invalid username and password');
       });
     }
