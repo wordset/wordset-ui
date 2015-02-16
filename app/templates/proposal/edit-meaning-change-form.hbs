@@ -1,0 +1,21 @@
+<div class="addMeaning">
+  {{#each error in errors.messages}}
+    <div class="error">
+      {{error}}
+    </div>
+  {{/each}}
+  <label>
+    Definition
+    {{validated-textarea value=def errors=errors.def}}
+  </label>
+  <label>
+    Example sentence
+    {{validated-textarea value=example errors=errors.example}}
+  </label>
+  <label>
+    Reason and sources
+    {{textarea value=reason}}
+  </label>
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
+  <button class="negative" {{action "cancelEdit"}}>Cancel</button>
+</div>

@@ -8,6 +8,10 @@ module.exports = function(environment) {
     locationType: 'auto',
     apiPrefix: '/api/v1',
 
+
+    
+    posList: ["adv", "adj", "verb", "noun"],
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

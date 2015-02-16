@@ -7,17 +7,22 @@
   {{model.original.pos}}
 </div>
 
-<div class="info">
-  <div class="definition">
-    <div class="def">
-      {{diff-text model.original.def def}}
+
+{{#if isEditing}}
+  {{partial "proposal/edit-meaning-change-form"}}
+{{else}}
+  <div class="info">
+    <div class="definition">
+      <div class="def">
+        {{diff-text model.original.def def}}
+      </div>
+    </div>
+    <div class="quoteWrap">
+      <div class="quote highlight">
+        <span class="quotemark"> “ </span>
+          {{diff-text model.original.example model.example}}
+        <span class="quotemark"> ” </span>
+      </div>
     </div>
   </div>
-  <div class="quoteWrap">
-    <div class="quote highlight">
-      <span class="quotemark"> “ </span>
-        {{diff-text model.original.example model.example}}
-      <span class="quotemark"> ” </span>
-    </div>
-  </div>
-</div>
+{{/if}}
