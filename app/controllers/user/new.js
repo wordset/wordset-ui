@@ -36,7 +36,6 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
         resp.errors.id = resp.errors.username;
         _this.set("errors", resp.errors);
         _this.flash.notice('Oops! Looks like something was amiss.');
-        console.log(errors);
       });
     }
   }

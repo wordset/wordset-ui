@@ -45,7 +45,6 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
       });
     },
     startEditing: function() {
-      console.log("Start editing");
       if(this.get("session").get("isAuthenticated")) {
         this.set("editing", true);
       } else {
