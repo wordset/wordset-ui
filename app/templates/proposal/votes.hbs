@@ -18,7 +18,12 @@
     <p>{{#link-to "user.new"}}Sign up to vote.{{/link-to}}</p>
   {{/if}}
 {{else}}
-<p>Voting is closed.</p>
+<p>
+  Voting is closed.
+  {{#if currentUser}}
+    {{#link-to "proposals.random"}}See another proposal?{{/link-to}}
+  {{/if}}
+</p>
 {{/if}}
 
 <h4>Voting History</h4>
