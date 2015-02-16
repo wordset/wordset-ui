@@ -22,7 +22,9 @@ Router.map(function() {
     this.route("new");
     this.route("random");
   });
-  this.resource("proposals");
+  this.resource("proposals", function() {
+    this.route("random");
+  });
   this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
     this.route("new-word");
     this.route("new-meaning");

@@ -2,7 +2,7 @@
 {{#if isOpen}}
   {{#if currentUser}}
     {{#if myVote}}
-      <p>You've already voted.</p>
+      <p>Thanks for your vote. {{#link-to "proposals.random"}}See another proposal?{{/link-to}}</p>
     {{else}}
       <div class="new-vote">
         <button {{action "voteYae"}}><span class="ion-thumbsup"></span>Yae</button>
