@@ -8,18 +8,23 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     return this.store.find('word_list');
   },
   notifyGoogleAnalytics: function() {
-    return ga('send', 'pageview', {
-      'page': this.get('url'),
-      'title': this.get('url')
-    });
+
   }.on('didTransition'),
   notifyMixpanel: function(){
-    mixpanel.track("pageview", {"url": this.get('url') });
+
+    console.log(this.get("url"))
   }.on('didTransition'),
   actions: {
     willTransition: function() {
       this.controller.set("showMenu", false);
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
+    },
+    didTransition: function(paths) {
+      mixpanel.track("pageview", {"url": window.location.pathname });
+      ga('send', 'pageview', {
+        'page': window.location.href,
+        'title': document.title,
+      });
     }
   }
 });
