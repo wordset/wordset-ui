@@ -17,7 +17,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       var user = this.get("session").get("account_id");
       mixpanel.identify(user);
       ga('send', 'pageview', {
-        'page': window.location.href,
+        'page': window.location.pathname,
         'title': document.title,
       });
     }
