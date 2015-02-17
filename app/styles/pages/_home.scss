@@ -13,17 +13,20 @@
     &:nth-child(even) {
       background: #F3F3F3;
     }
+    &:hover {
+      background: #EEE;
+    }
+    &.accepted {
+      background: $positive-background;
+    }
+    .activity-word, .value {
+      font-weight: 500;
+    }
     &.yae .value {
       color: $positive-color;
     }
     &.nay .value {
       color: $negative-color;
-    }
-    &:hover {
-      background: #EEE;
-    }
-    .activity-word, .value {
-      font-weight: 500;
     }
   }
   a {
