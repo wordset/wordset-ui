@@ -1,8 +1,7 @@
 <div class="addMeaning">
-  <label>
-    Word
-    {{validated-input value=model.wordName errors=errors.name}}
-  </label>
+  <div class="word">
+    {{model.wordName}}
+  </div>
   {{#each error in errors.messages}}
     <div class="error">
       {{error}}

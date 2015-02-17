@@ -1,5 +1,4 @@
 <div class="addMeaning">
-
   {{#each error in errors.messages}}
     <div class="error">
       {{error}}
@@ -22,5 +21,6 @@
     {{textarea value=reason}}
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
+  <button class="flag" {{action "deleteProposal"}}>Delete</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
 </div>

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.ObjectController.extend(
+{
   posList: ["adv", "adj", "verb", "noun"],
   needs: ['application'],
   isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
@@ -50,6 +51,18 @@ export default Ember.ObjectController.extend({
           // makes everything work. weird.
         }
       );
+    },
+    deleteProposal: function() {
+      this.get("model");
+      this.set("isEditing", false);
+      // then(
+      //   function(model) {
+      //     _this.transitionToRoute('proposals');
+      //   },
+      //   function() {
+      //
+      //   }
+      // )
     },
     cancelEdit: function() {
       this.get("model").rollback();
