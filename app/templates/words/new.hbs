@@ -10,10 +10,12 @@
     </label>
 
     {{#each meaning in model.meanings}}
-      {{render "words/new_word_submeaning" meaning}}
-      {{#if canRemove}}
-        <a {{action "removeMeaning" meaning}}>Remove Meaning</a>
-      {{/if}}
+      <div class="submeaning">
+        {{render "words/new_word_submeaning" meaning}}
+        {{#if canRemove}}
+          <a {{action "removeMeaning" meaning}}>Remove Meaning</a>
+        {{/if}}
+      </div>
     {{/each}}
 
     <a {{action "addMeaning"}}>Add New Meaning</a>

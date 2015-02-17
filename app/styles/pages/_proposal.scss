@@ -137,6 +137,10 @@
       background: #F3F3F3;
     }
     padding: 8px 4px;
+    &.edit {
+      border-bottom: 2px solid $dark-green;
+      border-top: 2px solid $dark-green;
+    }
   }
   .activity.yae {
     .value {
