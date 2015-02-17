@@ -18,6 +18,12 @@
         Top Contributors
       {{/link-to}}
     </li>
+    <li>
+      {{#link-to "words.random" class="randomWordLink"}}
+        <div class="ionicon ion-ios-infinite"></div>
+        Random Word
+      {{/link-to}}
+    </li>
     {{#if session.isAuthenticated}}
       <li>
         <a {{action "invalidateSession"}}>
