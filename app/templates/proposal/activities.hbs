@@ -1,0 +1,13 @@
+<h4>Activity</h4>
+{{#if firstObject}}
+  <div class="title">
+    <div class="name">Name</div>
+    <div class="value">Vote</div>
+    <div class="comment">Comment</div>
+  </div>
+  {{#each activity in controller}}
+    {{render "proposal/activity" activity}}
+  {{/each}}
+{{else}}
+  <p>No votes yet.</p>
+{{/if}}

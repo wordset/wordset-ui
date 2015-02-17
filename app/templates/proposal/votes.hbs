@@ -25,27 +25,3 @@
   {{/if}}
 </p>
 {{/if}}
-
-<h4>Voting History</h4>
-{{#if firstObject}}
-  <div class="title">
-    <div class="name">Name</div>
-    <div class="value">Vote</div>
-    <div class="comment">Comment</div>
-  </div>
-  {{#each vote in model}}
-    <div {{bind-attr class=":vote vote.yae:yae:nay"}}>
-      <div class="name">
-        {{vote.user.id}}
-      </div>
-      <div class="value">
-        {{vote.value}}
-      </div>
-      <div class="comment">
-        {{vote.comment}}
-      </div>
-    </div>
-  {{/each}}
-{{else}}
-  <p>No votes yet.</p>
-{{/if}}

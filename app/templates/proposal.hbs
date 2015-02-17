@@ -23,7 +23,7 @@
   {{#if isMeaningChange}}
     {{partial "proposal/meaning-change" model}}
   {{/if}}
-  
+
   {{#if canEdit}}
     {{#if isEditing}}
     {{else}}
@@ -61,4 +61,5 @@
   </div>
 
   {{render "proposal/votes" model.votes}}
+  {{render "proposal/activities" model.activities}}
 </div>

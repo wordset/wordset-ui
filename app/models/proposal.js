@@ -11,6 +11,7 @@ var Proposal = DS.Model.extend({
   createdAt: DS.attr("date"),
   tally: DS.attr("number"),
   votes: DS.hasMany("vote"),
+  activities: DS.hasMany("activity"),
   flagged: DS.attr("boolean"),
 
   // NewWord

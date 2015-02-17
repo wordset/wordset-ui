@@ -128,7 +128,7 @@
     font-size: 14px;
     text-transform: uppercase;
   }
-  .vote {
+  .activity {
     margin-bottom: 2px;
     &:nth-child(odd) {
       background: #FDFDFD;
@@ -138,17 +138,17 @@
     }
     padding: 8px 4px;
   }
-  .vote.yae {
+  .activity.yae {
     .value {
       color: $positive-color;
     }
   }
-  .vote.nay {
+  .activity.nay {
     .value {
       color: $red;
     }
   }
-  .name, .value, .comment {
+  .name, .value, .comment, .type {
     display: inline-block;
   }
   .name {
