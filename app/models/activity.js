@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  user: DS.belongsTo("user"),
-  proposal: DS.belongsTo("proposal"),
-  word: DS.belongsTo("word"),
+  userId: DS.attr("string"),
+  proposalId: DS.attr("string"),
+  wordId: DS.attr("string"),
 
   createdAt: DS.attr("date"),
 

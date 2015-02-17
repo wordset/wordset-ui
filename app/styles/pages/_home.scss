@@ -2,6 +2,39 @@
   margin-bottom: 40px;
 }
 
+.recent-activity {
+  margin-bottom: 40px;
+  .activity {
+    @include transition();
+    margin-bottom: 2px;
+    &:nth-child(odd) {
+      background: #FDFDFD;
+    }
+    &:nth-child(even) {
+      background: #F3F3F3;
+    }
+    &.yae .value {
+      color: $positive-color;
+    }
+    &.nay .value {
+      color: $negative-color;
+    }
+    &:hover {
+      background: #EEE;
+    }
+    .activity-word, .value {
+      font-weight: 500;
+    }
+  }
+  a {
+    color: $text-color;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    width: 100%;
+  }
+}
+
 .links {
   margin-bottom: 40px;
   a {

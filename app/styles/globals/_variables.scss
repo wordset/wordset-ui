@@ -57,8 +57,9 @@ $dropdown-anchor-color: $dark-green;
 // For positive/negative styles for votes and proposals
 
 $positive-background:lighten($dark-green, 69%);
-$positive-color: lighten($dark-green, 20%); 
+$positive-color: lighten($dark-green, 20%);
 
+$negative-color: $red;
 
 $footer-color: $dark-green;
 $footer-hover-color: lighten($dark-green, 10%);

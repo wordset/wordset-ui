@@ -8,13 +8,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   activate: function() {
     return this.store.find('word_list');
   },
-  notifyGoogleAnalytics: function() {
-
-  }.on('didTransition'),
-  notifyMixpanel: function(){
-
-    console.log(this.get("url"))
-  }.on('didTransition'),
+  
   actions: {
     willTransition: function() {
       this.controller.set("showMenu", false);
