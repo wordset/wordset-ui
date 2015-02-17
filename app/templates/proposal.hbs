@@ -15,13 +15,20 @@
   </div>
 
   {{#if isNewMeaning}}
-    {{render "proposal/new-meaning" model}}
+    {{partial "proposal/new-meaning" model}}
   {{/if}}
   {{#if isNewWord}}
-    {{render "proposal/new-word" model}}
+    {{partial "proposal/new-word" model}}
   {{/if}}
   {{#if isMeaningChange}}
-    {{render "proposal/meaning-change" model}}
+    {{partial "proposal/meaning-change" model}}
+  {{/if}}
+  
+  {{#if canEdit}}
+    {{#if isEditing}}
+    {{else}}
+      <button {{action "startEdit"}}> EDIT</button>
+    {{/if}}
   {{/if}}
 </div>
 

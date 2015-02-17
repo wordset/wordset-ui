@@ -4,27 +4,29 @@
 }
 
 .wordWrap {
-  border-bottom: 1px solid $taupe;
-  box-shadow: inset 0px -4px 4px -5px #CCC;
   margin-bottom: 20px;
   position: relative;
   .word, .tabs {
     display: inline-block;
+    @media screen and (max-width: $med-small) {
+      display: block;
+    }
+  }
+  .word {
+    margin-bottom: 25px;
+    @media screen and (min-width: $med-small) {
+      margin-right: 60px;
+    }
   }
   .tabs {
-    position: absolute;
-    right: 0px;
-    top: 19px;
     a {
       @include transition(0s);
-      border: 1px solid $taupe;
-      border-radius: 2px 2px 0px 0px;
       color: $dark-green;
       padding: 5px 10px 0px;
       margin-right: 20px;
       text-decoration: none;
       &.active {
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px solid $lime;
         background: #FFF;
         box-shadow: none;
       }
@@ -33,7 +35,7 @@
 }
 
 .pos {
-  border-bottom: 2px solid $lime;
+  border-bottom: 2px solid $taupe;
   display: inline-block;
   font-style: italic;
   margin-left: 0px;

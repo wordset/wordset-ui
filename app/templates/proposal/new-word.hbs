@@ -1,22 +1,26 @@
-<div class="word">
-  {{model.wordName}}
-</div>
-{{#each meaning in meanings}}
-  <div class="pos">
-    {{meaning.pos}}
+{{#if isEditing}}
+  {{partial "proposal/edit-new-word"}}
+{{else}}
+  <div class="word">
+    {{model.wordName}}
   </div>
-  <div class="info">
-    <div class="definition">
-      <div class="def">
-        {{meaning.def}}
+  {{#each meaning in meanings}}
+    <div class="pos">
+      {{meaning.pos}}
+    </div>
+    <div class="info">
+      <div class="definition">
+        <div class="def">
+          {{meaning.def}}
+        </div>
+      </div>
+      <div class="quoteWrap">
+        <div class="quote highlight">
+          <span class="quotemark"> “ </span>
+          {{meaning.example}}
+          <span class="quotemark"> ” </span>
+        </div>
       </div>
     </div>
-    <div class="quoteWrap">
-      <div class="quote highlight">
-        <span class="quotemark"> “ </span>
-        {{meaning.example}}
-        <span class="quotemark"> ” </span>
-      </div>
-    </div>
-  </div>
-{{/each}}
+  {{/each}}
+{{/if}}

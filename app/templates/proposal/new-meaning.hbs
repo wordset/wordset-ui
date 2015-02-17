@@ -3,23 +3,28 @@
     {{model.wordName}}
   {{/link-to}}
 </div>
-<div class="pos">
-  {{pos}}
-</div>
-<div class="info">
-  <div class="definition">
-    <ins class="def">
-      {{def}}
-    </ins>
+
+{{#if isEditing}}
+  {{partial "proposal/edit-new-meaning-form"}}
+{{else}}
+  <div class="pos">
+    {{pos}}
   </div>
-  <div class="quoteWrap">
-    <ins class="quote highlight">
-      <span class="quotemark"> “ </span>
-      {{example}}
-      <span class="quotemark"> ” </span>
-    </ins>
+  <div class="info">
+    <div class="definition">
+      <ins class="def">
+        {{def}}
+      </ins>
+    </div>
+    <div class="quoteWrap">
+      <ins class="quote highlight">
+        <span class="quotemark"> “ </span>
+        {{example}}
+        <span class="quotemark"> ” </span>
+      </ins>
+    </div>
   </div>
-</div>
+{{/if}}
 
 {{#if original.meanings}}
 <h3>Existing Meanings</h3>

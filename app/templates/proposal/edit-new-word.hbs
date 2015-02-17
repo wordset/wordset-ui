@@ -1,0 +1,31 @@
+<div class="addMeaning">
+  <label>
+    Word
+    {{validated-input value=model.wordName errors=errors.name}}
+  </label>
+  {{#each error in errors.messages}}
+    <div class="error">
+      {{error}}
+    </div>
+  {{/each}}
+  {{#each meaning in meanings}}
+    <label>
+      Part of speech
+      {{view "select" content=posList value=meaning.pos}}
+    </label>
+    <label>
+      Definition
+      {{validated-textarea value=meaning.def errors=errors.def}}
+    </label>
+    <label>
+      Example sentence
+      {{validated-textarea value=meaning.example errors=errors.example}}
+    </label>
+    <label>
+      Reason and sources
+      {{textarea value=reason}}
+    </label>
+  {{/each}}
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
+  <button class="negative" {{action "cancelEdit"}}>Cancel</button>
+</div>
