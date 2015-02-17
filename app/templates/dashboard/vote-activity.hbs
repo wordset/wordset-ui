@@ -1,5 +1,6 @@
 <div {{bind-attr class=":activity isYae:yae:nay"}}>
   {{#link-to "proposal.index" activity.proposalId}}
+    <span class="ionicon"></span>
     {{activity.userId}}
     voted
     <span class="value">{{activity.voteValue}}</span>

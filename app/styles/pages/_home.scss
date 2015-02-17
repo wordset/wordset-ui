@@ -17,16 +17,39 @@
       background: #EEE;
     }
     &.accepted {
-      background: $positive-background;
+      background: darken($positive-background, 5%);
+      .ionicon {
+        @extend .ion-checkmark-circled;
+      }
+    }
+    &.rejected {
+      background: lighten($negative-color, 50%);
+      .ionicon {
+        @extend .ion-close-circled;
+      }
+    }
+    .ionicon {
+      color: #666;
+      margin-right: 10px;
     }
     .activity-word, .value {
       font-weight: 500;
     }
-    &.yae .value {
-      color: $positive-color;
+    &.yae {
+      .ionicon {
+        @extend .ion-thumbsup;
+      }
+      .value {
+        color: $positive-color;
+      }
     }
-    &.nay .value {
-      color: $negative-color;
+    &.nay {
+      .ionicon {
+        @extend .ion-thumbsdown;
+      }
+      .value {
+        color: $negative-color;
+      }
     }
   }
   a {

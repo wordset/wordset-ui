@@ -1,5 +1,6 @@
 <div {{bind-attr class=":activity finalState"}}>
   {{#link-to "proposal.index" activity.proposalId}}
+    <span class="ionicon"></span>
     The proposal for
     <span class="activity-word">{{activity.wordId}}</span>
     was {{activity.finalState}}.
