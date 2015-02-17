@@ -3,7 +3,13 @@
     <span class="ionicon"></span>
     {{activity.userId}}
     voted
-    <span class="value">{{activity.voteValue}}</span>
+    <span class="value">
+      {{#if isYae}}
+        yae
+      {{else}}
+        nay
+      {{/if}}
+    </span>
     on a proposal for
     <span class="activity-word">{{activity.wordId}}</span>.
   {{/link-to}}
