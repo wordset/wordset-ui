@@ -5,6 +5,6 @@ export default Ember.Route.extend({
     return this.store.find("word");
   },
   afterModel: function(words) {
-    this.transitionTo("word.index", words.get("lastObject"));
+    this.replaceWith("word.index", words.get("lastObject"));
   }
 });
