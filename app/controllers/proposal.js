@@ -32,7 +32,8 @@ export default Ember.ObjectController.extend({
     }
   }.property("tally"),
   canEdit: function() {
-    return this.get("isOpen") && (this.get("currentUser") === this.get("user"));
+    return false;
+    //return this.get("isOpen") && (this.get("currentUser") === this.get("user"));
   }.property("isOpen", "currentUser", "user"),
   actions: {
     startEdit: function() {
