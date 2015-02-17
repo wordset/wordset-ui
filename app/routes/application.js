@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     didTransition: function(paths) {
       mixpanel.track("pageview", {"url": window.location.pathname });
-      var user = this.get("session").get("account_id");
+      var user = this.get("session").get("username");
       mixpanel.identify(user);
       mixpanel.people.set({
         '$name': user,
