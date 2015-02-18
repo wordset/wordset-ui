@@ -57,7 +57,10 @@
     vertical-align: text-top;
     width: 93%;
   }
-
+  .meaning {
+    background: $body-background;
+    z-index: 10;
+  }
   .edit-link, .locked {
     @include transition(0.2s);
     display: inline-block;

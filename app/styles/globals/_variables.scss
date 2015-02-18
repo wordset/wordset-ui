@@ -34,6 +34,7 @@ $sign-in-color: $lime;
 $menu-background: $light-grey;
 $menu-color: $dark-green;
 
+$body-background: #FFF;
 $text-color: $black;
 
 $header-color: $dark-green;
@@ -69,6 +70,9 @@ $footer-background: $light-grey;
 // Mixins
 
 @mixin transition($time: 0.5s, $type: all) {
-  -webkit-transition: $type $time;
-  transition: $type $time;
+  -webkit-transition: $type $time ease;
+     -moz-transition: $type $time ease;
+      -ms-transition: $type $time ease;
+       -o-transition: $type $time ease;
+          transition: $type $time ease;
 }

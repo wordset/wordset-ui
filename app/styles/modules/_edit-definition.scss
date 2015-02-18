@@ -1,5 +1,5 @@
 .editDefinition, .addMeaning, .newWord {
-  margin-bottom: 20px;
+  z-index: -1;
   input, textarea, select {
     font-size: 16px;
     padding: 5px;
@@ -31,20 +31,22 @@
   }
 }
 
+.editDefWrap {
+  height: 0px;
+  .editDefinition {
+    height: 0px;
+    overflow: hidden
+  }
+}
+.editDefWrap.display-edit {
+  height: 100%;
+  .editDefinition {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
 .edit-link span {
   font-size: 1px;
   opacity: 0;
-}
-
-.addMeaningLink {
-  border: 2px solid $lime;
-  border-radius: 2px;
-  color: #666;
-  padding: 10px 20px;
-  position: absolute;
-  right: 20px;
-  text-decoration: none;
-  &.active {
-    display: none;
-  }
 }

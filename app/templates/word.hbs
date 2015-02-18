@@ -13,6 +13,11 @@
     <div class="tabs">
       {{#link-to "word.index" class="active"}}Definition{{/link-to}}
       {{#link-to "word.proposals"}}Proposals{{/link-to}}
+      {{#if session.isAuthenticated}}
+        {{#link-to 'word.new-meaning' model}}
+          Propose New Meaning
+        {{/link-to}}
+      {{/if}}
     </div>
   </div>
 

@@ -1,7 +1,42 @@
 <li>
   <div class="info" tabindex="0">
-    {{#if displayEdit}}
-     <div class="editDefinition" aria-live="polite">
+    <div class="meaning">
+      <div class="defWrap">
+        <div class="def">
+          {{meaning.def}}
+
+          {{#if meaning.openProposal}}
+            <div class="openProposal">
+              <span class="ion-help-buoy"></span>
+              This definition has an
+              {{#link-to "proposal" meaning.openProposal}}
+               open proposal
+              {{/link-to}}
+              which we'd love your help with.
+            </div>
+          {{else}}
+            {{#if displayEdit}}
+            {{else}}
+              {{#if session.isAuthenticated}}
+                {{edit-button action="startEditing"}}
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        </div>
+      </div> <!-- defWrap div -->
+
+      {{#if meaning.example}}
+      <div class="quoteWrap">
+        <div class="quote">
+          <span class="quotemark">“</span>
+          {{meaning.example}}
+          <span class="quotemark">”</span>
+        </div>
+      </div>
+      {{/if}}
+    </div> <!-- meaning div -->
+    <div {{bind-attr class=":editDefWrap displayEdit"}}>
+      <div class="editDefinition" aria-live="polite">
         <label>
           Edit definition of word
           {{validated-textarea value=model.def errors=errors.def}}
@@ -20,40 +55,6 @@
         <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
         <button class="negative" {{action "cancel"}}>Cancel</button>
       </div>
-    {{else}}
-      <div class="meaning">
-        <div class="defWrap">
-          <div class="def">
-            {{meaning.def}}
-
-            {{#if meaning.openProposal}}
-              <div class="openProposal">
-                <span class="ion-help-buoy"></span>
-                This definition has an
-                {{#link-to "proposal" meaning.openProposal}}
-                 open proposal
-                {{/link-to}}
-                which we'd love your help with.
-              </div>
-            {{else}}
-              {{#if session.isAuthenticated}}
-                {{edit-button action="startEditing"}}
-              {{/if}}
-            {{/if}}
-          </div>
-        </div>
-
-        {{#if meaning.example}}
-        <div class="quoteWrap">
-          <div class="quote">
-            <span class="quotemark">“</span>
-            {{meaning.example}}
-            <span class="quotemark">”</span>
-          </div>
-        </div>
-        {{/if}}
-
-      </div>
-    {{/if}}
+    </div>
   </div>
 </li>
