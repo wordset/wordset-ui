@@ -1,0 +1,19 @@
+<div class="editDefinition" aria-live="polite">
+  <label>
+    Edit definition of word
+    {{validated-textarea value=model.def errors=errors.def}}
+  </label>
+  <label>
+    Edit example sentence
+    <p>Note: no quotemarks are necessary.</p>
+    <!-- Ember doesn't allow area-required="true" to be
+    set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
+    {{validated-textarea value=model.example errors=errors.example}}
+  </label>
+  <label>
+    Reason for change
+    {{textarea value=reason}}
+  </label>
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
+  <button class="negative" {{action "cancel"}}>Cancel</button>
+</div>
