@@ -16,6 +16,5 @@
   <p>This is a pretty critical part of proposing a new word be
     added. Please, please checkout the {{#link-to "info.guidelines"}}guidelines{{/link-to}}.
     We will reject improperly-sourced word submissions!</p>
-  {{inline-errors errors=errors.reason}}
-  {{textarea value=reason}}
+  {{validated-textarea value=reason errors=errors.reason}}
 </label>

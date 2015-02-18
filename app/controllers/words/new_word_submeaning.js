@@ -10,6 +10,10 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
     example: {
       presence: true,
       length: { minimum: 10 }
+    },
+    reason: {
+      presence: true,
+      length: { minimum: 10 }
     }
   },
   posList: ["adv", "adj", "verb", "noun"],
