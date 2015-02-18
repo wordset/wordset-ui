@@ -1,4 +1,11 @@
 <div class="addMeaning">
+  <h2>Add Totally New Meaning</h2>
+  <p><strong>NOTE!</strong> This is only if it's an entirely new meaning.
+    If you simply want to expand or extend one of the existing
+    meanings, please hover over the entry and click the
+    edit button that appears!</p>
+  <p>Meanings that are already covered (even badly) by an
+    existing meaning will be rejected</p>
 
   {{#each error in errors.messages}}
     <div class="error">
@@ -23,5 +30,5 @@
     {{textarea value=reason}}
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
-  <button class="negative" {{action "cancel"}}>Cancel</button>
+  <button class="negative" {{action "cancelShowAddMeaning"}}>Cancel</button>
 </div>

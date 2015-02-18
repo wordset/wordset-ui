@@ -37,9 +37,5 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin,
         }
       );
     },
-    cancel: function() {
-      this.get("model").destroy();
-      this.transitionToRoute("word.index", this.get("word"));
-    }
   }
 });

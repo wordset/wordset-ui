@@ -1,7 +1,11 @@
 {{partial "word/entries"}}
 
 {{#if session.isAuthenticated}}
-  {{#link-to 'word.new-meaning' model}}
-    Propose New Meaning
-  {{/link-to}}
+  {{#if showMeaningProposal}}
+    {{render "word/new-meaning" newMeaningProposal}}
+  {{else}}
+    <button {{action 'toggleShowAddMeaning'}}>
+      Propose New Meaning
+    </button>
+  {{/if}}
 {{/if}}
