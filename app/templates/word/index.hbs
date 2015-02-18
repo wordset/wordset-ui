@@ -1,1 +1,7 @@
 {{partial "word/entries"}}
+
+{{#if session.isAuthenticated}}
+  {{#link-to 'word.new-meaning' model}}
+    Propose New Meaning
+  {{/link-to}}
+{{/if}}
