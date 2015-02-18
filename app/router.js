@@ -16,6 +16,7 @@ Router.map(function() {
   this.route("user", {}, function() {
     this.route("new");
     this.route("login");
+    this.route("forgot-password");
     this.route("index", {path: "/:user_id"});
   });
   this.resource("words", function() {
