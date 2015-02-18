@@ -1,7 +1,12 @@
-import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend(
-{
+export default Ember.ObjectController.extend( EmberValidations.Mixin, {
+  validations: {
+    comment: {
+      presence: true,
+      length: { minimum: 1 }
+    },
+  },
   posList: ["adv", "adj", "verb", "noun"],
   needs: ['application'],
   isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
@@ -67,6 +72,23 @@ export default Ember.ObjectController.extend(
     cancelEdit: function() {
       this.get("model").rollback();
       this.set("isEditing", false);
+    },
+    submitComment: function() {
+      var _this = this;
+      var p = this.get("model").get("id");
+      var comment = this.get("comment");
+      var a = this.store.createRecord("activity", {
+        proposalId: p,
+        comment: comment,
+        type: "Comment",
+      });
+      a.save().then( function(comment) {
+        _this.set("comment", "");
+        _this.get("model").get("activities").addObject(comment);
+      },
+      function() {
+
+      });
     }
   }
 });

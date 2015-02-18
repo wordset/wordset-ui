@@ -18,7 +18,9 @@ export default Ember.ArrayController.extend({
     voteFlag: function() {
       this.get("registerVote")(this, false, true);
     },
+
   },
+
   registerVote: function(_this, yae, flagged) {
     var p = _this.get("proposal").get("model");
     var v = _this.store.createRecord("vote", {

@@ -9,10 +9,6 @@
         <button {{action "voteNay"}} class="negative"><span class="ion-thumbsdown"></span>Nay</button>
         <button {{action "voteFlag"}} class="flag"><span class="ion-flag"></span>Flag</button>
       </div>
-      <div class="comment-box">
-        <div>Comment</div>
-        {{textarea value=comment}}
-      </div>
     {{/if}}
   {{else}}
     <p>{{#link-to "user.new"}}Sign up to vote.{{/link-to}}</p>

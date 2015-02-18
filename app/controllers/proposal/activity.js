@@ -6,5 +6,5 @@ export default Ember.ObjectController.extend({
   }.property("type"),
   isYae: function() {
     return this.get("voteValue") > 0;
-  }.property("voteValue")
+  }.property("voteValue"),
 });

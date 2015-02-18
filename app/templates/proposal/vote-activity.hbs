@@ -1,10 +1,15 @@
 <div {{bind-attr class=":activity isYae:yae:nay"}}>
-  <div class="name">
-    {{activity.userId}}
-  </div>
-  <div class="value">
-    {{activity.voteValue}}
-  </div>
+  {{activity.userId}}
+  voted
+  <span class="value">
+    {{#if isYae}}
+      yae
+    {{else}}
+      nay
+    {{/if}}
+    ({{activity.voteValue}})
+  </span>
+
   <div class="comment">
     {{activity.comment}}
   </div>
