@@ -62,11 +62,7 @@
 
   {{render "proposal/votes" model.votes}}
   {{#if isOpen}}
-    <div class="comment-box">
-      <h4>Comment</h4>
-      {{validated-textarea value=comment error=errors.comment}}
-      <button {{bind-attr disabled=isInvalid}} {{action "submitComment"}}>Leave Comment</button>
-    </div>
+    {{render "proposal/new-comment"}}
   {{/if}}
   {{render "proposal/activities" model.activities}}
 </div>

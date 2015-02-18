@@ -1,0 +1,5 @@
+<div class="comment-box">
+  <h4>Comment</h4>
+  {{validated-textarea value=comment error=errors.comment}}
+  <button {{bind-attr disabled=isInvalid}} {{action "submitComment"}}>Leave Comment</button>
+</div>
