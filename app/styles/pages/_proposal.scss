@@ -39,7 +39,7 @@
   h3 {
     margin-top: 20px;
   }
-  li {
+  ol {
     padding: 20px 0px;
   }
   .prevProposal {
@@ -154,15 +154,5 @@
   }
   .name, .value, .comment, .type {
     display: inline-block;
-  }
-  .name {
-    width: 20%;
-  }
-  .value {
-    width: 12%;
-  }
-  .comment {
-    vertical-align: top;
-    width: 50%;
   }
 }

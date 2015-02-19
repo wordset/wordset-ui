@@ -18,9 +18,11 @@
       </div>
     {{/each}}
 
-    <a {{action "addMeaning"}}>Add New Meaning</a>
+    <button class="addNewMeaning" {{action "addMeaning"}}>Add New Meaning</button>
 
-    <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
-    <button class="negative" {{action "cancel"}}>Cancel</button>
+    <div>
+      <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
+      <button class="negative" {{action "cancel"}}>Cancel</button>
+    </div>
   </div>
 </div>
