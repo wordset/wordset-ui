@@ -32,11 +32,15 @@ var Proposal = DS.Model.extend({
   types: ["NewWord", "NewMeaning", "MeaningChange"],
 
   sortOrder: function() {
-    var time = this.get("createdAt").getMilliseconds();
-    if(this.get("state") === "open") {
-      return time + 10000000000000000000000;
+    if(this.get("createdAt")) {
+      var time = this.get("createdAt").getMilliseconds();
+      if(this.get("state") === "open") {
+        return time + 10000000000000000000000;
+      } else {
+        return time;
+      }
     } else {
-      return time;
+      return 0;
     }
   }.property("createdAt", "state"),
 
