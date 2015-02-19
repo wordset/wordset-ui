@@ -34,7 +34,7 @@ var Proposal = DS.Model.extend({
   sortOrder: function() {
     var time = this.get("createdAt").getMilliseconds();
     if(this.get("state") === "open") {
-      return time + 10000000000000;
+      return time + 10000000000000000000000;
     } else {
       return time;
     }
