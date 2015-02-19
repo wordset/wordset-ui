@@ -8,7 +8,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   activate: function() {
     return this.store.find('word_list');
   },
-  
+
   actions: {
     willTransition: function() {
       this.controller.set("showMenu", false);
@@ -18,7 +18,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       if (ENV.environment === 'production') {
         mixpanel.track("pageview", {"url": window.location.pathname });
         ga('send', 'pageview', {
-          'page': window.location.href,
+          'page': window.location.pathname,
           'title': document.title,
         });
       }
