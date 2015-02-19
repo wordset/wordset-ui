@@ -23,6 +23,7 @@ export default Ember.ArrayController.extend({
 
   registerVote: function(_this, yae, flagged) {
     var p = _this.get("proposal").get("model");
+    _this.send("log", "vote");
     var v = _this.store.createRecord("vote", {
       proposal: p,
       yae: yae,

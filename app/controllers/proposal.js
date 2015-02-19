@@ -41,6 +41,7 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
     },
     submitEdit: function() {
       var _this = this;
+      this.send("log", "edited proposal");
       this.get("model").save().then(
         function(model) {
           _this.set("isEditing", false);
@@ -50,10 +51,6 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
           // makes everything work. weird.
         }
       );
-    },
-    deleteProposal: function() {
-      this.get("model");
-      this.set("isEditing", false);
     },
     cancelEdit: function() {
       this.get("model").rollback();

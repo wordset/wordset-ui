@@ -24,6 +24,7 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin,
   }.property("model.pos"),
   actions: {
     submitProposal: function() {
+      this.send("log", "propose new meaning");
       this.get("proposalTarget");
 
       var _this = this;

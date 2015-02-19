@@ -16,12 +16,19 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     didTransition: function(paths) {
       if (ENV.environment === 'production') {
-        mixpanel.track("pageview", {"url": window.location.pathname });
         ga('send', 'pageview', {
           'page': window.location.pathname,
           'title': document.title,
         });
       }
-    }
+    },
+    log: function(name) {
+      var metaData = {"url": window.location.pathname, "user": this.get("session").get("username")};
+      if(ENV.environment === "production") {
+        mixpanel.track(name, metaData);
+      } else {
+        console.log(name, metaData);
+      }
+    },
   }
 });

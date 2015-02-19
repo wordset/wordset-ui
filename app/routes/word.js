@@ -7,6 +7,8 @@ export default Ember.Route.extend({
 
   afterModel: function(model) {
     var word = this.modelFor('word').get('id');
+    this.send("log", "word");
     Ember.$(document).attr('title', word + ' – definition from Wordset');
-  }
+  },
+
 });
