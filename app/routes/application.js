@@ -11,10 +11,11 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
 
   actions: {
     willTransition: function() {
-      this.controller.set("showMenu", false);
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     },
     didTransition: function(paths) {
+      this.controller.send("clear");
+      this.controller.set("showMenu", false);
       if (ENV.environment === 'production') {
         ga('send', 'pageview', {
           'page': window.location.pathname,
