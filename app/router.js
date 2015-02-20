@@ -14,10 +14,14 @@ Router.map(function() {
   });
   this.route("login");
   this.route("user", {}, function() {
-    this.route("new");
-    this.route("login");
     this.route("index", {path: "/:user_id"});
   });
+  this.route("users", {}, function() {
+    this.route("index");
+    this.route("forgot-password");
+    this.route("new");
+    this.route("login");
+  })
   this.resource("words", function() {
     this.route("new");
     this.route("random");
@@ -30,8 +34,6 @@ Router.map(function() {
     this.route("new-meaning");
     this.route("meaning-change");
   });
-
-  this.resource("users");
 
   this.route("info", function() {
     this.route("faqs");
