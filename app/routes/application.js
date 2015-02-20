@@ -13,20 +13,24 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     willTransition: function() {
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     },
-    didTransition: function(paths) {
-      this.controller.send("clear");
-      this.controller.set("showMenu", false);
+    didTransition: function() {
       if (ENV.environment === 'production') {
-        ga('send', 'pageview', {
-          'page': window.location.pathname,
-          'title': document.title,
+        Ember.run(function() {
+          ga('send', 'pageview', {
+            'page': window.location.pathname,
+            'title': document.title,
+          });
         });
       }
+      this.controller.send("clear");
+      this.controller.set("showMenu", false);
     },
     log: function(name) {
       var metaData = {"url": window.location.pathname, "user": this.get("session").get("username")};
       if(ENV.environment === "production") {
-        mixpanel.track(name, metaData);
+        Ember.run(function() {
+          mixpanel.track(name, metaData);
+        });
       } else {
         console.log(name, metaData);
       }
