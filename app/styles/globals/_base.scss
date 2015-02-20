@@ -53,7 +53,7 @@ button {
   border: 0;
   border-radius: 2px;
   box-shadow: inset 0px 1px 1px lighten($button-background-positive, 15%), 0px 1px 1px #DDD;
-  &, a {
+  &, a, a:hover {
     color: #FFF;
     cursor: pointer;
     display: block;

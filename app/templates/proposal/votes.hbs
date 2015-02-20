@@ -2,7 +2,10 @@
 {{#if isOpen}}
   {{#if currentUser}}
     {{#if myVote}}
-      <p>Thanks for your vote. {{#link-to "proposals.random"}}See another proposal?{{/link-to}}</p>
+      <p>Thanks for your vote.</p>
+      <button>
+        {{#link-to "proposals.random"}}Next Open Proposal >{{/link-to}}
+      </button>
     {{else}}
       <div class="new-vote">
         <button {{action "voteYae"}}><span class="ion-thumbsup"></span>Yae</button>
@@ -17,7 +20,9 @@
 <p>
   Voting is closed.
   {{#if currentUser}}
-    {{#link-to "proposals.random"}}See another proposal?{{/link-to}}
+  <button>
+    {{#link-to "proposals.random"}}Next Open Proposal >{{/link-to}}
+  </button>
   {{/if}}
 </p>
 {{/if}}
