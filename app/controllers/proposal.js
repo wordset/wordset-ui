@@ -12,6 +12,9 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
   isNewMeaning: function() {
     return ("NewMeaning" === this.get("type"));
   }.property("type"),
+  isMine: function() {
+    return (this.get("user") === this.get("currentUser"))
+  }.property("user", "currentUser"),
   isNewWord: function() {
     return ("NewWord" === this.get("type"));
   }.property("type"),
@@ -33,8 +36,8 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
     }
   }.property("tally"),
   canEdit: function() {
-    return this.get("isOpen") && (this.get("currentUser") === this.get("user"));
-  }.property("isOpen", "currentUser", "user"),
+    return (this.get("isOpen") && this.get("isMine"));
+  }.property("isOpen", "isMine"),
   actions: {
     startEdit: function() {
       this.set("isEditing", true);
@@ -52,6 +55,17 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
           // makes everything work. weird.
         }
       );
+    },
+    withdraw: function() {
+      var _this = this;
+      if(this.get("isWithdrawing")) { //second click!
+        Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
+        {}, function(data) {
+          _this.store.pushPayload('proposal', data);
+        })
+      } else {
+        this.set("isWithdrawing", true);
+      }
     },
     cancelEdit: function() {
       this.get("model").rollback();
