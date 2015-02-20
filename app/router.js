@@ -19,6 +19,7 @@ Router.map(function() {
   this.route("users", {}, function() {
     this.route("index");
     this.route("forgot-password");
+    this.route("reset-password");
     this.route("new");
     this.route("login");
   })

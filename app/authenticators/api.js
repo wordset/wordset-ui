@@ -38,7 +38,7 @@ export default Base.extend({
   },
   makeRequest: function(data) {
     return Ember.$.ajax({
-      url:        ENV.apiHost + ENV.apiPrefix + '/login',
+      url:        ENV.api + '/login',
       type:       'POST',
       data:       data,
       dataType:   'json',

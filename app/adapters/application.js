@@ -3,5 +3,5 @@ import ENV from 'wordset/config/environment';
 
 export default DS.ActiveModelAdapter.extend({
   host: ENV.apiHost,
-  namespace: "api/v1"
+  namespace: ENV.apiPrefix,
 });

@@ -6,9 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    apiPrefix: '/api/v1',
-
-
+    apiPrefix: 'api/v1',
 
     posList: ["adv", "adj", "verb", "noun", "conj", "pronoun", "prep"],
 
@@ -64,6 +62,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.apiHost = 'http://api.wordset.org';
   }
+
+  ENV.api = ENV.apiHost + "/" + ENV.apiPrefix;
 
 
   return ENV;
