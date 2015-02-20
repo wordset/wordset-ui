@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  sortProperties: ['sortOrder'],
+  sortProperties: ['createdAt'],
   sortAscending: false,
   queryParams: 'page',
   page: 1,
