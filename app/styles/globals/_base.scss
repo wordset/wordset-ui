@@ -53,10 +53,13 @@ button {
   border: 0;
   border-radius: 2px;
   box-shadow: inset 0px 1px 1px lighten($button-background-positive, 15%), 0px 1px 1px #DDD;
-  color: #FFF;
-  cursor: pointer;
-  display: block;
-  font-size: 18px;
+  &, a {
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+  }
   padding: 10px 20px;
   text-shadow: 0px 1px 0px $button-hover-background-positive;
   &:hover {
