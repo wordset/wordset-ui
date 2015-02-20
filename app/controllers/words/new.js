@@ -3,6 +3,7 @@
 
 import Ember from "ember";
 import EmberValidations from 'ember-validations';
+import ENV from '../../config/environment';
 
 export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   validations: {
@@ -11,7 +12,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
       length: { minimum: 1 }
     },
   },
-  posList: ["adv", "adj", "verb", "noun"],
+  posList: ENV.posList,
 
   canRemove: function() {
     return this.get("model").get("meanings").length > 1

@@ -1,5 +1,6 @@
 import Ember from "ember";
 import EmberValidations from 'ember-validations';
+import ENV from '../../config/environment';
 
 export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   validations: {
@@ -16,7 +17,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
       length: { minimum: 10 }
     }
   },
-  posList: ["adv", "adj", "verb", "noun"],
+  posList: ENV.posList,
 
   actions: {
   }

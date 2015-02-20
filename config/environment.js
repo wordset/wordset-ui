@@ -9,8 +9,8 @@ module.exports = function(environment) {
     apiPrefix: '/api/v1',
 
 
-    
-    posList: ["adv", "adj", "verb", "noun"],
+
+    posList: ["adv", "adj", "verb", "noun", "conj", "pronoun", "prep"],
 
     EmberENV: {
       FEATURES: {

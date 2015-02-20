@@ -1,7 +1,8 @@
 import EmberValidations from 'ember-validations';
+import ENV from '../config/environment';
 
 export default Ember.ObjectController.extend( EmberValidations.Mixin, {
-  posList: ["adv", "adj", "verb", "noun"],
+  posList: ENV.posList,
   needs: ['application'],
   isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
   currentUser: Ember.computed.alias('controllers.application.currentUser'),

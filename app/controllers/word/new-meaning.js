@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
+import ENV from '../../config/environment';
 
 export default Ember.ObjectController.extend( EmberValidations.Mixin,
 {
@@ -13,7 +14,7 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin,
       length: { minimum: 10 }
     }
   },
-  posList: ["adv", "adj", "verb", "noun"],
+  posList: ENV.posList,
   wordEntry: function() {
     var pos = this.get("pos");
     return this.get("word").then(
