@@ -14,7 +14,6 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   },
   actions: {
     submitProposal: function() {
-      this.send("log", "propose meaning change");
       var _this = this;
       var proposal = this.get("model");
       proposal.set("type", "MeaningChange");

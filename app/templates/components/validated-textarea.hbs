@@ -1,4 +1,5 @@
 {{#if showError}}
   <span class="error">{{errors}}</span>
+  {{yield}}
 {{/if}}
 {{textarea value=value focus-out="showErrors"}}
