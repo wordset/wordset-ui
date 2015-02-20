@@ -28,5 +28,14 @@
         <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
       </div>
     {{/each}}
+    <div>
+      Page {{page}} out of {{totalPages}} pages
+      {{#if hasPreviousPage}}
+        {{link-to "Previous Page" "proposals" (query-params page=prevPage)}}
+      {{/if}}
+      {{#if hasNextPage}}
+        {{link-to "Next Page" "proposals" (query-params page=nextPage)}}
+      {{/if}}
+    </div>
   </div>
 </div>
