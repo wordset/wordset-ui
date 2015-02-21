@@ -35,18 +35,19 @@
 }
 
 // Content and messages
+@media screen and (min-width: $medium) {
+  .content:nth-child(1):nth-last-child(1) {
+  	width: 100%;
+  }
 
-.content:nth-child(1):nth-last-child(1) {
-	width: 100%;
-}
+  .content:nth-child(2):nth-last-child(1) {
+    display: inline-block;
+  	width: 74%;
+  }
 
-.content:nth-child(2):nth-last-child(1) {
-  display: inline-block;
-	width: 74%;
-}
-
-.messages {
-  display: inline-block;
-  float: right;
-  width: 25%;
+  .messages {
+    display: inline-block;
+    float: right;
+    width: 25%;
+  }
 }
