@@ -1,20 +1,22 @@
-<h3>Chat</h3>
+<div class='messagesContent'>
+  <h3>Chat</h3>
 
-<ul>
-  {{#each message in controller}}
-    <li class='message'>
-      <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
-      <div class="info">
-        <div class='username'>
-          {{message.user.id}}
+  <ul>
+    {{#each message in controller}}
+      <li class='message'>
+        <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+        <div class="info">
+          <div class='username'>
+            {{message.user.id}}
+          </div>
+          <div class="text">
+            {{markdown-to-html markdown=message.text}}
+          </div>
         </div>
-        <div class="text">
-          {{markdown-to-html markdown=message.text}}
-        </div>
-      </div>
-    </li>
-  {{/each}}
-</ul>
+      </li>
+    {{/each}}
+  </ul>
 
-{{validated-input value=text action="submitMessage"}}
-<button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>Send</button>
+  {{validated-input value=text action="submitMessage"}}
+  <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>Send</button>
+</div>

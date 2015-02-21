@@ -1,7 +1,9 @@
 .messages {
   border: 2px solid $header-background;
-  padding: 20px 10px;
   vertical-align: top;
+  .messagesContent {
+    padding: 10px;
+  }
   h3 {
     margin-bottom: 20px;
   }
@@ -13,7 +15,7 @@
   }
   .info {
     display: inline-block;
-    max-width: 85%;
+    max-width: 84%;
   }
   .username {
     color: $taupe;

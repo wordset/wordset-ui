@@ -136,6 +136,11 @@ button {
 html, body, body > div, .main-content, .content, .messages {
   height: 100%;
 }
+
+.mainArea {
+  overflow: hidden;
+}
+
 .content, .messages {
-  overflow: scroll;
+  overflow: auto;
 }
