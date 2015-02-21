@@ -4,7 +4,19 @@ export default Ember.Controller.extend({
   searchTerm: "",
   showSearchList: false,
   searchLoading: false,
+  selectedIndex: -1,
+  selectedWord: function() {
+    if(this.get("selectedIndex") >= 0) {
+      return this.get("wordList.results").objectAt(this.get("selectedIndex"));
+    } else {
+      return null;
+    }
+  }.property("selectedIndex"),
+  wordCount: function() {
+    return this.get("wordList.results").length;
+  }.property("wordList"),
   searchTermObserver: function() {
+    this.set("selectedIndex", -1);
     if(this.get("searchTerm") === "") {
       this.set("showSearchList", false);
       this.set("searchLoading", false);
@@ -27,6 +39,30 @@ export default Ember.Controller.extend({
     },
     clear: function() {
       this.set("searchTerm", "");
+      this.set("selectedIndex", -1);
     },
+    searchEnter: function() {
+      var word = this.get("selectedWord");
+      if(word === null) {
+        word = this.get("wordList").get("results").objectAt(0);
+      }
+      // It could be there are no words... so don't do anything.
+      if(word) {
+        this.transitionToRoute("word", word);
+      }
+    },
+    searchShiftEnter: function() {
+      this.transitionToRoute("word", this.get("searchTerm"));
+    },
+    moveUp: function() {
+      if(this.get("selectedIndex") > 0) {
+        this.decrementProperty("selectedIndex");
+      }
+    },
+    moveDown: function() {
+      if(this.get("selectedIndex") < this.get("wordCount")) {
+        this.incrementProperty("selectedIndex");
+      }
+    }
   },
 });

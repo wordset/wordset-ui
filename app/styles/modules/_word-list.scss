@@ -17,20 +17,25 @@
   li:not(:last-of-type) {
     border-bottom: 1px solid #DDD;
   }
-  a {
-    background: #FFF;
-    color: $dropdown-anchor-color;
-    cursor: pointer;
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    &:hover {
-      background: #F3F3F3;
+  li {
+    &.selected a {
+      background: #E3E3E3;
     }
-    &.empty {
-      cursor: inherit;
+    a {
+      background: #FFF;
+      color: $dropdown-anchor-color;
+      cursor: pointer;
+      display: block;
+      padding: 20px;
+      text-decoration: none;
       &:hover {
-        background: #FFF;
+        background: #F3F3F3;
+      }
+      &.empty {
+        cursor: inherit;
+        &:hover {
+          background: #FFF;
+        }
       }
     }
   }

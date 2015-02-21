@@ -1,25 +1,11 @@
 <div class="search">
-  <div class="searchBar">
+  {{#view "searchbar"}}
     {{input type=text value=searchTerm placeholder="Search" autofocus="autofocus" title="Search for word"}}
     <span class="ion-close-circled" {{action 'clear'}}></span>
-  </div>
+  {{/view}}
   {{#if showSearchList}}
     <div class="wordListWrapper">
-      <ul class="wordList">
-        {{#each word in wordList.results}}
-          <li>
-            <a {{action 'clickWordFromList' word}} href="" tabindex="0">
-              {{word}}
-            </a>
-          </li>
-        {{else}}
-          <li>
-            {{#link-to "words.new"}}
-              No results found. Add word?
-            {{/link-to}}
-          </li>
-        {{/each}}
-      </ul>
+      {{search-results words=wordList.results selectedWord=selectedWord}}
     </div>
   {{/if}}
 </div>

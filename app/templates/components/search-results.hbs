@@ -1,0 +1,10 @@
+
+{{#each word in words}}
+  {{search-result word=word selectedWord=selectedWord}}
+{{else}}
+  <li>
+    {{#link-to "words.new"}}
+      No results found. Add word?
+    {{/link-to}}
+  </li>
+{{/each}}
