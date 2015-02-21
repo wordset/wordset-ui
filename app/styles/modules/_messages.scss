@@ -15,7 +15,7 @@
   }
   .info {
     display: inline-block;
-    max-width: 84%;
+    max-width: 78%;
   }
   .username {
     color: $taupe;
@@ -29,6 +29,7 @@
   }
   button {
     float: right;
+    margin-bottom: 30px;
     width: 100px;
   }
 }
@@ -41,11 +42,11 @@
 
 .content:nth-child(2):nth-last-child(1) {
   display: inline-block;
-	width: 72%;
+	width: 74%;
 }
 
 .messages {
   display: inline-block;
   float: right;
-  width: 22%;
+  width: 25%;
 }
