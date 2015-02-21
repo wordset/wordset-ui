@@ -71,7 +71,41 @@
       margin-left: 0.1em;
     }
   }
+  .edit {
+    float: right;
+  }
+  .withdraw {
+    @extend .negative;
+    display: inline-block;
+    &.is-withdrawing {
+      @extend .flag;
+      display: inline-block;
+    }
+  }
+  .withdrawingPopup {
+    border: 2px solid $negative-color;
+    border-radius: 2px;
+    display: block;
+    margin-bottom: 15px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    width: 200px;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 30px;
+      border-width: 15px 15px 0;
+      border-style: solid;
+      border-color: $negative-color transparent;
+      display: block;
+      width: 0;
+    }
+  }
 }
+
+
 
 .votes-sidebar {
   background: $header-background;
