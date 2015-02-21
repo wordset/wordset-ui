@@ -1,7 +1,5 @@
 <div class='messagesContent'>
-  <h3>Chat</h3>
-
-  <ul>
+  {{#view "message-list" controller=controller}}
     {{#each message in controller}}
       <li class='message'>
         <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
@@ -15,8 +13,12 @@
         </div>
       </li>
     {{/each}}
-  </ul>
+  {{/view}}
 
-  {{validated-input value=text action="submitMessage"}}
-  <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>Send</button>
+  <div class='newMessageArea'>
+    <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
+      <span class="ion-ios-paperplane-outline" />
+    </button>
+    {{validated-input value=text action="submitMessage"}}
+  </div>
 </div>

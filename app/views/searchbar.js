@@ -17,6 +17,5 @@ export default Ember.View.extend({
     } else if(event.keyCode === 27) { //escape
       controller.send("clear");
     }
-    console.log(event.keyCode)
   }
 });

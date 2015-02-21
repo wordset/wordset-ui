@@ -4,9 +4,21 @@
   .messagesContent {
     padding: 10px;
   }
-  h3 {
-    margin-bottom: 20px;
+  .newMessageArea {
+    height: 60px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    input {
+      font-size: 18px;
+      padding: 0px 5px 5px 5px;
+      width: 80%;
+    }
+    button {
+      float: right;
+      width: 18%;
+    }
   }
+
   img.icon {
     height: 30px;
     margin-right: 5px;
@@ -21,17 +33,7 @@
     color: $taupe;
     font-size: 16px;
   }
-  input {
-    font-size: 18px;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 100%;
-  }
-  button {
-    float: right;
-    margin-bottom: 30px;
-    width: 100px;
-  }
+
 }
 
 // Content and messages
