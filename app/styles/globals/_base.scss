@@ -133,20 +133,9 @@ button {
   transition: height 0.2s;
 }
 
-// Sticky Footer thing
-
-html, body, body > div, .main-content {
+html, body, body > div, .main-content, .mainArea {
   height: 100%;
 }
-.mainArea {
-  min-height: 90%;
-  /* equal to footer height */
-  margin-bottom: -100px;
-}
-.mainArea:after {
-  content: "";
-  display: block;
-}
-.footer, .mainArea:after {
-  height: 100px;
+.content {
+  overflow: scroll;
 }
