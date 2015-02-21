@@ -1,3 +1,9 @@
+.randomOpenProposal {
+  display: inherit;
+  margin: 0 auto 30px;
+  width: 300px;
+}
+
 .proposals {
   .item {
     margin-bottom: 2px;
@@ -35,5 +41,24 @@
   }
   .state {
     width: 18%;
+  }
+}
+
+.pagination {
+  margin-top: 30px;
+  position: relative;
+  .pageNumber {
+    display: block;
+    text-align: center;
+  }
+  .prev, .next {
+    position: absolute;
+  }
+  .prev {
+    left: 0px;
+  }
+  .next {
+    right: 0px;
+    top: 0px;
   }
 }
