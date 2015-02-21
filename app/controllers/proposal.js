@@ -1,7 +1,12 @@
 import EmberValidations from 'ember-validations';
 import ENV from '../config/environment';
+import { Bindings } from 'ember-pusher/bindings';
 
-export default Ember.ObjectController.extend( EmberValidations.Mixin, {
+export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
+  logPusherEvents: true,
+  PUSHER_SUBSCRIPTIONS: {
+    proposals: ['push']
+  },
   posList: ENV.posList,
   needs: ['application'],
   isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
@@ -70,6 +75,9 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
     cancelEdit: function() {
       this.get("model").rollback();
       this.set("isEditing", false);
+    },
+    push: function(data) {
+      this.store.pushPayload('proposal', data);
     },
   }
 });

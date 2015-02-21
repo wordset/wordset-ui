@@ -18,14 +18,15 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      PUSHER_OPTS: {
+        key: '48d537b460788bef06f4',
+      },
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com http://cdn.mxpnl.com",
+      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com http://cdn.mxpnl.com http://stats.pusher.com",
       'font-src': "'self'",
-      'connect-src': "'self' http://localhost:3000 http://wordnet-data.herokuapp.com http://api.mixpanel.com",
+      'connect-src': "'self' http://localhost:3000 http://api.wordset.org http://api.mixpanel.com ws://ws.pusherapp.com",
       'img-src': "'self' http://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
