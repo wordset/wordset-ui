@@ -120,12 +120,17 @@
       width: 100%;
     }
   }
-  .title {
-    margin-bottom: 10px;
+  .nextProposal {
+    margin-bottom: 30px;
+    span {
+      font-size: 16px;
+      margin-left: 11px;
+    }
   }
   .title {
     color: #666;
     font-size: 14px;
+    margin-bottom: 10px;
     text-transform: uppercase;
   }
   .activity {

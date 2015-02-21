@@ -3,7 +3,7 @@
   <p>This is a list of all of the proposals in the system. If you want
     to vote on a proposal, (do it!) then click "Random Open Proposal"
     and we'll send you to one that you haven't voted on yet!</p>
-  <button>
+  <button class="randomOpenProposal">
     {{#link-to "proposals.random"}}Random Open Proposal{{/link-to}}
   </button>
   <div class="proposals">
@@ -34,13 +34,14 @@
         <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
       </div>
     {{/each}}
-    <div>
-      Page {{page}} out of {{totalPages}} pages
+    <div class="pagination">
       {{#if hasPreviousPage}}
-        {{link-to "Previous Page" "proposals" (query-params page=prevPage)}}
+        {{link-to "Previous Page" "proposals" (query-params page=prevPage) class="prev"}}
       {{/if}}
+      <div class="pageNumber">Page {{page}} out of {{totalPages}} pages</div>
+
       {{#if hasNextPage}}
-        {{link-to "Next Page" "proposals" (query-params page=nextPage)}}
+        {{link-to "Next Page" "proposals" (query-params page=nextPage) class="next"}}
       {{/if}}
     </div>
   </div>
