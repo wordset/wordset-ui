@@ -4,6 +4,9 @@
   color: $header-color;
   height: 47px;
   padding: 30px;
+  @media screen and (max-width: 670px) {
+    height: 97px;
+  }
   a, a:visited, a:active {
     color: $header-color;
   }
@@ -63,11 +66,20 @@
     color: $taupe;
     float:right;
     font-size: 40px;
-    margin-right: 0px;
+    margin-right: 50px;
+    margin-top: -42px;
     @media screen and (min-width: $medium) {
       font-size: 52px;
       margin-top: -48px;
       margin-right: 40px;
+    }
+    @media screen and (max-width: $med-small) {
+      margin-top: -42px;
+      margin-right: 40px;
+    }
+    @media screen and (max-width: 630px) {
+      margin-top: -88px;
+      margin-right: 60px;
     }
   }
   .nav-toggler  {
@@ -82,7 +94,11 @@
       margin-right: 0px;
     }
     @media screen and (max-width: $med-small) {
-      margin-top: -93px;
+      margin-top: -42px;
+      margin-right: 10px;
+    }
+    @media screen and (max-width: 555px) {
+      margin-top: -90px;
       margin-right: 10px;
     }
   }

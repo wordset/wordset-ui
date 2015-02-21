@@ -15,7 +15,7 @@
   }
   .info {
     display: inline-block;
-    max-width: 84%;
+    max-width: 78%;
   }
   .username {
     color: $taupe;
@@ -29,23 +29,25 @@
   }
   button {
     float: right;
+    margin-bottom: 30px;
     width: 100px;
   }
 }
 
 // Content and messages
+@media screen and (min-width: $medium) {
+  .content:nth-child(1):nth-last-child(1) {
+  	width: 100%;
+  }
 
-.content:nth-child(1):nth-last-child(1) {
-	width: 100%;
-}
+  .content:nth-child(2):nth-last-child(1) {
+    display: inline-block;
+  	width: 74%;
+  }
 
-.content:nth-child(2):nth-last-child(1) {
-  display: inline-block;
-	width: 72%;
-}
-
-.messages {
-  display: inline-block;
-  float: right;
-  width: 22%;
+  .messages {
+    display: inline-block;
+    float: right;
+    width: 25%;
+  }
 }
