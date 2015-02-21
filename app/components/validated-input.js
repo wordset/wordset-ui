@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   actions: {
     showErrors: function() {
       this.set("showError", true);
+    },
+    sendAction: function() {
+      this.sendAction();
     }
   }
 

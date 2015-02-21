@@ -1,0 +1,18 @@
+Messages
+
+<ul>
+  {{#each message in controller}}
+    <li class='message'>
+      <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+      <div class='username'>
+        {{message.user.id}}
+      </div>
+      <div class="text">
+        {{message.text}}
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+{{validated-input value=text action="submitMessage"}}
+<button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>Send</button>

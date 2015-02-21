@@ -8,8 +8,13 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   activate: function() {
     return this.store.find('word_list');
   },
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    this.controllerFor("messages.index").set("model", this.store.find('message'));
+  },
 
   actions: {
+
     willTransition: function() {
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     },

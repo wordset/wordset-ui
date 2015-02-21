@@ -18,9 +18,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      PUSHER_OPTS: {
-        key: '48d537b460788bef06f4',
-      },
+
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
@@ -46,6 +44,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.apiHost = 'http://localhost:3000';
+    ENV.APP.PUSHER_OPTS = {
+      key: 'e8039c23fe140e473468',
+    };
   }
 
   if (environment === 'test') {
@@ -62,6 +63,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.apiHost = 'http://api.wordset.org';
+    ENV.APP.PUSHER_OPTS = {
+      key: '48d537b460788bef06f4',
+    };
   }
 
   ENV.api = ENV.apiHost + "/" + ENV.apiPrefix;
