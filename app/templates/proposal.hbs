@@ -27,7 +27,11 @@
   {{#if canEdit}}
     {{#if isEditing}}
     {{else}}
-      <button {{action "startEdit"}}>Edit</button>
+      {{#if isWithdrawing}}
+        <div class="withdrawingPopup">Click again to confirm!</div>
+      {{/if}}
+      <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
+      <button {{action "startEdit"}} class="edit">Edit</button>  
     {{/if}}
   {{/if}}
 </div>
@@ -43,12 +47,6 @@
       {{else}}
         <em>No reason given</em>
       {{/if}}
-    {{/if}}
-    {{#if canEdit}}
-      {{#if isWithdrawing}}
-        <p>Click again to confirm!</p>
-      {{/if}}
-      <button class="flag" {{action "withdraw"}}>Withdraw!</button>
     {{/if}}
   </div>
   <h4>Tally</h4>
