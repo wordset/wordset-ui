@@ -5,31 +5,9 @@
     {{#link-to "index"}}
       <div class="logo"></div>
     {{/link-to}}
-    <div class="search">
-      <div class="searchBar">
-        {{input type=text value=searchTerm placeholder="Search" autofocus="autofocus" title="Search for word"}}
-        <span class="ion-close-circled" {{action 'clear'}}></span>
-      </div>
-      {{#if showSearchList}}
-        <div class="wordListWrapper">
-          <ul class="wordList">
-            {{#each word in wordList.results}}
-              <li>
-                <a {{action 'clickWordFromList' word}} href="" tabindex="0">
-                  {{word}}
-                </a>
-              </li>
-            {{else}}
-              <li>
-                {{#link-to "words.new"}}
-                  No results found. Add word?
-                {{/link-to}}
-              </li>
-            {{/each}}
-          </ul>
-        </div>
-      {{/if}}
-    </div>
+
+    {{render "search"}}
+
     <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
       <span class="ion-android-apps"></span>
     </a>
@@ -41,14 +19,14 @@
   {{flash-message}}
 
   <div class="mainArea">
-    <div class="content">
-      {{outlet}}
-    </div>
     {{#if showChat}}
       <div class="messages">
         {{render "messages.index"}}
       </div>
     {{/if}}
+    <div class="content">
+      {{outlet}}
+    </div>
   </div>
 
   <div class="footer">
