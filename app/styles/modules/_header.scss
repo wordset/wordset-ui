@@ -58,7 +58,18 @@
       display: inline-block;
     }
   }
-  .nav-toggler {
+  .chat-toggler {
+    color: $taupe;
+    float:right;
+    font-size: 40px;
+    margin-right: 0px;
+    @media screen and (min-width: $medium) {
+      font-size: 52px;
+      margin-top: -48px;
+      margin-right: 40px;
+    }
+  }
+  .nav-toggler  {
     color: $taupe;
     float: right;
     font-size: 40px;

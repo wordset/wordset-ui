@@ -30,24 +30,26 @@
         </div>
       {{/if}}
     </div>
-    <a {{action 'toggleChat'}} class="chat-toggler" alt="Chat">
-      <span class="ion-android-chat"></span>
-    </a>
     <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
       <span class="ion-android-apps"></span>
     </a>
+    <a {{action 'toggleChat'}} class="chat-toggler" alt="Chat">
+      <span class="ion-android-chat"></span>
+    </a>
   </div>
 
-   {{flash-message}}
+  {{flash-message}}
 
-  <div class="content">
-    {{outlet}}
-  </div>
-  {{#if showChat}}
-    <div class="messages">
-      {{render "messages.index"}}
+  <div class="mainArea">
+    <div class="content">
+      {{outlet}}
     </div>
-  {{/if}}
+    {{#if showChat}}
+      <div class="messages">
+        {{render "messages.index"}}
+      </div>
+    {{/if}}
+  </div>
 
   <div class="footer">
     <div class="copyright">

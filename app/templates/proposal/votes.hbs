@@ -17,12 +17,13 @@
     <p>{{#link-to "users.new"}}Sign up to vote.{{/link-to}}</p>
   {{/if}}
 {{else}}
-<p>
-  Voting is closed.
+  <p>
+    Voting is closed.
+  </p>
   {{#if currentUser}}
   <button class="nextProposal">
     {{#link-to "proposals.random"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
   </button>
   {{/if}}
-</p>
+
 {{/if}}

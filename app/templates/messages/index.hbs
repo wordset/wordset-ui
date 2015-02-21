@@ -1,14 +1,16 @@
-Messages
+<h3>Messages</h3>
 
 <ul>
   {{#each message in controller}}
     <li class='message'>
       <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
-      <div class='username'>
-        {{message.user.id}}
-      </div>
-      <div class="text">
-        {{markdown-to-html markdown=message.text}}
+      <div class="info">
+        <div class='username'>
+          {{message.user.id}}
+        </div>
+        <div class="text">
+          {{markdown-to-html markdown=message.text}}
+        </div>
       </div>
     </li>
   {{/each}}
