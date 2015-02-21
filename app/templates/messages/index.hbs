@@ -8,7 +8,7 @@ Messages
         {{message.user.id}}
       </div>
       <div class="text">
-        {{message.text}}
+        {{markdown-to-html markdown=message.text}}
       </div>
     </li>
   {{/each}}

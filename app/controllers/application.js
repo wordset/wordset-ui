@@ -7,6 +7,7 @@ export default Ember.ObjectController.extend({
   showSearchList: false,
   searchLoading: false,
   showMenu: false,
+  showChat: false,
   wordList: null,
   searchTermObserver: function() {
     if(this.get("searchTerm") === "") {
@@ -40,6 +41,9 @@ export default Ember.ObjectController.extend({
     },
     toggleMenu: function() {
       this.toggleProperty("showMenu");
+    },
+    toggleChat: function() {
+      this.toggleProperty("showChat");
     },
     log: function(name) {
       var metaData = {"url": window.location.pathname, "user": this.get("currentUser").get("id")};

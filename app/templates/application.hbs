@@ -30,6 +30,9 @@
         </div>
       {{/if}}
     </div>
+    <a {{action 'toggleChat'}} class="chat-toggler" alt="Chat">
+      <span class="ion-android-chat"></span>
+    </a>
     <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
       <span class="ion-android-apps"></span>
     </a>
@@ -40,9 +43,11 @@
   <div class="content">
     {{outlet}}
   </div>
-  <div class="messages">
-    {{render "messages.index"}}
-  </div>
+  {{#if showChat}}
+    <div class="messages">
+      {{render "messages.index"}}
+    </div>
+  {{/if}}
 
   <div class="footer">
     <div class="copyright">
