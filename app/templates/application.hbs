@@ -18,7 +18,7 @@
 
   {{flash-message}}
 
-  <div class="mainArea">
+  {{#view "main-area"}}
     {{#if showChat}}
       <div class="messages">
         {{render "messages.index"}}
@@ -27,5 +27,5 @@
     <div class="content">
       {{outlet}}
     </div>
-  </div>
+  {{/view}}
 </div>

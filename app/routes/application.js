@@ -27,7 +27,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           });
         });
       }
-      this.controller.send("clear");
+      this.controllerFor("search").send("clear");
       this.controller.set("showMenu", false);
     },
     log: function(name) {

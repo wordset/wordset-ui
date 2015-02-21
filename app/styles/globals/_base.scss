@@ -133,9 +133,9 @@ button {
   transition: height 0.2s;
 }
 
-html, body, body > div, .main-content, .mainArea {
+html, body, body > div, .main-content, .content, .messages {
   height: 100%;
 }
-.content {
+.content, .messages {
   overflow: scroll;
 }
