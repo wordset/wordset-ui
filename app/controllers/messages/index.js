@@ -10,6 +10,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   },
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  chatReceived: Ember.computed.alias('controllers.application.chatReceived'),
   sortProperties: ['createdAt'],
   sortAscending: true,
   validations: {
@@ -29,6 +30,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       _this.set("text", "");
     },
     push: function(data) {
+      this.set("chatReceived", true);
       this.store.pushPayload('message', data);
     }
   }

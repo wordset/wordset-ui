@@ -6,6 +6,10 @@ export default Ember.Controller.extend({
   showMenu: false,
   showChat: false,
   wordList: null,
+  chatReceived: false,
+  hasChatAlert: function() {
+    return (!this.get("showChat")) && this.get("chatReceived")
+  }.property("showChat", "chatReceived"),
 
   isAdmin: function() {
     return this.get("currentUser").get("isAdmin");
@@ -19,6 +23,7 @@ export default Ember.Controller.extend({
     },
     toggleChat: function() {
       this.toggleProperty("showChat");
+      this.set("chatReceived", false);
     },
     log: function(name) {
       var metaData = {"url": window.location.pathname, "user": this.get("currentUser").get("id")};
