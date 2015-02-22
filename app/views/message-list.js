@@ -3,14 +3,14 @@ import ResizeMixin from 'ember-resize-mixin/main';
 
 export default Ember.View.extend(ResizeMixin, {
   tagName: "ul",
-  classNames: "messageList",
+  classNames: "message-list",
   onResize: function() {
     // do what you want when resize is triggered
     var elem = this.get("element");
     var area = Ember.$(elem);
     var topOffset = area.offset().top;
     var windowHeight = Ember.$(window).height();
-    var submitArea = Ember.$('.newMessageArea').height();
+    var submitArea = Ember.$('.new-message-area').height();
     var size = windowHeight - topOffset - submitArea;
     area.css('height', size);
     elem.scrollTop = elem.scrollHeight;

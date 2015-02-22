@@ -9,10 +9,10 @@
   .closed {
     width: 0px;
   }
-  .messagesContent {
+  .messages-content {
     padding: 10px;
   }
-  .newMessageArea {
+  .new-message-area {
     height: 60px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -24,6 +24,10 @@
     button {
       float: right;
       width: 18%;
+    }
+    .notice {
+      text-align: center;
+      color: $taupe;
     }
   }
 
