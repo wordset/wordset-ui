@@ -12,19 +12,17 @@
       <span class="ion-android-apps"></span>
     </a>
     <a {{action 'toggleChat'}} class="chat-toggler" alt="Chat">
-      <span class="ion-android-chat"></span>
+      <span {{bind-attr class=":ion-android-chat showChat"}}></span>
     </a>
   </div>
 
   {{flash-message}}
 
   {{#view "main-area"}}
-    {{#if showChat}}
-      <div class="messages">
-        {{render "messages.index"}}
-      </div>
-    {{/if}}
-    <div class="content">
+    <div {{bind-attr class=":messages showChat:open:closed"}}>
+      {{render "messages.index"}}
+    </div>
+    <div {{bind-attr class=":content showChat"}}>
       {{outlet}}
     </div>
   {{/view}}

@@ -1,6 +1,14 @@
 .messages {
   border: 2px solid $header-background;
   vertical-align: top;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  .closed {
+    width: 0px;
+  }
   .messagesContent {
     padding: 10px;
   }
@@ -37,19 +45,17 @@
 }
 
 // Content and messages
-@media screen and (min-width: $medium) {
-  .content:nth-child(1):nth-last-child(1) {
-  	width: 100%;
-  }
-
-  .content:nth-child(2):nth-last-child(1) {
+@media screen and (min-width: $small) {
+  .content.showChat {
     display: inline-block;
-  	width: 74%;
   }
 
   .messages {
     display: inline-block;
     float: right;
-    width: 25%;
+    width: 300px;
+    &.closed {
+      margin-right: -300px;
+    }
   }
 }

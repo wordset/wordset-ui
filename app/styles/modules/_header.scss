@@ -68,6 +68,9 @@
     font-size: 40px;
     margin-right: 50px;
     margin-top: -42px;
+    .show-chat {
+      color: $dark-green;
+    }
     @media screen and (min-width: $medium) {
       font-size: 52px;
       margin-top: -48px;
