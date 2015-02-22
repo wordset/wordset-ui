@@ -22,10 +22,10 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' http://www.google-analytics.com http://cdn.mxpnl.com http://stats.pusher.com",
+      'script-src': "'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.mxpnl.com https://stats.pusher.com",
       'font-src': "'self'",
-      'connect-src': "'self' http://localhost:3000 http://api.wordset.org http://api.mixpanel.com ws://ws.pusherapp.com",
-      'img-src': "'self' http://www.google-analytics.com https://secure.gravatar.com",
+      'connect-src': "'self' https://api.wordset.org https://api.mixpanel.com wss://ws.pusherapp.com",
+      'img-src': "'self' https://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },
@@ -47,6 +47,8 @@ module.exports = function(environment) {
     ENV.APP.PUSHER_OPTS = {
       key: 'e8039c23fe140e473468',
     };
+    ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 http://api.mixpanel.com ws://ws.pusherapp.com";
+    ENV.contentSecurityPolicy['script-src'] += "  http://stats.pusher.com";
   }
 
   if (environment === 'test') {
