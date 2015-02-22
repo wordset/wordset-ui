@@ -9,7 +9,6 @@ export default Ember.View.extend(ResizeMixin, {
     var topOffset = area.offset().top;
     var windowHeight = Ember.$(window).height();
     var size = windowHeight - topOffset;
-    console.log(size)
     area.css('height', size);
   }.on('resize', 'didInsertElement'),
 });

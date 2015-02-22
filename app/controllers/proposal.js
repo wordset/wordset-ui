@@ -46,7 +46,6 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   actions: {
     startEdit: function() {
       this.set("isEditing", true);
-      console.log(this.get("posList"));
     },
     submitEdit: function() {
       var _this = this;
