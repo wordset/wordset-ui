@@ -32,7 +32,7 @@ module.exports = function(environment) {
     "simple-auth": {
       store: 'simple-auth-session-store:local-storage',
       authorizer: 'authorizer:api',
-      crossOriginWhitelist: ['http://api.wordset.org', 'http://localhost:3000'],
+      crossOriginWhitelist: ['https://api.wordset.org', 'http://localhost:3000'],
 
     }
   };
@@ -64,7 +64,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiHost = 'http://api.wordset.org';
+    ENV.apiHost = 'https://api.wordset.org';
     ENV.APP.PUSHER_OPTS = {
       key: '48d537b460788bef06f4',
     };
