@@ -4,7 +4,7 @@
   color: $header-color;
   height: 47px;
   padding: 30px;
-  @media screen and (max-width: 670px) {
+  @media screen and (max-width: $header-medium) {
     height: 97px;
   }
   a, a:visited, a:active {
@@ -26,7 +26,7 @@
       margin-top: 4px;
       width: 52px;
     }
-    @media screen and (max-width: $med-small) {
+    @media screen and (max-width: $header-medium) {
       background: url("/assets/images/full-logo.png");
       background-size: 165px 30px;
       height: 30px;
@@ -58,16 +58,32 @@
         right: 5px;
       }
     }
-    @media screen and (max-width: $med-small) {
-      display: inline-block;
+    @media screen and (max-width: $header-medium) {
+      span {
+        top: 52px;
+      }
+    }
+    @media screen and (max-width: $header-medium) {
+      display: block;
+    }
+  }
+  .togglers {
+    float: right;
+    @media screen and (min-width: $med-small) {
+      margin-top: -40px;
+    }
+    @media screen and (min-width: $medium) {
+      margin-top: -47px;
+    }
+    @media screen and (max-width: $header-medium) {
+      margin-top: -90px;
     }
   }
   .chat-toggler {
     color: $taupe;
-    float:right;
+    display: inline-block;
     font-size: 40px;
-    margin-right: 50px;
-    margin-top: -42px;
+    margin-right: 40px;
     .has-chat-alert {
       &:after {
         background: $dark-green;
@@ -85,35 +101,18 @@
     }
     @media screen and (min-width: $medium) {
       font-size: 52px;
-      margin-top: -48px;
-      margin-right: 40px;
     }
-    @media screen and (max-width: $med-small) {
-      margin-top: -42px;
-      margin-right: 40px;
-    }
-    @media screen and (max-width: 630px) {
-      margin-top: -88px;
-      margin-right: 60px;
+    @media screen and (max-width: $header-medium) {
+      margin-right: 30px;
     }
   }
   .nav-toggler  {
     color: $taupe;
-    float: right;
     font-size: 40px;
-    margin-right: 0px;
-    margin-top: -44px;
     @media screen and (min-width: $medium) {
       font-size: 55px;
-      margin-top: -50px;
-      margin-right: 0px;
     }
-    @media screen and (max-width: $med-small) {
-      margin-top: -42px;
-      margin-right: 10px;
-    }
-    @media screen and (max-width: 555px) {
-      margin-top: -90px;
+    @media screen and (max-width: $header-medium) {
       margin-right: 10px;
     }
   }
