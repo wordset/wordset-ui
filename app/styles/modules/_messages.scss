@@ -16,14 +16,22 @@
     height: 60px;
     margin-bottom: 10px;
     margin-top: 10px;
+    position: relative;
     input {
       font-size: 18px;
-      padding: 0px 5px 5px 5px;
-      width: 80%;
+      padding: 0px 30px 5px 5px;
+      width: 100%;
     }
     button {
-      float: right;
-      width: 18%;
+      border-radius: 0px;
+      box-shadow: none;
+      font-size: 12px;
+      height: 32px;
+      padding: 0px;
+      position: absolute;
+      right: 1px;
+      top: 6px;
+      width: 25px;
     }
     .notice {
       text-align: center;
