@@ -1,14 +1,7 @@
 .messages {
+  @include transition();
   border: 2px solid $header-background;
   vertical-align: top;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  .closed {
-    width: 0px;
-  }
   .messages-content {
     padding: 10px;
   }
@@ -69,5 +62,11 @@
     &.closed {
       margin-right: -300px;
     }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .messages.closed {
+    display: none;
   }
 }
