@@ -1,2 +1,3 @@
 # http://www.robotstxt.org
 User-agent: *
+Sitemap: https://data.wordset.org/sitemap.xml.gz
