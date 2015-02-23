@@ -116,3 +116,16 @@
     width: 22%;
   }
 }
+
+// Add New Meaning Button (also on the new word page)
+
+.add-new-meaning {
+  background: #FFF;
+  box-shadow: none;
+  color: $dark-green;
+  text-shadow: none;
+  &:hover {
+    background: #FFF;
+    color: darken($lime, 10%);
+  }
+}

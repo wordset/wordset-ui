@@ -4,8 +4,9 @@
   {{#if showMeaningProposal}}
     {{render "word/new-meaning" newMeaningProposal}}
   {{else}}
-    <button {{action 'toggleShowAddMeaning'}}>
-      Propose New Meaning
+    <button class="add-new-meaning" {{action 'toggleShowAddMeaning'}}>
+      <span class="ion-plus"></span>
+      Add New Meaning
     </button>
   {{/if}}
 {{/if}}

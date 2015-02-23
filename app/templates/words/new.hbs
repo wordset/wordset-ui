@@ -25,11 +25,12 @@
       </div>
     {{/each}}
 
-    <button class="addNewMeaning" {{action "addMeaning"}}>Add New Meaning</button>
-
     <div>
       <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
-      <button class="negative" {{action "cancel"}}>Cancel</button>
+      <button class="add-new-meaning" {{action "addMeaning"}}>
+        <span class="ion-plus"></span>
+        Add New Meaning
+      </button>
     </div>
   </div>
 </div>

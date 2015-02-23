@@ -23,6 +23,14 @@ p {
   margin-bottom: 20px;
 }
 
+strong {
+  font-weight: 500;
+}
+
+em {
+  font-style: italic;
+}
+
 a {
   @include transition();
   color: $anchor-color;
@@ -103,12 +111,12 @@ button {
   }
 }
 
-.search, .wrapper {
+.search {
   padding: 0px 20px;
 }
 
 .wrapper {
-  padding-top: 40px;
+  padding: 40px 20px;
   position: relative;
   @media screen and (max-width: $small) {
     width: 90%;
