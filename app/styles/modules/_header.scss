@@ -60,11 +60,13 @@
     }
     @media screen and (max-width: $header-medium) {
       span {
-        top: 52px;
+        top: -4px;
       }
     }
+  }
+  .search, .searchbar {
     @media screen and (max-width: $header-medium) {
-      display: block;
+      display: inline;
     }
   }
   .togglers {

@@ -113,9 +113,11 @@
   display: inline-block;
   padding: 20px 35px;
   vertical-align: top;
-  width: 85%;
   @media screen and (min-width: $medium) {
     float: right;
+    width: 30%;
+  }
+  @media screen and (min-width: $large) {
     width: 40%;
   }
   h4 {
@@ -130,12 +132,9 @@
       display: inline-block;
       margin-bottom: 20px;
       min-width: 80px;
-      width: 30%;
-      @media screen and (max-width: $medium) {
+      width: 32%;
+      @media screen and (max-width: $large) {
         width: 100%;
-      }
-      &:not(:last-of-type) {
-        margin-right: 20px;
       }
       span {
         margin-right: 10px;
@@ -166,7 +165,9 @@
       width: 25px;
     }
   }
-  .nextProposal {
+  .next-proposal {
+    @extend button;
+    display: inline-block;
     margin-bottom: 30px;
     span {
       font-size: 16px;

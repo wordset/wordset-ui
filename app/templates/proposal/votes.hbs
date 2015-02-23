@@ -3,9 +3,7 @@
   {{#if currentUser}}
     {{#if myVote}}
       <p>Thanks for your vote.</p>
-      <button class="nextProposal">
-        {{#link-to "proposals.random"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
-      </button>
+      {{#link-to "proposals.random" class="next-proposal"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
     {{else}}
       <div class="new-vote">
         <button {{action "voteYae"}} class="yae"><span class="ion-thumbsup"></span>Yae</button>
@@ -21,9 +19,7 @@
     Voting is closed.
   </p>
   {{#if currentUser}}
-  <button class="nextProposal">
-    {{#link-to "proposals.random"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
-  </button>
+    {{#link-to "proposals.random" class="next-proposal"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
   {{/if}}
 
 {{/if}}
