@@ -68,6 +68,18 @@
     font-size: 40px;
     margin-right: 50px;
     margin-top: -42px;
+    .has-chat-alert {
+      &:after {
+        background: $dark-green;
+        border-radius: 50%;
+        content: "";
+        display: inline-block;
+        height: 10px;
+        position: absolute;
+        vertical-align: top;
+        width: 10px;
+      }
+    }
     .show-chat {
       color: $dark-green;
     }
