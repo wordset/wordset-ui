@@ -32,7 +32,7 @@ module.exports = function(environment) {
     "simple-auth": {
       store: 'simple-auth-session-store:local-storage',
       authorizer: 'authorizer:api',
-      crossOriginWhitelist: ['http://api.wordset.org', 'http://localhost:3000'],
+      crossOriginWhitelist: ['https://api.wordset.org', 'http://localhost:3000'],
 
     }
   };
