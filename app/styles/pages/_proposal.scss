@@ -71,6 +71,11 @@
       margin-left: 0.1em;
     }
   }
+
+
+  .proposal-change-buttons {
+    position: relative;
+  }
   .edit {
     float: right;
   }
@@ -83,14 +88,17 @@
       display: inline-block;
     }
   }
-  .withdrawingPopup {
+  .withdrawing-popup {
+    @include transition();
+    background: #FFF;
     border: 2px solid $negative-color;
     border-radius: 2px;
     display: block;
     margin-bottom: 15px;
     padding: 5px;
-    position: relative;
+    position: absolute;
     text-align: center;
+    top: -45px;
     width: 200px;
     &:after {
       content: "";
