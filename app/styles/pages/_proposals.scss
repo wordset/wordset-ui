@@ -5,6 +5,9 @@
 }
 
 .proposals {
+  a {
+    text-decoration: none;
+  }
   .item {
     margin-bottom: 2px;
     padding: 18px 0px 18px 5px;
@@ -20,27 +23,63 @@
       background: #EEE;
       color: #CCC;
     }
-  }
-
-  .word, .action, .user, .state, .view {
-    display: inline-block;
-    @media screen and (max-width: $medium) {
-
+    &.accepted, &.rejected {
+      .progress-bar {
+        opacity: 0.3;
+      }
     }
   }
+
+
+  .action-user, .state-progress, .word, .action, .user, .state {
+    display: inline-block;
+  }
   .word {
+    font-weight: 500;
     font-size: 18px;
-    margin-bottom: 0px;
-    width: 25%;
+    margin-bottom: 20px;
+    width: 100%;
+    @media screen and (min-width: $medium) {
+      margin-bottom: 0px;
+      width: 30%;
+    }
+  }
+  .action-user, .state-progress {
+    width: 48%;
+    @media screen and (min-width: $medium) {
+      width: 33%;
+    }
   }
   .action {
-    width: 22%;
+    width: 40%;
+    @media screen and (max-width: $small) {
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    @media screen and (min-width: $medium) {
+      width: 45%;
+    }
   }
   .user {
-    width: 20%;
+    width: 40%;
+
+    @media screen and (min-width: $medium) {
+      width: 50%;
+    }
   }
   .state {
-    width: 18%;
+    width: 40%;
+    @media screen and (max-width: $small) {
+      margin-bottom: 5px;
+    }
+    @media screen and (min-width: $medium) {
+      width: 42%;
+    }
+  }
+  .progress-bar {
+    display: inline-block;
+    margin-bottom: 0px;
+    width: 120px;
   }
 }
 

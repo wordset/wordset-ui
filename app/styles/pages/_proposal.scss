@@ -17,10 +17,11 @@
   float: left;
   list-style-position: inside;
   margin-bottom: 30px;
-  padding: 20px 35px;
+  padding: 20px;
   position: relative;
   width: 80%;
   @media screen and (min-width: $medium) {
+    padding: 20px 35px;
     width: 42%;
   }
   .word a {

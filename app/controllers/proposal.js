@@ -26,20 +26,6 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   isMeaningChange: function() {
     return ("MeaningChange" === this.get("type"));
   }.property("type"),
-  positiveTally: function() {
-    if(this.get("tally") > 0 ) {
-      return "width: " + this.get("tally") + "%;";
-    } else {
-      return "";
-    }
-  }.property("tally"),
-  negativeTally: function() {
-    if(this.get("tally") < 0 ) {
-      return "width: " + (this.get("tally") * -1) + "%;";
-    } else {
-      return "";
-    }
-  }.property("tally"),
   canEdit: function() {
     return (this.get("isOpen") && this.get("isMine"));
   }.property("isOpen", "isMine"),
