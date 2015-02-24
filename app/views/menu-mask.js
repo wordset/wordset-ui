@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import ResizeMixin from 'ember-resize-mixin/main';
 
-export default Ember.View.extend(ResizeMixin, {
+export default Ember.View.extend({
   classNames: ['mask'],
   touchEnd: function() {
     this.get("controller").send("toggleMenu");
