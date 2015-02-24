@@ -40,6 +40,20 @@ var Proposal = DS.Model.extend({
       return "Change";
     }
   }.property("type"),
+  positiveTally: function() {
+    if(this.get("tally") > 0 ) {
+      return "width: " + this.get("tally") + "%;";
+    } else {
+      return "";
+    }
+  }.property("tally"),
+  negativeTally: function() {
+    if(this.get("tally") < 0 ) {
+      return "width: " + (this.get("tally") * -1) + "%;";
+    } else {
+      return "";
+    }
+  }.property("tally"),
 
 });
 

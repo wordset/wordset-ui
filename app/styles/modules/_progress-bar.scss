@@ -1,29 +1,43 @@
 .progress-bar {
   margin-bottom: 30px;
   width: 100%;
-  .progress-positive, .progress-negative {
+  .progress, .progress-positive, .progress-negative {
     background: #DDD;
-    display: inline-block;
-    height: 20px;
     position: relative;
-    width: 48%;
     .bar {
-      height: 20px;
       position: absolute;
     }
   }
-  .progress-positive {
+
+  .progress-positive .bar, .positive.bar {
+    background: $lime;
+    left: 0px;
+  }
+
+  .progress-negative .bar, .negative.bar {
+    background: $red;
+  }
+  // For the single-way progress bar
+  
+  .progress, .bar {
+    height: 10px;
+  }
+
+  // For the double-way progress bar
+  .progress-positive, .progress-negative {
+    display: inline-block;
+    height: 20px;
+    width: 48%;
     .bar {
-      background: $lime;
-      left: 0px;
+      height: 20px;
     }
   }
   .progress-negative {
     .bar {
-      background: $red;
       right: 0px;
     }
   }
+
   .numbers {
     color: #666;
     font-size: 14px;
