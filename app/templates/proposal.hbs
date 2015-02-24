@@ -27,11 +27,13 @@
   {{#if canEdit}}
     {{#if isEditing}}
     {{else}}
-      {{#if isWithdrawing}}
-        <div class="withdrawingPopup">Click again to confirm!</div>
-      {{/if}}
-      <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
-      <button {{action "startEdit"}} class="edit">Edit</button>  
+      <div class="proposal-change-buttons">
+        {{#if isWithdrawing}}
+          <div class="withdrawing-popup">Click again to confirm!</div>
+        {{/if}}
+        <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
+        <button {{action "startEdit"}} class="edit">Edit</button>
+      </div>
     {{/if}}
   {{/if}}
 </div>
