@@ -1,6 +1,7 @@
 <div class="comment-box">
   <h4>Comment</h4>
-  {{validated-textarea value=comment error=errors.comment}}
+
+  {{multi-box value=comment action="submitComment" placeholder=""}}
   <button {{bind-attr disabled=isInvalid}} {{action "submitComment"}}>
     <span class="ion-chevron-right"></span>
   </button>
