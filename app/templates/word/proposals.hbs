@@ -1,25 +1,31 @@
 <div class="word-proposals">
-  <div class="item">
-    <div class="action">Action</div>
-    <div class="user">User</div>
-    <div class="state">Status</div>
-  </div>
   {{#each proposal in model}}
-    <div {{bind-attr class="proposal.state :item"}}>
-      <div class="action">
-        {{proposal.typeName}}
+    {{#link-to "proposal" proposal.id}}
+      <div {{bind-attr class="proposal.state :item"}}>
+        <div class="action-user">
+          <div class="action">
+            {{proposal.typeName}}
+          </div>
+          <div class="user">
+            {{#if proposal.wordnet}}
+              Wordnet
+            {{else}}
+              {{proposal.user.id}}
+            {{/if}}
+          </div>
+        </div>
+        <div class="state-progress">
+          <div {{bind-attr class="proposal.state :state"}}>
+            {{proposal.state}}
+          </div>
+          <div class="progress-bar">
+            <div class="progress">
+              <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
+              <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="user">
-        {{#if proposal.wordnet}}
-          Wordnet
-        {{else}}
-          {{proposal.user.id}}
-        {{/if}}
-      </div>
-      <div {{bind-attr class="proposal.state :state"}}>
-        {{proposal.state}}
-      </div>
-      <div class="view">{{#link-to "proposal" proposal.id}}View{{/link-to}}</div>
-    </div>
+    {{/link-to}}
   {{/each}}
 </div>

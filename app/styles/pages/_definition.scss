@@ -104,16 +104,43 @@
 }
 
 // Styles for the word proposal tab
+// Also used on the user page
 .word-proposals {
   @extend .proposals;
-  .action {
-    width: 32%;
+  .action-user {
+    width: 58%;
   }
-  .user {
-    width: 30%;
+  .state-progress {
+    width: 40%;
   }
-  .state {
-    width: 22%;
+  .word {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  @media screen and (min-width: $medium) {
+    .action {
+      width: 25%;
+    }
+    .user {
+      width: 25%;
+    }
+    .state {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: $large) {
+    .word {
+      width: 60%;
+    }
+    .action {
+      width: 25%;
+    }
+    .user {
+      width: 25%;
+    }
+    .state {
+      width: 33%;
+    }
   }
 }
 
