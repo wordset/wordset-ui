@@ -150,6 +150,9 @@
       }
     }
   }
+  .withdraw-vote {
+    @extend a;
+  }
   .comment-box {
     margin-bottom: 20px;
     position: relative;

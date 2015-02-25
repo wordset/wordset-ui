@@ -21,14 +21,10 @@ export default Ember.ArrayController.extend({
     },
     withdrawVote: function() {
       var _this = this;
-      if(this.get("isWithdrawingVote")) { //second click!
-        Ember.$.post(ENV.api + "/votes/" + this.get("myVote.id") + "/withdraw",
-        {}, function(data) {
-          _this.store.pushPayload('proposal', data);
-        })
-      } else {
-        this.set("isWithdrawingVote", true);
-      }
+      Ember.$.post(ENV.api + "/votes/" + this.get("myVote.id") + "/withdraw",
+      {}, function(data) {
+        _this.store.pushPayload('proposal', data);
+      })
     },
   },
 
