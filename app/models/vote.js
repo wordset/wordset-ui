@@ -7,5 +7,6 @@ export default DS.Model.extend({
   value: DS.attr("number"),
   flagged: DS.attr("boolean"),
   comment: DS.attr("string"),
-  usurped: DS.attr("boolean")
+  usurped: DS.attr("boolean"),
+  withdrawn: DS.attr("boolean")
 });

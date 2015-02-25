@@ -3,6 +3,10 @@
   {{#if currentUser}}
     {{#if myVote}}
       <p>Thanks for your vote.</p>
+      <button {{action "withdrawVote"}}>Withdraw Vote</button>
+      {{#if isWithdrawingVote}}
+        <div class="withdrawing-popup">Click again to confirm!</div>
+      {{/if}}
       {{#link-to "proposals.random" class="next-proposal"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
     {{else}}
       <div class="new-vote">
