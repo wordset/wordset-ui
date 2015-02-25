@@ -3,5 +3,15 @@
   "root": "./dist",
   "routes": {
     "/**": "index.html"
+  },
+  "proxy": {
+    "data": {
+      "origin": "https://data.wordset.org",
+      "cookies": false,
+      "headers": {
+        "content-type": "text/javascript"
+      },
+      "timeout": 30
+    }
   }
 }
