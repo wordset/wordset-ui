@@ -20,6 +20,7 @@
   padding: 20px;
   position: relative;
   width: 80%;
+  word-wrap: break-word;
   @media screen and (min-width: $medium) {
     padding: 20px 35px;
     width: 42%;
