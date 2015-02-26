@@ -1,0 +1,18 @@
+<li class='message'>
+  <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+  <div class="info">
+    {{#if isSelf}}
+      <div class='username'>
+        {{message.user.id}}
+        {{message.text}}
+      </div>
+    {{else}}
+      <div class='username'>
+        {{message.user.id}}
+      </div>
+      <div class="text">
+        {{markdown-to-html markdown=message.text}}
+      </div>
+    {{/if}}
+  </div>
+</li>

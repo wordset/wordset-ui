@@ -45,7 +45,12 @@
     color: $taupe;
     font-size: 16px;
   }
-
+  p {
+    margin-bottom: 0px;
+  }
+  .message {
+    margin-bottom: 15px;
+  }
 }
 
 // Content and messages

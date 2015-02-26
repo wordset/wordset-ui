@@ -1,17 +1,7 @@
 <div class='messages-content'>
   {{#view "message-list" controller=controller}}
     {{#each message in controller}}
-      <li class='message'>
-        <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
-        <div class="info">
-          <div class='username'>
-            {{message.user.id}}
-          </div>
-          <div class="text">
-            {{markdown-to-html markdown=message.text}}
-          </div>
-        </div>
-      </li>
+      {{render "messages.item" message}}
     {{/each}}
   {{/view}}
 
