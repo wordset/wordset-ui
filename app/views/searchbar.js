@@ -16,6 +16,12 @@ export default Ember.View.extend({
       controller.send("moveUp");
     } else if(event.keyCode === 27) { //escape
       controller.send("clear");
+    } else if(event.ctrlKey === true) {
+      if(event.keyCode === 78) { // CTRL + n
+        controller.send("moveDown");
+      } else if(event.keyCode === 80) { // CTRL + p
+        controller.send("moveUp");
+      }
     }
   }
 });
