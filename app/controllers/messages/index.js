@@ -21,13 +21,15 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   },
   actions: {
     submitMessage: function() {
-      var _this = this;
-      Ember.$.post(ENV.api + "/messages", {
-        message: {
-          text: this.get("text"),
-        },
-      });
-      _this.set("text", "");
+      if(this.get("isValid")) {
+        var _this = this;
+        Ember.$.post(ENV.api + "/messages", {
+          message: {
+            text: this.get("text"),
+          },
+        });
+      }
+      this.set("text", "");
     },
     push: function(data) {
       this.set("chatReceived", true);
