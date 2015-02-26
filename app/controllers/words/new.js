@@ -34,6 +34,8 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
       })
     },
   },
+  queryParams: ["wordName"],
+  wordName: null,
   posList: ENV.posList,
 
   canRemove: function() {

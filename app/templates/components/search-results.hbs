@@ -3,7 +3,7 @@
   {{search-result word=word selectedWord=selectedWord}}
 {{else}}
   <li>
-    {{#link-to "words.new"}}
+    {{#link-to "words.new" (query-params wordName=searchTerm)}}
       No results found. Add word?
     {{/link-to}}
   </li>

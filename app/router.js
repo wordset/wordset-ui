@@ -10,7 +10,6 @@ Router.map(function() {
   this.resource("word", {path: "/word/:word_id"}, function() {
     this.route("proposals");
     this.route("new-meaning");
-
   });
   this.route("login");
   this.route("user", {}, function() {
