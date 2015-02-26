@@ -98,6 +98,15 @@
   }
 }
 
+span.quotemark {
+  &:first-of-type {
+    margin-right: -4px;
+  }
+  &:last-of-type {
+    margin-left: -4px;
+  }
+}
+
 .openProposal {
   color: #666;
   font-size: 14px;
