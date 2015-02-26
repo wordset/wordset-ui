@@ -39,6 +39,7 @@
   .info {
     display: inline-block;
     max-width: 78%;
+    word-wrap: break-word;
   }
   .username {
     color: $taupe;
