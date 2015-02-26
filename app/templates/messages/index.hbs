@@ -20,7 +20,7 @@
       <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
         <span class="ion-chevron-right" />
       </button>
-      {{input value=text action="submitMessage"}}
+      {{textarea value=text action="submitMessage"}}
     {{else}}
       <div class="notice">
         If you want to chat,<br/>
