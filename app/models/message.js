@@ -5,4 +5,5 @@ export default DS.Model.extend({
   user: DS.belongsTo("user"),
   createdAt: DS.attr("date"),
   type: DS.attr("string"),
+  url: DS.attr("string")
 });

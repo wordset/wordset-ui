@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'auto',
     apiPrefix: 'api/v1',
 
-    posList: ["adv", "adj", "verb", "noun", "conj", "pronoun", "prep"],
+    posList: ["adv", "adj", "verb", "noun", "conj", "pronoun", "prep", "intj"],
 
     EmberENV: {
       FEATURES: {

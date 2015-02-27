@@ -26,6 +26,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         Ember.$.post(ENV.api + "/messages", {
           message: {
             text: this.get("text"),
+            path: document.location.pathname
           },
         });
       }
