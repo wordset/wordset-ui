@@ -12,7 +12,11 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   chatReceived: Ember.computed.alias('controllers.application.chatReceived'),
   sortProperties: ['createdAt'],
+  showUsers: false,
   sortAscending: true,
+  onlineUsers: function() {
+    return this.store.metadataFor("message").online || [];
+  }.property("model.@each"),
   validations: {
     text: {
       presence: true,
@@ -35,6 +39,9 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
     push: function(data) {
       this.set("chatReceived", true);
       this.store.pushPayload('message', data);
-    }
+    },
+    toggleUsers: function() {
+      this.toggleProperty("showUsers");
+    },
   }
 });

@@ -1,6 +1,7 @@
 .messages {
   @include transition();
   border: 2px solid $header-background;
+  position: relative;
   vertical-align: top;
   .messages-content {
     padding: 10px;
@@ -80,6 +81,30 @@
       &:hover {
         background: #EEE;
       }
+    }
+  }
+}
+
+.online-users {
+  background: #FFF;
+  box-shadow: 0px 1px 2px #CCC;
+  position: absolute;
+  right: 0px;
+  z-index: 2;
+  .toggle-users {
+    float: right;
+    padding: 5px;
+  }
+  ul {
+    background: #FFF;
+    display: none;
+    padding: 10px;
+
+    &.show-users {
+      display: block;
+    }
+    li:not(:last-of-type) {
+      margin-bottom: 10px
     }
   }
 }

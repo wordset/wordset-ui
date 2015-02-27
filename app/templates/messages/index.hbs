@@ -1,3 +1,15 @@
+<div class="online-users">
+  <div class="toggle-users" {{action "toggleUsers"}}>
+    <span class="ion-person"></span>
+    {{onlineUsers.length}}
+  </div>
+  <ul {{bind-attr class="showUsers"}}>
+    {{#each username in onlineUsers}}
+      <li>{{#link-to "user.index" username}}{{username}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+</div>
+
 <div class='messages-content'>
   {{#view "message-list" controller=controller}}
     {{#each message in controller}}
