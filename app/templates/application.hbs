@@ -1,7 +1,7 @@
 {{partial "menu"}}
 
 <div class="main-content">
-  <div class="header">
+  <header class="header">
     {{#link-to "index"}}
       <div class="logo"></div>
     {{/link-to}}
@@ -18,16 +18,16 @@
         <span class="ion-android-apps"></span>
       </a>
     </div>
-  </div>
+  </header>
 
   {{flash-message}}
 
   {{#view "main-area"}}
-    <div {{bind-attr class=":messages showChat:open:closed"}}>
+    <aside {{bind-attr class=":messages showChat:open:closed"}}>
       {{render "messages.index"}}
-    </div>
-    <div {{bind-attr class=":content showChat"}}>
+    </aside>
+    <menu {{bind-attr class=":content showChat"}}>
       {{outlet}}
-    </div>
+    </menu>
   {{/view}}
 </div>
