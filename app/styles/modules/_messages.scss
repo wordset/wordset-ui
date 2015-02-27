@@ -39,7 +39,6 @@
   .info {
     display: inline-block;
     max-width: 78%;
-    word-wrap: break-word;
   }
   .username {
     color: $taupe;
@@ -50,6 +49,38 @@
   }
   .message {
     margin-bottom: 15px;
+    .info {
+      word-wrap: break-word;
+    }
+    &.is-self {
+      img {
+        vertical-align: middle;
+      }
+      .text {
+        font-size: 14px;
+        font-style: italic;
+      }
+    }
+    // Link Styles
+    .link-image {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      span {
+        color: #FFF;
+        font-size: 30px;
+        left: 5px;
+        position: absolute;
+        top: 0px;
+      }
+    }
+    &.link {
+      font-size: 14px;
+      font-style: italic;
+      &:hover {
+        background: #EEE;
+      }
+    }
   }
 }
 
