@@ -28,6 +28,11 @@
         @extend .ion-close-circled;
       }
     }
+    &.withdrawn {
+      .ionicon {
+        @extend .ion-arrow-return-left;
+      }
+    }
     .ionicon {
       color: #666;
       margin-right: 10px;
