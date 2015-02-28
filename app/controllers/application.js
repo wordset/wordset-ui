@@ -17,12 +17,17 @@ export default Ember.Controller.extend({
   currentUser: function() {
     return this.get("session").get("currentUser");
   }.property("session.currentUser"),
+  init: function() {
+    this._super();
+    this.set("showChat", JSON.parse(localStorage.showChat));
+  },
   actions: {
     toggleMenu: function() {
       this.toggleProperty("showMenu");
     },
     toggleChat: function() {
       this.toggleProperty("showChat");
+      localStorage.showChat = this.get("showChat");
       this.set("chatReceived", false);
     },
     log: function(name) {
