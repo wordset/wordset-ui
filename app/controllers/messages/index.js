@@ -39,6 +39,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
     push: function(data) {
       this.set("chatReceived", true);
       this.store.pushPayload('message', data);
+      this.store.setMetadataFor('message', data.meta);
     },
     toggleUsers: function() {
       this.toggleProperty("showUsers");
