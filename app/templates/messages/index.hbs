@@ -1,3 +1,21 @@
+<div class="message-settings">
+  <div class="toggle-settings" {{action "toggleSettings"}}>
+    <span class="ion-gear-b"></span>
+  </div>
+  <ul {{bind-attr class="showSettings"}}>
+    <li>
+      {{#if notificationsEnabled}}
+        <span {{action "disableNotifications"}}>
+          Disable Notifications
+        </span>
+      {{else}}
+        <span {{action "enableNotifications"}}>
+          Enable Notifications
+        </span>
+      {{/if}}
+    </li>
+  </ul>
+</div>
 <div class="online-users">
   <div class="toggle-users" {{action "toggleUsers"}}>
     <span class="ion-person"></span>

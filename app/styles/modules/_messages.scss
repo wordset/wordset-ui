@@ -85,27 +85,39 @@
   }
 }
 
-.online-users {
+.online-users, .message-settings {
+  position: absolute;
   background: #FFF;
   box-shadow: 0px 1px 2px #CCC;
-  position: absolute;
-  right: 0px;
   z-index: 2;
-  .toggle-users {
-    float: right;
-    padding: 5px;
-  }
   ul {
     background: #FFF;
     display: none;
     padding: 10px;
 
-    &.show-users {
+    &.show-users, &.show-settings {
       display: block;
     }
     li:not(:last-of-type) {
       margin-bottom: 10px
     }
+  }
+}
+
+.online-users {
+  right: 0px;
+  .toggle-users {
+    float: right;
+    padding: 5px;
+  }
+}
+
+.message-settings {
+  left: 0px;
+  .toggle-settings {
+    float: left;
+    clear: left;
+    padding: 5px;
   }
 }
 

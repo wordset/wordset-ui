@@ -1,8 +1,9 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
+import VisibilityMixin from '../mixins/visibility.js'
 /* global mixpanel */
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(VisibilityMixin, {
   showMenu: false,
   showChat: false,
   wordList: null,
@@ -10,7 +11,6 @@ export default Ember.Controller.extend({
   hasChatAlert: function() {
     return (!this.get("showChat")) && this.get("chatReceived")
   }.property("showChat", "chatReceived"),
-
   isAdmin: function() {
     return this.get("currentUser").get("isAdmin");
   }.property("currentUser"),
@@ -19,7 +19,9 @@ export default Ember.Controller.extend({
   }.property("session.currentUser"),
   init: function() {
     this._super();
-    this.set("showChat", JSON.parse(localStorage.showChat));
+    if(localStorage.showChat) {
+      this.set("showChat", JSON.parse(localStorage.showChat));
+    };
   },
   actions: {
     toggleMenu: function() {
@@ -29,6 +31,11 @@ export default Ember.Controller.extend({
       this.toggleProperty("showChat");
       localStorage.showChat = this.get("showChat");
       this.set("chatReceived", false);
+    },
+    notify: function(title, body, tag) {
+      if(this.get("visible") === false) {
+        new Notification(title, {body: body, tag: tag, icon: "/assets/images/square-logo.png"})
+      }
     },
     log: function(name) {
       var metaData = {"url": window.location.pathname, "user": this.get("currentUser").get("id")};
