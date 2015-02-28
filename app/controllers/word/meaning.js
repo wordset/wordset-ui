@@ -4,11 +4,14 @@ export default Ember.ObjectController.extend({
   canEdit: function() {
     return !this.get("model").get("hasProposal");
   }.property("hasProposal"),
+  hasOpenProposal: function() {
+    return this.get("hasProposal") && (this.get("openProposal.state") === "open")
+  }.property("hasProposal", "openProposal", "openProposal.state"),
   displayEdit: function() {
     return (this.get("canEdit") &&
             this.get("editing") &&
             !this.get("hasProposal"));
-  }.property("canEdit", "editing", "hasProposal"),
+  }.property("canEdit", "editing"),
   actions: {
     startEditing: function() {
       if(this.get("session").get("isAuthenticated")) {

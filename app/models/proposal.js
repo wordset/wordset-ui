@@ -22,7 +22,7 @@ var Proposal = DS.Model.extend({
   example: DS.attr("string"),
 
   // ChangeMeaning
-  meaning: DS.belongsTo("meaning"),
+  meaning: DS.belongsTo("meaning", {inverse: null}),
   original: DS.attr(),
   parentId: DS.attr(),
 

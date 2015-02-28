@@ -10,9 +10,6 @@ var Meaning = DS.Model.extend({
   word: function() {
     return this.get("entry").get("word");
   },
-  activeProposals: function() {
-    return this.get('proposals').filterBy("state", "new");
-  }.property('proposals.@each'),
 });
 
 
