@@ -18,20 +18,6 @@
       margin-right: 60px;
     }
   }
-  .tabs {
-    a {
-      @include transition(0s);
-      color: $dark-green;
-      padding: 5px 10px 0px;
-      margin-right: 20px;
-      text-decoration: none;
-      &.active {
-        border-bottom: 2px solid $lime;
-        background: #FFF;
-        box-shadow: none;
-      }
-    }
-  }
 }
 
 .pos {

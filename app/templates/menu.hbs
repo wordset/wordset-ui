@@ -26,6 +26,12 @@
     </li>
     {{#if session.isAuthenticated}}
       <li>
+        {{#link-to "user.index" currentUser}}
+          <div class="ionicon ion-person"></div>
+          My Profile
+        {{/link-to}}
+      </li>
+      <li>
         <a {{action "invalidateSession"}}>
           <div class="ionicon ion-android-exit"></div>
           Logout
