@@ -1,6 +1,7 @@
 <div class="project">
   <div class="heading">
-    <h2>Project: {{model.project.name}}</h2>
+    <h2>Project:
+      {{#link-to "project.index" model.project}}{{model.project.name}}{{/link-to}}</h2>
     <div class="progress-bar-title">Progress:</div>
     <div class="progress-bar">
       <div class="progress">

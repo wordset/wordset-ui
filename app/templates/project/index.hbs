@@ -2,5 +2,15 @@
   <h2>{{name}}</h2>
   <p>{{description}}</p>
 
+  <div class="progress-bar">
+    <div class="progress">
+      <div class="bar positive" {{bind-attr style="percentageThrough"}}>
+        <div class="numbers">
+          <div class="current">{{percentageComplete}}%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <button {{action "randomTarget"}}>Random Target</button>
 </div>
