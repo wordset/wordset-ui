@@ -29,7 +29,6 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
     if(localStorage.notificationsEnabled) {
       this.set("notificationsEnabled", JSON.parse(localStorage.notificationsEnabled));
     }
-
   },
   actions: {
     submitMessage: function() {
@@ -53,7 +52,6 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       if(this.get("notificationsEnabled") === true
             && (data.message.user !== this.get("currentUser"))) {
         // bubble up the notifier to the application controller
-        console.log(this.get("currentUser"))
         this.send("notify", data.message.user.id, data.message.text, "chat");
       }
     },
