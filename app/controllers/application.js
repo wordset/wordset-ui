@@ -8,12 +8,19 @@ export default Ember.Controller.extend(VisibilityMixin, {
   showChat: false,
   wordList: null,
   chatReceived: false,
+  notifications: [],
   hasChatAlert: function() {
     return (!this.get("showChat")) && this.get("chatReceived")
   }.property("showChat", "chatReceived"),
   isAdmin: function() {
     return this.get("currentUser").get("isAdmin");
   }.property("currentUser"),
+  clearNotifications: function() {
+    if(this.get("visible") === true) {
+      this.get("notifications").forEach(function(n) { n.close() });
+      this.set("notifications", []);
+    }
+  }.observes("visible"),
   currentUser: function() {
     return this.get("session").get("currentUser");
   }.property("session.currentUser"),
@@ -34,7 +41,9 @@ export default Ember.Controller.extend(VisibilityMixin, {
     },
     notify: function(title, body, tag) {
       if(this.get("visible") === false) {
-        new Notification(title, {body: body, tag: tag, icon: "/assets/images/square-logo.png"})
+        var opt = {body: body, tag: tag, icon: "/assets/images/square-logo.png"};
+        var n = new Notification(title, opt);
+        this.get("notifications").addObject(n)
       }
     },
     log: function(name) {
