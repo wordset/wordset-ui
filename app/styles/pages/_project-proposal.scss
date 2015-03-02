@@ -1,0 +1,47 @@
+.project {
+  .heading {
+    padding: 20px;
+    .progress-bar-title {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .progress-bar {
+      display: inline-block;
+      margin-top: 4px;
+      width: 90%;
+      .progress, .bar {
+        height: 10px;
+      }
+    }
+  }
+  .rules, .project-proposal {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .rules {
+    margin-right: 100px;
+    padding: 20px;
+    width: 300px;
+    li {
+      line-height: 1.4em;
+      margin-bottom: 10px;
+      strong {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .project-proposal {
+    padding: 20px 10px;
+    width: 50%;
+    @media screen and (max-width: $medium) {
+      width: 100%;
+    }
+  }
+  .meaning {
+    padding: 20px 0px;
+    .def {
+      margin-bottom: 10px;
+    }
+  }
+}

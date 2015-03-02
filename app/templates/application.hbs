@@ -26,8 +26,8 @@
     <aside {{bind-attr class=":messages showChat:open:closed"}}>
       {{render "messages.index"}}
     </aside>
-    <menu {{bind-attr class=":content showChat"}}>
+    <section {{bind-attr class=":content showChat"}}>
       {{outlet}}
-    </menu>
+    </section>
   {{/view}}
 </div>

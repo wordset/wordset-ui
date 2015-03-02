@@ -37,7 +37,9 @@ Router.map(function() {
     this.route("new-meaning");
     this.route("meaning-change");
   });
-
+  this.route("project", {path: "/project/:project_id"}, function() {
+    this.route("propose", {path: "/propose/:meaning_id"});
+  });
   this.route("info", function() {
     this.route("faqs");
     this.route("guidelines");

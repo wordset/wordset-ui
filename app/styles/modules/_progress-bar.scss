@@ -42,7 +42,7 @@
     color: #666;
     font-size: 14px;
     position: relative;
-    .min, .mid, .max {
+    .min, .mid, .max, .current {
       position: absolute;
     }
     .min {
@@ -53,6 +53,10 @@
     }
     .max {
       left: 94%;
+    }
+    .current {
+      left: 97%;
+      top: 13px;
     }
   }
 }

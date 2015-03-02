@@ -4,6 +4,7 @@ var Proposal = DS.Model.extend({
   type: DS.attr("string"),
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word", {async: true}),
+  project: DS.belongsTo("project", {inverse: null}),
   wordName: DS.attr("string"),
   reason: DS.attr("string"),
   state: DS.attr("string"),
