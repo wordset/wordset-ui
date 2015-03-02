@@ -1,6 +1,25 @@
 .project {
   .heading {
+    background: $blue;
+    color: #FFF;
     padding: 20px;
+
+    h2 {
+      color: #FFF;
+      display: inline-block;
+    }
+    .title {
+      span {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      a {
+        color: #FFF;
+        &:hover {
+          color: #DDD;
+        }
+      }
+    }
     .progress-bar-title {
       display: inline-block;
       vertical-align: top;
@@ -8,9 +27,13 @@
     .progress-bar {
       display: inline-block;
       margin-top: 4px;
+      margin-bottom: 20px;
       width: 90%;
       .progress, .bar {
         height: 10px;
+      }
+      .numbers {
+        color: #EEE;
       }
     }
   }

@@ -1,7 +1,9 @@
 <div class="wrapper">
   <h2>{{name}}</h2>
-  <p>{{description}}</p>
-
+  <p>Goal: <strong>{{description}}</strong></p>
+  <p>We're starting to implement projects on our site. These are self-contained groups of improvements we want to make to Wordset.</p>
+  <p>Our first major project is to remove parantheses from definitions. You'll have seen them everywhere – "(in law)", "(slang)", and so on.</p>
+  <p>The information contained within the parantheses is useful, but the parantheses themselves break up the definition too much. We want to put the paranthetical back into the definition so it reads more smoothly.</p>
   <div class="progress-bar">
     <div class="progress">
       <div class="bar positive" {{bind-attr style="percentageThrough"}}>
@@ -12,5 +14,7 @@
     </div>
   </div>
 
-  <button {{action "randomTarget"}}>Random Target</button>
+  <p>Hit the button below to find a random definition that needs your help!</p>
+
+  <button {{action "randomTarget"}}>Random Word</button>
 </div>
