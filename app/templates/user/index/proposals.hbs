@@ -1,0 +1,29 @@
+<div class="word-proposals">
+{{#each proposal in controller.proposals}}
+  {{#link-to 'proposal' proposal}}
+    <div {{bind-attr class="proposal.state :item"}}>
+      <div class="action-user">
+        <div class="word">
+          {{proposal.wordName}}
+        </div>
+        <div class="action">
+          {{proposal.typeName}}
+        </div>
+      </div>
+      <div class="state-progress">
+        <div class="state">
+          {{proposal.state}}
+        </div>
+        <div class="progress-bar">
+          <div class="progress">
+            <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
+            <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/link-to}}
+{{else}}
+  This User hasn't proposed anything yet.
+{{/each}}
+</div>
