@@ -1,1 +1,25 @@
-{{outlet}}
+<div class="wrapper">
+  <div class="user">
+    <div class="bio">
+      <h2>{{id}}</h2>
+      <img {{bind-attr src="imageUrl"}} class="avatar" />
+
+      <div class="info">
+        <div class="points">
+          <span>Points: </span>
+          {{points}}
+        </div>
+        <div class="rank">
+          {{rank}}
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      {{#link-to "user.index" class="active"}}Proposals{{/link-to}}
+      {{#link-to "user.activity"}}Activity{{/link-to}}
+    </div>
+
+    {{outlet}}
+  </div>
+</div>

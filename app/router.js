@@ -12,11 +12,8 @@ Router.map(function() {
     this.route("new-meaning");
   });
   this.route("login");
-  this.route("user", {}, function() {
-    this.route("index", {path: "/:user_id"}, function() {
-      this.route("proposals");
-      this.route("activity");
-    });
+  this.route("user", {path: "/user/:user_id"}, function() {
+    this.route("activity");
   });
   this.route("users", {}, function() {
     this.route("index");
