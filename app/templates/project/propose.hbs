@@ -4,12 +4,13 @@
       <h2>{{model.project.name}}</h2>
       <span>({{#link-to "project.index" model.project}}More Info{{/link-to}})</span>
     </div>
-    <div class="progress-bar-title">Progress:</div>
-    <div class="progress-bar">
-      <div class="progress">
-        <div class="bar positive" {{bind-attr style="model.project.percentageThrough"}}>
-          <div class="numbers">
-            <div class="current">{{model.project.percentageComplete}}%</div>
+    <div class="progress-numbers">
+      <span class="metric">Total To-dos:</span> {{model.project.totalTargets}}
+      <span class="metric">Open Proposals:</span> {{model.project.pendingTargets}}
+      <span class="metric">Fixed To-dos:</span> {{model.project.fixedTargets}}
+      <div class="progress-bar">
+        <div class="progress">
+          <div class="bar positive" {{bind-attr style="model.project.percentageThrough"}}>
           </div>
         </div>
       </div>

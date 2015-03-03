@@ -7,8 +7,12 @@
     h2 {
       color: #FFF;
       display: inline-block;
+      font-size: 30px;
+      margin-bottom: 0px;
     }
     .title {
+      display: inline-block;
+      vertical-align: top;
       span {
         font-size: 14px;
         margin-left: 10px;
@@ -20,17 +24,28 @@
         }
       }
     }
-    .progress-bar-title {
+    .progress-numbers {
       display: inline-block;
-      vertical-align: top;
+      font-size: 14px;
+      margin-top: 15px;
+      @media screen and (min-width: $header-medium) {
+        margin-left: 20px;
+      }
+      @media screen and (min-width: $medium) {
+        float: right;
+        margin-top: 5px;
+      }
+      span.metric {
+        color: lighten($blue, 25%);
+        text-transform: uppercase;
+      }
     }
     .progress-bar {
       display: inline-block;
       margin-top: 4px;
-      margin-bottom: 20px;
-      width: 90%;
+      margin-bottom: 10px;
       .progress, .bar {
-        height: 10px;
+        // height: 10px;
       }
       .numbers {
         color: #EEE;
