@@ -1,52 +1,54 @@
-<div class="message-settings">
-  <div class="toggle-settings" {{action "toggleSettings"}}>
-    <span class="ion-gear-b"></span>
+{{#if showChat}}
+  <div class="message-settings">
+    <div class="toggle-settings" {{action "toggleSettings"}}>
+      <span class="ion-gear-b"></span>
+    </div>
+    <ul {{bind-attr class="showSettings"}}>
+      <li>
+        {{#if notificationsEnabled}}
+          <span {{action "disableNotifications"}}>
+            Disable Notifications
+          </span>
+        {{else}}
+          <span {{action "enableNotifications"}}>
+            Enable Notifications
+          </span>
+        {{/if}}
+      </li>
+    </ul>
   </div>
-  <ul {{bind-attr class="showSettings"}}>
-    <li>
-      {{#if notificationsEnabled}}
-        <span {{action "disableNotifications"}}>
-          Disable Notifications
-        </span>
+  <div class="online-users">
+    <div class="toggle-users" {{action "toggleUsers"}}>
+      <span class="ion-person"></span>
+      {{onlineUsers.length}}
+    </div>
+    <ul {{bind-attr class="showUsers"}}>
+      {{#each username in onlineUsers}}
+        <li>{{#link-to "user.index" username}}{{username}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class='messages-content'>
+    {{#view "message-list" controller=controller}}
+      {{#each message in controller}}
+        {{render "messages.item" message}}
+      {{/each}}
+    {{/view}}
+
+    <div class='new-message-area'>
+      {{#if session.isAuthenticated}}
+        <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
+          <span class="ion-chevron-right" />
+        </button>
+        {{multi-box value=text action="submitMessage"}}
       {{else}}
-        <span {{action "enableNotifications"}}>
-          Enable Notifications
-        </span>
+        <div class="notice">
+          If you want to chat,<br/>
+          {{link-to "Sign up" "users.new"}} or
+          {{link-to "Log in" "users.login"}}
+        </div>
       {{/if}}
-    </li>
-  </ul>
-</div>
-<div class="online-users">
-  <div class="toggle-users" {{action "toggleUsers"}}>
-    <span class="ion-person"></span>
-    {{onlineUsers.length}}
+    </div>
   </div>
-  <ul {{bind-attr class="showUsers"}}>
-    {{#each username in onlineUsers}}
-      <li>{{#link-to "user.index" username}}{{username}}{{/link-to}}</li>
-    {{/each}}
-  </ul>
-</div>
-
-<div class='messages-content'>
-  {{#view "message-list" controller=controller}}
-    {{#each message in controller}}
-      {{render "messages.item" message}}
-    {{/each}}
-  {{/view}}
-
-  <div class='new-message-area'>
-    {{#if session.isAuthenticated}}
-      <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
-        <span class="ion-chevron-right" />
-      </button>
-      {{multi-box value=text action="submitMessage"}}
-    {{else}}
-      <div class="notice">
-        If you want to chat,<br/>
-        {{link-to "Sign up" "users.new"}} or
-        {{link-to "Log in" "users.login"}}
-      </div>
-    {{/if}}
-  </div>
-</div>
+{{/if}}
