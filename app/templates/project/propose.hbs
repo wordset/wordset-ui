@@ -40,7 +40,9 @@
     </ul>
   </div>
   <div class="project-proposal">
-    <div class="word">{{word.id}}</div>
+    <div class="word">
+      {{#link-to "word.index" word.id}}{{word.id}}{{/link-to}}
+    </div>
     <div class="pos">{{meaning.entry.pos}}</div>
     <div class="meaning">
       <div class="defWrap">

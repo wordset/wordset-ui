@@ -75,6 +75,10 @@
     @media screen and (max-width: $medium) {
       width: 100%;
     }
+    .word a {
+      color: $text-color;
+      text-decoration: none;
+    }
   }
   .meaning {
     padding: 20px 0px;
