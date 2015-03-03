@@ -20,7 +20,9 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         function() {
           _this.flash.notice("Thanks! Here's another meaning that needs cleaning up.");
           _this.send("randomTarget");
-        }, function() { }
+        }, function() {
+          _this.send("randomTarget");
+        }
       );
     }
   }
