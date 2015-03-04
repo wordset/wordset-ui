@@ -14,17 +14,9 @@
     {{typeName}}.
   </div>
 
-  {{#if isNewMeaning}}
-    {{partial "proposal/new-meaning" model}}
-  {{/if}}
-  {{#if isNewWord}}
-    {{partial "proposal/new-word" model}}
-  {{/if}}
-  {{#if isMeaningChange}}
-    {{partial "proposal/meaning-change" model}}
-  {{/if}}
+  {{partial partialName model}}
 
-  {{#if canEdit}}
+  {{#if canChange}}
     {{#if isEditing}}
     {{else}}
       <div class="proposal-change-buttons">
@@ -32,7 +24,9 @@
           <div class="withdrawing-popup">Click again to confirm!</div>
         {{/if}}
         <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
-        <button {{action "startEdit"}} class="edit">Edit</button>
+        {{#if isEditableType}}
+          <button {{action "startEdit"}} class="edit">Edit</button>
+        {{/if}}
       </div>
     {{/if}}
   {{/if}}

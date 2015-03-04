@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import ENV from '../config/environment';
+import Proposal from '../models/proposal';
 /* global ga */
 /* global mixpanel */
 
@@ -29,6 +30,15 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       }
       this.controllerFor("search").send("clear");
       this.controller.set("showMenu", false);
+    },
+    randomProposal: function() {
+      var _this = this;
+      Proposal.random().then(function(data) {
+        _this.store.pushPayload("proposal", data);
+        _this.transitionTo('proposal.index', data.proposal.id);
+      }, function() {
+        _this.send("randomProposal")
+      });
     },
     log: function(name) {
       var metaData = {"url": window.location.pathname, "user": this.get("session").get("username")};

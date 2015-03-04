@@ -3,7 +3,7 @@
   {{#if currentUser}}
     {{#if myVote}}
       <p>Thanks for your vote. You can <span class="withdraw-vote" {{action "withdrawVote"}}>withdraw your vote</span> if necessary.</p>
-      {{#link-to "proposals.random" class="next-proposal"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
+      <button {{action "randomProposal"}} class="next-proposal">Next Open Proposal<span class="ion-ios-arrow-forward"></span></button>
     {{else}}
       <div class="new-vote">
         <button {{action "voteYae"}} class="yae"><span class="ion-thumbsup"></span>Yae</button>
@@ -19,7 +19,7 @@
     Voting is closed.
   </p>
   {{#if currentUser}}
-    {{#link-to "proposals.random" class="next-proposal"}}Next Open Proposal<span class="ion-ios-arrow-forward"></span>{{/link-to}}
+  <button {{action "randomProposal"}} class="next-proposal">Next Open Proposal<span class="ion-ios-arrow-forward"></span></button>
   {{/if}}
 
 {{/if}}

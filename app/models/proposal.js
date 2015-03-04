@@ -1,6 +1,18 @@
 import DS from 'ember-data';
+import ENV from '../config/environment';
 
-var Proposal = DS.Model.extend({
+export default DS.Model.reopenClass({
+  random: function() {
+    var _this = this;
+    var path = "/proposals/next";
+    return (new Promise(function(resolve, reject) {
+      Ember.$.getJSON(ENV.api + path).then(
+        function(data) {
+          resolve(data);
+        }, reject);
+    }));
+  },
+}).extend({
   type: DS.attr("string"),
   user: DS.belongsTo("user"),
   word: DS.belongsTo("word", {async: true}),
@@ -8,7 +20,6 @@ var Proposal = DS.Model.extend({
   wordName: DS.attr("string"),
   reason: DS.attr("string"),
   state: DS.attr("string"),
-  wordnet: DS.attr("boolean"),
   createdAt: DS.attr("date"),
   tally: DS.attr("number"),
   votes: DS.hasMany("vote"),
@@ -30,8 +41,6 @@ var Proposal = DS.Model.extend({
   // NewMeaning
   pos: DS.attr("string"),
 
-  types: ["NewWord", "NewMeaning", "MeaningChange"],
-
   typeName: function() {
     if(this.get("type") === "NewWord") {
       return "New Word";
@@ -39,8 +48,13 @@ var Proposal = DS.Model.extend({
       return "New Meaning";
     } else if(this.get("type") === "MeaningChange") {
       return "Change";
+    } else if(this.get("type") === "MeaningRemoval") {
+      return "Removal";
     }
   }.property("type"),
+  isEditableType: function() {
+    return (this.get("type") !== "MeaningRemoval")
+  }.property("typeName"),
   positiveTally: function() {
     if(this.get("tally") > 0 ) {
       return "width: " + this.get("tally") + "%;";
@@ -57,5 +71,3 @@ var Proposal = DS.Model.extend({
   }.property("tally"),
 
 });
-
-export default Proposal;

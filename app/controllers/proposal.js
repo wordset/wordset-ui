@@ -14,21 +14,15 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   isOpen: function() {
     return (this.get("state") === "open");
   }.property("state"),
-  isNewMeaning: function() {
-    return ("NewMeaning" === this.get("type"));
-  }.property("type"),
   isMine: function() {
     return (this.get("user") === this.get("currentUser"))
   }.property("user", "currentUser"),
-  isNewWord: function() {
-    return ("NewWord" === this.get("type"));
-  }.property("type"),
-  isMeaningChange: function() {
-    return ("MeaningChange" === this.get("type"));
-  }.property("type"),
-  canEdit: function() {
+  canChange: function() {
     return (this.get("isOpen") && this.get("isMine"));
   }.property("isOpen", "isMine"),
+  partialName: function() {
+    return "proposal/" + this.get("model.type").dasherize();
+  }.property("type"),
   actions: {
     startEdit: function() {
       this.set("isEditing", true);

@@ -27,7 +27,6 @@ Router.map(function() {
     this.route("random");
   });
   this.resource("proposals", function() {
-    this.route("random");
   });
   this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
     this.route("new-word");
@@ -43,8 +42,6 @@ Router.map(function() {
     this.route("get-started");
     this.route("legal");
   });
-
-  //this.resource("submit-proposal");
 
 });
 
