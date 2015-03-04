@@ -43,6 +43,8 @@ $header-color: $dark-green;
 $anchor-color: $lime;
 $anchor-hover-color: darken($lime, 10%);
 
+$maybe-color: $taupe;
+
 $button-background-positive: $lime;
 $button-hover-background-positive: darken($lime, 10%);
 
@@ -51,6 +53,9 @@ $button-hover-background-negative: darken($dark-green, 10%);
 
 $button-background-flag: $red;
 $button-hover-background-flag: darken($red, 10%);
+
+$button-background-skip: $maybe-color;
+$button-hover-background-skip: darken($maybe-color, 10%);
 
 $module-border: $dark-green;
 
@@ -61,7 +66,7 @@ $dropdown-anchor-color: $dark-green;
 $positive-background:lighten($dark-green, 69%);
 $positive-color: lighten($dark-green, 20%);
 
-$negative-color: $red;
+$negative-color: darken($red, 50%);
 
 $footer-color: $dark-green;
 $footer-hover-color: lighten($dark-green, 10%);

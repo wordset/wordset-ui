@@ -89,6 +89,14 @@ button {
       background: $button-hover-background-flag;
     }
   }
+  &.skip {
+    background: $button-background-skip;
+    box-shadow: inset 0px 1px 1px lighten($button-background-skip, 15%), 0px 1px 1px #DDD;
+    text-shadow: 0px 1px 0px $button-hover-background-skip;
+    &:hover {
+      background: $button-background-skip;
+    }
+  }
   &[disabled] {
     background: #CCC;
     box-shadow: none;

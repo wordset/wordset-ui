@@ -137,18 +137,37 @@
   .reason {
     margin-bottom: 20px;
   }
-  .new-vote {
+  .action-bar {
     button {
       display: inline-block;
       margin-bottom: 20px;
       min-width: 80px;
-      width: 32%;
+      width: 28%;
+
       @media screen and (max-width: $large) {
         width: 100%;
       }
+
       span {
         margin-right: 10px;
       }
+
+      &.flag {
+        width: 10%;
+        min-width: 0px;
+        span {
+          margin: 0;
+        }
+        @media screen and (max-width: $large) {
+          width: 0px;
+          height: 0px;
+          padding: 0;
+        }
+      }
+
+    }
+    &.just-voted button {
+      @extend button[disabled];
     }
   }
   .withdraw-vote {

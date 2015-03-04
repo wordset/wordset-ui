@@ -9,15 +9,28 @@ export default Ember.ArrayController.extend({
   myVote: function() {
     return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user", this.get("currentUser"));
   }.property("model.@each.user", "currentUser"),
+  canVote: function() {
+    return (!this.get("justVoted") && !this.get("myVote"));
+  }.property("myVote"),
+  justVoted: false,
   actions: {
-    voteYae: function() {
-      this.get("registerVote")(this, true, false);
-    },
-    voteNay: function() {
-      this.get("registerVote")(this, false, false);
-    },
-    voteFlag: function() {
-      this.get("registerVote")(this, false, true);
+    registerVote: function(type) {
+      if(this.get("canVote")) {
+        var _this = this;
+        var p = _this.get("proposal").get("model");
+        this.set("justVoted", true);
+        Ember.$.post(ENV.api + "/votes", {
+          vote: {
+            type: type,
+            proposal_id: p.get('id'),
+          },
+        }).then(function(data) {
+          console.log(data);
+          _this.set("justVoted", false);
+        }, function() {
+          _this.set("justVoted", false);
+        })
+      }
     },
     withdrawVote: function() {
       var _this = this;
@@ -28,21 +41,5 @@ export default Ember.ArrayController.extend({
     },
   },
 
-  registerVote: function(_this, yae, flagged) {
-    var p = _this.get("proposal").get("model");
-    _this.send("log", "vote");
-    var v = _this.store.createRecord("vote", {
-      proposal: p,
-      yae: yae,
-      flagged: flagged,
-      comment: _this.get("comment")
-    });
-    v.save().then(function() {
-      p.reload();
-    }, function() {
-      v.deleteRecord();
-      p.reload();
-      _this.flash.notice("We were unable to accept your vote.");
-    });
-  }
+
 });
