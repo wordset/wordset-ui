@@ -32,7 +32,7 @@
   <div class='messages-content'>
     {{#view "message-list" controller=controller}}
       {{#each message in controller}}
-        {{render "messages.item" message}}
+        {{partial "messages/item" message}}
       {{/each}}
     {{/view}}
 

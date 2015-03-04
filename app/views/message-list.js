@@ -14,6 +14,7 @@ export default Ember.View.extend(ResizeMixin, {
     var size = windowHeight - topOffset - submitArea.height();
     area.css('height', size);
     elem.scrollTop = elem.scrollHeight;
+
   }.on('resize', 'didInsertElement'),
   scrollToBottom: function() {
     Ember.run.next(this, function() {
