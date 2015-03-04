@@ -1,6 +1,17 @@
 
-{{#if isLink}}
-  {{partial "messages/link-item"}}
+{{#if message.isLink}}
+  <li class="message link" {{action "goToLink" message.url}}>
+    <div class="link-image">
+      <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+      <span class="ion-forward"></span>
+    </div>
+    <div class="info">
+      <div class="text">
+        {{message.user.id}} shared a link
+      </div>
+    </div>
+  </li>
+
 {{else}}
   <li {{bind-attr class=":message isSelf"}}>
     <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
@@ -15,7 +26,7 @@
           {{message.user.id}}
         </div>
         <div class="text">
-          {{markdown-to-html markdown=message.text}}
+          {{message.text}}
         </div>
       {{/if}}
     </div>
