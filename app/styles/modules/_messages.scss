@@ -3,6 +3,16 @@
   border: 2px solid $header-background;
   position: relative;
   vertical-align: top;
+  .rankings {
+    img {
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+    }
+    .self {
+      font-weight: 500;
+    }
+  }
   .messages-content {
     padding: 10px;
   }
