@@ -77,3 +77,9 @@ $footer-background: $light-grey;
        -o-transition: $type $time ease;
           transition: $type $time ease;
 }
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+       -o-transform: rotate($deg); 
+          transform: rotate($deg);
+}

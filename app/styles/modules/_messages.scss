@@ -4,10 +4,23 @@
   position: relative;
   vertical-align: top;
   .rankings {
+    border-bottom: 2px solid $taupe;
+    li {
+      padding: 5px 10px;
+    }
     img {
       border-radius: 50%;
       height: 20px;
+      margin-right: 2px;
+      vertical-align: middle;
       width: 20px;
+    }
+    .username {
+      display: inline-block;
+      width: 50%;
+    }
+    .points {
+      font-size: 16px;
     }
     .self {
       font-weight: 500;
