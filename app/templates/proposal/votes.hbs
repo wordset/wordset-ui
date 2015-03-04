@@ -2,24 +2,25 @@
 {{#if isOpen}}
   {{#if currentUser}}
     {{#if myVote}}
-      <p>Thanks for your vote. You can <span class="withdraw-vote" {{action "withdrawVote"}}>withdraw your vote</span> if necessary.</p>
-      <button {{action "randomProposal"}} class="next-proposal">Next Open Proposal<span class="ion-ios-arrow-forward"></span></button>
+      <div class="action-bar">
+        <button {{action "randomProposal"}} class="skip">Next</button>
+        <button {{action "withdrawVote"}} class='negative'>Withdraw</button>
+      </div>
     {{else}}
-      <div class="new-vote">
-        <button {{action "voteYae"}} class="yae"><span class="ion-thumbsup"></span>Yae</button>
-        <button {{action "voteNay"}} class="nay negative"><span class="ion-thumbsdown"></span>Nay</button>
-        <button {{action "voteFlag"}} class="flag"><span class="ion-flag"></span>Flag</button>
+      <div {{bind-attr class=":action-bar justVoted"}}>
+        <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Yea</button>
+        <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Nay</button>
+        <button {{action "registerVote" "skip"}} class="skip"><span class="ion-ios-fastforward"></span>Skip</button>
+        <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span></button>
       </div>
     {{/if}}
   {{else}}
     <p>{{#link-to "users.new"}}Sign up to vote.{{/link-to}}</p>
   {{/if}}
 {{else}}
-  <p>
-    Voting is closed.
-  </p>
   {{#if currentUser}}
-  <button {{action "randomProposal"}} class="next-proposal">Next Open Proposal<span class="ion-ios-arrow-forward"></span></button>
+    <div class="action-bar">
+      <button {{action "randomProposal"}} class="skip">Next</button>
+    </div>
   {{/if}}
-
 {{/if}}
