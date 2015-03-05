@@ -160,13 +160,16 @@
       @media screen and (max-width: $large) {
         width: 100%;
       }
+      &.next.skip {
+        width: 100%;
+      }
 
       span {
         margin-right: 10px;
       }
 
       &.flag {
-        // width: 10%;
+        width: 10%;
         min-width: 0px;
         span {
           margin: 0;

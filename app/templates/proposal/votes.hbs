@@ -18,9 +18,7 @@
     <p>{{#link-to "users.new"}}Sign up to vote.{{/link-to}}</p>
   {{/if}}
 {{else}}
-  {{#if currentUser}}
-    <div class="action-bar">
-      <button {{action "randomProposal"}} class="skip">Next</button>
-    </div>
-  {{/if}}
+  <div class="action-bar">
+    <button {{action "randomProposal"}} class="skip next">See another open proposal</button>
+  </div>
 {{/if}}
