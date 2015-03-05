@@ -8,8 +8,13 @@
       </div>
     {{else}}
       <div class="action-bar">
-        <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Yea</button>
-        <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Nay</button>
+        {{#if proposal.isRemoval}}
+          <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Delete</button>
+          <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Keep</button>
+        {{else}}
+          <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Yea</button>
+          <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Nay</button>
+        {{/if}}
         <button {{action "registerVote" "skip"}} class="skip"><span class="ion-ios-fastforward"></span>Skip</button>
         <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span></button>
       </div>
