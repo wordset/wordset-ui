@@ -12,6 +12,6 @@ export default Ember.Route.extend({
           _this.transitionTo("project.propose", data.meaning.id);
         }, function() { }
       );
-    }
+    },
   }
 });

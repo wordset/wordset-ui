@@ -23,7 +23,7 @@
       }
     }
     &.rejected {
-      background: lighten($negative-color, 50%);
+      background: lighten($red, 50%);
       .ionicon {
         @extend .ion-close-circled;
       }
