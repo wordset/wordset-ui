@@ -7,7 +7,7 @@
         <button {{action "withdrawVote"}} class='negative'>Withdraw</button>
       </div>
     {{else}}
-      <div {{bind-attr class=":action-bar justVoted"}}>
+      <div class="action-bar">
         <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Yea</button>
         <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Nay</button>
         <button {{action "registerVote" "skip"}} class="skip"><span class="ion-ios-fastforward"></span>Skip</button>

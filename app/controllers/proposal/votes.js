@@ -6,13 +6,13 @@ export default Ember.ArrayController.extend({
   proposal: Ember.computed.alias("controllers.proposal"),
   isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
   currentUser: Ember.computed.alias("controllers.application.session.currentUser"),
+
   myVote: function() {
     return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user", this.get("currentUser"));
   }.property("model.@each.user", "currentUser"),
   canVote: function() {
-    return (!this.get("justVoted") && !this.get("myVote"));
+    return (!this.get("myVote"));
   }.property("myVote"),
-  justVoted: false,
   actions: {
     registerVote: function(type) {
       if(this.get("canVote")) {
@@ -24,12 +24,8 @@ export default Ember.ArrayController.extend({
             type: type,
             proposal_id: p.get('id'),
           },
-        }).then(function(data) {
-          console.log(data);
-          _this.set("justVoted", false);
-        }, function() {
-          _this.set("justVoted", false);
-        })
+        });
+        _this.send("randomProposal")
       }
     },
     withdrawVote: function() {
