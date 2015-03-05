@@ -1,35 +1,45 @@
-<div class="proposal">
-  <div class="details">
-    {{#if wordnet}}
-      Wordnet
-    {{else}}
-      {{#link-to "user" model.user}}
-        <img {{bind-attr src="user.imageUrl"}} class="avatar" />
-      {{/link-to}}
-      {{#link-to "user" model.user}}
-        {{user.id}}
-      {{/link-to}}
-    {{/if}}
-    proposed a
-    {{typeName}}.
-  </div>
-
-  {{partial partialName model}}
-
-  {{#if canChange}}
-    {{#if isEditing}}
-    {{else}}
-      <div class="proposal-change-buttons">
-        {{#if isWithdrawing}}
-          <div class="withdrawing-popup">Click again to confirm!</div>
-        {{/if}}
-        <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
-        {{#if isEditableType}}
-          <button {{action "startEdit"}} class="edit">Edit</button>
-        {{/if}}
-      </div>
-    {{/if}}
+<div class="proposal-wrap">
+  {{#if model.project}}
+    {{partial "project/header"}}
   {{/if}}
+  <div class="proposal">
+    <div class="details">
+      {{#if wordnet}}
+        Wordnet proposed a {{typeName}}.
+      {{else}}
+        {{#if model.user}}
+          {{#link-to "user" model.user}}
+            <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+          {{/link-to}}
+          {{#link-to "user" model.user}}
+            {{user.id}}
+          {{/link-to}}
+          proposed a {{typeName}}.
+        {{else}}
+          <img src="assets/images/square-logo.png" class="avatar" />
+          Wordset proposed this change automatically.
+        {{/if}}
+      {{/if}}
+
+    </div>
+
+    {{partial partialName model}}
+
+    {{#if canChange}}
+      {{#if isEditing}}
+      {{else}}
+        <div class="proposal-change-buttons">
+          {{#if isWithdrawing}}
+            <div class="withdrawing-popup">Click again to confirm!</div>
+          {{/if}}
+          <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
+          {{#if isEditableType}}
+            <button {{action "startEdit"}} class="edit">Edit</button>
+          {{/if}}
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
 </div>
 
 <div class="votes-sidebar">

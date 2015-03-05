@@ -12,18 +12,27 @@
   }
 }
 
-.proposal {
+.proposal-wrap {
   display: inline-block;
   float: left;
+  position: relative;
+  @media screen and (min-width: $medium) {
+    width: 70%;
+  }
+  @media screen and (min-width: $large) {
+    width: 60%;
+  }
+}
+
+.proposal {
   list-style-position: inside;
   margin-bottom: 30px;
   padding: 20px;
-  position: relative;
-  width: 80%;
   word-wrap: break-word;
+  width: 100%;
   @media screen and (min-width: $medium) {
     padding: 20px 35px;
-    width: 42%;
+    width: 80%;
   }
   .word a {
     color: $text-color;
@@ -34,9 +43,6 @@
   }
   .info {
     margin-bottom: 30px;
-  }
-  h2 {
-    text-transform: uppercase;
   }
   h3 {
     margin-top: 20px;
@@ -121,7 +127,6 @@
 .votes-sidebar {
   background: $header-background;
   display: inline-block;
-  padding: 20px 35px;
   vertical-align: top;
   @media screen and (min-width: $medium) {
     float: right;
@@ -130,9 +135,17 @@
   @media screen and (min-width: $large) {
     width: 40%;
   }
+  // Replacing Padding
+  h4, .reason, .progress-bar, .action-bar, .comment-box, .activity, p {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
   h4 {
     color: darken($header-background, 30%);
     margin-bottom: 10px;
+    &:first-child {
+      margin-top: 20px;
+    }
   }
   .reason {
     margin-bottom: 20px;
@@ -191,7 +204,7 @@
       padding: 0px;
       position: absolute;
       right: 1px;
-      top: 29px;
+      top: 1px;
       width: 25px;
     }
   }
@@ -212,6 +225,9 @@
   }
   .activity {
     margin-bottom: 2px;
+    &:last-child {
+      margin-bottom: 20px;
+    }
     &:nth-child(odd) {
       background: #FDFDFD;
     }

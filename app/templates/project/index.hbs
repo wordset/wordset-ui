@@ -1,9 +1,10 @@
-<div class="wrapper">
+<div class="wrapper project-index">
   <h2>{{name}}</h2>
   <p>Goal: <strong>{{description}}</strong></p>
   <p>We're starting to implement projects on our site. These are self-contained groups of improvements we want to make to Wordset.</p>
-  <p>Our first major project is to remove parantheses from definitions. You'll have seen them everywhere – "(in law)", "(slang)", and so on.</p>
-  <p>The information contained within the parantheses is useful, but the parantheses themselves break up the definition too much. We want to put the paranthetical back into the definition so it reads more smoothly.</p>
+  <p>Our first major project is to remove proper nouns from Wordset. We believe that our dictionary should be about definitions, not reference. A dictionary is not the place to gather in-depth information about a person or place. That's what an encyclopedia is for.</p>
+
+  <p>We have opened a number of proposals that delete proper nouns from Wordset. We need your help in voting on these proposals. We need you to check that the proper noun is, in fact, a proper noun, and that it's worthy of deletion.</p>
   <div class="progress-bar">
     <div class="progress">
       <div class="bar positive" {{bind-attr style="percentageThrough"}}>
@@ -14,7 +15,9 @@
     </div>
   </div>
 
-  <p>Hit the button below to find a random definition that needs your help!</p>
+  <p>Total proper nouns in Wordset: <span class="progress-numbers">{{totalTargetsCount}}</span></p>
+  <p>Number of open proposals: <span class="progress-numbers">{{pendingTargetsCount}}</span></p>
+  <p>Number fixed: <span class="progress-numbers">{{fixedTargetsCount}}</span></p>
 
-  <button {{action "randomTarget"}}>Random Word</button>
+  <!-- <button {{action "randomTarget"}}>Random Word</button> -->
 </div>

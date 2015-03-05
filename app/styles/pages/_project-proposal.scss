@@ -1,57 +1,4 @@
 .project {
-  .heading {
-    background: $blue;
-    color: #FFF;
-    padding: 20px;
-
-    h2 {
-      color: #FFF;
-      display: inline-block;
-      font-size: 30px;
-      margin-bottom: 0px;
-    }
-    .title {
-      display: inline-block;
-      vertical-align: top;
-      span {
-        font-size: 14px;
-        margin-left: 10px;
-      }
-      a {
-        color: #FFF;
-        &:hover {
-          color: #DDD;
-        }
-      }
-    }
-    .progress-numbers {
-      display: inline-block;
-      font-size: 14px;
-      margin-top: 15px;
-      @media screen and (min-width: $header-medium) {
-        margin-left: 20px;
-      }
-      @media screen and (min-width: $medium) {
-        float: right;
-        margin-top: 5px;
-      }
-      span.metric {
-        color: lighten($blue, 25%);
-        text-transform: uppercase;
-      }
-    }
-    .progress-bar {
-      display: inline-block;
-      margin-top: 4px;
-      margin-bottom: 10px;
-      .progress, .bar {
-        // height: 10px;
-      }
-      .numbers {
-        color: #EEE;
-      }
-    }
-  }
   .rules, .project-proposal {
     display: inline-block;
     vertical-align: top;
@@ -84,6 +31,59 @@
     padding: 20px 0px;
     .def {
       margin-bottom: 10px;
+    }
+  }
+}
+
+.project-heading {
+  background: $blue;
+  color: #FFF;
+  padding: 20px;
+
+  h2 {
+    color: #FFF;
+    display: inline-block;
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+  .title {
+    display: inline-block;
+    vertical-align: top;
+    span {
+      font-size: 14px;
+      margin-left: 10px;
+    }
+    a {
+      color: #FFF;
+      &:hover {
+        color: #DDD;
+      }
+    }
+  }
+  .progress-numbers {
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 15px;
+    @media screen and (min-width: $header-medium) {
+      margin-left: 20px;
+    }
+    @media screen and (min-width: $medium) {
+      float: right;
+      margin-top: 5px;
+    }
+    span.metric {
+      color: lighten($blue, 25%);
+      text-transform: uppercase;
+    }
+  }
+  .progress-bar {
+    display: inline-block;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    
+    .numbers {
+      color: #EEE;
     }
   }
 }
