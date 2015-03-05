@@ -159,9 +159,9 @@
   .messages {
     display: inline-block;
     float: right;
-    width: 300px;
+    width: $chat-width;
     &.closed {
-      margin-right: -300px;
+      margin-right: -$chat-width;
     }
   }
 }

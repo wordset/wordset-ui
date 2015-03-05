@@ -157,9 +157,11 @@
       min-width: 80px;
       width: 28%;
 
-      @media screen and (max-width: $large) {
+      @include media-max-width($large) {
         width: 100%;
       }
+
+
       &.next.skip {
         width: 100%;
       }
@@ -174,7 +176,7 @@
         span {
           margin: 0;
         }
-        @media screen and (max-width: $large) {
+        @include media-max-width($large) {
           width: 0px;
           height: 0px;
           padding: 0;
