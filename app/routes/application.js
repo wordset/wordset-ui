@@ -15,7 +15,6 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   },
 
   actions: {
-
     willTransition: function() {
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     },
@@ -35,7 +34,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       var _this = this;
       this.intermediateTransitionTo('loading');
       Proposal.random().then(function(data) {
-        if(data.proposal) {
+        if(data.proposal !== undefined) {
           _this.store.pushPayload("proposal", data);
           _this.transitionTo('proposal.index', data.proposal.id);
         } else {
