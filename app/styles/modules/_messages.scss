@@ -30,7 +30,6 @@
     padding: 10px;
   }
   .new-message-area {
-
     position: relative;
     textarea {
       font-size: 18px;
@@ -38,14 +37,17 @@
       width: 100%;
     }
     button {
+      background: #FFF;
       border-radius: 0px;
       box-shadow: none;
+      color: $lime;
+      cursor: pointer;
       font-size: 12px;
-      height: 60px;
+      height: 58px;
       padding: 0px;
       position: absolute;
       right: 1px;
-      top: 1px;
+      top: 2px;
       width: 25px;
     }
     .notice {
@@ -159,9 +161,9 @@
   .messages {
     display: inline-block;
     float: right;
-    width: 300px;
+    width: $chat-width;
     &.closed {
-      margin-right: -300px;
+      margin-right: -$chat-width;
     }
   }
 }

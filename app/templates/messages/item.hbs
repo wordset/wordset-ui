@@ -13,10 +13,10 @@
   </li>
 
 {{else}}
-  <li {{bind-attr class=":message isSelf"}}>
+  <li {{bind-attr class=":message message.isSelf"}}>
     <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
     <div class="info">
-      {{#if isSelf}}
+      {{#if message.isSelf}}
         <div class='text'>
           {{message.user.id}}
           {{message.text}}

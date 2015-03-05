@@ -48,6 +48,8 @@
   }
   .title {
     display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 30px;
     vertical-align: top;
     span {
       font-size: 14px;
@@ -63,14 +65,7 @@
   .progress-numbers {
     display: inline-block;
     font-size: 14px;
-    margin-top: 15px;
-    @media screen and (min-width: $header-medium) {
-      margin-left: 20px;
-    }
-    @media screen and (min-width: $medium) {
-      float: right;
-      margin-top: 5px;
-    }
+    margin-top: 5px;
     span.metric {
       color: lighten($blue, 25%);
       text-transform: uppercase;
@@ -81,7 +76,7 @@
     margin-top: 4px;
     margin-bottom: 10px;
     width: 100%;
-    
+
     .numbers {
       color: #EEE;
     }

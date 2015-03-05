@@ -1,3 +1,12 @@
+{{#if currentUser}}
+
+{{else}}
+  <div class="banner">
+    This is a collaborative project.
+    {{#link-to "users.new"}}Sign up{{/link-to}} to propose improvements!
+  </div>
+{{/if}}
+
 <div class="proposal-wrap">
   {{#if model.project}}
     {{partial "project/header"}}

@@ -2,12 +2,15 @@ $serif: Garamond, serif;
 $sans-serif: "Avenir Next", sans-serif;
 
 // Screen sizes
+$chat-width: 300px;
 
 $large: 1200px;
 $medium: 940px;
 $header-medium: 780px;
 $med-small: 670px;
 $small: 550px;
+
+$large-chat: $large + $chat-width;
 
 // Colours
 
@@ -71,20 +74,3 @@ $negative-color: darken($red, 50%);
 $footer-color: $dark-green;
 $footer-hover-color: lighten($dark-green, 10%);
 $footer-background: $light-grey;
-
-
-// Mixins
-
-@mixin transition($time: 0.5s, $type: all) {
-  -webkit-transition: $type $time ease;
-     -moz-transition: $type $time ease;
-      -ms-transition: $type $time ease;
-       -o-transition: $type $time ease;
-          transition: $type $time ease;
-}
-
-@mixin rotate($deg) {
-  -webkit-transform: rotate($deg);
-       -o-transform: rotate($deg); 
-          transform: rotate($deg);
-}
