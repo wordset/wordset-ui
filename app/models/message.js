@@ -9,4 +9,7 @@ export default DS.Model.extend({
   isLink: function() {
     return this.get("type") === "link";
   }.property("type"),
+  isSelf: function() {
+    return this.get("type") === "self";
+  }.property("type"),
 });
