@@ -11,6 +11,7 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   needs: ['application'],
   isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  justVoted: false,
   isOpen: function() {
     return (this.get("state") === "open");
   }.property("state"),

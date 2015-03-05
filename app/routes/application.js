@@ -33,6 +33,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     randomProposal: function() {
       var _this = this;
+      this.replaceWith('loading');
       Proposal.random().then(function(data) {
         _this.store.pushPayload("proposal", data);
         _this.transitionTo('proposal.index', data.proposal.id);
