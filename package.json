@@ -24,6 +24,7 @@
     "broccoli-sass": "^0.3.3",
     "ember-cli": "0.1.15",
     "ember-cli-content-security-policy": "0.3.0",
+    "ember-cli-dates": "1.1.0",
     "ember-cli-dependency-checker": "0.0.7",
     "ember-cli-divshot": "^0.1.6",
     "ember-cli-esnext": "0.1.1",
