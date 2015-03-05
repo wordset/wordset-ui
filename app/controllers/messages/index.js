@@ -76,8 +76,8 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       _this.flash.notice("Notifications disabled")
     },
     goToLink: function(link) {
-      if(this.get("url")) {
-        this.transitionToRoute(this.get("url"));
+      if(link) {
+        this.transitionToRoute(link);
       }
     },
   }
