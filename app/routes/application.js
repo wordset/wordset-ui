@@ -30,10 +30,10 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       this.controllerFor("search").send("clear");
       this.controller.set("showMenu", false);
     },
-    randomProposal: function() {
+    randomProposal: function(proposal_id) {
       var _this = this;
       this.intermediateTransitionTo('loading');
-      Proposal.random().then(function(data) {
+      Proposal.random(proposal_id).then(function(data) {
         if(data.proposal !== undefined) {
           _this.store.pushPayload("proposal", data);
           _this.transitionTo('proposal.index', data.proposal.id);

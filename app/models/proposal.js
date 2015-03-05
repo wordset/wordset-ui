@@ -2,9 +2,12 @@ import DS from 'ember-data';
 import ENV from '../config/environment';
 
 export default DS.Model.reopenClass({
-  random: function() {
+  random: function(proposal_id) {
     var _this = this;
     var path = "/proposals/next";
+    if(proposal_id) {
+      path += "?proposal_id=" + proposal_id; 
+    }
     return (new Promise(function(resolve, reject) {
       Ember.$.getJSON(ENV.api + path).then(
         function(data) {
