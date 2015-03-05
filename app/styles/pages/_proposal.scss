@@ -166,9 +166,6 @@
       }
 
     }
-    &.just-voted button {
-      @extend button[disabled];
-    }
   }
   .withdraw-vote {
     @extend a;
