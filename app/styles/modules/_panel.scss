@@ -7,8 +7,8 @@
     border-bottom: 2px solid $taupe;
     li {
       padding: 5px 10px;
-      &:nth-child(2) {
-        font-weight: 500;
+      &:nth-child(odd) {
+        background: #F9F9F9;
       }
     }
     img {

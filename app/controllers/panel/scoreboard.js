@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
     //   }
     // }
   }.observes("list.@each.points"),
-
+  
   actions: {
     reloadList: function() {
       var users = this.store.find("user", {user_id: this.get("currentUser.id")});
