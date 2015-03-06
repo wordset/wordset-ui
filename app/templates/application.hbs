@@ -11,8 +11,8 @@
     <div class="togglers">
 
       <a {{action 'toggleChat'}} class="chat-toggler" alt="Chat">
-        <span {{bind-attr class="hasChatAlert :ion-android-chat showChat"}}></span>
-        <!-- <span {{bind-attr class="hasChatAlert:ion-chatbox-working:ion-chatbox showChat"}}></span> -->
+        <span {{bind-attr class="hasChatAlert :ion-android-chat showPanel"}}></span>
+        <!-- <span {{bind-attr class="hasChatAlert:ion-chatbox-working:ion-chatbox showPanel"}}></span> -->
       </a>
       <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
         <span class="ion-android-apps"></span>
@@ -23,10 +23,10 @@
   {{flash-message}}
 
   {{#view "main-area"}}
-    <aside {{bind-attr class=":messages showChat:open:closed"}}>
-      {{render "messages.index"}}
+    <aside {{bind-attr class=":panel showPanel:open:closed"}}>
+      {{render "panel"}}
     </aside>
-    <section {{bind-attr class=":content showChat"}}>
+    <section {{bind-attr class=":content showPanel"}}>
       {{outlet}}
     </section>
   {{/view}}

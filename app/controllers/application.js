@@ -10,13 +10,13 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
     activities: ["push"]
   },
   showMenu: false,
-  showChat: false,
+  showPanel: false,
   wordList: null,
   chatReceived: false,
   notifications: [],
   hasChatAlert: function() {
-    return (!this.get("showChat")) && this.get("chatReceived")
-  }.property("showChat", "chatReceived"),
+    return (!this.get("showPanel")) && this.get("chatReceived")
+  }.property("showPanel", "chatReceived"),
   isAdmin: function() {
     return this.get("currentUser").get("isAdmin");
   }.property("currentUser"),
@@ -26,13 +26,16 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
       this.set("notifications", []);
     }
   }.observes("visible"),
+  username: function() {
+    return this.get("session.username");
+  }.property("session.username"),
   currentUser: function() {
     return this.get("session").get("currentUser");
   }.property("session.currentUser"),
   init: function() {
     this._super();
-    if(localStorage.showChat) {
-      this.set("showChat", JSON.parse(localStorage.showChat));
+    if(localStorage.showPanel) {
+      this.set("showPanel", JSON.parse(localStorage.showPanel));
     };
   },
   actions: {
@@ -40,8 +43,8 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
       this.toggleProperty("showMenu");
     },
     toggleChat: function() {
-      this.toggleProperty("showChat");
-      localStorage.showChat = this.get("showChat");
+      this.toggleProperty("showPanel");
+      localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);
     },
     notify: function(title, body, tag) {

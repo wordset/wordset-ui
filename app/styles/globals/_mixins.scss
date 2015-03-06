@@ -17,7 +17,7 @@
   @media screen and (max-width: #{$width}) {
     @content;
   }
-  .show-chat & {
+  .show-panel & {
     @media screen and (max-width: #{$width + $chat-width}) {
       @content;
     }
@@ -28,7 +28,7 @@
   @media screen and (min-width: #{$width}) {
     @content;
   }
-  .show-chat & {
+  .show-panel & {
     @media screen and (min-width: #{$width + $chat-width}) {
       @content;
     }

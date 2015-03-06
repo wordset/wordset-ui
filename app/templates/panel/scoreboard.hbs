@@ -1,0 +1,9 @@
+<ul class="scoreboard">
+  {{#each user in list}}
+    <li>
+      <img {{bind-attr src="user.imageUrl"}}/>
+      <span class="username">{{user.id}}</span>
+      <span class="points">{{user.points}}</span>
+    </li>
+  {{/each}}
+</ul>

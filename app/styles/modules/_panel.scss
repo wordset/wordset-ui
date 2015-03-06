@@ -1,12 +1,15 @@
-.messages {
+.panel {
   @include transition();
   border: 2px solid $header-background;
   position: relative;
   vertical-align: top;
-  .rankings {
+  .scoreboard {
     border-bottom: 2px solid $taupe;
     li {
       padding: 5px 10px;
+      &:nth-child(2) {
+        font-weight: 500;
+      }
     }
     img {
       border-radius: 50%;
@@ -21,9 +24,6 @@
     }
     .points {
       font-size: 16px;
-    }
-    .self {
-      font-weight: 500;
     }
   }
   .messages-content {
@@ -154,11 +154,11 @@
 
 // Content and messages
 @media screen and (min-width: $small) {
-  .content.showChat {
+  .content.showPanel {
     display: inline-block;
   }
 
-  .messages {
+  .panel {
     display: inline-block;
     float: right;
     width: $chat-width;
@@ -169,7 +169,7 @@
 }
 
 @media screen and (max-width: $small) {
-  .messages.closed {
+  .panel.closed {
     display: none;
   }
 }

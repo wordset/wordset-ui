@@ -11,7 +11,6 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   chatReceived: Ember.computed.alias('controllers.application.chatReceived'),
-  showChat: Ember.computed.alias('controllers.application.showChat'),
   sortProperties: ['createdAt'],
   showUsers: false,
   sortAscending: true,
