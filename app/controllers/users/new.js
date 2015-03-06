@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-
+import ENV from '../config/environment';
+/* global _gaq */
 
 export default Ember.ObjectController.extend( EmberValidations.Mixin, {
   validations: {
@@ -29,7 +30,14 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
       var _this = this;
       this.get("model").save().then(function(){
         _this.flash.success('Welcome! Now just log in to begin!');
+        _trackEvent(category, action, opt_label, opt_value, opt_noninteraction)
         _this.transitionToRoute('users.login');
+        if (ENV.environment === 'production') {
+          Ember.run(function() {
+            _gaq.push(['_trackEvent', 'account', 'register', 'signup']);
+          });
+        }
+        this.send("log", "register")
       }, function(resp) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);

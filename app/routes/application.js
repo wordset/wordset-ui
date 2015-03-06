@@ -2,7 +2,7 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import ENV from '../config/environment';
 import Proposal from '../models/proposal';
-/* global ga */
+/* global _gaq */
 /* global mixpanel */
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
@@ -21,10 +21,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     didTransition: function() {
       if (ENV.environment === 'production') {
         Ember.run(function() {
-          ga('send', 'pageview', {
-            'page': window.location.pathname,
-            'title': document.title,
-          });
+          _gaq.push(['_trackPageview', window.location.pathname]);
         });
       }
       this.controllerFor("search").send("clear");

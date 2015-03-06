@@ -1,5 +1,6 @@
 import Ember from "ember";
 import ENV from '../../config/environment';
+/* global _gaq */
 
 export default Ember.ArrayController.extend({
   needs: [ "proposal", "application" ],
@@ -24,6 +25,12 @@ export default Ember.ArrayController.extend({
             type: type,
             proposal_id: p.get('id'),
           },
+        }).then(function() {
+          if (ENV.environment === 'production') {
+            Ember.run(function() {
+              _gaq.push(['_trackEvent', 'votes', type, 'voted ' + type]);
+            });
+          }
         });
         _this.send("randomProposal", p.get("id"));
       }
