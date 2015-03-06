@@ -18,7 +18,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         comment: comment,
         type: "Comment",
       });
-      this.send("log", "commented");
+      this.send("log", "proposal", "commented");
       a.save().then( function(comment) {
         _this.set("comment", "");
         //p.get("activities").addObject(comment);

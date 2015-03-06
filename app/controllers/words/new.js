@@ -45,7 +45,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   actions: {
     submitProposal: function() {
       var _this = this;
-      this.send("log", "propose new word");
+      this.send("log", "propose", "new word");
       this.get("model").save().then(
         function(p) {
           _this.transitionToRoute("proposal.index", p);

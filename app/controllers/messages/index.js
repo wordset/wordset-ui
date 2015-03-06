@@ -64,7 +64,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       Notification.requestPermission(function(result) {
         if(result === "granted") {
           _this.set("notificationsEnabled", true);
-          this.send("log", "notifications", "enabled");
+          _this.send("log", "notifications", "enabled");
           _this.flash.notice("We'll let you know when someone messages now!")
           localStorage.notificationsEnabled = true;
         } else {

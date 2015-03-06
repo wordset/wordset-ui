@@ -30,7 +30,7 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
         _this.flash.success('Welcome! Now just log in to begin!');
         _trackEvent(category, action, opt_label, opt_value, opt_noninteraction)
         _this.transitionToRoute('users.login');
-        this.send("log", "account", "register");
+        _this.send("log", "account", "register");
       }, function(resp) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);

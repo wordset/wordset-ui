@@ -47,7 +47,7 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
         Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
         {}, function(data) {
           _this.store.pushPayload('proposal', data);
-          this.send("log", "proposal", "withdraw");
+          _this.send("log", "proposal", "withdraw");
         })
       } else {
         this.set("isWithdrawing", true);

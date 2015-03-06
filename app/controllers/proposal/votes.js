@@ -26,7 +26,7 @@ export default Ember.ArrayController.extend({
             proposal_id: p.get('id'),
           },
         }).then(function() {
-          this.send("log", "votes", type);
+          _this.send("log", "votes", type);
         });
         _this.send("randomProposal", p.get("id"));
       }
