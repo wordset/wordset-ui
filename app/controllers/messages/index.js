@@ -35,6 +35,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
     submitMessage: function() {
       if(this.get("isValid")) {
         var _this = this;
+        this.send("log", "messages", "sentchat");
         Ember.$.post(ENV.api + "/messages", {
           message: {
             text: this.get("text"),
@@ -63,6 +64,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       Notification.requestPermission(function(result) {
         if(result === "granted") {
           _this.set("notificationsEnabled", true);
+          this.send("log", "notifications", "enabled");
           _this.flash.notice("We'll let you know when someone messages now!")
           localStorage.notificationsEnabled = true;
         } else {
@@ -72,11 +74,13 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
     },
     disableNotifications: function() {
       this.set("notificationsEnabled", false);
+      this.send("log", "notifications", "disabled");
       localStorage.notificationsEnabled = false;
       _this.flash.notice("Notifications disabled")
     },
     goToLink: function(link) {
       if(link) {
+        this.send("log", "messages", "clickedlink");
         this.transitionToRoute(link);
       }
     },

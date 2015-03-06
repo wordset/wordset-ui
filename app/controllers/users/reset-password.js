@@ -28,6 +28,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
           }).then(function() {
             _this.transitionToRoute("index");
             _this.flash.notice("Logged in!");
+            this.send("log", "account", "resetpassword");
           });
         });
     },

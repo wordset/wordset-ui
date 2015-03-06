@@ -26,11 +26,7 @@ export default Ember.ArrayController.extend({
             proposal_id: p.get('id'),
           },
         }).then(function() {
-          if (ENV.environment === 'production') {
-            Ember.run(function() {
-              _gaq.push(['_trackEvent', 'votes', type, 'voted ' + type]);
-            });
-          }
+          this.send("log", "votes", type);
         });
         _this.send("randomProposal", p.get("id"));
       }

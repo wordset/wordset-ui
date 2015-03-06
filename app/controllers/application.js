@@ -46,13 +46,5 @@ export default Ember.Controller.extend(VisibilityMixin, {
         this.get("notifications").addObject(n)
       }
     },
-    log: function(name) {
-      var metaData = {"url": window.location.pathname, "user": this.get("currentUser").get("id")};
-      if(ENV.environment === "production") {
-        mixpanel.track(name, metaData);
-      } else {
-        console.log(name, metaData);
-      }
-    }
   }
 });

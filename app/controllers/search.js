@@ -35,11 +35,13 @@ export default Ember.Controller.extend({
   actions: {
     clickWordFromList: function(word) {
       this.set("showSearchList", false);
+      this.send("log", "search", "clicked");
       this.transitionToRoute("word", word);
     },
     clear: function() {
       this.set("searchTerm", "");
       this.set("selectedIndex", -1);
+      this.send("log", "search", "cleared");
     },
     searchEnter: function() {
       var word = this.get("selectedWord");

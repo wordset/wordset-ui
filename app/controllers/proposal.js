@@ -30,7 +30,7 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
     },
     submitEdit: function() {
       var _this = this;
-      this.send("log", "edited proposal");
+      this.send("log", "proposal", "edit");
       this.get("model").save().then(
         function(model) {
           _this.set("isEditing", false);
@@ -47,6 +47,7 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
         Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
         {}, function(data) {
           _this.store.pushPayload('proposal', data);
+          this.send("log", "proposal", "withdraw");
         })
       } else {
         this.set("isWithdrawing", true);
