@@ -1,9 +1,14 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
-import VisibilityMixin from '../mixins/visibility.js'
+import VisibilityMixin from '../mixins/visibility.js';
+import { Bindings } from 'ember-pusher/bindings';
 /* global mixpanel */
 
-export default Ember.Controller.extend(VisibilityMixin, {
+export default Ember.Controller.extend(Bindings, VisibilityMixin, {
+  logPusherEvents: (ENV.environment === "development"),
+  PUSHER_SUBSCRIPTIONS: {
+    activities: ["push"]
+  },
   showMenu: false,
   showChat: false,
   wordList: null,
@@ -46,5 +51,8 @@ export default Ember.Controller.extend(VisibilityMixin, {
         this.get("notifications").addObject(n)
       }
     },
+    push: function(data) {
+      this.store.pushPayload('activity', data);
+    }
   }
 });

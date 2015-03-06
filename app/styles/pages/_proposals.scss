@@ -20,6 +20,10 @@
       color: $positive-color;
     }
     &.rejected {
+      background: #DDD;
+      color: #BBB;
+    }
+    &.withdrawn {
       background: #EEE;
       color: #CCC;
     }
