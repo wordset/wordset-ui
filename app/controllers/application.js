@@ -42,7 +42,7 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
     toggleMenu: function() {
       this.toggleProperty("showMenu");
     },
-    toggleChat: function() {
+    togglePanel: function() {
       this.toggleProperty("showPanel");
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);
