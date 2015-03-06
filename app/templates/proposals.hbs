@@ -39,12 +39,12 @@
     {{/each}}
     <div class="pagination">
       {{#if hasPreviousPage}}
-        {{link-to "Previous Page" "proposals" (query-params page=prevPage) class="prev"}}
+        {{#link-to "proposals" (query-params page=prevPage) class="prev"}}<span class="ion-chevron-left"></span>{{/link-to}}
       {{/if}}
-      <div class="pageNumber">Page {{page}} out of {{totalPages}} pages</div>
+      <div class="pageNumber">Page {{page}}</div>
 
       {{#if hasNextPage}}
-        {{link-to "Next Page" "proposals" (query-params page=nextPage) class="next"}}
+        {{#link-to "proposals" (query-params page=nextPage) class="next"}}<span class="ion-chevron-right"></span>{{/link-to}}
       {{/if}}
     </div>
   </div>
