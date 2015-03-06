@@ -6,7 +6,7 @@ export default DS.Model.reopenClass({
     var _this = this;
     var path = "/proposals/next";
     if(proposal_id) {
-      path += "?proposal_id=" + proposal_id; 
+      path += "?proposal_id=" + proposal_id;
     }
     return (new Promise(function(resolve, reject) {
       Ember.$.getJSON(ENV.api + path).then(
@@ -54,6 +54,9 @@ export default DS.Model.reopenClass({
     } else if(this.get("type") === "MeaningRemoval") {
       return "Removal";
     }
+  }.property("type"),
+  isRemoval: function() {
+    return (this.get("type") === "MeaningRemoval");
   }.property("type"),
   isEditableType: function() {
     return (this.get("type") !== "MeaningRemoval")
