@@ -4,15 +4,12 @@
   }
 
   project-info {
-    background: white;
-    border: $dark-green 1px solid;
+    border-radius: 2px;
     margin-bottom: 20px;
-    h2, .progress-numbers, a, a:hover, a:visited {
-      color: $dark-green !important;
+    h2 {
+      font-size: 28px;
     }
-    .metric {
-      color: $taupe !important;
-    }
+
   }
 }
 

@@ -1,8 +1,9 @@
 
 <div class="title">
-  <h2>{{project.name}}</h2>
   {{#if link}}
-    <span>({{#link-to "project.index" project}}More Info{{/link-to}})</span>
+    <h2>{{#link-to "project.index" project.id}}{{project.name}}{{/link-to}}</h2>
+  {{else}}
+    <h2>{{project.name}}</h2>
   {{/if}}
 </div>
 <div class="progress-numbers">
