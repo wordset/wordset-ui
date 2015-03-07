@@ -12,8 +12,11 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   setupController: function(controller, model) {
     this._super(controller, model);
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
-    var users = this.store.find("user", {user_id: controller.get("username")});
-    this.controllerFor("panel.scoreboard").set("list", users);
+    if(controller.get("username")) {
+      var users = this.store.find("user", {user_id: controller.get("username")});
+      this.controllerFor("panel.scoreboard").set("list", users);
+    }
+    controller.set("activeProject", this.store.find("project", "current"));
   },
 
   actions: {
