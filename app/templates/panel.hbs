@@ -1,4 +1,6 @@
 {{#if showPanel}}
-  {{render "panel.scoreboard"}}
+  {{#if currentUser}}
+    {{render "panel.scoreboard"}}
+  {{/if}}
   {{render "panel.messages"}}
 {{/if}}
