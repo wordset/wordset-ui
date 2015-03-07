@@ -8,13 +8,11 @@ import ENV from '../../config/environment';
 export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   validations: {
     wordName: {
-      presence: true,
-      length: { minimum: 1 },
       inline: EmberValidations.validator(function() {
-        var name = this.get("wordName");
+        var name = this.model.get("wordName");
 
         var _this = this;
-        if(name) {
+        if(name && (name.length > 0)) {
           Ember.$.getJSON(ENV.api + "/proposals/new-word-status/" + name).then(
             function(resp) {
               _this.model.set("wordId", "");
@@ -30,12 +28,12 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
               }
             }
           )
+        } else {
+          return "It needs the actual word! :)";
         }
       })
     },
   },
-  queryParams: ["wordName"],
-  wordName: null,
   posList: ENV.posList,
 
   canRemove: function() {

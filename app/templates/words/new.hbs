@@ -7,15 +7,15 @@
     <label>
       Word
       <br/>
-      <span class="error">{{errors.wordName}}</span>
-      {{#if model.wordId}}
-        – {{link-to "check it out." "word.index" model.wordId}}
-      {{/if}}
-      {{#if model.proposalId}}
-        – {{link-to "check it out." "proposal.index" model.proposalId}}
-      {{/if}}
-      {{input value=model.wordName type=type insert-newline="sendAction"}}
 
+      {{#validated-input value=model.wordName errors=errors.wordName}}
+        {{#if model.wordId}}
+          – {{link-to "check it out." "word.index" model.wordId}}
+        {{/if}}
+        {{#if model.proposalId}}
+          – {{link-to "check it out." "proposal.index" model.proposalId}}
+        {{/if}}
+      {{/validated-input}}
     </label>
 
     {{#each meaning in model.meanings}}
