@@ -17,9 +17,6 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
   hasChatAlert: function() {
     return (!this.get("showPanel")) && this.get("chatReceived")
   }.property("showPanel", "chatReceived"),
-  isAdmin: function() {
-    return this.get("currentUser").get("isAdmin");
-  }.property("currentUser"),
   clearNotifications: function() {
     if(this.get("visible") === true) {
       this.get("notifications").forEach(function(n) { n.close() });

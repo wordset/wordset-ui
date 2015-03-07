@@ -9,7 +9,6 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   },
   posList: ENV.posList,
   needs: ['application'],
-  isAdmin: Ember.computed.alias('controllers.application.isAdmin'),
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   justVoted: false,
   isOpen: function() {

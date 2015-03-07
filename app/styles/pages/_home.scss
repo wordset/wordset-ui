@@ -1,5 +1,19 @@
-.home p {
-  margin-bottom: 40px;
+.home {
+  p {
+    margin-bottom: 40px;
+  }
+
+  project-info {
+    background: white;
+    border: $dark-green 1px solid;
+    margin-bottom: 20px;
+    h2, .progress-numbers, a, a:hover, a:visited {
+      color: $dark-green !important;
+    }
+    .metric {
+      color: $taupe !important;
+    }
+  }
 }
 
 .recent-activity {

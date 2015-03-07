@@ -9,12 +9,8 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
   rank: DS.attr("string"),
   votes: DS.hasMany("votes"),
-  
+
   // Only for registration purposes
   emailOptIn: DS.attr("boolean"),
   acceptTos: DS.attr("boolean"),
-
-  isAdmin: function() {
-    return (this.get("rank") === "Admin");
-  }.property("rank"),
 });

@@ -9,12 +9,12 @@
     {{/if}}
     <div class="username">
       <label> Username
-      {{input value=identification type="text" autofocus="autofocus"}}
+      {{input value=identification name="username" type="text" autofocus="autofocus"}}
       </label>
     </div>
     <div class="password">
       <label> Password
-      {{input type="password" value=password}}
+      {{input type="password" name="password" value=password}}
       </label>
     </div>
     <button {{action "authenticate"}}> Sign In </button>

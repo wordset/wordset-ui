@@ -1,5 +1,4 @@
 .progress-bar {
-  margin-bottom: 30px;
   .progress, .progress-positive, .progress-negative {
     background: #DDD;
     position: relative;
@@ -16,10 +15,10 @@
   .progress-negative .bar, .negative.bar {
     background: $red;
   }
-  // For the single-way progress bar
 
+  // For the single-way progress bar
   .progress, .bar {
-    height: 4px;
+    height: 8px;
   }
 
   // For the double-way progress bar
@@ -41,6 +40,7 @@
     color: #666;
     font-size: 14px;
     position: relative;
+    margin-bottom: 30px;
     .min, .mid, .max, .current {
       position: absolute;
     }
