@@ -78,6 +78,10 @@
     margin-bottom: 15px;
     .info {
       word-wrap: break-word;
+      .text {
+        line-height: 1.3em;
+        margin: 2px 0px;
+      }
     }
     &.is-self {
       img {
