@@ -3,7 +3,7 @@
     <li>
       <img {{bind-attr src="user.imageUrl"}}/>
       <span class="username">{{user.id}}</span>
-      <span class="points">{{user.points}}</span>
+      <span class="points">{{liquid-bind user.points}}</span>
     </li>
   {{/each}}
 </ul>

@@ -37,7 +37,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     randomProposal: function(proposal_id) {
       var _this = this;
-      this.intermediateTransitionTo('loading');
+      //this.intermediateTransitionTo('loading');
       Proposal.random(proposal_id).then(function(data) {
         if(data.proposal !== undefined) {
           _this.store.pushPayload("proposal", data);

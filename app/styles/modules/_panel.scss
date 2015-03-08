@@ -5,11 +5,16 @@
   vertical-align: top;
   .scoreboard {
     border-bottom: 2px solid $taupe;
-    height: 90px;
+    //height: 90px;
     li {
       padding: 5px 10px;
       &:nth-child(odd) {
         background: #F9F9F9;
+      }
+      .points {
+        font-size: 16px;
+        float: right;
+        margin-right: 10px;
       }
     }
     img {
@@ -23,9 +28,7 @@
       display: inline-block;
       width: 50%;
     }
-    .points {
-      font-size: 16px;
-    }
+
   }
   .messages-content {
     padding: 10px;

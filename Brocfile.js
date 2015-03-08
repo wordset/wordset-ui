@@ -8,7 +8,7 @@ var app = new EmberApp({
   }
 });
 
-app.import("bower_components/jquery-autosize/jquery.autosize.js");
+//app.import("bower_components/jquery-autosize/jquery.autosize.js");
 app.import("bower_components/jsdiff/diff.js");
 
 // Use `app.import` to add additional libraries to the generated
