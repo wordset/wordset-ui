@@ -47,7 +47,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           _this.transitionTo('proposals');
         }
       }, function() {
-        _this.send("randomProposal")
+        //_this.send("randomProposal")
       });
     },
     log: function(category, name) {
