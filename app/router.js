@@ -21,7 +21,7 @@ Router.map(function() {
     this.route("reset-password");
     this.route("new");
     this.route("login");
-  })
+  });
   this.resource("words", function() {
     this.route("new");
     this.route("random");
@@ -34,6 +34,7 @@ Router.map(function() {
     this.route("meaning-change");
   });
   this.route("project", {path: "/project/:project_id"}, function() {
+    this.route("random");
     this.route("propose", {path: "/propose/:meaning_id"});
   });
   this.route("info", function() {
