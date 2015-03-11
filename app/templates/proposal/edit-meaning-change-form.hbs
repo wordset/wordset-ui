@@ -6,16 +6,16 @@
   {{/each}}
   <label>
     Definition
-    {{validated-textarea value=def errors=errors.def}}
+    {{validated-textarea value=model.def errors=errors.def}}
   </label>
   <label class="edit-example">
     Example sentence
     <p>Note: no quotemarks are necessary.</p>
-    {{validated-textarea value=example errors=errors.example}}
+    {{validated-textarea value=model.example errors=errors.example}}
   </label>
   <label>
     Reason and sources
-    {{textarea value=reason}}
+    {{textarea value=model.reason}}
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
   <!-- <button class="flag" {{action "withdrawProposal"}}>Withdraw</button> -->

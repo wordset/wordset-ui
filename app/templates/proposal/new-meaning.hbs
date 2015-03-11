@@ -8,29 +8,29 @@
   {{partial "proposal/edit-new-meaning-form"}}
 {{else}}
   <div class="pos">
-    {{pos}}
+    {{model.pos}}
   </div>
   <div class="info">
     <div class="definition">
       <ins class="def">
-        {{def}}
+        {{model.def}}
       </ins>
     </div>
     <div class="quoteWrap">
       <ins class="quote highlight">
         <span class="quotemark"> “ </span>
-        {{example}}
+        {{model.example}}
         <span class="quotemark"> ” </span>
       </ins>
     </div>
   </div>
 {{/if}}
 
-{{#if original.meanings}}
+{{#if model.original.meanings}}
 <h3>Existing Meanings</h3>
 {{/if}}
 <ol>
-  {{#each meaning in original.meanings}}
+  {{#each meaning in model.original.meanings}}
     <li>
       <div class="info">
         <div class="definition">

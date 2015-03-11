@@ -13,8 +13,11 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     this._super(controller, model);
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
     if(controller.get("username")) {
-      var users = this.store.find("user", {user_id: controller.get("username")});
-      this.controllerFor("panel.scoreboard").set("list", users);
+      var _this = this;
+      var users = this.store.find("user", {user_id: controller.get("username")}).then(function(users) {
+        _this.controllerFor("panel.scoreboard").set("list", users);
+      }, function() { });
+
     }
     controller.set("activeProject", this.store.find("project", "current"));
   },
@@ -58,7 +61,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           ga('send', 'event', category, name);
         });
       } else {
-        console.log(name, metaData);
+        // console.log(name, metaData);
       }
     },
   }

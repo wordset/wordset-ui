@@ -13,7 +13,7 @@
   {{/if}}
   <div class="proposal">
     <div class="details">
-      {{#if wordnet}}
+      {{#if model.wordnet}}
         Wordnet proposed a {{typeName}}.
       {{else}}
         {{#if model.user}}
@@ -54,10 +54,10 @@
 <div class="votes-sidebar">
   <h4> Reason</h4>
   <div class="reason">
-    {{#if reason}}
-      {{reason}}
+    {{#if model.reason}}
+      {{model.reason}}
     {{else}}
-      {{#if wordnet}}
+      {{#if model.wordnet}}
         <em>Imported from Wordnet 3.0</em>
       {{else}}
         <em>No reason given</em>

@@ -7,7 +7,7 @@
       {{error}}
     </div>
   {{/each}}
-  {{#each meaning in meanings}}
+  {{#each meaning in model.meanings}}
     <label>
       Part of speech
       {{view "select" content=posList value=meaning.pos}}

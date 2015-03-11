@@ -4,7 +4,7 @@
   <div class="word">
     {{model.wordName}}
   </div>
-  {{#each meaning in meanings}}
+  {{#each meaning in model.meanings}}
     <div class="pos">
       {{meaning.pos}}
     </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="reason">
-        Source for this meaning: 
+        Source for this meaning:
         {{meaning.reason}}
       </div>
     </div>

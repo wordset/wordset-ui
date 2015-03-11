@@ -2,7 +2,7 @@ import EmberValidations from 'ember-validations';
 import ENV from '../config/environment';
 import { Bindings } from 'ember-pusher/bindings';
 
-export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
+export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
   logPusherEvents: true,
   PUSHER_SUBSCRIPTIONS: {
     proposals: ['push']
@@ -12,17 +12,17 @@ export default Ember.ObjectController.extend(Bindings, EmberValidations.Mixin, {
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   justVoted: false,
   isOpen: function() {
-    return (this.get("state") === "open");
-  }.property("state"),
+    return (this.get("model.state") === "open");
+  }.property("model.state"),
   isMine: function() {
-    return (this.get("user") === this.get("currentUser"))
-  }.property("user", "currentUser"),
+    return (this.get("model.user") === this.get("currentUser"))
+  }.property("model.user", "currentUser"),
   canChange: function() {
     return (this.get("isOpen") && this.get("isMine"));
   }.property("isOpen", "isMine"),
   partialName: function() {
     return "proposal/" + this.get("model.type").dasherize();
-  }.property("type"),
+  }.property("model.type"),
   actions: {
     startEdit: function() {
       this.set("isEditing", true);

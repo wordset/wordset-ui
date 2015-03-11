@@ -1,16 +1,16 @@
 <div class="wrapper">
   <div class="user">
     <div class="bio">
-      <h2>{{id}}</h2>
-      <img {{bind-attr src="imageUrl"}} class="avatar" />
+      <h2>{{model.id}}</h2>
+      <img {{bind-attr src="model.imageUrl"}} class="avatar" />
 
       <div class="info">
         <div class="points">
           <span>Points: </span>
-          {{points}}
+          {{model.points}}
         </div>
         <div class="rank">
-          {{rank}}
+          {{model.rank}}
         </div>
       </div>
     </div>

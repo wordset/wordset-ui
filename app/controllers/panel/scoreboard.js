@@ -14,21 +14,30 @@ export default Ember.Controller.extend({
 
   pointsChanged: function() {
     var points = this.get("currentUser.points");
-    // if(this.get("superior")) {
-    //   if(this.get("superior.points") < points) {
-    //     this.send("win");
-    //   } else if (this.get("posterior.points") > points) {
-    //     this.send("lose");
-    //   } else {
-    //     console.log("nochange");
-    //   }
-    // }
+    var superior = this.get("superior.points");
+    var posterior = this.get("posterior.points");
+    console.log(points, superior, posterior);
+    if(superior < points) {
+      this.send("win");
+      console.log("winnnnnn")
+    } else if (posterior > points) {
+      this.send("lose");
+      console.log("looooose");
+    } else {
+      console.log("nochange");
+    }
   }.observes("list.@each.points"),
-  
+
   actions: {
     reloadList: function() {
-      var users = this.store.find("user", {user_id: this.get("currentUser.id")});
-      this.set("list", users);
+      var _this = this
+      this.store.find("user", {user_id: this.get("currentUser.id")}).then(
+        function(users) {
+          console.log(users);
+          _this.set ("list", users);
+        }, function() {}
+      );
+
     },
     win: function() {
       this.flash.success("You just overtook " + this.get("superior.id"));
