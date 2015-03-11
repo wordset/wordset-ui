@@ -125,6 +125,7 @@ span.quotemark {
   }
   @media screen and (min-width: $large) {
     .word {
+      margin-bottom: 0px;
       width: 60%;
     }
     .action {
