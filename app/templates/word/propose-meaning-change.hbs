@@ -12,7 +12,7 @@
   </label>
   <label>
     Reason for change
-    {{textarea value=reason}}
+    {{textarea value=model.reason}}
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
   <button class="negative" {{action "cancel"}}>Cancel</button>

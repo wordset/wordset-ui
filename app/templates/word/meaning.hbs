@@ -4,7 +4,7 @@
       <div class="defWrap">
         <div class="def">
           {{meaning.def}}
-          {{#if displayEdit}}
+          {{#if model.displayEdit}}
           {{else}}
             {{#if meaning.openProposal}}
               <div class="openProposal">
@@ -34,7 +34,7 @@
       </div>
       {{/if}}
     </div> <!-- meaning div -->
-    {{#if displayEdit}}
+    {{#if model.displayEdit}}
       <div {{bind-attr class=":editDefWrap displayEdit"}}>
         {{render "word/propose-meaning-change" meaningProposal}}
       </div>
