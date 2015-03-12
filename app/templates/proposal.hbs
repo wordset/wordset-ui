@@ -42,7 +42,7 @@
             <div class="withdrawing-popup">Click again to confirm!</div>
           {{/if}}
           <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
-          {{#if isEditableType}}
+          {{#if model.isEditableType}}
             <button {{action "startEdit"}} class="edit">Edit</button>
           {{/if}}
         </div>
