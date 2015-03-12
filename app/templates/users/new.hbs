@@ -3,33 +3,33 @@
     <h3>Register</h3>
     <div class="username">
       <label>Username
-      {{validated-input type="text" autofocus="autofocus" value=id errors=errors.id}}
+      {{validated-input type="text" autofocus="autofocus" value=model.id errors=errors.model.id}}
       </label>
     </div>
     <div class="email">
       <label>E-mail
-      {{validated-input type="email" value=email errors=errors.email}}
+      {{validated-input type="email" value=model.email errors=errors.model.email}}
       </label>
     </div>
     <div class="password">
       <label>Password
-      {{validated-input type="password" value=password errors=errors.password}}
+      {{validated-input type="password" value=model.password errors=errors.model.password}}
       </label>
     </div>
     <div class="password">
       <label> Confirm password
-      {{validated-input type="password" value=passwordConfirmation errors=errors.passwordConfirmation}}
+      {{validated-input type="password" value=model.passwordConfirmation errors=errors.model.passwordConfirmation}}
       </label>
     </div>
     <div class="tos">
       <label>
-        {{input type="checkbox" checked=emailOptIn}}
+        {{input type="checkbox" checked=model.emailOptIn}}
         <span>E-mail me with news and updates about Wordset.</span>
       </label>
     </div>
     <div class="tos">
       <label>
-        {{input type="checkbox" checked=acceptTos}}
+        {{input type="checkbox" checked=model.acceptTos}}
         <span>I pledge to follow the {{#link-to "info.guidelines"}}community guidelines{{/link-to}} and I accept the {{#link-to "info.legal"}}terms and conditions{{/link-to}}.</span>
       </label>
     </div>

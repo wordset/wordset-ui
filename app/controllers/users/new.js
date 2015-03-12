@@ -1,25 +1,25 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend( EmberValidations.Mixin, {
+export default Ember.Controller.extend( EmberValidations.Mixin, {
   validations: {
-    id: {
+    "model.id": {
       presence: true,
       length: { minimum: 1,
                 maximum: 16 }
     },
-    email: {
+    "model.email": {
       presence: true,
       length: { minimum: 10 },
       format: { with: /^\S+@\S+\.\S+$/,
                 message: "must be a valid e-mail"}
     },
-    password: {
+    "model.password": {
       presence: true,
       length: { minimum: 8 },
       confirmation: true,
     },
-    acceptTos: {
+    "model.acceptTos": {
       acceptance: true,
     }
   },
@@ -28,13 +28,12 @@ export default Ember.ObjectController.extend( EmberValidations.Mixin, {
       var _this = this;
       this.get("model").save().then(function(){
         _this.flash.success('Welcome! Now just log in to begin!');
-        _trackEvent(category, action, opt_label, opt_value, opt_noninteraction)
         _this.transitionToRoute('users.login');
         _this.send("log", "account", "register");
       }, function(resp) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);
-        resp.errors.id = resp.errors.username;
+        resp.errors.id = resp.errors;
         _this.set("errors", resp.errors);
         _this.flash.notice('Oops! Looks like something was amiss.');
       });
