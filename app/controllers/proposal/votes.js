@@ -4,7 +4,7 @@ import ENV from '../../config/environment';
 
 export default Ember.ArrayController.extend({
   needs: [ "proposal", "application" ],
-  proposal: Ember.computed.alias("controllers.proposal"),
+  proposal: Ember.computed.alias("controllers.proposal.model"),
   isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
   currentUser: Ember.computed.alias("controllers.application.session.currentUser"),
 
@@ -18,7 +18,7 @@ export default Ember.ArrayController.extend({
     registerVote: function(type) {
       if(this.get("canVote")) {
         var _this = this;
-        var p = _this.get("proposal").get("model");
+        var p = _this.get("proposal");
         this.set("justVoted", true);
         Ember.$.post(ENV.api + "/votes", {
           vote: {
