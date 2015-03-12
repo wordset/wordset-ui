@@ -1,7 +1,8 @@
 import Ember from "ember";
 
-export default Ember.Controller.extend({
+export default Ember.ObjectController.extend({
   showMeaningProposal: false,
+  newMeaningProposal: false,
   actions: {
     toggleShowAddMeaning: function() {
       this.set("newMeaningProposal", this.store.createRecord("proposal", {

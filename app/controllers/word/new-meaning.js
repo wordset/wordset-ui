@@ -5,11 +5,11 @@ import ENV from '../../config/environment';
 export default Ember.ObjectController.extend( EmberValidations.Mixin,
 {
   validations: {
-    def: {
+    "model.def": {
       presence: true,
       length: { minimum: 10 }
     },
-    example: {
+    "model.example": {
       presence: true,
       length: { minimum: 10 }
     }

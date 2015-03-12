@@ -8,11 +8,11 @@
       Word
       <br/>
 
-      {{#validated-input value=model.wordName errors=errors.wordName}}
-        {{#if model.wordId}}
+      {{#validated-input value=model.wordName errors=errors.model.wordName}}
+        {{#if wordId}}
           – {{link-to "check it out." "word.index" model.wordId}}
         {{/if}}
-        {{#if model.proposalId}}
+        {{#if proposalId}}
           – {{link-to "check it out." "proposal.index" model.proposalId}}
         {{/if}}
       {{/validated-input}}

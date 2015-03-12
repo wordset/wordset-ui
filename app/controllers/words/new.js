@@ -6,23 +6,25 @@ import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
 export default Ember.ObjectController.extend(EmberValidations.Mixin, {
+  wordId: null,
+  proposalId: null,
   validations: {
-    wordName: {
+    "model.wordName": {
       inline: EmberValidations.validator(function() {
-        var name = this.model.get("wordName");
+        var name = this.get("model.wordName");
 
         var _this = this;
         if(name && (name.length > 0)) {
           Ember.$.getJSON(ENV.api + "/proposals/new-word-status/" + name).then(
             function(resp) {
-              _this.model.set("wordId", "");
-              _this.model.set("proposalId", "");
+              _this.set("wordId", "");
+              _this.set("proposalId", "");
               if(!resp.can) {
                 if(resp.word_id) {
-                  _this.model.set("wordId", resp.word_id);
+                  _this.set("wordId", resp.word_id);
                   _this.get("errors").addObject("This word already exists");
                 } else if(resp.proposal_id) {
-                  _this.model.set("proposalId", resp.proposal_id);
+                  _this.set("proposalId", resp.proposal_id);
                   _this.get("errors").addObject("There is an open proposal for this word");
                 }
               }
