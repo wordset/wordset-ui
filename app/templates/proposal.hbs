@@ -14,16 +14,16 @@
   <div class="proposal">
     <div class="details">
       {{#if model.wordnet}}
-        Wordnet proposed a {{typeName}}.
+        Wordnet proposed a {{model.typeName}}.
       {{else}}
         {{#if model.user}}
           {{#link-to "user" model.user}}
-            <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+            <img {{bind-attr src="model.user.imageUrl"}} class="avatar" />
           {{/link-to}}
           {{#link-to "user" model.user}}
-            {{user.id}}
+            {{model.user.id}}
           {{/link-to}}
-          proposed a {{typeName}}.
+          proposed a {{model.typeName}}.
         {{else}}
           <img src="assets/images/square-logo.png" class="avatar" />
           Wordset proposed this {{typeName}} automatically.
