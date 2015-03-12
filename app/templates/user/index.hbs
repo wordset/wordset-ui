@@ -1,6 +1,6 @@
 
 <div class="word-proposals">
-{{#each proposal in controller.proposals}}
+{{#each proposal in model.proposals}}
   {{#link-to 'proposal' proposal}}
     <div {{bind-attr class="proposal.state :item"}}>
       <div class="action-user">
