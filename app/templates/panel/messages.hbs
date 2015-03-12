@@ -40,7 +40,7 @@
       <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
         <span class="ion-chevron-right" />
       </button>
-      {{multi-box value=text action="submitMessage"}}
+      {{multi-box value=text action="submitMessage" maxlength="255"}}
     {{else}}
       <div class="notice">
         To chat,
