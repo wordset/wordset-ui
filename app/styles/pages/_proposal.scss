@@ -34,9 +34,26 @@
     padding: 20px 35px;
     width: 80%;
   }
+  .word {
+    margin-bottom: 25px;
+  }
   .word a {
     color: $text-color;
+    position: relative;
     text-decoration: none;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 1em;
+      width: 100%;
+      border-bottom: 2px solid $lime;
+      margin-top: -1px;
+    }
+    &:hover {
+      color: $dark-green;
+    }
   }
   .pos {
     margin-bottom: 20px;
