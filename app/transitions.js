@@ -5,4 +5,4 @@ export default function(){
     this.childOf('.points'),
     this.use('toUp')
   );
-};
+}

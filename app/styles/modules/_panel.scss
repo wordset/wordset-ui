@@ -86,10 +86,10 @@
         margin: 2px 0px;
       }
     }
+    &.link .info {
+      margin-top: -6px;
+    }
     &.is-self {
-      img {
-        vertical-align: middle;
-      }
       .text {
         font-size: 14px;
         font-style: italic;
@@ -97,7 +97,6 @@
     }
     .time {
       color: $taupe;
-      // float: right;
       font-size: 12px;
       font-style: italic;
     }

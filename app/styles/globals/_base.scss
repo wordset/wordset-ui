@@ -114,9 +114,9 @@ button {
   @media screen and (max-width: $large) {
     max-width: 500px;
   }
-  @media screen and (max-width: $medium) {
-    width: 100%;
-  }
+  // @media screen and (max-width: $small) {
+  //   width: 100%;
+  // }
 }
 
 .search {

@@ -1,6 +1,6 @@
 import Ember from "ember";
 import ENV from '../../config/environment';
-/* global _gaq */
+// global _gaq //
 
 export default Ember.ArrayController.extend({
   needs: [ "proposal", "application" ],

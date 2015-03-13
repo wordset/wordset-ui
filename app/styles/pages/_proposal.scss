@@ -1,10 +1,16 @@
 .details {
+  display: table;
   margin-bottom: 20px;
+  position: relative;
   text-transform: lowercase;
   img {
     height: 50px;
     width: 50px;
     margin-right: 10px;
+    vertical-align: middle;
+  }
+  .detail-text {
+    display: table-cell;
     vertical-align: middle;
   }
   a {

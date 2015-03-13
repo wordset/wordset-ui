@@ -28,6 +28,7 @@ export default Ember.Route.extend({
           });
   },
   afterModel: function(model) {
+    this._super(model);
     Ember.$(document).attr('title', 'Proposals from Wordset');
   },
   setupController: function(controller, model){
