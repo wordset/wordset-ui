@@ -36,7 +36,7 @@ export default Ember.ArrayController.extend({
       Ember.$.post(ENV.api + "/votes/" + this.get("myVote.id") + "/withdraw",
       {}, function(data) {
         _this.store.pushPayload('proposal', data);
-      })
+      });
     },
   },
 

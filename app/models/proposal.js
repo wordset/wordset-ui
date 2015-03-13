@@ -1,9 +1,9 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 import ENV from '../config/environment';
 
 export default DS.Model.reopenClass({
   random: function(proposal_id) {
-    var _this = this;
     var path = "/proposals/next";
     if(proposal_id) {
       path += "?proposal_id=" + proposal_id;
@@ -59,7 +59,7 @@ export default DS.Model.reopenClass({
     return (this.get("type") === "MeaningRemoval");
   }.property("type"),
   isEditableType: function() {
-    return (this.get("type") !== "MeaningRemoval")
+    return (this.get("type") !== "MeaningRemoval");
   }.property("typeName"),
   positiveTally: function() {
     if(this.get("tally") > 0 ) {

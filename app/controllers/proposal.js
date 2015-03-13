@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../config/environment';
 import { Bindings } from 'ember-pusher/bindings';
@@ -15,7 +16,7 @@ export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
     return (this.get("model.state") === "open");
   }.property("model.state"),
   isMine: function() {
-    return (this.get("model.user") === this.get("currentUser"))
+    return (this.get("model.user") === this.get("currentUser"));
   }.property("model.user", "currentUser"),
   canChange: function() {
     return (this.get("isOpen") && this.get("isMine"));
@@ -47,7 +48,7 @@ export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
         {}, function(data) {
           _this.store.pushPayload('proposal', data);
           _this.send("log", "proposal", "withdraw");
-        })
+        });
       } else {
         this.set("isWithdrawing", true);
       }

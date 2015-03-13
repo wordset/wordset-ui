@@ -15,11 +15,13 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
   chatReceived: false,
   notifications: [],
   hasChatAlert: function() {
-    return (!this.get("showPanel")) && this.get("chatReceived")
+    return (!this.get("showPanel")) && this.get("chatReceived");
   }.property("showPanel", "chatReceived"),
   clearNotifications: function() {
     if(this.get("visible") === true) {
-      this.get("notifications").forEach(function(n) { n.close() });
+      this.get("notifications").forEach(function(n) {
+        n.close();
+      });
       this.set("notifications", []);
     }
   }.observes("visible"),
@@ -48,7 +50,7 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
       if(this.get("visible") === false) {
         var opt = {body: body, tag: tag, icon: "/assets/images/square-logo.png"};
         var n = new Notification(title, opt);
-        this.get("notifications").addObject(n)
+        this.get("notifications").addObject(n);
       }
     },
     push: function(data) {

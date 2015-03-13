@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
     console.log(points, superior, posterior);
     if(superior < points) {
       this.send("win");
-      console.log("winnnnnn")
+      console.log("winnnnnn");
     } else if (posterior > points) {
       this.send("lose");
       console.log("looooose");
@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
 
   actions: {
     reloadList: function() {
-      var _this = this
+      var _this = this;
       this.store.find("user", {user_id: this.get("currentUser.id")}).then(
         function(users) {
           console.log(users);

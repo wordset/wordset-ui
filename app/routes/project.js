@@ -4,7 +4,7 @@ import ENV from '../config/environment';
 export default Ember.Route.extend({
   actions: {
     randomTarget: function() {
-      var _this = this
+      var _this = this;
       var path = "/projects/" + this.controller.get("model.id") + "/next";
       Ember.$.getJSON(ENV.api + path).then(
         function(data) {

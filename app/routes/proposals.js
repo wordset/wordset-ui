@@ -15,7 +15,6 @@ export default Ember.Route.extend({
   },
   model: function(params) {
     var page;
-    var _this = this;
     if(params.page) {
       page = params.page;
       page = isNaN(page) ? 1 : Math.floor(Math.abs(page));

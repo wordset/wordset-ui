@@ -29,7 +29,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
                 }
               }
             }
-          )
+          );
         } else {
           return "It needs the actual word! :)";
         }
@@ -39,7 +39,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   posList: ENV.posList,
 
   canRemove: function() {
-    return this.get("model").get("meanings").length > 1
+    return this.get("model").get("meanings").length > 1;
   }.property("model.meanings.@each"),
 
   actions: {

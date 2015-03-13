@@ -10,7 +10,7 @@ export default DS.Model.extend({
   pendingTargetsCount: DS.attr("number"),
 
   percentageThrough: function() {
-    var perc = this.get("percentageComplete")
+    var perc = this.get("percentageComplete");
     return "width: " + perc + "%;";
   }.property("percentageComplete"),
 

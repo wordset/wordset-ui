@@ -33,7 +33,6 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   actions: {
     submitMessage: function() {
       if(this.get("isValid")) {
-        var _this = this;
         this.send("log", "messages", "sentchat");
         Ember.$.post(ENV.api + "/messages", {
           message: {
@@ -50,8 +49,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       delete data.meta;
       this.store.pushPayload('message', data);
       this.store.setMetadataFor('message', meta);
-      if(this.get("notificationsEnabled") === true
-            && (data.message.user !== this.get("currentUser"))) {
+      if(this.get("notificationsEnabled") === true && (data.message.user !== this.get("currentUser"))) {
         // bubble up the notifier to the application controller
         this.send("notify", data.message.user.id, data.message.text, "chat");
       }
@@ -64,18 +62,18 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         if(result === "granted") {
           _this.set("notificationsEnabled", true);
           _this.send("log", "notifications", "enabled");
-          _this.flash.notice("We'll let you know when someone messages now!")
+          _this.flash.notice("We'll let you know when someone messages now!");
           localStorage.notificationsEnabled = true;
         } else {
-          _this.flash.notice("We can't notify because you said no. :(")
+          _this.flash.notice("We can't notify because you said no. :(");
         }
       });
     },
-    disableNotifications: function() {
+    disableNotifications: function()
       this.set("notificationsEnabled", false);
       this.send("log", "notifications", "disabled");
       localStorage.notificationsEnabled = false;
-      _this.flash.notice("Notifications disabled")
+      this.flash.notice("Notifications disabled");
     },
     goToLink: function(link) {
       if(link) {

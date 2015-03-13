@@ -7,7 +7,7 @@ export default Ember.ObjectController.extend({
     return !this.get("model").get("hasProposal");
   }.property("model.hasProposal"),
   hasOpenProposal: function() {
-    return this.get("model.hasProposal") && (this.get("openProposal.state") === "open")
+    return this.get("model.hasProposal") && (this.get("openProposal.state") === "open");
   }.property("model.hasProposal", "openProposal", "openProposal.state"),
   displayEdit: function() {
     return (this.get("canEdit") &&

@@ -33,7 +33,7 @@ export default Ember.Mixin.create({
     document.addEventListener(visibilityChange, determineVisibility);
     window.onblur = function() {
       _this.set("visible", false);
-    }
+    };
     window.onfocus = determineVisibility;
     this.set("visible", document[visibilityState] === "visible");
   }
