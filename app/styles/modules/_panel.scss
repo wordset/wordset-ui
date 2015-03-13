@@ -3,124 +3,6 @@
   border: 2px solid $header-background;
   position: relative;
   vertical-align: top;
-  .scoreboard {
-    border-bottom: 2px solid $taupe;
-    height: 90px;
-    li {
-      padding: 5px 10px;
-      &:nth-child(odd) {
-        background: #F9F9F9;
-      }
-      .points {
-        font-size: 16px;
-        float: right;
-        margin-right: 10px;
-      }
-    }
-    img {
-      border-radius: 50%;
-      height: 20px;
-      margin-right: 2px;
-      vertical-align: middle;
-      width: 20px;
-    }
-    .username {
-      display: inline-block;
-      width: 50%;
-    }
-
-  }
-  .messages-content {
-    padding: 10px;
-  }
-  .new-message-area {
-    position: relative;
-    textarea {
-      font-size: 18px;
-      padding: 5px 30px 5px 5px;
-      width: 100%;
-    }
-    button {
-      background: #FFF;
-      border-radius: 0px;
-      box-shadow: none;
-      color: $lime;
-      cursor: pointer;
-      font-size: 12px;
-      height: 54px;
-      padding: 0px;
-      position: absolute;
-      right: 1px;
-      top: 6px;
-      width: 25px;
-    }
-    .notice {
-      text-align: center;
-      color: $taupe;
-    }
-  }
-
-  img.icon {
-    height: 30px;
-    margin-right: 5px;
-    vertical-align: top;
-    width: 30px;
-  }
-  .info {
-    display: inline-block;
-    width: 78%;
-  }
-  .username {
-    color: $taupe;
-    font-size: 16px;
-  }
-  p {
-    margin-bottom: 0px;
-  }
-  .message {
-    margin-bottom: 15px;
-    .info {
-      word-wrap: break-word;
-      .text {
-        line-height: 1.3em;
-        margin: 2px 0px;
-      }
-    }
-    &.link .info {
-      margin-top: -6px;
-    }
-    &.is-self {
-      .text {
-        font-size: 14px;
-        font-style: italic;
-      }
-    }
-    .time {
-      color: $taupe;
-      font-size: 12px;
-      font-style: italic;
-    }
-    // Link Styles
-    .link-image {
-      display: inline-block;
-      position: relative;
-      vertical-align: top;
-      span {
-        color: #FFF;
-        font-size: 30px;
-        left: 5px;
-        position: absolute;
-        top: 0px;
-      }
-    }
-    &.link {
-      font-size: 14px;
-      font-style: italic;
-      &:hover {
-        background: #EEE;
-      }
-    }
-  }
 }
 
 .online-users, .message-settings {
@@ -164,7 +46,6 @@
   .content.showPanel {
     display: inline-block;
   }
-
   .panel {
     display: inline-block;
     float: right;

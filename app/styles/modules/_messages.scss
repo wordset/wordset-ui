@@ -1,0 +1,96 @@
+.panel .messages-content {
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 15px;
+  img.icon {
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: top;
+    width: 30px;
+  }
+  .info {
+    display: inline-block;
+    width: 78%;
+    word-wrap: break-word;
+    .text {
+      line-height: 1.3em;
+      margin: 2px 0px;
+    }
+  }
+  .username {
+    color: $taupe;
+    font-size: 16px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  .time {
+    color: $taupe;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  // Self Statement Styles
+  &.is-self {
+    .text {
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+
+  // Link Styles
+  .link-image {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    span {
+      color: #FFF;
+      font-size: 30px;
+      left: 5px;
+      position: absolute;
+      top: 0px;
+    }
+  }
+  &.link {
+    font-size: 14px;
+    font-style: italic;
+    padding-top: 4px;
+    &:hover {
+      background: #EEE;
+    }
+    .info {
+      margin-top: -6px;
+    }
+  }
+}
+
+// Typing New Messages
+
+.new-message-area {
+  position: relative;
+  textarea {
+    font-size: 18px;
+    padding: 5px 30px 5px 5px;
+    width: 100%;
+  }
+  button {
+    background: #FFF;
+    border-radius: 0px;
+    box-shadow: none;
+    color: $lime;
+    cursor: pointer;
+    font-size: 12px;
+    height: 54px;
+    padding: 0px;
+    position: absolute;
+    right: 1px;
+    top: 6px;
+    width: 25px;
+  }
+  .notice {
+    text-align: center;
+    color: $taupe;
+  }
+}
