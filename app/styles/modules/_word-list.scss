@@ -18,10 +18,10 @@
     border-bottom: 1px solid #DDD;
   }
   li {
-    &.selected a {
+    &.selected div {
       background: #E3E3E3;
     }
-    a {
+    div {
       background: #FFF;
       color: $dropdown-anchor-color;
       cursor: pointer;

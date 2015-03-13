@@ -1,0 +1,25 @@
+<div class="search">
+  <div class='searchbar'>
+    {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word"}}
+    <span class="ion-close-circled" {{action 'clear'}}></span>
+  </div>
+  {{#if showSearchList}}
+    <div class="wordListWrapper">
+      <ul class='wordList'>
+        {{#each word in wordList.results}}
+          {{#search-result word=word selectedWord=selectedWord}}
+            <div {{action "clickWord" word}} tabIndex=0>
+              {{word}}
+            </div>
+          {{/search-result}}
+        {{else}}
+          <li>
+            <div {{action "clickWord"}}>
+              No results found. Add word?
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+</div>

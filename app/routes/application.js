@@ -35,7 +35,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           });
         });
       }
-      this.controllerFor("search").send("clear");
+      //this.controllerFor("search").send("clear");
       this.controller.set("showMenu", false);
     },
     randomProposal: function(proposal_id) {
