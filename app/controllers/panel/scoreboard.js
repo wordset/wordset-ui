@@ -16,15 +16,11 @@ export default Ember.Controller.extend({
     var points = this.get("currentUser.points");
     var superior = this.get("superior.points");
     var posterior = this.get("posterior.points");
-    console.log(points, superior, posterior);
     if(superior < points) {
       this.send("win");
-      console.log("winnnnnn");
     } else if (posterior > points) {
       this.send("lose");
-      console.log("looooose");
     } else {
-      console.log("nochange");
     }
   }.observes("list.@each.points"),
 
