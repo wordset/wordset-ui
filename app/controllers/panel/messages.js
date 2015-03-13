@@ -69,7 +69,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         }
       });
     },
-    disableNotifications: function()
+    disableNotifications: function() {
       this.set("notificationsEnabled", false);
       this.send("log", "notifications", "disabled");
       localStorage.notificationsEnabled = false;
