@@ -29,7 +29,6 @@ export default Ember.Controller.extend({
       var _this = this;
       this.store.find("user", {user_id: this.get("currentUser.id")}).then(
         function(users) {
-          console.log(users);
           _this.set ("list", users);
         }, function() {}
       );

@@ -57,12 +57,12 @@ export default Ember.Component.extend({
     }
     return false;
   },
-  checkForFocus: function(event) {
+  checkForFocus: function() {
     var _this = this;
     Ember.run.later(function() {
       if(!Ember.$.contains(_this.get("element"), document.activeElement)) {
         _this.set("showSearchList", false);
-      };
+      }
     });
   }.on('focusOut'),
   actions: {
@@ -84,7 +84,7 @@ export default Ember.Component.extend({
       this.send("log", "search", "cleared");
     },
     searchEnter: function() {
-      this.send("clickWord", this.get("selectedWord"))
+      this.send("clickWord", this.get("selectedWord"));
     },
     searchShiftEnter: function() {
       this.get('targetObject').transitionToRoute("word", this.get("searchTerm"));
