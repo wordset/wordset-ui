@@ -74,6 +74,7 @@ export default Ember.Component.extend({
       // It could be there are no words... so don't do anything.
       if(word) {
         this.get('targetObject').transitionToRoute("word", word);
+        this.set('searchTerm', '');
       } else {
         this.get('targetObject').transitionToRoute("words.new");
       }
