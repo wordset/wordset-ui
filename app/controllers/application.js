@@ -2,7 +2,7 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 import VisibilityMixin from '../mixins/visibility.js';
 import { Bindings } from 'ember-pusher/bindings';
-/* global mixpanel */
+// global mixpanel //
 
 export default Ember.Controller.extend(Bindings, VisibilityMixin, {
   logPusherEvents: (ENV.environment === "development"),
@@ -35,7 +35,7 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
     this._super();
     if(localStorage.showPanel) {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
-    };
+    }
   },
   actions: {
     toggleMenu: function() {

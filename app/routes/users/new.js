@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     return this.store.createRecord('user');
   },
   afterModel: function(model) {
+    this._super(model);
     Ember.$(document).attr('title', 'Register');
   }
 });
