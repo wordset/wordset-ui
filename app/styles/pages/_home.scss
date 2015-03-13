@@ -53,7 +53,7 @@
       }
     }
     &.rejected {
-      background: lighten($red, 50%);
+      background: lighten($negative-color, 50%);
       .ionicon {
         @extend .ion-close-circled;
       }
@@ -81,9 +81,6 @@
     &.nay {
       .ionicon {
         @extend .ion-thumbsdown;
-      }
-      .value {
-        color: $negative-color;
       }
     }
   }
