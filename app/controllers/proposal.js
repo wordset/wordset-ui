@@ -32,7 +32,7 @@ export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
       var _this = this;
       this.send("log", "proposal", "edit");
       this.get("model").save().then(
-        function(model) {
+        function() {
           _this.set("isEditing", false);
         },
         function() {

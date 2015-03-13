@@ -18,7 +18,7 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
       var proposal = this.get("model");
       proposal.set("type", "MeaningChange");
 
-      proposal.save().then(function(proposal) {
+      proposal.save().then(function() {
         _this.get("parentController").set("editing", false);
         _this.set("meaning.hasProposal", true);
         _this.set("meaning.openProposal", _this.get("model"));
