@@ -8,7 +8,7 @@ export default DS.Model.reopenClass({
     if(proposal_id) {
       path += "?proposal_id=" + proposal_id;
     }
-    return (new Ember.Promise(function(resolve, reject) {
+    return (new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.getJSON(ENV.api + path).then(
         function(data) {
           resolve(data);
