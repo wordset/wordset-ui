@@ -51,7 +51,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       this.store.setMetadataFor('message', meta);
       if(this.get("notificationsEnabled") === true && (data.message.user !== this.get("currentUser"))) {
         // bubble up the notifier to the application controller
-        this.send("notify", data.message.user.id, data.message.text, "chat");
+        this.send("browserNotification", data.message.user.id, data.message.text, "chat");
       }
     },
     toggleUsers: function() { this.toggleProperty("showUsers"); },
