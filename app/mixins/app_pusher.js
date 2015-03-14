@@ -25,8 +25,17 @@ export default Ember.Mixin.create(Bindings, {
       this.store.pushPayload('activity', data);
     },
     notify: function(data) {
-      console.log("notified of ", data);
       this.store.pushPayload('notification', data);
+      var activity = data.activities[0];
+      switch (activity.type) {
+        case "ProposalComment":
+          this.flash.notice("Someone just commented on your proposal for " + activity.wordId);
+          break;
+        case "ProposalClosed":
+          this.flash.notice("Your proposal for " + activity.wordId + " was " + activity.finalState);
+          break;
+      }
+
     }
   },
 });
