@@ -1,17 +1,12 @@
 import Ember from 'ember';
-import ENV from '../config/environment';
 import VisibilityMixin from '../mixins/visibility.js';
-import { Bindings } from 'ember-pusher/bindings';
+import AppPusherMixin from '../mixins/app_pusher.js';
+
 // global mixpanel //
 
-export default Ember.Controller.extend(Bindings, VisibilityMixin, {
-  logPusherEvents: (ENV.environment === "development"),
-  PUSHER_SUBSCRIPTIONS: {
-    activities: ["push"]
-  },
+export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
   showMenu: false,
   showPanel: false,
-  wordList: null,
   chatReceived: false,
   notifications: [],
   hasChatAlert: function() {
@@ -46,15 +41,12 @@ export default Ember.Controller.extend(Bindings, VisibilityMixin, {
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);
     },
-    notify: function(title, body, tag) {
+    browserNotification: function(title, body, tag) {
       if(this.get("visible") === false) {
         var opt = {body: body, tag: tag, icon: "/assets/images/square-logo.png"};
         var n = new Notification(title, opt);
         this.get("notifications").addObject(n);
       }
     },
-    push: function(data) {
-      this.store.pushPayload('activity', data);
-    }
   }
 });
