@@ -5,42 +5,10 @@
 }
 
 .proposals {
-  a {
-    text-decoration: none;
-  }
-  .item {
-    margin-bottom: 2px;
-    padding: 18px 0px 18px 5px;
-    &.open {
-      background: lighten($blue, 38%);
-      color: darken($blue, 30%);
-    }
-    &.accepted {
-      background: $positive-background;
-      color: $positive-color;
-    }
-    &.rejected {
-      background: #DDD;
-      color: #BBB;
-    }
-    &.withdrawn {
-      background: #EEE;
-      color: #CCC;
-    }
-    &.accepted, &.rejected {
-      .progress-bar {
-        opacity: 0.3;
-      }
-    }
-  }
-
-
-  .action-user, .state-progress, .word, .action, .user, .state {
+  .action, .state-progress, .word, .state {
     display: inline-block;
   }
   .word {
-    font-weight: 500;
-    font-size: 18px;
     margin-bottom: 20px;
     width: 100%;
     @media screen and (min-width: $medium) {
@@ -48,27 +16,10 @@
       width: 30%;
     }
   }
-  .action-user, .state-progress {
+  .action, .state-progress {
     width: 48%;
     @media screen and (min-width: $medium) {
       width: 33%;
-    }
-  }
-  .action {
-    width: 40%;
-    @media screen and (max-width: $small) {
-      margin-bottom: 5px;
-      width: 100%;
-    }
-    @media screen and (min-width: $medium) {
-      width: 45%;
-    }
-  }
-  .user {
-    width: 40%;
-
-    @media screen and (min-width: $medium) {
-      width: 50%;
     }
   }
   .state {

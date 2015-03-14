@@ -23,9 +23,4 @@ export default Ember.ArrayController.extend({
   hasNextPage: function() {
     return (this.get('offset') + this.get('limit')) < this.get('total');
   }.property('offset', 'limit', 'total'),
-  actions: {
-    previousPage: function() {
-      var totalPages = Math.ceil(this.get('total')/this.get('limit'));
-    }
-  }
 });

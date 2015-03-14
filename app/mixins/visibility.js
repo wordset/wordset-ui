@@ -7,16 +7,16 @@ export default Ember.Mixin.create({
     this._super();
     var hidden, visibilityChange, visibilityState;
     if (typeof document.hidden !== "undefined") {
-        hidden = "hidden", visibilityChange = "visibilitychange", visibilityState = "visibilityState";
+        hidden = "hidden"; visibilityChange = "visibilitychange"; visibilityState = "visibilityState";
     }
     else if (typeof document.mozHidden !== "undefined") {
-        hidden = "mozHidden", visibilityChange = "mozvisibilitychange", visibilityState = "mozVisibilityState";
+        hidden = "mozHidden"; visibilityChange = "mozvisibilitychange"; visibilityState = "mozVisibilityState";
     }
     else if (typeof document.msHidden !== "undefined") {
-        hidden = "msHidden", visibilityChange = "msvisibilitychange", visibilityState = "msVisibilityState";
+        hidden = "msHidden"; visibilityChange = "msvisibilitychange"; visibilityState = "msVisibilityState";
     }
     else if (typeof document.webkitHidden !== "undefined") {
-        hidden = "webkitHidden", visibilityChange = "webkitvisibilitychange", visibilityState = "webkitVisibilityState";
+        hidden = "webkitHidden"; visibilityChange = "webkitvisibilitychange"; visibilityState = "webkitVisibilityState";
     }
 
     var _this = this;

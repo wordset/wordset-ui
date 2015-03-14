@@ -11,17 +11,14 @@
           <div class="word">
             {{proposal.wordName}}
           </div>
-          <div class="action-user">
-            <div class="action">
-              {{proposal.typeName}}
-            </div>
-            <div class="user">
-              {{#if proposal.wordnet}}
-                Wordnet
-              {{else}}
-                {{proposal.user.id}}
-              {{/if}}
-            </div>
+          <div class="action">
+            {{proposal.typeName}}
+            by
+            {{#if proposal.wordnet}}
+              Wordnet
+            {{else}}
+              {{proposal.user.id}}
+            {{/if}}
           </div>
           <div class="state-progress">
             <div {{bind-attr class="proposal.state :state"}}>
