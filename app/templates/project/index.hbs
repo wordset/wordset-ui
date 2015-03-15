@@ -2,12 +2,12 @@
 <div class="wrapper project-index">
   <h2>{{model.name}}</h2>
   <p>Goal: <strong>{{model.description}}</strong></p>
-  <p>We're starting to implement projects on our site. These are self-contained groups of improvements we want to make to Wordset.</p>
-  <p>Our first major project is to remove proper nouns from Wordset. We believe that our dictionary should be about definitions, not reference. A dictionary is not the place to gather in-depth information about a person or place. That's what an encyclopedia is for.</p>
 
-  <p>Total proper nouns in Wordset: <span class="progress-numbers">{{model.totalTargetsCount}}</span></p>
-  <p>Number of open proposals: <span class="progress-numbers">{{model.pendingTargetsCount}}</span></p>
-  <p>Number fixed: <span class="progress-numbers">{{model.fixedTargetsCount}}</span></p>
+  {{description}}
+
+  <p>Total targets in Wordset: <span class='progress-numbers'>{{model.totalTargetsCount}}</span></p>
+  <p>Number of open proposals: <span class='progress-numbers'>{{model.pendingTargetsCount}}</span></p>
+  <p>Number fixed: <span class='progress-numbers'>{{model.fixedTargetsCount}}</span></p>
 
   {{#if currentUser}}
     <button {{action "randomProposal"}}>Help Out!</button>
