@@ -12,6 +12,14 @@ export default Ember.Controller.extend({
     }
   }.property("model.name"),
 
+  projectAction: function() {
+    if(this.get("model.name") === "Proper Noun Purge") {
+      return "randomProposal";
+    } else if(this.get("model.name") === "Parantheses Roundup") {
+      return "randomTarget";
+    }
+  }.property("model.name"),
+
   actions: {
     signUp: function() {
       this.transitionToRoute("users.new");

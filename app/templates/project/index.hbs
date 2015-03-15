@@ -10,7 +10,7 @@
   <p>Number fixed: <span class='progress-numbers'>{{model.fixedTargetsCount}}</span></p>
 
   {{#if currentUser}}
-    <button {{action "randomProposal"}}>Help Out!</button>
+    <button {{action projectAction}}>Help Out!</button>
   {{else}}
     <button {{action "signUp"}}>Help Out!</button>
   {{/if}}
