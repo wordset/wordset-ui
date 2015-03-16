@@ -38,11 +38,9 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
   },
   actions: {
     toggleMenu: function() {
-      this.get("notifier").show("Showed the menu!", {type: "Alert"});
       this.toggleProperty("showMenu");
     },
     togglePanel: function() {
-      this.get("notifier").show("Showed the panel!", {type: "Warning"});
       this.toggleProperty("showPanel");
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);
@@ -54,5 +52,8 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
         this.get("browserNotifications").addObject(n);
       }
     },
+    showAlert: function() {
+      this.get("notifier").show("Showed the menu!", {type: "Alert"});
+    }
   }
 });
