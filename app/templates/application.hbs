@@ -1,10 +1,15 @@
 {{partial "menu"}}
 
-{{#each notification in notifications}}
-  {{notification-alert notification=notification}}
-{{/each}}
-
 <div class="main-content">
+
+  {{#if notifications}}
+    <div class="notifications-wrapper">
+    {{#each notification in notifications}}
+      {{notification-alert notification=notification}}
+    {{/each}}
+    </div>
+  {{/if}}
+
   <header class="header">
 
     {{#link-to "index"}}
