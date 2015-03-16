@@ -42,6 +42,7 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
       this.toggleProperty("showMenu");
     },
     togglePanel: function() {
+      this.get("notifier").show("Showed the panel!", {type: "Warning"});
       this.toggleProperty("showPanel");
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);
