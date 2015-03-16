@@ -16,5 +16,10 @@ export default Ember.Service.extend({
       this.get("notifications").removeObject(options);
     }, 2500);
 
+  },
+
+  remove: function(notification) {
+    this.get("notifications").removeObject(notification);
   }
+
 });
