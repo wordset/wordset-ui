@@ -1,7 +1,12 @@
 {{partial "menu"}}
 
+{{#each notification in notifications}}
+  {{notification-alert notification=notification}}
+{{/each}}
+
 <div class="main-content">
   <header class="header">
+
     {{#link-to "index"}}
       <div class="logo"></div>
     {{/link-to}}
