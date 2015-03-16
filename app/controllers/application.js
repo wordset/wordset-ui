@@ -9,6 +9,7 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
   notifier: Ember.inject.service(),
   showPanel: false,
   chatReceived: false,
+  browserNotifications: [],
   notifications: function() {
     return this.get("notifier.notifications");
   }.property("notifier.notifications.@each"),
@@ -37,7 +38,7 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
   },
   actions: {
     toggleMenu: function() {
-      this.get("notifier").show("Showed the menu!");
+      this.get("notifier").show("Showed the menu!", {type: "Alert"});
       this.toggleProperty("showMenu");
     },
     togglePanel: function() {
