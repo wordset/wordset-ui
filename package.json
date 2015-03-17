@@ -44,5 +44,5 @@
     "glob": "^5.0.1",
     "jsdiff": "^1.1.1",
     "liquid-fire": "ef4/liquid-fire"
-  },
+  }
 }
