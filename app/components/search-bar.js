@@ -82,7 +82,6 @@ export default Ember.Component.extend({
     clear: function() {
       this.set("searchTerm", "");
       this.set("selectedIndex", -1);
-      this.send("log", "search", "cleared");
     },
     searchEnter: function() {
       this.send("clickWord", this.get("selectedWord"));
