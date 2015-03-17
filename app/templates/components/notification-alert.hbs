@@ -1,3 +1,16 @@
-<a class="close" {{action "removeNotification"}}><span class="ion-close"></span></a>
-<div class="title">{{notification.type}}</div>
-<div class="text">{{notification.text}}</div>
+
+{{#if notification.proposalLink}}
+  {{#link-to "proposal.index" notification.proposalLink}}
+    <a class="close" {{action "removeNotification"}}><span class="ion-close"></span></a>
+    <div class="title">{{notification.type}}</div>
+    <div class="text">{{notification.text}}</div>
+  {{/link-to}}
+{{/if}}
+
+{{#if notification.userLink}}
+  {{#link-to "user.index" notification.userLink}}
+    <a class="close" {{action "removeNotification"}}><span class="ion-close"></span></a>
+    <div class="title">{{notification.type}}</div>
+    <div class="text">{{notification.text}}</div>
+  {{/link-to}}
+{{/if}}

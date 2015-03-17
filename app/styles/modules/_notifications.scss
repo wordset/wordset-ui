@@ -10,23 +10,27 @@ notification {
   @include transition();
   background: $notification-background;
   border-radius: 2px;
-  color: $notification-color;
   display: block;
   margin-bottom: 5px;
   padding: 10px 15px;
   position: relative;
   width: 200px;
+  a {
+    color: $notification-color;
+    text-decoration: none;
+    &:hover {
+      color: darken($notification-color, 10%);
+    }
+  }
   .title {
     font-size: 12px;
     margin-bottom: 4px;
     text-transform: uppercase;
   }
   .close {
-    color: $notification-color;
     font-size: 14px;
     padding: 5px;
     position: absolute;
-    text-decoration: none;
     right: 4px;
     top: 4px;
   }
