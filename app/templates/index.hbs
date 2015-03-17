@@ -1,20 +1,11 @@
 
 
 <div class="wrapper home">
-  <h1>The collaborative dictionary.</h1>
-  <p>Search for a word above to get started, or get a {{#link-to "words.random"}}random word{{/link-to}}.</p>
+  <h1>The Collaborative Dictionary.</h1>
 
-  <p>Our goal is to make the <strong>best dictionary in the world</strong>, with an <strong>encouraging community</strong> to foster its continual growth and development.</p>
-
-  <p>We found other collaborative dictionaries lacking in either usability or thoroughness. Having found a starting set of words, we began making the definitions more precise, the example sentences clearer. </p>
-
-
-  <h2>Current Project</h2>
-  <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
-  {{project-info project=activeProject}}
-
-  <h2>Get involved</h2>
   <div class="links">
+    {{#link-to "info.goals"}}
+      <div class="ionicon ion-ios-star"></div>Project Goals{{/link-to}}
     {{#link-to "info.get-started"}}
       <div class="ionicon ion-asterisk"></div>Contributing {{/link-to}}
     {{#link-to "info.guidelines"}}
@@ -22,6 +13,13 @@
     {{#link-to "info.faqs"}}
       <div class="ionicon ion-help"></div>FAQs {{/link-to}}
   </div>
+
+
+  <h2>Current Community Project</h2>
+  <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
+  {{project-info project=activeProject}}
+
+
 
   <h2>Recent Activity</h2>
   <div class="recent-activity">

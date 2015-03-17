@@ -1,5 +1,6 @@
 @import "reset";
 @import "ionicons";
+@import "globals/animate";
 
 @import "globals/variables";
 @import "globals/mixins";
@@ -9,6 +10,7 @@
 @import "modules/header";
 @import "modules/footer";
 
+@import "modules/notifications";
 
 @import "modules/panel";
 @import "modules/scoreboard";

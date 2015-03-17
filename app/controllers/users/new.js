@@ -2,6 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Controller.extend( EmberValidations.Mixin, {
+  notifier: Ember.inject.service(),
   validations: {
     "model.id": {
       presence: true,
@@ -27,7 +28,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
     register: function() {
       var _this = this;
       this.get("model").save().then(function(){
-        _this.flash.success('Welcome! Now just log in to begin!');
+        _this.get("notifier").show('Welcome! Now just log in to begin!', {type: "Success"});
         _this.transitionToRoute('users.login');
         _this.send("log", "account", "register");
       }, function(resp) {
@@ -35,7 +36,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
         _this.set("isError", true);
         resp.errors.id = resp.errors;
         _this.set("errors", resp.errors);
-        _this.flash.notice('Oops! Looks like something was amiss.');
+        _this.get("notifier").show('Oops! Looks like something was amiss.', {type: "Alert"});
       });
     }
   }

@@ -37,6 +37,7 @@
   }
   .search {
     position: relative;
+    z-index: 4;
     input {
       border: 0;
       font-size: 20px;

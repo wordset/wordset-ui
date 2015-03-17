@@ -6,6 +6,7 @@ import Proposal from '../models/proposal';
 /* global mixpanel */
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
+  notifier: Ember.inject.service(),
   activate: function() {
     return this.store.find('word_list');
   },
@@ -46,7 +47,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           _this.store.pushPayload("proposal", data);
           _this.transitionTo('proposal.index', data.proposal.id);
         } else {
-          _this.flash.notice("YAY! You've voted on all open proposals!");
+          _this.get("notifier").show("Yay! You voted on all open proposals!", {type: "Alert"});
           _this.transitionTo('proposals');
         }
       }, function() {

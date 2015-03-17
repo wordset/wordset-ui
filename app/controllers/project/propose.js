@@ -2,6 +2,7 @@ import Ember from "ember";
 import EmberValidations from "ember-validations";
 
 export default Ember.Controller.extend(EmberValidations.Mixin, {
+  notifier: Ember.inject.service(),
   validations: {
     "model.def": {
       presence: true,
@@ -18,7 +19,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       var _this = this;
       this.get("model").save().then(
         function() {
-          _this.flash.notice("Thanks! Here's another meaning that needs cleaning up.");
+          _this.get("notifier").show("Thanks! Here's another meaning that needs cleaning up.", {type: "Alert"});
           _this.send("randomTarget");
         }, function() {
           _this.send("randomTarget");
