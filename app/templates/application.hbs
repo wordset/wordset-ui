@@ -36,6 +36,16 @@
     </aside>
     <section {{bind-attr class=":content showPanel"}}>
       {{liquid-outlet}}
+      <footer>
+        <div class="footer-links">
+          {{#link-to "info.faqs"}}FAQs{{/link-to}}
+          {{#link-to "info.legal"}}Legal{{/link-to}}
+          <a href="https://twitter.com/thewordset" target="_blank">Twitter</a>
+          <a href="https://facebook.com/wordset" target="_blank">Facebook</a>
+        </div>
+      </footer>
     </section>
+
   {{/view}}
+  
 </div>

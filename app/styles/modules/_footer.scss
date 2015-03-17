@@ -1,0 +1,31 @@
+}
+
+
+/* Sticky Footer Goes here */
+section.content > div {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -30px;
+}
+section.content > div:after{
+  content: "";
+  display: block;
+}
+footer, section.content > div:after {
+  height: 80px;
+}
+footer {
+  background: $footer-background;
+  color: $footer-color;
+  padding: 30px;
+  text-align: center;
+  a {
+    color: $footer-color;
+    text-decoration: none;
+  }
+  .footer-links {
+    margin-bottom: 40px;
+    a:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
