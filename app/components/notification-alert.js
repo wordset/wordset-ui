@@ -6,6 +6,13 @@ export default Ember.Component.extend({
   notifier: Ember.inject.service(),
   deleted: false,
 
+  didInsertElement: function() {
+    this._super();
+    Ember.run.later(this, function() {
+      this.send("removeNotification");
+    }, 2500);
+  },
+
   actions: {
     removeNotification: function() {
       this.set("deleted", true)
