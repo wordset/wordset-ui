@@ -45,7 +45,4 @@
     "jsdiff": "^1.1.1",
     "liquid-fire": "ef4/liquid-fire"
   },
-  "dependencies": {
-    "ember-flash-message": "^0.1.0"
-  }
 }
