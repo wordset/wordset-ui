@@ -44,27 +44,9 @@
     margin-bottom: 15px;
   }
   .word a {
+    @include underline;
     color: $text-color;
-    position: relative;
     text-decoration: none;
-    &:after {
-      @include transition;
-      border-bottom: 2px solid $lime;
-      content: '';
-      position: absolute;
-      left: 0;
-      display: inline-block;
-      height: 1em;
-      margin-top: -1px;
-      opacity: 0;
-      width: 100%;
-    }
-    &:hover:after {
-      opacity: 1;
-    }
-    &:hover {
-      color: $dark-green;
-    }
   }
   .pos {
     margin-bottom: 20px;

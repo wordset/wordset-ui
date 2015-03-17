@@ -22,6 +22,8 @@ $yellow: #EEE82C;
 $taupe: #929487;
 $light-grey: #ECECEC;
 $red: #BF2719;
+$light-green: lighten($dark-green, 20%);
+$lightest-green: lighten($dark-green, 69%);
 
 $brown: #6B6054;
 
@@ -41,7 +43,8 @@ $menu-color: $dark-green;
 $body-background: #FFF;
 $text-color: $black;
 
-$header-color: $dark-green;
+$footer-color: $dark-green;
+$footer-background: $light-grey;
 
 $anchor-color: $lime;
 $anchor-hover-color: darken($lime, 10%);
@@ -69,8 +72,8 @@ $dropdown-anchor-color: $dark-green;
 
 // For positive/negative styles for votes and proposals
 
-$positive-background:lighten($dark-green, 69%);
-$positive-color: lighten($dark-green, 20%);
+$positive-background: $lightest-green;
+$positive-color: $light-green;
 
 $negative-color: $red;
 

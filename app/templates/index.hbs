@@ -1,7 +1,16 @@
-
-
 <div class="wrapper home">
   <h1>The Collaborative Dictionary.</h1>
+
+  <section class="news">
+    <div class="header">
+      <h2>NEWS: We've Open Sourced!</h2>
+    </div>
+    <p>
+      We have open sourced both the definitions and the software running this site.
+      {{#link-to "post" "going-open-source"}}Read all about it {{/link-to}} or
+      <a href="https://github.com/wordset">take a look on GitHub</a>.
+    </p>
+  </section>
 
   <div class="links">
     {{#link-to "info.goals"}}
@@ -10,8 +19,6 @@
       <div class="ionicon ion-asterisk"></div>Contributing {{/link-to}}
     {{#link-to "info.guidelines"}}
       <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
-    {{#link-to "info.faqs"}}
-      <div class="ionicon ion-help"></div>FAQs {{/link-to}}
   </div>
 
 
@@ -26,13 +33,4 @@
     {{render "dashboard/activities" activities}}
   </div>
 
-  <h2>Contact</h2>
-  <ul class="contact">
-    <li><a href="http://twitter.com/thewordset" target="_blank">
-      <span class="ion-social-twitter"></span>Twitter
-    </a></li>
-    <li><a href="mailto:contact@teamrarebit.com" target="_blank">
-      <span class="ion-email"></span>Email
-    </a></li>
-  </ul>
 </div>

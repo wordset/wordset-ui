@@ -19,10 +19,11 @@
   .project-proposal {
     padding: 20px 10px;
     width: 50%;
-    @media screen and (max-width: $medium) {
-      width: 100%;
+    @include media-max-width($medium) {
+      width: 95%;
     }
     .word a {
+      @include underline;
       color: $text-color;
       text-decoration: none;
     }

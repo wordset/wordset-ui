@@ -6,6 +6,33 @@
     margin-bottom: 20px;
   }
 
+  .news {
+    border: 1px solid $dark-green;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 0px;
+    .header {
+      background: lighten($dark-green, 40%);
+      box-shadow: none;
+      height: inherit;
+      padding: 10px 0px;
+      h2 {
+        color: #FFF;
+        margin: 0px 0px 0px 10px;
+      }
+      width: 100%;
+
+    }
+    a {
+      color: $dark-green;
+    }
+    p {
+      padding: 10px;
+      margin-bottom: 0px;
+    }
+
+  }
+
   project-info {
     background: #FFF;
     border: 1px solid lighten($blue, 25%);
