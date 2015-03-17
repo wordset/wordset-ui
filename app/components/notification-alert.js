@@ -24,7 +24,7 @@ export default Ember.Component.extend({
 
   actions: {
     removeNotification: function() {
-      this.set("deleted", true)
+      this.set("deleted", true);
       this.get("notifier").remove(this.get("notification"));
     }
   }
