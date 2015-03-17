@@ -8,18 +8,27 @@
 
   .news {
     border: 1px solid $dark-green;
+    border-radius: 2px;
+    margin-bottom: 20px;
     padding: 0px;
     .header {
-      h2 {
-        margin: 0px;
-      }
-      color: white;
-      width: 100%;
       background: lighten($dark-green, 40%);
-      padding: 5px;
+      box-shadow: none;
+      height: inherit;
+      padding: 10px 0px;
+      h2 {
+        color: #FFF;
+        margin: 0px 0px 0px 10px;
+      }
+      width: 100%;
+
+    }
+    a {
+      color: $dark-green;
     }
     p {
       padding: 10px;
+      margin-bottom: 0px;
     }
 
   }
