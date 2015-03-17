@@ -2,7 +2,7 @@
 
 Wordset UI is the Ember front-end layer for [Wordset](https://www.wordset.org). Wordset is a collaborative, structured dictionary.
 
-To get it working locally, you will also need to clone and set up the Rails back-end, [Wordset data](http://github.com/wordset/wordset-data).
+To get it working locally, you will also need to clone and set up the Rails back-end, [Wordset API](http://github.com/wordset/wordset-api).
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ You will need the following things properly installed on your computer.
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Make sure the Rails back-end ([Wordset data](http://github.com/wordset/wordset-data)) is also running, or else you'll see no data.
+* Make sure the Rails back-end ([Wordset api](http://github.com/wordset/wordset-api)) is also running, or else you'll see no data.
 
 ### Code Generators
 
