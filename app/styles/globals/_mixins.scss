@@ -34,3 +34,22 @@
     }
   }
 }
+
+@mixin underline($color: $lime) {
+  position: relative;
+  &:after {
+    @include transition;
+    border-bottom: 2px solid $color;
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    margin-top: -1px;
+    opacity: 0;
+    width: 100%;
+  }
+  &:hover:after {
+    opacity: 1;
+  }
+}
