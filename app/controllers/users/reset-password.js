@@ -3,6 +3,7 @@ import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment.js';
 
 export default Ember.Controller.extend( EmberValidations.Mixin, {
+  notifier: Ember.inject.service(),
   queryParams: 'token',
   password: '',
   passwordConfirmation: '',
@@ -27,7 +28,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
             password: _this.get("password"),
           }).then(function() {
             _this.transitionToRoute("index");
-            _this.flash.notice("Logged in!");
+            _this.get("notifier").show("Logged in!", {type: "Success"});
             _this.send("log", "account", "resetpassword");
           });
         });

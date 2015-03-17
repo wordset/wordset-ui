@@ -3,6 +3,7 @@ import Ember from "ember";
 export default Ember.Controller.extend({
   needs: ["application"],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  notifier: Ember.inject.service(),
 
   superior: function() {
     return this.get("list").get("firstObject");
@@ -35,11 +36,11 @@ export default Ember.Controller.extend({
 
     },
     win: function() {
-      this.flash.success("You just overtook " + this.get("superior.id"));
+      this.get("notifier").show("You just overtook " + this.get("superior.id"), {type: "Ranks", route: ["user.index", this.get("superior.id")]});
       this.send("reloadList");
     },
     lose: function() {
-      this.flash.notice("You were just overtaken by " + this.get("posterior.id"));
+      this.get("notifier").show("You were just overtaken by " + this.get("posterior.id"), {type: "Ranks", route: ["user.index", this.get("posterior.id")]});
       this.send("reloadList");
     }
   }

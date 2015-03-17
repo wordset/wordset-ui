@@ -6,18 +6,22 @@ import AppPusherMixin from '../mixins/app_pusher.js';
 
 export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
   showMenu: false,
+  notifier: Ember.inject.service(),
   showPanel: false,
   chatReceived: false,
-  notifications: [],
+  browserNotifications: [],
+  notifications: function() {
+    return this.get("notifier.notifications");
+  }.property("notifier.notifications.@each"),
   hasChatAlert: function() {
     return (!this.get("showPanel")) && this.get("chatReceived");
   }.property("showPanel", "chatReceived"),
   clearNotifications: function() {
     if(this.get("visible") === true) {
-      this.get("notifications").forEach(function(n) {
+      this.get("browserNotifications").forEach(function(n) {
         n.close();
       });
-      this.set("notifications", []);
+      this.set("browserNotifications", []);
     }
   }.observes("visible"),
   username: function() {
@@ -45,7 +49,7 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
       if(this.get("visible") === false) {
         var opt = {body: body, tag: tag, icon: "/assets/images/square-logo.png"};
         var n = new Notification(title, opt);
-        this.get("notifications").addObject(n);
+        this.get("browserNotifications").addObject(n);
       }
     },
   }

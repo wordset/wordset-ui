@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  notifier: Ember.inject.service(),
   editing: false,
   meaningProposal: null,
   canEdit: function() {
@@ -24,7 +25,7 @@ export default Ember.ObjectController.extend({
         }));
         this.set("editing", true);
       } else {
-        this.flash.notice("You must login to propose changes!");
+        this.get("notifier").show("You must login to propose changes!", {type: "Alert"});
       }
     },
     cancel: function() {

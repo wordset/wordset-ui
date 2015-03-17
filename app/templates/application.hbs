@@ -1,7 +1,17 @@
 {{partial "menu"}}
 
 <div class="main-content">
+
+  {{#if notifications}}
+    <div class="notifications-wrapper">
+      {{#each notification in notifications}}
+        {{notification-alert notification=notification}}
+      {{/each}}
+    </div>
+  {{/if}}
+
   <header class="header">
+
     {{#link-to "index"}}
       <div class="logo"></div>
     {{/link-to}}
@@ -19,8 +29,6 @@
       </a>
     </div>
   </header>
-
-  {{flash-message}}
 
   {{#view "main-area"}}
     <aside {{bind-attr class=":panel showPanel:open:closed"}}>

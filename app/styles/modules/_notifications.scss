@@ -1,0 +1,38 @@
+.notifications-wrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 5;
+}
+
+
+notification {
+  @include transition();
+  background: $notification-background;
+  border-radius: 2px;
+  color: $notification-color;
+  display: block;
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  position: relative;
+  width: 200px;
+  a {
+    color: $notification-color;
+    text-decoration: none;
+    &:hover {
+      color: darken($notification-color, 10%);
+    }
+  }
+  .title {
+    font-size: 12px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .close {
+    font-size: 14px;
+    padding: 5px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+  }
+}
