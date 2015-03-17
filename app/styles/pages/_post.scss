@@ -1,0 +1,16 @@
+
+article {
+  h1 {
+    margin-bottom: 5px;
+  }
+  footer {
+    color: $taupe;
+    .post-footer {
+      margin-bottom: 5px;
+    }
+  }
+  section.post-body {
+    margin-top: 20px;
+  }
+
+}

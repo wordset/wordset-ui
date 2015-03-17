@@ -26,6 +26,7 @@ Router.map(function() {
     this.route("new");
     this.route("random");
   });
+  this.resource("post", {path: "/post/:post_id"});
   this.resource("proposals", function() {
   });
   this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
