@@ -5,6 +5,7 @@ import { Bindings } from 'ember-pusher/bindings';
 
 export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   logPusherEvents: (ENV.environment === 'development'),
+  notifier: Ember.inject.service(),
   PUSHER_SUBSCRIPTIONS: {
     messages: ['push']
   },
@@ -62,10 +63,10 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         if(result === "granted") {
           _this.set("notificationsEnabled", true);
           _this.send("log", "notifications", "enabled");
-          _this.flash.notice("We'll let you know when someone messages now!");
+          _this.get("notifier").show("We'll let you know when someone messages", {type: "Alert"});
           localStorage.notificationsEnabled = true;
         } else {
-          _this.flash.notice("We can't notify because you said no. :(");
+          _this.get("notifier").show("We can't notify because you said no. :(", {type: "Alert"});
         }
       });
     },
@@ -73,7 +74,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       this.set("notificationsEnabled", false);
       this.send("log", "notifications", "disabled");
       localStorage.notificationsEnabled = false;
-      this.flash.notice("Notifications disabled");
+      this.get("notifier").show("Notifications disabled", {type: "Alert"});
     },
     goToLink: function(link) {
       if(link) {
