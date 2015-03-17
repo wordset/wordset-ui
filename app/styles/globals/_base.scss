@@ -163,6 +163,6 @@ html, body, body > div, .main-content, .content, .messages {
 
 
 // Ember  thing to make actions clickable
-[data-ember-action] {
+notification, [data-ember-action] {
   cursor: pointer;
 }

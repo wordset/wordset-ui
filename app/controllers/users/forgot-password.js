@@ -3,6 +3,7 @@ import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment.js';
 
 export default Ember.Controller.extend( EmberValidations.Mixin, {
+  notifier: Ember.inject.service(),
   email: '',
   validations: {
     email: {
@@ -18,7 +19,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
       var url = ENV.api + "/users/forgot_password";
       Ember.$.post(url, { email: this.get("email") },
         function() {
-          _this.flash.notice("Go check email!");
+          _this.get("notifier").show("You will receive instructions via e-mail", {type: "Forgotten Password"});
         });
     },
   },

@@ -38,6 +38,7 @@ Router.map(function() {
     this.route("propose", {path: "/propose/:meaning_id"});
   });
   this.route("info", function() {
+    this.route("goals");
     this.route("faqs");
     this.route("guidelines");
     this.route("get-started");
