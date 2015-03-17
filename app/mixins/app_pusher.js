@@ -27,7 +27,7 @@ export default Ember.Mixin.create(Bindings, {
     notify: function(data) {
       this.store.pushPayload('notification', data);
       var activity = data.activities[0];
-      Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack")
+      Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");
       switch (activity.type) {
         case "ProposalComment":
           this.flash.notice("Someone just commented on your proposal for " + activity.wordId);
