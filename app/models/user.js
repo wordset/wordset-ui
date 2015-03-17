@@ -7,7 +7,7 @@ export default DS.Model.extend({
   points: DS.attr("number"),
   imageUrl: DS.attr("string"),
   createdAt: DS.attr('date'),
-  rank: DS.attr("string"),
+  trust_level: DS.attr("string"),
   votes: DS.hasMany("votes"),
 
   // Only for registration purposes

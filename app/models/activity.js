@@ -11,5 +11,6 @@ export default DS.Model.extend({
   comment: DS.attr("string"), // Vote or Comment
   voteValue: DS.attr("number"), // Vote
   finalState: DS.attr("string"), // ProposalClosed
+  newLevel: DS.attr("string"), // UserPromotion
 
 });
