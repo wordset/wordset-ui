@@ -10,6 +10,7 @@ notification {
   @include transition();
   background: $notification-background;
   border-radius: 2px;
+  color: $notification-color;
   display: block;
   margin-bottom: 5px;
   padding: 10px 15px;
