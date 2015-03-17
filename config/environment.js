@@ -66,7 +66,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.apiHost = 'https://api.wordset.org';
     ENV.APP.PUSHER_OPTS = {
-      key: '48d537b460788bef06f4',
+      key: '981cd5a1b0a2a518c814',
     };
   }
 
