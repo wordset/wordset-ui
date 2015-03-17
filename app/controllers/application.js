@@ -52,8 +52,5 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
         this.get("browserNotifications").addObject(n);
       }
     },
-    showAlert: function() {
-      this.get("notifier").show("Showed the menu!", {type: "Alert"});
-    }
   }
 });
