@@ -9,6 +9,7 @@
     "QUnit",
     "define",
     "console",
+    "moment",
     "equal",
     "notEqual",
     "notStrictEqual",

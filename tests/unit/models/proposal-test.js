@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('word', {
+moduleForModel('proposal', {
   // Specify the other units that are required for this test.
-  needs: ["model:entry", "model:proposal"]
+  needs: ["model:meaning", "model:word", "model:user", "model:project", "model:vote"]
 });
 
 test('it exists', function(assert) {

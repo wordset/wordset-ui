@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var Word = DS.Model.extend({
+export default DS.Model.extend({
   entries: DS.hasMany('entries'),
   proposals: DS.hasMany('proposals', {async: true}),
 
@@ -10,9 +10,3 @@ var Word = DS.Model.extend({
     });
   },
 });
-
-Word.reopenClass({
-
-});
-
-export default Word;
