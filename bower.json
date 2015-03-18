@@ -13,7 +13,6 @@
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
     "ember-simple-auth": "0.7.2",
-    "jquery-autosize": "",
     "JavaScript-MD5": "~1.1.0",
     "jsdiff": "~1.2.2",
     "pusher": "~2.2.4",
