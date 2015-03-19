@@ -4,7 +4,6 @@
     vertical-align: top;
   }
   .rules {
-    margin-right: 100px;
     padding: 20px;
     width: 300px;
     li {
@@ -17,9 +16,12 @@
     }
   }
   .project-proposal {
+    margin-left: 10%;
+    margin-right: 100px;
     padding: 20px 10px;
     width: 50%;
     @include media-max-width($medium) {
+      margin-left: 0px;
       width: 95%;
     }
     .word a {
