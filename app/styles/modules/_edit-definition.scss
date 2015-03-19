@@ -53,7 +53,7 @@
 
 .edit-example {
   position: relative;
-  div:before {
+  .textarea:before {
     content: "“";
     font-family: sans-serif;
     font-size: 40px;
