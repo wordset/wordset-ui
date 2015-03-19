@@ -9,7 +9,8 @@ import Word from "wordset/models/word";
 
 moduleForModel('user', {
   // Specify the other units that are required for this test.
-  needs: ["model:proposal", "model:vote", "model:word"]
+  needs: ["model:entry", "model:proposal", "model:meaning", "model:word",
+          "model:project", "model:vote", "model:activity"]
 });
 
 test('it exists', function(assert) {

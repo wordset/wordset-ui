@@ -8,7 +8,8 @@ import Proposal from "wordset/models/proposal";
 
 moduleForModel('vote', {
   // Specify the other units that are required for this test.
-  needs: ['model:user', 'model:proposal']
+  needs: ["model:entry", "model:proposal", "model:meaning", "model:user",
+          "model:project", "model:word", "model:activity"]
 });
 
 test('it exists', function(assert) {
