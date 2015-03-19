@@ -50,3 +50,17 @@
   font-size: 1px;
   opacity: 0;
 }
+
+.edit-example {
+  position: relative;
+  div:before {
+    content: "“";
+    font-family: sans-serif;
+    font-size: 40px;
+    position: absolute;
+  }
+  textarea {
+    margin-left: 18px;
+    width: 95%;
+  }
+}
