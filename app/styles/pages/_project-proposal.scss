@@ -3,6 +3,7 @@
     display: inline-block;
     vertical-align: top;
   }
+
   .rules {
     padding: 20px;
     width: 300px;
@@ -14,20 +15,26 @@
         margin-bottom: 5px;
       }
     }
+    @include media-max-width($large) {
+      margin-left: 10%;
+      width: 50%;
+    }
   }
   .project-proposal {
     margin-left: 10%;
     margin-right: 100px;
     padding: 20px 10px;
     width: 50%;
-    @include media-max-width($medium) {
-      margin-left: 0px;
-      width: 95%;
-    }
     .word a {
       @include underline;
       color: $text-color;
       text-decoration: none;
+    }
+  }
+  .rules, .project-proposal {
+    @include media-max-width($medium) {
+      margin-left: 0px;
+      width: 95%;
     }
   }
   .meaning {
