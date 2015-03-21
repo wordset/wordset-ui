@@ -38,7 +38,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         _this.get("notifier").show("Thanks! Here's another meaning that needs cleaning up.", {name: "Alert"});
         _this.send("randomTarget");
       }, function() {
-        _this.get("notifier").error("Something went wrong that time...")
+        _this.get("notifier").error("Something went wrong that time...");
         _this.send("randomTarget");
       });
 
