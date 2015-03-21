@@ -36,6 +36,7 @@
         {{validated-textarea value=model.example errors=errors.model.example}}
       </label>
       <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
+      <button class="negative" {{action "proposeMeaningRemoval"}}>Propose Removal</button>
       <button class="negative" {{action "randomTarget"}}>Skip</button>
     </div>
   </div>

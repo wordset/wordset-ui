@@ -15,9 +15,8 @@ export default Ember.Controller.extend({
   projectAction: function() {
     if(this.get("model.name") === "Proper Noun Purge") {
       return "randomProposal";
-    } else if(this.get("model.name") === "Parentheses Roundup") {
-      return "randomTarget";
     }
+    return "randomTarget";
   }.property("model.name"),
 
   actions: {
