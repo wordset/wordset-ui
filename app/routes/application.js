@@ -47,7 +47,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           _this.store.pushPayload("proposal", data);
           _this.transitionTo('proposal.index', data.proposal.id);
         } else {
-          _this.get("notifier").show("Yay! You voted on all open proposals!", {type: "Alert"});
+          _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
           _this.transitionTo('proposals');
         }
       }, function() {

@@ -25,7 +25,7 @@ export default Ember.ObjectController.extend({
         }));
         this.set("editing", true);
       } else {
-        this.get("notifier").show("You must login to propose changes!", {type: "Alert"});
+        this.get("notifier").show("You must login to propose changes!", {name: "Alert"});
       }
     },
     cancel: function() {

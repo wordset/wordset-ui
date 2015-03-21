@@ -19,7 +19,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
       var url = ENV.api + "/users/forgot_password";
       Ember.$.post(url, { email: this.get("email") },
         function() {
-          _this.get("notifier").show("You will receive instructions via e-mail", {type: "Forgotten Password"});
+          _this.get("notifier").show("You will receive instructions via e-mail", {name: "Forgotten Password"});
         });
     },
   },

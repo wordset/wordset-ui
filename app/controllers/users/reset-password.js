@@ -28,7 +28,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
             password: _this.get("password"),
           }).then(function() {
             _this.transitionToRoute("index");
-            _this.get("notifier").show("Logged in!", {type: "Success"});
+            _this.get("notifier").show("Logged in!", {name: "Success"});
             _this.send("log", "account", "resetpassword");
           });
         });

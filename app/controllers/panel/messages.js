@@ -63,10 +63,10 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         if(result === "granted") {
           _this.set("notificationsEnabled", true);
           _this.send("log", "notifications", "enabled");
-          _this.get("notifier").show("We'll let you know when someone messages", {type: "Alert"});
+          _this.get("notifier").show("We'll let you know when someone messages", {name: "Alert"});
           localStorage.notificationsEnabled = true;
         } else {
-          _this.get("notifier").show("We can't notify because you said no. :(", {type: "Alert"});
+          _this.get("notifier").show("We can't notify because you said no. :(", {name: "Alert"});
         }
       });
     },
@@ -74,7 +74,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       this.set("notificationsEnabled", false);
       this.send("log", "notifications", "disabled");
       localStorage.notificationsEnabled = false;
-      this.get("notifier").show("Notifications disabled", {type: "Alert"});
+      this.get("notifier").show("Notifications disabled", {name: "Alert"});
     },
     goToLink: function(link) {
       if(link) {

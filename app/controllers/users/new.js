@@ -36,7 +36,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
         _this.set("isError", true);
         resp.errors.id = resp.errors;
         _this.set("errors", resp.errors);
-        _this.get("notifier").show('Oops! Looks like something was amiss.', {type: "Alert"});
+        _this.get("notifier").show('Oops! Looks like something was amiss.', {name: "Alert"});
       });
     }
   }
