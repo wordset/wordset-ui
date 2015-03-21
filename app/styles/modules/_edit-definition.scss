@@ -61,6 +61,6 @@
   }
   textarea {
     margin-left: 18px;
-    width: 95%;
+    width: calc(100% - 18px);
   }
 }
