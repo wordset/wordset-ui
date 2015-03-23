@@ -8,6 +8,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
       var _this = this;
       this._super().then(function() {
         _this.send("log", "account", "login");
+        location.reload();
       }, function() {
         _this.set('errorMessage', 'Invalid username and password');
       });
