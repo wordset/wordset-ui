@@ -6,11 +6,11 @@ export default Ember.Controller.extend({
   notifier: Ember.inject.service(),
 
   superior: function() {
-    return this.get("list").get("firstObject");
+    return this.get("list.firstObject");
   }.property("list.firstObject"),
 
-  posterior: function() {
-    return this.get("list").get("lastObject");
+  inferior: function() {
+    return this.get("list.lastObject");
   }.property("list.lastObject"),
 
   pointsChanged: function() {

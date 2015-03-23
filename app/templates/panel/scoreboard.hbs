@@ -1,9 +1,20 @@
 <ul class="scoreboard">
-  {{#each user in list}}
-    <li>
-      <img {{bind-attr src="user.imageUrl"}}/>
-      <span class="username">{{user.id}}</span>
-      <span class="points">{{liquid-bind user.points}}</span>
-    </li>
-  {{/each}}
+  <!-- {{#each user in list}}
+  {{/each}} -->
+  <li>
+    <img {{bind-attr src="superior.imageUrl"}}/>
+    <span class="username">{{superior.id}}</span>
+    <span class="points">{{liquid-bind superior.points}}</span>
+  </li>
+  <li>
+    <img {{bind-attr src="currentUser.imageUrl"}}/>
+    <span class="username">{{currentUser.id}}</span>
+    <span class="points">{{liquid-bind currentUser.points}}</span>
+  </li>
+  <li>
+    <img {{bind-attr src="inferior.imageUrl"}}/>
+    <span class="username">{{inferior.id}}</span>
+    <span class="points">{{liquid-bind inferior.points}}</span>
+  </li>
+
 </ul>

@@ -30,6 +30,10 @@
       color: $text-color;
       text-decoration: none;
     }
+    .flag, .negative {
+      display: inline-block;
+      margin-right: 10px;
+    }
   }
   .rules, .project-proposal {
     @include media-max-width($medium) {
