@@ -122,6 +122,9 @@
       border-bottom: 2px solid $dark-green;
       border-top: 2px solid $dark-green;
     }
+    &.comment {
+      line-height: 1.4em;
+    }
   }
   .activity.yae {
     .value {
