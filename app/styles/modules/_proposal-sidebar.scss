@@ -108,6 +108,7 @@
   }
   .activity {
     margin-bottom: 2px;
+    padding: 8px 4px;
     &:last-child {
       margin-bottom: 20px;
     }
@@ -117,7 +118,6 @@
     &:nth-child(even) {
       background: #F3F3F3;
     }
-    padding: 8px 4px;
     &.edit {
       border-bottom: 2px solid $dark-green;
       border-top: 2px solid $dark-green;
