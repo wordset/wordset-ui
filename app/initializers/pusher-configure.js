@@ -14,11 +14,10 @@ export function initialize(container, application) {
           },
           failure: function(error) {
             reject(error);
-            console.warn("Unable to load pusher configuration in time")
+            console.warn("Unable to load pusher configuration in time");
           }
         });
     });
-    console.log()
   }
 }
 
