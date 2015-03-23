@@ -33,7 +33,6 @@ module.exports = function(environment) {
       store: 'simple-auth-session-store:local-storage',
       authorizer: 'authorizer:api',
       crossOriginWhitelist: ['https://api.wordset.org', 'http://localhost:3000'],
-
     }
   };
 
@@ -44,10 +43,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.apiHost = 'http://localhost:3000';
-    ENV.APP.PUSHER_OPTS = {
-      key: 'e8039c23fe140e473468',
-    };
-    ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 http://api.mixpanel.com ws://ws.pusherapp.com";
+    ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 ws://127.0.0.1:* http://api.mixpanel.com ws://ws.pusherapp.com";
     ENV.contentSecurityPolicy['script-src'] += "  http://stats.pusher.com";
   }
 
@@ -71,7 +67,6 @@ module.exports = function(environment) {
   }
 
   ENV.api = ENV.apiHost + "/" + ENV.apiPrefix;
-
 
   return ENV;
 };
