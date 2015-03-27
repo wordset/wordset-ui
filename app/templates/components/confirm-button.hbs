@@ -1,9 +1,9 @@
 {{#if isConfirm}}
-<button {{action "action"}} class="flag">
+  <button {{action "remove"}} class="flag">
   {{confirmText}}
-</button>
+  </button>
 {{else}}
-<button {{action "showConfirm"}}>
-  {{text}}
-</button>
+  <button {{action "showConfirm"}}>
+    {{text}}
+  </button>
 {{/if}}
