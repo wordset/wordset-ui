@@ -3,9 +3,5 @@
   {{yield}}
 {{/if}}
 <div class="textarea">
-  {{#if value}}
-    {{textarea value=value focus-out="showErrors"}}
-  {{else}}
-    {{textarea value=value focus-out="showErrors" placeholder="No example sentence. Please add one!"}}
-  {{/if}}
+  {{textarea value=value focus-out="showErrors" placeholder="No example sentence. Please add one!"}}
 </div>
