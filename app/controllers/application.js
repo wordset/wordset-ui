@@ -1,15 +1,17 @@
 import Ember from 'ember';
-import VisibilityMixin from '../mixins/visibility.js';
 import AppPusherMixin from '../mixins/app_pusher.js';
 
 // global mixpanel //
 
-export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
+export default Ember.Controller.extend(AppPusherMixin, {
   showMenu: false,
   notifier: Ember.inject.service(),
   showPanel: false,
   chatReceived: false,
   browserNotifications: [],
+  visibilityChangeHup: function() {
+    this.hup.to();
+  }.observes("visible.now"),
   notifications: function() {
     return this.get("notifier.notifications");
   }.property("notifier.notifications.@each"),
@@ -17,13 +19,13 @@ export default Ember.Controller.extend(AppPusherMixin, VisibilityMixin, {
     return (!this.get("showPanel")) && this.get("chatReceived");
   }.property("showPanel", "chatReceived"),
   clearNotifications: function() {
-    if(this.get("visible") === true) {
+    if(this.get("visible.now") === true) {
       this.get("browserNotifications").forEach(function(n) {
         n.close();
       });
       this.set("browserNotifications", []);
     }
-  }.observes("visible"),
+  }.observes("visible.now"),
   username: function() {
     return this.get("session.username");
   }.property("session.username"),
