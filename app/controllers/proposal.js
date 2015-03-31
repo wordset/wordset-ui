@@ -43,15 +43,11 @@ export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
     },
     withdraw: function() {
       var _this = this;
-      if(this.get("isWithdrawing")) { //second click!
-        Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
-        {}, function(data) {
-          _this.store.pushPayload('proposal', data);
-          _this.send("log", "proposal", "withdraw");
-        });
-      } else {
-        this.set("isWithdrawing", true);
-      }
+      Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
+      {}, function(data) {
+        _this.store.pushPayload('proposal', data);
+        _this.send("log", "proposal", "withdraw");
+      });
     },
     cancelEdit: function() {
       this.get("model").rollback();
