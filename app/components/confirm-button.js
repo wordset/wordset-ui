@@ -4,7 +4,11 @@ export default Ember.Component.extend({
   isConfirm: false,
   actions: {
     showConfirm: function() {
-      this.set("isConfirm", true);
+      this.toggleProperty("isConfirm");
+    },
+    confirm: function() {
+      this.toggleProperty("isConfirm");
+      this.sendAction("action", this.get("param"));
     },
   }
 });
