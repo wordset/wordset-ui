@@ -12,19 +12,7 @@
       Part of speech
       {{view "select" content=posList value=meaning.pos}}
     </label>
-    <label>
-      Definition
-      {{validated-textarea value=meaning.def errors=errors.def}}
-    </label>
-    <label class="edit-example">
-      Example sentence
-      <p>Note: no quotemarks are necessary.</p>
-      {{validated-textarea value=meaning.example errors=errors.example}}
-    </label>
-    <label>
-      Reason and sources
-      {{textarea value=meaning.reason}}
-    </label>
+    {{meaning-edit model=model}}
   {{/each}}
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
