@@ -3,6 +3,10 @@ import Ember from 'ember';
 // used by the Application controller
 
 export default Ember.Mixin.create({
+  needs: ['service:hup'],
+  hupTo: function() {
+    this.hup.to();
+  }.observes("visible"),
   init: function() {
     this._super();
     var hidden, visibilityChange, visibilityState;
