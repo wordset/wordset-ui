@@ -4,10 +4,9 @@
       {{error}}
     </div>
   {{/each}}
-  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
-  <!-- <button class="flag" {{action "withdrawProposal"}}>Withdraw</button> -->
 
   {{meaning-edit model=model}}
 
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit My Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
 </div>
