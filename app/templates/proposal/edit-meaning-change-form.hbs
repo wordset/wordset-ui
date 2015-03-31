@@ -4,20 +4,9 @@
       {{error}}
     </div>
   {{/each}}
-  <label>
-    Definition
-    {{validated-textarea value=model.def errors=errors.def}}
-  </label>
-  <label class="edit-example">
-    Example sentence
-    <p>Note: no quotemarks are necessary.</p>
-    {{validated-textarea value=model.example errors=errors.example placeholder="No example sentence! Please add one."}}
-  </label>
-  <label>
-    Reason and sources
-    {{textarea value=model.reason}}
-  </label>
-  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
-  <!-- <button class="flag" {{action "withdrawProposal"}}>Withdraw</button> -->
+
+  {{meaning-edit model=model}}
+
+  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit My Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
 </div>
