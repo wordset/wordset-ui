@@ -16,6 +16,6 @@
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
   <!-- <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Meaning</button> -->
-  {{confirm-button action="model.proposeMeaningRemoval" text="Remove meaning" confirmText="Are you sure?"}}
+  {{confirm-button action="proposeMeaningRemoval" text="Remove meaning" confirmText="Are you sure?"}}
   <button class="negative" {{action "cancel"}}>Cancel</button>
 </div>
