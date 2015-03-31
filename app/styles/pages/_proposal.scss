@@ -91,19 +91,16 @@
 
 
   .proposal-change-buttons {
-    position: relative;
+    button {
+      display: inline-block;
+    }
+    // The withdraw button should float left
+    div > button {
+      float: left;
+    }
   }
   .edit {
     float: right;
-  }
-  .withdraw {
-    @extend .negative;
-    display: inline-block;
-    float: left;
-    &.is-withdrawing {
-      @extend .flag;
-      display: inline-block;
-    }
   }
   .withdrawing-popup {
     @include transition();
