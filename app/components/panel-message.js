@@ -1,5 +1,6 @@
 
 import Ember from 'ember';
+/* global moment */
 
 export default Ember.Component.extend({
   messagedAt: function() {
