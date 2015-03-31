@@ -15,7 +15,6 @@
     {{textarea value=model.reason}}
   </label>
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
-  <!-- <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Meaning</button> -->
-  {{confirm-button action="proposeMeaningRemoval" text="Remove meaning" confirmText="Are you sure?"}}
   <button class="negative" {{action "cancel"}}>Cancel</button>
+  {{confirm-button action="proposeMeaningRemoval" text="Remove Meaning" confirmText="Are you sure?" icon="ion-trash-a"}}
 </div>
