@@ -2,13 +2,7 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp({
-  vendorFiles: {
-    'handlebars.js': null
-  }
-});
-
-app.import("bower_components/jsdiff/diff.js");
+var app = new EmberApp();
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
