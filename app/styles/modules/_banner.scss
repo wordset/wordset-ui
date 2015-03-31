@@ -12,11 +12,16 @@
   background-size: 1200px 120px;
   background-repeat: no-repeat;
   color: white;
+  display: block;
   font-size: 20px;
   height: 120px;
   margin-top: -53px;
   margin-bottom: 30px;
   padding-top: 20px;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
 
   @include media-min-width(900px) {
     font-size: 24px;
