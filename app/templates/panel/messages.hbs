@@ -31,7 +31,7 @@
 <div class='messages-content'>
   {{#view "message-list" controller=controller}}
     {{#each message in controller}}
-      {{partial "panel/message" message}}
+      {{panel-message message=message}}
     {{/each}}
   {{/view}}
 

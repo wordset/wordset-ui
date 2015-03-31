@@ -1,0 +1,11 @@
+{{#if isConfirm}}
+  <button {{action "confirm"}} class="flag">
+    <span class={{icon}}></span>
+    {{confirmText}}
+  </button>
+{{else}}
+  <button {{action "showConfirm"}}>
+    <span class={{icon}}></span>
+    {{text}}
+  </button>
+{{/if}}

@@ -37,11 +37,9 @@
     {{#if canChange}}
       {{#if isEditing}}
       {{else}}
+
         <div class="proposal-change-buttons">
-          {{#if isWithdrawing}}
-            <div class="withdrawing-popup">Click again to confirm!</div>
-          {{/if}}
-          <button {{action "withdraw"}} {{bind-attr class=":withdraw isWithdrawing"}}>Withdraw!</button>
+          {{confirm-button action="withdraw" text="Withdraw" confirmText="Click to Confirm"}}
           {{#if model.isEditableType}}
             <button {{action "startEdit"}} class="edit">Edit</button>
           {{/if}}

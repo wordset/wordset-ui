@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
-export default Ember.ObjectController.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations.Mixin, {
   validations: {
     "model.def": {
       presence: true,
@@ -28,5 +28,22 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
         _this.set("errors", errors.errors);
       });
     },
+    proposeMeaningRemoval: function() {
+      var _this = this;
+      var proposal = this.store.createRecord("proposal", {
+                            type: "MeaningRemoval",
+                            meaning: this.get("meaning")
+                        });
+      this.get("model").destroy();
+      proposal.save().then(function() {
+        _this.get("parentController").set("editing", false);
+        _this.set("meaning.hasProposal", true);
+        _this.set("meaning.openProposal", _this.get("model"));
+        _this.send("log", "proposal", "meaning change");
+      }, function(errors) {
+        _this.set("errors", errors.errors);
+      });
+
+    }
   }
 });

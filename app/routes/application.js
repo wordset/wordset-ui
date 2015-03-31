@@ -28,6 +28,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
     },
     didTransition: function() {
+      this.hup.to();
       if (ENV.environment === 'production') {
         Ember.run(function() {
           ga('send', 'pageview', {
