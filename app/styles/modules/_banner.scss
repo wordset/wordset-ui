@@ -4,3 +4,57 @@
   padding: 10px;
   text-align: center;
 }
+
+
+.fools-banner {
+  background-image: url("images/JimmyHampton.jpg");
+  background-position: center;
+  background-size: 1200px 120px;
+  background-repeat: no-repeat;
+  color: white;
+  display: block;
+  font-size: 20px;
+  height: 120px;
+  margin-top: -44px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  text-decoration: none;
+  &:hover {
+    color: white;
+  }
+
+  @include media-min-width(900px) {
+    font-size: 24px;
+    .text {
+      margin-left: 60px;
+    }
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @include media-max-width($large) {
+    background-position: -220px 15px, top;
+    font-size: 20px;
+    padding-top: 30px;
+    .text {
+      margin-left: 20px;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+
+  @include media-max-width(500px) {
+    background-position: -340px 15px, top;
+  }
+
+  .text {
+    text-shadow: 0px 1px 4px #333;
+    vertical-align: center;
+  }
+  span {
+    color: #DDD;
+
+  }
+}
