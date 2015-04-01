@@ -76,11 +76,5 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
       localStorage.notificationsEnabled = false;
       this.get("notifier").show("Notifications disabled", {name: "Alert"});
     },
-    goToLink: function(link) {
-      if(link) {
-        this.send("log", "messages", "clickedlink");
-        this.transitionToRoute(link);
-      }
-    },
   }
 });

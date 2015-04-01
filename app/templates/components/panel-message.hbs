@@ -1,13 +1,13 @@
 
 {{#if message.isLink}}
-  <li class="message link" {{action "goToLink" message.url}}>
+  <li class="message link" {{action "goToLink"}}>
     <div class="link-image">
       <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
       <span class="ion-forward"></span>
     </div>
     <div class="info">
       <div class="text">
-        {{message.user.id}} shared a link {{time-ago-in-words message.createdAt}}
+        {{message.user.id}} shared a link {{messagedAt}}
       </div>
     </div>
   </li>
