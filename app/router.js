@@ -44,6 +44,7 @@ Router.map(function() {
     this.route("guidelines");
     this.route("get-started");
     this.route("legal");
+    this.route("donate");
   });
 
 });
