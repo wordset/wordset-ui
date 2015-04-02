@@ -45,7 +45,6 @@ Router.map(function() {
     this.route("get-started");
     this.route("legal");
   });
-
 });
 
 export default Router;
