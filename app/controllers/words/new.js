@@ -5,13 +5,13 @@ import Ember from "ember";
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.ObjectController.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations.Mixin, {
   wordId: null,
   proposalId: null,
   validations: {
     "model.wordName": {
       inline: EmberValidations.validator(function() {
-        var name = this.get("model.wordName");
+        var name = this.get("model.model.wordName");
 
         var _this = this;
         if(name && (name.length > 0)) {
