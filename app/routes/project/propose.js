@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       controller.set("word", word);
       controller.set("model", _this.store.createRecord("proposal", {
         type: "MeaningChange",
-        word: word,
+        wordset: word,
         meaning: meaning,
         def: meaning.get("def"),
         example: meaning.get("example"),

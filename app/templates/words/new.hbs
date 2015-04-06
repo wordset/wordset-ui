@@ -10,7 +10,7 @@
 
       {{#validated-input value=model.wordName errors=errors.model.wordName}}
         {{#if wordId}}
-          – {{link-to "check it out." "word.index" model.wordId}}
+          – {{link-to "check it out." "seq.wordset.index" model.wordId}}
         {{/if}}
         {{#if proposalId}}
           – {{link-to "check it out." "proposal.index" model.proposalId}}

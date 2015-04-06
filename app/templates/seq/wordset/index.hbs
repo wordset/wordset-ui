@@ -1,8 +1,8 @@
-{{partial "word/entries"}}
+{{partial "seq/wordset/entries"}}
 
 {{#if session.isAuthenticated}}
   {{#if showMeaningProposal}}
-    {{render "word/new-meaning" newMeaningProposal}}
+    {{render "seq/wordset/new-meaning" newMeaningProposal}}
   {{else}}
     <button class="add-new-meaning" {{action 'toggleShowAddMeaning'}}>
       <span class="ion-plus"></span>

@@ -18,7 +18,8 @@ export default DS.Model.reopenClass({
 }).extend({
   type: DS.attr("string"),
   user: DS.belongsTo("user"),
-  word: DS.belongsTo("word", {async: true}),
+  lang: DS.belongsTo("lang"),
+  wordset: DS.belongsTo("wordset", {async: true}),
   project: DS.belongsTo("project", {inverse: null}),
   wordName: DS.attr("string"),
   reason: DS.attr("string"),

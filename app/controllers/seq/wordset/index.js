@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
     toggleShowAddMeaning: function() {
       this.set("newMeaningProposal", this.store.createRecord("proposal", {
         type: "NewMeaning",
-        word: this.get("model"),
+        wordset: this.get("model"),
         wordName: this.get("model").get("name"),
       }));
       this.set("showMeaningProposal", true);

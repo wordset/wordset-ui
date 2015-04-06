@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   userId: DS.attr("string"),
   proposalId: DS.attr("string"),
-  wordId: DS.attr("string"),
+  wordName: DS.attr("string"),
 
   createdAt: DS.attr("date"),
 

@@ -7,6 +7,7 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     apiPrefix: 'api/v1',
+    langs: ['en'],
 
     posList: ["adv", "adj", "verb", "noun", "conj", "pronoun", "prep", "intj"],
 

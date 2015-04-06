@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  seqs: DS.hasMany('seqs'),
   entries: DS.hasMany('entries'),
   proposals: DS.hasMany('proposals', {async: true}),
 

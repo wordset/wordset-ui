@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-import ENV from '../../config/environment';
+import ENV from '../../../config/environment';
 
 export default Ember.Controller.extend( EmberValidations.Mixin,
 {

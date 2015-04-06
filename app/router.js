@@ -7,10 +7,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource("index", {path: "/"});
-  this.resource("word", {path: "/word/:word_id"}, function() {
-    this.route("proposals");
-    this.route("new-meaning");
-  });
+
   this.route("login");
   this.route("user", {path: "/user/:user_id"}, function() {
     this.route("activity");
@@ -44,6 +41,13 @@ Router.map(function() {
     this.route("guidelines");
     this.route("get-started");
     this.route("legal");
+  });
+
+  this.resource("seq", {path: "/:lang/:seq"}, function() {
+    this.route("wordset", {path: "/"}, function() {
+      this.route("proposals");
+      this.route("new-meaning");
+    });
   });
 });
 

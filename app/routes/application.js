@@ -8,6 +8,7 @@ import Proposal from '../models/proposal';
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
   activate: function() {
+    this.store.find('lang');
     return this.store.find('word_list');
   },
   setupController: function(controller, model) {

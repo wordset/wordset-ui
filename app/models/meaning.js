@@ -7,7 +7,7 @@ var Meaning = DS.Model.extend({
   hasProposal: DS.attr("boolean"),
   openProposal: DS.belongsTo("proposal", {async: true}),
 
-  word: function() {
+  wordset: function() {
     return this.get("entry").get("word");
   },
 });
