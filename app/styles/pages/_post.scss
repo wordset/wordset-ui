@@ -2,6 +2,14 @@
 article {
   h1 {
     margin-bottom: 5px;
+  ul {
+    line-height: 1.4em;
+    list-style: circle;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  li {
+    margin-bottom: 10px;
   }
   .article-head {
     .post-footer {
