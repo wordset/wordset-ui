@@ -1,7 +1,11 @@
 
-article {
+article.post {
   h1 {
-    margin-bottom: 5px;
+    margin-bottom: 25px;
+    span {
+      margin-right: 10px;
+    }
+  }
   ul {
     line-height: 1.4em;
     list-style: circle;
