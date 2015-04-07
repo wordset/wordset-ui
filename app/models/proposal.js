@@ -46,7 +46,7 @@ export default DS.Model.reopenClass({
   pos: DS.attr("string"),
 
   typeName: function() {
-    if(this.get("type") === "NewWord") {
+    if(this.get("type") === "NewWordset") {
       return "New Word";
     } else if(this.get("type") === "NewMeaning") {
       return "New Meaning";
