@@ -3,14 +3,14 @@ import Ember from "ember";
 export default Ember.Route.extend({
   setupController: function(controller, model) {
     this._super();
-    var word = model.get("lastObject");
+    var wordset = model.get("lastObject");
     var _this = this;
     this.store.find("meaning", this.get("meaningId")).then( function(meaning) {
       controller.set("meaning", meaning);
-      controller.set("word", word);
+      controller.set("wordset", wordset);
       controller.set("model", _this.store.createRecord("proposal", {
         type: "MeaningChange",
-        wordset: word,
+        wordset: wordset,
         meaning: meaning,
         def: meaning.get("def"),
         example: meaning.get("example"),
@@ -21,7 +21,7 @@ export default Ember.Route.extend({
   },
   model: function(params) {
     this.set("meaningId", params.meaning_id);
-    return this.store.find("word", {meaning_id: params.meaning_id});
+    return this.store.find("wordset", {meaning_id: params.meaning_id});
   }
 
 });
