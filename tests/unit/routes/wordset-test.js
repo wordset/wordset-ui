@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:word', 'WordRoute', {
+moduleFor('route:seq:wordset', 'WordsetRoute', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

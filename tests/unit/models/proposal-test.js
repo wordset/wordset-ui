@@ -5,8 +5,8 @@ import {
 
 moduleForModel('proposal', {
   // Specify the other units that are required for this test.
-  needs: ["model:entry", "model:word", "model:meaning", "model:user",
-          "model:project", "model:vote", "model:activity"]
+  needs: ["model:entry", "model:wordset", "model:meaning", "model:user",
+          "model:project", "model:vote", "model:activity",  "model:seq", "model:lang"]
 });
 
 test('it exists', function(assert) {

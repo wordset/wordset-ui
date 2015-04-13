@@ -49,6 +49,7 @@ Router.map(function() {
       this.route("new-meaning");
     });
   });
+  this.route('legacy-word');
 });
 
 export default Router;
