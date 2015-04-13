@@ -43,13 +43,15 @@ Router.map(function() {
     this.route("legal");
   });
 
+  this.route('legacy-word', {path: "/word/:seq"});
+
   this.resource("seq", {path: "/:lang/:seq"}, function() {
     this.route("wordset", {path: "/"}, function() {
       this.route("proposals");
       this.route("new-meaning");
     });
   });
-  this.route('legacy-word');
+
 });
 
 export default Router;
