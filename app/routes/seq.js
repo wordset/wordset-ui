@@ -7,6 +7,6 @@ export default Ember.Route.extend({
   afterModel: function(model) {
     this._super(model);
     this.send("log", "word", "viewed");
-    Ember.$(document).attr('title', 'What does \"' + this.get("model.text") + '\" mean?');
+    Ember.$(document).attr('title', 'What does \"' + model.get("text") + '\" mean?');
   },
 });
