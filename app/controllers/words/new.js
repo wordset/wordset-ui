@@ -61,6 +61,9 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
     },
     removeMeaning: function(meaning) {
       this.get("model").get("meanings").removeObject(meaning);
+    },
+    seeExistingWord: function() {
+      this.transitionTo("seq.wordset.index", this.get("model.lang.id"), this.get("seqId"));
     }
   }
 
