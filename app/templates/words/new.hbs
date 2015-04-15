@@ -9,11 +9,11 @@
       <br/>
 
       {{#validated-input value=model.wordName errors=errors.model.wordName}}
-        {{#if wordId}}
-          – {{link-to "check it out." "seq.wordset.index" model.wordId}}
+        {{#if seqId}}
+          – <a href="" {{action "seeExistingWord"}}>check it out.</a>
         {{/if}}
         {{#if proposalId}}
-          – {{link-to "check it out." "proposal.index" model.proposalId}}
+          – {{link-to "check it out." "proposal.index" proposalId}}
         {{/if}}
       {{/validated-input}}
     </label>

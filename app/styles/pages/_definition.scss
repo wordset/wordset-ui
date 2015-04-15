@@ -21,10 +21,15 @@
 }
 
 .pos {
-  border-bottom: 2px solid $taupe;
-  display: inline-block;
+  color: #888;
   font-style: italic;
-  margin-left: 0px;
+  margin-right: 5px;
+  // These styles were when there was one POS per
+  // entry; needs to be more muted now
+  // border-bottom: 2px solid $taupe;
+  // display: inline-block;
+  // font-style: italic;
+  // margin-left: 0px;
 
 }
 

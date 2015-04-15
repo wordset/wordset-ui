@@ -17,7 +17,6 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       length: { minimum: 10 }
     }
   },
-  posList: ENV.posList,
 
   actions: {
   }

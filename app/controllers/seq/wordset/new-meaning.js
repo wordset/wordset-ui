@@ -14,15 +14,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin,
       length: { minimum: 10 }
     }
   },
-  posList: ENV.posList,
-  wordEntry: function() {
-    var pos = this.get("pos");
-    return this.get("word").then(
-      function(word) {
-        return word.entryForPos(pos);
-      }
-    );
-  }.property("model.pos"),
+  
   actions: {
     submitProposal: function() {
       this.send("log", "proposal", "new meaning");
