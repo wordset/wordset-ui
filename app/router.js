@@ -48,7 +48,6 @@ Router.map(function() {
   this.resource("seq", {path: "/:lang/:seq"}, function() {
     this.route("wordset", {path: "/"}, function() {
       this.route("proposals");
-      this.route("new-meaning");
     });
   });
 
