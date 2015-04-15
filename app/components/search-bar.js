@@ -79,6 +79,10 @@ export default Ember.Component.extend({
         this.get('targetObject').transitionToRoute("words.new");
       }
     },
+    clickNewWord: function() {
+      this.get('targetObject').transitionToRoute("words.new");
+      this.set("showSearchList", false);
+    },
     clear: function() {
       this.set("searchTerm", "");
       this.set("selectedIndex", -1);
