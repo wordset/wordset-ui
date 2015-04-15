@@ -11,6 +11,9 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
   },
   actions: {
     submitComment: function() {
+      if (this.get("isInvalid")) {
+        return false;
+      }
       var _this = this;
       var p = this.get("parentController").get("model");
       var comment = this.get("comment");
