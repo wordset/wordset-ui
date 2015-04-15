@@ -37,7 +37,9 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       })
     },
   },
-  posList: ENV.posList,
+  posList: function() {
+    return this.get("model.lang.parts");
+  }.property("model.lang"),
 
   canRemove: function() {
     return this.get("model").get("meanings").length > 1;
