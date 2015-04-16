@@ -1,12 +1,3 @@
 <div class="addMeaning">
-  {{#each error in errors.messages}}
-    <div class="error">
-      {{error}}
-    </div>
-  {{/each}}
-
-  {{meaning-edit model=model}}
-
-  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit My Edit</button>
-  <button class="negative" {{action "cancelEdit"}}>Cancel</button>
+  {{meaning-edit model=model disableSubmit=disableSubmit}}
 </div>
