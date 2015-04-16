@@ -12,7 +12,7 @@
       Part of speech
       {{view "select" content=posList value=meaning.pos}}
     </label>
-    {{meaning-edit model=model}}
+    {{meaning-edit model=meaning showButtons=false}}
   {{/each}}
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
