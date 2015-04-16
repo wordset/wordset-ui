@@ -1,9 +1,8 @@
 import Ember from 'ember';
-import EmberValidations from 'ember-validations';
 import ENV from '../config/environment';
 import { Bindings } from 'ember-pusher/bindings';
 
-export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
+export default Ember.Controller.extend(Bindings, {
   logPusherEvents: true,
   PUSHER_SUBSCRIPTIONS: {
     proposals: ['push']
