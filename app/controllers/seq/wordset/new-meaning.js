@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
-import ENV from '../../../config/environment';
 
 export default Ember.Controller.extend( EmberValidations.Mixin,
 {
@@ -14,7 +13,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin,
       length: { minimum: 10 }
     }
   },
-  
+
   actions: {
     submitProposal: function() {
       this.send("log", "proposal", "new meaning");

@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     this._super(controller, model);
     // TODO: Need to make this dynamic
     this.store.find("lang", "en").then( function(lang) {
-      model.set("lang", lang)
+      model.set("lang", lang);
     }, function() {} );
   },
 });
