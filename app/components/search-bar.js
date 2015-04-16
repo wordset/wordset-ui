@@ -58,14 +58,22 @@ export default Ember.Component.extend({
     return false;
   },
   checkForFocus: function() {
-    var _this = this;
-    Ember.run.later(function() {
-      if(!Ember.$.contains(_this.get("element"), document.activeElement)) {
-        _this.set("showSearchList", false);
-      }
-    });
+    // Removing this because it was causing the click new word
+    // function to mess up; I think the showSearchList => false
+    // transition is being taken care of elsewhere
+    // var _this = this;
+    // Ember.run.later(function() {
+    //   if(!Ember.$.contains(_this.get("element"), document.activeElement)) {
+    //     _this.set("showSearchList", false);
+    //   }
+    // });
   }.on('focusOut'),
   actions: {
+    clickNewWord: function(word) {
+      this.set("showSearchList", false);
+      this.get('targetObject').transitionToRoute("words.new");
+      this.set('searchTerm', '');
+    },
     clickWord: function(word) {
       this.set("showSearchList", false);
       if(word === null) {
@@ -75,14 +83,9 @@ export default Ember.Component.extend({
       if(word) {
         this.get('targetObject').transitionToRoute("seq.wordset.index", "en", word);
         this.set('searchTerm', '');
-      } else {
-        this.get('targetObject').transitionToRoute("words.new");
       }
     },
-    clickNewWord: function() {
-      this.get('targetObject').transitionToRoute("words.new");
-      this.set("showSearchList", false);
-    },
+
     clear: function() {
       this.set("searchTerm", "");
       this.set("selectedIndex", -1);
