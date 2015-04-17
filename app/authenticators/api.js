@@ -16,22 +16,28 @@ export default Base.extend({
   },
   authenticate: function(credentials) {
     var _this = this;
-    return new Ember.RSVP.Promise(function(resolve, reject) {
-      var data                 = {};
-      data = {
-        username:    credentials.identification,
-        password:    credentials.password
-      };
-      _this.makeRequest(data).then(function(response) {
-        Ember.run(function() {
-          resolve(response);
-        });
-      }, function(xhr) {
-        Ember.run(function() {
-          reject(xhr.responseJSON || xhr.responseText);
+    // Check if we are doing a manual auth, without needing to do a request
+    if(!Ember.isEmpty(credentials.auth_key)) {
+      return this.restore(credentials);
+    } else {
+      return new Ember.RSVP.Promise(function(resolve, reject) {
+        var data                 = {};
+        data = {
+          username:    credentials.identification,
+          password:    credentials.password
+        };
+        _this.makeRequest(data).then(function(response) {
+          Ember.run(function() {
+            resolve(response);
+          });
+        }, function(xhr) {
+          Ember.run(function() {
+            reject(xhr.responseJSON || xhr.responseText);
+          });
         });
       });
-    });
+    }
+
   },
   invalidate: function() {
     return Ember.RSVP.resolve();

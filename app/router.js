@@ -12,6 +12,15 @@ Router.map(function() {
   this.route("user", {path: "/user/:user_id"}, function() {
     this.route("activity");
   });
+
+  this.route("auth", function() {
+    this.route("facebook", function() {
+      this.route("setup");
+    });
+    this.route("oauth_login", {path: "/:provider/login"})
+    this.route("manual", {path: "/do/:username/:auth_key"});
+  });
+
   this.route("users", {}, function() {
     this.route("index");
     this.route("forgot-password");
