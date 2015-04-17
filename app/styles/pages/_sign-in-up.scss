@@ -35,10 +35,15 @@
       float: left;
       width: 18px;
     }
-    span {
+    .text {
       display: inline-block;
+      line-height: 1.3em;
       margin-top: 5px;
       width: 85%;
+    }
+    .required {
+      color: $red;
+      margin-right: 5px;
     }
   }
 
