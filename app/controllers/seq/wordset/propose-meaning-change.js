@@ -32,18 +32,17 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       var _this = this;
       var proposal = this.store.createRecord("proposal", {
                             type: "MeaningRemoval",
-                            meaning: this.get("meaning")
+                            meaning: this.get("model.meaning")
                         });
-      this.get("model").destroy();
       proposal.save().then(function() {
         _this.get("parentController").set("editing", false);
-        _this.set("meaning.hasProposal", true);
-        _this.set("meaning.openProposal", _this.get("model"));
+        _this.set("model.meaning.hasProposal", true);
+        _this.set("model.meaning.openProposal", proposal);
         _this.send("log", "proposal", "meaning change");
+        _this.get("model").destroy();
       }, function(errors) {
         _this.set("errors", errors.errors);
       });
-
     }
   }
 });
