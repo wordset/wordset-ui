@@ -43,6 +43,15 @@
   }
 
   .auth {
+    margin-right: 5px;
+    margin-bottom: 20px;
+    @include media-min-width($small) {
+      display: inline-block !important;
+      width: 35%;
+    }
+    @include media-max-width($small) {
+      display: block;
+    }
     span {
       margin-right: 5px;
     }
@@ -54,12 +63,15 @@
     }
     &.gh {
       @include button(#999,
-                      #999,
-                      #999,
-                      #999);
+                      #777,
+                      #888,
+                      #777);
     }
     &.google {
-
+      @include button(#dd4b39,
+                      darken(#dd4b39, 10%),
+                      darken(#dd4b39, 5%),
+                      darken(#dd4b39, 10%))
     }
   }
 
