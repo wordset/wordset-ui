@@ -13,6 +13,10 @@
     font-size: 20px;
     margin-bottom: 20px;
   }
+  .separator {
+    border-bottom: 1px solid #EEE;
+    margin: 20px 0px;
+  }
   input {
     display: block;
     font-size: 18px;
@@ -37,6 +41,28 @@
       width: 85%;
     }
   }
+
+  .auth {
+    span {
+      margin-right: 5px;
+    }
+    &.fb {
+      @include button(#3a5795,
+                      darken(#3a5795, 10%),
+                      darken(#3a5795, 5%),
+                      darken(#3a5795, 10%))
+    }
+    &.gh {
+      @include button(#999,
+                      #999,
+                      #999,
+                      #999);
+    }
+    &.google {
+
+    }
+  }
+
   button {
     margin: 30px auto 40px;
   }
