@@ -1,6 +1,19 @@
 <form {{submit "register"}}>
   <div class="sign-module">
     <h3>Register</h3>
+    {{#link-to "auth.oauth_login" "facebook" class="fb auth"}}
+      <span class="ion-social-facebook"></span>
+      Facebook Login
+    {{/link-to}}
+    {{#link-to "auth.oauth_login" "github" class="gh auth"}}
+      <span class="ion-social-github"></span>
+      GitHub Login
+    {{/link-to}}
+    {{#link-to "auth.oauth_login" "google" class="google auth"}}
+      <span class="ion-social-google"></span>
+      Google Login
+    {{/link-to}}
+    <div class="separator"></div>
     <div class="username">
       <label>Username
       {{validated-input type="text" autofocus="autofocus" value=model.id errors=errors.model.id}}
