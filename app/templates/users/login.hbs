@@ -1,6 +1,9 @@
 <form {{submit "authenticate"}}>
   <div class="sign-module">
     <h3> Sign In </h3>
+    {{#link-to "auth.oauth_login" "facebook"}}
+      Use Facebook Login
+    {{/link-to}}
     {{#if errorMessage}}
       <div class="login-error">
         <span class="ion-android-alert"></span>

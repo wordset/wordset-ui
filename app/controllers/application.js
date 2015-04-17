@@ -30,7 +30,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
     return this.get("session.username");
   }.property("session.username"),
   currentUser: function() {
-    return this.get("session").get("currentUser");
+    return this.get("session").get("user");
   }.property("session.currentUser"),
   init: function() {
     this._super();
