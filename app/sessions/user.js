@@ -1,11 +1,11 @@
-import SimpleAuth from 'simple-auth';
+import Session from 'simple-auth/session';
 import Ember from 'ember';
 
-export default SimpleAuth.Session.extend({
-  account: function() {
-    var accountId = this.get('account_id');
-    if (!Ember.isEmpty(accountId)) {
-      return this.container.lookup('store:main').find('account', accountId);
+export default Session.extend({
+  user: function() {
+    var userId = this.get('username');
+    if (!Ember.isEmpty(userId)) {
+      return this.container.lookup('store:main').find('user', userId);
     }
-  }.property('account_id')
+  }.property('username'),
 });
