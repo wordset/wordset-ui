@@ -2,12 +2,13 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Controller.extend( EmberValidations.Mixin, {
-  notifier: Ember.inject.service(),
   validations: {
     "model.id": {
       presence: true,
       length: { minimum: 1,
-                maximum: 16 }
+                maximum: 16 },
+      format: { with: /^\w+$/,
+                message: "Only letters and numbers, please!"}
     },
     "model.email": {
       presence: true,

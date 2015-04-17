@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <h2>Finish Account Setup</h2>
+  <p>We just need to know a couple things before your account is fully done</p>
+
+  {{#if needsUsername}}
+    <h3>Setup Username</h3>
+    <p>Everyone on the site goes by a username... pick yours!</p>
+    {{validated-input value=model.username type="text" autofocus="autofocus" placeholder="Username" errors=errors.model.username}}
+  {{/if}}
+
+  {{partial "users/-tos-area"}}
+
+  <button {{action "submit"}} {{bind-attr disabled=isInvalid}}>Signup</button>
+  <button {{action "cancel"}}>Cancel</button>
+</div>

@@ -21,18 +21,7 @@
       {{validated-input type="password" value=model.passwordConfirmation errors=errors.model.passwordConfirmation}}
       </label>
     </div>
-    <div class="tos">
-      <label>
-        {{input type="checkbox" checked=model.emailOptIn}}
-        <span>E-mail me with news and updates about Wordset.</span>
-      </label>
-    </div>
-    <div class="tos">
-      <label>
-        {{input type="checkbox" checked=model.acceptTos}}
-        <span>I pledge to follow the {{#link-to "info.guidelines"}}community guidelines{{/link-to}} and I accept the {{#link-to "info.legal"}}terms and conditions{{/link-to}}.</span>
-      </label>
-    </div>
+    {{partial "users/-tos-area"}}
     <button  {{bind-attr disabled=isInvalid}} {{action "register"}}>Register</button>
 
     <div class="aside">
