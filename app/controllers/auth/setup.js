@@ -6,30 +6,20 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
 
   validations: {
     "model.username": {
-      presence: {
-        'if': 'needsUsername',
-      },
+      presence: true,
       length: {
         minimum: 1,
         maximum: 16,
-        'if': 'needsUsername',
       },
       format: {
         with: /^\w+$/,
         message: "Only letters and numbers, please!",
-        'if': 'needsUsername',
       }
     },
     "model.acceptTos": {
       acceptance: true,
     }
   },
-  isFacebook: function() {
-    return this.get("model.provider") === "facebook"
-  }.property("model.provider"),
-  needsUsername: function() {
-    return this.get("isFacebook");
-  }.property("isFacebook"),
   actions: {
     cancel: function() {
       this.notifier.show("Signup cancelled");
