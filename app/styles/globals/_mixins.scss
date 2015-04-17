@@ -53,3 +53,28 @@
     opacity: 1;
   }
 }
+
+@mixin button($background, $border, $hover-color, $text-shadow) {
+  @include transition();
+  background: $background;
+  border: 1px solid $border;
+  -moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+  padding: 12px 30px;
+  text-shadow: 0px 1px 0px $text-shadow;
+  &, a, a:hover {
+    color: #FFF;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  &:hover {
+    background: $hover-color;
+  }
+  &:active {
+  	position: relative;
+  	top: 1px;
+  }
+}

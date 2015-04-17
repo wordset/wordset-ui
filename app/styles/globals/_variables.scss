@@ -54,17 +54,25 @@ $maybe-color: $taupe;
 $notification-background: $lime;
 $notification-color: #FFF;
 
-$button-background-positive: $lime;
+$button-background-positive: darken($lime, 5%);
+$button-border-positive: darken($lime, 20%);
 $button-hover-background-positive: darken($lime, 10%);
+$button-text-shadow-positive: darken($lime, 30%);
 
 $button-background-negative: $dark-green;
+$button-border-negative: lighten($dark-green, 10%);
 $button-hover-background-negative: darken($dark-green, 10%);
+$button-text-shadow-negative: $dark-green;
 
 $button-background-flag: $red;
+$button-border-flag: darken($red, 20%);
 $button-hover-background-flag: darken($red, 10%);
+$button-text-shadow-flag: darken($red, 30%);
 
 $button-background-skip: $maybe-color;
+$button-border-skip: darken($maybe-color, 20%);
 $button-hover-background-skip: darken($maybe-color, 10%);
+$button-text-shadow-skip: darken($maybe-color, 20%);
 
 $module-border: $dark-green;
 

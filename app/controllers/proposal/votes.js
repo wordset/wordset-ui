@@ -6,7 +6,7 @@ export default Ember.ArrayController.extend({
   needs: [ "proposal", "application" ],
   proposal: Ember.computed.alias("controllers.proposal.model"),
   isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
-  currentUser: Ember.computed.alias("controllers.application.session.currentUser"),
+  currentUser: Ember.computed.alias("controllers.application.currentUser"),
 
   myVote: function() {
     return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user", this.get("currentUser"));

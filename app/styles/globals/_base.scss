@@ -56,50 +56,33 @@ textarea {
 }
 
 button {
-  @include transition();
-  background: $button-background-positive;
-  border: 0;
-  border-radius: 2px;
-  box-shadow: inset 0px 1px 1px lighten($button-background-positive, 15%), 0px 1px 1px #DDD;
-  &, a, a:hover {
-    color: #FFF;
-    cursor: pointer;
-    display: block;
-    font-size: 18px;
-    text-decoration: none;
-  }
-  padding: 10px 20px;
-  text-shadow: 0px 1px 0px $button-hover-background-positive;
-  &:hover {
-    background: $button-hover-background-positive;
-  }
+  @include button($button-background-positive,
+                  $button-border-positive,
+                  $button-hover-background-positive,
+                  $button-text-shadow-positive);
+
   &.negative {
-    background: $button-background-negative;
-    box-shadow: inset 0px 1px 1px lighten($button-background-negative, 15%), 0px 1px 1px #DDD;
-    text-shadow: 0px 1px 0px $button-hover-background-negative;
-    &:hover {
-      background: $button-hover-background-negative;
-    }
+    @include button($button-background-negative,
+                    $button-border-negative,
+                    $button-hover-background-negative,
+                    $button-text-shadow-negative);
   }
   &.flag {
-    background: $button-background-flag;
-    box-shadow: inset 0px 1px 1px lighten($button-background-flag, 15%), 0px 1px 1px #DDD;
-    text-shadow: 0px 1px 0px $button-hover-background-flag;
-    &:hover {
-      background: $button-hover-background-flag;
-    }
+    @include button($button-background-flag,
+                    $button-border-flag,
+                    $button-hover-background-flag,
+                    $button-text-shadow-flag);
+
   }
   &.skip {
-    background: $button-background-skip;
-    box-shadow: inset 0px 1px 1px lighten($button-background-skip, 15%), 0px 1px 1px #DDD;
-    text-shadow: 0px 1px 0px $button-hover-background-skip;
-    &:hover {
-      background: $button-background-skip;
-    }
+    @include button($button-background-skip,
+                    $button-border-skip,
+                    $button-hover-background-skip,
+                    $button-text-shadow-skip);
+
   }
   &[disabled] {
     background: #CCC;
-    box-shadow: none;
     color: #AAA;
     cursor: inherit;
     text-shadow: none;

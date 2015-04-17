@@ -31,7 +31,7 @@
       display: inline-block;
       margin-bottom: 20px;
       min-width: 80px;
-      width: 28%;
+      width: 49%;
       @include media-max-width($large) {
         width: 100%;
       }
@@ -41,20 +41,7 @@
       &.next.skip {
         width: 100%;
       }
-      // The flag button
-      &.flag {
-        width: 10%;
-        min-width: 0px;
-        span {
-          margin: 0;
-        }
-        // Disappears on mobile
-        @include media-max-width($large) {
-          width: 0px;
-          height: 0px;
-          padding: 0;
-        }
-      }
+
     }
   }
   .withdraw-vote {
@@ -77,6 +64,7 @@
     button {
       background: #FFF;
       border-radius: 0px;
+      border: none;
       box-shadow: none;
       color: #DDD;
       height: 48px;

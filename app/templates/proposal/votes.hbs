@@ -16,11 +16,11 @@
           <button {{action "registerVote" "nay"}} class="nay negative"><span class="ion-android-hand"></span>Nay</button>
         {{/if}}
         <button {{action "registerVote" "skip"}} class="skip"><span class="ion-ios-fastforward"></span>Skip</button>
-        <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span></button>
+        <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span>Flag</button>
       </div>
     {{/if}}
   {{else}}
-    <p>{{#link-to "users.new"}}Sign up to vote.{{/link-to}}</p>
+    <p>{{#link-to "users.new"}}Register to vote.{{/link-to}}</p>
   {{/if}}
 {{else}}
   <div class="action-bar">
