@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import("bower_components/jsdiff/diff.js");
+app.import("bower_components/moment/moment.js");
 
 module.exports = app.toTree();
