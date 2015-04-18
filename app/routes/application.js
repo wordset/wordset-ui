@@ -81,7 +81,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
   },
   _saveTransition: function(transition) {
-    if(transition.targetName !== ("users.login")) {
+    if(transition.targetName !== ("users.login" || "users.new")) {
       this.controllerFor("users.login").set("previousTransition", transition);
     }
   }

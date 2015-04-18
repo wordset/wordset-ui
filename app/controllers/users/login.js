@@ -8,8 +8,16 @@ export default Ember.Controller.extend(LoginControllerMixin, {
       var _this = this;
       this._super().then(function() {
         _this.send("log", "account", "login");
+        // This transition to previous route is from http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-login
         var previousTransition = _this.get("previousTransition");
-        if(previousTransition) {
+        var previousTarget = _this.get("previousTransition.targetName");
+        // This checks to see if the previous target was the
+        // registration page; if so, we can assume that the user
+        // just registered and should go to the index
+        if(previousTarget == "users.new") {
+          _this.transitionToRoute("index");
+          return;
+        } else if(previousTransition) {
           previousTransition.retry();
           return;
         }
