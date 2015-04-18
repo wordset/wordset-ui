@@ -32,7 +32,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
           _this.get("session").authenticate('authenticator:api', response);
           _this.notifier.show("Welcome to the site! You've successfully registered!");
           _this.transitionToRoute("user", response.username);
-        }, function(error) {
+        }, function() {
           _this.notifier.error("Something went wrong. We've been notified. Please ensure you've filled out all fields");
         }
       );
