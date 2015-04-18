@@ -24,9 +24,21 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     controller.set("activeProject", this.store.find("project", "current"));
   },
 
+  // This saves the previous transition for going back
+  // to the user's original page when signing in
+  // http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-login
+  beforeModel: function(transition) {
+    this._saveTransition(transition);
+  },
+
   actions: {
-    willTransition: function() {
+    willTransition: function(transition) {
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
+
+      // This saves the previous transition for going back
+      // to the user's original page when signing in
+      // http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-logi
+      this._saveTransition(transition);
     },
     didTransition: function() {
       this.hup.to();
@@ -67,5 +79,10 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         // console.log(name, metaData);
       }
     },
+  },
+  _saveTransition: function(transition) {
+    if(transition.targetName !== ("users.login")) {
+      this.controllerFor("users.login").set("previousTransition", transition);
+    }
   }
 });
