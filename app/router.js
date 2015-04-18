@@ -15,7 +15,7 @@ export default Router.map(function() {
 
   this.route("auth", function() {
     this.route("setup", {path: "/:provider/setup/:token"});
-    this.route("oauth_login", {path: "/:provider/login"})
+    this.route("oauth_login", {path: "/:provider/login"});
     this.route("manual", {path: "/do/:username/:auth_key"});
   });
 
