@@ -5,7 +5,6 @@ export default Ember.Component.extend(ResizeMixin, {
   tagName: "ul",
   classNames: "message-list",
   onResize: function() {
-    console.log(this.get("hup.at"));
     // do what you want when resize is triggered
     var submitArea = Ember.$('.new-message-area');
     var elem = this.get("element");
