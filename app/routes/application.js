@@ -22,6 +22,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       this.store.find("user", {user_id: controller.get("username")}).then(function(users) {
 
         _this.controllerFor("panel.scoreboard").set("list", users);
+        Ember.run.later(function() { _this.hup.to() });
       }, function() { });
 
     }
