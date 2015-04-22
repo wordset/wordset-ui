@@ -1,10 +1,11 @@
 import Ember from 'ember';
 import ResizeMixin from 'ember-resize-mixin/main';
 
-export default Ember.View.extend(ResizeMixin, {
+export default Ember.Component.extend(ResizeMixin, {
   tagName: "ul",
   classNames: "message-list",
   onResize: function() {
+    console.log(this.get("hup.at"));
     // do what you want when resize is triggered
     var submitArea = Ember.$('.new-message-area');
     var elem = this.get("element");
@@ -15,7 +16,7 @@ export default Ember.View.extend(ResizeMixin, {
     area.css('height', size);
     elem.scrollTop = elem.scrollHeight;
 
-  }.on('resize', 'didInsertElement'),
+  }.on('resize', 'didInsertElement').observes('hup.at'),
   scrollToBottom: function() {
     Ember.run.next(this, function() {
       this.get("element").scrollTop = this.get("element").scrollHeight;

@@ -29,11 +29,11 @@
 </div>
 
 <div class='messages-content'>
-  {{#view "message-list" controller=controller}}
+  {{#message-list controller=controller}}
     {{#each message in controller}}
       {{panel-message message=message}}
     {{/each}}
-  {{/view}}
+  {{/message-list}}
 
   <div class='new-message-area'>
     {{#if session.isAuthenticated}}
