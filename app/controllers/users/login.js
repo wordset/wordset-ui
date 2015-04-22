@@ -14,7 +14,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
         // This checks to see if the previous target was the
         // registration page; if so, we can assume that the user
         // just registered and should go to the index
-        if(previousTarget == "users.new") {
+        if(previousTarget === "users.new") {
           _this.transitionToRoute("index");
           return;
         } else if(previousTransition) {
