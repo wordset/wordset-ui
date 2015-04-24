@@ -54,6 +54,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
         // bubble up the notifier to the application controller
         this.send("browserNotification", data.message.user.id, data.message.text, "chat");
       }
+      this.hup.to();
     },
     toggleUsers: function() { this.toggleProperty("showUsers"); },
     toggleSettings: function() { this.toggleProperty("showSettings"); },

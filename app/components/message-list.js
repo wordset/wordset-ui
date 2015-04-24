@@ -13,12 +13,11 @@ export default Ember.Component.extend(ResizeMixin, {
     var windowHeight = Ember.$(window).height();
     var size = windowHeight - topOffset - submitArea.height();
     area.css('height', size);
-    elem.scrollTop = elem.scrollHeight;
-
+    this.scrollToBottom();
   }.on('resize', 'didInsertElement').observes('hup.at'),
   scrollToBottom: function() {
     Ember.run.next(this, function() {
       this.get("element").scrollTop = this.get("element").scrollHeight;
     });
-  }.observes("controller.@each")
+  }.observes("controller.model.@each")
 });
