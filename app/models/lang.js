@@ -5,4 +5,5 @@ export default DS.Model.extend({
   proposals: DS.hasMany("proposals"),
   name: DS.attr("string"),
   parts: DS.attr(),
+  labels: DS.hasMany("labels"),
 });

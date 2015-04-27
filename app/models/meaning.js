@@ -7,6 +7,7 @@ var Meaning = DS.Model.extend({
   hasProposal: DS.attr("boolean"),
   openProposal: DS.belongsTo("proposal", {async: true}),
   wordset: DS.belongsTo("wordset"),
+  labels: DS.hasMany("labels"),
 });
 
 

@@ -4,4 +4,5 @@ export default DS.Model.extend({
   wordset: DS.belongsTo("wordset"),
   text: DS.attr("string"),
   lang: DS.belongsTo("lang"),
+  labels: DS.hasMany("labels"),
 });
