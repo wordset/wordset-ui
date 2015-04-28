@@ -1,0 +1,11 @@
+<label class="parent">
+  <input type="checkbox" />
+  <span>{{parentLabel.name}}</span>
+</label>
+
+{{#each label in parentLabel.children}}
+  <label class="child">
+    <input type="checkbox" />
+    <span>{{label.name}}</span>
+  </label>
+{{/each}}
