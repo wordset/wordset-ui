@@ -24,6 +24,7 @@ export default Ember.Controller.extend({
           example: this.get("model.example"),
           lang: this.get("model.wordset.lang"),
         }));
+        this.get("meaningProposal.labels").addObjects(this.get("model.labels"))
         this.set("editing", true);
       } else {
         this.get("notifier").show("You must login to propose changes!", {name: "Alert"});
