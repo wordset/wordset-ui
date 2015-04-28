@@ -22,6 +22,7 @@ export default Ember.Controller.extend({
           meaning: this.get("model"),
           def: this.get("model.def"),
           example: this.get("model.example"),
+          lang: this.get("model.wordset.lang"),
         }));
         this.set("editing", true);
       } else {

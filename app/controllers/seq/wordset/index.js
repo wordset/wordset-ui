@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
         type: "NewMeaning",
         wordset: this.get("model"),
         wordName: this.get("model").get("name"),
+        lang: this.get("model").get("lang"),
       }));
       this.set("showMeaningProposal", true);
     },
