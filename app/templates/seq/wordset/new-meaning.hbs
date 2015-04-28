@@ -26,6 +26,8 @@
     <p>Note: no quotemarks are necessary.</p>
     {{validated-textarea value=model.example errors=errors.model.example}}
   </label>
+
+  {{label-selection labels=model.lang.labels}}
   <label>
     Reason and sources
     {{textarea value=model.reason}}
