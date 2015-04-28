@@ -10,7 +10,7 @@
     set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
     {{validated-textarea value=model.example errors=errors.model.example placeholder="No example sentence! Please add one."}}
   </label>
-  {{label-selection labels=model.lang.labels}}
+  {{label-selection labels=model.lang.labels selectedLabels=model.labels}}
   <label>
     Reason for change
     {{textarea value=model.reason}}
