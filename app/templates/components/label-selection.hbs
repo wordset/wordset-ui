@@ -1,0 +1,15 @@
+<div class="labels">
+  <div class="title">
+    Labels
+  </div>
+  <div class="dialects">
+    {{#each dialect in parentDialects}}
+      {{label-group parentLabel=dialect}}
+    {{/each}}
+  </div>
+  <div class="non-dialects">
+    {{#each label in parentLabels}}
+      {{label-group parentLabel=label}}
+    {{/each}}
+  </div>
+</div>

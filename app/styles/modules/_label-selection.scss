@@ -1,0 +1,22 @@
+.labels {
+  .title {
+    font-size: 14px;
+  }
+  .dialects, .non-dialects {
+    display: inline-block;
+    vertical-align: top;
+    width: 47%;
+    label {
+      display: block;
+      font-size: 18px;
+      margin: 0px 0px 10px;
+      &.child {
+        margin-left: 20px;
+      }
+    }
+    input {
+      padding: 0px;
+      width: inherit;
+    }
+  }
+}
