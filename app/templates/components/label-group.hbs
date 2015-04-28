@@ -1,11 +1,5 @@
-<label class="parent">
-  <input type="checkbox" />
-  <span>{{parentLabel.name}}</span>
-</label>
+{{label-box label=parentLabel selectedLabels=selectedLabels type="parent"}}
 
 {{#each label in parentLabel.children}}
-  <label class="child">
-    <input type="checkbox" />
-    <span>{{label.name}}</span>
-  </label>
+  {{label-box label=label selectedLabels=selectedLabels type="child"}}
 {{/each}}
