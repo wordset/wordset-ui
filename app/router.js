@@ -26,7 +26,7 @@ export default Router.map(function() {
     this.route("new");
     this.route("login");
   });
-  this.resource("words", function() {
+  this.resource("words", {path: "/words/:lang"}, function() {
     this.route("new");
     this.route("random");
   });
