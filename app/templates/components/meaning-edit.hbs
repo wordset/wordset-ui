@@ -11,7 +11,7 @@
   Reason and sources
   {{textarea value=model.reason}}
 </label>
-
+{{label-selection labels=model.lang.labels selectedLabels=model.labels}}
 {{#if showButtons}}
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit My Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
