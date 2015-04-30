@@ -1,0 +1,27 @@
+<div class="meaning-labels">
+  {{#if sameLabels}}
+    <div class="label-grouping">
+      Existing Labels:
+      {{#each label in sameLabels}}
+        <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if addedLabels}}
+    <div class="label-grouping">
+      <ins>Added Labels:</ins>
+      {{#each label in addedLabels}}
+        <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if removedLabels}}
+    <div class="label-grouping">
+      <del>Removed Labels:</del>
+      {{#each label in removedLabels}}
+        <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+      {{/each}}
+    </div>
+  {{/if}}
+
+</div>

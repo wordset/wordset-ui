@@ -78,4 +78,11 @@ export default DS.Model.reopenClass({
     }
   }.property("tally"),
 
+  originalLabels: function() {
+    var _this = this
+    return this.store.filter("label", function(label) {
+      return _this.get("original.labels").contains("" + label.id)
+    });
+  }.property("original.labels"),
+
 });
