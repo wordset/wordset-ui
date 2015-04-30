@@ -67,7 +67,7 @@ export default Ember.Component.extend({
   }.on('focusOut'),
   actions: {
     clickNewWord: function() {
-      this.get('targetObject').transitionToRoute("words.new");
+      this.get('targetObject').transitionToRoute("words.new", "en");
       this.set("showSearchList", false);
       this.set('searchTerm', '');
     },
