@@ -7,6 +7,14 @@
   {{model.original.pos}}
 </div>
 
+<div class="meaning-labels">
+{{#each label in model.labels}}
+  <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+{{/each}}
+{{#each label in model.original.labels}}
+  {{label}}
+{{/each}}
+</div>
 
 {{#if isEditing}}
   {{partial "proposal/edit-meaning-change-form"}}
