@@ -36,7 +36,7 @@ export default DS.Model.reopenClass({
   // MeaningLike
   def: DS.attr("string"),
   example: DS.attr("string"),
-  labels: DS.hasMany("labels", {inverse: null}),
+  labels: DS.hasMany("labels", {serialize: true}),
 
   // ChangeMeaning
   meaning: DS.belongsTo("meaning", {inverse: null}),
