@@ -3,10 +3,12 @@
     <div class="meaning">
       <div class="defWrap">
         <div class="def">
-          {{#each label in meaning.labels}}
-            {{label.name}}
-          {{/each}}
           <span class="pos">({{meaning.pos}})</span>
+          <div class="meaning-labels">
+            {{#each label in meaning.labels}}
+              <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+            {{/each}}
+          </div>
           {{meaning.def}}
           {{#if displayEdit}}
           {{else}}
