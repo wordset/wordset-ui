@@ -80,6 +80,7 @@ export default DS.Model.reopenClass({
 
   originalLabels: function() {
     var _this = this
+    if(Ember.isEmpty(this.get("original.labels"))) { return [] };
     return this.store.filter("label", function(label) {
       return _this.get("original.labels").contains("" + label.id)
     });
