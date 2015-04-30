@@ -1,5 +1,5 @@
 {{label-box label=parentLabel selectedLabels=selectedLabels type="parent"}}
 
 {{#each label in parentLabel.children}}
-  {{label-box label=label selectedLabels=selectedLabels type="child"}}
+  {{label-box label=label selectedLabels=selectedLabels type="child" useId=useId}}
 {{/each}}
