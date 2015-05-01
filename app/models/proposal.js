@@ -79,10 +79,10 @@ export default DS.Model.reopenClass({
   }.property("tally"),
 
   originalLabels: function() {
-    var _this = this
-    if(Ember.isEmpty(this.get("original.labels"))) { return [] };
+    var _this = this;
+    if(Ember.isEmpty(this.get("original.labels"))) { return []; }
     return this.store.filter("label", function(label) {
-      return _this.get("original.labels").contains("" + label.id)
+      return _this.get("original.labels").contains("" + label.id);
     });
   }.property("original.labels"),
 

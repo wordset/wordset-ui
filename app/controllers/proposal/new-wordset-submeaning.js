@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
     var _this = this;
     return this.store.filter("label", function(label) {
       return _this.get("label_ids").contains("" + label.id);
-    })
+    });
   }.property("model.label_ids"),
   label_ids: function() {
     return this.get("model.label_ids") || [];

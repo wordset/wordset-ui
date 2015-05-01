@@ -12,10 +12,10 @@ export default Ember.Component.extend({
     }
   }.property("label"),
   updateSelection: function() {
-    if(this.get("isChecked") == true) {
+    if(this.get("isChecked") === true) {
       this.get("selectedLabels").addObject(this.get("labelKey"));
-    } else if(this.get("isChecked") == false ) {
+    } else if(this.get("isChecked") === false ) {
       this.get("selectedLabels").removeObject(this.get("labelKey"));
-    };
+    }
   }.observes("isChecked")
 });
