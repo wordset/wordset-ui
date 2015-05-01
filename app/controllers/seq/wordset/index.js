@@ -16,9 +16,17 @@ export default Ember.Controller.extend({
       }));
       this.set("showMeaningProposal", true);
     },
+    // Clean up the states if we are canceling the AddNewMeaning dialog
     cancelShowAddMeaning: function() {
-      this.store.unloadRecord(this.get("newMeaningProposal"));
+      var _this = this;
       this.set("showMeaningProposal", false);
+      var proposal = this.get("newMeaningProposal");
+      this.set("newMeaningProposal", null);
+
+      // After we've hidden it... then remove it.
+      Ember.run.later(function() {
+        _this.store.unloadRecord(proposal);
+      });
     }
   }
 });
