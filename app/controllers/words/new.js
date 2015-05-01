@@ -57,7 +57,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         );
     },
     addMeaning: function() {
-      this.get("model").get("meanings").addObject({});
+      this.get("model").get("meanings").addObject({label_ids: []});
     },
     removeMeaning: function(meaning) {
       this.get("model").get("meanings").removeObject(meaning);
