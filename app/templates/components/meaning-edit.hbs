@@ -7,16 +7,15 @@
   <p>Note: no quotemarks are necessary.</p>
   {{validated-textarea value=model.example errors=errors.model.example placeholder="No example sentence! Please add one."}}
 </label>
-<label>
-  Reason and sources
-  {{textarea value=model.reason}}
-</label>
 {{#if useLabelIds}}
-  {{model.label_ids}}
   {{label-selection labels=lang.labels selectedLabels=model.label_ids useId=true}}
 {{else}}
   {{label-selection labels=lang.labels selectedLabels=model.labels}}
 {{/if}}
+<label>
+  Reason and sources
+  {{textarea value=model.reason}}
+</label>
 {{#if showButtons}}
   <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit My Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
