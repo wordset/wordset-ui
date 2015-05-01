@@ -16,6 +16,8 @@ export default Ember.Route.extend({
         example: meaning.get("example"),
         project: _this.modelFor("project"),
         reason: "Part of the " + _this.modelFor("project").get("name"),
+        labelIds: meaning.get("labels"),
+        lang: meaning.get("wordset.seq.lang"),
       }));
     }, function() { });
   },
