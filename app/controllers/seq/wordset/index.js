@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
       this.set("showMeaningProposal", false);
       // After we've hidden it... then remove it.
       Ember.run.later(function() {
-        _this.store.unloadRecord(this.get("newMeaningProposal"));
+        _this.store.unloadRecord(_this.get("newMeaningProposal"));
         _this.set("newMeaningProposal", null);
       });
     }
