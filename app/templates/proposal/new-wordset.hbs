@@ -5,26 +5,6 @@
     {{model.wordName}}
   </div>
   {{#each meaning in model.meanings}}
-    <div class="pos">
-      {{meaning.pos}}
-    </div>
-    <div class="info">
-      <div class="definition">
-        <div class="def">
-          {{meaning.def}}
-        </div>
-      </div>
-      <div class="quoteWrap">
-        <div class="quote highlight">
-          <span class="quotemark"> “ </span>
-          {{meaning.example}}
-          <span class="quotemark"> ” </span>
-        </div>
-      </div>
-      <div class="reason">
-        Source for this meaning:
-        {{meaning.reason}}
-      </div>
-    </div>
+    {{render "proposal/new-wordset-submeaning" meaning}}
   {{/each}}
 {{/if}}
