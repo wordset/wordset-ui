@@ -20,12 +20,10 @@ export default Ember.Controller.extend({
     cancelShowAddMeaning: function() {
       var _this = this;
       this.set("showMeaningProposal", false);
-      var proposal = this.get("newMeaningProposal");
-      this.set("newMeaningProposal", null);
-
       // After we've hidden it... then remove it.
       Ember.run.later(function() {
-        _this.store.unloadRecord(proposal);
+        _this.store.unloadRecord(this.get("newMeaningProposal"));
+        _this.set("newMeaningProposal", null);
       });
     }
   }
