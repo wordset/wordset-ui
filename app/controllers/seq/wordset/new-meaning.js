@@ -23,7 +23,6 @@ export default Ember.Controller.extend( EmberValidations.Mixin,
       this.get("model").save().then(
         function(model) {
           _this.transitionToRoute("proposal", model);
-          _this.parentController.set("newMeaningProposal", null);
         },
         function() {
           // apparently, just defining this function
