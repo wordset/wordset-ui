@@ -22,4 +22,10 @@
       width: inherit;
     }
   }
+  .look-disabled {
+    color: grey;
+    input {
+      color: grey;
+    }
+  }
 }

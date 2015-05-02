@@ -4,7 +4,7 @@
   </div>
   <div class="dialects">
     {{#each dialect in parentDialects}}
-      {{label-group parentLabel=dialect selectedLabels=selectedLabels useId=useId}}
+      {{label-group parentLabel=dialect selectedLabels=selectedLabels useId=useId showChildrenAsChecked=true}}
     {{/each}}
   </div>
   <div class="non-dialects">

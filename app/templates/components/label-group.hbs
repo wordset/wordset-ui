@@ -1,5 +1,14 @@
-{{label-box label=parentLabel selectedLabels=selectedLabels type="parent" useId=useId}}
+{{label-box label=parentLabel
+            selectedLabels=selectedLabels
+            type="parent"
+            useId=useId
+            isChecked=parentChecked
+            disabled=disabledParent}}
 
 {{#each label in parentLabel.children}}
-  {{label-box label=label selectedLabels=selectedLabels type="child" useId=useId}}
+  {{label-box label=label
+              selectedLabels=selectedLabels
+              type="child"
+              useId=useId
+              parentState=parentChecked}}
 {{/each}}
