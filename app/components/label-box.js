@@ -3,7 +3,7 @@ import Ember from "ember";
 export default Ember.Component.extend({
   setup: function() {
     this.set("isChecked", this.get("selectedLabels").contains(this.get("labelKey")));
-  }.on("willInsertElement"),
+  }.on("willInsertElement").observes("selectedLabels"),
   labelKey: function() {
     if(this.get("useId")) {
       return this.get("label.id");
