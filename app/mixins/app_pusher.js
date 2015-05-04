@@ -30,10 +30,10 @@ export default Ember.Mixin.create(Bindings, {
       Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");
       switch (activity.type) {
         case "ProposalComment":
-          this.get("notifier").show("On your proposal for " + activity.wordId, {name: "New Comment", route: ["proposal.index", activity.proposalId]});
+          this.get("notifier").show("On your proposal for " + activity.wordName, {name: "New Comment", route: ["proposal.index", activity.proposalId]});
           break;
         case "ProposalClosed":
-          this.get("notifier").show("Your proposal for " + activity.wordId + " was " + activity.finalState, {name: "Proposal", route: ["proposal.index", activity.proposalId]});
+          this.get("notifier").show("Your proposal for " + activity.wordName + " was " + activity.finalState, {name: "Proposal", route: ["proposal.index", activity.proposalId]});
           break;
       }
 
