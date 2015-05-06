@@ -12,13 +12,13 @@ export default Ember.Component.extend({
     }
   }.property("label"),
   checkedWhenDisabled: function() {
-    return this.get("isChecked")
+    return this.get("isChecked");
   }.property("isChecked"),
   lookDisabled: function() {
     return this.get("disabled");
   }.property("disabled"),
   parentChecked: function() {
-    return this.get("parentState")
+    return this.get("parentState");
   }.property("parentState"),
   updateSelection: function() {
     if((this.get("isChecked") === true)) {

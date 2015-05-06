@@ -8,7 +8,6 @@ export default Ember.Component.extend({
     return this.get("labels").filterBy("isDialect", false).filterBy("parent", null);
   }.property("labels"),
   debug: function() {
-    var _this = this;
     console.log("Labels", this.get("selectedLabels").mapBy("name"));
   }.observes("selectedLabels.@each"),
 });
