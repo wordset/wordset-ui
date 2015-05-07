@@ -1,6 +1,11 @@
 {{#if showError}}
-  <span class="error">{{errors}}</span>
-  {{yield}}
+  {{#each error in errors}}
+  <div class="error">
+    {{error}}
+    {{yield}}
+  </div>
+  {{/each}}
+
 {{/if}}
 <div class="textarea">
   {{textarea value=value focus-out="showErrors" placeholder=placeholder}}
