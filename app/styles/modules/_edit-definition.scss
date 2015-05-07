@@ -13,6 +13,7 @@
   label {
     font-size: 14px;
     margin-top: 5px;
+    position: relative;
     p {
       font-style: italic;
       margin-bottom: 5px;
@@ -25,9 +26,28 @@
     float: right;
   }
   .error {
+    background: $red;
+    border-radius: 2px;
+    color: white;
     font-size: 14px;
     margin-top: -10px;
-    margin-bottom: 0px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    a {
+      color: white;
+    }
+    @include media-max-width($header-medium) {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    @include media-min-width($header-medium) {
+      line-height: 1.2em;
+      min-width: 140px;
+      padding: 5px 5px;
+      position: absolute;
+        right: 100%;
+        top: 10px;
+    }
   }
 }
 
@@ -38,7 +58,11 @@
 }
 
 .edit-example {
-  position: relative;
+  .error {
+    @include media-min-width($header-medium) {
+      top: 33px;
+    }
+  }
   .textarea:before {
     content: "“";
     font-family: sans-serif;
