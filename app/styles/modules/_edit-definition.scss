@@ -30,6 +30,7 @@
     border-radius: 2px;
     color: white;
     font-size: 14px;
+    line-height: 1.5em;
     margin-top: -10px;
     margin-right: 5px;
     padding: 0px 5px;
@@ -48,6 +49,23 @@
         right: 100%;
         top: 10px;
     }
+    .project-proposal & {
+      @include media-max-width($large) {
+        display: inline-block;
+        margin-bottom: 10px;
+        min-width: inherit;
+        position: inherit;
+
+      }
+      @include media-min-width($large) {
+        line-height: 1.2em;
+        min-width: 100px;
+        padding: 5px 5px;
+        position: absolute;
+          right: 100%;
+          top: 10px;
+      }
+    }
   }
 }
 
@@ -61,6 +79,11 @@
   .error {
     @include media-min-width($header-medium) {
       top: 33px;
+    }
+    .project-proposal & {
+      @include media-min-width($large) {
+        top: 33px;
+      }
     }
   }
   .textarea:before {
