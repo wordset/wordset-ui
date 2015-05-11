@@ -26,7 +26,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.mxpnl.com https://stats.pusher.com https://js-agent.newrelic.com https://bam.nr-data.net",
       'font-src': "'self'",
       'connect-src': "'self' https://api.wordset.org https://bam.nr-data.net https://api.mixpanel.com wss://ws.pusherapp.com",
-      'img-src': "'self' https://stats.g.doubleclick.net https://www.google-analytics.com https://secure.gravatar.com",
+      'img-src': "'self' https://bam.nr-data.net https://stats.g.doubleclick.net https://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },
