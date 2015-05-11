@@ -115,6 +115,7 @@
     font-size: 40px;
     margin-right: 40px;
     .has-chat-alert {
+      position: relative;
       &:after {
         background: $dark-green;
         border-radius: 50%;
@@ -122,6 +123,8 @@
         display: inline-block;
         height: 10px;
         position: absolute;
+          top: 0px;
+          right: -8px;
         vertical-align: top;
         width: 10px;
       }
