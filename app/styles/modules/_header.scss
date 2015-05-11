@@ -9,6 +9,7 @@
   }
   a, a:visited, a:active {
     color: $header-color;
+    text-decoration: none;
   }
   .logo {
     float: left;
@@ -81,6 +82,31 @@
     @media screen and (max-width: $header-medium) {
       margin-top: -100px;
     }
+    .toggler-chat, .toggler-menu {
+      display: inline-block;
+      margin-top: -8px;
+      vertical-align: top;
+    }
+    @media screen and (min-width: $header-medium) {
+      .toggler-chat, .toggler-menu {
+        display: inline-block;
+      }
+      .toggler-menu {
+        margin-top: -8px;
+      }
+      .toggler-chat {
+        margin-top: -5px;
+      }
+    }
+
+    a .icon-text {
+      font-size: 12px;
+      margin-top: -4px;
+      text-align: center;
+      @media screen and (max-width: $header-medium) {
+        margin-left: -4px;
+      }
+    }
   }
   .panel-toggler {
     color: $taupe;
@@ -116,7 +142,7 @@
       font-size: 55px;
     }
     @media screen and (max-width: $header-medium) {
-      margin-right: 10px;
+      margin-right: 0px;
     }
   }
   @media screen and (max-width: $med-small) {
