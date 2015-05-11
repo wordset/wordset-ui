@@ -4,6 +4,9 @@ export default Ember.Controller.extend({
   needs: ["application"],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   notifier: Ember.inject.service(),
+  list: function() {
+    return this.store.find("user", {user_id: this.get("currentUser.id")});
+  }.property("currentUser"),
 
   superior: function() {
     return this.get("list.firstObject");
