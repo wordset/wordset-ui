@@ -17,15 +17,18 @@ export default Ember.Controller.extend({
   }.property("list.lastObject"),
 
   pointsChanged: function() {
-    var points = this.get("currentUser.points");
-    var superior = this.get("superior.points");
-    var posterior = this.get("posterior.points");
-    if(superior < points) {
-      this.send("win");
-    } else if (posterior > points) {
-      this.send("lose");
-    } else {
+    if(this.get("list").length > 0) {
+      var points = this.get("currentUser.points");
+      var superior = this.get("superior.points");
+      var posterior = this.get("posterior.points");
+      if(superior < points) {
+        debugger
+        this.send("win");
+      } else if (posterior > points) {
+        this.send("lose");
+      }
     }
+
   }.observes("list.@each.points"),
 
   actions: {
