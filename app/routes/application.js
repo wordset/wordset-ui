@@ -52,13 +52,14 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     didTransition: function() {
       this.hup.to();
+      var _this = this;
       if (ENV.environment === 'production') {
         Ember.run(function() {
           ga('send', 'pageview', {
             'page': window.location.pathname,
             'title': document.title,
           });
-          var transitionTime = (new Date).getTime() - this.get("willTransitionAt");
+          var transitionTime = (new Date).getTime() - _this.get("willTransitionAt");
           NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
