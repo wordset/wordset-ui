@@ -9,7 +9,7 @@ export default Ember.ArrayController.extend({
   currentUser: Ember.computed.alias("controllers.application.currentUser"),
 
   myVote: function() {
-    return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user", this.get("currentUser"));
+    return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user.id", this.get("currentUser.id"));
   }.property("model.@each.user", "currentUser"),
   canVote: function() {
     return (!this.get("myVote"));
