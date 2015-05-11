@@ -15,8 +15,8 @@ export default Ember.Controller.extend(Bindings, {
     return (this.get("model.state") === "open");
   }.property("model.state"),
   isMine: function() {
-    return (this.get("model.user") === this.get("currentUser"));
-  }.property("model.user", "currentUser"),
+    return (this.get("model.user.id") === this.get("currentUser.id"));
+  }.property("model.user.id", "currentUser.id"),
   canChange: function() {
     return (this.get("isOpen") && this.get("isMine"));
   }.property("isOpen", "isMine"),
