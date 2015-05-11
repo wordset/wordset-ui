@@ -4,9 +4,11 @@ import ENV from '../config/environment';
 import Proposal from '../models/proposal';
 /* global ga */
 /* global mixpanel */
+/* gloabl NREUM */
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
+  willTransitionAt: null,
   activate: function() {
     this.store.find('lang');
     return this.store.find('word_list');
@@ -38,7 +40,10 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
 
   actions: {
     willTransition: function(transition) {
+      // Set the page to a default title
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
+
+      this.set("willTransitionAt", (new Date).getTime());
 
       // This saves the previous transition for going back
       // to the user's original page when signing in
@@ -47,12 +52,15 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     },
     didTransition: function() {
       this.hup.to();
+      var _this = this;
       if (ENV.environment === 'production') {
         Ember.run(function() {
           ga('send', 'pageview', {
             'page': window.location.pathname,
             'title': document.title,
           });
+          var transitionTime = (new Date).getTime() - _this.get("willTransitionAt");
+          NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
       //this.controllerFor("search").send("clear");
