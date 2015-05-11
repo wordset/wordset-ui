@@ -43,7 +43,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       // Set the page to a default title
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
 
-      this.set("willTransitionAt", (new Date).getTime());
+      this.set("willTransitionAt", (new Date()).getTime());
 
       // This saves the previous transition for going back
       // to the user's original page when signing in
@@ -59,7 +59,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
             'page': window.location.pathname,
             'title': document.title,
           });
-          var transitionTime = (new Date).getTime() - _this.get("willTransitionAt");
+          var transitionTime = (new Date()).getTime() - _this.get("willTransitionAt");
           NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
