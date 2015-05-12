@@ -80,7 +80,7 @@
       margin-top: -47px;
     }
     @media screen and (max-width: $header-medium) {
-      margin-top: -100px;
+      margin-top: -94px;
     }
     .toggler-chat, .toggler-menu {
       display: inline-block;
@@ -108,11 +108,16 @@
         margin-left: -4px;
       }
     }
+    .toggler-menu a .icon-text {
+      @media screen and (max-width: $header-medium) {
+        margin-left: -7px;
+      }
+    }
   }
   .panel-toggler {
     color: $taupe;
     display: inline-block;
-    font-size: 40px;
+    font-size: 34px;
     margin-right: 40px;
     .has-chat-alert {
       position: relative;
@@ -141,7 +146,7 @@
   }
   .nav-toggler  {
     color: $taupe;
-    font-size: 40px;
+    font-size: 35px;
     @media screen and (min-width: $medium) {
       font-size: 55px;
     }
