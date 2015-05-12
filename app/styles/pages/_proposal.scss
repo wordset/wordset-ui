@@ -54,6 +54,15 @@
   .info {
     margin-bottom: 30px;
   }
+  .error {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-right: 5px;
+    padding: 0px 5px;
+    position: inherit;
+    min-width: inherit;
+  }
   h3 {
     margin-top: 20px;
   }

@@ -26,23 +26,24 @@
     float: right;
   }
   .error {
-    background: $red;
+    background: #F6F6F6;
     border-radius: 2px;
-    color: white;
+    color: darken($blue, 15%);
     font-size: 14px;
     line-height: 1.5em;
-    margin-top: -10px;
+    margin-top: 3px;
     margin-right: 5px;
     padding: 0px 5px;
     a {
-      color: white;
+      color: darken($blue, 15%);
     }
     @include media-max-width($header-medium) {
       display: inline-block;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
     @include media-min-width($header-medium) {
       line-height: 1.2em;
+      margin-top: -10px;
       min-width: 140px;
       padding: 5px 5px;
       position: absolute;
