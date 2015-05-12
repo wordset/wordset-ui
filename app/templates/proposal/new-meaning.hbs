@@ -11,10 +11,12 @@
     {{model.pos}}
   </div>
   <div class="meaning-labels">
-    <ins>Labels:</ins>
-    {{#each label in model.labels}}
-      <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
-    {{/each}}
+    {{#if model.labels}}
+      <ins>Labels:</ins>
+      {{#each label in model.labels}}
+        <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+      {{/each}}
+    {{/if}}
   </div>
   <div class="info">
     <div class="definition">
