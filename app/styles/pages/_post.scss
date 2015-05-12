@@ -10,7 +10,10 @@ article.post {
     line-height: 1.4em;
     list-style: circle;
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 5px 20px;
+    ul {
+      margin-bottom: 0px;
+    }
   }
   li {
     margin-bottom: 10px;
