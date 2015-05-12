@@ -15,6 +15,17 @@ article.post {
   li {
     margin-bottom: 10px;
   }
+  dl {
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  dt {
+    font-weight: 600;
+  }
+  dd {
+    margin-bottom: 10px;
+  }
   .article-head {
     .post-footer {
       margin-bottom: 5px;
