@@ -5,9 +5,12 @@ export default Ember.Component.extend( EmberValidations.Mixin, {
   validations: {
     "model.def": {
       generic: true,
+      definitionlike: true,
     },
     "model.example": {
       generic: true,
+      nongendered: true,
+      sentencelike: true,
     },
   },
   showButtons: true,

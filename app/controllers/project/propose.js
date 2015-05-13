@@ -6,9 +6,12 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
   validations: {
     "model.def": {
       generic: true,
+      definitionlike: true,
     },
     "model.example": {
       generic: true,
+      nongendered: true,
+      sentencelike: true,
     }
   },
   needs: ['project'],
