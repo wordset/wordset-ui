@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import AppPusherMixin from '../mixins/app_pusher.js';
+import AppPusherMixin from '../mixins/app_pusher';
 
 // global mixpanel //
 

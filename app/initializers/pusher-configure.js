@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from '../config/environment.js';
+import ENV from '../config/environment';
 
 export function initialize(container, application) {
   if (typeof application.PUSHER_OPTS === 'undefined') {
