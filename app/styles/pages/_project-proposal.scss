@@ -30,6 +30,13 @@
       color: $text-color;
       text-decoration: none;
     }
+    .editDefinition {
+      .error {
+        @include media-max-width($large) {
+          margin-top: 4px;
+        }
+      }
+    }
     .flag, .negative {
       display: inline-block;
       margin-right: 10px;
