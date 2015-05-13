@@ -2,6 +2,9 @@
 // _edit-definition page for most styles)
 
 .newWord {
+  input, textarea, select {
+    margin-top: 5px;
+  }
   input {
     font-size: 20px;
     margin-bottom: 20px;
@@ -11,5 +14,9 @@
   }
   .submeaning {
     margin-bottom: 30px;
+  }
+  
+  .submitProposal {
+    margin-left: 20px;
   }
 }
