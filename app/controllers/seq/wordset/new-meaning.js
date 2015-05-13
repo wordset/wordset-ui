@@ -5,12 +5,10 @@ export default Ember.Controller.extend( EmberValidations.Mixin,
 {
   validations: {
     "model.def": {
-      presence: true,
-      length: { minimum: 10 }
+      generic: true,
     },
     "model.example": {
-      presence: true,
-      length: { minimum: 10 }
+      generic: true,
     }
   },
 
