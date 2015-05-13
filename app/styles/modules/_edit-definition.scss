@@ -81,16 +81,6 @@
 }
 
 .edit-example {
-  .error {
-    @include media-min-width($header-medium) {
-      top: 33px;
-    }
-    .project-proposal & {
-      @include media-min-width($large) {
-        top: 33px;
-      }
-    }
-  }
   .textarea:before {
     content: "“";
     font-family: sans-serif;
