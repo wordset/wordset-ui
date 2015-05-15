@@ -2,20 +2,20 @@
 
 input[type="radio"] {
   display: none;
-  & + label {
+  & + span {
     position: relative;
     display: block;
-    padding-left: 1.5em;
-    margin-right: 2em;
+    padding: 1em 0em 1em 2.5em;
+
     cursor: pointer;
     line-height: 1.4em;
     transition: all .3s ease-in-out;
     &:before, &:after {
-      border: 1px solid #DDD;
+      border: 1px solid #BBB;
       content: '';
       position: absolute;
-      top: 4px;
-      left: 0;
+      top: 24px;
+      left: 20px;
       width: 0.8em;
       height: 0.8em;
       text-align: center;
@@ -26,7 +26,7 @@ input[type="radio"] {
     }
   }
 }
-input[type="radio"] + label {
+input[type="radio"] + span {
   &:before {
     transition: all .3s ease;
     box-shadow:
@@ -43,7 +43,8 @@ input[type="radio"] + label {
       inset 0 0 0 1em #696D6E;
   }
 }
-input[type="radio"]:checked + label {
+input[type="radio"]:checked + span {
+  background: #EEE;
   &:before {
     transition: all .3s ease;
     box-shadow:

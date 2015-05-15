@@ -1,7 +1,27 @@
+.quiz-wrap {
+  margin: auto;
+  max-width: 600px;
+  padding-top: 20px;
+
+  @include media-max-width($med-small) {
+    padding: 20px 10px;
+  }
+
+  .quiz-image {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .instructions {
+    font-size: 24px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+  }
+}
+
 .quiz-question {
-  border: 1px solid $dark-green;
-  border-radius: 2px;
-  margin-bottom: 20px;
+  @include quiz-box;
   padding: 0px;
   .image {
     height: 200px;
@@ -10,23 +30,12 @@
   img {
     width: 100%;
   }
-  .text {
-    background: lighten($dark-green, 40%);
-    box-shadow: none;
-    height: inherit;
-    padding: 10px 0px;
-    width: 100%;
-    h2 {
-      color: #FFF;
-      margin: 0px 0px 0px 10px;
-    }
-
-  }
-
-  ul.answers {
-    padding: 10px 20px;
-  }
   li {
-    margin-bottom: 5px
+    font-size: 20px;
+    line-height: 1.2em;
   }
+}
+
+.result-box {
+  @include quiz-box;
 }
