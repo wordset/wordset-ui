@@ -41,8 +41,15 @@
         <div class="text">
           <h2>Your result...</h2>
         </div>
-        {{winningResult.name}}
-        <img src={{winningResult.image_url}} >
+        <div class="image">
+          <img src={{winningResult.image_url}} >
+        </div>
+        <div class="result-name">
+          {{winningResult.name}}
+        </div>
+        <div class="result-description">
+          {{winningResult.description}}
+        </div>
       </div>
     {{/if}}
   </div>

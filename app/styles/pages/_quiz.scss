@@ -38,4 +38,24 @@
 
 .result-box {
   @include quiz-box;
+  .image {
+    height: 300px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+  }
+
+  .result-name, .result-description {
+    text-align: center;
+  }
+
+  .result-name {
+    padding: 20px 10px;
+    font-size: 40px;
+
+  }
+  .result-description {
+    padding: 0px 10px 20px
+  }
 }
