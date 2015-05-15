@@ -22,7 +22,6 @@ export default Ember.Controller.extend({
       var superior = this.get("superior.points");
       var posterior = this.get("posterior.points");
       if(superior < points) {
-        debugger
         this.send("win");
       } else if (posterior > points) {
         this.send("lose");
