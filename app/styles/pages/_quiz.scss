@@ -1,0 +1,32 @@
+.quiz-question {
+  border: 1px solid $dark-green;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  padding: 0px;
+  .image {
+    height: 200px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+  }
+  .text {
+    background: lighten($dark-green, 40%);
+    box-shadow: none;
+    height: inherit;
+    padding: 10px 0px;
+    width: 100%;
+    h2 {
+      color: #FFF;
+      margin: 0px 0px 0px 10px;
+    }
+
+  }
+
+  ul.answers {
+    padding: 10px 20px;
+  }
+  li {
+    margin-bottom: 5px
+  }
+}

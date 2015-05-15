@@ -1,0 +1,53 @@
+// From : http://codepen.io/iharosi/pen/kbzso
+
+input[type="radio"] {
+  display: none;
+  & + label {
+    position: relative;
+    display: block;
+    padding-left: 1.5em;
+    margin-right: 2em;
+    cursor: pointer;
+    line-height: 1.4em;
+    transition: all .3s ease-in-out;
+    &:before, &:after {
+      border: 1px solid #DDD;
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 0.8em;
+      height: 0.8em;
+      text-align: center;
+      color: white;
+      font-family: Times;
+      border-radius: 50%;
+      transition: all .3s ease;
+    }
+  }
+}
+input[type="radio"] + label {
+  &:before {
+    transition: all .3s ease;
+    box-shadow:
+      inset 0 0 0 0.2em white,
+      inset 0 0 0 1em white;
+  }
+  &:hover {
+    background: #F9F9F9;
+  }
+  &:hover:before {
+    transition: all .3s ease;
+    box-shadow:
+      inset 0 0 0 0.3em white,
+      inset 0 0 0 1em #696D6E;
+  }
+}
+input[type="radio"]:checked + label {
+  &:before {
+    transition: all .3s ease;
+    box-shadow:
+      inset 0 0 0 0.2em white,
+      inset 0 0 0 1em $lime;
+  }
+}
