@@ -9,7 +9,6 @@ export default Base.extend({
     } else {
       var downProp = prop.toLowerCase();
       var tokens = downProp.split(/[^\w]+/);
-      var _this = this;
       if (tokens.any(function(token) {
         return genderedWords.contains(token);
       })) {

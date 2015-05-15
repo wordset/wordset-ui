@@ -7,7 +7,6 @@ export default Base.extend({
     var propertiesObject = Ember.Object.create(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(propertiesObject.get("username")) && !Ember.isEmpty(propertiesObject.get("auth_key"))) {
-        var _this = this;
         Ember.$.post(`${ENV.api}/auth/authorized`, {username: propertiesObject.get("username"),
                                                    auth_key: propertiesObject.get("auth_key") }
                     ).then(function(response) {
