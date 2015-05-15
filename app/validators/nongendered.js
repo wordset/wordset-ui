@@ -1,9 +1,10 @@
+import Ember from 'ember';
 import Base from 'ember-validations/validators/base';
 
 export default Base.extend({
   call: function() {
     var prop = this.model.get(this.property);
-    var genderedWords = ["her", "his", "he", "she"]
+    var genderedWords = ["her", "his", "he", "she"];
     if (Ember.isBlank(prop)) {
       this.errors.pushObject("We need something here!");
     } else {
