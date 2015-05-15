@@ -1,0 +1,31 @@
+<h1>{{model.title}}</h1>
+
+{{model.instructions}}
+
+<img src={{model.image_url}} />
+
+{{#each model.questions as |question|}}
+  <div class="question">
+    {{question.text}}
+    <div class="answers">
+      {{#each question.answers as |answer|}}
+        <div class="answer {{answer.state}}">
+          {{#radio-button
+              value=answer.aid
+              groupValue=question.selectedAnswer
+              changed="selectedAnswer"}}
+              {{answer.text}}
+          {{/radio-button}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
+
+
+<div class="result">
+  {{#if isComplete}}
+    <h1>You've gotten...</h1>
+    {{winningResult.title}}
+  {{/if}}
+</div>

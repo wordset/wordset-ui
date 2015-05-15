@@ -6,4 +6,5 @@ export default DS.Model.extend({
   name: DS.attr("string"),
   parts: DS.attr(),
   labels: DS.hasMany("labels"),
+  quizzes_simple: DS.attr(),
 });
