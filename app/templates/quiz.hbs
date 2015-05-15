@@ -1,31 +1,49 @@
-<h1>{{model.title}}</h1>
+<div class="quiz-wrap">
+  <h1>{{model.title}}</h1>
 
-{{model.instructions}}
-
-<img src={{model.image_url}} />
-
-{{#each model.questions as |question|}}
-  <div class="question">
-    {{question.text}}
-    <div class="answers">
-      {{#each question.answers as |answer|}}
-        <div class="answer {{answer.state}}">
-          {{#radio-button
-              value=answer.aid
-              groupValue=question.selectedAnswer
-              changed="selectedAnswer"}}
-              {{answer.text}}
-          {{/radio-button}}
-        </div>
-      {{/each}}
-    </div>
+  <div class="quiz-image">
+    <img src={{model.image_url}} />
   </div>
-{{/each}}
+
+  <div class="instructions">
+    {{model.instructions}}
+  </div>
 
 
-<div class="result">
-  {{#if isComplete}}
-    <h1>You've gotten...</h1>
-    {{winningResult.title}}
-  {{/if}}
+
+  {{#each model.questions as |question|}}
+    <div class="quiz-question">
+      <div class="image">
+        <img src={{question.image_url}}>
+      </div>
+      <div class="text">
+        <h2>{{question.text}}</h2>
+      </div>
+      <ul class="answers">
+        {{#each question.answers as |answer|}}
+          <li class="answer {{answer.state}}">
+            {{#radio-button
+                value=answer.aid
+                groupValue=question.selectedAnswer
+                changed="selectedAnswer"}}
+                <span>{{answer.text}}</span>
+            {{/radio-button}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+
+
+  <div class="result">
+    {{#if isComplete}}
+      <div class="result-box">
+        <div class="text">
+          <h2>Your result...</h2>
+        </div>
+        {{winningResult.title}}
+      </div>
+    {{/if}}
+  </div>
+
 </div>
