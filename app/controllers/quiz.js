@@ -1,16 +1,25 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  selections: {},
   winningResult: function() {
     if(this.get("isComplete")) {
-      return this.get("model.results.0");
+      var tally = Ember.Object.create();
+      var selections = this.get("selections");
+      Object.keys(selections).forEach(function(qid) {
+        var answer = selections[qid];
+        Object.keys(answer).forEach(function(resultId) {
+          tally.incrementProperty(resultId, answer[resultId]);
+        })
+      })
+      var winningResultId = Object.keys(tally).reduce(function(a, b){ return tally[a] > tally[b] ? a : b });
+      var result = this.get(`model.results.${winningResultId}`);
+      console.log(result);
+      return result;
     } else {
       return null;
     }
   }.property("selections", "isComplete"),
   isComplete: function() {
-    console.log(Object.keys(this.get("selections")).length);
     return Object.keys(this.get("selections")).length === this.get("model.questions").length;
   }.property("selections"),
   actions: {
