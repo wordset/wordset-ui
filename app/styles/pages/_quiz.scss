@@ -1,0 +1,61 @@
+.quiz-wrap {
+  margin: auto;
+  max-width: 600px;
+  padding-top: 20px;
+
+  @include media-max-width($med-small) {
+    padding: 20px 10px;
+  }
+
+  .quiz-image {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .instructions {
+    font-size: 24px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+  }
+}
+
+.quiz-question {
+  @include quiz-box;
+  padding: 0px;
+  .image {
+    height: 200px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+  }
+  li {
+    font-size: 20px;
+    line-height: 1.2em;
+  }
+}
+
+.result-box {
+  @include quiz-box;
+  .image {
+    height: 300px;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+  }
+
+  .result-name, .result-description {
+    text-align: center;
+  }
+
+  .result-name {
+    padding: 20px 10px;
+    font-size: 40px;
+
+  }
+  .result-description {
+    padding: 0px 10px 20px
+  }
+}

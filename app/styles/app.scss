@@ -6,6 +6,8 @@
 @import "globals/mixins";
 @import "globals/base";
 
+@import "modules/radio-buttons";
+
 @import "modules/menu";
 @import "modules/header";
 @import "modules/footer";
@@ -49,6 +51,8 @@
 
 @import "pages/users";
 @import "pages/user";
+
+@import "pages/quiz";
 
 @import "pages/faqs";
 @import "pages/guidelines";

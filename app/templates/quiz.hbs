@@ -1,0 +1,57 @@
+<div class="quiz-wrap">
+  <h1>{{model.title}}</h1>
+
+  <div class="quiz-image">
+    <img src={{model.image_url}} />
+  </div>
+
+  <div class="instructions">
+    {{model.instructions}}
+  </div>
+
+
+
+  {{#each model.questions as |question|}}
+    <div class="quiz-question">
+      <div class="image">
+        <img src={{question.image_url}}>
+      </div>
+      <div class="text">
+        <h2>{{question.text}}</h2>
+      </div>
+      <ul class="answers">
+        {{#each question.answers as |answer|}}
+          <li class="answer {{answer.state}}">
+            {{#radio-button
+                value=answer.aid
+                groupValue=question.selectedAnswer
+                changed="selectedAnswer"}}
+                <span>{{answer.text}}</span>
+            {{/radio-button}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+
+
+  <div class="result">
+    {{#if isComplete}}
+      <div class="result-box">
+        <div class="text">
+          <h2>Your result...</h2>
+        </div>
+        <div class="image">
+          <img src={{winningResult.image_url}} >
+        </div>
+        <div class="result-name">
+          {{winningResult.name}}
+        </div>
+        <div class="result-description">
+          {{winningResult.description}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+
+</div>
