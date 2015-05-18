@@ -16,11 +16,17 @@
     <div class="separator"></div>
     <div class="username">
       <label>Username
+      {{#if errors.username}}
+        <div class="error">Username is already taken! Try {{#link-to 'users.login'}} signing in{{/link-to}}.</div>
+      {{/if}}
       {{validated-input type="text" autofocus="autofocus" value=model.id errors=errors.model.id}}
       </label>
     </div>
     <div class="email">
       <label>E-mail
+      {{#if errors.email}}
+        <div class="error">E-mail is already taken! Try {{#link-to 'users.login'}} signing in{{/link-to}}.</div>
+      {{/if}}
       {{validated-input type="email" value=model.email errors=errors.model.email}}
       </label>
     </div>
