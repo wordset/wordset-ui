@@ -82,12 +82,26 @@
     @media screen and (max-width: $header-medium) {
       margin-top: -94px;
     }
-    .toggler-chat, .toggler-menu {
+    .toggler-chat, .toggler-menu, .nav-sign-in {
       display: inline-block;
       font-weight: 600;
       margin-top: -8px;
       vertical-align: top;
     }
+
+    .login-icon{
+      font-size: 46px;
+      color: #81C14B;
+      padding-top: 5px;
+    }
+    .nav-sign-in .icon-text{
+      font-size: 12px;
+      color: #81C14B;
+    }
+
+    // .nav-sign-in{
+    //   line-height: 40px;
+    // }
     @media screen and (min-width: $header-medium) {
       .toggler-chat, .toggler-menu {
         display: inline-block;
