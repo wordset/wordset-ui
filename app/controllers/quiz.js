@@ -25,6 +25,10 @@ export default Ember.Controller.extend({
   url: function() {
     return window.location;
   }.property(),
+  tweet: function() {
+    var tweetText = "I got '" + this.get("winningResult.name") + "' on the '" + this.get("model.title") + "' quiz by @thewordset";
+    return encodeURI(tweetText);
+  }.property("winningResult"),
   actions: {
     selectedAnswer: function(answer) {
       answer = answer.split("-");
