@@ -21,6 +21,17 @@
     line-height: 1.4em;
     margin-bottom: 20px;
   }
+
+  .citation {
+    color: #AAA;
+    font-size: 14px;
+    font-style: italic;
+    margin: 3px 0px 5px 5px;
+    a {
+       color: #AAA;
+    }
+  }
+
 }
 
 .quiz-question {
