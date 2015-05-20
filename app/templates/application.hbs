@@ -19,10 +19,12 @@
     {{search-bar}}
 
     <div class="togglers">
+      {{#link-to "users.login"}}
       <div class="nav-sign-in">
         <div class="ionicon ion-log-in login-icon"></div>
         <div class="icon-text">LOGIN</div>
       </div>
+      {{/link-to}}
       <div class="toggler-chat">
         <a {{action 'togglePanel'}} class="panel-toggler" alt="Chat">
           <div {{bind-attr class="hasChatAlert :ion-android-chat showPanel"}}>
