@@ -103,6 +103,18 @@
       color: $lime;
     }
 
+    @media screen and (max-width: $medium){
+
+        .login-icon{
+          font-size: 32px;
+          margin-left: 5px;
+          padding-bottom: 1px;
+
+        }
+    }
+
+  
+
     // .nav-sign-in{
     //   line-height: 40px;
     // }
