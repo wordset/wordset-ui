@@ -4,9 +4,11 @@
   <div class="quiz-image">
     <img src={{model.image_url}} />
   </div>
-  <div class="citation">
-    Image by: <a href="{{model.image_link}}">{{model.image_citation}}</a>
-  </div>
+  {{#if model.image_citation}}
+    <div class="citation">
+      Image by: <a href="{{model.image_link}}">{{model.image_citation}}</a>
+    </div>
+  {{/if}}
 
   <div class="instructions">
     {{model.instructions}}
@@ -20,9 +22,11 @@
         <img src={{question.image_url}}>
 
       </div>
-      <div class="citation">
-        Image by: <a href="{{question.image_link}}">{{question.image_citation}}</a>
-      </div>
+      {{#if question.image_citation}}
+        <div class="citation">
+          Image by: <a href="{{question.image_link}}">{{question.image_citation}}</a>
+        </div>
+      {{/if}}
       <div class="text">
         <h2>{{question.text}}</h2>
       </div>
@@ -51,9 +55,11 @@
         <div class="image">
           <img src={{winningResult.image_url}} >
         </div>
-        <div class="citation">
-          Image by: <a href="{{winningResult.image_link}}">{{winningResult.image_citation}}</a>
-        </div>
+        {{#if question.image_citation}}
+          <div class="citation">
+            Image by: <a href="{{winningResult.image_link}}">{{winningResult.image_citation}}</a>
+          </div>
+        {{/if}}
         <div class="result-name">
           {{winningResult.name}}
         </div>
