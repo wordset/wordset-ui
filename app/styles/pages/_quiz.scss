@@ -8,8 +8,8 @@
   }
 
   .quiz-image {
-    height: 200px;
-    overflow: hidden;
+    // height: 200px;
+    // overflow: hidden;
     margin-bottom: 10px;
     img {
       width: 100%;
@@ -38,11 +38,11 @@
   @include quiz-box;
   padding: 0px;
   .image {
-    height: 200px;
-    overflow: hidden;
+    // height: 200px;
+    // overflow: hidden;
   }
   img {
-    margin-top: -15%;
+    // margin-top: -15%;
     width: 100%;
   }
   li {
@@ -54,8 +54,8 @@
 .result-box {
   @include quiz-box;
   .image {
-    height: 300px;
-    overflow: hidden;
+    // height: 300px;
+    // overflow: hidden;
   }
   img {
     width: 100%;
