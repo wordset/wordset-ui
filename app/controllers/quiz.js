@@ -22,7 +22,9 @@ export default Ember.Controller.extend({
   isComplete: function() {
     return Object.keys(this.get("selections")).length === this.get("model.questions").length;
   }.property("selections"),
-  url: window.location,
+  url: function() {
+    return window.location;
+  }.property(),
   actions: {
     selectedAnswer: function(answer) {
       answer = answer.split("-");
