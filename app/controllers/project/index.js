@@ -4,6 +4,10 @@ export default Ember.Controller.extend({
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
 
+  htmlDescription: function() {
+    return Ember.String.htmlSafe(this.get("model.longDescription"));
+  }.property("model.longDescription"),
+
   description: function() {
     if(this.get("model.name") === "Proper Noun Purge") {
       return "<p>We're starting to implement projects on our site. These are self-contained groups of improvements we want to make to Wordset.</p><p>Our first major project is to remove proper nouns from Wordset. We believe that our dictionary should be about definitions, not reference. A dictionary is not the place to gather in-depth information about a person or place. That's what an encyclopedia is for.</p>".htmlSafe();
