@@ -24,6 +24,6 @@ export default Ember.Route.extend({
   model: function(params) {
     this.set("meaningId", params.meaning_id);
     return this.store.find("wordset", {meaning_id: params.meaning_id});
-  }
+  },
 
 });
