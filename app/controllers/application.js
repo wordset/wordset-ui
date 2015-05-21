@@ -48,7 +48,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
       this.set("chatReceived", false);
     },
     browserNotification: function(title, body, tag) {
-      if(this.get("visible") === false) {
+      if(this.get("visible.now") === false) {
         var opt = {body: body, tag: tag, icon: "/assets/images/square-logo.png"};
         var n = new Notification(title, opt);
         this.get("browserNotifications").addObject(n);
