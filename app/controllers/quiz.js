@@ -9,9 +9,9 @@ export default Ember.Controller.extend({
         var answer = selections[qid];
         Object.keys(answer).forEach(function(resultId) {
           tally.incrementProperty(resultId, answer[resultId]);
-        })
-      })
-      var winningResultId = Object.keys(tally).reduce(function(a, b){ return tally[a] > tally[b] ? a : b });
+        });
+      });
+      var winningResultId = Object.keys(tally).reduce(function(a, b){ return tally[a] > tally[b] ? a : b; });
       var result = this.get(`model.results.${winningResultId}`);
       console.log(result);
       return result;
