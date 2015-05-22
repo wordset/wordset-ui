@@ -58,7 +58,7 @@ $facebook-blue: #3B5998;
 // Colour Uses
 
 $header-color: $blue-3;
-$header-background: $light-grey;
+$header-background: #FFF;
 $header-color-selected: $blue-2;
 
 $menu-background: $light-grey;
@@ -66,6 +66,7 @@ $menu-color: $blue-2;
 
 $body-background: #FFF;
 $text-color: $black;
+$h-color: $blue-3;
 
 $footer-color: $blue-2;
 $footer-background: $light-grey;
@@ -73,7 +74,7 @@ $footer-background: $light-grey;
 $anchor-color: $blue-2;
 $anchor-hover-color: darken($blue-2, 10%);
 
-$maybe-color: $taupe;
+$maybe-color: $yellow-2;
 
 $notification-background: $green-1;
 $notification-color: #FFF;
@@ -82,20 +83,20 @@ $error-color: $pink-3;
 
 $enter-button: $blue-1;
 
-$button-background-positive: darken($lime, 5%);
-$button-border-positive: darken($lime, 20%);
-$button-hover-background-positive: darken($lime, 10%);
-$button-text-shadow-positive: darken($lime, 30%);
+$button-background-positive: $green-2;
+$button-border-positive: $green-3;
+$button-hover-background-positive: $green-3;
+$button-text-shadow-positive: $green-3;
 
-$button-background-negative: $dark-green;
-$button-border-negative: lighten($dark-green, 10%);
-$button-hover-background-negative: darken($dark-green, 10%);
-$button-text-shadow-negative: $dark-green;
+$button-background-negative: $blue-3;
+$button-border-negative: lighten($blue-3, 10%);
+$button-hover-background-negative: darken($blue-3, 10%);
+$button-text-shadow-negative: $blue-3;
 
-$button-background-flag: $red;
-$button-border-flag: darken($red, 20%);
-$button-hover-background-flag: darken($red, 10%);
-$button-text-shadow-flag: darken($red, 30%);
+$button-background-flag: $pink-2;
+$button-border-flag: $pink-3;
+$button-hover-background-flag: $pink-3;
+$button-text-shadow-flag: $pink-3;
 
 $button-background-skip: $maybe-color;
 $button-border-skip: darken($maybe-color, 20%);
@@ -105,6 +106,8 @@ $button-text-shadow-skip: darken($maybe-color, 20%);
 $module-border: $dark-green;
 
 $dropdown-anchor-color: $dark-green;
+
+$proposal-sidebar-color: #EEE;
 
 // For positive/negative styles for votes and proposals
 

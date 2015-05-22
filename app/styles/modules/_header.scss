@@ -40,7 +40,9 @@
     position: relative;
     z-index: 4;
     input {
-      border: 0;
+      border: 1px solid $header-color;
+      border-radius: 2px;
+      box-shadow: 0px 0px 2px $header-color;
       font-size: 20px;
       margin-top: 0px;
       padding: 10px;
