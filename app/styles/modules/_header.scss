@@ -88,23 +88,6 @@
       margin-top: -8px;
       vertical-align: top;
     }
-<<<<<<< HEAD
-=======
-
-    .login-icon{
-      font-size: 46px;
-      color: #81C14B;
-      padding-top: 5px;
-    }
-    .nav-sign-in .icon-text{
-      font-size: 12px;
-      color: #81C14B;
-    }
-
-    // .nav-sign-in{
-    //   line-height: 40px;
-    // }
->>>>>>> parent of 79357f3... added media query for ''
     @media screen and (min-width: $header-medium) {
       .toggler-chat, .toggler-menu {
         display: inline-block;
@@ -135,15 +118,7 @@
     color: $taupe;
     display: inline-block;
     font-size: 34px;
-<<<<<<< HEAD
-<<<<<<< HEAD
     margin-right: 40px;
-=======
-    margin-right: 20px;
->>>>>>> parent of 232f97d... changed login padding to margin to match chat
-=======
-    margin-right: 40px;
->>>>>>> parent of 12574aa... padding is equal, still need media queries
     .has-chat-alert {
       position: relative;
       &:after {
