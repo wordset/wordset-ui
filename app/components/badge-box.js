@@ -9,9 +9,12 @@ export default Ember.Component.extend({
   percentage: function() {
     var level = this.get("badge.level");
     if(Ember.isEmpty(level)) {
-      return "100";
+      return 100;
     }
     var percentage = Math.round(((level - 1) / 4) * 100);
-    return `${percentage}`
-  }.property("badge.level")
+    return percentage;
+  }.property("badge.level"),
+  inversePercentage: function() {
+    return 100-this.get("percentage");
+  }.property("percentage"),
 });
