@@ -82,12 +82,14 @@
     @media screen and (max-width: $header-medium) {
       margin-top: -94px;
     }
-    .toggler-chat, .toggler-menu, .nav-sign-in {
+    .toggler-chat, .toggler-menu {
       display: inline-block;
       font-weight: 600;
       margin-top: -8px;
       vertical-align: top;
     }
+<<<<<<< HEAD
+=======
 
     .nav-sign-in{
       margin-right: 15px;
@@ -103,21 +105,10 @@
       color: $lime;
     }
 
-    @media screen and (max-width: $medium){
-
-        .login-icon{
-          font-size: 32px;
-          margin-left: 5px;
-          padding-bottom: 1px;
-
-        }
-    }
-
-  
-
     // .nav-sign-in{
     //   line-height: 40px;
     // }
+>>>>>>> parent of 79357f3... added media query for ''
     @media screen and (min-width: $header-medium) {
       .toggler-chat, .toggler-menu {
         display: inline-block;
@@ -148,7 +139,7 @@
     color: $taupe;
     display: inline-block;
     font-size: 34px;
-    margin-right: 15px;
+    margin-right: 40px;
     .has-chat-alert {
       position: relative;
       &:after {
