@@ -81,11 +81,11 @@
 }
 
 @mixin quiz-box {
-  border: 1px solid $dark-green;
+  border: 1px solid $blue-3;
   border-radius: 2px;
   margin-bottom: 20px;
   .text {
-    background: lighten($dark-green, 30%);
+    background: $blue-2, 30%;
     box-shadow: none;
     height: inherit;
     padding: 10px 0px;

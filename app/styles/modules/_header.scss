@@ -115,14 +115,14 @@
     }
   }
   .panel-toggler {
-    color: $taupe;
+    color: $header-color;
     display: inline-block;
     font-size: 34px;
     margin-right: 40px;
     .has-chat-alert {
       position: relative;
       &:after {
-        background: $dark-green;
+        background: $header-color-selected;
         border-radius: 50%;
         content: "";
         display: inline-block;
@@ -135,7 +135,7 @@
       }
     }
     .show-panel {
-      color: $dark-green;
+      color: $header-color-selected;
     }
     @media screen and (min-width: $medium) {
       font-size: 52px;
@@ -145,7 +145,7 @@
     }
   }
   .nav-toggler  {
-    color: $taupe;
+    color: $header-color;
     font-size: 35px;
     @media screen and (min-width: $medium) {
       font-size: 55px;

@@ -7,12 +7,12 @@
   }
 
   .news {
-    border: 1px solid $dark-green;
+    border: 1px solid $blue-3;
     border-radius: 2px;
     margin-bottom: 20px;
     padding: 0px;
     .header {
-      background: lighten($dark-green, 40%);
+      background: $blue-2;
       box-shadow: none;
       height: inherit;
       padding: 10px 0px;
@@ -24,7 +24,7 @@
 
     }
     a {
-      color: $dark-green;
+      color: $anchor-color;
     }
     p {
       padding: 10px;
@@ -40,10 +40,10 @@
     margin-bottom: 20px;
     max-width: 420px;
     h2 a, .progress-numbers {
-      color: $dark-green;
+      color: $anchor-color;
     }
     .progress-numbers span.metric {
-      color: lighten($dark-green, 20%);
+      color: darken($anchor-color, 20%);
     }
     .title {
       display: block;
@@ -52,7 +52,7 @@
       font-size: 20px;
       margin-top: 0px;
       a:hover {
-        color: lighten($dark-green, 20%);
+        color: $anchor-hover-color;
       }
     }
 
@@ -126,7 +126,7 @@
   a {
     border: 1px solid #DDD;
     border-radius: 2px;
-    color: lighten($dark-green, 20%);
+    color: $yellow-2;
     display: inline-block;
     margin: 10px;
     min-width: 100px;

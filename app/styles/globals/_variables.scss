@@ -31,31 +31,56 @@ $purple: #54428E;
 $blue: #7C99B4;
 $dark-blue: #010D2A;
 
+
+// New Colours
+
+$blue-1: #00C9FC;
+$blue-2: #0a9abf;
+$blue-3: #0f6f87;
+
+$pink-1: #fc0065;
+$pink-2: #bf0a53;
+$pink-3: #870f3f;
+
+$green-1: #00fc00;
+$green-2: #0abf0a;
+$green-3: #0f870f;
+
+$yellow-1: #fcca00;
+$yellow-2: #bf9b0a;
+$yellow-3: #876f0f;
+
+// Brand Colours
+
 $twitter-blue: #55ACEE;
 $facebook-blue: #3B5998;
 
 // Colour Uses
 
-$header-color: $dark-green;
+$header-color: $blue-3;
 $header-background: $light-grey;
-$sign-in-color: $lime;
+$header-color-selected: $blue-2;
 
 $menu-background: $light-grey;
-$menu-color: $dark-green;
+$menu-color: $blue-2;
 
 $body-background: #FFF;
 $text-color: $black;
 
-$footer-color: $dark-green;
+$footer-color: $blue-2;
 $footer-background: $light-grey;
 
-$anchor-color: $lime;
-$anchor-hover-color: darken($lime, 10%);
+$anchor-color: $blue-2;
+$anchor-hover-color: darken($blue-2, 10%);
 
 $maybe-color: $taupe;
 
-$notification-background: $lime;
+$notification-background: $green-1;
 $notification-color: #FFF;
+
+$error-color: $pink-3;
+
+$enter-button: $blue-1;
 
 $button-background-positive: darken($lime, 5%);
 $button-border-positive: darken($lime, 20%);
