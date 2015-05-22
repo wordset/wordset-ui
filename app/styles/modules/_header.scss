@@ -92,7 +92,7 @@
 =======
 
     .nav-sign-in{
-      margin-right: 15px;
+      padding-right: 20px;
     }
 
     .login-icon{
@@ -139,7 +139,11 @@
     color: $taupe;
     display: inline-block;
     font-size: 34px;
+<<<<<<< HEAD
     margin-right: 40px;
+=======
+    margin-right: 20px;
+>>>>>>> parent of 232f97d... changed login padding to margin to match chat
     .has-chat-alert {
       position: relative;
       &:after {
