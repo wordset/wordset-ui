@@ -91,10 +91,6 @@
 <<<<<<< HEAD
 =======
 
-    .nav-sign-in{
-      padding-right: 20px;
-    }
-
     .login-icon{
       font-size: 50px;
       color: #81C14B;
@@ -140,10 +136,14 @@
     display: inline-block;
     font-size: 34px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin-right: 40px;
 =======
     margin-right: 20px;
 >>>>>>> parent of 232f97d... changed login padding to margin to match chat
+=======
+    margin-right: 40px;
+>>>>>>> parent of 12574aa... padding is equal, still need media queries
     .has-chat-alert {
       position: relative;
       &:after {
