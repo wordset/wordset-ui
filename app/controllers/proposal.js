@@ -34,10 +34,7 @@ export default Ember.Controller.extend(Bindings, {
         function() {
           _this.set("isEditing", false);
         },
-        function() {
-          // apparently, just defining this function
-          // makes everything work. weird.
-        }
+        function() {}
       );
     },
     withdraw: function() {
