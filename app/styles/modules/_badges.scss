@@ -1,6 +1,23 @@
 badge {
-  display: block;
-  width: 200px;
-  height: 200px;
-  background: red;
+  .badge {
+    display: inline-block;
+    height: 200px;
+    position: relative;
+    width: 200px;
+  }
+  img {
+    border-radius: 10px;
+  }
+  .grayscale {
+    overflow: hidden;
+    position: absolute;
+  }
+  .badge-info {
+    margin-top: 10px;
+    text-align: center;
+    .name {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+  }
 }
