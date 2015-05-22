@@ -1,4 +1,7 @@
 
 
-<img src="/assets/images/badges/{{badge.name}}.svg" width="100%" height="100%" />
-{{badge.name}}
+<img src="/assets/images/badges/{{badge.name}}.svg" class="percent_{{percentage}}" width="100%" height="100%" title="{{badge.description}}" />
+"{{badge.display_name}}"
+{{#if badge.level}}
+  Level {{badge.level}}
+{{/if}}
