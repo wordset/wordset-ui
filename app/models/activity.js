@@ -12,5 +12,6 @@ export default DS.Model.extend({
   voteValue: DS.attr("number"), // Vote
   finalState: DS.attr("string"), // ProposalClosed
   newLevel: DS.attr("string"), // UserPromotion
+  badge: DS.attr(), // UserBadge
 
 });

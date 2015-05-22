@@ -11,6 +11,7 @@ export default Router.map(function() {
   this.route("login");
   this.route("user", {path: "/user/:user_id"}, function() {
     this.route("activity");
+    this.route("proposals");
   });
 
   this.route("auth", function() {

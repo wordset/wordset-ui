@@ -35,6 +35,16 @@ export default Ember.Mixin.create(Bindings, {
         case "ProposalClosed":
           this.get("notifier").show("Your proposal for " + activity.wordName + " was " + activity.finalState, {name: "Proposal", route: ["proposal.index", activity.proposalId]});
           break;
+        case "UserBadge":
+          var message = `You just got the badge "${activity.badge.display_name}"`;
+          if(activity.badge.level > 1) {
+            message += ` level ${activity.badge.level}`;
+          }
+
+          this.get("notifier").show(message + "!", {
+            name: activity.badge.display_name,
+            route: ["user.index", activity.userId],
+          });
       }
 
     }

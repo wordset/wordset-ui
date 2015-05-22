@@ -1,27 +1,4 @@
 
-<div class="proposals-user">
-{{#each proposal in model.proposals}}
-  {{#link-to 'proposal' proposal}}
-    <div {{bind-attr class="proposal.state :item"}}>
-      <div class="sentence">
-        <span class="state">{{proposal.state}}</span>
-        proposal for a
-        <span class="action">
-          {{proposal.typeName}}:
-        </span>
-        <span class="word">
-          {{proposal.wordName}}
-        </span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress">
-          <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
-          <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
-        </div>
-      </div>
-    </div>
-  {{/link-to}}
-{{else}}
-  This User hasn't proposed anything yet.
+{{#each badge in model.badges}}
+  {{badge-box badge=badge}}
 {{/each}}
-</div>
