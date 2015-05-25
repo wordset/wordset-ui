@@ -1,4 +1,8 @@
 <h3>Badges</h3>
-{{#each badge in model.badges}}
-  {{badge-box badge=badge}}
-{{/each}}
+{{#if model.badges}}
+  {{#each badge in model.badges}}
+    {{badge-box badge=badge}}
+  {{/each}}
+{{else}}
+  <p>You don't have any badges yet! Why not vote on an open proposal, participate in a project, or fix up a definition to get some badges?</p>
+{{/if}}
