@@ -35,6 +35,8 @@ export default Ember.Mixin.create(Bindings, {
         case "ProposalClosed":
           this.get("notifier").show("Your proposal for " + activity.wordName + " was " + activity.finalState, {name: "Proposal", route: ["proposal.index", activity.proposalId]});
           break;
+        case "UserBadge":
+          this.send('openModal', 'new-badge', data);
       }
 
     }
