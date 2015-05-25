@@ -23,9 +23,9 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' 'unsafe-inline' https://www.google-analytics.com https://cdn.mxpnl.com https://stats.pusher.com https://js-agent.newrelic.com https://bam.nr-data.net",
+      'script-src': "'self' 'unsafe-inline' https://www.google-analytics.com https://stats.pusher.com https://js-agent.newrelic.com https://bam.nr-data.net",
       'font-src': "'self'",
-      'connect-src': "'self' https://api.wordset.org https://bam.nr-data.net https://api.mixpanel.com wss://ws.pusherapp.com",
+      'connect-src': "'self' https://api.wordset.org https://bam.nr-data.net wss://ws.pusherapp.com",
       'img-src': "'self'  https://api.wordset.org https://bam.nr-data.net https://stats.g.doubleclick.net https://www.google-analytics.com https://secure.gravatar.com",
       'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
@@ -46,7 +46,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.apiHost = 'http://localhost:3000';
     ENV.contentSecurityPolicy['img-src'] += " http://localhost:3000"
-    ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 ws://127.0.0.1:* http://api.mixpanel.com ws://ws.pusherapp.com";
+    ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 ws://127.0.0.1:* ws://ws.pusherapp.com";
     ENV.contentSecurityPolicy['script-src'] += "  http://stats.pusher.com http://js-agent.newrelic.com http://bam.nr-data.net";
   }
 
