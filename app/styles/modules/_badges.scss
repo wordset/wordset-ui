@@ -1,5 +1,10 @@
 .badges {
   margin-top: 30px;
+  &.user-page {
+    .badge {
+      margin-right: 40px;
+    }
+  }
 }
 
 badge {
