@@ -29,3 +29,36 @@ badge {
     }
   }
 }
+
+$modal-width: 600px;
+$modal-height: 640px;
+
+.new-badge-modal {
+  background-image: url("/assets/images/badges/newbadge.png");
+  background-size: $modal-width $modal-height;
+  margin-top: -($modal-height/2);
+  margin-left: -($modal-width/2);
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  z-index: 100;
+  height: $modal-height;
+  width: $modal-width;
+
+  badge {
+    display: inline-block;
+    margin: 250px auto;
+    text-align: center;
+    width: 606px;
+  }
+  .ion-close {
+    background: #EEE;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 15px;
+    padding: 2px 5px;
+    position: absolute;
+      top: 104px;
+      right: 143px
+  }
+}
