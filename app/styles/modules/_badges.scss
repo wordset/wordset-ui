@@ -1,3 +1,7 @@
+.badges {
+  margin-top: 30px;
+}
+
 badge {
   .badge {
     display: inline-block;
@@ -11,6 +15,10 @@ badge {
   .grayscale {
     overflow: hidden;
     position: absolute;
+    -webkit-filter: contrast(40%);
+    filter: contrast(40%);
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
   }
   .badge-info {
     margin-top: 10px;
