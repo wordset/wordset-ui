@@ -5,11 +5,13 @@
 badge {
   .badge {
     display: inline-block;
-    margin-right: 40px;
-    position: relative;
     vertical-align: top;
+  }
+  .badge-image {
+    display: inline-block;
+    position: relative;
+    height: 200px;
     width: 200px;
-
   }
   img {
     border-radius: 10px;
@@ -54,9 +56,9 @@ $modal-height: 640px;
     width: 606px;
   }
   .ion-close {
-    background: #EEE;
+    background: #0D3B47;
     border-radius: 50%;
-    color: #0D3B47;
+    color: #FFF;
     font-size: 15px;
     padding: 2px 5px;
     position: absolute;
