@@ -25,7 +25,7 @@ export default Ember.Service.extend({
   remove: function(notification) {
     Ember.run.later(this, function() {
       this.get("notifications").removeObject(notification);
-    }, 1000);
+    }, 3000);
   }
 
 });
