@@ -31,23 +31,34 @@ $purple: #54428E;
 $blue: #7C99B4;
 $dark-blue: #010D2A;
 
+
+// // New Colours
+//
+$blue-1: #00C9FC;
+$blue-2: #0a9abf;
+$blue-3: #0f6f87;
+//
+
+// Brand Colours
+
 $twitter-blue: #55ACEE;
 $facebook-blue: #3B5998;
 
 // Colour Uses
 
-$header-color: $dark-green;
-$header-background: $light-grey;
-$sign-in-color: $lime;
+$header-color: $taupe;
+$header-background: #FFF;
+$header-color-selected: $dark-green;
 
 $menu-background: $light-grey;
 $menu-color: $dark-green;
 
 $body-background: #FFF;
 $text-color: $black;
+$h-color: $dark-green;
 
-$footer-color: $dark-green;
-$footer-background: $light-grey;
+$footer-color: $taupe;
+$footer-background: #FFF;
 
 $anchor-color: $lime;
 $anchor-hover-color: darken($lime, 10%);
@@ -57,23 +68,27 @@ $maybe-color: $taupe;
 $notification-background: $lime;
 $notification-color: #FFF;
 
+$error-color: $red;
+
+$enter-button: $lime;
+
 $button-background-positive: darken($lime, 5%);
-$button-border-positive: darken($lime, 20%);
+$button-border-positive: darken($lime, 5%);
 $button-hover-background-positive: darken($lime, 10%);
-$button-text-shadow-positive: darken($lime, 30%);
+$button-text-shadow-positive: darken($lime, 20%);
 
 $button-background-negative: $dark-green;
-$button-border-negative: lighten($dark-green, 10%);
+$button-border-negative: $dark-green;
 $button-hover-background-negative: darken($dark-green, 10%);
 $button-text-shadow-negative: $dark-green;
 
 $button-background-flag: $red;
-$button-border-flag: darken($red, 20%);
+$button-border-flag: $red;
 $button-hover-background-flag: darken($red, 10%);
 $button-text-shadow-flag: darken($red, 30%);
 
 $button-background-skip: $maybe-color;
-$button-border-skip: darken($maybe-color, 20%);
+$button-border-skip: $maybe-color;
 $button-hover-background-skip: darken($maybe-color, 10%);
 $button-text-shadow-skip: darken($maybe-color, 20%);
 
@@ -81,13 +96,11 @@ $module-border: $dark-green;
 
 $dropdown-anchor-color: $dark-green;
 
+$proposal-sidebar-color: #EEE;
+
 // For positive/negative styles for votes and proposals
 
 $positive-background: $lightest-green;
 $positive-color: $light-green;
 
 $negative-color: $red;
-
-$footer-color: $dark-green;
-$footer-hover-color: lighten($dark-green, 10%);
-$footer-background: $light-grey;

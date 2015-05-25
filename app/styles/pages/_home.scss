@@ -7,24 +7,10 @@
   }
 
   .news {
-    border: 1px solid $dark-green;
-    border-radius: 2px;
-    margin-bottom: 20px;
+    @include quiz-box(#F9F9F9, #666, #DDD);
     padding: 0px;
-    .header {
-      background: lighten($dark-green, 40%);
-      box-shadow: none;
-      height: inherit;
-      padding: 10px 0px;
-      h2 {
-        color: #FFF;
-        margin: 0px 0px 0px 10px;
-      }
-      width: 100%;
-
-    }
     a {
-      color: $dark-green;
+      color: $anchor-color;
     }
     p {
       padding: 10px;
@@ -40,10 +26,10 @@
     margin-bottom: 20px;
     max-width: 420px;
     h2 a, .progress-numbers {
-      color: $dark-green;
+      color: $anchor-color;
     }
     .progress-numbers span.metric {
-      color: lighten($dark-green, 20%);
+      color: darken($anchor-color, 20%);
     }
     .title {
       display: block;
@@ -52,7 +38,7 @@
       font-size: 20px;
       margin-top: 0px;
       a:hover {
-        color: lighten($dark-green, 20%);
+        color: $anchor-hover-color;
       }
     }
 
@@ -126,7 +112,7 @@
   a {
     border: 1px solid #DDD;
     border-radius: 2px;
-    color: lighten($dark-green, 20%);
+    color: $anchor-hover-color;
     display: inline-block;
     margin: 10px;
     min-width: 100px;

@@ -1,6 +1,6 @@
 .header {
   background: $header-background;
-  box-shadow: 0px 1px 1px #DDD;
+  border-bottom: 2px solid #DDD;
   color: $header-color;
   height: 47px;
   padding: 30px;
@@ -40,7 +40,9 @@
     position: relative;
     z-index: 4;
     input {
-      border: 0;
+      border: 1px solid #DDD;
+      border-radius: 2px;
+      box-shadow: 0px 0px 2px #DDD;
       font-size: 20px;
       margin-top: 0px;
       padding: 10px;
@@ -115,14 +117,14 @@
     }
   }
   .panel-toggler {
-    color: $taupe;
+    color: $header-color;
     display: inline-block;
     font-size: 34px;
     margin-right: 40px;
     .has-chat-alert {
       position: relative;
       &:after {
-        background: $dark-green;
+        background: $header-color-selected;
         border-radius: 50%;
         content: "";
         display: inline-block;
@@ -135,7 +137,7 @@
       }
     }
     .show-panel {
-      color: $dark-green;
+      color: $header-color-selected;
     }
     @media screen and (min-width: $medium) {
       font-size: 52px;
@@ -145,7 +147,7 @@
     }
   }
   .nav-toggler  {
-    color: $taupe;
+    color: $header-color;
     font-size: 35px;
     @media screen and (min-width: $medium) {
       font-size: 55px;
