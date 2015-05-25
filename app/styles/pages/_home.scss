@@ -7,22 +7,8 @@
   }
 
   .news {
-    border: 1px solid $blue-3;
-    border-radius: 2px;
-    margin-bottom: 20px;
+    @include quiz-box(#F9F9F9, #666, #DDD);
     padding: 0px;
-    .header {
-      background: $blue-2;
-      box-shadow: none;
-      height: inherit;
-      padding: 10px 0px;
-      h2 {
-        color: #FFF;
-        margin: 0px 0px 0px 10px;
-      }
-      width: 100%;
-
-    }
     a {
       color: $anchor-color;
     }
@@ -126,7 +112,7 @@
   a {
     border: 1px solid #DDD;
     border-radius: 2px;
-    color: $yellow-2;
+    color: $anchor-hover-color;
     display: inline-block;
     margin: 10px;
     min-width: 100px;

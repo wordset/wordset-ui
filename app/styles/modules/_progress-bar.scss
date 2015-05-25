@@ -8,12 +8,12 @@
   }
 
   .progress-positive .bar, .positive.bar {
-    background: $green-2;
+    background: $lime;
     left: 0px;
   }
 
   .progress-negative .bar, .negative.bar {
-    background: $pink-2;
+    background: $red;
   }
 
   // For the single-way progress bar

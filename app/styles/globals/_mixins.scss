@@ -80,18 +80,18 @@
   }
 }
 
-@mixin quiz-box {
-  border: 1px solid $blue-3;
+@mixin quiz-box($text-bg: $blue-2, $text-c: #FFF, $border: $blue-3) {
+  border: 1px solid $border;
   border-radius: 2px;
   margin-bottom: 20px;
   .text {
-    background: $blue-2, 30%;
+    background: $text-bg;
     box-shadow: none;
     height: inherit;
     padding: 10px 0px;
     width: 100%;
     h2 {
-      color: #FFF;
+      color: $text-c;
       line-height: 1.2em;
       margin: 0px 0px 0px 10px;
     }

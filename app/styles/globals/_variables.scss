@@ -32,23 +32,12 @@ $blue: #7C99B4;
 $dark-blue: #010D2A;
 
 
-// New Colours
-
+// // New Colours
+//
 $blue-1: #00C9FC;
 $blue-2: #0a9abf;
 $blue-3: #0f6f87;
-
-$pink-1: #fc0065;
-$pink-2: #bf0a53;
-$pink-3: #870f3f;
-
-$green-1: #00fc00;
-$green-2: #0abf0a;
-$green-3: #0f870f;
-
-$yellow-1: #fcca00;
-$yellow-2: #bf9b0a;
-$yellow-3: #876f0f;
+//
 
 // Brand Colours
 
@@ -57,49 +46,49 @@ $facebook-blue: #3B5998;
 
 // Colour Uses
 
-$header-color: $blue-3;
+$header-color: $taupe;
 $header-background: #FFF;
-$header-color-selected: $blue-2;
+$header-color-selected: $dark-green;
 
-$menu-background: $blue-2;
-$menu-color: #FFF;
+$menu-background: $light-grey;
+$menu-color: $dark-green;
 
 $body-background: #FFF;
 $text-color: $black;
-$h-color: $blue-3;
+$h-color: $dark-green;
 
-$footer-color: $blue-2;
+$footer-color: $taupe;
 $footer-background: #FFF;
 
-$anchor-color: $blue-2;
-$anchor-hover-color: darken($blue-2, 10%);
+$anchor-color: $lime;
+$anchor-hover-color: darken($lime, 10%);
 
-$maybe-color: $yellow-2;
+$maybe-color: $taupe;
 
-$notification-background: $green-1;
+$notification-background: $lime;
 $notification-color: #FFF;
 
-$error-color: $pink-3;
+$error-color: $red;
 
-$enter-button: $blue-1;
+$enter-button: $lime;
 
-$button-background-positive: $green-2;
-$button-border-positive: $green-3;
-$button-hover-background-positive: $green-3;
-$button-text-shadow-positive: $green-3;
+$button-background-positive: darken($lime, 5%);
+$button-border-positive: darken($lime, 5%);
+$button-hover-background-positive: darken($lime, 10%);
+$button-text-shadow-positive: darken($lime, 20%);
 
-$button-background-negative: $blue-3;
-$button-border-negative: lighten($blue-3, 10%);
-$button-hover-background-negative: darken($blue-3, 10%);
-$button-text-shadow-negative: $blue-3;
+$button-background-negative: $dark-green;
+$button-border-negative: $dark-green;
+$button-hover-background-negative: darken($dark-green, 10%);
+$button-text-shadow-negative: $dark-green;
 
-$button-background-flag: $pink-2;
-$button-border-flag: $pink-3;
-$button-hover-background-flag: $pink-3;
-$button-text-shadow-flag: $pink-3;
+$button-background-flag: $red;
+$button-border-flag: $red;
+$button-hover-background-flag: darken($red, 10%);
+$button-text-shadow-flag: darken($red, 30%);
 
 $button-background-skip: $maybe-color;
-$button-border-skip: darken($maybe-color, 20%);
+$button-border-skip: $maybe-color;
 $button-hover-background-skip: darken($maybe-color, 10%);
 $button-text-shadow-skip: darken($maybe-color, 20%);
 
@@ -115,7 +104,3 @@ $positive-background: $lightest-green;
 $positive-color: $light-green;
 
 $negative-color: $red;
-
-$footer-color: $dark-green;
-$footer-hover-color: lighten($dark-green, 10%);
-$footer-background: $light-grey;

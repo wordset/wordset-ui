@@ -91,7 +91,7 @@
     color: #D49A90;
   }
   ins {
-    color: $green-3;
+    color: darken($lime, 20%);;
     font-weight: 500;
     + del {
       margin-left: 0.1em;
