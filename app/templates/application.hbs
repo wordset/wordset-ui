@@ -1,5 +1,7 @@
 {{partial "menu"}}
 
+{{outlet 'modal'}}
+
 <div class="main-content">
 
   {{#if notifications}}
@@ -36,6 +38,14 @@
       </div>
     </div>
   </header>
+  {{#if session.isAuthenticated}}
+
+  {{else}}
+    <div class="banner">
+      This is a collaborative project.
+      {{#link-to "users.new"}}Register{{/link-to}} or {{#link-to "users.login"}}sign in{{/link-to}} to take part!
+    </div>
+  {{/if}}
 
   {{#view "main-area"}}
     <aside {{bind-attr class=":panel showPanel:open:closed"}}>

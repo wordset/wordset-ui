@@ -15,6 +15,11 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
     }
   },
   needs: ['project'],
+
+  htmlRules: function() {
+    return Ember.String.htmlSafe(this.get("model.project.rules"));
+  }.property("model.project.rules"),
+
   actions: {
     submitProposal: function() {
       var _this = this;

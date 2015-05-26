@@ -3,6 +3,8 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr("string"),
   description: DS.attr("string"),
+  longDescription: DS.attr("string"),
+  rules: DS.attr("string"),
   startAt: DS.attr("date"),
   percentageComplete: DS.attr("number"),
   totalTargetsCount: DS.attr("number"),

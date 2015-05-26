@@ -1,0 +1,27 @@
+{{#link-to "proposal" proposal.id}}
+  <div {{bind-attr class="proposal.state :item"}}>
+    <div class="sentence">
+      <span class="user">
+        {{#if proposal.wordnet}}
+          Wordnet
+        {{else}}
+          {{proposal.user.id}}
+        {{/if}}
+      </span>
+      proposed a
+      <span class="action">
+        {{proposal.typeName}}
+      </span>
+      <span class="state">
+        ({{proposal.state}})
+      </span>
+      on {{formattedDate}}
+    </div>
+    <div class="progress-bar">
+      <div class="progress">
+        <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
+        <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+      </div>
+    </div>
+  </div>
+{{/link-to}}

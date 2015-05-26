@@ -2,7 +2,7 @@ import Ember from "ember";
 
 export default Ember.Route.extend({
   setupController: function(controller, model) {
-    this._super();
+    this._super(controller, model);
     var wordset = model.get("lastObject");
     var _this = this;
     this.store.find("meaning", this.get("meaningId")).then( function(meaning) {
@@ -24,6 +24,6 @@ export default Ember.Route.extend({
   model: function(params) {
     this.set("meaningId", params.meaning_id);
     return this.store.find("wordset", {meaning_id: params.meaning_id});
-  }
+  },
 
 });

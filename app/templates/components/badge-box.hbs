@@ -1,0 +1,19 @@
+
+<div class="badge">
+  <div class="badge-image">
+    <div class="grayscale" style="height: {{inversePercentage}}%">
+      <img src="/assets/images/badges/{{badge.name}}-before.png" width="200px" height="200px" title="{{badge.description}}" />
+    </div>
+    <img src="/assets/images/badges/{{badge.name}}.png" width="100%" height="100%" title="{{badge.description}}" />
+  </div>
+  <div class="badge-info">
+    <div class="name">
+      "{{badge.display_name}}"
+    </div>
+    {{#if badge.level}}
+    <div class="level">
+      Level {{badge.level}}
+    </div>
+    {{/if}}
+  </div>
+</div>
