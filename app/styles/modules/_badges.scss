@@ -1,0 +1,75 @@
+.badges {
+  margin-top: 30px;
+  &.user-page {
+    .badge {
+      margin-right: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+badge {
+  .badge {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+  }
+  .badge-image {
+    display: inline-block;
+    position: relative;
+    height: 200px;
+    width: 200px;
+  }
+  img {
+    border-radius: 10px;
+  }
+  .grayscale {
+    overflow: hidden;
+    position: absolute;
+    -webkit-filter: contrast(40%);
+    filter: contrast(40%);
+    -webkit-filter: brightness(150%);
+    filter: brightness(150%);
+  }
+  .badge-info {
+    margin-top: 10px;
+    text-align: center;
+    .name {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+$modal-width: 600px;
+$modal-height: 640px;
+
+.new-badge-modal {
+  background-image: url("/assets/images/badges/newbadge.png");
+  background-size: $modal-width $modal-height;
+  margin-top: -(($modal-height+300)/2);
+  margin-left: -($modal-width/2);
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  z-index: 100;
+  height: $modal-height;
+  width: $modal-width;
+
+  badge {
+    display: inline-block;
+    margin: 250px auto;
+    text-align: center;
+    width: 606px;
+  }
+  .ion-close {
+    background: #0D3B47;
+    border-radius: 50%;
+    color: #FFF;
+    font-size: 15px;
+    padding: 2px 5px;
+    position: absolute;
+      top: 104px;
+      right: 143px
+  }
+}
