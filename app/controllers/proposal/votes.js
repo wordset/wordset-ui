@@ -20,15 +20,17 @@ export default Ember.ArrayController.extend({
         var _this = this;
         var p = _this.get("proposal");
         this.set("justVoted", true);
+        _this.send("randomProposal", p.get("id"));
         Ember.$.post(ENV.api + "/votes", {
           vote: {
             type: type,
             proposal_id: p.get('id'),
-          },
-        }).then(function() {
+          }
+        }).then(function(data) {
+          _this.store.pushPayload(data);
           _this.send("log", "votes", type);
         });
-        _this.send("randomProposal", p.get("id"));
+
       }
     },
     withdrawVote: function() {
