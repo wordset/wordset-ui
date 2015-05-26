@@ -47,7 +47,7 @@ $modal-height: 640px;
 .new-badge-modal {
   background-image: url("/assets/images/badges/newbadge.png");
   background-size: $modal-width $modal-height;
-  margin-top: -(($modal-height+300)/2);
+  margin-top: -($modal-height/2);
   margin-left: -($modal-width/2);
   position: absolute;
     top: 50%;
