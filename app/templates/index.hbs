@@ -1,7 +1,7 @@
-<div class="wrapper home">
+<div class="two-column-wrapper home">
   <h1>The Collaborative, Open Dictionary.</h1>
 
-  <section class="news">
+  <!-- <section class="news">
     <div class="text">
       <h2>New Blog Post</h2>
     </div>
@@ -10,29 +10,39 @@
       <a href="/post/new-feature-achievement-badges">
         blog post on the new badges</a>, and come and say "hi" in the chat room to earn your first badge.
     </p>
-  </section>
+  </section> -->
+  <div class="wrapper-left">
+    <p>Wordset is the world's first structured dictionary that you can contribute to. Look up a word, propose an improvement, and have your change accepted into the dictionary.</p>
 
-  <p>Wordset is the world's first structured dictionary that you can contribute to. Look up a word, propose an improvement, and have your change accepted into the dictionary.</p>
+    <div class="links">
+      {{#link-to "info.goals"}}
+        <div class="ionicon ion-ios-star"></div>Project Goals{{/link-to}}
+      {{#link-to "info.faqs"}}
+        <div class="ionicon ion-asterisk"></div>FAQs {{/link-to}}
+      {{#link-to "info.guidelines"}}
+        <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
+    </div>
 
-  <div class="links">
-    {{#link-to "info.goals"}}
-      <div class="ionicon ion-ios-star"></div>Project Goals{{/link-to}}
-    {{#link-to "info.faqs"}}
-      <div class="ionicon ion-asterisk"></div>FAQs {{/link-to}}
-    {{#link-to "info.guidelines"}}
-      <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
+
+    <h2>Current Community Project</h2>
+    <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
+    {{project-info project=activeProject}}
+
+    <h2>About Us</h2>
+
+    <p>We're passionate about language. More than that, we're passionate about <em>open</em> language.</p>
+
   </div>
 
+  <div class="wrapper-right">
 
-  <h2>Current Community Project</h2>
-  <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
-  {{project-info project=activeProject}}
+    {{latest-blog-posts}}
 
+    <h2>Recent Activity</h2>
+    <div class="recent-activity">
+      {{render "dashboard/activities" activities}}
+    </div>
 
-
-  <h2>Recent Activity</h2>
-  <div class="recent-activity">
-    {{render "dashboard/activities" activities}}
   </div>
 
 </div>
