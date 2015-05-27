@@ -16,7 +16,6 @@ export default Base.extend({
     } 
 
     if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
-      console.log(prop.indexOf(backtick));
       this.errors.pushObject("No need for backticks.")
     }
   }
