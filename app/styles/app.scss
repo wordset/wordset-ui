@@ -6,6 +6,8 @@
 @import "globals/mixins";
 @import "globals/base";
 
+@import "globals/two-column-layout";
+
 @import "modules/radio-buttons";
 
 @import "modules/menu";
@@ -27,6 +29,8 @@
 @import "modules/project-info";
 @import "modules/labels";
 @import "modules/label-selection";
+
+@import "components/latest-blog-posts";
 
 @import "pages/loading";
 
