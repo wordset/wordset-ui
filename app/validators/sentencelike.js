@@ -4,7 +4,7 @@ import Base from 'ember-validations/validators/base';
 export default Base.extend({
   call: function() {
     var prop = this.model.get(this.property);
-
+    var backtick = "`";
     var endingPunctuation = [".", "?", "!"];
 
     if (Ember.isBlank(prop)) {
@@ -22,5 +22,11 @@ export default Base.extend({
         this.errors.pushObject("Finish your example sentence with a full stop, question mark, or exclamation point.");
       }
     }
+
+    if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
+      console.log(prop.indexOf(backtick));
+      this.errors.pushObject("No need for backticks.")
+    }
+
   }
 });
