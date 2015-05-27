@@ -1,6 +1,15 @@
 .home {
+  h1 {
+
+    @include media-min-width($medium) {
+      padding: 20px 40px 0px;
+    }
+    @include media-max-width($medium) {
+      padding: 20px 20px 0px;
+    }
+  }
   h2 {
-    margin-top: 40px;
+    // margin-top: 40px;
   }
   p {
     margin-bottom: 20px;
@@ -50,10 +59,10 @@
   .activity {
     @include transition();
     margin-bottom: 2px;
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background: #FDFDFD;
     }
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background: #F3F3F3;
     }
     &:hover {
@@ -114,13 +123,15 @@
     border-radius: 2px;
     color: $anchor-hover-color;
     display: inline-block;
-    margin: 10px;
     min-width: 100px;
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     &:hover {
       background: #FAFAFA;
+    }
+    &:not:first-child {
+      margin-left: 20px;
     }
   }
   .ionicon {
