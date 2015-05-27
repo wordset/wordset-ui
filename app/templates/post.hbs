@@ -1,32 +1,37 @@
 
-<div class="wrapper">
-  <article class="post">
-    <h1 class="post-title"><span class="ion-social-rss ionicon"></span>{{model.title}}</h1>
-    <div class="article-head">
-      <div class="post-footer">by {{model.authorName}}</div>
-      <div class="date-header">{{formattedDate}}</div>
-    </div>
+<div class="two-column-wrapper">
+  <div class="wrapper-left">
+    <article class="post">
+      <h1 class="post-title"><span class="ion-social-rss ionicon"></span>{{model.title}}</h1>
+      <div class="article-head">
+        <div class="post-footer">by {{model.authorName}}</div>
+        <div class="date-header">{{formattedDate}}</div>
+      </div>
 
-    <section class="post-body">
-      {{html}}
-    </section>
-  </article>
+      <section class="post-body">
+        {{html}}
+      </section>
+    </article>
 
-  <!-- All this stuff below here is Disqus code for the
-  blog. You can probably get rid of it if we have our
-  own comment section in the future. -->
+    <!-- All this stuff below here is Disqus code for the
+    blog. You can probably get rid of it if we have our
+    own comment section in the future. -->
 
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      /* * * CONFIGURATION VARIABLES * * */
-      var disqus_shortname = 'wordset';
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'wordset';
 
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+  <div class="wrapper-right">
+    {{latest-blog-posts}}
+  </div>
 </div>
