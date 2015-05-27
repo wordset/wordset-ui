@@ -1,11 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  needs: ['service:search'],
+  lang: "en",
+  search: Ember.inject.service(),
   searchTerm: "",
   showSearchList: false,
   searchLoading: false,
   selectedIndex: -1,
+  loaded: false,
   wordList: null,
+  didInsertElement: function() {
+    // make sure we've loaded search
+    var _this = this;
+    this.get("search").load(this.get("lang")).then(function() {
+      _this.set("loaded", true);
+    });
+  },
   selectedWord: function() {
     if(this.get("selectedIndex") >= 0) {
       return this.get("wordList.results").objectAt(this.get("selectedIndex"));
@@ -23,14 +34,11 @@ export default Ember.Component.extend({
       this.set("searchLoading", false);
       this.set("wordList", null);
     } else {
-      this.set("searchLoading", true);
       var _this = this;
-      this.get("targetObject.store").find('word_list', this.get('searchTerm'))
-        .then(function(wordList) {
-          _this.set("showSearchList", true);
-          _this.set("searchLoading", false);
-          _this.set("wordList", wordList);
-        });
+      this.get("search").perform(this.get("lang"), this.get('searchTerm')).then(function(list) {
+        _this.set("wordList", list);
+        _this.set("showSearchList", true);
+      });
     }
   }.observes('searchTerm'),
   keyDown: function(event) {
