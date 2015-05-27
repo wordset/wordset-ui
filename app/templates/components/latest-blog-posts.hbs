@@ -2,8 +2,11 @@
   <h2>Latest Blog Posts</h2>
 
   <ul>
-    <li>{{#link-to blog blog}}Entry Title{{/link-to}}</li>
-    <li>{{#link-to blog blog}}Entry Title{{/link-to}}</li>
-    <li>{{#link-to blog blog}}Entry Title{{/link-to}}</li>
+    {{#each post in blogPosts}}
+      <li>{{#link-to blog blog}}x _ {{post.title}}{{/link-to}}</li>
+    {{/each}}
+    <li>{{#link-to blog blog}}title{{post.title}}{{/link-to}}</li>
+    <li>{{#link-to blog blog}}BLOG POST{{/link-to}}</li>
   </ul>
+
 </div>
