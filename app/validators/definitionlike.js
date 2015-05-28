@@ -13,9 +13,7 @@ export default Base.extend({
       this.errors.pushObject("Start your example sentence with a lowercase letter.");
     } else if (endingPunctuation.contains(prop[prop.length - 1])) {
       this.errors.pushObject("Don't finish your definition with punctuation.");
-    } 
-
-    if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
+    } else if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
       this.errors.pushObject("No need for backticks.");
     }
   }
