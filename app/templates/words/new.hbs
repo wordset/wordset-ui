@@ -8,9 +8,8 @@
       Word
       <br/>
 
-      {{#validated-input value=model.wordName errors=errors.model.wordName}}
-     {{!--    attempt at adding attr --}}
-        {{bind-attr focus=focusout}}
+      {{#validated-input value=model.wordName errors=errors.model.wordName wordIsGood=wordIsGood}}
+
         {{#if seqId}}
           – <a href="" {{action "seeExistingWord"}}>check it out.</a>
         {{/if}}
@@ -18,6 +17,7 @@
           – {{link-to "check it out." "proposal.index" proposalId}}
         {{/if}}
       {{/validated-input}}
+
     </label>
 
     {{#each meaning in model.meanings}}
