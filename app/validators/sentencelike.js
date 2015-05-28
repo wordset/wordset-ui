@@ -13,6 +13,8 @@ export default Base.extend({
       this.errors.pushObject("Start your example sentence with a capital letter.");
     } else if ( (prop[0] || prop[prop.length - 1]) === "\"") {
       this.errors.pushObject("There's no need to use quotation marks.");
+    } else if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
+      this.errors.pushObject("No need for backticks.");
     } else {
       var hasPunctuation = endingPunctuation.contains(prop[prop.length - 1]);
       var hasPunctuationAndExtraSpace = endingPunctuation.contains(prop[prop.length - 2]) && prop[prop.length -1] === " ";
@@ -22,10 +24,5 @@ export default Base.extend({
         this.errors.pushObject("Finish your example sentence with a full stop, question mark, or exclamation point.");
       }
     }
-
-    if (!Ember.isBlank(prop) && prop.indexOf(backtick) !== -1){
-      this.errors.pushObject("No need for backticks.");
-    }
-
   }
 });
