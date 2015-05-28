@@ -8,6 +8,7 @@ import ENV from '../../config/environment';
 export default Ember.Controller.extend(EmberValidations.Mixin, {
   seqId: null,
   proposalId: null,
+  wordIsGood: false,
   validations: {
     "model.wordName": {
       inline: EmberValidations.validator(function() {
@@ -15,38 +16,37 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         var _this = this;
 
         //new variable to use to determine what to do in focus out method
-        var wordIsGood = false;
         if(name && (name.length > 0)) {
           Ember.$.getJSON(ENV.api + "/proposals/new-word-status/" + name).then(
             function(resp) {
               _this.set("model.seqId", "");
               _this.set("model.proposalId", "");
-              wordIsGood = true;
+              _this.set("model.wordIsGood", true);
               //problem seems to occur after / during the execution of the two lines above
               if(!resp.can) {
                 if(resp.seq_id) {
                   _this.set("model.seqId", resp.seq_id);
                   _this.get("errors").addObject("This word already exists");
-                  wordIsGood =false;
+                  _this.set("model.wordIsGood", false);
                 } else if(resp.proposal_id) {
                   _this.set("model.proposalId", resp.proposal_id);
                   _this.get("errors").addObject("There is an open proposal for this word");
-                  wordIsGood =false;
+                  _this.set("model.wordIsGood", false);
                 }
               }
             }
           );
-       
+
         } else {
           console.log(this.get("model.wordName"));
           //return "It needs the actual word! :)";
-          wordIsGood =false;
+          _this.set("model.wordIsGood", false);
           _this.get("errors").addObject("It needs the actual word! :)");
         }
       })
     },
   },
- 
+
   posList: function() {
     return this.get("model.lang.parts");
   }.property("model.lang"),
