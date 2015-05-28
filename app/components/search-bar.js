@@ -19,13 +19,13 @@ export default Ember.Component.extend({
   },
   selectedWord: function() {
     if(this.get("selectedIndex") >= 0) {
-      return this.get("wordList.results").objectAt(this.get("selectedIndex"));
+      return this.get("wordList").objectAt(this.get("selectedIndex"));
     } else {
       return null;
     }
   }.property("selectedIndex"),
   wordCount: function() {
-    return this.get("wordList.results.length");
+    return this.get("wordList.length");
   }.property("wordList"),
   searchTermObserver: function() {
     this.set("selectedIndex", -1);
@@ -82,7 +82,7 @@ export default Ember.Component.extend({
     clickWord: function(word) {
       this.set("showSearchList", false);
       if(word === null) {
-        word = this.get("wordList.results").objectAt(0);
+        word = this.get("wordList").objectAt(0);
       }
       // It could be there are no words... so don't do anything.
       if(word) {
