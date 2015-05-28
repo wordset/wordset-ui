@@ -1,15 +1,11 @@
 .home {
   h1 {
-
     @include media-min-width($medium) {
       padding: 20px 40px 0px;
     }
     @include media-max-width($medium) {
       padding: 20px 20px 0px;
     }
-  }
-  h2 {
-    // margin-top: 40px;
   }
   p {
     margin-bottom: 20px;
@@ -113,6 +109,7 @@
     padding: 10px;
     text-decoration: none;
     width: 90%;
+    word-wrap: break-word;
   }
 }
 
