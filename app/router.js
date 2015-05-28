@@ -31,6 +31,7 @@ export default Router.map(function() {
     this.route("new");
     this.route("random");
   });
+  this.resource("posts");
   this.resource("post", {path: "/post/:post_id"});
   this.resource("proposals", function() {
   });
