@@ -6,5 +6,7 @@ export default DS.Model.extend({
   proposals: DS.hasMany('proposals', {async: true}),
   name: DS.attr('string'),
   lang: DS.belongsTo('lang'),
+  //new attr
+  focus: DS.attr(),
 
 });

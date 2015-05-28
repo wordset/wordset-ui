@@ -9,6 +9,8 @@
       <br/>
 
       {{#validated-input value=model.wordName errors=errors.model.wordName}}
+     {{!--    attempt at adding attr --}}
+        {{bind-attr focus=focusout}}
         {{#if seqId}}
           – <a href="" {{action "seeExistingWord"}}>check it out.</a>
         {{/if}}
