@@ -53,6 +53,7 @@ export default Router.map(function() {
 
   this.route('legacy-word', {path: "/word/:seq"});
 
+  this.route("quizzes");
   this.route("quiz", {path: "/quiz/:id"});
 
   this.resource("seq", {path: "/:lang/:seq"}, function() {
