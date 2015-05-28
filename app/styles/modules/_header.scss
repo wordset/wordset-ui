@@ -56,6 +56,15 @@
       right: 28px;
       top: 8px;
     }
+    .loading {
+      border: 3px solid rgba(0, 0, 0, 0);
+      border-bottom-color: #DDD;
+      border-top-color: #DDD;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      animation: rotate 1.5s linear 0s infinite;
+    }
     @media screen and (max-width: $medium) {
       padding: 0px;
       span {
