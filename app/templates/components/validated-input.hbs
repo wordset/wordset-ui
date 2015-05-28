@@ -1,7 +1,10 @@
 {{#if showError}}
-  <div class="error">
-    {{errors}}
-    {{yield}}
-  </div>
+  {{#if wordIsGood}}
+  {{ else }}
+    <div class="error">
+      {{errors}}
+      {{yield}}
+    </div>
+  {{/if}}
 {{/if}}
 {{input value=value focus-out="showErrors" type=type insert-newline="sendAction"}}
