@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  needs: ['service:search'],
   lang: "en",
   search: Ember.inject.service(),
   searchTerm: "",
