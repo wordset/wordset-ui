@@ -1,12 +1,4 @@
 .home {
-  h1 {
-    @include media-min-width($medium) {
-      padding: 40px 40px 0px;
-    }
-    @include media-max-width($medium) {
-      padding: 20px 20px 0px;
-    }
-  }
   p {
     margin-bottom: 20px;
   }
