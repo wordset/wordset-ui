@@ -1,0 +1,25 @@
+.quizzes {
+  .quiz-box {
+    @include quiz-box;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+
+    @include media-min-width($medium) {
+      width: 45%;
+    }
+    .citation {
+      color: #AAA;
+      font-size: 14px;
+      font-style: italic;
+      margin: 3px 0px 5px 5px;
+      text-decoration: none;
+      a {
+         color: #AAA;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}

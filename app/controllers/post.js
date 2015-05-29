@@ -7,5 +7,5 @@ export default Ember.Controller.extend({
   }.property("model.text"),
   formattedDate: function() {
     return moment(this.get('model.publishedAt')).format("LL");
-  }.property("model.publishedAt")
+  }.property("model.publishedAt"),
 });

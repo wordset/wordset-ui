@@ -6,6 +6,8 @@
 @import "globals/mixins";
 @import "globals/base";
 
+@import "globals/two-column-layout";
+
 @import "modules/radio-buttons";
 
 @import "modules/menu";
@@ -28,6 +30,8 @@
 @import "modules/labels";
 @import "modules/label-selection";
 
+@import "components/latest-blog-posts";
+
 @import "pages/loading";
 
 @import "modules/word-list";
@@ -44,6 +48,7 @@
 @import "modules/proposal-sidebar";
 
 @import "pages/post";
+@import "pages/posts";
 
 @import "pages/definition";
 
@@ -54,6 +59,7 @@
 @import "pages/user";
 
 @import "pages/quiz";
+@import "pages/quizzes";
 
 @import "pages/faqs";
 @import "pages/guidelines";

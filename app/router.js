@@ -31,6 +31,7 @@ export default Router.map(function() {
     this.route("new");
     this.route("random");
   });
+  this.resource("posts");
   this.resource("post", {path: "/post/:post_id"});
   this.resource("proposals", function() {
   });
@@ -53,6 +54,7 @@ export default Router.map(function() {
 
   this.route('legacy-word', {path: "/word/:seq"});
 
+  this.route("quizzes");
   this.route("quiz", {path: "/quiz/:id"});
 
   this.resource("seq", {path: "/:lang/:seq"}, function() {

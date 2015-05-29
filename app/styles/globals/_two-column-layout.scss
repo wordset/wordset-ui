@@ -1,0 +1,40 @@
+.two-column-wrapper {
+  margin: auto;
+  max-width: 900px;
+  padding-top: 20px;
+  .wrapper-left, .wrapper-right {
+    display: inline-block;
+  }
+  .wrapper-left {
+    @include media-min-width($medium) {
+      width: 65%;
+      padding: 20px 40px;
+    }
+    @include media-max-width($medium) {
+      width: 90%;
+      padding: 20px 20px 0px;
+    }
+  }
+  .wrapper-right {
+    padding: 20px;
+    vertical-align: top;
+    @include media-min-width($medium) {
+      padding: 20px 0px;
+      width: 25%;
+    }
+    @include media-max-width($medium) {
+      width: 90%;
+      padding: 20px;
+    }
+    ul {
+      margin-top: 10px;
+    }
+    li {
+      line-height: 1.4em;
+      margin: 10px 0px;
+    }
+    button {
+      width: 100%;
+    }
+  }
+}

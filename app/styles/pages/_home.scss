@@ -1,7 +1,4 @@
 .home {
-  h2 {
-    margin-top: 40px;
-  }
   p {
     margin-bottom: 20px;
   }
@@ -16,7 +13,6 @@
       padding: 10px;
       margin-bottom: 0px;
     }
-
   }
 
   project-info {
@@ -43,6 +39,12 @@
     }
 
   }
+
+  ol {
+    @include media-max-width($medium) {
+      padding: 0px 20px;
+    }
+  }
 }
 
 .recent-activity {
@@ -50,10 +52,10 @@
   .activity {
     @include transition();
     margin-bottom: 2px;
-    &:nth-child(odd) {
+    &:nth-child(even) {
       background: #FDFDFD;
     }
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background: #F3F3F3;
     }
     &:hover {
@@ -104,6 +106,7 @@
     padding: 10px;
     text-decoration: none;
     width: 90%;
+    word-wrap: break-word;
   }
 }
 
@@ -114,7 +117,6 @@
     border-radius: 2px;
     color: $anchor-hover-color;
     display: inline-block;
-    margin: 10px;
     min-width: 100px;
     padding: 10px 15px;
     text-align: center;
@@ -122,10 +124,22 @@
     &:hover {
       background: #FAFAFA;
     }
+    &:not:first-child {
+      margin-left: 20px;
+    }
   }
   .ionicon {
     font-size: 35px;
     margin-bottom: 5px;
+  }
+  @include media-max-width($small) {
+    a {
+      width: 39%;
+    }
+    a:first-child {
+      margin-bottom: 10px;
+      width: 90%;
+    }
   }
 }
 

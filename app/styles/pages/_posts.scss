@@ -1,0 +1,17 @@
+.posts {
+  li {
+    margin-bottom: 20px;
+    a {
+      text-decoration: none;
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .byline {
+      > div {
+        display: inline-block;
+      }
+    }
+  }
+}

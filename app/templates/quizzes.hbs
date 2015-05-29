@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <h2>Quizzes</h2>
+
+  <div class="quizzes">
+    {{#each quiz in model}}
+      <div class="quiz-box">
+        {{#link-to "quiz" quiz.id}}
+        <div class="image">
+          <img src={{quiz.image_url}}>
+
+        </div>
+        {{#if quiz.image_citation}}
+          <div class="citation">
+            Image by: <a href="{{quiz.image_link}}">{{quiz.image_citation}}</a>
+          </div>
+        {{/if}}
+        <div class="text">
+          <h2>{{quiz.title}}</h2>
+        </div>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  </div>
+</div>
