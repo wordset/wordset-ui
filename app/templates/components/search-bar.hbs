@@ -1,12 +1,16 @@
 <div class="search">
   <div class='searchbar'>
     {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word"}}
-    <span class="ion-close-circled" {{action 'clear'}}></span>
+    {{#if loaded}}
+      <span class="ion-close-circled" {{action 'clear'}}></span>
+    {{else}}
+      <span class="loading" />
+    {{/if}}
   </div>
   {{#if showSearchList}}
     <div class="wordListWrapper">
       <ul class='wordList'>
-        {{#each word in wordList.results}}
+        {{#each word in wordList}}
           {{#search-result word=word selectedWord=selectedWord}}
             <div {{action "clickWord" word}} tabIndex=0>
               {{word}}

@@ -1,20 +1,30 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  lang: "en",
+  search: Ember.inject.service(),
   searchTerm: "",
   showSearchList: false,
   searchLoading: false,
   selectedIndex: -1,
+  loaded: false,
   wordList: null,
+  didInsertElement: function() {
+    // make sure we've loaded search
+    var _this = this;
+    this.get("search").load(this.get("lang")).then(function() {
+      _this.set("loaded", true);
+    });
+  },
   selectedWord: function() {
     if(this.get("selectedIndex") >= 0) {
-      return this.get("wordList.results").objectAt(this.get("selectedIndex"));
+      return this.get("wordList").objectAt(this.get("selectedIndex"));
     } else {
       return null;
     }
   }.property("selectedIndex"),
   wordCount: function() {
-    return this.get("wordList.results.length");
+    return this.get("wordList.length");
   }.property("wordList"),
   searchTermObserver: function() {
     this.set("selectedIndex", -1);
@@ -23,14 +33,11 @@ export default Ember.Component.extend({
       this.set("searchLoading", false);
       this.set("wordList", null);
     } else {
-      this.set("searchLoading", true);
       var _this = this;
-      this.get("targetObject.store").find('word_list', this.get('searchTerm'))
-        .then(function(wordList) {
-          _this.set("showSearchList", true);
-          _this.set("searchLoading", false);
-          _this.set("wordList", wordList);
-        });
+      this.get("search").perform(this.get("lang"), this.get('searchTerm')).then(function(list) {
+        _this.set("wordList", list);
+        _this.set("showSearchList", true);
+      });
     }
   }.observes('searchTerm'),
   keyDown: function(event) {
@@ -74,7 +81,7 @@ export default Ember.Component.extend({
     clickWord: function(word) {
       this.set("showSearchList", false);
       if(word === null) {
-        word = this.get("wordList.results").objectAt(0);
+        word = this.get("wordList").objectAt(0);
       }
       // It could be there are no words... so don't do anything.
       if(word) {

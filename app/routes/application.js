@@ -10,7 +10,6 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   willTransitionAt: null,
   activate: function() {
     this.store.find('lang');
-    return this.store.find('word_list');
   },
   setupController: function(controller, model) {
     this._super(controller, model);
