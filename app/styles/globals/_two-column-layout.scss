@@ -1,6 +1,7 @@
 .two-column-wrapper {
   margin: auto;
   max-width: 900px;
+  padding-top: 20px;
   .wrapper-left, .wrapper-right {
     display: inline-block;
   }
@@ -31,6 +32,9 @@
     li {
       line-height: 1.4em;
       margin: 10px 0px;
+    }
+    button {
+      width: 100%;
     }
   }
 }
