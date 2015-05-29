@@ -13,7 +13,6 @@
       padding: 10px;
       margin-bottom: 0px;
     }
-
   }
 
   project-info {
@@ -39,6 +38,12 @@
       }
     }
 
+  }
+
+  ol {
+    @include media-max-width($medium) {
+      padding: 0px 20px;
+    }
   }
 }
 
