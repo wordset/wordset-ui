@@ -56,17 +56,21 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     randomProposal: function(proposal_id) {
       var _this = this;
       this.intermediateTransitionTo('loading');
-      Proposal.random(proposal_id).then(function(data) {
-        if(data.proposal !== undefined) {
-          _this.store.pushPayload("proposal", data);
-          _this.transitionTo('proposal.index', data.proposal.id);
-        } else {
-          _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
-          _this.transitionTo('proposals');
-        }
-      }, function() {
-        //_this.send("randomProposal")
-      });
+      if(this.get("controller.currentUser")) {
+        Proposal.random(proposal_id).then(function(data) {
+          if(data.proposal !== undefined) {
+            _this.store.pushPayload("proposal", data);
+            _this.transitionTo('proposal.index', data.proposal.id);
+          } else {
+            _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
+            _this.transitionTo('proposals');
+          }
+        }, function() {
+          //_this.send("randomProposal")
+        });
+      } else {
+        _this.transitionTo('users.new')
+      }
     },
     log: function(category, name) {
       if(ENV.environment === "production") {
