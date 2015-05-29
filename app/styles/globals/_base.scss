@@ -39,6 +39,12 @@ a {
   &:hover {
     color: $anchor-hover-color;
   }
+  &.button {
+    @include button($button-background-positive,
+                    $button-border-positive,
+                    $button-hover-background-positive,
+                    $button-text-shadow-positive);
+  }
 }
 
 input {
