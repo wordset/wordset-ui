@@ -7,7 +7,9 @@
   max-width: 500px;
   padding: 30px 40px;
   @media screen and (max-width: $small) {
-    padding: 30px 20px;
+    border: none;
+    margin: 5px auto;
+    padding: 10px 20px;
   }
   h3 {
     font-size: 20px;
