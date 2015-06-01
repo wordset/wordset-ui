@@ -14,10 +14,11 @@
         <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
     </div>
 
-
-    <h2>Current Community Project</h2>
-    <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
-    {{project-info project=activeProject}}
+    {{#if activeProject}}
+      <h2>Current Community Project</h2>
+      <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're getting rid of parentheses. Help us out!</p>
+      {{project-info project=activeProject}}
+    {{/if}}
 
     <h2>About Us</h2>
 
@@ -75,8 +76,9 @@
   </div>
 
   <div class="wrapper-right">
-
-    {{latest-blog-posts}}
+    {{#if postsSimple}}
+      {{latest-blog-posts posts=postsSimple}}
+    {{/if}}
 
     <button {{action "randomProposal"}} class="randomOpenProposal">Vote on a Proposal</button>
 

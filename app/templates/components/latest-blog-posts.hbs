@@ -2,12 +2,9 @@
   <h2>Latest Blog Posts</h2>
 
   <ul>
-    <li>{{#link-to "post" "new-feature-achievement-badges"}} New Feature: Achievement Badges! {{/link-to}}</li>
-    <li>{{#link-to "post" "congratulations-cant-even"}} Congratulations "Can't Even" {{/link-to}}</li>
-    <li>{{#link-to "post" "varieties-and-labels"}} Varieties of English and Labels {{/link-to}}</li>
-    <!-- {{#each post in blogPosts}}
-      <li>{{#link-to post post}}{{post.title}}{{/link-to}}</li>
-    {{/each}} -->
+    {{#each post in posts}}
+      <li>{{#link-to "post" post.id}} {{post.title}} {{/link-to}}</li>
+    {{/each}}
   </ul>
 
 </div>
