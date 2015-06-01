@@ -38,9 +38,7 @@
       </div>
     </div>
   </header>
-  {{#if session.isAuthenticated}}
-
-  {{else}}
+  {{#if shouldShowBanner}}
     <div class="banner">
       This is a collaborative project.
       {{#link-to "users.new"}}Register{{/link-to}} or {{#link-to "users.login"}}sign in{{/link-to}} to take part!

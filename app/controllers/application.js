@@ -38,6 +38,10 @@ export default Ember.Controller.extend(AppPusherMixin, {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
     }
   },
+  shouldShowBanner: function() {
+    return (Ember.isEmpty(this.get("username")) &&
+            !window.location.pathname.startsWith("/users"));
+  }.property("username", "currentPath"),
   actions: {
     toggleMenu: function() {
       this.send("log", "nav", "menu_click");
