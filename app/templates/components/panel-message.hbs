@@ -14,7 +14,7 @@
 
 {{else}}
   <li {{bind-attr class=":message message.isSelf"}}>
-    <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+    {{#link-to "user.index" message.user.id}}<img {{bind-attr src="message.user.imageUrl"}} class="icon" />{{/link-to}}
     <div class="info">
       {{#if message.isSelf}}
         <div class='text'>
@@ -23,7 +23,7 @@
         </div>
       {{else}}
         <div class='username'>
-          {{message.user.id}}
+          {{#link-to "user.index" message.user.id}}{{message.user.id}}{{/link-to}}
         </div>
         <div class="text">
           {{message.text}}
