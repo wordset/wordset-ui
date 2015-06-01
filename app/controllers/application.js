@@ -40,7 +40,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
   },
   shouldShowBanner: function() {
     return (Ember.isEmpty(this.get("username")) &&
-            !window.location.pathname.startsWith("/users"));
+            !(window.location.pathname.indexOf("/users") === 0));
   }.property("username", "currentPath"),
   actions: {
     toggleMenu: function() {
