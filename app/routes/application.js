@@ -8,13 +8,10 @@ import Proposal from '../models/proposal';
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
   willTransitionAt: null,
-  activate: function() {
-    this.store.find('lang');
-  },
   setupController: function(controller, model) {
     this._super(controller, model);
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
-    controller.set("activeProject", this.store.find("project", "current"));
+    controller.set("currentLang", this.store.find("lang", "en"));
   },
 
   // This saves the previous transition for going back
