@@ -2,10 +2,10 @@
   <div {{bind-attr class="proposal.state :item"}}>
     <div class="sentence">
       <span class="user">
-        {{#if proposal.wordnet}}
-          Wordnet
-        {{else}}
+        {{#if proposal.user.id}}
           {{proposal.user.id}}
+        {{else}}
+          Wordnet automatically
         {{/if}}
       </span>
       proposed a
