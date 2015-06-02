@@ -58,9 +58,17 @@ $modal-height: 640px;
 
   badge {
     display: inline-block;
-    margin: 250px auto;
+    margin: 228px auto;
     text-align: center;
     width: 606px;
+    .badge {
+      background: #FFF;
+      border-left: 2px solid #0D3B47;
+      border-right: 2px solid #0D3B47;
+      border-bottom: 2px solid #0D3B47;
+      border-radius: 0px 0px 5px 5px;
+      padding: 20px;
+    }
   }
   .ion-close {
     background: #0D3B47;
@@ -69,7 +77,7 @@ $modal-height: 640px;
     font-size: 15px;
     padding: 2px 5px;
     position: absolute;
-      top: 104px;
-      right: 143px
+      top: 133px;
+      right: 103px
   }
 }
