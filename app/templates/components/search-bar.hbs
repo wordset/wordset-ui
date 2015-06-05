@@ -11,7 +11,7 @@
     <div class="wordListWrapper">
       <ul class='wordList'>
         {{#each word in wordList}}
-          {{#search-result word=word selectedWord=selectedWord name="word"}}
+          {{#search-result word=word selectedWord=selectedWord name="search-result-word"}}
             <div {{action "clickWord" word}} tabIndex=0>
               {{word}}
             </div>
