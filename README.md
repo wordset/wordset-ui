@@ -4,7 +4,7 @@ Wordset UI is the Ember front-end layer for [Wordset](https://www.wordset.org). 
 
 [![Travis CI](https://travis-ci.org/wordset/wordset-ui.png?branch=master)](https://travis-ci.org/wordset/wordset-ui)
 
-To get it working locally, you will also need to clone and set up the Rails back-end, [Wordset API](http://github.com/wordset/wordset-api).
+To get it working locally, you will need to setup the development environment to point to the API.
 
 ## Prerequisites
 
