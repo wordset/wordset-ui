@@ -42,6 +42,14 @@ article.post {
     margin: 0px auto 20px;
     max-width: 100%;
   }
+
+  blockquote {
+    font-family: $serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
   // Responsive Video technique from :https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
   .video-wrap {
     margin-bottom: 20px;
