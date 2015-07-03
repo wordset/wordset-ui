@@ -59,7 +59,7 @@
     width: 100%;
   }
 
-  .result-name, .result-description {
+  .result-name {
     text-align: center;
   }
 
@@ -69,7 +69,8 @@
 
   }
   .result-description {
-    padding: 0px 10px 20px
+    padding: 0px 10px 20px;
+    text-align: left;
   }
   .social {
     margin-bottom: 20px;
