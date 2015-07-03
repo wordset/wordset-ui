@@ -80,7 +80,7 @@
 }
 
 .editDefinition .error {
-  @include media-min-width($large) {
+  @include media-min-width($header-medium) {
     top: 38px;
   }
 }
