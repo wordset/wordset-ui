@@ -1,4 +1,4 @@
-<label class="{{type}} {{if lookDisabled "look-disabled"}}">
+<label class="checkbox {{type}} {{if lookDisabled "look-disabled"}} {{if isChecked "checked"}} {{if label.isDialect "dialect"}}">
   {{input type="checkbox" checked=isChecked}}
   <span>{{label.name}}</span>
 </label>
