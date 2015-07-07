@@ -6,7 +6,7 @@ export default Ember.Service.extend({
 
   load: function(lang) {
     var _this = this;
-    return new Ember.Promise(function(resolve, reject) {
+    return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.getJSON(ENV.api + `/seqs/${lang}.list`).then(function(data) {
         console.log("Loaded " + lang);
         _this.langs[lang] = data.list;
@@ -18,7 +18,7 @@ export default Ember.Service.extend({
 
   perform: function(lang, term) {
     var _this = this;
-    return new Ember.Promise(function(resolve) {
+    return new Ember.RSVP.Promise(function(resolve) {
       var wordList = _this.get("langs." + lang);
       var results = [];
       var searchTerm = ", " + term;
