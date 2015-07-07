@@ -1,17 +1,19 @@
 
 {{#if message.isLink}}
-  <li class="message link" {{action "goToLink"}}>
-    <div class="link-image">
-      <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
-      <span class="ion-forward"></span>
-    </div>
-    <div class="info">
-      <div class="text">
-        {{message.user.id}} shared a link {{messagedAt}}
+  {{#link-to 'redirector' (query-params url=message.url)}}
+    <li class="message link">
+      <div class="link-image">
+        <img {{bind-attr src="message.user.imageUrl"}} class="icon" />
+        <span class="ion-forward"></span>
       </div>
-    </div>
-  </li>
 
+      <div class="info">
+        <div class="text">
+          {{message.user.id}} shared a link {{messagedAt}}
+        </div>
+      </div>
+    </li>
+  {{/link-to}}
 {{else}}
   <li {{bind-attr class=":message message.isSelf"}}>
     {{#link-to "user.index" message.user.id}}<img {{bind-attr src="message.user.imageUrl"}} class="icon" />{{/link-to}}
@@ -29,7 +31,6 @@
           {{message.text}}
         </div>
         <div class="time">{{messagedAt}}</div>
-
       {{/if}}
     </div>
   </li>
