@@ -27,6 +27,7 @@
     "ember-cli-content-security-policy": "0.4.0",
     "ember-cli-dependency-checker": "^1.0.0",
     "ember-cli-divshot": "^0.1.7",
+    "ember-cli-fastboot": "tildeio/ember-cli-fastboot",
     "ember-cli-gravatar": "^2.4.0",
     "ember-cli-htmlbars": "^0.7.6",
     "ember-cli-ic-ajax": "0.1.1",
@@ -36,9 +37,9 @@
     "ember-cli-showdown": "2.1.0",
     "ember-cli-simple-auth": "^0.7.3",
     "ember-cli-uglify": "^1.0.1",
-    "ember-disable-proxy-controllers": "^1.0.0",
     "ember-cli-visible": "1.0.1",
-    "ember-data": "^1.0.0-beta.18",
+    "ember-data": "1.13.4",
+    "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-radio-button": "1.0.5",
     "ember-resize-mixin": "0.1.0",
@@ -46,6 +47,6 @@
     "express": "^4.12.2",
     "glob": "^5.0.1",
     "jsdiff": "^1.1.1",
-    "liquid-fire": "0.19.3"
+    "liquid-fire": "0.20.4"
   }
 }

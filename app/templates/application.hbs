@@ -50,7 +50,7 @@
       {{render "panel"}}
     </aside>
     <section {{bind-attr class=":content showPanel"}}>
-      {{liquid-outlet}}
+      {{outlet}}
       <footer>
         <div class="footer-links">
           {{#link-to "info.faqs"}}FAQs{{/link-to}}
