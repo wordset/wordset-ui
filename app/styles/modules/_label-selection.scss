@@ -9,11 +9,16 @@
     vertical-align: top;
     width: 47%;
     label {
-      display: block;
+      border: 1px solid #EEE;
+      color: #666;
+      border-radius: 2px;
+      display: inline-block;
       font-size: 18px;
-      margin: 0px 0px 10px;
+      line-height: 1em;
+      margin: 0px 0px 5px;
+      padding: 5px 10px 5px 5px;
       &.child {
-        margin-left: 20px;
+        margin-left: 40px;
       }
     }
     input {
@@ -27,5 +32,15 @@
     input {
       color: grey;
     }
+  }
+  .dialects label.checked {
+    background: lighten(#336699, 57%);
+    border: 1px solid #336699;
+    color: #336699;
+  }
+  .non-dialects label.checked {
+    background: lighten(#7B6D8D, 48%);
+    border: 1px solid #7B6D8D;
+    color: #7B6D8D;
   }
 }

@@ -69,17 +69,19 @@
       padding: 0px;
       span {
         right: 5px;
+      
       }
     }
     @media screen and (max-width: $header-medium) {
       span {
-        top: -4px;
+        top: 64px;
+   
       }
     }
   }
   .search, .searchbar {
     @media screen and (max-width: $header-medium) {
-      display: inline;
+        
     }
   }
   .togglers {
@@ -169,3 +171,4 @@
     padding: 10px;
   }
 }
+

@@ -11,6 +11,7 @@
     max-width: 300px;
   }
   label {
+    display: block;
     font-size: 14px;
     margin-top: 5px;
     position: relative;
@@ -39,7 +40,9 @@
     }
     @include media-max-width($header-medium) {
       display: inline-block;
+      margin-top: 0px;
       margin-bottom: 5px;
+      position: inherit;
     }
     @include media-min-width($header-medium) {
       line-height: 1.2em;
@@ -48,7 +51,7 @@
       padding: 5px 5px;
       position: absolute;
         right: 100%;
-        top: 10px;
+        top: 30px;
     }
     .project-proposal & {
       @include media-max-width($large) {
@@ -64,9 +67,21 @@
         padding: 5px 5px;
         position: absolute;
           right: 100%;
-          top: 10px;
+          top: 30px;
       }
     }
+  }
+}
+
+.project-proposal .editDefinition .error {
+  @include media-min-width($large) {
+    top: 24px;
+  }
+}
+
+.editDefinition .error {
+  @include media-min-width($header-medium) {
+    top: 38px;
   }
 }
 
