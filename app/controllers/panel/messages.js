@@ -17,6 +17,7 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   sortAscending: true,
   showSettings: false,
   onlineUsers: function() {
+    Ember.run.later(() => this.hup.to(), 1000);
     return this.store.metadataFor("message").online || [];
   }.property("model.@each"),
   validations: {

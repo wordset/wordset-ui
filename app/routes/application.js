@@ -10,8 +10,8 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   willTransitionAt: null,
   setupController: function(controller, model) {
     this._super(controller, model);
-    this.controllerFor("panel.messages").set("model", this.store.find('message'));
     controller.set("currentLang", this.store.find("lang", "en"));
+    this.controllerFor("panel.messages").set("model", this.store.find('message'));
   },
 
   // This saves the previous transition for going back
