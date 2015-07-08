@@ -18,6 +18,7 @@ export default Ember.Component.extend(ResizeMixin, {
   scrollToBottom: function() {
     Ember.run.next(this, function() {
       this.get("element").scrollTop = this.get("element").scrollHeight;
+      this.onResize();
     });
   }.observes("controller.model.@each")
 });
