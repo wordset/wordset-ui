@@ -1,8 +1,8 @@
 <div class="search">
-  <div class='searchbar wrap left'>
+  <div class='searchbar'>
     {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word" name="search-input"}}
     {{#if loaded}}
-      <span class="ion-close-circled right" {{action 'clear'}}></span>
+      <span class="ion-close-circled" {{action 'clear'}}></span>
     {{else}}
       <span class="loading right"></span>
     {{/if}}
