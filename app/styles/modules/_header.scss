@@ -37,10 +37,6 @@
     }
   }
 
-
-//new fix yay
- 
-
   @media screen and(max-width: $header-medium){
     .search, .searchbar, input[name="search-input"] {
       display:block;
@@ -58,29 +54,23 @@
         margin: auto;
     }
 
-    .togglers{
-      margin-top: -94px !important;
-    }
-    
-    .wrap {
-    position:relative;
-    
 
-   
-}
+    .wrap {
+      position:relative;
+
+    }
 
     .left {
       float:left;
     }
 
     .right{
-    float:right;
+      float:right;
     }
 
     .search {
       width:360px;
-      position:relative; top:2px; 
-     
+      position:relative; top:2px;
     }
 
 
@@ -96,8 +86,7 @@
       margin-top: 0px;
       padding: 10px;
       width: 100%;
-      
-   
+
     }
     span {
       color: #DDD;
@@ -117,7 +106,6 @@
       animation: rotate 1.5s linear 0s infinite;
     }
     @media screen and (max-width: $medium) {
-    
        span {
        right: 25px;
 
@@ -146,37 +134,29 @@
 // $small: 550px;
 
     @media screen and (max-width: $medium){
-      margin-top: -37px;
-      margin-left: 15px;
-    }
-    @media screen and (max-width: $med-small) {
-      margin-top: -80px;
-    }
-    @media screen and (max-width: $medium) {
-      // margin-top: 0px;
+      margin-top: -40px;
 
     }
+    @media screen and (max-width: $med-small) {
+      margin-top: -100px;
+
+    }
+
     @media screen and (max-width: $header-medium) {
-      // margin-top: -94px;
-      //  margin-left: 15px;
-      // margin-top: -94px;
+      margin-top: -100px;
+
     }
     .toggler-chat, .toggler-menu {
       display: inline-block;
       font-weight: 600;
       margin-top: -8px;
-      vertical-align: top;
+
     }
     @media screen and (min-width: $header-medium) {
       .toggler-chat, .toggler-menu {
         display: inline-block;
       }
-      .toggler-menu {
-        // margin-top: -8px;
-      }
-      .toggler-chat {
-        // margin-top: -5px;
-      }
+
     }
 
     a .icon-text {
@@ -238,3 +218,11 @@
   }
 }
 
+.ion-android-apps{
+  margin-top: 0px;
+
+}
+.android-chat{
+  margin-top: 0px;
+
+}
