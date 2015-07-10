@@ -5,7 +5,7 @@
   height: 47px;
   padding: 30px;
   @media screen and (max-width: $header-medium) {
-    height: 97px;
+    height: 105px;
   }
   a, a:visited, a:active {
     color: $header-color;
@@ -36,6 +36,55 @@
       width: 165px;
     }
   }
+
+
+//new fix yay
+ 
+
+  @media screen and(max-width: $header-medium){
+    .search, .searchbar, input[name="search-input"] {
+      display:block;
+      float: left;
+      min-width:100%;
+
+    }      
+
+    .search{
+      padding: 0;
+      margin-top: 5px;
+    }
+
+    input[name="search-input"]{
+        margin: auto;
+    }
+
+    .togglers{
+      margin-top: -94px !important;
+    }
+    
+    .wrap {
+    position:relative;
+    
+
+   
+}
+
+    .left {
+      float:left;
+    }
+
+    .right{
+    float:right;
+    }
+
+    .search {
+      width:360px;
+      position:relative; top:2px; 
+     
+    }
+
+
+  }
   .search {
     position: relative;
     z-index: 4;
@@ -47,6 +96,8 @@
       margin-top: 0px;
       padding: 10px;
       width: 100%;
+      
+   
     }
     span {
       color: #DDD;
@@ -66,15 +117,15 @@
       animation: rotate 1.5s linear 0s infinite;
     }
     @media screen and (max-width: $medium) {
-      padding: 0px;
-      span {
-        right: 5px;
+    
+       span {
+       right: 25px;
 
-      }
+       }
     }
     @media screen and (max-width: $header-medium) {
       span {
-        top: -4px;
+        right: 10px;
       }
     }
   }
@@ -85,14 +136,30 @@
   }
   .togglers {
     float: right;
-    @media screen and (min-width: $med-small) {
-      margin-top: -40px;
+    margin-top: -47px;
+
+
+//     $large: 1200px;
+// $medium: 940px;
+// $header-medium: 780px;
+// $med-small: 670px;
+// $small: 550px;
+
+    @media screen and (max-width: $medium){
+      margin-top: -37px;
+      margin-left: 15px;
     }
-    @media screen and (min-width: $medium) {
-      margin-top: -47px;
+    @media screen and (max-width: $med-small) {
+      margin-top: -80px;
+    }
+    @media screen and (max-width: $medium) {
+      // margin-top: 0px;
+
     }
     @media screen and (max-width: $header-medium) {
-      margin-top: -94px;
+      // margin-top: -94px;
+      //  margin-left: 15px;
+      // margin-top: -94px;
     }
     .toggler-chat, .toggler-menu {
       display: inline-block;
@@ -105,10 +172,10 @@
         display: inline-block;
       }
       .toggler-menu {
-        margin-top: -8px;
+        // margin-top: -8px;
       }
       .toggler-chat {
-        margin-top: -5px;
+        // margin-top: -5px;
       }
     }
 
@@ -170,3 +237,4 @@
     padding: 10px;
   }
 }
+
