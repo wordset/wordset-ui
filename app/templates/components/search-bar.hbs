@@ -1,10 +1,10 @@
 <div class="search">
   <div class='searchbar'>
-    {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word" name="search-input"}}
+    {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word"}}
     {{#if loaded}}
       <span class="ion-close-circled" {{action 'clear'}}></span>
     {{else}}
-      <span class="loading right"></span>
+      <span class="loading"></span>
     {{/if}}
   </div>
   {{#if showSearchList}}

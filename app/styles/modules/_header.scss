@@ -38,12 +38,12 @@
   }
 
   @media screen and(max-width: $header-medium){
-    .search, .searchbar, input[name="search-input"] {
-      display:block;
+    .search, .searchbar, input {
+      display: block;
       float: left;
       min-width:100%;
 
-    }      
+    }
 
     .search{
       padding: 0;
