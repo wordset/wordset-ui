@@ -1,5 +1,8 @@
 .panel .messages-content {
   padding: 10px;
+  a {
+    text-decoration: none;
+  }
 }
 
 .message {
@@ -22,7 +25,6 @@
   .username a {
     color: $taupe;
     font-size: 16px;
-    text-decoration: none;
   }
   p {
     margin-bottom: 0px;
