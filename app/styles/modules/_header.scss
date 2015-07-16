@@ -3,7 +3,7 @@
   border-bottom: 2px solid #DDD;
   color: $header-color;
   height: 47px;
-  padding: 30px;
+  padding: 20px;
   @media screen and (max-width: $header-medium) {
     height: 105px;
   }
@@ -100,7 +100,7 @@
   }
   .togglers {
     float: right;
-    margin-top: -47px;
+    margin-top: -53px;
 
     @media screen and (max-width: $medium){
       margin-top: -40px;
