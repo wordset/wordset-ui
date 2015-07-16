@@ -3,6 +3,10 @@
     margin-bottom: 20px;
   }
 
+  ul {
+    list-style-type: circle;
+    padding: 0px 20px;
+  }
   .news {
     @include quiz-box(#F9F9F9, #666, #DDD);
     padding: 0px;
@@ -153,9 +157,4 @@
       margin-right: 10px;
     }
   }
-}
-
-ul{
-  list-style-type: circle;
-  padding: 0px 20px;
 }
