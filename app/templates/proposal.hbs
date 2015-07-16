@@ -9,14 +9,14 @@
       {{else}}
         {{#if model.user}}
           {{#link-to "user" model.user}}
-            <img {{bind-attr src="model.user.imageUrl"}} class="avatar" />
+            <img {{bind-attr src="model.user.imageUrl"}} class="avatar" alt="" />
           {{/link-to}}
           {{#link-to "user" model.user}}
             {{model.user.id}}
           {{/link-to}}
           proposed a {{model.typeName}}.
         {{else}}
-          <img src="assets/images/square-logo.png" class="avatar" />
+          <img src="assets/images/square-logo.png" class="avatar" alt="" />
           <div class="detail-text">Wordset inherited this {{model.typeName}} from Wordnet.</div>
         {{/if}}
       {{/if}}
