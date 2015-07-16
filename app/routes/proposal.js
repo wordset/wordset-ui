@@ -7,4 +7,8 @@ export default Ember.Route.extend({
     this.send("log", "proposal", "viewed");
     Ember.$(document).attr('title', word + ' – proposal from Wordset');
   },
+  setupController: function(controller, model) {
+    this._super(controller, model);
+    controller.set("isEditing", false);
+  }
 });
