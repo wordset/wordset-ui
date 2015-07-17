@@ -128,7 +128,7 @@ p {
 }
 
 a {
-  @include transition();
+  transition: all .5s;
   color: $anchor-color;
   cursor: pointer;
   text-decoration: underline;
@@ -147,7 +147,7 @@ input {
 }
 
 button {
-  @include transition();
+  transition: all .5s;
   background: $button-background-positive;
   border: 0;
   border-radius: 2px;

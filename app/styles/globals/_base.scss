@@ -47,7 +47,7 @@ em {
 }
 
 a {
-  @include transition();
+  transition: all .5s;
   color: $anchor-color;
   cursor: pointer;
   text-decoration: underline;
