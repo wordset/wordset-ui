@@ -4,7 +4,7 @@
   <ol class="users">
   {{#each user in controller}}
     <li>
-      <img {{bind-attr src="user.imageUrl"}} class="avatar" />
+      <img {{bind-attr src="user.imageUrl"}} class="avatar" alt="" />
       <div class="info">
         {{#link-to "user" user.id}} {{user.id}} {{/link-to}}
         <div class="points">Points: {{user.points}}</div>
