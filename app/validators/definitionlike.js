@@ -13,7 +13,7 @@ export default Base.extend({
       this.errors.pushObject("Start your definition with a lowercase letter.");
     } else if (endingPunctuation.contains(prop[prop.length - 1])) {
       if (prop.substr(prop.length - 4) == "etc.") {
-        console.log("wheee")
+        // etc. is fine at the end of a definition
       }
       else {
         this.errors.pushObject("Don't finish your definition with punctuation.");
