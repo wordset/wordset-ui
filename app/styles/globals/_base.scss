@@ -119,9 +119,6 @@ button {
   @media screen and (max-width: $large) {
     max-width: 500px;
   }
-  // @media screen and (max-width: $small) {
-  //   width: 100%;
-  // }
 }
 
 .search {
@@ -149,21 +146,39 @@ button {
 }
 
 .animated {
-  -webkit-transition: height 0.2s;
-  -moz-transition: height 0.2s;
   transition: height 0.2s;
 }
 
-html, body, body > div, .main-content, .content, .messages {
-  height: 100%;
-}
-
 .mainArea {
-  overflow: hidden;
+
 }
 
-.content, .message-list {
-  overflow: auto;
+.message-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-bottom: 4px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }
 
 

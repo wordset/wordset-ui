@@ -1,8 +1,20 @@
 .panel {
-  @include transition();
+  transition: all .4s .2s ease-in-out;
   border: 2px solid $header-background;
   position: relative;
   vertical-align: top;
+  overflow: hidden;
+  background: white;
+
+  @media (min-width: $small) {
+    position: fixed;
+    top: 82px;
+    right: 0;
+    bottom: 0;
+  }
+}
+.content {
+  transition: padding-right .4s ease-in-out;
 }
 
 .online-users, .message-settings {
@@ -25,7 +37,7 @@
 }
 
 .online-users {
-  right: 0px;
+  right: 0;
   .toggle-users {
     float: right;
     padding: 5px;
@@ -33,7 +45,7 @@
 }
 
 .message-settings {
-  left: 0px;
+  left: 0;
   .toggle-settings {
     float: left;
     clear: left;
@@ -41,23 +53,22 @@
   }
 }
 
-// Content and messages
-@media screen and (min-width: $small) {
-  .content.showPanel {
-    display: inline-block;
-  }
-  .panel {
-    display: inline-block;
-    float: right;
-    width: $chat-width;
-    &.closed {
-      margin-right: -$chat-width;
-    }
-  }
+.content.show-panel {
+  display: none;
 }
 
-@media screen and (max-width: $small) {
-  .panel.closed {
-    display: none;
+// Content and messages
+@media (min-width: $small) {
+  .content.show-panel {
+    display: block;
+    padding-right: $chat-width + 20px;
+  }
+  .panel {
+    width: $chat-width;
+    transform: translateX(0);
+
+    &.closed {
+      transform: translateX(100%);
+    }
   }
 }

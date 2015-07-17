@@ -1,154 +1,150 @@
 .header {
   background: $header-background;
   border-bottom: 2px solid #DDD;
+  box-sizing: border-box;
   color: $header-color;
-  height: 47px;
-  padding: 20px;
-  @media screen and (max-width: $header-medium) {
-    height: 105px;
+  height: 125px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+
+  @media (min-width: $header-medium) {
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  a, a:visited, a:active {
+
+  a,
+  a:visited,
+  a:active {
     color: $header-color;
     text-decoration: none;
   }
   .logo {
+    $full-logo-ratio: 810 / 150;
+    $logo-single-ratio: 188 / 150;
     float: left;
-    @media screen and (min-width: 1000px) {
-      background: url("/assets/images/full-logo.png");
-      background-size: 195px 36px;
+    background: no-repeat 0 0 url("/assets/images/full-logo.png");
+    background-size: 100% 100%;
+    height: 30px;
+    width: ceil(30px * $full-logo-ratio);
+    margin-top: 4px;
+    margin-bottom: 10px;
+
+    @media (min-width: $header-medium) {
+      background-image: url("/assets/images/logo-single.png");
       height: 36px;
-      margin-top: 4px;
-      width: 195px;
-    }
-    @media screen and (max-width: 1000px) {
-      background: url("/assets/images/logo-single.png");
-      background-size: 52px 36px;
-      height: 36px;
-      margin-top: 4px;
-      width: 52px;
-    }
-    @media screen and (max-width: $header-medium) {
-      background: url("/assets/images/full-logo.png");
-      background-size: 165px 30px;
-      height: 30px;
-      margin-top: 4px;
+      width: ceil(36px * $logo-single-ratio);
       margin-bottom: 20px;
-      width: 165px;
+      margin-top: 10px;
+    }
+    @media (min-width: 1000px) {
+      background-image: url("/assets/images/full-logo.png");
+      height: 36px;
+      width: ceil(36px * $full-logo-ratio);
     }
   }
 
-  @media screen and(max-width: $header-medium){
-    .search, .searchbar, input {
+  @media (max-width: $header-medium) {
+    .search,
+    .searchbar,
+    input {
       display: block;
       float: left;
       min-width:100%;
-
     }
-
-    .search{
-      padding: 0;
-      margin-top: 5px;
-    }
-
   }
   .search {
     position: relative;
+    padding: 0;
     z-index: 4;
+    margin-top: 5px;
+
+    @media (min-width: $header-medium) {
+      margin-top: 0;
+    }
+
     input {
+      box-sizing: border-box;
       border: 1px solid #DDD;
       border-radius: 2px;
       box-shadow: 0px 0px 2px #DDD;
       font-size: 20px;
-      margin-top: 0px;
-      padding: 10px;
+      padding: 10px 40px 10px 14px;
       width: 100%;
-
     }
     span {
       color: #DDD;
       cursor: pointer;
-      font-size: 30px;
+      font-size: 28px;
       position: absolute;
-      right: 28px;
-      top: 8px;
+      right: 12px;
+      top: 16px;
+    }
+    .cancel-search {
+      transition: color .1s ease-in;
+
+      &:hover {
+        color: darken(#DDD, 15%);
+        outline: none;
+      }
     }
     .loading {
       border: 3px solid rgba(0, 0, 0, 0);
       border-bottom-color: #DDD;
       border-top-color: #DDD;
-      width: 25px;
-      height: 25px;
+      width: 22px;
+      height: 22px;
       border-radius: 100%;
       animation: rotate 1.5s linear 0s infinite;
     }
-    @media screen and (max-width: $medium) {
-       span {
-       right: 25px;
-
-       }
-    }
-    @media screen and (max-width: $header-medium) {
-      span {
-        right: 10px;
-      }
-    }
-  }
-  .search, .searchbar {
-    @media screen and (max-width: $header-medium) {
-        display: inline;
-    }
   }
   .togglers {
-    float: right;
-    margin-top: -53px;
+    display: table;
+    position: absolute;
+      top: 6px;
+      right: 0;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 12px;
+    width: 150px;
 
-    @media screen and (max-width: $medium){
-      margin-top: -40px;
-
+    @media (min-width: $small) {
+      top: 10px;
     }
-    @media screen and (max-width: $med-small) {
-      margin-top: -100px;
 
+    .toggler-chat,
+    .toggler-menu {
+      display: table-cell;
+      min-width: 50%;
+      max-width: 50%;
     }
-
-    @media screen and (max-width: $header-medium) {
-      margin-top: -100px;
-
-    }
-    .toggler-chat, .toggler-menu {
+    .icon-text {
       display: inline-block;
-      font-weight: 600;
-      margin-top: -8px;
-
-    }
-    @media screen and (min-width: $header-medium) {
-      .toggler-chat, .toggler-menu {
-        display: inline-block;
-      }
-
-    }
-
-    a .icon-text {
-      font-size: 12px;
-      margin-top: -4px;
-      text-align: center;
-      @media screen and (max-width: $header-medium) {
-        margin-left: -4px;
-      }
-    }
-    .toggler-menu a .icon-text {
-      @media screen and (max-width: $header-medium) {
-        margin-left: -7px;
-      }
+      width: 100%;
     }
   }
+  .nav-toggler,
   .panel-toggler {
     color: $header-color;
-    display: inline-block;
+  }
+  .toggler-icon {
+    line-height: 1px;
     font-size: 34px;
-    margin-right: 40px;
+
+    @media (min-width: $medium) {
+      font-size: 40px;
+    }
+  }
+
+  .panel-toggler {
     .has-chat-alert {
       position: relative;
+
       &:after {
         background: $header-color-selected;
         border-radius: 50%;
@@ -165,28 +161,8 @@
     .show-panel {
       color: $header-color-selected;
     }
-    @media screen and (min-width: $medium) {
-      font-size: 52px;
-    }
-    @media screen and (max-width: $header-medium) {
-      margin-right: 30px;
-    }
   }
-  .nav-toggler  {
+  .nav-toggler {
     color: $header-color;
-    font-size: 35px;
-    @media screen and (min-width: $medium) {
-      font-size: 55px;
-    }
-    @media screen and (max-width: $header-medium) {
-      margin-right: 0px;
-    }
-  }
-  @media screen and (max-width: $med-small) {
-    padding: 10px;
   }
 }
-
-
-
-
