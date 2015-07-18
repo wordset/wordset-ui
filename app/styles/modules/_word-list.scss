@@ -40,6 +40,9 @@
     }
   }
   @media screen and (max-width: $medium) {
+    top: 50px;
+  }
+  @media screen and (max-width: $header-medium) {
     left: -1px;
   }
 }

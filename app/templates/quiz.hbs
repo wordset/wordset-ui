@@ -2,7 +2,7 @@
   <h1>{{model.title}}</h1>
 
   <div class="quiz-image">
-    <img src={{model.image_url}} />
+    <img src={{model.image_url}} alt="" />
   </div>
   {{#if model.image_citation}}
     <div class="citation">
@@ -19,7 +19,7 @@
   {{#each model.questions as |question|}}
     <div class="quiz-question">
       <div class="image">
-        <img src={{question.image_url}}>
+        <img src={{question.image_url}}  alt="">
 
       </div>
       {{#if question.image_citation}}
@@ -53,7 +53,7 @@
           <h2>Your result...</h2>
         </div>
         <div class="image">
-          <img src={{winningResult.image_url}} >
+          <img src={{winningResult.image_url}} alt="">
         </div>
         {{#if winningResult.image_citation}}
           <div class="citation">

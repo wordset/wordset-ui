@@ -1,6 +1,6 @@
 <div class="search">
   <div class='searchbar'>
-    {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word"}}
+    {{search-field value=searchTerm placeholder="Search" aria-haspopup=showSearchList aria-autocomplete="list" autofocus="autofocus" title="Search for word" autocapitalize="off"}}
     {{#if loaded}}
       <span class="ion-close-circled" {{action 'clear'}}></span>
     {{else}}

@@ -4,7 +4,7 @@ body {
   font-size: 18px;
 }
 
-h1, h2, h3 {
+h1, h2, h2 a, h3 {
   color: $h-color;
 }
 
@@ -13,9 +13,13 @@ h1 {
   margin-bottom: 30px;
 }
 
-h2 {
+h2, h2 a {
   font-size: 22px;
   margin-bottom: 20px;
+}
+
+h2 a {
+  text-decoration: none;
 }
 
 p {

@@ -23,7 +23,7 @@
     <h2>About Wordset</h2>
 
     <p>Wordset is a community of language lovers from around the world dedicated to building the best dictionary alive.</p>
-    
+
     <p>Here are some key features of our dictionary:</p>
     <ul>
       <li><p>Wordset is updated continually and its easy to navigate structure was built to integrate seamlessly into an API for developers.</p></li>
@@ -44,11 +44,22 @@
     <p>The idea for Wordset is the brainchild of co-founders Hampton and Michael Catlin, who build and maintain the site. Justin LeFurjah, Wordset’s first employee, takes care of content and community management.</p>
 
     <p>Wordsetters make the dictionary.</p>
+
+
+    <h2><a name="more-posts">More Blog Posts</a></h2>
+    <ul class="blog-posts">
+      {{#each post in postsSimple}}
+        <li>
+          {{blog-post-byline post=post}}
+        </li>
+      {{/each}}
+    </ul>
+
   </div>
 
   <div class="wrapper-right">
     {{#if postsSimple}}
-      {{latest-blog-posts posts=postsSimple}}
+      {{latest-blog-posts posts=topPostsSimple}}
     {{/if}}
 
     <button {{action "randomProposal"}} class="randomOpenProposal">Vote on a Proposal</button>
