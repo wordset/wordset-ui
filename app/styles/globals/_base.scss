@@ -6,7 +6,7 @@ html {
   overflow-y: scroll;
 }
 body {
-  padding-top: 125px;
+  padding-top: 115px;
 
   @media (min-width: $header-medium) {
     padding-top: 60px;
@@ -122,14 +122,15 @@ button {
 }
 
 .search {
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 .wrapper {
-  padding: 40px 20px;
+  padding: 10px;
   position: relative;
-  @media screen and (max-width: $small) {
-    width: 90%;
+
+  @media (min-width: $small) {
+    padding: 40px 20px;
   }
 }
 
