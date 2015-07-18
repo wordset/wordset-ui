@@ -75,6 +75,10 @@
       font-size: 20px;
       padding: 10px 40px 10px 14px;
       width: 100%;
+
+      &:invalid + span {
+        display: none;
+      }
     }
     span {
       color: #DDD;
