@@ -11,6 +11,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   setupController: function(controller, model) {
     this._super(controller, model);
     controller.set("currentLang", this.store.find("lang", "en"));
+    console.log(controller.get("currentRouteName"));
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
   },
 
@@ -46,6 +47,10 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
+      Ember.run.later(function() {
+        console.log("LOADED!?");
+        window.prerenderReady = true;
+      }, 2500);
       //this.controllerFor("search").send("clear");
       this.controller.set("showMenu", false);
     },
