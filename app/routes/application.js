@@ -48,10 +48,8 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         });
       }
       Ember.run.later(function() {
-        console.log("LOADED!?");
         window.prerenderReady = true;
-      }, 2500);
-      //this.controllerFor("search").send("clear");
+      }, 4000);
       this.controller.set("showMenu", false);
     },
     randomProposal: function(proposal_id) {
