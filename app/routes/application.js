@@ -47,9 +47,6 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
           NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
-      Ember.run.later(function() {
-        window.prerenderReady = true;
-      }, 4000);
       this.controller.set("showMenu", false);
     },
     randomProposal: function(proposal_id) {
