@@ -6,7 +6,9 @@
   <div class="current-projects">
     <h2>Current Projects</h2>
     {{#each project in activeProjects}}
-      {{project-card project=project fullDescription=true progress=true}}
+      <div class="col-2">
+        {{project-card project=project fullDescription=true progress=true}}
+      </div>
     {{/each}}
   </div>
 

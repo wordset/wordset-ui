@@ -18,7 +18,9 @@
       margin-bottom: 0px;
     }
   }
-
+  project-card {
+    max-width: 420px;
+  }
   ol {
     @include media-max-width($medium) {
       padding: 0px 20px;
