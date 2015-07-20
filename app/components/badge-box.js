@@ -18,10 +18,10 @@ export default Ember.Component.extend({
     return 100-this.get("percentage");
   }.property("percentage"),
   url: function() {
-    return "http://www.wordset.org/user/"+this.get("activity.userId")
+    return "http://www.wordset.org/user/"+this.get("activity.userId");
   }.property("activity.userId"),
   tweet: function() {
     var tweetText = "I just earned the " + this.get("badge.display_name") + " badge on @thewordset!";
-    return encodeURI(tweetText)
+    return encodeURI(tweetText);
   }.property("badge.display_name"),
 });

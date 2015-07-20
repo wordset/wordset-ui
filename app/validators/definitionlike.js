@@ -12,7 +12,7 @@ export default Base.extend({
     } else if (prop[0] === prop[0].toUpperCase()) {
       this.errors.pushObject("Start your definition with a lowercase letter.");
     } else if (endingPunctuation.contains(prop[prop.length - 1])) {
-      if (prop.substr(prop.length - 4) == "etc.") {
+      if (prop.substr(prop.length - 4) === "etc.") {
         // etc. is fine at the end of a definition
       }
       else {
