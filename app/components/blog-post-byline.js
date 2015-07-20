@@ -1,4 +1,5 @@
 import Ember from 'ember';
+/* globals moment */
 
 export default Ember.Component.extend({
   formattedDate: function() {

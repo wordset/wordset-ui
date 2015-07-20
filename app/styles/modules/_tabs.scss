@@ -1,6 +1,6 @@
 .tabs {
   a {
-    @include transition(0s);
+    transition: none;
     color: $black;
     padding: 5px 10px 0px;
     margin-right: 20px;
