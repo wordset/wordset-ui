@@ -15,10 +15,12 @@
       Level {{badge.level}}
     </div>
     {{/if}}
-    <div class="share">
-      Share on:
-      <a class="share twitter ion-social-twitter" href="https://twitter.com/intent/tweet?text={{ tweet }}&amp;url={{ url}}"></a>
-      <a class="share facebook ion-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ url }}"></a>
-    </div>
+    {{#if shareable}}
+      <div class="share">
+        Share on:
+        <a class="share twitter ion-social-twitter" href="https://twitter.com/intent/tweet?text={{ tweet }}&amp;url={{ url}}"></a>
+        <a class="share facebook ion-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ url }}"></a>
+      </div>
+    {{/if}}
   </div>
 </div>
