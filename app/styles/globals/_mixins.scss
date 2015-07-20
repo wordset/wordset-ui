@@ -1,18 +1,3 @@
-@mixin transition($time: 0.5s, $type: all) {
-  -webkit-transition: $type $time ease;
-     -moz-transition: $type $time ease;
-      -ms-transition: $type $time ease;
-       -o-transition: $type $time ease;
-          transition: $type $time ease;
-}
-
-@mixin rotate($deg) {
-  -webkit-transform: rotate($deg);
-       -o-transform: rotate($deg);
-          transform: rotate($deg);
-}
-
-
 @mixin media-max-width($width) {
   @media screen and (max-width: #{$width}) {
     @content;
@@ -38,7 +23,7 @@
 @mixin underline($color: $blue-2) {
   position: relative;
   &:after {
-    @include transition;
+    transition: all .5s;
     border-bottom: 2px solid $color;
     content: '';
     position: absolute;
@@ -55,7 +40,7 @@
 }
 
 @mixin button($background, $border, $hover-color, $text-shadow) {
-  @include transition();
+  transition: all .5s;
   background: $background;
   border: 1px solid $border;
   -moz-border-radius: 2px;
@@ -99,25 +84,11 @@
 }
 
 
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
 @keyframes rotate {
   from {
-    -ms-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -ms-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }

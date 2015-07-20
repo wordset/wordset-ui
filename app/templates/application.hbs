@@ -23,17 +23,15 @@
     <div class="togglers">
 
       <div class="toggler-chat">
-        <a {{action 'togglePanel'}} class="panel-toggler" alt="Chat">
-          <div {{bind-attr class="hasChatAlert :ion-android-chat showPanel"}}>
-          <div class="icon-text">CHAT</div>
-          </div>
+        <a {{action 'togglePanel'}} class="panel-toggler">
+          <span {{bind-attr class="hasChatAlert :ion-android-chat :toggler-icon showPanel"}}></span>
+          <span class="icon-text">Chat</span>
         </a>
       </div>
       <div class="toggler-menu">
-        <a {{action 'toggleMenu'}} class="nav-toggler" alt="Menu">
-          <div class="ion-android-apps">
-          <div class="icon-text">MENU</div>
-          </div>
+        <a {{action 'toggleMenu'}} class="nav-toggler">
+          <span class="ion-android-apps toggler-icon"></span>
+          <span class="icon-text">Menu</span>
         </a>
       </div>
     </div>

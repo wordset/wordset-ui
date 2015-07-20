@@ -53,7 +53,7 @@
     z-index: 10;
   }
   .edit-link, .locked {
-    @include transition(0.2s);
+    transition: all .2s;
     display: inline-block;
     margin-left: 10px;
     margin-top: 1px;

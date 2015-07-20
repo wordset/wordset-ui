@@ -1,7 +1,15 @@
-body {
+html {
   color: $text-color;
   font-family: $sans-serif;
-  font-size: 18px;
+  font-size: percentage(18/16); // 18px font-size
+  overflow-y: scroll;
+}
+body {
+  line-height: 1.4em;
+  padding-top: 115px;
+  @media (min-width: $header-medium) {
+    padding-top: 80px;
+  }
 }
 
 h1, h2, h2 a, h3 {
@@ -23,7 +31,6 @@ h2 a {
 }
 
 p {
-  line-height: 1.4em;
   margin-bottom: 20px;
 }
 
@@ -36,7 +43,7 @@ em {
 }
 
 a {
-  @include transition();
+  transition: all .5s;
   color: $anchor-color;
   cursor: pointer;
   text-decoration: underline;
@@ -108,20 +115,18 @@ button {
   @media screen and (max-width: $large) {
     max-width: 500px;
   }
-  // @media screen and (max-width: $small) {
-  //   width: 100%;
-  // }
 }
 
 .search {
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 .wrapper {
-  padding: 40px 20px;
+  padding: 10px;
   position: relative;
-  @media screen and (max-width: $small) {
-    width: 90%;
+
+  @media (min-width: $small) {
+    padding: 40px 20px;
   }
 }
 
@@ -138,21 +143,39 @@ button {
 }
 
 .animated {
-  -webkit-transition: height 0.2s;
-  -moz-transition: height 0.2s;
   transition: height 0.2s;
 }
 
-html, body, body > div, .main-content, .content, .messages {
-  height: 100%;
-}
-
 .mainArea {
-  overflow: hidden;
+
 }
 
-.content, .message-list {
-  overflow: auto;
+.message-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-bottom: 4px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }
 
 

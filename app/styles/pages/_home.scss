@@ -54,7 +54,7 @@
 .recent-activity {
   margin-bottom: 40px;
   .activity {
-    @include transition();
+    transition: all .5s;
     margin-bottom: 2px;
     &:nth-child(even) {
       background: #FDFDFD;
