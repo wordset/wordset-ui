@@ -1,5 +1,5 @@
 .panel {
-  transition: all .4s .2s ease-in-out;
+  transition: all .4s .1s cubic-bezier(0.42, 0, 0.51, 1.21);
   position: relative;
   vertical-align: top;
   overflow: hidden;
