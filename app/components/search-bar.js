@@ -58,6 +58,8 @@ export default Ember.Component.extend({
         this.send("moveDown");
       } else if(event.keyCode === 80) { // CTRL + p
         this.send("moveUp");
+      } else {
+        return true;
       }
     } else {
       return true;
