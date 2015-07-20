@@ -1,6 +1,7 @@
 {
   "name": "wordset",
   "root": "./dist",
+  "prerender": true,
   "routes": {
     "/**": "index.html"
   },
