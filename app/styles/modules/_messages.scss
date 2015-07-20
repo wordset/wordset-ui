@@ -5,6 +5,15 @@
   }
 }
 
+.message-list {
+  @media (min-width: $small) {
+    position: fixed;
+    top: $scoreboard-height + 2px; // The 2px accounts for the border
+    bottom: 69px;
+    width: 95%;
+  }
+}
+
 .message {
   line-height: 1em;
   margin-bottom: 15px;
@@ -74,7 +83,11 @@
 // Typing New Messages
 
 .new-message-area {
-  position: relative;
+  @media (min-width: $small) {
+    position: fixed;
+    bottom: 0px;
+    width: 95%;
+  }
   textarea {
     font-size: 18px;
     padding: 5px 30px 5px 5px;

@@ -1,6 +1,6 @@
 .panel .scoreboard {
   border-bottom: 2px solid $taupe;
-  height: 105px;
+  height: $scoreboard-height;
   li {
     padding: 5px 10px;
     &:nth-child(odd) {

@@ -3,7 +3,7 @@ import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 import { Bindings } from 'ember-pusher/bindings';
 
-export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
+export default Ember.Controller.extend(Bindings, EmberValidations.Mixin, {
   logPusherEvents: (ENV.environment === 'development'),
   notifier: Ember.inject.service(),
   PUSHER_SUBSCRIPTIONS: {
@@ -12,10 +12,11 @@ export default Ember.ArrayController.extend(Bindings, EmberValidations.Mixin, {
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   chatReceived: Ember.computed.alias('controllers.application.chatReceived'),
-  sortProperties: ['createdAt'],
   showUsers: false,
-  sortAscending: true,
   showSettings: false,
+  messageList: function() {
+    return this.get("model").sortBy("createdAt");
+  }.property("model.@each"),
   onlineUsers: function() {
     Ember.run.later(() => this.hup.to(), 1000);
     return this.store.metadataFor("message").online || [];
