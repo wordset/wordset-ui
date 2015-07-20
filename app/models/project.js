@@ -6,6 +6,7 @@ export default DS.Model.extend({
   longDescription: DS.attr("string"),
   rules: DS.attr("string"),
   startAt: DS.attr("date"),
+  state: DS.attr("string"),
   percentageComplete: DS.attr("number"),
   totalTargetsCount: DS.attr("number"),
   fixedTargetsCount: DS.attr("number"),
