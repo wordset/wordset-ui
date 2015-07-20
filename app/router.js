@@ -41,6 +41,7 @@ export default Router.map(function() {
     this.route("new-meaning");
     this.route("meaning-change");
   });
+  this.route("projects");
   this.route("project", {path: "/project/:project_id"}, function() {
     this.route("random");
     this.route("propose", {path: "/propose/:meaning_id"});
