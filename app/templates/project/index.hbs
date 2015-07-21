@@ -1,17 +1,33 @@
-{{project-info project=model link=false}}
 <div class="wrapper project-index">
-  <h2>{{model.name}}</h2>
+  <div class="badge">
+    <img src="/assets/images/badges/projects/{{model.id}}.png" title="{{model.description}}" alt="{{model.description}}">
+  </div>
+
+  <h1>{{model.name}}</h1>
+
+  <p>Status: <h2>{{model.state}}</h2></p>
   <p>Goal: <strong>{{model.description}}</strong></p>
 
   {{htmlDescription}}
 
-  <p>Total targets in Wordset: <span class='progress-numbers'>{{model.totalTargetsCount}}</span></p>
-  <p>Number of open proposals: <span class='progress-numbers'>{{model.pendingTargetsCount}}</span></p>
-  <p>Number fixed: <span class='progress-numbers'>{{model.fixedTargetsCount}}</span></p>
+  <div class="progress-numbers">
+    <span class="metric">Total:</span> {{model.totalTargetsCount}}
+    <span class="metric">Pending:</span> {{model.pendingTargetsCount}}
+    <span class="metric">Fixed:</span> {{model.fixedTargetsCount}}
+    <div class="progress-bar">
+      <div class="progress">
+        <div class="bar positive" {{bind-attr style="model.percentageThrough"}}>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  {{#if currentUser}}
-    <button {{action projectAction}}>Help Out!</button>
+  {{#if isComplete}}
   {{else}}
-    <button {{action "signUp"}}>Help Out!</button>
+    {{#if currentUser}}
+      <button {{action projectAction}}>Help Out!</button>
+    {{else}}
+      <button {{action "signUp"}}>Help Out!</button>
+    {{/if}}
   {{/if}}
 </div>

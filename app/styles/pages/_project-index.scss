@@ -1,5 +1,18 @@
 .project-index {
+  .badge {
+    float: right;
+    margin: 0 0 10px 20px;
+    img {
+      width: 200px;
+    }
+  }
   .progress-numbers {
+    margin: 20px 0;
+  }
+  .metric {
     font-weight: 500;
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
   }
 }
