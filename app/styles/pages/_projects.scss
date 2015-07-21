@@ -2,15 +2,24 @@
   .current-projects {
     margin-bottom: 20px;
   }
+  h3 {
+    margin-bottom: 10px;
+  }
+  ul, li {
+    list-style: circle;
+  }
+  ul {
+    padding-left: 20px;
+    li {
+      margin-bottom: 10px;
+    }
+  }
   .col-2 {
     @media (min-width: $large) {
       display: inline-block;
       margin: 0px 10px;
       width: 46%;
       vertical-align: top;
-    }
-    h3 {
-      margin-bottom: 10px;
     }
   }
 }
