@@ -24,10 +24,13 @@
 
   {{#if isComplete}}
   {{else}}
-    {{#if currentUser}}
-      <button {{action projectAction}}>Help Out!</button>
+    {{#if canHelpOut}}
     {{else}}
-      <button {{action "signUp"}}>Help Out!</button>
+      {{#if currentUser}}
+        <button {{action projectAction}}>Help Out!</button>
+      {{else}}
+        <button {{action "signUp"}}>Help Out!</button>
+      {{/if}}
     {{/if}}
   {{/if}}
 </div>
