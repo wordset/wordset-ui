@@ -6,30 +6,24 @@
   <div class="current-projects">
     <h2>Current Projects</h2>
     {{#each project in activeProjects}}
-      <div class="col-2">
-        {{project-card project=project fullDescription=true progress=true}}
-      </div>
+      {{project-card project=project progress=true}}
     {{/each}}
   </div>
 
-  <div class="col-container">
-    <div class="col-2">
-      <h3>Completed Projects</h3>
-      {{#each project in completedProjects}}
-        {{project-card project=project}}
-      {{/each}}
-    </div>
+  <h3>Completed Projects</h3>
+  {{#each project in completedProjects}}
+    {{project-card project=project complete=true}}
+  {{/each}}
 
-    <div class="col-2">
-      <h3>Upcoming Projects</h3>
-      {{#if upcomingProjects}}
-        {{#each project in upcomingProjects}}
-          {{project-card project=project}}
-        {{/each}}
-      {{else}}
-        <p> There are no upcoming projects right now. Feel free to suggest one!</p>
-      {{/if}}
-    </div>
-  </div>
+  <h3>Upcoming Projects</h3>
+  {{#if upcomingProjects}}
+    <ul>
+      {{#each project in upcomingProjects}}
+        <li>{{project.name}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p> There are no upcoming projects right now. Feel free to suggest one!</p>
+  {{/if}}
 
 </div>

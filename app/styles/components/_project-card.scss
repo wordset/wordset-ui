@@ -1,13 +1,38 @@
 project-card {
   background: #FFF;
   border: 1px solid lighten($blue, 25%);
-  border-radius: 2px;
-  margin-bottom: 20px;
+  border-radius: 20px 20px 2px 2px;
   display: inline-block;
-  padding: 10px 0 20px;
+  margin-bottom: 20px;
+  position: relative;
   width: 100%;
-  .title, .description, .progress-numbers {
-    padding: 0 20px;
+  @media (min-width: $small) {
+    border-radius: 12px 2px 2px 12px;
+    height: 150px;
+  }
+  .badge, .badge img {
+    display: inline-block;
+    @media (min-width: $small) {
+      height: 100%;
+    }
+  }
+
+  .badge img {
+    margin-right: 20px;
+    width: 100%;
+    @media (min-width: $small) {
+      width: inherit;
+    }
+  }
+
+  .information {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    @media (min-width: $small) {
+      width: 64%;
+      padding: 10px 0 0;
+    }
   }
   h2 a, .progress-numbers {
     color: $anchor-color;
@@ -22,10 +47,15 @@ project-card {
     margin-top: 5px;
   }
   .title {
-    border-bottom: 1px solid lighten($blue, 25%);
     display: block;
     margin-bottom: 10px;
     vertical-align: top;
+    .ion-checkmark-circled {
+      color: $lime;
+      position: absolute;
+        top: 6px;
+        right: 10px;
+    }
   }
   h2 {
     font-size: 20px;
