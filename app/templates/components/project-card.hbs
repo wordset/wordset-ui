@@ -36,3 +36,19 @@
     {{/if}}
   </div>
 </div>
+
+{{#if project.hasTimer}}
+  <div class="timer">
+    <div class="remaining">
+      {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
+    </div>
+  </div>
+  <div class="fixed">
+    <div class="expected">
+      {{expectedFixed}}
+    </div>
+    <div class="balance">
+      {{differenceFromExpected}}
+    </div>
+  </div>
+{{/if}}
