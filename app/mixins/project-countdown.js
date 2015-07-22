@@ -18,6 +18,6 @@ export default Ember.Mixin.create({
     return Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
   }.property("timeRemaining", "project.startedAt", "project.spaceBetweenProposals"),
   differenceFromExpected: function() {
-    return this.get("expectedFixed") - this.get("project.fixedTargetsCount");
+    return this.get("project.fixedTargetsCount") - this.get("expectedFixed");
   }.property("expectedFixed", "project.fixedTargetsCount"),
 });
