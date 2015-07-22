@@ -11,7 +11,10 @@ export default Ember.Mixin.create({
     return Math.floor((this.get("timeRemaining") / 60) % 60);
   }.property("timeRemaining"),
   hoursRemaining: function() {
-    return Math.floor(this.get("timeRemaining") / 3600);
+    return Math.floor((this.get("timeRemaining") / 3600) % 24);
+  }.property("timeRemaining"),
+  daysRemaining: function() {
+    return Math.floor(this.get("timeRemaining") / 86400);
   }.property("timeRemaining"),
   expectedFixed: function() {
     var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
