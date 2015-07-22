@@ -15,6 +15,9 @@
   .progress-negative .bar, .negative.bar {
     background: $red;
   }
+  .progress-neutral .bar, .neutral.bar {
+    background: $taupe;
+  }
 
   // For the single-way progress bar
   .progress, .bar {

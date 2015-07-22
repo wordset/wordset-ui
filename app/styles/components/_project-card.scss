@@ -37,8 +37,12 @@ project-card {
   h2 a, .progress-numbers {
     color: $anchor-color;
   }
+  .remaining {
+    font-size: 16px;
+  }
   .progress-numbers span.metric {
     color: darken($anchor-color, 20%);
+    font-weight: 400;
     text-transform: uppercase;
   }
   .progress-numbers {
@@ -46,9 +50,17 @@ project-card {
     font-size: 14px;
     margin-top: 5px;
   }
+  .prog-num {
+    display: inline-block;
+    width: 45%;
+    &.negative {
+      color: $red;
+      font-weight: 600;
+    }
+  }
   .title {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     vertical-align: top;
     .ion-checkmark-circled {
       color: $lime;
@@ -65,5 +77,7 @@ project-card {
       color: $anchor-hover-color;
     }
   }
-
+  .progress-bar {
+    margin-bottom: 1px;
+  }
 }
