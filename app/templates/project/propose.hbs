@@ -26,13 +26,13 @@
     <div class="editDefinition">
       <label>
         Edit definition of word
-        {{validated-textarea value=model.def errors=errors.model.def}}
+        {{validated-textarea value=model.def errors=errors.model.def showError=true}}
       </label>
       <label class="edit-example">
         Edit example sentence
         <!-- Ember doesn't allow area-required="true" to be
         set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
-        {{validated-textarea value=model.example errors=errors.model.example placeholder="No example sentence! Please add one."}}
+        {{validated-textarea value=model.example showErrors=true errors=errors.model.example placeholder="No example sentence! Please add one."}}
       </label>
       {{#if model.lang}}
         {{label-selection labels=model.lang.labels selectedLabels=model.labels}}
