@@ -47,20 +47,22 @@
     </div>
     {{/if}}
     {{#if progress}}
-      <div class="progress-bar">
-        <div class="progress">
-          <div class="bar positive" {{bind-attr style="project.percentageThrough"}}>
+      <div class="progress-bars">
+        <div class="progress-bar">
+          <div class="progress">
+            <div class="bar positive" style={{project.percentageThrough}}>
+            </div>
           </div>
         </div>
-      </div>
-      {{#if project.hasTimer}}
-      <div class="progress-bar">
-        <div class="progress">
-          <div class="bar neutral" {{bind-attr style="percentageExpectedFixed"}}>
+        {{#if project.hasTimer}}
+        <div class="progress-bar">
+          <div class="progress">
+            <div class="bar neutral" style={{percentageExpectedFixed}}>
+            </div>
           </div>
         </div>
+        {{/if}}
       </div>
-      {{/if}}
     {{/if}}
   </div>
 </div>

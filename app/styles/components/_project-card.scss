@@ -8,7 +8,7 @@ project-card {
   width: 100%;
   @media (min-width: $small) {
     border-radius: 12px 2px 2px 12px;
-    height: 150px;
+    height: 160px;
   }
   .badge, .badge img {
     display: inline-block;
@@ -30,7 +30,7 @@ project-card {
     padding: 10px;
     vertical-align: top;
     @media (min-width: $small) {
-      width: 64%;
+      width: 62%;
       padding: 10px 0 0;
     }
   }
@@ -76,6 +76,9 @@ project-card {
     a:hover {
       color: $anchor-hover-color;
     }
+  }
+  .progress-bars {
+    margin-top: 6px;
   }
   .progress-bar {
     margin-bottom: 1px;

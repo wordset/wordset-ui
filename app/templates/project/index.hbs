@@ -10,16 +10,47 @@
 
   {{htmlDescription}}
 
+  {{#if model.hasTimer}}
+  <div class="remaining">
+    Projects Ends In: {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
+  </div>
+  {{/if}}
+
   <div class="progress-numbers">
-    <span class="metric">Total:</span> {{model.totalTargetsCount}}
-    <span class="metric">Pending:</span> {{model.pendingTargetsCount}}
-    <span class="metric">Fixed:</span> {{model.fixedTargetsCount}}
+    {{#if complete}}
+    {{else}}
+      <div class="prog-num">
+        <span class="metric">Total:</span>
+         {{project.totalTargetsCount}}
+      </div>
+      <div class="prog-num">
+        <span class="metric">Pending:</span> {{project.pendingTargetsCount}}
+      </div>
+    {{/if}}
+    <div class="prog-num">
+      <span class="metric">Fixed:</span>
+      {{project.fixedTargetsCount}}
+    </div>
+    {{#if complete}}{{else}}
+    <div {{bind-attr class=":prog-num differenceIsNegative:negative" }}>
+      <span class="metric">Difference:</span>
+      {{differenceFromExpected}}
+    </div>
+    {{/if}}
     <div class="progress-bar">
       <div class="progress">
-        <div class="bar positive" {{bind-attr style="model.percentageThrough"}}>
+        <div class="bar positive" style={{model.percentageThrough}}>
         </div>
       </div>
     </div>
+    {{#if model.hasTimer}}
+    <div class="progress-bar">
+      <div class="progress">
+        <div class="bar neutral" style={{percentageExpectedFixed}}>
+        </div>
+      </div>
+    </div>
+    {{/if}}
   </div>
 
   {{#if isComplete}}

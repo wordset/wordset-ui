@@ -11,13 +11,23 @@
     font-weight: 500;
     font-size: 1.2em;
   }
+  .remaining {
+    margin-top: 20px;
+  }
   .progress-numbers {
     margin: 20px 0;
   }
-  .metric {
-    font-weight: 500;
+  .prog-num {
+    display: inline-block;
     &:not(:first-of-type) {
       margin-left: 20px;
     }
+  }
+  .negative {
+    color: $red;
+  }
+  .metric {
+    color: darken($anchor-color, 20%);
+    font-weight: 500;
   }
 }
