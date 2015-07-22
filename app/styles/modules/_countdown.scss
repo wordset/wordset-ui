@@ -1,0 +1,15 @@
+.countdown {
+  .timer, .fixed, .actual, .deficit {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .metric {
+    color: darken($anchor-color, 20%);
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+.remaining div {
+  display: inline-block;
+  vertical-align:top;
+}

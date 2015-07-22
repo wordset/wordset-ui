@@ -4,66 +4,13 @@
 
 @import "globals/variables";
 @import "globals/mixins";
+
 @import "globals/base";
 
-@import "globals/two-column-layout";
+@media screen {
+  @import "screen";
+}
 
-@import "modules/radio-buttons";
-
-@import "modules/menu";
-@import "modules/header";
-@import "modules/footer";
-
-@import "modules/notifications";
-
-@import "modules/panel";
-@import "modules/scoreboard";
-@import "modules/messages";
-
-@import "modules/errors";
-@import "modules/banner";
-@import "modules/badges";
-@import "modules/user-avatar";
-@import "modules/progress-bar";
-@import "modules/tabs";
-@import "modules/project-info";
-@import "modules/labels";
-@import "modules/label-selection";
-
-@import "components/latest-blog-posts";
-@import "components/new-badge";
-@import "components/project-card";
-
-@import "pages/loading";
-
-@import "modules/word-list";
-@import "modules/edit-definition";
-@import "modules/new-word";
-
-@import "pages/home";
-
-@import "pages/sign-in-up";
-@import "pages/proposals";
-@import "modules/proposals-list";
-
-@import "pages/proposal";
-@import "modules/proposal-sidebar";
-
-@import "pages/post";
-@import "pages/posts";
-
-@import "pages/definition";
-
-@import "pages/projects";
-@import "pages/project-index";
-@import "pages/project-proposal";
-
-@import "pages/users";
-@import "pages/user";
-
-@import "pages/quiz";
-@import "pages/quizzes";
-
-@import "pages/faqs";
-@import "pages/guidelines";
-@import "pages/legal";
+@media print {
+  @import "print";
+}

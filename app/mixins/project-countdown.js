@@ -20,4 +20,11 @@ export default Ember.Mixin.create({
   differenceFromExpected: function() {
     return this.get("project.fixedTargetsCount") - this.get("expectedFixed");
   }.property("expectedFixed", "project.fixedTargetsCount"),
+  differenceIsNegative: function() {
+    return this.get("differenceFromExpected") < 0 ;
+  }.property("differenceFromExpected"),
+  percentageExpectedFixed: function() {
+    var number = ( this.get("expectedFixed") / this.get("project.totalTargetsCount") ) * 100;
+    return "width: " + number + "%";
+  }.property("expectedFixed", "project.totalTargetsCount"),
 });

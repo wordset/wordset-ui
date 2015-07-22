@@ -1,0 +1,29 @@
+header, nav, footer {
+  display: none;
+}
+
+
+.wordWrap {
+  .word {
+    font-size: 2em;
+  }
+}
+.meanings {
+  li {
+    margin-bottom: 20px;
+  }
+  .info {
+    display: inline-block;
+    vertical-align: text-top;
+  }
+  .meaning {
+    display: inline-block;
+  }
+  .edit-link {
+    display: none;
+  }
+}
+
+.add-new-meaning {
+  display: none;
+}

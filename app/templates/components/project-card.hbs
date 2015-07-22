@@ -15,17 +15,37 @@
     {{/if}}
   </div>
 
-  <div class="description">
-    {{project.description}}
-  </div>
+  {{#if project.hasTimer}}
+    <div class="remaining">
+      Projects Ends In: {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
+    </div>
+  {{else}}
+    <div class="description">
+      {{project.description}}
+    </div>
+  {{/if}}
 
   <div class="progress-numbers">
     {{#if complete}}
     {{else}}
-      <span class="metric">Total:</span> {{project.totalTargetsCount}}
-      <span class="metric">Pending:</span> {{project.pendingTargetsCount}}
+      <div class="prog-num">
+        <span class="metric">Total:</span>
+         {{project.totalTargetsCount}}
+      </div>
+      <div class="prog-num">
+        <span class="metric">Pending:</span> {{project.pendingTargetsCount}}
+      </div>
     {{/if}}
-    <span class="metric">Fixed:</span> {{project.fixedTargetsCount}}
+    <div class="prog-num">
+      <span class="metric">Fixed:</span>
+      {{project.fixedTargetsCount}}
+    </div>
+    {{#if complete}}{{else}}
+    <div {{bind-attr class=":prog-num differenceIsNegative:negative" }}>
+      <span class="metric">Difference:</span>
+      {{differenceFromExpected}}
+    </div>
+    {{/if}}
     {{#if progress}}
       <div class="progress-bar">
         <div class="progress">
@@ -33,22 +53,14 @@
           </div>
         </div>
       </div>
+      {{#if project.hasTimer}}
+      <div class="progress-bar">
+        <div class="progress">
+          <div class="bar neutral" {{bind-attr style="percentageExpectedFixed"}}>
+          </div>
+        </div>
+      </div>
+      {{/if}}
     {{/if}}
   </div>
 </div>
-
-{{#if project.hasTimer}}
-  <div class="timer">
-    <div class="remaining">
-      {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
-    </div>
-  </div>
-  <div class="fixed">
-    <div class="expected">
-      {{expectedFixed}}
-    </div>
-    <div class="balance">
-      {{differenceFromExpected}}
-    </div>
-  </div>
-{{/if}}
