@@ -19,15 +19,6 @@ export default DS.Model.extend({
     return "width: " + perc + "%;";
   }.property("percentageComplete"),
 
-  calculateExpectedFixed: function() {
-    if(this.get("hasTimer")) {
-      var elapsedTime = (new Date()) - this.get("startedAt");
-      this.set("expectedFixed", elapsedTime / this.get("spaceBetweenProposals"));
-    } else {
-      this.set("expectedFixed", 0);
-    }
-  }.on("didLoad", "hup.at"),
-
   canHelpOut: function() {
     return (this.get("totalTargetsCount") > (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
   }.property("totalTargetsCount", "pendingTargetsCount", "fixedTargetsCount"),
@@ -39,6 +30,6 @@ export default DS.Model.extend({
     return this.get("endsAt") - this.get("startedAt");
   }.property("endsAt", "startedAt", "hup.at"),
   spaceBetweenProposals: function() {
-    return this.get("totalTime") / this.get("totalTargetsCount");
-  }.property("hasTimer", "totalTime", "totalTargetsCount"),
+    return ((this.get("endsAt") - this.get("startedAt")) / 1000) / this.get("totalTargetsCount");
+  }.property("hasTimer", "endsAt", "startedAt", "totalTargetsCount"),
 });

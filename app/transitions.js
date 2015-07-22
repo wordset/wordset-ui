@@ -5,4 +5,8 @@ export default function(){
     this.childOf('.points'),
     this.use('toUp')
   );
+  this.transition(
+    this.childOf(".timer .remaining"),
+    this.use('toUp')
+  )
 }
