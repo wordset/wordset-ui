@@ -11,7 +11,7 @@ export default Base.extend({
     if (Ember.isBlank(prop)) {
       this.errors.pushObject("We need something here!");
     } else if ((pos === "verb") && (prop.substr(0,3) !== "to ")) {
-      this.errors.pushObject("Verb definitions should start with 'to '");
+      this.errors.pushObject("Verb definitions should start with 'to'");
     } else if (prop[0] === prop[0].toUpperCase()) {
       this.errors.pushObject("Start your definition with a lowercase letter.");
     } else if (endingPunctuation.contains(prop[prop.length - 1])) {
