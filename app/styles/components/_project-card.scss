@@ -6,33 +6,34 @@ project-card {
   margin-bottom: 20px;
   position: relative;
   width: 100%;
-  @media (min-width: $small) {
+  &[min-width="500px"] {
     border-radius: 12px 2px 2px 12px;
     height: 160px;
-  }
-  .badge, .badge img {
-    display: inline-block;
-    @media (min-width: $small) {
+    .badge, .badge img {
       height: 100%;
     }
+    .badge img {
+      width: inherit;
+    }
+    .information {
+      width: 61%;
+      padding: 10px 0 0;
+    }
+  }
+
+  .badge, .badge img {
+    display: inline-block;
   }
 
   .badge img {
     margin-right: 20px;
     width: 100%;
-    @media (min-width: $small) {
-      width: inherit;
-    }
   }
 
   .information {
     display: inline-block;
     padding: 10px;
     vertical-align: top;
-    @media (min-width: $small) {
-      width: 62%;
-      padding: 10px 0 0;
-    }
   }
   h2 a, .progress-numbers {
     color: $anchor-color;
