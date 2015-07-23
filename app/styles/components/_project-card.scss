@@ -1,7 +1,7 @@
 project-card {
   background: #FFF;
   border: 1px solid lighten($blue, 25%);
-  border-radius: 20px 20px 2px 2px;
+  border-radius: 20px 2px 2px 2px;
   display: inline-block;
   margin-bottom: 20px;
   position: relative;
@@ -27,7 +27,7 @@ project-card {
 
   .badge img {
     margin-right: 20px;
-    width: 100%;
+    width: 100px;
   }
 
   .information {
