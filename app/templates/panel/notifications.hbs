@@ -1,0 +1,5 @@
+<div class="alert-list">
+  {{#each notification in sortedNotifications}}
+    {{render "dashboard.activity" notification.activity}}
+  {{/each}}
+</div>

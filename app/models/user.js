@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   points: DS.attr("number"),
   trust_level: DS.attr("string"),
-  
+
   imageUrl: DS.attr("string"),
   createdAt: DS.attr('date'),
 
@@ -16,4 +16,5 @@ export default DS.Model.extend({
   acceptTos: DS.attr("boolean"),
   password: DS.attr("string"),
   email: DS.attr("string"),
+
 });

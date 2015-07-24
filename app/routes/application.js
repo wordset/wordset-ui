@@ -13,6 +13,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     controller.set("currentLang", this.store.find("lang", "en"));
     console.log(controller.get("currentRouteName"));
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
+    this.controllerFor("panel.notifications").set("model", this.store.all("notification"));
   },
 
   // This saves the previous transition for going back
