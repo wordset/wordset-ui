@@ -8,7 +8,7 @@
 .message-list {
   @media (min-width: $small) {
     position: fixed;
-    top: $scoreboard-height + 2px; // The 2px accounts for the border
+    top: $tab-height + 2px; // The 2px accounts for the border
     bottom: 69px;
     width: 95%;
   }

@@ -12,6 +12,34 @@
     right: 0;
     bottom: 0;
   }
+  .tabs {
+    background: #EEE;
+    padding: 4px 10px 0;
+    .chat, .alert {
+      background: #F9F9F9;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      padding: 2px 10px;
+    }
+    &.display-chat .chat,
+    &.display-alert .alert  {
+      background: #FFF;
+      border-bottom: 2px solid $blue-2;
+    }
+  }
+  .subpanels {
+    .subpanel {
+      margin-left: 400px;
+      margin-bottom: 0px;
+    }
+    &.display-chat .subpanel.chat {
+      margin-left: 0px;
+    }
+    &.display-alert .subpanel.alert {
+      margin-left: 0px;
+    }
+  }
 }
 .content {
   transition: padding-right .4s ease-in-out;
@@ -20,7 +48,6 @@
 .online-users, .message-settings {
   position: absolute;
   background: #FFF;
-  box-shadow: 0px 1px 2px #CCC;
   z-index: 2;
   ul {
     background: #FFF;
@@ -38,6 +65,7 @@
 
 .online-users {
   right: 0;
+  top: 0;
   .toggle-users {
     float: right;
     padding: 5px;
@@ -45,7 +73,8 @@
 }
 
 .message-settings {
-  left: 0;
+  right: 50px;
+  top: 0;
   .toggle-settings {
     float: left;
     clear: left;
@@ -56,6 +85,16 @@
 .content.show-panel {
   display: none;
 }
+
+.alert-list {
+  @media (min-width: $small) {
+    position: fixed;
+    top: $tab-height + 2px; // The 2px accounts for the border
+    bottom: 6px;
+    width: 100%;
+  }
+}
+
 
 // Content and messages
 @media (min-width: $small) {
