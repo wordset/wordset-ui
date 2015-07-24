@@ -1,8 +1,8 @@
 <div class="activity">
-  {{#link-to "proposal.index" activity.proposalId}}
+  {{#link-to "proposal.index" model.proposalId}}
     <span class="ionicon ion-arrow-return-left"></span>
-    {{activity.userId}}
+    {{model.userId}}
     withdrew their vote on
-    <span class="activity-word">{{activity.wordName}}</span>.
+    <span class="activity-word">{{model.wordName}}</span>.
   {{/link-to}}
 </div>

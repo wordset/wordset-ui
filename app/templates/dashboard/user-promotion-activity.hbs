@@ -1,7 +1,7 @@
 <div class="activity">
-  {{#link-to "user.index" activity.userId}}
+  {{#link-to "user.index" model.userId}}
     <span class="ionicon ion-chatbox"></span>
-    {{activity.userId}} was promoted to
-    <span class="activity-word">{{activity.newLevel}}</span>.
+    {{model.userId}} was promoted to
+    <span class="activity-word">{{model.newLevel}}</span>.
   {{/link-to}}
 </div>

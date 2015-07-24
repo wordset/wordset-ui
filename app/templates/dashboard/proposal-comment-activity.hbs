@@ -1,7 +1,7 @@
 <div class="activity">
-  {{#link-to "proposal.index" activity.proposalId}}
+  {{#link-to "proposal.index" model.proposalId}}
     <span class="ionicon ion-chatbox"></span>
-    {{activity.userId}} commented on the proposal for
-    <span class="activity-word">{{activity.wordName}}</span>.
+    {{model.userId}} commented on the proposal for
+    <span class="activity-word">{{model.wordName}}</span>.
   {{/link-to}}
 </div>

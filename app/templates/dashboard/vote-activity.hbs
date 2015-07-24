@@ -1,7 +1,7 @@
 <div {{bind-attr class=":activity isYae:yae:nay"}}>
-  {{#link-to "proposal.index" activity.proposalId}}
+  {{#link-to "proposal.index" model.proposalId}}
     <span class="ionicon"></span>
-    {{activity.userId}}
+    {{model.userId}}
     voted
     <span class="value">
       {{#if isYae}}
@@ -11,6 +11,6 @@
       {{/if}}
     </span>
     on a proposal for
-    <span class="activity-word">{{activity.wordName}}</span>.
+    <span class="activity-word">{{model.wordName}}</span>.
   {{/link-to}}
 </div>
