@@ -14,6 +14,10 @@ export default Ember.Controller.extend( ProjectCountdown, {
     return (this.get("model.state") === "completed");
   }.property("model.state"),
 
+  isIncomplete: function() {
+    return !(this.get("model.state") === "completed");
+  }.property("model.state"),
+
   projectAction: function() {
     if(this.get("model.name") === "Proper Noun Purge") {
       return "randomProposal";

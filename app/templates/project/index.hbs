@@ -17,8 +17,7 @@
   {{/if}}
 
   <div class="progress-numbers">
-    {{#if complete}}
-    {{else}}
+    {{#if isIncomplete}}
       <div class="prog-num">
         <span class="metric">Total:</span>
          {{project.totalTargetsCount}}
@@ -31,18 +30,20 @@
       <span class="metric">Fixed:</span>
       {{project.fixedTargetsCount}}
     </div>
-    {{#if complete}}{{else}}
+    {{#if isIncomplete}}
     <div {{bind-attr class=":prog-num differenceIsNegative:negative" }}>
       <span class="metric">Difference:</span>
       {{differenceFromExpected}}
     </div>
     {{/if}}
+    {{#if isIncomplete}}
     <div class="progress-bar">
       <div class="progress">
         <div class="bar positive" style={{model.percentageThrough}}>
         </div>
       </div>
     </div>
+    {{/if}}
     {{#if model.hasTimer}}
     <div class="progress-bar">
       <div class="progress">
