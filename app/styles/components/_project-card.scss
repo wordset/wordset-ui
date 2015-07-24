@@ -58,6 +58,10 @@ project-card {
       color: $red;
       font-weight: 600;
     }
+    &.positive {
+      color: $positive-color;
+      font-weight: 600;
+    }
   }
   .title {
     display: block;
