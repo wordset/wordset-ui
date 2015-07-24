@@ -1,0 +1,82 @@
+project-info {
+  background: #FFF;
+  border-bottom: 1px solid lighten($blue, 25%);
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 20px;
+
+  .badge, .badge img {
+    display: inline-block;
+  }
+
+  .badge img {
+    margin-right: 20px;
+    width: 100px;
+  }
+
+  .information {
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    width: 75%;
+  }
+  .main-info {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  h2 a, .progress-numbers {
+    color: $anchor-color;
+  }
+  .remaining {
+    font-size: 16px;
+  }
+  .progress-numbers span.metric {
+    color: darken($anchor-color, 20%);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  .progress-numbers {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+  }
+  .prog-num {
+    display: inline-block;
+    width: 45%;
+    &.negative {
+      color: $red;
+      font-weight: 600;
+    }
+    &.positive {
+      color: $positive-color;
+      font-weight: 600;
+    }
+  }
+  .title {
+    display: block;
+    margin-bottom: 8px;
+    padding-right: 10px;
+    vertical-align: top;
+    .ion-checkmark-circled {
+      color: $lime;
+      position: absolute;
+        top: 6px;
+        right: 10px;
+    }
+  }
+  h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    a:hover {
+      color: $anchor-hover-color;
+    }
+  }
+  .progress-bars {
+    margin-top: 6px;
+  }
+  .progress-bar {
+    margin-bottom: 1px;
+  }
+}

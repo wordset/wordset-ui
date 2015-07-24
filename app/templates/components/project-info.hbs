@@ -1,19 +1,74 @@
 
-<div class="title">
-  {{#if link}}
-    <h2>{{#link-to "project.index" project.id}}{{project.name}}{{/link-to}}</h2>
-  {{else}}
-    <h2>{{project.name}}</h2>
-  {{/if}}
+<div class="badge">
+  <img src="/assets/images/badges/projects/{{project.id}}.png" title="{{project.description}}" alt="{{project.description}}">
 </div>
-<div class="progress-numbers">
-  <span class="metric">Total:</span> {{project.totalTargetsCount}}
-  <span class="metric">Pending:</span> {{project.pendingTargetsCount}}
-  <span class="metric">Fixed:</span> {{project.fixedTargetsCount}}
-  <div class="progress-bar">
-    <div class="progress">
-      <div class="bar positive" {{bind-attr style="project.percentageThrough"}}>
-      </div>
+
+<div class="information">
+  <div class="main-info">
+    <div class="title">
+      {{#if link}}
+        <h2>{{#link-to "project.index" project.id}}{{project.name}}{{/link-to}}</h2>
+      {{else}}
+        <h2>{{project.name}}</h2>
+      {{/if}}
+      {{#if complete}}
+        <span class="ion-checkmark-circled"></span>
+      {{/if}}
     </div>
+
+    {{#if project.hasTimer}}
+      <div class="remaining">
+        Projects Ends In: {{liquid-bind daysRemaining}} days, {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
+      </div>
+    {{else}}
+      <div class="description">
+        {{project.description}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="progress-numbers">
+    {{#if complete}}
+    {{else}}
+      <div class="prog-num">
+        <span class="metric">Total:</span>
+         {{project.totalTargetsCount}}
+      </div>
+      <div class="prog-num">
+        <span class="metric">Pending:</span> {{project.pendingTargetsCount}}
+      </div>
+    {{/if}}
+    <div class="prog-num">
+      <span class="metric">Fixed:</span>
+      {{project.fixedTargetsCount}}
+    </div>
+    {{#if complete}}{{else}}
+    <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
+      <span class="metric">Difference:</span>
+      {{#if differenceIsNegative}}
+        {{differenceFromExpected}}
+      {{else}}
+        +{{differenceFromExpected}}
+      {{/if}}
+    </div>
+    {{/if}}
+    {{#if progress}}
+      <div class="progress-bars">
+        <div class="progress-bar">
+          <div class="progress">
+            <div class="bar positive" style={{project.percentageThrough}}>
+            </div>
+          </div>
+        </div>
+        {{#if project.hasTimer}}
+        <div class="progress-bar">
+          <div class="progress">
+            <div class="bar neutral" style={{percentageExpectedFixed}}>
+            </div>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    {{/if}}
   </div>
 </div>
