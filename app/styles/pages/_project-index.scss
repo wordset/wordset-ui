@@ -23,8 +23,14 @@
       margin-left: 20px;
     }
   }
+  .progress-bar {
+    margin-bottom: 1px;
+  }
   .negative {
     color: $red;
+  }
+  .positive {
+    color: $positive-color;
   }
   .metric {
     color: darken($anchor-color, 20%);

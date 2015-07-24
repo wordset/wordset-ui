@@ -31,7 +31,7 @@
       {{project.fixedTargetsCount}}
     </div>
     {{#if isIncomplete}}
-    <div {{bind-attr class=":prog-num differenceIsNegative:negative" }}>
+    <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
       <span class="metric">Difference:</span>
       {{differenceFromExpected}}
     </div>
