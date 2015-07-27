@@ -20,7 +20,8 @@
       cursor: pointer;
       display: inline-block;
       font-size: 14px;
-      padding: 2px 10px;
+      padding: 2px 30px;
+      margin-right: 5px;
     }
     &.display-chat .chat,
     &.display-alert .alert  {
@@ -32,12 +33,32 @@
     .subpanel {
       margin-left: 400px;
       margin-bottom: 0px;
+      @media (max-width: $small) {
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
     }
     &.display-chat .subpanel.chat {
       margin-left: 0px;
+      @media (max-width: $small) {
+        display: block;
+        .message-list {
+          padding-bottom: 215px;
+        }
+      }
     }
     &.display-alert .subpanel.alert {
       margin-left: 0px;
+      @media (max-width: $small) {
+        display: block;
+        .alert-list {
+          padding-bottom: 155px;
+        }
+      }
     }
   }
 }
@@ -50,12 +71,18 @@
   background: #FFF;
   z-index: 2;
   ul {
-    background: #FFF;
     display: none;
-    padding: 10px;
-
+    position: relative;
     &.show-users, &.show-settings {
       display: block;
+    }
+    > li {
+      background: #FFF;
+      box-shadow: 0px 1px 2px #EEE;
+      padding: 10px;
+      position: absolute;
+      top: 24px;
+      right: 0px;
     }
     li:not(:last-of-type) {
       margin-bottom: 10px

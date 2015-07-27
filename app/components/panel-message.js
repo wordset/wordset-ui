@@ -9,6 +9,6 @@ export default Ember.Component.extend({
   scrollToBottom: function() {
     var messageWindow = Ember.$(".message-list")[0];
     messageWindow.scrollTop = messageWindow.scrollHeight;
-    // console.log("scrolling to bottom");
+    console.log("scrolling to bottom");
   }.on("didInsertElement")
 });

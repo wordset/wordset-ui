@@ -83,11 +83,10 @@
 // Typing New Messages
 
 .new-message-area {
-  @media (min-width: $small) {
-    position: fixed;
-    bottom: 0px;
-    width: 95%;
-  }
+  position: fixed;
+  bottom: 0px;
+  width: 95%;
+
   textarea {
     font-size: 18px;
     padding: 5px 30px 5px 5px;
