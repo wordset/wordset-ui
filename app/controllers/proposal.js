@@ -1,12 +1,7 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
-import { Bindings } from 'ember-pusher/bindings';
 
-export default Ember.Controller.extend(Bindings, {
-  logPusherEvents: true,
-  PUSHER_SUBSCRIPTIONS: {
-    proposals: ['push']
-  },
+export default Ember.Controller.extend({
   posList: ENV.posList,
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
@@ -48,9 +43,6 @@ export default Ember.Controller.extend(Bindings, {
     cancelEdit: function() {
       this.get("model").rollback();
       this.set("isEditing", false);
-    },
-    push: function(data) {
-      this.store.pushPayload('proposal', data);
     },
   }
 });

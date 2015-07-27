@@ -15,7 +15,6 @@
     "JavaScript-MD5": "~1.1.0",
     "jsdiff": "~1.2.2",
     "pusher": "~2.2.4",
-    "ember-pusher": "0.1.0",
     "qunit": "~1.17.1",
     "moment": "~2.10.2"
   }

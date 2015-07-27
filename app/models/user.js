@@ -8,7 +8,6 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
 
   proposals: DS.hasMany("proposals"),
-  votes: DS.hasMany("votes"),
   badges: DS.attr(),
 
   // Only for registration purposes

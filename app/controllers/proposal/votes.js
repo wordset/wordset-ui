@@ -2,18 +2,15 @@ import Ember from "ember";
 import ENV from '../../config/environment';
 // global _gaq //
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   needs: [ "proposal", "application" ],
   proposal: Ember.computed.alias("controllers.proposal.model"),
   isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
   currentUser: Ember.computed.alias("controllers.application.currentUser"),
 
-  myVote: function() {
-    return this.get("model").filterBy("usurped", false).filterBy("withdrawn", false).findBy("user.id", this.get("currentUser.id"));
-  }.property("model.@each.user", "currentUser"),
   canVote: function() {
-    return (!this.get("myVote"));
-  }.property("myVote"),
+    return ((this.get("proposal.userVoteIds") || []).indexOf(this.get("currentUser.id")) < 0);
+  }.property("proposal.userVoteIds.@each", "currentUser.id"),
   actions: {
     registerVote: function(type) {
       if(this.get("canVote")) {
@@ -35,7 +32,7 @@ export default Ember.ArrayController.extend({
     },
     withdrawVote: function() {
       var _this = this;
-      Ember.$.post(ENV.api + "/votes/" + this.get("myVote.id") + "/withdraw",
+      Ember.$.post(ENV.api + "/votes/" + this.get("proposal.id") + "/withdraw",
       {}, function(data) {
         _this.store.pushPayload('proposal', data);
       });

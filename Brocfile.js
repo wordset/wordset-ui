@@ -33,5 +33,6 @@ var app = new EmberApp({
 
 app.import("bower_components/jsdiff/diff.js");
 app.import("bower_components/moment/moment.js");
+app.import("bower_components/pusher/dist/pusher.js");
 
 module.exports = app.toTree();

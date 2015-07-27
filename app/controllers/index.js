@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   needs: ['application'],
   activeProject: Ember.computed.alias("currentLang.project"),
   currentLang: Ember.computed.alias("controllers.application.currentLang"),

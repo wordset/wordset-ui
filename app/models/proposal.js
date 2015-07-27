@@ -26,9 +26,9 @@ export default DS.Model.reopenClass({
   state: DS.attr("string"),
   createdAt: DS.attr("date"),
   tally: DS.attr("number"),
-  votes: DS.hasMany("vote"),
   activities: DS.hasMany("activity"),
   flagged: DS.attr("boolean"),
+  userVoteIds: DS.attr(),
 
   // NewWord
   meanings: DS.attr(),

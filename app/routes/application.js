@@ -8,9 +8,12 @@ import Proposal from '../models/proposal';
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
   willTransitionAt: null,
+  model: function() {
+    return this.store.find("lang", "en");
+  },
   setupController: function(controller, model) {
     this._super(controller, model);
-    controller.set("currentLang", this.store.find("lang", "en"));
+    controller.set("currentLang", model);
     console.log(controller.get("currentRouteName"));
     this.controllerFor("panel.messages").set("model", this.store.find('message'));
     this.controllerFor("panel.notifications").set("model", this.store.all("notification"));

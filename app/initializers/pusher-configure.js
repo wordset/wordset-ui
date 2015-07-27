@@ -2,6 +2,11 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 export function initialize(container, application) {
+  application.inject('controller', 'pusher', 'service:pusher');
+  application.inject('component', 'pusher', 'service:pusher');
+  application.inject('route', 'pusher', 'service:pusher');
+  application.inject('model', 'pusher', 'service:pusher');
+
   if (typeof application.PUSHER_OPTS === 'undefined') {
     application.deferReadiness();
     ENV.APP.PUSHER_OPTS = new Ember.RSVP.Promise(function(resolve, reject) {
@@ -23,6 +28,5 @@ export function initialize(container, application) {
 
 export default {
   name: 'pusher-configure',
-  before: 'pusher',
   initialize: initialize
 };

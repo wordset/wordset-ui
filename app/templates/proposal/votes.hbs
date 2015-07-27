@@ -1,12 +1,7 @@
 <h4>Vote</h4>
 {{#if isOpen}}
   {{#if currentUser}}
-    {{#if myVote}}
-      <div class="action-bar">
-        <button {{action "randomProposal"}} class="skip">Next</button>
-        <button {{action "withdrawVote"}} class='negative'>Withdraw Vote</button>
-      </div>
-    {{else}}
+    {{#if canVote}}
       <div class="action-bar">
         {{#if proposal.isRemoval}}
           <button {{action "registerVote" "yea"}} class="yae"><span class="ion-thumbsup"></span>Delete</button>
@@ -17,6 +12,11 @@
         {{/if}}
         <button {{action "registerVote" "skip"}} class="skip"><span class="ion-ios-fastforward"></span>Skip</button>
         <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span>Flag</button>
+      </div>
+    {{else}}
+      <div class="action-bar">
+        <button {{action "randomProposal"}} class="skip">Next</button>
+        <button {{action "withdrawVote"}} class='negative'>Withdraw Vote</button>
       </div>
     {{/if}}
   {{else}}
