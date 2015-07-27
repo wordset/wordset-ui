@@ -66,6 +66,9 @@ module.exports = function(environment) {
     ENV.apiHost = 'https://api.wordset.org';
     ENV.APP.PUSHER_OPTS = {
       key: '89cac67060d4d835fe7c',
+      connection: {
+        authEndpoint: "https://api.wordset.org/api/v1/auth/pusher_authorization"
+      }
     };
   }
 

@@ -23,7 +23,7 @@ export default Ember.Service.extend({
         }
       });
     } else {
-      this.connect(ENV.APP.PUSHER_OPTS.key, {});
+      this.connect(ENV.APP.PUSHER_OPTS.key, ENV.APP.PUSHER_OPTS.connection);
     }
   },
   connect: function(key, options) {
