@@ -22,9 +22,11 @@
     {{onlineUsers.length}}
   </div>
   <ul {{bind-attr class="showUsers"}}>
-    {{#each username in onlineUsers}}
-      <li>{{#link-to "user.index" username}}{{username}}{{/link-to}}</li>
-    {{/each}}
+    <li>
+      {{#each username in onlineUsers}}
+      {{#link-to "user.index" username}}{{username}}{{/link-to}}
+      {{/each}}
+    </li>
   </ul>
 </div>
 
