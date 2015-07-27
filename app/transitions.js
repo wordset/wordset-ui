@@ -8,5 +8,5 @@ export default function(){
   this.transition(
     this.childOf(".timer .remaining"),
     this.use('toUp')
-  )
+  );
 }
