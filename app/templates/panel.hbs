@@ -1,14 +1,18 @@
 {{#if showPanel}}
   <div class="tabs display-{{activeSubpanel}}">
     <div {{action "showSubpanel" "chat"}} class="chat"> Chat </div>
-    <div {{action "showSubpanel" "alert"}} class="alert"> Alerts </div>
+    {{#if loggedIn}}
+      <div {{action "showSubpanel" "alert"}} class="alert"> Alerts </div>
+    {{/if}}
   </div>
   <div class="subpanels display-{{activeSubpanel}}">
     <div class="subpanel chat">
       {{render "panel.messages"}}
     </div>
-    <div class="subpanel alert">
-      {{render "panel.notifications"}}
-    </div>
+    {{#if loggedIn}}
+      <div class="subpanel alert">
+        {{render "panel.notifications"}}
+      </div>
+    {{/if}}
   </div>
 {{/if}}
