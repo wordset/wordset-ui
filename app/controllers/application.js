@@ -21,6 +21,9 @@ export default Ember.Controller.extend(AppPusherMixin, {
   currentUser: function() {
     return this.session.get("user");
   }.property("session.user"),
+  loggedIn: function() {
+    return !Ember.isEmpty(this.get("username"))
+  }.property("username"),
   init: function() {
     this._super();
     if(localStorage.showPanel) {
