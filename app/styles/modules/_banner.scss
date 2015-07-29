@@ -1,9 +1,13 @@
 .banner {
   background: $header-color;
   color: #FFF;
+  display: none;
   padding: 10px;
   text-align: center;
   a {
     color: #FFF;
+  }
+  @media (min-width: $small) {
+    display: block;
   }
 }
