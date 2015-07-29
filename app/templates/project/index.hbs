@@ -12,7 +12,12 @@
 
   {{#if model.hasTimer}}
   <div class="remaining">
-    Projects Ends In: {{liquid-bind daysRemaining}} days, {{liquid-bind hoursRemaining}}:{{liquid-bind minutesRemaining}}:{{liquid-bind secondsRemaining}}
+    Project Ends In:
+    {{#if lessThanOneDay}}
+      {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins, {{liquid-bind secondsRemaining}}s
+    {{else}}
+      {{liquid-bind daysRemaining}} days, {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins
+    {{/if}}
   </div>
   {{/if}}
 

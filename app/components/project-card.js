@@ -7,4 +7,5 @@ export default Ember.Component.extend(ProjectCountdown, {
   link: true,
   timer: null,
 
+
 });

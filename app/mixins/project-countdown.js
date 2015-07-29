@@ -16,6 +16,9 @@ export default Ember.Mixin.create({
   daysRemaining: function() {
     return Math.floor(this.get("timeRemaining") / 86400);
   }.property("timeRemaining"),
+  lessThanOneDay: function() {
+    return this.get("daysRemaining") < 1;
+  }.property("daysRemaining"),
   expectedFixed: function() {
     var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
     return Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
