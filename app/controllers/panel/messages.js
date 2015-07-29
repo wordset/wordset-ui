@@ -7,6 +7,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
   pusher: Ember.inject.service(),
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  loggedIn: Ember.computed.alias('controllers.application.loggedIn'),
   chatReceived: Ember.computed.alias('controllers.application.chatReceived'),
 
   showUsers: false,
