@@ -40,6 +40,9 @@ export default Ember.Service.extend({
       if(this.privateChannel) {
         this.connection.unsubscribe(privateChannel.channelName);
       }
+      if(this.presenceChannel) {
+        this.connection.unsubscribe(presenceChannel.channelName);
+      }
       if(this.get("username")) {
         var authorizer = this.container.lookup('authorizer:api');
         conn.config.auth = {
