@@ -3,7 +3,7 @@ import Base from 'simple-auth/authorizers/base';
 
 export default Base.extend({
   authorize: function(jqXHR) {
-    var bearerKey = this.get("bearerKey")
+    var bearerKey = this.get("bearerKey");
     if (bearerKey) {
       jqXHR.setRequestHeader('Authorization', bearerKey);
     }

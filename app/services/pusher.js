@@ -30,7 +30,6 @@ export default Ember.Service.extend({
     var conn = new Pusher(key, options);
     this.set("connection", conn);
     this.public = conn.subscribe('public');
-    var _this = this;
     this.public.bind('push', (data) => this.handlePayload(data));
     console.log("session", this.get("session"));
   },
@@ -50,7 +49,6 @@ export default Ember.Service.extend({
             Authorization: authorizer.get("bearerKey")
           }
         };
-        var _this = this;
         this.privateChannel = conn.subscribe('private-' + this.get("username"));
         this.privateChannel.bind('push', (data) => this.handlePayload(data));
         this.privateChannel.bind('notify', (data) => this.handleNotification(data));
@@ -63,7 +61,7 @@ export default Ember.Service.extend({
   }.observes("username", "connection"),
   handlePayload: function(data) {
     if(data.meta) {
-      delete data.meta
+      delete data.meta;
     }
     this.get("store").pushPayload(data);
     if(data.message) {

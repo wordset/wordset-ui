@@ -22,4 +22,4 @@ export default Ember.Service.extend({
       this.set("browserNotifications", []);
     }
   }.observes("visible.now"),
-})
+});
