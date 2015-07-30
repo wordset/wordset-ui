@@ -5,6 +5,7 @@ import ENV from '../config/environment';
 export default Ember.Service.extend({
   store: Ember.inject.service(),
   browserNotifier: Ember.inject.service(),
+  chatReceived: false,
   connection: null,
   online: [],
   init: function() {
@@ -87,6 +88,7 @@ export default Ember.Service.extend({
     if(localStorage.notificationsEnabled === "true") {
       this.get("browserNotifier").newMessage(message);
     }
+    this.set("chatReceived", true);
   }
 
 });

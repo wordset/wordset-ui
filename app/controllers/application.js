@@ -7,7 +7,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
   showMenu: false,
   notifier: Ember.inject.service(),
   showPanel: false,
-  chatReceived: false,
+  chatReceived: Ember.computed.alias('pusher.chatReceived'),
   notifications: function() {
     return this.get("notifier.notifications");
   }.property("notifier.notifications.@each"),
