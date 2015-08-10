@@ -23,6 +23,10 @@ notification {
       color: darken($notification-color, 10%);
     }
   }
+  &.error {
+    background: $notification-background-error;
+    color: white;
+  }
   .title {
     font-size: 12px;
     margin-bottom: 4px;
