@@ -83,6 +83,9 @@
       position: absolute;
       top: 24px;
       right: 0px;
+      a {
+        display: block;
+      }
     }
     li:not(:last-of-type) {
       margin-bottom: 10px
