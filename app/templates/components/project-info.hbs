@@ -48,14 +48,16 @@
       {{project.fixedTargetsCount}}
     </div>
     {{#if complete}}{{else}}
-    <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
-      <span class="metric">Difference:</span>
-      {{#if differenceIsNegative}}
-        {{differenceFromExpected}}
-      {{else}}
-        +{{differenceFromExpected}}
+      {{#if project.hasTimer}}
+      <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
+        <span class="metric">Difference:</span>
+        {{#if differenceIsNegative}}
+          {{differenceFromExpected}}
+        {{else}}
+          +{{differenceFromExpected}}
+        {{/if}}
+      </div>
       {{/if}}
-    </div>
     {{/if}}
     {{#if progress}}
       <div class="progress-bars">
