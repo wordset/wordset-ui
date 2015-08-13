@@ -1,10 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  sortProperties: ['createdAt'],
-  sortAscending: false,
+export default Ember.Controller.extend({
   queryParams: 'page',
   page: 1,
+  proposals: Ember.computed("model.[]", function() {
+    return this.get("model").sortBy("createdAt").reverse()
+  }),
   total: Ember.computed("model", function() {
     return this.store.metadataFor("proposal").total;
   }),

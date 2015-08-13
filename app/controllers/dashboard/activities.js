@@ -1,9 +1,7 @@
 import Ember from "ember";
 
-export default Ember.ArrayController.extend({
-  sortProperties: ['createdAt'],
-  sortAscending: false,
-  limitedActivities: Ember.computed("arrangedContent.[]", function() {
-    return this.get("arrangedContent").slice(0,24);
+export default Ember.Controller.extend({
+  limitedActivities: Ember.computed("model.[]", function() {
+    return this.get("model").sortBy('createdAt').reverse().slice(0,24);
   }),
 });

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  sortProperties: ['points'],
-  sortAscending: false
+export default Ember.Controller.extend({
+  users: Ember.computed('model.[]', function() {
+    return this.get("model").sortBy("points").reverse();
+  })
 });

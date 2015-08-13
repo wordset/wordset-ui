@@ -1,7 +1,7 @@
 <h4>Activity</h4>
 {{#if firstObject}}
-  {{#each model as |activity|}}
-    {{render "proposal/activity" activity}}
+  {{#each activities as |activity|}}
+    {{render "proposal.activity" activity}}
   {{/each}}
 {{else}}
   <p>No votes yet.</p>

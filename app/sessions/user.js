@@ -6,7 +6,7 @@ export default Session.extend({
   user: Ember.computed('secure.username', function() {
     var userId = this.get('secure.username');
     if (!Ember.isEmpty(userId)) {
-      return this.container.lookup('store:main').find('user', userId);
+      return this.container.lookup('service:store').find('user', userId);
     }
   }),
 });
