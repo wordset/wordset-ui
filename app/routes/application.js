@@ -72,13 +72,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         _this.transitionTo('users.new');
       }
     },
-    log: function(category, name) {
-      if(ENV.environment === "production") {
-        Ember.run(function() {
-          ga('send', 'event', category, name);
-        });
-      }
-    },
+    
     openModal: function(modalName, model) {
       return this.render(modalName, {
         into: 'application',

@@ -38,11 +38,11 @@ export default Ember.Controller.extend(AppPusherMixin, {
   }.property("username", "currentPath"),
   actions: {
     toggleMenu: function() {
-      this.send("log", "nav", "menu_click");
+      this.tracker.log("nav", "menu_click");
       this.toggleProperty("showMenu");
     },
     togglePanel: function() {
-      this.send("log", "nav", "chat_click");
+      this.tracker.log("nav", "chat_click");
       this.toggleProperty("showPanel");
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);

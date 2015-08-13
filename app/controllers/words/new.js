@@ -48,7 +48,7 @@ export default Ember.Controller.extend(EmberValidations, {
   actions: {
     submitProposal: function() {
       var _this = this;
-      this.send("log", "propose", "new word");
+      this.tracker.log("propose", "new word");
       this.get("model").save().then(
         function(p) {
           _this.transitionToRoute("proposal.index", p);

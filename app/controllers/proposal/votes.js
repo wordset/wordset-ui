@@ -25,7 +25,7 @@ export default Ember.Controller.extend({
           }
         }).then(function(data) {
           _this.store.pushPayload(data);
-          _this.send("log", "votes", type);
+          _this.tracker.log("votes", type);
         });
 
       }

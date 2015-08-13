@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
     },
     submitEdit: function() {
       var _this = this;
-      this.send("log", "proposal", "edit");
+      this.tracker.log("proposal", "edit");
       this.get("model").save().then(
         function() {
           _this.set("isEditing", false);
@@ -37,7 +37,7 @@ export default Ember.Controller.extend({
       Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
       {}, function(data) {
         _this.store.pushPayload('proposal', data);
-        _this.send("log", "proposal", "withdraw");
+        _this.tracker.log("proposal", "withdraw");
       });
     },
     cancelEdit: function() {

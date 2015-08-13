@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       this.notifier.error("No such word found!");
       this.transitionTo("application");
     } else {
-      this.send("log", "word", "viewed");
+      this.tracker.log("word", "viewed");
       Ember.$(document).attr('title', 'What does \"' + model.get("text") + '\" mean?');
     }
 

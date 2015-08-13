@@ -29,7 +29,7 @@ export default Ember.Controller.extend( EmberValidations, {
           }).then(function() {
             _this.transitionToRoute("index");
             _this.get("notifier").show("Logged in!", {name: "Success"});
-            _this.send("log", "account", "resetpassword");
+            _this.tracker.log("account", "resetpassword");
           });
         });
     },

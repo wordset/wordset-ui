@@ -31,7 +31,7 @@ export default Ember.Controller.extend( EmberValidations, {
       this.get("model").save().then(function(){
         _this.get("notifier").show('Welcome! Now just log in to begin!', {type: "Success"});
         _this.transitionToRoute('users.login');
-        _this.send("log", "account", "register");
+        _this.tracker.log("account", "register");
       }, function(resp) {
         // Couldn't save, do nothing about it.
         _this.set("isError", true);

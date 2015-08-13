@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   afterModel: function(model) {
     this._super(model);
     var word = this.modelFor('proposal').get('wordName');
-    this.send("log", "proposal", "viewed");
+    this.tracker.log("proposal", "viewed");
     Ember.$(document).attr('title', word + ' – proposal from Wordset');
   },
   setupController: function(controller, model) {

@@ -27,7 +27,7 @@ export default Ember.Controller.extend(EmberValidations, {
       }).then(function() {
          _this.set("comment", "");
       }, function() { });
-      this.send("log", "proposal", "commented");
+      this.tracker.log("proposal", "commented");
     },
   }
 });
