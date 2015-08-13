@@ -1,9 +1,9 @@
-{{#if loggedIn}}
+{{#if session.isAuthenticated}}
   <div class="message-settings">
     <div class="toggle-settings" {{action "toggleSettings"}}>
       <span class="ion-gear-b"></span>
     </div>
-    <ul {{bind-attr class="showSettings"}}>
+    <ul class="{{if showSettings 'show-settings'}}">
       <li>
         {{#if notificationsEnabled}}
           <span {{action "disableNotifications"}}>
@@ -22,10 +22,10 @@
       <span class="ion-person"></span>
       {{onlineUsers.length}}
     </div>
-    <ul {{bind-attr class="showUsers"}}>
+    <ul class="{{if showUsers 'show-users'}}">
       <li>
         {{#each onlineUsers as |username|}}
-        {{#link-to "user.index" username}}{{username}}{{/link-to}}
+          {{#link-to "user.index" username}}{{username}}{{/link-to}}
         {{/each}}
       </li>
     </ul>
@@ -41,7 +41,7 @@
 
   <div class='new-message-area'>
     {{#if session.isAuthenticated}}
-      <button {{action "submitMessage"}} {{bind-attr disabled=isInvalid}}>
+      <button {{action "submitMessage"}} disabled={{isInvalid}}>
         <span class="ion-chevron-right" />
       </button>
       {{multi-box value=text action="submitMessage" maxlength="255"}}
