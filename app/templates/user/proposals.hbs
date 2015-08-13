@@ -1,5 +1,5 @@
 <div class="proposals-user">
-{{#each proposal in model.proposals}}
+{{#each model.proposals as |proposal|}}
   {{#link-to 'proposal' proposal}}
     <div {{bind-attr class="proposal.state :item"}}>
       <div class="sentence">

@@ -2,7 +2,7 @@
   <h2>Top Contributors</h2>
 
   <ol class="users">
-  {{#each user in controller}}
+  {{#each model as |user|}}
     <li>
       <img {{bind-attr src="user.imageUrl"}} class="avatar" alt="" />
       <div class="info">

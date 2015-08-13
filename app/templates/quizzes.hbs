@@ -2,7 +2,7 @@
   <h2>Quizzes</h2>
 
   <div class="quizzes">
-    {{#each quiz in model}}
+    {{#each model as |quiz|}}
       <div class="quiz-box">
         {{#link-to "quiz" quiz.id}}
         <div class="image">

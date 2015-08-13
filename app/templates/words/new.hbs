@@ -18,7 +18,7 @@
       {{/validated-input}}
     </label>
 
-    {{#each meaning in model.meanings}}
+    {{#each model.meanings as |meaning|}}
       <div class="submeaning">
         {{render "words/new_word_submeaning" meaning}}
         {{#if canRemove}}

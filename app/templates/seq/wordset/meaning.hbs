@@ -5,7 +5,7 @@
         <div class="def">
           <span class="pos">({{meaning.pos}})</span>
           <div class="meaning-labels">
-            {{#each label in meaning.labels}}
+            {{#each meaning.labels as |label|}}
               <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
             {{/each}}
           </div>

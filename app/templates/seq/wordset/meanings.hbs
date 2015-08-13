@@ -1,5 +1,5 @@
 <ol class="meanings">
-  {{#each meaning in model.meanings}}
+  {{#each model.meanings as |meaning|}}
     {{render "seq/wordset/meaning" meaning}}
   {{/each}}
 </ol>

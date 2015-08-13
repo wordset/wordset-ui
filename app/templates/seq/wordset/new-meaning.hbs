@@ -8,7 +8,7 @@
   <p>Meanings that are already covered (even badly) by an
     existing meaning will be rejected.</p>
 
-  {{#each error in errors.messages}}
+  {{#each errors.messages as |error|}}
     <div class="error">
       {{error}}
     </div>
