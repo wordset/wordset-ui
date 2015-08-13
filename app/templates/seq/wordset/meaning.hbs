@@ -6,7 +6,7 @@
           <span class="pos">({{meaning.pos}})</span>
           <div class="meaning-labels">
             {{#each meaning.labels as |label|}}
-              <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+              <div class="label {{if label.isDialect 'dialect' 'nondialect'}}">{{label.name}}</div>
             {{/each}}
           </div>
           {{meaning.def}}
@@ -41,7 +41,7 @@
       {{/if}}
     </div> <!-- meaning div -->
     {{#if displayEdit}}
-      <div {{bind-attr class=":editDefWrap displayEdit"}}>
+      <div class="editDefWrap {{if displayEdit 'display-edit'}}">
         {{render "seq/wordset/propose-meaning-change" meaningProposal}}
       </div>
     {{/if}}

@@ -14,6 +14,6 @@
     </label>
     {{meaning-edit model=meaning showButtons=false useLabelIds=true lang=model.lang}}
   {{/each}}
-  <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
+  <button class="submitProposal" disabled={{isInvalid}} {{action "submitEdit"}}>Submit Edit</button>
   <button class="negative" {{action "cancelEdit"}}>Cancel</button>
 </div>

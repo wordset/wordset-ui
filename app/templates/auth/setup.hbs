@@ -9,6 +9,6 @@
 
   {{partial "users/-tos-area"}}
 
-  <button {{action "submit"}} {{bind-attr disabled=isInvalid}}>Finish Registration</button>
+  <button {{action "submit"}} disabled={{isInvalid}}>Finish Registration</button>
   <button {{action "cancel"}} class="negative">Cancel</button>
 </div>

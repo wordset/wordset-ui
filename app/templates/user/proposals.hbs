@@ -1,7 +1,7 @@
 <div class="proposals-user">
 {{#each model.proposals as |proposal|}}
   {{#link-to 'proposal' proposal}}
-    <div {{bind-attr class="proposal.state :item"}}>
+    <div class="{{proposal.state}} item"}}>
       <div class="sentence">
         <span class="state">{{proposal.state}}</span>
         proposal for a
@@ -14,8 +14,8 @@
       </div>
       <div class="progress-bar">
         <div class="progress">
-          <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
-          <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+          <div class="bar negative" style="{{proposal.negativeTally}}"></div>
+          <div class="bar positive" style="{{proposal.positiveTally}}"></div>
         </div>
       </div>
     </div>

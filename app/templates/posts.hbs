@@ -2,13 +2,11 @@
   <h2>Blog Posts</h2>
 
   <ul class="posts">
-    {{#each controller as |post|}}
-
+    {{#each model as |post|}}
       <li>
         <div class="title">{{#link-to "post" post.id}}{{post.title}}{{/link-to}}</div>
         <div class="byline">by <strong>{{post.authorName}}</strong> on {{formatted-date date=post.publishedAt}}</div>
       </li>
-
     {{/each}}
   </ul>
 </div>

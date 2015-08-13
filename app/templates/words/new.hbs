@@ -28,7 +28,7 @@
     {{/each}}
 
     <div>
-      <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
+      <button class="submitProposal" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
       <button class="add-new-meaning" {{action "addMeaning"}}>
         <span class="ion-plus"></span>
         Add New Meaning

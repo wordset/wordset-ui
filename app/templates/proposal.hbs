@@ -9,7 +9,7 @@
       {{else}}
         {{#if model.user}}
           {{#link-to "user" model.user}}
-            <img {{bind-attr src="model.user.imageUrl"}} class="avatar" alt="" />
+            <img src="{{model.user.imageUrl}}" class="avatar" alt="" />
           {{/link-to}}
           {{#link-to "user" model.user}}
             {{model.user.id}}
@@ -55,10 +55,10 @@
   <h4>Tally</h4>
   <div class="progress-bar">
     <div class="progress-negative">
-      <div class="bar" {{bind-attr style="model.negativeTally"}}></div>
+      <div class="bar" style="{{model.negativeTally}}"></div>
     </div>
     <div class="progress-positive">
-      <div class="bar" {{bind-attr style="model.positiveTally"}}></div>
+      <div class="bar" style="{{model.positiveTally}}"></div>
     </div>
     <div class="numbers">
       <div class="min">-100</div>

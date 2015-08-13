@@ -1,6 +1,6 @@
 <h4>Activity</h4>
 {{#if firstObject}}
-  {{#each controller as |activity|}}
+  {{#each model as |activity|}}
     {{render "proposal/activity" activity}}
   {{/each}}
 {{else}}

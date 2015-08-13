@@ -14,7 +14,7 @@
     {{#if model.labels}}
       <ins>Labels:</ins>
       {{#each model.labels as |label|}}
-        <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
+        <div class="label {{if label.isDialect 'dialect' 'nondialect'}}">{{label.name}}</div>
       {{/each}}
     {{/if}}
   </div>

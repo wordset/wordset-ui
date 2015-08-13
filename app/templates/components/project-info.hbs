@@ -49,7 +49,7 @@
     </div>
     {{#if complete}}{{else}}
       {{#if project.hasTimer}}
-      <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
+      <div class="prog-num {{if differenceIsNegative 'negative' 'positive'}}">
         <span class="metric">Difference:</span>
         {{#if differenceIsNegative}}
           {{differenceFromExpected}}

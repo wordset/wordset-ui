@@ -3,7 +3,7 @@
   {{#link-to 'redirector' (query-params url=message.url)}}
     <li class="message link">
       <div class="link-image">
-        <img {{bind-attr src="message.user.imageUrl"}} class="icon" alt="" />
+        <img src="{{message.user.imageUrl}}" class="icon" alt="" />
         <span class="ion-forward"></span>
       </div>
 
@@ -15,8 +15,8 @@
     </li>
   {{/link-to}}
 {{else}}
-  <li {{bind-attr class=":message message.isSelf"}}>
-    {{#link-to "user.index" message.user.id}}<img {{bind-attr src="message.user.imageUrl"}} class="icon" alt="" />{{/link-to}}
+  <li class="message {{if message.isSelf 'is-self'}}">
+    {{#link-to "user.index" message.user.id}}<img src="{{message.user.imageUrl}}" class="icon" alt="" />{{/link-to}}
     <div class="info">
       {{#if message.isSelf}}
         <div class='text'>
