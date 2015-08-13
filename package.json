@@ -43,7 +43,6 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
     "ember-radio-button": "1.0.7",
-    "ember-resize-mixin": "0.1.1",
     "ember-validations": "2.0.0-alpha.4",
     "ember-watson": "^0.6.2",
     "express": "^4.12.2",
