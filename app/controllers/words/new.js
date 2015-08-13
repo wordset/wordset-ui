@@ -41,7 +41,7 @@ export default Ember.Controller.extend(EmberValidations, {
     return this.get("model.lang.parts");
   }),
 
-  canRemove: Ember.computed("model.meanings.@each", function() {
+  canRemove: Ember.computed("model.meanings.[]", function() {
     return this.get("model").get("meanings").length > 1;
   }),
 

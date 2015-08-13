@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       return _this.get("label_ids").contains("" + label.id);
     });
   }),
-  label_ids: Ember.computed("model.label_ids.@each", function() {
+  label_ids: Ember.computed("model.label_ids.[]", function() {
     return this.get("model.label_ids") || [];
   }),
   originalLabels: [],

@@ -8,7 +8,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
   notifier: Ember.inject.service(),
   showPanel: false,
   chatReceived: Ember.computed.alias('pusher.chatReceived'),
-  notifications: Ember.computed("notifier.notifications.@each", function() {
+  notifications: Ember.computed("notifier.notifications.[]", function() {
     return this.get("notifier.notifications");
   }),
   hasChatAlert: Ember.computed("showPanel", "chatReceived", function() {

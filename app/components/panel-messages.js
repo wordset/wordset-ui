@@ -9,10 +9,10 @@ export default Ember.Component.extend(EmberValidations, {
 
   showUsers: false,
   showSettings: false,
-  messageList: Ember.computed("messages.@each", function() {
+  messageList: Ember.computed("messages.[]", function() {
     return this.get("messages").sortBy("createdAt");
   }),
-  onlineUsers: Ember.computed("pusher.online.@each", function() {
+  onlineUsers: Ember.computed("pusher.online.[]", function() {
     return this.get("pusher.online");
   }),
   validations: {

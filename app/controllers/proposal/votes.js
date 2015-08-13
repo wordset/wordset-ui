@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
   currentUser: Ember.computed.alias("controllers.application.currentUser"),
 
-  canVote: Ember.computed("proposal.userVoteIds.@each", "currentUser.id", function() {
+  canVote: Ember.computed("proposal.userVoteIds.[]", "currentUser.id", function() {
     return ((this.get("proposal.userVoteIds") || []).indexOf(this.get("currentUser.id")) < 0);
   }),
   actions: {

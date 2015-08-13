@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   activeProject: Ember.computed.alias("currentLang.project"),
   currentLang: Ember.computed.alias("controllers.application.currentLang"),
   postsSimple: Ember.computed.alias("currentLang.postsSimple"),
-  topPostsSimple: Ember.computed("postsSimple.@each", function() {
+  topPostsSimple: Ember.computed("postsSimple.[]", function() {
     return this.get("postsSimple").slice(0, 2);
   }),
 });
