@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   seq: null,
-  model: function(params) {
+  model(params) {
     this.set("seq", params.seq);
   },
   actions: {
-    didTransition: function() {
+    didTransition() {
       this.replaceWith("seq.wordset.index", "en", this.get("seq"));
     }
   }

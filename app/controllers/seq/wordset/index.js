@@ -3,12 +3,12 @@ import Ember from "ember";
 export default Ember.Controller.extend({
   showMeaningProposal: false,
   newMeaningProposal: false,
-  posList: function() {
+  posList: Ember.computed("model.lang", function() {
     return this.get("model.lang.parts");
-  }.property("model.lang"),
+  }),
   actions: {
-    toggleShowAddMeaning: function() {
-      this.set("newMeaningProposal", this.store.createRecord("proposal", {
+    toggleShowAddMeaning() {
+      this.set("newMeaningProposal", this.store.createRecord('proposal', {
         type: "NewMeaning",
         wordset: this.get("model"),
         wordName: this.get("model").get("name"),
@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
       this.set("showMeaningProposal", true);
     },
     // Clean up the states if we are canceling the AddNewMeaning dialog
-    cancelShowAddMeaning: function() {
+    cancelShowAddMeaning() {
       var _this = this;
       this.set("showMeaningProposal", false);
       // After we've hidden it... then remove it.

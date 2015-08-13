@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  showBanner: function() {
+  showBanner: Ember.computed("session.isAuthenticated", function() {
     return !this.get("session").get("isAuthenticated");
-  }.property("session.isAuthenticated"),
+  }),
 });

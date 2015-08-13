@@ -6,23 +6,23 @@ export default Ember.Controller.extend({
   needs: ['application'],
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   justVoted: false,
-  isOpen: function() {
+  isOpen: Ember.computed("model.state", function() {
     return (this.get("model.state") === "open");
-  }.property("model.state"),
-  isMine: function() {
+  }),
+  isMine: Ember.computed("model.user.id", "currentUser.id", function() {
     return (this.get("model.user.id") === this.get("currentUser.id"));
-  }.property("model.user.id", "currentUser.id"),
-  canChange: function() {
+  }),
+  canChange: Ember.computed("isOpen", "isMine", function() {
     return (this.get("isOpen") && this.get("isMine"));
-  }.property("isOpen", "isMine"),
-  partialName: function() {
+  }),
+  partialName: Ember.computed("model.type", function() {
     return "proposal/" + this.get("model.type").dasherize();
-  }.property("model.type"),
+  }),
   actions: {
-    startEdit: function() {
+    startEdit() {
       this.set("isEditing", true);
     },
-    submitEdit: function() {
+    submitEdit() {
       var _this = this;
       this.tracker.log("proposal", "edit");
       this.get("model").save().then(
@@ -32,7 +32,7 @@ export default Ember.Controller.extend({
         function() {}
       );
     },
-    withdraw: function() {
+    withdraw() {
       var _this = this;
       Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
       {}, function(data) {
@@ -40,7 +40,7 @@ export default Ember.Controller.extend({
         _this.tracker.log("proposal", "withdraw");
       });
     },
-    cancelEdit: function() {
+    cancelEdit() {
       this.get("model").rollback();
       this.set("isEditing", false);
     },

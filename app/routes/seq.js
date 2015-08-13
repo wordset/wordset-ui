@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(params) {
+  model(params) {
     return this.store.find('seq', params.lang + "-" + params.seq).then(
       (model) => model,
       (error) => null);
   },
-  afterModel: function(model) {
+  afterModel(model) {
     this._super(model);
     if(Ember.isEmpty(model)) {
       this.notifier.error("No such word found!");

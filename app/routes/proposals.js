@@ -9,11 +9,11 @@ export default Ember.Route.extend({
       refreshModel: true
     }
   },
-  activate: function() {
+  activate() {
     this._super();
     window.scrollTo(0,0);
   },
-  model: function(params) {
+  model(params) {
     var page;
     if(params.page) {
       page = params.page;
@@ -27,11 +27,11 @@ export default Ember.Route.extend({
             flagged: this.get('flagged')
           });
   },
-  afterModel: function(model) {
+  afterModel(model) {
     this._super(model);
     Ember.$(document).attr('title', 'Proposals from Wordset');
   },
-  setupController: function(controller, model){
+  setupController(controller, model) {
     this._super(controller, model);
     controller.setProperties({
       offset: this.get('offset'),

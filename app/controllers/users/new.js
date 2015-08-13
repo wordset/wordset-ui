@@ -26,7 +26,7 @@ export default Ember.Controller.extend( EmberValidations, {
     }
   },
   actions: {
-    register: function() {
+    register() {
       var _this = this;
       this.get("model").save().then(function(){
         _this.get("notifier").show('Welcome! Now just log in to begin!', {type: "Success"});

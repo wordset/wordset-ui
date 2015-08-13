@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -14,22 +15,27 @@ export default DS.Model.extend({
   endsAt: DS.attr("date"),
   expectedFixed: DS.attr("number"),
 
-  percentageThrough: function() {
+  percentageThrough: Ember.computed("percentageComplete", function() {
     var perc = this.get("percentageComplete");
     return "width: " + perc + "%;";
-  }.property("percentageComplete"),
+  }),
 
-  canHelpOut: function() {
-    return (this.get("totalTargetsCount") > (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
-  }.property("totalTargetsCount", "pendingTargetsCount", "fixedTargetsCount"),
+  canHelpOut: Ember.computed(
+    "totalTargetsCount",
+    "pendingTargetsCount",
+    "fixedTargetsCount",
+    function() {
+      return (this.get("totalTargetsCount") > (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
+    }
+  ),
 
-  hasTimer: function() {
+  hasTimer: Ember.computed("endsAt", "state", function() {
     return !!((this.get("state") === "active") && this.get("endsAt"));
-  }.property("endsAt", "state"),
-  totalTimeRemaining: function() {
+  }),
+  totalTimeRemaining: Ember.computed("endsAt", "startedAt", "hup.at", function() {
     return this.get("endsAt") - this.get("startedAt");
-  }.property("endsAt", "startedAt", "hup.at"),
-  spaceBetweenProposals: function() {
+  }),
+  spaceBetweenProposals: Ember.computed("hasTimer", "endsAt", "startedAt", "totalTargetsCount", function() {
     return ((this.get("endsAt") - this.get("startedAt")) / 1000) / this.get("totalTargetsCount");
-  }.property("hasTimer", "endsAt", "startedAt", "totalTargetsCount"),
+  }),
 });

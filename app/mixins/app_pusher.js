@@ -4,16 +4,16 @@ import ENV from '../config/environment';
 // used by the Application controller
 
 export default Ember.Mixin.create({
-  subscribeToMyChannel: function() {
+  subscribeToMyChannel: Ember.observer("userChannel", function() {
     var channelName = this.get("username") + '_channel';
     //this.pusher.wire(this, channelName, ['notify']);
-  }.observes("userChannel"),
-  init: function() {
+  }),
+  init() {
     this._super();
     this.subscribeToMyChannel();
   },
   actions: {
-    notify: function(data) {
+    notify(data) {
       this.store.pushPayload('notification', data);
       var activity = data.activities[0];
       Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");

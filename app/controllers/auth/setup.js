@@ -21,11 +21,11 @@ export default Ember.Controller.extend(EmberValidations, {
     }
   },
   actions: {
-    cancel: function() {
+    cancel() {
       this.notifier.show("Signup cancelled");
       this.transitionToRoute("index");
     },
-    submit: function() {
+    submit() {
       var _this = this;
       Ember.$.post(ENV.apiHost + "/auth/" + this.get("model.provider") + "/create", this.get("model")).then(
         function(response) {

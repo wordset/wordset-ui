@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   at: null,
-  init: function() {
+  init() {
     this._super();
     this.to();
   },
-  to: function() {
+  to() {
     this.set("at", new Date());
   },
 });

@@ -15,7 +15,7 @@ export default Ember.Controller.extend( EmberValidations, {
     },
   },
   actions: {
-    submit: function() {
+    submit() {
       var _this = this;
       var url = ENV.api + "/users/reset_password";
       Ember.$.post(url, {

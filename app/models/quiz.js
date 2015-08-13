@@ -1,7 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  lang: DS.belongsTo("lang"),
+  lang: DS.belongsTo('lang', {
+    async: false
+  }),
   title: DS.attr("string"),
   image_url: DS.attr("string"),
   image_citation: DS.attr("string"),

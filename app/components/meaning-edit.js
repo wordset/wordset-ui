@@ -15,10 +15,10 @@ export default Ember.Component.extend( EmberValidations, {
   },
   showButtons: true,
   actions: {
-    submitEdit: function() {
+    submitEdit() {
       this.get("targetObject").send("submitEdit");
     },
-    cancelEdit: function() {
+    cancelEdit() {
       this.get("targetObject").send("cancelEdit");
     }
   }

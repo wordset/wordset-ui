@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   activeSubpanel: "chat",
 
   actions: {
-    showSubpanel: function(panelName) {
+    showSubpanel(panelName) {
       this.set("activeSubpanel", panelName);
     },
   }

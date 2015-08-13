@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   isConfirm: false,
   actions: {
-    showConfirm: function() {
+    showConfirm() {
       this.toggleProperty("isConfirm");
     },
-    confirm: function() {
+    confirm() {
       this.toggleProperty("isConfirm");
       this.sendAction("action", this.get("param"));
     },

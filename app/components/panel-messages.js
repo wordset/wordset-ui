@@ -9,26 +9,26 @@ export default Ember.Component.extend(EmberValidations, {
 
   showUsers: false,
   showSettings: false,
-  messageList: function() {
+  messageList: Ember.computed("messages.@each", function() {
     return this.get("messages").sortBy("createdAt");
-  }.property("messages.@each"),
-  onlineUsers: function() {
+  }),
+  onlineUsers: Ember.computed("pusher.online.@each", function() {
     return this.get("pusher.online");
-  }.property("pusher.online.@each"),
+  }),
   validations: {
     text: {
       presence: true,
       length: { minimum: 1, maximum: 255 },
     },
   },
-  init: function() {
+  init() {
     this._super();
     if(localStorage.notificationsEnabled) {
       this.set("notificationsEnabled", JSON.parse(localStorage.notificationsEnabled));
     }
   },
   actions: {
-    submitMessage: function() {
+    submitMessage() {
       if(this.get("isValid")) {
         this.tracker.log("messages", "sentchat");
         Ember.$.post(ENV.api + "/messages", {
@@ -40,9 +40,9 @@ export default Ember.Component.extend(EmberValidations, {
       }
       this.set("text", "");
     },
-    toggleUsers: function() { this.toggleProperty("showUsers"); },
-    toggleSettings: function() { this.toggleProperty("showSettings"); },
-    enableNotifications: function() {
+    toggleUsers() { this.toggleProperty("showUsers"); },
+    toggleSettings() { this.toggleProperty("showSettings"); },
+    enableNotifications() {
       var _this = this;
       Notification.requestPermission(function(result) {
         if(result === "granted") {
@@ -55,7 +55,7 @@ export default Ember.Component.extend(EmberValidations, {
         }
       });
     },
-    disableNotifications: function() {
+    disableNotifications() {
       this.set("notificationsEnabled", false);
       this.tracker.log("notifications", "disabled");
       localStorage.notificationsEnabled = false;

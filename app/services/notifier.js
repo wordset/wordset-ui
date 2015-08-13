@@ -4,7 +4,7 @@ export default Ember.Service.extend({
 
   notifications: [],
 
-  show: function(text, options) {
+  show(text, options) {
     if(typeof options !== "object") {
       options = { };
     }
@@ -13,7 +13,7 @@ export default Ember.Service.extend({
     this.get("notifications").addObject(options);
   },
 
-  error: function(text, options) {
+  error(text, options) {
     if(typeof options !== "object") {
       options = {};
     }
@@ -22,7 +22,7 @@ export default Ember.Service.extend({
     this.show(text, options);
   },
 
-  remove: function(notification) {
+  remove(notification) {
     Ember.run.later(this, function() {
       this.get("notifications").removeObject(notification);
     }, 3000);

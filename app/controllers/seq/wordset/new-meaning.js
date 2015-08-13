@@ -16,7 +16,7 @@ export default Ember.Controller.extend( EmberValidations,
   },
 
   actions: {
-    submitProposal: function() {
+    submitProposal() {
       this.tracker.log("proposal", "new meaning");
       this.get("proposalTarget");
 

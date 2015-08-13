@@ -4,7 +4,7 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 export default Ember.Controller.extend(LoginControllerMixin, {
   authenticator: 'authenticator:api',
   actions: {
-    authenticate: function() {
+    authenticate() {
       var _this = this;
       this._super().then(function() {
         _this.tracker.log("account", "login");

@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['mask'],
-  touchEnd: function() {
+  touchEnd() {
     this.get("targetObject").send("toggleMenu");
   },
-  click: function() {
+  click() {
     this.get("targetObject").send("toggleMenu");
   }
 });

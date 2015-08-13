@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function(/*params*/) {
+  model() /*params*/{
     return this.store.createRecord('proposal', {
       type: 'NewWordset',
       meanings: [{label_ids: []}],

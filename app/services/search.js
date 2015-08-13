@@ -4,7 +4,7 @@ import ENV from '../config/environment';
 export default Ember.Service.extend({
   langs: {},
 
-  load: function(lang) {
+  load(lang) {
     var _this = this;
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.getJSON(ENV.api + `/seqs/${lang}.list`).then(function(data) {
@@ -16,7 +16,7 @@ export default Ember.Service.extend({
 
   },
 
-  perform: function(lang, term) {
+  perform(lang, term) {
     var _this = this;
     return new Ember.RSVP.Promise(function(resolve) {
       var wordList = _this.get("langs." + lang);

@@ -7,7 +7,9 @@ export default DS.Model.extend({
   imageUrl: DS.attr("string"),
   createdAt: DS.attr('date'),
 
-  proposals: DS.hasMany("proposals"),
+  proposals: DS.hasMany('proposals', {
+    async: false
+  }),
   badges: DS.attr(),
 
   // Only for registration purposes

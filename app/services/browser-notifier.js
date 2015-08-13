@@ -4,7 +4,7 @@ import ENV from '../config/environment';
 export default Ember.Service.extend({
   visible: Ember.inject.service(),
   browserNotifications: [],
-  newMessage: function(data) {
+  newMessage(data) {
     let body = data.text;
     let tag = data.user.id;
     let title = data.user.id;
@@ -14,12 +14,12 @@ export default Ember.Service.extend({
       this.get("browserNotifications").addObject(n);
     }
   },
-  clearNotifications: function() {
+  clearNotifications: Ember.observer("visible.now", function() {
     if(this.get("visible.now") === true) {
       this.get("browserNotifications").forEach(function(n) {
         n.close();
       });
       this.set("browserNotifications", []);
     }
-  }.observes("visible.now"),
+  }),
 });

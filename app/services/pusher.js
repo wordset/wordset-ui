@@ -8,7 +8,7 @@ export default Ember.Service.extend({
   chatReceived: false,
   connection: null,
   online: [],
-  init: function() {
+  init() {
     this._super();
     var key = ENV.APP.PUSHER_OPTS.key;
 
@@ -17,10 +17,10 @@ export default Ember.Service.extend({
       Ember.$.ajax({
         dataType: "json",
         url: (ENV.api + "/auth/pusher_configuration"),
-        success: function(data) {
+        success(data) {
           _this.connect(data.key, data.connection);
         },
-        failure: function(error) {
+        failure(error) {
           console.warn("Unable to load pusher configuration in time", error);
         }
       });
@@ -28,13 +28,13 @@ export default Ember.Service.extend({
       this.connect(ENV.APP.PUSHER_OPTS.key, ENV.APP.PUSHER_OPTS.connection);
     }
   },
-  connect: function(key, options) {
+  connect(key, options) {
     var conn = new Pusher(key, options);
     this.set("connection", conn);
     this.public = conn.subscribe('public');
     this.public.bind('push', (data) => this.handlePayload(data));
   },
-  connectPrivateChannel: function() {
+  connectPrivateChannel: Ember.observer("session.username", "connection", function() {
     var conn = this.get('connection');
     if(conn) {
       if(this.privateChannel) {
@@ -59,8 +59,8 @@ export default Ember.Service.extend({
         this.presenceChannel.bind('pusher:member_removed', (member) => this.get("online").removeObject(member.id));
       }
     }
-  }.observes("session.username", "connection"),
-  handlePayload: function(data) {
+  }),
+  handlePayload(data) {
     if(data.meta) {
       delete data.meta;
     }
@@ -69,7 +69,7 @@ export default Ember.Service.extend({
       this.handleMessage(data.message);
     }
   },
-  handleNotification: function(data) {
+  handleNotification(data) {
     this.handlePayload(data);
     var activity = data.activities[0];
     Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");
@@ -84,7 +84,7 @@ export default Ember.Service.extend({
         this.send('openModal', 'new-badge', data);
     }
   },
-  handleMessage: function(message) {
+  handleMessage(message) {
     if(localStorage.notificationsEnabled === "true") {
       this.get("browserNotifier").newMessage(message);
     }

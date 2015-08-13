@@ -45,6 +45,7 @@
     "ember-radio-button": "1.0.7",
     "ember-resize-mixin": "0.1.1",
     "ember-validations": "2.0.0-alpha.4",
+    "ember-watson": "^0.6.2",
     "express": "^4.12.2",
     "glob": "^5.0.1",
     "jsdiff": "^1.1.1",

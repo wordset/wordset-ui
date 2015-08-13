@@ -9,24 +9,24 @@ export default Ember.Component.extend({
   selectedIndex: -1,
   loaded: false,
   wordList: null,
-  didInsertElement: function() {
+  didInsertElement() {
     // make sure we've loaded search
     var _this = this;
     this.get("search").load(this.get("lang")).then(function() {
       _this.set("loaded", true);
     });
   },
-  selectedWord: function() {
+  selectedWord: Ember.computed("selectedIndex", function() {
     if(this.get("selectedIndex") >= 0) {
       return this.get("wordList").objectAt(this.get("selectedIndex"));
     } else {
       return null;
     }
-  }.property("selectedIndex"),
-  wordCount: function() {
+  }),
+  wordCount: Ember.computed("wordList", function() {
     return this.get("wordList.length");
-  }.property("wordList"),
-  searchTermObserver: function() {
+  }),
+  searchTermObserver: Ember.observer('searchTerm', function() {
     this.set("selectedIndex", -1);
     if(this.get("searchTerm") === "") {
       this.set("showSearchList", false);
@@ -39,8 +39,8 @@ export default Ember.Component.extend({
         _this.set("showSearchList", true);
       });
     }
-  }.observes('searchTerm'),
-  keyDown: function(event) {
+  }),
+  keyDown(event) {
     if(event.keyCode === 13) {
       if(event.shiftKey === true) {
         this.send("searchShiftEnter");
@@ -66,21 +66,21 @@ export default Ember.Component.extend({
     }
     return false;
   },
-  checkForFocus: function() {
+  checkForFocus: Ember.on('focusOut', function() {
     var _this = this;
     Ember.run.later(function() {
       if(!Ember.$.contains(_this.get("element"), document.activeElement)) {
         _this.set("showSearchList", false);
       }
     }, 300);
-  }.on('focusOut'),
+  }),
   actions: {
-    clickNewWord: function() {
+    clickNewWord() {
       this.get('targetObject').transitionToRoute("words.new", "en");
       this.set("showSearchList", false);
       this.set('searchTerm', '');
     },
-    clickWord: function(word) {
+    clickWord(word) {
       this.set("showSearchList", false);
       if(word === null) {
         word = this.get("wordList").objectAt(0);
@@ -92,22 +92,22 @@ export default Ember.Component.extend({
       }
     },
 
-    clear: function() {
+    clear() {
       this.set("searchTerm", "");
       this.set("selectedIndex", -1);
     },
-    searchEnter: function() {
+    searchEnter() {
       this.send("clickWord", this.get("selectedWord"));
     },
-    searchShiftEnter: function() {
+    searchShiftEnter() {
       this.get('targetObject').transitionToRoute("word", this.get("searchTerm"));
     },
-    moveUp: function() {
+    moveUp() {
       if(this.get("selectedIndex") > 0) {
         this.decrementProperty("selectedIndex");
       }
     },
-    moveDown: function() {
+    moveDown() {
       if(this.get("selectedIndex") < this.get("wordCount")) {
         this.incrementProperty("selectedIndex");
       }

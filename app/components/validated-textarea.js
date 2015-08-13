@@ -1,20 +1,21 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(EmberValidations, {
 
   showError: false,
   placeholder: "",
 
-  anyErrors: function() {
+  anyErrors: Ember.computed("errors", function() {
     if(this.get("errors").length > 0) {
       return true;
     } else {
       return false;
     }
-  }.property("errors"),
+  }),
 
   actions: {
-    showErrors: function() {
+    showErrors() {
       this.set("showError", true);
     },
   }

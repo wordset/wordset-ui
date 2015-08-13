@@ -1,14 +1,15 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend(EmberValidations, {
 
   showError: false,
 
   actions: {
-    showErrors: function() {
+    showErrors() {
       this.set("showError", true);
     },
-    sendAction: function() {
+    sendAction() {
       this.sendAction();
     }
   }

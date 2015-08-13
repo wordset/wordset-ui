@@ -2,7 +2,7 @@ import Ember from 'ember';
 import Base from 'ember-validations/validators/base';
 
 export default Base.extend({
-  call: function() {
+  call() {
     var prop = this.model.get(this.property);
     if (Ember.isBlank(prop)) {
       this.errors.pushObject("We need something here!");

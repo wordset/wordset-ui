@@ -37,16 +37,16 @@ export default Ember.Controller.extend(EmberValidations, {
       })
     },
   },
-  posList: function() {
+  posList: Ember.computed("model.lang", function() {
     return this.get("model.lang.parts");
-  }.property("model.lang"),
+  }),
 
-  canRemove: function() {
+  canRemove: Ember.computed("model.meanings.@each", function() {
     return this.get("model").get("meanings").length > 1;
-  }.property("model.meanings.@each"),
+  }),
 
   actions: {
-    submitProposal: function() {
+    submitProposal() {
       var _this = this;
       this.tracker.log("propose", "new word");
       this.get("model").save().then(
@@ -56,13 +56,13 @@ export default Ember.Controller.extend(EmberValidations, {
         function() {}
         );
     },
-    addMeaning: function() {
+    addMeaning() {
       this.get("model").get("meanings").addObject({label_ids: []});
     },
-    removeMeaning: function(meaning) {
+    removeMeaning(meaning) {
       this.get("model").get("meanings").removeObject(meaning);
     },
-    seeExistingWord: function() {
+    seeExistingWord() {
       this.transitionTo("seq.wordset.index", this.get("model.lang.id"), this.get("seqId"));
     }
   }

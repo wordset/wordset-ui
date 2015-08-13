@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
+  model() {
     return this.store.find('user');
   },
-  afterModel: function(model) {
+  afterModel(model) {
     this._super(model);
     Ember.$(document).attr('title', 'Top Contributors');
   }

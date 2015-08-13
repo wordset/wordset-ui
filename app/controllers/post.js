@@ -3,12 +3,12 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   needs: ['application'],
-  html: function() {
+  html: Ember.computed("model.text", function() {
     return Ember.String.htmlSafe(this.get("model.text"));
-  }.property("model.text"),
-  formattedDate: function() {
+  }),
+  formattedDate: Ember.computed("model.publishedAt", function() {
     return moment(this.get('model.publishedAt')).format("LL");
-  }.property("model.publishedAt"),
+  }),
   //activeProject: Ember.computed.alias("currentLang.project"),
   currentLang: Ember.computed.alias("controllers.application.currentLang"),
   postsSimple: Ember.computed.alias("currentLang.postsSimple"),

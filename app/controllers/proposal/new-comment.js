@@ -11,7 +11,7 @@ export default Ember.Controller.extend(EmberValidations, {
     },
   },
   actions: {
-    submitComment: function() {
+    submitComment() {
       if (this.get("isInvalid")) {
         return false;
       }

@@ -42,7 +42,7 @@
     </div> <!-- meaning div -->
     {{#if displayEdit}}
       <div class="editDefWrap {{if displayEdit 'display-edit'}}">
-        {{render "seq/wordset/propose-meaning-change" meaningProposal}}
+        {{propose-meaning-change model=meaningProposal}}
       </div>
     {{/if}}
   </div>

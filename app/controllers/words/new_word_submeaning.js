@@ -17,9 +17,9 @@ export default Ember.Controller.extend(EmberValidations, {
       length: { minimum: 10 }
     }
   },
-  lang: function() {
+  lang: Ember.computed("lang", function() {
     return this.parentController.get("model.lang");
-  }.property("lang"),
+  }),
 
   actions: {
   }

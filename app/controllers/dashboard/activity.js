@@ -1,10 +1,10 @@
 import Ember from "ember";
 
 export default Ember.Controller.extend({
-  templateName: function() {
+  templateName: Ember.computed("model.type", function() {
     return "dashboard/" + this.get("model.type").dasherize() + "-activity";
-  }.property("model.type"),
-  isYae: function() {
+  }),
+  isYae: Ember.computed("model.voteValue", function() {
     return this.get("model.voteValue") > 0;
-  }.property("model.voteValue")
+  })
 });

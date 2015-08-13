@@ -6,27 +6,27 @@ export default Ember.Controller.extend( ProjectCountdown, {
   currentUser: Ember.computed.alias('controllers.application.currentUser'),
   project: Ember.computed.alias('model'),
 
-  htmlDescription: function() {
+  htmlDescription: Ember.computed("model.longDescription", function() {
     return Ember.String.htmlSafe(this.get("model.longDescription"));
-  }.property("model.longDescription"),
+  }),
 
-  isComplete: function() {
+  isComplete: Ember.computed("model.state", function() {
     return (this.get("model.state") === "completed");
-  }.property("model.state"),
+  }),
 
-  isIncomplete: function() {
+  isIncomplete: Ember.computed("model.state", function() {
     return !(this.get("model.state") === "completed");
-  }.property("model.state"),
+  }),
 
-  projectAction: function() {
+  projectAction: Ember.computed("model", function() {
     if(this.get("model.name") === "Proper Noun Purge") {
       return "randomProposal";
     }
     return "randomTarget";
-  }.property("model"),
+  }),
 
   actions: {
-    signUp: function() {
+    signUp() {
       this.transitionToRoute("users.new");
     }
   }

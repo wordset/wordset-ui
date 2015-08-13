@@ -1,36 +1,41 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-  timeRemaining: function() {
+  timeRemaining: Ember.computed("clock.second", function() {
     return (this.get("project.endsAt") - (new Date())) / 1000;
-  }.property("clock.second"),
-  secondsRemaining: function() {
+  }),
+  secondsRemaining: Ember.computed("timeRemaining", function() {
     return Math.floor(this.get("timeRemaining") % 60);
-  }.property("timeRemaining"),
-  minutesRemaining: function() {
+  }),
+  minutesRemaining: Ember.computed("timeRemaining", function() {
     return Math.floor((this.get("timeRemaining") / 60) % 60);
-  }.property("timeRemaining"),
-  hoursRemaining: function() {
+  }),
+  hoursRemaining: Ember.computed("timeRemaining", function() {
     return Math.floor((this.get("timeRemaining") / 3600) % 24);
-  }.property("timeRemaining"),
-  daysRemaining: function() {
+  }),
+  daysRemaining: Ember.computed("timeRemaining", function() {
     return Math.floor(this.get("timeRemaining") / 86400);
-  }.property("timeRemaining"),
-  lessThanOneDay: function() {
+  }),
+  lessThanOneDay: Ember.computed("daysRemaining", function() {
     return this.get("daysRemaining") < 1;
-  }.property("daysRemaining"),
-  expectedFixed: function() {
-    var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
-    return Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
-  }.property("timeRemaining", "project.startedAt", "project.spaceBetweenProposals"),
-  differenceFromExpected: function() {
+  }),
+  expectedFixed: Ember.computed(
+    "timeRemaining",
+    "project.startedAt",
+    "project.spaceBetweenProposals",
+    function() {
+      var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
+      return Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
+    }
+  ),
+  differenceFromExpected: Ember.computed("expectedFixed", "project.fixedTargetsCount", function() {
     return this.get("project.fixedTargetsCount") - this.get("expectedFixed");
-  }.property("expectedFixed", "project.fixedTargetsCount"),
-  differenceIsNegative: function() {
+  }),
+  differenceIsNegative: Ember.computed("differenceFromExpected", function() {
     return this.get("differenceFromExpected") < 0 ;
-  }.property("differenceFromExpected"),
-  percentageExpectedFixed: function() {
+  }),
+  percentageExpectedFixed: Ember.computed("expectedFixed", "project.totalTargetsCount", function() {
     var number = ( this.get("expectedFixed") / this.get("project.totalTargetsCount") ) * 100;
     return "width: " + number + "%";
-  }.property("expectedFixed", "project.totalTargetsCount"),
+  }),
 });

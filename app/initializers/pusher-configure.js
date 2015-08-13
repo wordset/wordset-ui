@@ -13,11 +13,11 @@ export function initialize(container, application) {
       Ember.$.ajax({
           dataType: "json",
           url: (ENV.api + "/auth/pusher_configuration"),
-          success: function(data) {
+          success(data) {
             application.advanceReadiness();
             resolve(data);
           },
-          failure: function(error) {
+          failure(error) {
             reject(error);
             console.warn("Unable to load pusher configuration in time");
           }
