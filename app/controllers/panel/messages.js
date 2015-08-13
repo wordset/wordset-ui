@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.Controller.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations, {
   notifier: Ember.inject.service(),
   pusher: Ember.inject.service(),
   needs: ['application'],

@@ -5,7 +5,7 @@
             isChecked=parentChecked
             disabled=disabledParent}}
 
-{{#each label in parentLabel.children}}
+{{#each parentLabel.children as |label|}}
   {{label-box label=label
               selectedLabels=selectedLabels
               type="child"

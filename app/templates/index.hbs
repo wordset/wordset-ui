@@ -48,7 +48,7 @@
 
     <h2><a name="more-posts">More Blog Posts</a></h2>
     <ul class="blog-posts">
-      {{#each post in postsSimple}}
+      {{#each postsSimple as |post|}}
         <li>
           {{blog-post-byline post=post}}
         </li>

@@ -5,7 +5,7 @@
     and we'll send you to one that you haven't voted on yet!</p>
   <button {{action "randomProposal"}} class="randomOpenProposal">Random Open Proposal</button>
   <div class="proposals">
-    {{#each proposal in controller}}
+    {{#each model as |proposal|}}
       {{#link-to "proposal" proposal.id}}
         <div {{bind-attr class="proposal.state :item"}}>
           <div class="word">

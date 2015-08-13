@@ -2,12 +2,12 @@
   <div class="word">
     {{model.wordName}}
   </div>
-  {{#each error in errors.messages}}
+  {{#each errors.messages as |error|}}
     <div class="error">
       {{error}}
     </div>
   {{/each}}
-  {{#each meaning in model.meanings}}
+  {{#each model.meanings as |meaning|}}
     <label>
       Part of speech
       {{view "select" content=posList value=meaning.pos}}

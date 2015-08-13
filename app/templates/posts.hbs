@@ -2,7 +2,7 @@
   <h2>Blog Posts</h2>
 
   <ul class="posts">
-    {{#each post in controller}}
+    {{#each controller as |post|}}
 
       <li>
         <div class="title">{{#link-to "post" post.id}}{{post.title}}{{/link-to}}</div>

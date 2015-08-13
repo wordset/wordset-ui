@@ -6,7 +6,7 @@
 
   {{#if notifications}}
     <div class="notifications-wrapper">
-      {{#each notification in notifications}}
+      {{#each notifications as |notification|}}
         {{notification-alert notification=notification}}
       {{/each}}
     </div>
@@ -43,25 +43,23 @@
     </div>
   {{/if}}
 
-  {{#view "main-area"}}
-    <aside {{bind-attr class=":panel showPanel:open:closed"}}>
-      {{render "panel"}}
-    </aside>
-    <section {{bind-attr class=":content showPanel"}}>
-      {{liquid-outlet}}
-      <footer>
-        <div class="footer-links">
-          {{#link-to "info.faqs"}}FAQs{{/link-to}}
-          {{#link-to "info.legal"}}Legal{{/link-to}}
-          <a href="https://twitter.com/thewordset" target="_blank">Twitter</a>
-          <a href="https://facebook.com/wordset" target="_blank">Facebook</a>
-          <a href="https://github.com/wordset" target="_blank">GitHub</a>
-        </div>
-        <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="assets/images/creative-commons.png" alt="Creative Commons Logo – NB SA"/></a>
-      </footer>
-    </section>
 
-  {{/view}}
+  <aside {{bind-attr class=":panel showPanel:open:closed"}}>
+    {{render "panel"}}
+  </aside>
+  <section {{bind-attr class=":content showPanel"}}>
+    {{liquid-outlet}}
+    <footer>
+      <div class="footer-links">
+        {{#link-to "info.faqs"}}FAQs{{/link-to}}
+        {{#link-to "info.legal"}}Legal{{/link-to}}
+        <a href="https://twitter.com/thewordset" target="_blank">Twitter</a>
+        <a href="https://facebook.com/wordset" target="_blank">Facebook</a>
+        <a href="https://github.com/wordset" target="_blank">GitHub</a>
+      </div>
+      <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode"><img src="assets/images/creative-commons.png" alt="Creative Commons Logo – NB SA"/></a>
+    </footer>
+  </section>
 
   <script src="assets/ResizeSensor.js"></script>
   <script src="assets/ElementQueries.js"></script>

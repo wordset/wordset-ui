@@ -32,7 +32,6 @@ export default Ember.Service.extend({
     this.set("connection", conn);
     this.public = conn.subscribe('public');
     this.public.bind('push', (data) => this.handlePayload(data));
-    console.log("session", this.get("session"));
   },
   connectPrivateChannel: function() {
     var conn = this.get('connection');

@@ -4,7 +4,7 @@
   <div class="word">
     {{model.wordName}}
   </div>
-  {{#each meaning in model.meanings}}
+  {{#each model.meanings as |meaning|}}
     {{render "proposal/new-wordset-submeaning" meaning}}
   {{/each}}
 {{/if}}

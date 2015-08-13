@@ -24,7 +24,7 @@
     </div>
     <ul {{bind-attr class="showUsers"}}>
       <li>
-        {{#each username in onlineUsers}}
+        {{#each onlineUsers as |username|}}
         {{#link-to "user.index" username}}{{username}}{{/link-to}}
         {{/each}}
       </li>
@@ -34,7 +34,7 @@
 
 <div class='messages-content'>
   <ul class="message-list">
-    {{#each message in messageList}}
+    {{#each messageList as |message|}}
       {{panel-message message=message}}
     {{/each}}
   </ul>

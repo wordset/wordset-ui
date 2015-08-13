@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend( EmberValidations.Mixin, {
+export default Ember.Component.extend( EmberValidations, {
   validations: {
     "model.def": {
       generic: true,

@@ -2,7 +2,7 @@
   {{#if sameLabels}}
     <div class="label-grouping">
       Existing Labels:
-      {{#each label in sameLabels}}
+      {{#each sameLabels as |label|}}
         <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
       {{/each}}
     </div>
@@ -10,7 +10,7 @@
   {{#if addedLabels}}
     <div class="label-grouping">
       <ins>Added Labels:</ins>
-      {{#each label in addedLabels}}
+      {{#each addedLabels as |label|}}
         <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
       {{/each}}
     </div>
@@ -18,7 +18,7 @@
   {{#if removedLabels}}
     <div class="label-grouping">
       <del>Removed Labels:</del>
-      {{#each label in removedLabels}}
+      {{#each removedLabels as |label|}}
         <div {{bind-attr class=":label label.isDialect:dialect:nondialect"}}>{{label.name}}</div>
       {{/each}}
     </div>

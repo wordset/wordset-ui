@@ -3,12 +3,12 @@
     Labels
   </div>
   <div class="dialects">
-    {{#each dialect in parentDialects}}
+    {{#each parentDialects as |dialect|}}
       {{label-group parentLabel=dialect selectedLabels=selectedLabels useId=useId showChildrenAsChecked=true}}
     {{/each}}
   </div>
   <div class="non-dialects">
-    {{#each label in parentLabels}}
+    {{#each parentLabels as |label|}}
       {{label-group parentLabel=label selectedLabels=selectedLabels useId=useId}}
     {{/each}}
   </div>

@@ -14,10 +14,12 @@ export default Ember.Controller.extend(AppPusherMixin, {
   hasChatAlert: function() {
     return (!this.get("showPanel")) && this.get("chatReceived");
   }.property("showPanel", "chatReceived"),
-
   username: function() {
     return this.get("session.username");
   }.property("session.username"),
+  connectToPusher: function() { // THIS IS SO SHITTY
+    this.pusher.set("username", this.get("username"));
+  }.observes("username"),
   currentUser: function() {
     return this.session.get("user");
   }.property("session.user"),

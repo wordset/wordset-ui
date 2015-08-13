@@ -10,7 +10,7 @@
   {{#if showSearchList}}
     <div class="wordListWrapper">
       <ul class='wordList'>
-        {{#each word in wordList}}
+        {{#each wordList as |word|}}
           {{#search-result word=word selectedWord=selectedWord name="search-result-word"}}
             <div {{action "clickWord" word}} tabIndex=0>
               {{word}}
