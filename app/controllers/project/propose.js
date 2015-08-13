@@ -14,7 +14,7 @@ export default Ember.Controller.extend(EmberValidations, {
       sentencelike: true,
     }
   },
-  needs: ['project'],
+  application: Ember.inject.controller('project'),
 
   htmlRules: Ember.computed("model.project.rules", function() {
     return Ember.String.htmlSafe(this.get("model.project.rules"));

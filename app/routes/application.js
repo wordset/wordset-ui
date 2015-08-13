@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   setupController(controller, model) {
     controller.set("currentLang", model);
     controller.set("messages", this.store.find('message'));
-    controller.set("activityNotifications", this.store.all('notification'));
+    controller.set("activityNotifications", this.store.peekAll('notification'));
     this._super(controller, model);
   },
 
@@ -71,7 +71,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         _this.transitionTo('users.new');
       }
     },
-    
+
     openModal(modalName, model) {
       return this.render(modalName, {
         into: 'application',

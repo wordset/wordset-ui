@@ -2,8 +2,7 @@ import Ember from 'ember';
 import ProjectCountdown from '../../mixins/project-countdown';
 
 export default Ember.Controller.extend( ProjectCountdown, {
-  needs: ['application'],
-  currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  currentUser: Ember.computed.alias('session.user'),
   project: Ember.computed.alias('model'),
 
   htmlDescription: Ember.computed("model.longDescription", function() {

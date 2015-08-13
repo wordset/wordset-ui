@@ -3,8 +3,8 @@ import ENV from '../config/environment';
 
 export default Ember.Controller.extend({
   posList: ENV.posList,
-  needs: ['application'],
-  currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  application: Ember.inject.controller("application"),
+  currentUser: Ember.computed.alias('application.currentUser'),
   justVoted: false,
   isOpen: Ember.computed("model.state", function() {
     return (this.get("model.state") === "open");

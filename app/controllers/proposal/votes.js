@@ -3,10 +3,10 @@ import ENV from '../../config/environment';
 // global _gaq //
 
 export default Ember.Controller.extend({
-  needs: [ "proposal", "application" ],
-  proposal: Ember.computed.alias("controllers.proposal.model"),
-  isOpen: Ember.computed.alias("controllers.proposal.isOpen"),
-  currentUser: Ember.computed.alias("controllers.application.currentUser"),
+  proposalController: Ember.inject.controller("proposal"),
+  proposal: Ember.computed.alias("proposalController.model"),
+  isOpen: Ember.computed.alias("proposalController.isOpen"),
+  currentUser: Ember.computed.alias("session.user"),
 
   canVote: Ember.computed("proposal.userVoteIds.[]", "currentUser.id", function() {
     return ((this.get("proposal.userVoteIds") || []).indexOf(this.get("currentUser.id")) < 0);

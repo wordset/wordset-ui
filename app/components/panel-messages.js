@@ -5,7 +5,7 @@ import ENV from '../config/environment';
 export default Ember.Component.extend(EmberValidations, {
   notifier: Ember.inject.service(),
   pusher: Ember.inject.service(),
-  currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  currentUser: Ember.computed.alias('session.user'),
 
   showUsers: false,
   showSettings: false,
