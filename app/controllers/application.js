@@ -24,7 +24,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
     return this.session.get("user");
   }.property("session.user"),
   loggedIn: function() {
-    return !Ember.isEmpty(this.get("username"))
+    return !Ember.isEmpty(this.get("username"));
   }.property("username"),
   init: function() {
     this._super();
