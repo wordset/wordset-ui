@@ -43,14 +43,14 @@ export default Ember.Service.extend({
       if(this.presenceChannel) {
         this.connection.unsubscribe(this.presenceChannel.channelName);
       }
-      if(this.get("username")) {
+      if(this.get("session.username")) {
         var authorizer = this.container.lookup('authorizer:api');
         conn.config.auth = {
           headers: {
             Authorization: authorizer.get("bearerKey")
           }
         };
-        this.privateChannel = conn.subscribe('private-' + this.get("username"));
+        this.privateChannel = conn.subscribe('private-' + this.get("session.username"));
         this.privateChannel.bind('push', (data) => this.handlePayload(data));
         this.privateChannel.bind('notify', (data) => this.handleNotification(data));
         this.presenceChannel = this.connection.subscribe('presence-en');
@@ -59,7 +59,7 @@ export default Ember.Service.extend({
         this.presenceChannel.bind('pusher:member_removed', (member) => this.get("online").removeObject(member.id));
       }
     }
-  }.observes("username", "connection"),
+  }.observes("session.username", "connection"),
   handlePayload: function(data) {
     if(data.meta) {
       delete data.meta;

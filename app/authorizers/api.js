@@ -9,13 +9,13 @@ export default Base.extend({
     }
   },
   bearerKey: function() {
-    var username = this.get('session').get('username');
-    var authKey = this.get('session').get('auth_key');
+    var username = this.get('session.username');
+    var authKey = this.get('session.content.secure.auth_key');
     if (this.get('session.isAuthenticated') && !Ember.isEmpty(username) && !Ember.isEmpty(authKey)) {
       var authData = username + ':' + authKey;
       return 'Bearer ' + authData;
     } else {
       return false;
     }
-  }.property("session.username", "session.auth_key", "session.isAuthenticated"),
+  }.property("session.username", "session.content.secure.auth_key", "session.isAuthenticated"),
 });
