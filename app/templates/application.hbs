@@ -48,7 +48,7 @@
     {{panel-main notifications=activityNotifications messages=messages showPanel=showPanel}}
   </aside>
   <section class="content {{if showPanel 'show-panel'}}">
-    {{liquid-outlet}}
+    {{outlet}}
     <footer>
       <div class="footer-links">
         {{#link-to "info.faqs"}}FAQs{{/link-to}}
