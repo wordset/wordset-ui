@@ -9,6 +9,7 @@ export default Ember.Service.extend({
   connection: null,
   online: [],
   init: function() {
+    this._super();
     var key = ENV.APP.PUSHER_OPTS.key;
 
     if(typeof key === 'undefined') {

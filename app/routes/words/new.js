@@ -8,7 +8,4 @@ export default Ember.Route.extend({
       lang: this.modelFor("words")
     });
   },
-  setupController: function(controller, model) {
-    this._super(controller, model);
-  },
 });
