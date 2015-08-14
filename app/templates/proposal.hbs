@@ -71,5 +71,12 @@
   {{#if isOpen}}
     {{render "proposal.new-comment"}}
   {{/if}}
-  {{render "proposal.activities" model.activities}}
+
+  <h4>Activity</h4>
+  <div class="proposal-activities">
+    {{#each model.activitiesSimple as |activity|}}
+      {{proposal-activity activity=activity}}
+    {{/each}}
+  </div>
+
 </div>

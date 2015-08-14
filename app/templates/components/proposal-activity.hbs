@@ -1,0 +1,40 @@
+{{#if (is-equal activity.type "create")}}
+  <div class="activity">
+    {{activity.user_id}} created the proposal.
+  </div>
+{{/if}}
+{{#if (is-equal activity.type "vote")}}
+  <div class="activity {{if isYae 'yae' 'nay' }} {{if isWithdrawn 'is-withdrawn'}}">
+    {{activity.user_id}}
+    voted
+    <span class="value">
+      {{#if isYae}}
+        yae
+      {{else}}
+        nay
+      {{/if}}
+      ({{activity.vote_value}})
+    </span>
+  </div>
+{{/if}}
+{{#if (is-equal activity.type "withdraw")}}
+  <div class="activity">
+    {{activity.user_id}}
+    withdrew their vote.
+  </div>
+{{/if}}
+{{#if (is-equal activity.type "comment")}}
+  <div class="activity comment">
+    {{activity.user_id}} commented: {{activity.comment}}
+  </div>
+{{/if}}
+{{#if (is-equal activity.type "edit")}}
+  <div class="activity edit">
+    {{activity.user_id}} edited the proposal.
+  </div>
+{{/if}}
+{{#if (is-equal activity.type "close")}}
+  <div class="activity">
+    The proposal was {{activity.state}}.
+  </div>
+{{/if}}
