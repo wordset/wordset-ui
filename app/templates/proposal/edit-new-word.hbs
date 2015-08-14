@@ -10,7 +10,7 @@
   {{#each model.meanings as |meaning|}}
     <label>
       Part of speech
-      {{view "select" content=posList value=meaning.pos}}
+      {{select-tag content=posList value=meaning.pos}}
     </label>
     {{meaning-edit model=meaning showButtons=false useLabelIds=true lang=model.lang}}
   {{/each}}
