@@ -1,0 +1,26 @@
+{{#each seqs as |seq|}}
+  {{seq.text}}
+{{/each}}
+
+{{#each meanings as |meaning|}}
+  <div class="info">
+    <div class="pos">
+      {{meaning.original.pos}}
+    </div>
+    <div class="labels">
+      {{label-diff newLabelIds=meaning.labels originalLabelIds=meaning.original.labels}}
+    </div>
+    <div class="definition">
+      <div class="def">
+        {{diff-text meaning.original.def meaning.def}}
+      </div>
+    </div>
+    <div class="quoteWrap">
+      <div class="quote highlight">
+        <span class="quotemark"> “ </span>
+          {{diff-text meaning.original.example meaning.example}}
+        <span class="quotemark"> ” </span>
+      </div>
+    </div>
+  </div>
+{{/each}}

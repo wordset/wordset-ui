@@ -7,16 +7,13 @@ export default Ember.Controller.extend({
   currentUser: Ember.computed.alias('application.currentUser'),
   justVoted: false,
   isOpen: Ember.computed("model.state", function() {
-    return (this.get("model.state") === "open");
+    return (this.get("model.state") === "pending");
   }),
   isMine: Ember.computed("model.user.id", "currentUser.id", function() {
     return (this.get("model.user.id") === this.get("currentUser.id"));
   }),
   canChange: Ember.computed("isOpen", "isMine", function() {
     return (this.get("isOpen") && this.get("isMine"));
-  }),
-  partialName: Ember.computed("model.type", function() {
-    return "proposal/" + this.get("model.type").dasherize();
   }),
   actions: {
     startEdit() {

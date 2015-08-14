@@ -2,10 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 import ENV from '../config/environment';
 
-export default DS.Model.reopenClass({
-
-}).extend({
-  type: DS.attr("string"),
+export default DS.Model.extend({
   user: DS.belongsTo('user', {
     async: false
   }),
@@ -13,61 +10,24 @@ export default DS.Model.reopenClass({
     inverse: null,
     async: false
   }),
-  wordset: DS.belongsTo('wordset', {async: true}),
-  project: DS.belongsTo('project', {
+  projects: DS.hasMany('project', {
     inverse: null,
     async: false
   }),
-  wordName: DS.attr("string"),
+  wordset: DS.belongsTo("wordset", {async: false}),
+  changes: DS.attr(),
+  activitiesSimple: DS.attr(),
   reason: DS.attr("string"),
   state: DS.attr("string"),
   createdAt: DS.attr("date"),
   tally: DS.attr("number"),
+  points: DS.attr("number"),
   activities: DS.hasMany('activity', {
     async: false
   }),
   flagged: DS.attr("boolean"),
   userVoteIds: DS.attr(),
 
-  // NewWord
-  meanings: DS.attr(),
-
-  // MeaningLike
-  def: DS.attr("string"),
-  example: DS.attr("string"),
-  labels: DS.hasMany('labels', {
-    serialize: true,
-    async: false
-  }),
-
-  // ChangeMeaning
-  meaning: DS.belongsTo('meaning', {
-    inverse: null,
-    async: false
-  }),
-  original: DS.attr(),
-  parentId: DS.attr(),
-
-  // NewMeaning
-  pos: DS.attr("string"),
-
-  typeName: Ember.computed("type", function() {
-    if(this.get("type") === "NewWordset") {
-      return "New Word";
-    } else if(this.get("type") === "NewMeaning") {
-      return "New Meaning";
-    } else if(this.get("type") === "MeaningChange") {
-      return "Change";
-    } else if(this.get("type") === "MeaningRemoval") {
-      return "Removal";
-    }
-  }),
-  isRemoval: Ember.computed("type", function() {
-    return (this.get("type") === "MeaningRemoval");
-  }),
-  isEditableType: Ember.computed("typeName", function() {
-    return (this.get("type") !== "MeaningRemoval");
-  }),
   positiveTally: Ember.computed("tally", function() {
     if(this.get("tally") > 0 ) {
       return "width: " + this.get("tally") + "%;";

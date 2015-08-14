@@ -5,7 +5,7 @@
   <div class="proposal">
     <div class="details">
       {{#if model.wordnet}}
-        Wordnet proposed a {{model.typeName}}.
+        Wordnet made a proposal.
       {{else}}
         {{#if model.user}}
           {{#link-to "user" model.user}}
@@ -14,16 +14,16 @@
           {{#link-to "user" model.user}}
             {{model.user.id}}
           {{/link-to}}
-          proposed a {{model.typeName}}.
+          proposed a change.
         {{else}}
           <img src="assets/images/square-logo.png" class="avatar" alt="" />
-          <div class="detail-text">Wordset inherited this {{model.typeName}} from Wordnet.</div>
+          <div class="detail-text">Wordset has automatically proposed this change.</div>
         {{/if}}
       {{/if}}
 
     </div>
 
-    {{partial partialName model}}
+    {{proposal-diff proposal=model}}
 
     {{#if canChange}}
       {{#if isEditing}}
