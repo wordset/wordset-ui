@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   queryParams: 'page',
   page: 1,
   proposals: Ember.computed("model.[]", function() {
-    return this.get("model").sortBy("createdAt").reverse()
+    return this.get("model").sortBy("createdAt").reverse();
   }),
   total: Ember.computed("model", function() {
     return this.store.metadataFor("proposal").total;
