@@ -14,9 +14,9 @@
   <div class="remaining">
     Project Ends In:
     {{#if lessThanOneDay}}
-      {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins, {{liquid-bind secondsRemaining}}s
+      {{hoursRemaining}} hrs, {{minutesRemaining}} mins, {{secondsRemaining}}s
     {{else}}
-      {{liquid-bind daysRemaining}} days, {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins
+      {{daysRemaining}} days, {{hoursRemaining}} hrs, {{minutesRemaining}} mins
     {{/if}}
   </div>
   {{/if}}
