@@ -56,7 +56,11 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       var _this = this;
       this.intermediateTransitionTo('loading');
       if(this.get("controller.currentUser")) {
-        Proposal.random(proposal_id).then(function(data) {
+        var path = "/proposals/next";
+        if(proposal_id) {
+          path += "?proposal_id=" + proposal_id;
+        }
+        Ember.$.getJSON(ENV.api + path).then(function(data) {
           if(data.proposal !== undefined) {
             _this.store.pushPayload('proposal', data);
             _this.transitionTo('proposal.index', data.proposal.id);
@@ -64,9 +68,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
             _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
             _this.transitionTo('proposals');
           }
-        }, function() {
-          //_this.send("randomProposal")
-        });
+        }, function() {});
       } else {
         _this.transitionTo('users.new');
       }

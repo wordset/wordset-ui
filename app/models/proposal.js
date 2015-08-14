@@ -3,18 +3,7 @@ import DS from 'ember-data';
 import ENV from '../config/environment';
 
 export default DS.Model.reopenClass({
-  random(proposal_id) {
-    var path = "/proposals/next";
-    if(proposal_id) {
-      path += "?proposal_id=" + proposal_id;
-    }
-    return (new Ember.RSVP.Promise(function(resolve, reject) {
-      Ember.$.getJSON(ENV.api + path).then(
-        function(data) {
-          resolve(data);
-        }, reject);
-    }));
-  },
+
 }).extend({
   type: DS.attr("string"),
   user: DS.belongsTo('user', {
