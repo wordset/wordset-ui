@@ -2,7 +2,7 @@
 // a new meaning proposal
 
 import Ember from "ember";
-import EmberValidations from 'ember-validations';
+import EmberValidations, {validator} from 'ember-validations';
 import ENV from '../../config/environment';
 
 export default Ember.Controller.extend(EmberValidations, {
@@ -10,7 +10,7 @@ export default Ember.Controller.extend(EmberValidations, {
   proposalId: null,
   validations: {
     "model.wordName": {
-      inline: EmberValidations.validator(function() {
+      inline: validator(function() {
         var name = this.get("model.model.wordName");
 
         var _this = this;
