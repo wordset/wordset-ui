@@ -5,7 +5,7 @@ export default Base.extend({
   call: function() {
     var prop = this.model.get(this.property);
     if (Ember.isBlank(prop)) {
-      this.errors.pushObject("We need something here!");
+      // Blank ones are now fine
     } else if (prop.length < 10) {
       this.errors.pushObject("It needs to be over 10 characters");
     } else if ((prop.indexOf("(") >= 0)||(prop.indexOf(")") >= 0)) {
