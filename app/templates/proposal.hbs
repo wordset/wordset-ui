@@ -25,6 +25,7 @@
 
     {{#if isEditing}}
       {{edit-interface changes=model.changes}}
+      <button {{action "submitEdit"}}>Save</button>
     {{else}}
       {{proposal-diff proposal=model}}
     {{/if}}

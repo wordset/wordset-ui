@@ -9,7 +9,7 @@
   {{#if isEditing}}
 
     {{edit-interface changes=changeSet}}
-    <button>SUBMIT</button>
+    <button {{action "submitProposal"}}>SUBMIT</button>
 
   {{else}}
     <button {{action "startEditing"}}>EDIT</button>

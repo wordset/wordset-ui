@@ -9,6 +9,16 @@ export default Ember.Controller.extend({
     startEditing: function() {
       this.set("isEditing", true);
       this.set("changeSet", this.get("model.wordset").generateInitialChangeSet());
+    },
+    submitProposal: function() {
+      var _this = this;
+      this.store.createRecord('proposal', {
+        wordset: this.get("model.wordset"),
+        lang: this.get("model.wordset.lang"),
+        changes: this.get("changeSet")
+      }).save().then((proposal) => {
+        _this.transitionTo("proposal.index", proposal.get("id"));
+      });
     }
   }
 });
