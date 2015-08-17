@@ -1,0 +1,16 @@
+<h2>Seqs</h2>
+
+{{#each changes.seqs as |seq|}}
+  {{edit-seq seq=seq}}
+{{/each}}
+
+<h2>Meanings</h2>
+
+{{#each changes.meanings as |meaning|}}
+  {{edit-meaning meaning=meaning}}
+{{/each}}
+
+<label>
+  Reason and sources
+  {{textarea value=reason}}
+</label>
