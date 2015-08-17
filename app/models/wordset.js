@@ -13,4 +13,11 @@ export default DS.Model.extend({
     async: false
   }),
 
+  generateInitialChangeSet() {
+    var changeSet = {};
+    changeSet.seqs = this.get("seqs").map((seq) => seq.returnChangeSet());
+    changeSet.meanings = this.get("meanings").map((m) => m.returnChangeSet());
+    return changeSet;
+  },
+
 });

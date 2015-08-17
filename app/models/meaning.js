@@ -12,6 +12,22 @@ var Meaning = DS.Model.extend({
   labels: DS.hasMany('labels', {
     async: false
   }),
+
+  returnChangeSet() {
+    return {
+      action: "modify",
+      def: this.get("def"),
+      example: this.get("example"),
+      labels: this.get("labels").map((l) => l.get("id")),
+      pos: this.get("pos"),
+      meaning_id: this.get("meaning_id"),
+      original: {
+        def: this.get("def"),
+        example: this.get("example"),
+        labels: this.get("labels").map((l) => l.get("id")),
+      }
+    }
+  },
 });
 
 
