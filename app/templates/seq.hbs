@@ -12,7 +12,10 @@
     <button {{action "submitProposal"}}>SUBMIT</button>
 
   {{else}}
-    <button {{action "startEditing"}}>EDIT</button>
+    {{#if model.wordset.pendingProposalId}}
+    {{else}}
+      <button {{action "startEditing"}}>Edit</button>
+    {{/if}}
     <div class="wordWrap">
       <div class="word">
         {{model.text}}

@@ -6,11 +6,14 @@ export default Ember.Controller.extend({
     return !this.get("session").get("isAuthenticated");
   }),
   actions: {
-    startEditing: function() {
+    startEditing() {
       this.set("isEditing", true);
       this.set("changeSet", this.get("model.wordset").generateInitialChangeSet());
     },
-    submitProposal: function() {
+    cancel() {
+      this.set("isEditing", false);
+    },
+    submitProposal() {
       var _this = this;
       this.store.createRecord('proposal', {
         wordset: this.get("model.wordset"),
