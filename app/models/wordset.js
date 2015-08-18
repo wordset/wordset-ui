@@ -7,6 +7,7 @@ export default DS.Model.extend({
   meanings: DS.hasMany('meanings', {
     async: false
   }),
+  pendingProposalId: DS.attr('string'),
   proposals: DS.hasMany('proposals', {async: true}),
   name: DS.attr('string'),
   lang: DS.belongsTo('lang', {
