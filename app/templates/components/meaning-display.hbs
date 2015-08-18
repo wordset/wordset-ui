@@ -4,29 +4,8 @@
       <div class="defWrap">
         <div class="def">
           <span class="pos">({{meaning.pos}})</span>
-          <div class="meaning-labels">
-            {{#each meaning.labels as |label|}}
-              <div class="label {{if label.isDialect 'dialect' 'nondialect'}}">{{label.name}}</div>
-            {{/each}}
-          </div>
+          {{label-display labels=meaning.labels}}
           {{meaning.def}}
-          {{#if displayEdit}}
-          {{else}}
-            {{#if meaning.openProposal}}
-              <div class="openProposal">
-                <span class="ion-help-buoy"></span>
-                This definition has an
-                {{#link-to "proposal" meaning.openProposal}}
-                 open proposal
-                {{/link-to}}
-                which we'd love your help with.
-              </div>
-            {{else}}
-              {{#if session.isAuthenticated}}
-                {{edit-button action="startEditing"}}
-              {{/if}}
-            {{/if}}
-          {{/if}}
         </div>
       </div> <!-- defWrap div -->
 
@@ -40,10 +19,5 @@
       </div>
       {{/if}}
     </div> <!-- meaning div -->
-    {{#if displayEdit}}
-      <div class="editDefWrap {{if displayEdit 'display-edit'}}">
-        {{propose-meaning-change model=meaningProposal}}
-      </div>
-    {{/if}}
   </div>
 </li>
