@@ -8,6 +8,7 @@ export default DS.Model.extend({
   isDialect: DS.attr("boolean"),
   forSeq: DS.attr("boolean"),
   forMeaning: DS.attr("boolean"),
+  speechParts: DS.attr(),
 
   proposals: DS.hasMany('proposals', {
     async: false
