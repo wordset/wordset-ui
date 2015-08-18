@@ -1,4 +1,4 @@
-<select {{action 'change' on='change'}}>
+<select {{action 'change' on='change'}} disabled={{disabled}}>
   {{#each content key="@index" as |item|}}
     <option value="{{item}}" selected={{is-equal item value}}>
       {{item}}
