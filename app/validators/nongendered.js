@@ -6,7 +6,6 @@ export default Base.extend({
     var prop = this.model.get(this.property);
     var genderedWords = ["her", "his", "he", "she", "him", "hers", "herself", "himself", "man", "woman", "girl", "boy"];
     if (Ember.isBlank(prop)) {
-      this.errors.pushObject("We need something here!");
     } else {
       var downProp = prop.toLowerCase();
       var tokens = downProp.split(/[^\w]+/);
