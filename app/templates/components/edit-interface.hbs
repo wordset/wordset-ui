@@ -5,12 +5,22 @@
   {{edit-labels labels=lang.labels selectedLabels=seq.labels}}
 {{/each}}
 
+<button class="add-new-meaning" {{action 'addNewSeq'}}>
+  <span class="ion-plus"></span>
+  Add New Seq
+</button>
+
 <h2>Meanings</h2>
 
 {{#each changes.meanings as |meaning|}}
   {{edit-meaning meaning=meaning}}
   {{edit-labels labels=lang.labels selectedLabels=meaning.labels }}
 {{/each}}
+
+<button class="add-new-meaning" {{action 'addNewMeaning'}} disabled={{hasErrors}}>
+  <span class="ion-plus"></span>
+  Add New Meaning
+</button>
 
 <label>
   Reason and sources
