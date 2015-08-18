@@ -1,12 +1,1 @@
 {{partial "seq/wordset/meanings"}}
-
-{{#if session.isAuthenticated}}
-  {{#if showMeaningProposal}}
-    {{render "seq/wordset/new-meaning" newMeaningProposal}}
-  {{else}}
-    <button class="add-new-meaning" {{action 'toggleShowAddMeaning'}}>
-      <span class="ion-plus"></span>
-      Add New Meaning
-    </button>
-  {{/if}}
-{{/if}}
