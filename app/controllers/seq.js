@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import EmberValidations from 'ember-validations';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(EmberValidations, {
   isEditing: false,
   showBanner: Ember.computed("session.isAuthenticated", function() {
     return !this.get("session").get("isAuthenticated");
