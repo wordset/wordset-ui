@@ -7,10 +7,10 @@ export default Ember.Component.extend(EmberValidations, {
   placeholder: "",
 
   anyErrors: Ember.computed("errors", function() {
-    if(this.get("errors").length > 0) {
-      return true;
-    } else {
+    if(Ember.isEmpty(this.get("errors"))) {
       return false;
+    } else {
+      return true;
     }
   }),
 

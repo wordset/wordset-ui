@@ -2,9 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.find('proposal', params.proposal_id, {alwaysReload: true});
+    return this.store.findRecord('proposal', params.proposal_id);
   },
   afterModel(model) {
+    if(Ember.isBlank(model.get("changes"))) {
+      model.reload();
+    }
     this._super(model);
     var word = this.modelFor('proposal').get('wordName');
     this.tracker.log("proposal", "viewed");

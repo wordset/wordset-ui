@@ -5,11 +5,7 @@ export default Ember.Component.extend({
     this.set("isChecked", this.get("selectedLabels").contains(this.get("labelKey")));
   }).observes("selectedLabels"),
   labelKey: Ember.computed("label", function() {
-    if(this.get("useId")) {
-      return this.get("label.id");
-    } else {
-      return this.get("label");
-    }
+    return this.get("label.id");
   }),
   checkedWhenDisabled: Ember.computed("isChecked", function() {
     return this.get("isChecked");

@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       });
     },
     cancelEdit() {
-      this.get("model").rollback();
+      this.get("model").reload();
       this.set("isEditing", false);
     },
   }

@@ -4,12 +4,12 @@
   </div>
   <div class="dialects">
     {{#each parentDialects as |dialect|}}
-      {{label-group parentLabel=dialect selectedLabels=selectedLabels useId=useId showChildrenAsChecked=true}}
+      {{label-group parentLabel=dialect selectedLabels=selectedLabels showChildrenAsChecked=true}}
     {{/each}}
   </div>
   <div class="non-dialects">
     {{#each parentLabels as |label|}}
-      {{label-group parentLabel=label selectedLabels=selectedLabels useId=useId}}
+      {{label-group parentLabel=label selectedLabels=selectedLabels}}
     {{/each}}
   </div>
 </div>

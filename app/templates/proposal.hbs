@@ -24,8 +24,9 @@
     </div>
 
     {{#if isEditing}}
-      {{edit-interface changes=model.changes}}
-      <button {{action "submitEdit"}}>Save</button>
+      {{edit-interface changes=model.changes lang=model.lang}}
+      <button class="negative" {{action "cancelEdit"}}>Cancel</button>
+      <button class="submitProposal" {{action "submitEdit"}}>Save</button>
     {{else}}
       {{proposal-diff proposal=model}}
     {{/if}}

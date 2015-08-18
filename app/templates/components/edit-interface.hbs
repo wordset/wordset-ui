@@ -2,12 +2,14 @@
 
 {{#each changes.seqs as |seq|}}
   {{edit-seq seq=seq}}
+  {{edit-labels labels=lang.labels selectedLabels=seq.labels}}
 {{/each}}
 
 <h2>Meanings</h2>
 
 {{#each changes.meanings as |meaning|}}
   {{edit-meaning meaning=meaning}}
+  {{edit-labels labels=lang.labels selectedLabels=meaning.labels }}
 {{/each}}
 
 <label>
