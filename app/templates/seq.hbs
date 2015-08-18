@@ -8,8 +8,9 @@
 
   {{#if isEditing}}
 
-    {{edit-interface changes=changeSet}}
-    <button {{action "submitProposal"}}>SUBMIT</button>
+    {{edit-interface changes=changeSet lang=model.lang errors=errors}}
+    <button class="negative" {{action "cancel"}}>Cancel</button>
+    <button {{action "submitProposal"}}>Submit</button>
 
   {{else}}
     {{#if model.wordset.pendingProposalId}}
