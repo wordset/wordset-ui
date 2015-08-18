@@ -13,8 +13,10 @@
 <h2>Meanings</h2>
 
 {{#each changes.meanings as |meaning|}}
-  {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
-  {{edit-meaning meaning=meaning lang=lang errors=errors.meanings}}
+  <div class="edit-meaning">
+    {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
+    {{edit-meaning meaning=meaning lang=lang errors=errors.meanings}}
+  </div>
 {{/each}}
 
 <button class="add-new-meaning" {{action 'addNewMeaning'}} disabled={{hasErrors}}>

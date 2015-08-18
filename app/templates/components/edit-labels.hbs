@@ -16,6 +16,6 @@
     </div>
   </div>
 {{else}}
-  {{label-display labelIds=selectedLabels}}
-  <button {{action "startEdit"}}>modify labels</button>
+  {{label-display labelIds=selectedLabels class="label-display"}}
+  <button class="label modify-labels" {{action "startEdit"}}>+ modify labels</button>
 {{/if}}

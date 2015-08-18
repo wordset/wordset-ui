@@ -148,13 +148,12 @@ span.quotemark {
   }
 }
 
-// Add New Meaning Button (also on the new word page)
+// Add New Meaning / Seq Button (also on the new word page)
 
-.add-new-meaning {
+.add-new-meaning, .add-new-seq {
   background: #FFF;
   box-shadow: none;
   color: $dark-green;
-  float: right;
   text-shadow: none;
   &:hover {
     background: #FFF;
