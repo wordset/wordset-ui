@@ -31,7 +31,6 @@ export default Ember.Controller.extend(EmberValidations, {
             }
           );
         } else {
-          // console.log(this.get("model.wordName"));
           return "It needs the actual word! :)";
         }
       })

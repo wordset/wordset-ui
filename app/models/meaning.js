@@ -26,7 +26,7 @@ var Meaning = DS.Model.extend({
         example: this.get("example"),
         labels: this.get("labels").map((l) => l.get("id")),
       }
-    }
+    };
   },
 });
 

@@ -21,7 +21,7 @@ export default DS.Model.extend({
       original: {
         labels: this.get("labels").map((l) => l.get("id"))
       }
-    }
+    };
   },
 
 });

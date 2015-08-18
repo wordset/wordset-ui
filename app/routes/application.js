@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import ENV from '../config/environment';
-import Proposal from '../models/proposal';
 /* global ga */
 /* global NREUM */
 

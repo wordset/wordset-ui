@@ -10,7 +10,7 @@ export default Ember.Route.extend({
         _this.store.pushPayload('wordset', data);
         return _this.store.getById('seq', key);
       }
-    )
+    );
   },
   afterModel(model) {
     this._super(model);

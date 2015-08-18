@@ -14,7 +14,7 @@ export default Ember.Controller.extend( ProjectCountdown, {
   }),
 
   isIncomplete: Ember.computed("model.state", function() {
-    return !(this.get("model.state") === "completed");
+    return (this.get("model.state") !== "completed");
   }),
 
   projectAction: Ember.computed("model", function() {

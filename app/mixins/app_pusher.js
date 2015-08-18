@@ -4,14 +4,6 @@ import ENV from '../config/environment';
 // used by the Application controller
 
 export default Ember.Mixin.create({
-  subscribeToMyChannel: Ember.observer("userChannel", function() {
-    var channelName = this.get("username") + '_channel';
-    //this.pusher.wire(this, channelName, ['notify']);
-  }),
-  init() {
-    this._super();
-    this.subscribeToMyChannel();
-  },
   actions: {
     notify(data) {
       this.store.pushPayload('notification', data);

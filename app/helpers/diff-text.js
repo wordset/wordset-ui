@@ -2,7 +2,7 @@ import Ember from 'ember';
 /* global JsDiff */
 
 export default Ember.Helper.extend({
-  compute(params, hash) {
+  compute(params/*, hash */) {
     var o = params[0];
     var n = params[1];
     var diff = JsDiff.diffWordsWithSpace(o, n);
