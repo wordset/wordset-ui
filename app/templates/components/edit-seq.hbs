@@ -1,1 +1,7 @@
-{{seq.text}}
+
+{{#if (is-equal seq.action "add")}}
+  {{validated-input value=seq.text errors=errors.seq.text}}
+  <button {{action "remove"}}>Remove this seq</button>
+{{else}}
+  {{seq.text}}
+{{/if}}

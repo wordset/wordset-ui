@@ -1,8 +1,23 @@
 <label>
+  Part of Speech
+  {{#if (is-equal meaning.action "add")}}
+    {{select-tag content=posList value=meaning.pos}}
+  {{else}}
+    {{select-tag content=posList value=meaning.pos disabled=true}}
+  {{/if}}
+</label>
+
+{{#if (is-equal meaning.action "remove")}}
+  <button {{action "restore"}}>Undelete</button>
+{{else}}
+  <button {{action "remove"}}>Remove this meaning</button>
+{{/if}}
+
+<label>
   Definition
-  {{validated-textarea value=meaning.def errors=errors.meaning.def}}
+  {{validated-textarea value=meaning.def errors=errors.meaning.def disabled=(is-equal meaning.action "remove")}}
 </label>
 <label class="edit-example">
   Example sentence
-  {{validated-textarea value=meaning.example errors=errors.meaning.example placeholder="No example sentence! Please add one."}}
+  {{validated-textarea value=meaning.example errors=errors.meaning.example placeholder="No example sentence! Please add one." disabled=(is-equal meaning.action "remove")}}
 </label>

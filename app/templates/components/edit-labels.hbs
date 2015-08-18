@@ -1,15 +1,21 @@
-<div class="label-selection">
-  <div class="title">
-    Labels
+{{#if isEditing}}
+  <div class="label-selection">
+    <button {{action "collapse"}}>close</button>
+    <div class="title">
+      Labels
+    </div>
+    <div class="dialects">
+      {{#each parentDialects as |dialect|}}
+        {{label-group parentLabel=dialect selectedLabels=selectedLabels showChildrenAsChecked=true applicableLabels=applicableLabels}}
+      {{/each}}
+    </div>
+    <div class="non-dialects">
+      {{#each parentLabels as |label|}}
+        {{label-group parentLabel=label selectedLabels=selectedLabels applicableLabels=applicableLabels}}
+      {{/each}}
+    </div>
   </div>
-  <div class="dialects">
-    {{#each parentDialects as |dialect|}}
-      {{label-group parentLabel=dialect selectedLabels=selectedLabels showChildrenAsChecked=true}}
-    {{/each}}
-  </div>
-  <div class="non-dialects">
-    {{#each parentLabels as |label|}}
-      {{label-group parentLabel=label selectedLabels=selectedLabels}}
-    {{/each}}
-  </div>
-</div>
+{{else}}
+  {{label-display labelIds=selectedLabels}}
+  <button {{action "startEdit"}}>modify labels</button>
+{{/if}}

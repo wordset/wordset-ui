@@ -7,4 +7,11 @@ export default Ember.Component.extend( EmberValidations, {
       presence: true,
     },
   },
+  actions: {
+    remove() {
+      if(this.get("seq.action") === "add") {
+        this.get("targetObject.changes.seqs").removeObject(this.get("seq"));
+      }
+    },
+  }
 });

@@ -25,4 +25,12 @@ export default Ember.Component.extend({
   parentLabels: Ember.computed("applicableLabels", function() {
     return this.get("applicableLabels").filterBy("isDialect", false).filterBy("parent", null);
   }),
+  actions: {
+    startEdit() {
+      this.set("isEditing", true);
+    },
+    collapse() {
+      this.set("isEditing", false);
+    }
+  }
 });
