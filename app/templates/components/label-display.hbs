@@ -1,0 +1,5 @@
+<div class="labels">
+  {{#each labelList as |label|}}
+    <div class="label {{if label.isDialect 'dialect' 'nondialect'}}">{{label.name}}</div>
+  {{/each}}
+</div>
