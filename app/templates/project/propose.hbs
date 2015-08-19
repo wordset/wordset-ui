@@ -1,47 +1,11 @@
 <div class="project">
   {{project-info project=model.project progress=true}}
 
-  <div class="project-proposal">
-    <div class="word">
-      {{#link-to "seq.wordset.index" wordset.lang.id wordset.name}}{{wordset.name}}{{/link-to}}
-    </div>
-    <div class="pos">{{meaning.pos}}</div>
-    <div class="meaning">
-      <div class="defWrap">
-        <div class="def">
-          {{meaning.def}}
-        </div>
-      </div> <!-- defWrap div -->
+  {{edit-interface changes=proposal.changes lang=wordset.lang}}
+  <button class="submitProposal positive" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
+  <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Word from Dictionary</button>
+  <button class="negative" {{action "randomTarget"}}>Skip</button>
 
-      {{#if meaning.example}}
-      <div class="quoteWrap">
-        <div class="quote">
-          <span class="quotemark">“</span>
-          {{meaning.example}}
-          <span class="quotemark">”</span>
-        </div>
-      </div>
-      {{/if}}
-    </div> <!-- meaning div -->
-    <div class="editDefinition">
-      <label>
-        Edit definition of word
-        {{validated-textarea value=model.def errors=errors.model.def showError=true}}
-      </label>
-      <label class="edit-example">
-        Edit example sentence
-        <!-- Ember doesn't allow area-required="true" to be
-        set on this textarea (see here: http://emberjs.com/guides/templates/input-helpers/)-->
-        {{validated-textarea value=model.example showErrors=true errors=errors.model.example placeholder="No example sentence! Please add one."}}
-      </label>
-      {{#if model.lang}}
-        {{label-selection labels=model.lang.labels selectedLabels=model.labels}}
-      {{/if}}
-      <button class="submitProposal" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
-      <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Word from Dictionary</button>
-      <button class="negative" {{action "randomTarget"}}>Skip</button>
-    </div>
-  </div>
 
   <div class="rules">
     {{htmlRules}}
