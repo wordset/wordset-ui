@@ -6,7 +6,7 @@
 
 .edit-meaning,
 .edit-seq,
-.reason {
+.edit-reason {
   background: #FDFDFD;
   border-radius: 2px;
   box-sizing: border-box;
@@ -73,6 +73,9 @@
 
 .edit-seq {
   font-size: 30px;
+  .validated-input {
+    padding-right: 40px;
+  }
 }
 
 // If the the meaning is selected to be removed, the meaning box
@@ -90,7 +93,7 @@
   }
 }
 
-.reason {
+.edit-reason {
   padding: 10px 20px;
 }
 
