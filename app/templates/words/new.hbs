@@ -6,19 +6,6 @@
   <div class="newWord">
       {{edit-interface changes=model.changes lang=model.lang}}
       <button class="negative" {{action "cancelEdit"}}>Cancel</button>
-      <button class="submit positive" {{action "submitEdit"}}>Save</button>
-
-    <label>
-      {{#validated-input value=model.wordName errors=errors.model.wordName}}
-        {{#if seqId}}
-          – <a href="" {{action "seeExistingWord"}}>check it out.</a>
-        {{/if}}
-        {{#if proposalId}}
-          – {{link-to "check it out." "proposal.index" proposalId}}
-        {{/if}}
-      {{/validated-input}}
-    </label>
-
-    <button class="submitProposal positive" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
+      <button class="submit positive" {{action "submitEdit"}}>Suggest</button>
   </div>
 </div>
