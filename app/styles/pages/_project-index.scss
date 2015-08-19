@@ -26,10 +26,10 @@
   .progress-bar {
     margin-bottom: 1px;
   }
-  .negative {
+  .prog-num.negative {
     color: $red;
   }
-  .positive {
+  .prog-num.positive {
     color: $positive-color;
   }
   .metric {
