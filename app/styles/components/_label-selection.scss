@@ -1,0 +1,9 @@
+.label-selection {
+  position: relative;
+  .collapse {
+    @include circle-button($hover-background: $button-background-positive);
+    position: absolute;
+    top: 0px;
+    right: 12px;
+  }
+}
