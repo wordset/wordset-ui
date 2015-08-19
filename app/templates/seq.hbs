@@ -10,7 +10,7 @@
 
     {{edit-interface changes=changeSet lang=model.lang errors=errors}}
     <button class="negative" {{action "cancel"}}>Cancel</button>
-    <button {{action "submitProposal"}}>Submit</button>
+    <button class="positive submit" {{action "submitProposal"}}>Submit</button>
 
   {{else}}
     {{#if model.wordset.pendingProposalId}}

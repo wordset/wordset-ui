@@ -26,7 +26,7 @@
     {{#if isEditing}}
       {{edit-interface changes=model.changes lang=model.lang}}
       <button class="negative" {{action "cancelEdit"}}>Cancel</button>
-      <button class="submitProposal" {{action "submitEdit"}}>Save</button>
+      <button class="submit positive" {{action "submitEdit"}}>Save</button>
     {{else}}
       {{proposal-diff proposal=model}}
     {{/if}}
@@ -37,7 +37,7 @@
         <div class="proposal-change-buttons">
           {{confirm-button action="withdraw" text="Delete Proposal" confirmText="Click to Confirm"}}
 
-          <button {{action "startEdit"}} class="edit">Edit</button>
+          <button {{action "startEdit"}} class="edit positive">Edit</button>
 
         </div>
       {{/if}}
