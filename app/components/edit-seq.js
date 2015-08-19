@@ -2,6 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Component.extend( EmberValidations, {
+  classNames: ["edit-seq-inputs"],
   validations: {
     "seq.text": {
       presence: true,

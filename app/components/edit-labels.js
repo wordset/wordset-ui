@@ -1,6 +1,7 @@
 import Ember from "ember";
 
 export default Ember.Component.extend({
+  classNames: ["edit-labels"],
   applicableLabels: Ember.computed("labels", function() {
     if (Ember.isEmpty(this.get("labels"))) { return []; }
     var _this = this;

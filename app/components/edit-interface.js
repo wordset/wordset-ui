@@ -2,6 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 
 export default Ember.Component.extend(EmberValidations, {
+  classNames: ["edit-interface"],
   actions: {
     addNewMeaning() {
       this.get("changes.meanings").pushObject(new Object({action: "add", def: "", example: "", labels: []}));
