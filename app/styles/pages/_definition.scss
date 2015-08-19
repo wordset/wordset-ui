@@ -20,6 +20,11 @@
   }
 }
 
+.propose {
+  display: inline-block;
+  margin-right: 20px;
+}
+
 .pos {
   color: #888;
   font-style: italic;
@@ -52,7 +57,7 @@
     background: $body-background;
     z-index: 10;
   }
-  .edit-link, .locked {
+  .locked {
     transition: all .2s;
     display: inline-block;
     margin-left: 10px;
@@ -72,11 +77,11 @@
   // The edit link should appear when you hover
   // over the whole meaning (info class)
   .info:hover, .info:focus {
-    .edit-link, .locked {
+    .locked {
       opacity: 1;
     }
   }
-  .edit-link:focus, .locked:focus {
+  .locked:focus {
     opacity: 1;
   }
 
