@@ -49,23 +49,23 @@
   border-radius: 2px;
   color: $color;
   display: inline-block;
-  position: relative;
-  height: 36px;
-  min-width: 64px;
-  padding: 0 8px;
   font-size: 14px;
   font-weight: 500;
+  height: 36px;
   letter-spacing: 0;
+  line-height: 36px;
   overflow: hidden;
-  will-change: box-shadow,transform;
-  -webkit-transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
-  transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
   outline: none;
   cursor: pointer;
+  padding: 0 8px;
+  position: relative;
   text-decoration: none;
   text-align: center;
-  line-height: 36px;
+  -webkit-transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
   vertical-align: middle;
+  min-width: 64px;
+  will-change: box-shadow,transform;
   &, a, a:hover {
     color: $color;
     cursor: pointer;
@@ -96,15 +96,15 @@
   min-width: 40px;
   width: 40px;
   span {
+    line-height: 24px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+      top: 50%;
+      left: 50%;
     -webkit-transform: translate(-12px,-12px);
     -ms-transform: translate(-12px,-12px);
     transform: translate(-12px,-12px);
-    line-height: 24px;
-    width: 24px;
     vertical-align: middle;
+    width: 24px;
   }
   &:hover {
     background: $hover-background;
