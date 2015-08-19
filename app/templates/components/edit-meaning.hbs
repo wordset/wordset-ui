@@ -8,9 +8,13 @@
 </label>
 
 {{#if (is-equal meaning.action "remove")}}
-  <button {{action "restore"}}>Undelete</button>
+  <button class="restore" {{action "restore"}}>
+    <span class="ion-trash-a"></span>
+  </button>
 {{else}}
-  <button {{action "remove"}}>Remove this meaning</button>
+  <button class="remove" {{action "remove"}}>
+    <span class="ion-trash-a"></span>
+  </button>
 {{/if}}
 
 <label>

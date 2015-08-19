@@ -1,7 +1,12 @@
 
 {{#if (is-equal seq.action "add")}}
-  {{validated-input value=seq.text errors=errors.seq.text}}
-  <button {{action "remove"}}>Remove this seq</button>
+  <label>
+    Enter a new string of letters that should be associated with the meaning(s) below.
+    {{validated-input value=seq.text errors=errors.seq.text}}
+  </label>
+  <button class="remove" {{action "remove"}}>
+    <span class="ion-trash-a"></span>
+  </button>
 {{else}}
   {{seq.text}}
 {{/if}}
