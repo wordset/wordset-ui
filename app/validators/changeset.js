@@ -22,7 +22,6 @@ export default Base.extend({
         }
       }
     }
-    console.log("Made it here")
     if(Ember.isEmpty(changes.meanings)) {
       this.errors.addObject("Must have at least one valid meaning.");
     } else {
@@ -31,11 +30,9 @@ export default Base.extend({
         var meaning = changes.meanings[i];
         if( (generic(meaning.def) !== false ) ||
             (definitionlike(meaning.def, meaning.pos) !== false)) {
-          console.log("def fail", meaning.def);
           meaningError = true;
         }
         if(sentencelike(meaning.example) !== false) {
-          console.log("example fail", meaning.example);
           meaningError = true;
         }
       }
