@@ -31,7 +31,7 @@ export default Ember.Component.extend( EmberValidations, {
       }
     },
     restore() {
-      this.set("meaning.action", "change");
+      this.set("meaning.action", "modify");
     }
-  }
+  },
 });
