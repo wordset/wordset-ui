@@ -25,7 +25,10 @@
   // This is for the modify label button
   &.modify-labels {
     background: lighten($button-border-positive, 48%);
+    box-shadow: none;
+    border: 1px solid $button-border-positive;
     color: $button-border-positive;
+    height: inherit;
     text-shadow: none;
     &:hover {
       background: lighten($button-border-positive, 40%);
