@@ -34,6 +34,8 @@
   </label>
 </div>
 
-{{#each errors.changes as |error|}}
-  {{error}}
-{{/each}}
+<div class="new-word-errors">
+  {{#each errors.changes as |error|}}
+    <div class="error">{{error}}</div>
+  {{/each}}
+</div>
