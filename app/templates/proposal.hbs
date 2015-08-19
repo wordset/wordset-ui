@@ -81,7 +81,7 @@
   <h4>Activity</h4>
   <div class="proposal-activities">
     {{#each model.activitiesSimple as |activity|}}
-      {{proposal-activity activity=activity}}
+      {{proposal-activity activity=activity class=activity.type}}
     {{/each}}
   </div>
 
