@@ -65,21 +65,15 @@
     }
     &.fb {
       @include button(#3a5795,
-                      darken(#3a5795, 10%),
-                      darken(#3a5795, 5%),
-                      darken(#3a5795, 10%))
+                      darken(#3a5795, 5%))
     }
     &.gh {
       @include button(#999,
-                      #777,
-                      #888,
-                      #777);
+                      #888);
     }
     &.google {
       @include button(#dd4b39,
-                      darken(#dd4b39, 10%),
-                      darken(#dd4b39, 5%),
-                      darken(#dd4b39, 10%))
+                      darken(#dd4b39, 5%))
     }
   }
 

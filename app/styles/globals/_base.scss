@@ -52,9 +52,7 @@ a {
   }
   &.button {
     @include button($button-background-positive,
-                    $button-border-positive,
-                    $button-hover-background-positive,
-                    $button-text-shadow-positive);
+                    $button-hover-background-positive);
   }
 }
 
@@ -70,40 +68,40 @@ textarea {
   box-sizing: border-box;
   font-family: $sans-serif;
   font-size: 16px;
+  &:disabled {
+    background: #F3F3F3;
+  }
 }
 
 button {
-  @include button($button-background-positive,
-                  $button-border-positive,
-                  $button-hover-background-positive,
-                  $button-text-shadow-positive);
+  @include button();
+  &.positive {
+    @include button($button-background-positive,
+                    $button-hover-background-positive,
+                    $white);
+  }
 
   &.negative {
     @include button($button-background-negative,
-                    $button-border-negative,
                     $button-hover-background-negative,
-                    $button-text-shadow-negative);
+                    $white);
   }
   &.flag {
     @include button($button-background-flag,
-                    $button-border-flag,
                     $button-hover-background-flag,
-                    $button-text-shadow-flag);
+                    $white);
 
   }
   &.skip {
     @include button($button-background-skip,
-                    $button-border-skip,
                     $button-hover-background-skip,
-                    $button-text-shadow-skip);
+                    $white);
 
   }
   &[disabled] {
-    background: #CCC;
-    border: #BBB;
-    color: #AAA;
-    cursor: inherit;
-    text-shadow: none;
+    color: rgba(0,0,0,.26);
+    cursor: auto;
+    background-color: transparent;
   }
 }
 
