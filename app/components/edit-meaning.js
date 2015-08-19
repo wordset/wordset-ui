@@ -17,10 +17,15 @@ export default Ember.Component.extend( EmberValidations, {
       sentencelike: true,
     },
   },
+  /* This is only required because ember-validations doesn't correctly observe child errors */
+  hupHack: function() {
+    this.hup.to();
+  }.observes("meaning.example", "meaning.def", "meaning.action"),
   actions: {
     remove() {
       if(this.get("meaning.action") === "add") {
         this.get("targetObject.changes.meanings").removeObject(this.get("meaning"));
+        this.hup.to();
       } else {
         this.set("meaning.action", "remove");
       }

@@ -4,6 +4,9 @@
     Enter a new string of letters that should be associated with the meaning(s) below.
     {{validated-input value=seq.text errors=errors.seq.text}}
   </label>
+  {{#if status.seq_id}}
+    CAUTION: {{status.seq_id}} already belongs to another wordset, and would be detached from the other wordset if this were done.
+  {{/if}}
   <button class="remove" {{action "remove"}}>
     <span class="ion-trash-a"></span>
   </button>

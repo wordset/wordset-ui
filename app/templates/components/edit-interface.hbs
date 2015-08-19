@@ -2,7 +2,7 @@
 
 {{#each changes.seqs as |seq|}}
   <div class="edit-seq">
-    {{edit-seq seq=seq errors=errors.seqs}}
+    {{edit-seq seq=seq lang=lang}}
     {{edit-labels labels=lang.labels selectedLabels=seq.labels forSeq=true}}
   </div>
 {{/each}}
@@ -15,7 +15,7 @@
 
 {{#each changes.meanings as |meaning|}}
   <div class="edit-meaning {{meaning.action}}">
-    {{edit-meaning meaning=meaning lang=lang errors=errors.meanings}}
+    {{edit-meaning meaning=meaning lang=lang}}
     {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
   </div>
 {{/each}}
@@ -33,3 +33,7 @@
     {{textarea value=reason}}
   </label>
 </div>
+
+{{#each errors.changes as |error|}}
+  {{error}}
+{{/each}}
