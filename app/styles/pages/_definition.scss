@@ -148,21 +148,6 @@ span.quotemark {
   }
 }
 
-// Add New Meaning / Seq Button (also on the new word page)
-
-.add-new-meaning, .add-new-seq {
-  background: #FFF;
-  box-shadow: none;
-  color: $dark-green;
-  text-shadow: none;
-  &:hover {
-    background: #FFF;
-    color: darken($lime, 10%);
-  }
-  span {
-    margin-right: 5px;
-  }
-}
 
 // CSS for Ads
 
