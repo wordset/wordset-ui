@@ -1,30 +1,35 @@
 <h2>Seqs</h2>
 
 {{#each changes.seqs as |seq|}}
-  {{edit-labels labels=lang.labels selectedLabels=seq.labels forSeq=true}}
-  {{edit-seq seq=seq errors=errors.seqs}}
+  <div class="edit-seq">
+    {{edit-seq seq=seq errors=errors.seqs}}
+    {{edit-labels labels=lang.labels selectedLabels=seq.labels forSeq=true}}
+  </div>
 {{/each}}
 
-<button class="add-new-meaning" {{action 'addNewSeq'}}>
+<button class="add-new-seq" {{action 'addNewSeq'}}>
   <span class="ion-plus"></span>
-  Add New Seq
 </button>
 
 <h2>Meanings</h2>
 
 {{#each changes.meanings as |meaning|}}
-  <div class="edit-meaning">
-    {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
+  <div class="edit-meaning {{meaning.action}}">
     {{edit-meaning meaning=meaning lang=lang errors=errors.meanings}}
+    {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
   </div>
 {{/each}}
 
 <button class="add-new-meaning" {{action 'addNewMeaning'}} disabled={{hasErrors}}>
   <span class="ion-plus"></span>
-  Add New Meaning
 </button>
 
-<label>
-  Reason and sources
-  {{textarea value=reason}}
-</label>
+
+<h2>Reasons</h2>
+
+<div class="reason">
+  <label>
+    Explain the reason, with sources, for your improvement
+    {{textarea value=reason}}
+  </label>
+</div>
