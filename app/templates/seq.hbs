@@ -13,10 +13,6 @@
     <button class="positive submit" {{action "submitProposal"}}>Submit</button>
 
   {{else}}
-    {{#if model.wordset.pendingProposalId}}
-    {{else}}
-      <button {{action "startEditing"}}>Edit</button>
-    {{/if}}
     <div class="wordWrap">
       <div class="word">
         {{model.text}}
@@ -24,6 +20,10 @@
       <div class="tabs">
         {{#link-to "seq.wordset.index" class="active"}}Definition{{/link-to}}
         {{#link-to "seq.wordset.proposals"}}Proposals{{/link-to}}
+        {{#if model.wordset.pendingProposalId}}
+        {{else}}
+          <button class="propose" {{action "startEditing"}}>Propose an Improvement</button>
+        {{/if}}
       </div>
     </div>
 
