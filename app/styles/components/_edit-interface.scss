@@ -56,7 +56,7 @@
   .submitProposal {
     float: right;
   }
-  .error {
+  .error, .existing-word-caution {
     background: #F6F6F6;
     border-radius: 2px;
     color: darken($blue, 15%);
@@ -68,6 +68,10 @@
     a {
       color: darken($blue, 15%);
     }
+  }
+  .existing-word-caution {
+    color: $button-background-flag;
+    font-size: 18px;
   }
 }
 
