@@ -6,14 +6,14 @@
 
 {{#each meanings as |meaning|}}
   <div class="info">
-    <div class="pos">
-      {{meaning.original.pos}}
-    </div>
     <div class="labels">
       {{label-diff newLabelIds=meaning.labels originalLabelIds=meaning.original.labels}}
     </div>
     <div class="definition">
       <div class="def">
+        <span class="pos">
+          ({{meaning.original.pos}})
+        </span>
         {{diff-text meaning.original.def meaning.def}}
       </div>
     </div>
