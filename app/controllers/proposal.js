@@ -22,9 +22,11 @@ export default Ember.Controller.extend({
     submitEdit() {
       var _this = this;
       this.tracker.log("proposal", "edit");
+      _this.transitionToRoute("loading");
       this.get("model").save().then(
-        function() {
+        function(model) {
           _this.set("isEditing", false);
+          _this.transitionToRoute("proposal", model.get("id"));
         },
         function() {}
       );
