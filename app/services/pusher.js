@@ -10,7 +10,7 @@ export default Ember.Service.extend({
   online: [],
   init() {
     this._super();
-    var key = ENV.APP.PUSHER_OPTS.key;
+    var key = ENV.pusherConfig.key;
 
     if(typeof key === 'undefined') {
       var _this = this;
@@ -25,14 +25,15 @@ export default Ember.Service.extend({
         }
       });
     } else {
-      this.connect(ENV.APP.PUSHER_OPTS.key, ENV.APP.PUSHER_OPTS.connection);
+      this.connect(ENV.pusherConfig.key, ENV.pusherConfig.connection);
     }
   },
   connect(key, options) {
     var conn = new Pusher(key, options);
-    this.set("connection", conn);
     this.public = conn.subscribe('public');
     this.public.bind('push', (data) => this.handlePayload(data));
+    this.set("connection", conn);
+    this.send("connectPrivateChannel");
   },
   connectPrivateChannel: Ember.observer("session.username", "connection", function() {
     var conn = this.get('connection');

@@ -44,6 +44,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.pusherConfig = {};
     ENV.apiHost = 'http://localhost:3000';
     ENV.contentSecurityPolicy['img-src'] += " http://localhost:3000"
     ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 ws://127.0.0.1:* ws://ws.pusherapp.com";
@@ -64,7 +65,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.apiHost = 'https://api.wordset.org';
-    ENV.APP.PUSHER_OPTS = {
+    ENV.pusherConfig = {
       key: '89cac67060d4d835fe7c',
       connection: {
         authEndpoint: "https://api.wordset.org/api/v1/auth/pusher_authorization"
