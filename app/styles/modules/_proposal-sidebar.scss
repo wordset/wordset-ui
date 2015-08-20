@@ -73,6 +73,7 @@
       right: 1px;
       text-shadow: none;
       top: 6px;
+      min-width: 25px;
       width: 25px;
       &:not([disabled]) {
         color: $enter-button;

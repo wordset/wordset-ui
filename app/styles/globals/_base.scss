@@ -50,9 +50,6 @@ a {
   &:hover {
     color: $anchor-hover-color;
   }
-  &.button {
-    @include button();
-  }
 }
 
 input {
@@ -72,7 +69,7 @@ textarea {
   }
 }
 
-button {
+button, .button {
   @include button();
   &.positive {
     @include button($button-background-positive,
