@@ -46,7 +46,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
             'title': document.title,
           });
           var transitionTime = (new Date()).getTime() - _this.get("willTransitionAt");
-          NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
+          //NREUM.inlineHit(window.location.pathname, 0, transitionTime, 0, 0, 0);
         });
       }
       this.controller.set("showMenu", false);
