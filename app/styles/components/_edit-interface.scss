@@ -1,9 +1,3 @@
-.edit-interface {
-  + button + .positive.submit {
-    float: right;
-  }
-}
-
 .edit-meaning,
 .edit-seq,
 .edit-reason {
@@ -57,27 +51,22 @@
     float: right;
   }
   .error, .existing-word-caution {
-    background: #F6F6F6;
-    border-radius: 2px;
-    color: darken($blue, 15%);
+    color: $red;
     font-size: 14px;
     line-height: 1.5em;
-    margin-top: 3px;
     margin-right: 5px;
-    padding: 0px 5px;
     a {
       color: darken($blue, 15%);
     }
   }
   .existing-word-caution {
-    color: $button-background-flag;
     font-size: 18px;
   }
 }
 
 .edit-seq {
   font-size: 30px;
-  .validated-input {
+  label {
     padding-right: 40px;
   }
 }
@@ -116,9 +105,20 @@
     font-family: sans-serif;
     font-size: 40px;
     position: absolute;
+      top: 30px;
   }
   textarea {
     margin-left: 18px;
     width: calc(100% - 18px);
+  }
+}
+
+
+// This is for the buttons that appear after the edit interface
+
+.edit-interface-buttons {
+  margin-top: 20px;
+  .positive {
+    float: right;
   }
 }

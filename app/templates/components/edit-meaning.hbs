@@ -19,9 +19,9 @@
 
 <label>
   Definition
-  {{validated-textarea value=meaning.def errors=errors.meaning.def disabled=(is-equal meaning.action "remove")}}
+  {{validated-textarea value=meaning.def errors=errors.meaning.def disabled=(is-equal meaning.action "remove") showError=true}}
 </label>
 <label class="edit-example">
   Example sentence
-  {{validated-textarea value=meaning.example errors=errors.meaning.example placeholder="No example sentence! Please add one." disabled=(is-equal meaning.action "remove")}}
+  {{validated-textarea value=meaning.example errors=errors.meaning.example placeholder="No example sentence! Please add one." disabled=(is-equal meaning.action "remove") showError=true}}
 </label>

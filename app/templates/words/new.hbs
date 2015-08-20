@@ -5,6 +5,8 @@
     {{#link-to "info.guidelines"}}guidelines{{/link-to}}.</p>
   <div class="newWord">
       {{edit-interface changes=model.changes lang=model.lang}}
-      <button class="submit positive" {{action "submitProposal"}}>Suggest</button>
+      <div class="edit-interface-buttons">
+        <button class="submit positive" {{action "submitProposal"}}>Suggest</button>
+      </div>
   </div>
 </div>

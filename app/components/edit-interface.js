@@ -10,7 +10,7 @@ export default Ember.Component.extend(EmberValidations, {
   },
   /* This is only required because ember-validations doesn't correctly observe child errors */
   runValidations: function() {
-    this.validate();
+    this.validate().then(function() {}, function() {});
   }.observes("hup.at"),
   actions: {
     addNewMeaning() {

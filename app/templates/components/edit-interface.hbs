@@ -34,8 +34,11 @@
   </label>
 </div>
 
-<div class="new-word-errors">
+<div class="bottom-errors">
   {{#each errors.changes as |error|}}
-    <div class="error">{{error}}</div>
+    <div class="error">
+      <span class="ion-alert-circled"></span>
+      {{error}}
+    </div>
   {{/each}}
 </div>

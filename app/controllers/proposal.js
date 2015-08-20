@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   application: Ember.inject.controller("application"),
   currentUser: Ember.computed.alias('application.currentUser'),
   justVoted: false,
+  invalidEdit: false,
   isOpen: Ember.computed("model.state", function() {
     return (this.get("model.state") === "pending");
   }),

@@ -17,6 +17,9 @@ export default Ember.Component.extend( EmberValidations, {
       sentencelike: true,
     },
   },
+  initialValidate: function() {
+    this.validate().then(function() {}, function() {});
+  }.on("willInsertElement"),
   /* This is only required because ember-validations doesn't correctly observe child errors */
   hupHack: function() {
     this.hup.to();

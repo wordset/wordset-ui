@@ -8,7 +8,7 @@ export default Ember.Component.extend({
       return [];
     }
     return this.get("newLabelIds").map(function(id) {
-      return _this.get("store").find("label", id);
+      return _this.get("store").peekRecord("label", id);
     });
   }),
   originalLabels: Ember.computed("originalLabelIds.[]", function() {
@@ -17,7 +17,7 @@ export default Ember.Component.extend({
       return [];
     }
     return this.get("originalLabelIds").map(function(id) {
-      return _this.get("store").find("label", id);
+      return _this.get("store").peekRecord("label", id);
     });
   }),
   addedLabels: Ember.computed("newLabels.[]", "originalLabels.[]", function() {

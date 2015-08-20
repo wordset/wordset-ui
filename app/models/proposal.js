@@ -5,6 +5,7 @@ export default DS.Model.extend({
   user: DS.belongsTo('user', {
     async: false
   }),
+  userId: DS.attr('string'), //always passed, to avoid doing full sideloads
   lang: DS.belongsTo('lang', {
     inverse: null,
     async: false

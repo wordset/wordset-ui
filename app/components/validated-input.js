@@ -1,9 +1,16 @@
 import Ember from 'ember';
-import EmberValidations from 'ember-validations';
 
-export default Ember.Component.extend(EmberValidations, {
+export default Ember.Component.extend({
   classNames: ["validated-input"],
   showError: false,
+
+  anyErrors: Ember.computed("errors", function() {
+    if(Ember.isEmpty(this.get("errors"))) {
+      return false;
+    } else {
+      return true;
+    }
+  }),
 
   actions: {
     showErrors() {

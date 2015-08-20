@@ -9,8 +9,10 @@
   {{#if isEditing}}
 
     {{edit-interface changes=changeSet lang=model.lang errors=errors}}
-    <button class="negative" {{action "cancel"}}>Cancel</button>
-    <button class="positive submit" {{action "submitProposal"}}>Submit</button>
+    <div class="edit-interface-buttons">
+      <button class="negative" {{action "cancel"}}>Cancel</button>
+      <button class="positive submit" {{action "submitProposal"}}>Submit</button>
+    </div>
 
   {{else}}
     <div class="wordWrap">

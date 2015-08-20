@@ -1,3 +1,6 @@
+<div class="textarea {{if anyErrors 'error-input'}}">
+  {{textarea value=value focus-out="showErrors" placeholder=placeholder disabled=disabled}}
+</div>
 {{#if showError}}
   {{#if anyErrors}}
     <div class="error">
@@ -6,7 +9,3 @@
     </div>
   {{/if}}
 {{/if}}
-
-<div class="textarea">
-  {{textarea value=value focus-out="showErrors" placeholder=placeholder disabled=disabled}}
-</div>

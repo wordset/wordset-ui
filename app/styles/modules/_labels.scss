@@ -1,5 +1,9 @@
 .label-display {
   display: inline-block;
+  .edit-seq & {
+    position: relative;
+    top: -3px;
+  }
 }
 .label-grouping {
   margin-bottom: 5px;
