@@ -3,7 +3,7 @@
   <p>This is a list of all of the proposals in the system. If you want
     to vote on a proposal, (do it!) then click "Random Open Proposal"
     and we'll send you to one that you haven't voted on yet!</p>
-  <button {{action "randomProposal"}} class="randomOpenProposal">Random Open Proposal</button>
+  <button {{action "randomProposal"}} class="randomOpenProposal positive">Random Open Proposal</button>
   <div class="proposals">
     {{#each proposals as |proposal|}}
       {{#link-to "proposal" proposal.id}}
