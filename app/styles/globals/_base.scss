@@ -51,8 +51,7 @@ a {
     color: $anchor-hover-color;
   }
   &.button {
-    @include button($button-background-positive,
-                    $button-hover-background-positive);
+    @include button();
   }
 }
 
@@ -142,10 +141,6 @@ button {
 
 .animated {
   transition: height 0.2s;
-}
-
-.mainArea {
-
 }
 
 .message-list, .alert-list {
