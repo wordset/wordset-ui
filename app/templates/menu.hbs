@@ -1,10 +1,10 @@
 
 {{#if showMenu}}
-  {{view "menu-mask"}}
+  {{menu-mask}}
 {{/if}}
 
 
-<nav {{bind-attr class=":menu showMenu:open:closed"}}>
+<nav class="menu {{if showMenu 'open' 'closed'}}">
   <ul>
     <li>
       {{#link-to "proposals" class="proposalLink"}}

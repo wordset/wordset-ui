@@ -1,17 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  activity: function() {
+  activity: Ember.computed("model.activities.0", function() {
     return this.get("model.activities.0");
-  }.property("model.activities.0"),
-  notification: function() {
+  }),
+  notification: Ember.computed("model.notification", function() {
     return this.get("model.notification");
-  }.property("model.notification"),
-  badge: function() {
+  }),
+  badge: Ember.computed("activity.badge", function() {
     return this.get("activity.badge");
-  }.property("activity.badge"),
+  }),
   actions: {
-    close: function() {
+    close() {
       this.send("closeModal");
     }
   }

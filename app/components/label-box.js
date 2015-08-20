@@ -1,26 +1,22 @@
 import Ember from "ember";
 
 export default Ember.Component.extend({
-  setup: function() {
+  setup: Ember.on("willInsertElement", function() {
     this.set("isChecked", this.get("selectedLabels").contains(this.get("labelKey")));
-  }.on("willInsertElement").observes("selectedLabels"),
-  labelKey: function() {
-    if(this.get("useId")) {
-      return this.get("label.id");
-    } else {
-      return this.get("label");
-    }
-  }.property("label"),
-  checkedWhenDisabled: function() {
+  }).observes("selectedLabels"),
+  labelKey: Ember.computed("label", function() {
+    return this.get("label.id");
+  }),
+  checkedWhenDisabled: Ember.computed("isChecked", function() {
     return this.get("isChecked");
-  }.property("isChecked"),
-  lookDisabled: function() {
+  }),
+  lookDisabled: Ember.computed("disabled", function() {
     return this.get("disabled");
-  }.property("disabled"),
-  parentChecked: function() {
+  }),
+  parentChecked: Ember.computed("parentState", function() {
     return this.get("parentState");
-  }.property("parentState"),
-  updateSelection: function() {
+  }),
+  updateSelection: Ember.observer("isChecked", function() {
     if((this.get("isChecked") === true)) {
       if(this.get("type") === "child") {
         this.set("parentState", true);
@@ -32,10 +28,10 @@ export default Ember.Component.extend({
       }
       this.get("selectedLabels").removeObject(this.get("labelKey"));
     }
-  }.observes("isChecked"),
-  updateChecked: function () {
+  }),
+  updateChecked: Ember.observer("parentState", function () {
     if(this.get("parentState") === false) {
       this.set("isChecked", false);
     }
-  }.observes("parentState"),
+  }),
 });

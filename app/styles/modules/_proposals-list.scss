@@ -5,7 +5,7 @@
   .item {
     margin-bottom: 2px;
     padding: 18px 15px;
-    &.open {
+    &.pending {
       background: lighten($blue, 38%);
       color: darken($blue, 30%);
     }

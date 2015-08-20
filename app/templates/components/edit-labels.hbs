@@ -1,0 +1,23 @@
+{{#if isEditing}}
+  <div class="label-selection">
+    <button class="collapse" {{action "collapse"}}>
+      <span class="ion-android-done"></span>
+    </button>
+    <div class="title">
+      Labels
+    </div>
+    <div class="dialects">
+      {{#each parentDialects as |dialect|}}
+        {{label-group parentLabel=dialect selectedLabels=selectedLabels showChildrenAsChecked=true applicableLabels=applicableLabels}}
+      {{/each}}
+    </div>
+    <div class="non-dialects">
+      {{#each parentLabels as |label|}}
+        {{label-group parentLabel=label selectedLabels=selectedLabels applicableLabels=applicableLabels}}
+      {{/each}}
+    </div>
+  </div>
+{{else}}
+  {{label-display labelIds=selectedLabels class="label-display"}}
+  <button class="label modify-labels" {{action "startEdit"}}>+ modify labels</button>
+{{/if}}

@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.Controller.extend( EmberValidations.Mixin, {
+export default Ember.Controller.extend( EmberValidations, {
   notifier: Ember.inject.service(),
   queryParams: 'token',
   password: '',
@@ -15,7 +15,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
     },
   },
   actions: {
-    submit: function() {
+    submit() {
       var _this = this;
       var url = ENV.api + "/users/reset_password";
       Ember.$.post(url, {
@@ -29,7 +29,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
           }).then(function() {
             _this.transitionToRoute("index");
             _this.get("notifier").show("Logged in!", {name: "Success"});
-            _this.send("log", "account", "resetpassword");
+            _this.tracker.log("account", "resetpassword");
           });
         });
     },

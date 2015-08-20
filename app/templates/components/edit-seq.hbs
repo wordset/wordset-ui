@@ -1,0 +1,15 @@
+
+{{#if (is-equal seq.action "add")}}
+  <label>
+    Enter a new string of letters that should be associated with the meaning(s) below.
+    {{validated-input value=seq.text errors=errors.seq.text showError=true}}
+  </label>
+  {{#if status.seq_id}}
+    <div class="existing-word-caution">CAUTION: <strong>{{status.seq_id}}</strong> already belongs to another wordset, and would be detached from the other wordset if this were done.</div>
+  {{/if}}
+  <button class="remove" {{action "remove"}}>
+    <span class="ion-trash-a"></span>
+  </button>
+{{else}}
+  {{seq.text}}
+{{/if}}

@@ -1,14 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-
+  classNames: ["validated-input"],
   showError: false,
 
+  anyErrors: Ember.computed("errors", function() {
+    if(Ember.isEmpty(this.get("errors"))) {
+      return false;
+    } else {
+      return true;
+    }
+  }),
+
   actions: {
-    showErrors: function() {
+    showErrors() {
       this.set("showError", true);
     },
-    sendAction: function() {
+    sendAction() {
       this.sendAction();
     }
   }

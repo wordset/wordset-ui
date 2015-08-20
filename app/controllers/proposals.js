@@ -1,26 +1,27 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
-  sortProperties: ['createdAt'],
-  sortAscending: false,
+export default Ember.Controller.extend({
   queryParams: 'page',
   page: 1,
-  total: function() {
+  proposals: Ember.computed("model.[]", function() {
+    return this.get("model").sortBy("createdAt").reverse();
+  }),
+  total: Ember.computed("model", function() {
     return this.store.metadataFor("proposal").total;
-  }.property("model"),
-  totalPages: function() {
+  }),
+  totalPages: Ember.computed('limit', 'total', function() {
     return Math.floor(Math.abs(this.get("total") / this.get("limit")));
-  }.property('limit', 'total'),
-  prevPage: function() {
+  }),
+  prevPage: Ember.computed('page', function() {
     return this.get("page") - 1;
-  }.property('page'),
-  nextPage: function() {
+  }),
+  nextPage: Ember.computed('page', function() {
     return this.get('page') + 1;
-  }.property('page'),
-  hasPreviousPage: function() {
+  }),
+  hasPreviousPage: Ember.computed('offset', function() {
     return this.get('offset') !== 0;
-  }.property('offset'),
-  hasNextPage: function() {
+  }),
+  hasNextPage: Ember.computed('offset', 'limit', 'total', function() {
     return (this.get('offset') + this.get('limit')) < this.get('total');
-  }.property('offset', 'limit', 'total'),
+  }),
 });

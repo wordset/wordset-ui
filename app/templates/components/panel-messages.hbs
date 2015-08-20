@@ -1,0 +1,58 @@
+{{#if session.isAuthenticated}}
+  <div class="message-settings">
+    <div class="toggle-settings" {{action "toggleSettings"}}>
+      <span class="ion-gear-b"></span>
+    </div>
+    <ul class="{{if showSettings 'show-settings'}}">
+      <li>
+        {{#if notificationsEnabled}}
+          <span {{action "disableNotifications"}}>
+            Disable Notifications
+          </span>
+        {{else}}
+          <span {{action "enableNotifications"}}>
+            Enable Notifications
+          </span>
+        {{/if}}
+      </li>
+    </ul>
+  </div>
+  <div class="online-users">
+    <div class="toggle-users" {{action "toggleUsers"}}>
+      <span class="ion-person"></span>
+      {{onlineUsers.length}}
+    </div>
+    <ul class="{{if showUsers 'show-users'}}">
+      <li>
+        {{#each onlineUsers as |username|}}
+          {{#link-to "user.index" username}}{{username}}{{/link-to}}
+        {{/each}}
+      </li>
+    </ul>
+  </div>
+{{/if}}
+
+<div class='messages-content'>
+  <ul class="message-list">
+    {{#each messageList as |message|}}
+      {{panel-message message=message}}
+    {{/each}}
+  </ul>
+
+  <div class='new-message-area'>
+    {{#if session.isAuthenticated}}
+      <button {{action "submitMessage"}} disabled={{isInvalid}}>
+        <span class="ion-chevron-right" />
+      </button>
+      {{multi-box value=text action="submitMessage" maxlength="255"}}
+    {{else}}
+      <div class="notice">
+        To chat,
+        {{link-to "register" "users.new"}} or
+        {{link-to "sign in" "users.login"}}
+        <br>
+        &nbsp;
+      </div>
+    {{/if}}
+  </div>
+</div>

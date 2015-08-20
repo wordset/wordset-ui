@@ -2,17 +2,17 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  activeProjects: function() {
+  activeProjects: Ember.computed("model.[]", function() {
     return this.get("model").filterBy("state", "active");
-  }.property("model.@each"),
+  }),
 
-  completedProjects: function() {
+  completedProjects: Ember.computed("model.[]", function() {
     return this.get("model").filterBy("state", "completed");
-  }.property("model.@each"),
+  }),
 
-  upcomingProjects: function() {
+  upcomingProjects: Ember.computed("model.[]", function() {
     return this.get("model").filterBy("state", "upcoming");
-  }.property("model.@each"),
+  }),
 
 
 });

@@ -1,26 +1,23 @@
-{{#link-to "proposal" proposal.id}}
-  <div {{bind-attr class="proposal.state :item"}}>
+{{#link-to "proposal" model.id}}
+  <div class="{{model.state}} item">
     <div class="sentence">
       <span class="user">
-        {{#if proposal.user.id}}
-          {{proposal.user.id}}
+        {{#if model.userId}}
+          {{model.userId}}
         {{else}}
           Wordnet automatically
         {{/if}}
       </span>
-      proposed a
-      <span class="action">
-        {{proposal.typeName}}
-      </span>
+      made a change
       <span class="state">
-        ({{proposal.state}})
+        ({{model.state}})
       </span>
       on {{formattedDate}}
     </div>
     <div class="progress-bar">
       <div class="progress">
-        <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
-        <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+        <div class="bar negative" style="{{model.negativeTally}}"></div>
+        <div class="bar positive" style="{{model.positiveTally}}"></div>
       </div>
     </div>
   </div>

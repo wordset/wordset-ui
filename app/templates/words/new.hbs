@@ -4,35 +4,9 @@
     please check out our
     {{#link-to "info.guidelines"}}guidelines{{/link-to}}.</p>
   <div class="newWord">
-    <label>
-      Word
-      <br/>
-
-      {{#validated-input value=model.wordName errors=errors.model.wordName}}
-        {{#if seqId}}
-          – <a href="" {{action "seeExistingWord"}}>check it out.</a>
-        {{/if}}
-        {{#if proposalId}}
-          – {{link-to "check it out." "proposal.index" proposalId}}
-        {{/if}}
-      {{/validated-input}}
-    </label>
-
-    {{#each meaning in model.meanings}}
-      <div class="submeaning">
-        {{render "words/new_word_submeaning" meaning}}
-        {{#if canRemove}}
-          <a {{action "removeMeaning" meaning}}>Remove Meaning</a>
-        {{/if}}
+      {{edit-interface changes=model.changes lang=model.lang}}
+      <div class="edit-interface-buttons">
+        <button class="submit positive" {{action "submitProposal"}}>Suggest</button>
       </div>
-    {{/each}}
-
-    <div>
-      <button class="submitProposal" {{bind-attr disabled=isInvalid}} {{action "submitProposal"}}>Suggest</button>
-      <button class="add-new-meaning" {{action "addMeaning"}}>
-        <span class="ion-plus"></span>
-        Add New Meaning
-      </button>
-    </div>
   </div>
 </div>

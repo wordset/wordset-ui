@@ -73,6 +73,7 @@
       right: 1px;
       text-shadow: none;
       top: 6px;
+      min-width: 25px;
       width: 25px;
       &:not([disabled]) {
         color: $enter-button;
@@ -94,7 +95,7 @@
     margin-bottom: 10px;
     text-transform: uppercase;
   }
-  .activity {
+  .proposal-activities > div {
     margin-bottom: 2px;
     padding: 8px 4px;
     &:last-child {

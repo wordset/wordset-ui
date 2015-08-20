@@ -1,0 +1,124 @@
+.edit-meaning,
+.edit-seq,
+.edit-reason {
+  background: #FDFDFD;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  position: relative;
+  margin-bottom: 20px;
+
+  .edit-meaning-inputs, .edit-seq-inputs, .edit-labels {
+    padding: 10px 20px;
+  }
+
+  .edit-labels {
+    border-top: 1px solid #EEE;
+  }
+
+  input, textarea, select {
+    font-size: 16px;
+    padding: 5px;
+    width: 100%;
+  }
+  select {
+    display: block;
+    margin-bottom: 5px;
+    max-width: 300px;
+  }
+  label {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+    position: relative;
+    p {
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+  }
+  .remove {
+    @include circle-button($hover-background: $button-background-flag);
+  }
+  .restore {
+    @include circle-button($background: #666, $color: $white);
+  }
+  .remove, .restore {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+  }
+  .submitProposal {
+    float: right;
+  }
+  .error, .existing-word-caution {
+    color: $red;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-right: 5px;
+    a {
+      color: darken($blue, 15%);
+    }
+  }
+  .existing-word-caution {
+    font-size: 18px;
+  }
+}
+
+.edit-seq {
+  font-size: 30px;
+  label {
+    padding-right: 40px;
+  }
+}
+
+// If the the meaning is selected to be removed, the meaning box
+// should be greyed out
+.edit-meaning.remove {
+  background: #EEE;
+  label {
+    color: #999;
+  }
+  .edit-labels button {
+    cursor: auto;
+    &:hover {
+      background: inherit;
+    }
+  }
+}
+
+.edit-reason {
+  padding: 10px 20px;
+}
+
+// Add New Meaning / Seq Button (also on the new word page)
+
+.add-new-meaning, .add-new-seq {
+  @include circle-button($hover-background: $button-background-positive);
+  margin-bottom: 40px;
+}
+
+// For the quote marks etc.
+
+.edit-example {
+  .textarea:before {
+    content: "“";
+    font-family: sans-serif;
+    font-size: 40px;
+    position: absolute;
+      top: 30px;
+  }
+  textarea {
+    margin-left: 18px;
+    width: calc(100% - 18px);
+  }
+}
+
+
+// This is for the buttons that appear after the edit interface
+
+.edit-interface-buttons {
+  margin-top: 20px;
+  .positive {
+    float: right;
+  }
+}

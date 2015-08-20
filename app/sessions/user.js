@@ -2,14 +2,11 @@ import Session from 'simple-auth/session';
 import Ember from 'ember';
 
 export default Session.extend({
-  pusher: Ember.inject.service(),
-  user: function() {
-    var userId = this.get('username');
+  username: Ember.computed.alias("secure.username"),
+  user: Ember.computed('secure.username', function() {
+    var userId = this.get('secure.username');
     if (!Ember.isEmpty(userId)) {
-      return this.container.lookup('store:main').find('user', userId);
+      return this.container.lookup('service:store').find('user', userId);
     }
-  }.property('username'),
-  connectToPusher: function() {
-    this.set("pusher.username", this.get("username"));
-  }.observes('username')
+  }),
 });

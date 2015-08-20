@@ -1,19 +1,22 @@
 import Ember from "ember";
 
 export default Ember.Component.extend({
-  allChildrenChecked: function() {
+  children: Ember.computed("applicableLabels.[]", "parentLabel.id", function() {
+    return this.get("applicableLabels").filterBy("parent", this.get("parentLabel"));
+  }),
+  allChildrenChecked: Ember.computed("selectedLabels.[]", function() {
     var _this = this;
-    return this.get("parentLabel.children").every(function(label) {
+    return this.get("children").every(function(label) {
       return _this.get("selectedLabels").contains(label);
     });
-  }.property("selectedLabels.@each"),
-  allChildrenUnchecked: function() {
+  }),
+  allChildrenUnchecked: Ember.computed("selectedLabels.[]", function() {
     var _this = this;
-    return !this.get("parentLabel.children").any(function(label) {
+    return !this.get("children").any(function(label) {
       return _this.get("selectedLabels").contains(label);
     });
-  }.property("selectedLabels.@each"),
-  disabledParent: function() {
+  }),
+  disabledParent: Ember.computed("allChildrenUnchecked", "parentChecked", function() {
     return (this.get("parentChecked") && !this.get("allChildrenUnchecked"));
-  }.property("allChildrenUnchecked", "parentChecked")
+  })
 });

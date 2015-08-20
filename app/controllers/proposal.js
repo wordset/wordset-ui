@@ -3,45 +3,45 @@ import ENV from '../config/environment';
 
 export default Ember.Controller.extend({
   posList: ENV.posList,
-  needs: ['application'],
-  currentUser: Ember.computed.alias('controllers.application.currentUser'),
+  application: Ember.inject.controller("application"),
+  currentUser: Ember.computed.alias('application.currentUser'),
   justVoted: false,
-  isOpen: function() {
-    return (this.get("model.state") === "open");
-  }.property("model.state"),
-  isMine: function() {
+  invalidEdit: false,
+  isOpen: Ember.computed("model.state", function() {
+    return (this.get("model.state") === "pending");
+  }),
+  isMine: Ember.computed("model.user.id", "currentUser.id", function() {
     return (this.get("model.user.id") === this.get("currentUser.id"));
-  }.property("model.user.id", "currentUser.id"),
-  canChange: function() {
+  }),
+  canChange: Ember.computed("isOpen", "isMine", function() {
     return (this.get("isOpen") && this.get("isMine"));
-  }.property("isOpen", "isMine"),
-  partialName: function() {
-    return "proposal/" + this.get("model.type").dasherize();
-  }.property("model.type"),
+  }),
   actions: {
-    startEdit: function() {
+    startEdit() {
       this.set("isEditing", true);
     },
-    submitEdit: function() {
+    submitEdit() {
       var _this = this;
-      this.send("log", "proposal", "edit");
+      this.tracker.log("proposal", "edit");
+      _this.transitionToRoute("loading");
       this.get("model").save().then(
-        function() {
+        function(model) {
           _this.set("isEditing", false);
+          _this.transitionToRoute("proposal", model.get("id"));
         },
         function() {}
       );
     },
-    withdraw: function() {
+    withdraw() {
       var _this = this;
       Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
       {}, function(data) {
         _this.store.pushPayload('proposal', data);
-        _this.send("log", "proposal", "withdraw");
+        _this.tracker.log("proposal", "withdraw");
       });
     },
-    cancelEdit: function() {
-      this.get("model").rollback();
+    cancelEdit() {
+      this.get("model").reload();
       this.set("isEditing", false);
     },
   }

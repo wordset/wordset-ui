@@ -1,4 +1,4 @@
-<div {{bind-attr class=":activity isYae:yae:nay"}}>
+<div class="activity {{if isYae 'yae' 'nay'}}">
   {{#link-to "proposal.index" model.proposalId}}
     <span class="ionicon"></span>
     {{model.userId}}

@@ -3,7 +3,7 @@ import Base from 'simple-auth/authenticators/base';
 import ENV from 'wordset/config/environment';
 
 export default Base.extend({
-  restore: function(properties) {
+  restore(properties) {
     var propertiesObject = Ember.Object.create(properties);
     return new Ember.RSVP.Promise(function(resolve, reject) {
       if (!Ember.isEmpty(propertiesObject.get("username")) && !Ember.isEmpty(propertiesObject.get("auth_key"))) {
@@ -21,7 +21,7 @@ export default Base.extend({
       }
     });
   },
-  authenticate: function(credentials) {
+  authenticate(credentials) {
     var _this = this;
     // Check if we are doing a manual auth, without needing to do a request
     if(!Ember.isEmpty(credentials.auth_key)) {
@@ -46,16 +46,16 @@ export default Base.extend({
     }
 
   },
-  invalidate: function() {
+  invalidate() {
     return Ember.RSVP.resolve();
   },
-  makeRequest: function(data) {
+  makeRequest(data) {
     return Ember.$.ajax({
       url:        ENV.api + '/auth/login',
       type:       'POST',
       data:       data,
       dataType:   'json',
-      beforeSend: function(xhr, settings) {
+      beforeSend(xhr, settings) {
         xhr.setRequestHeader('Accept', settings.accepts.json);
       }
     });

@@ -1,0 +1,23 @@
+<li>
+  <div class="info" tabindex="0">
+    <div class="meaning">
+      <div class="defWrap">
+        <div class="def">
+          <span class="pos">({{meaning.pos}})</span>
+          {{label-display labels=meaning.labels}}
+          {{meaning.def}}
+        </div>
+      </div> <!-- defWrap div -->
+
+      {{#if meaning.example}}
+      <div class="quoteWrap">
+        <div class="quote">
+          <span class="quotemark">“</span>
+          {{meaning.example}}
+          <span class="quotemark">”</span>
+        </div>
+      </div>
+      {{/if}}
+    </div> <!-- meaning div -->
+  </div>
+</li>

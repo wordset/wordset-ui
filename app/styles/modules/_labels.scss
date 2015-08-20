@@ -1,24 +1,41 @@
-.meaning-labels {
-  .label-grouping {
-    margin-bottom: 5px;
-  }
-  .label {
-    border-radius: 2px;
-    display: inline-block;
-    line-height: 1em;
-    font-size: 12px;
-    padding: 5px 5px;
+.label-display {
+  display: inline-block;
+  .edit-seq & {
     position: relative;
-      top: -2px;
-    &.dialect {
-      background: lighten(#336699, 57%);
-      border: 1px solid #336699;
-      color: #336699;
-    }
-    &.nondialect {
-      background: lighten(#7B6D8D, 48%);
-      border: 1px solid #7B6D8D;
-      color: #7B6D8D;
+    top: -3px;
+  }
+}
+.label-grouping {
+  margin-bottom: 5px;
+}
+.label {
+  border-radius: 2px;
+  display: inline-block;
+  line-height: 1em;
+  font-size: 12px;
+  padding: 5px 5px;
+  position: relative;
+    top: -2px;
+  &.dialect {
+    background: lighten(#336699, 57%);
+    border: 1px solid #336699;
+    color: #336699;
+  }
+  &.nondialect {
+    background: lighten(#7B6D8D, 48%);
+    border: 1px solid #7B6D8D;
+    color: #7B6D8D;
+  }
+  // This is for the modify label button
+  &.modify-labels {
+    background: lighten($button-border-positive, 48%);
+    box-shadow: none;
+    border: 1px solid $button-border-positive;
+    color: $button-border-positive;
+    height: inherit;
+    text-shadow: none;
+    &:hover {
+      background: lighten($button-border-positive, 40%);
     }
   }
 }

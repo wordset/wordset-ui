@@ -1,7 +1,7 @@
 <h4>Comment</h4>
 <div class="comment-box">
   {{multi-box value=comment action="submitComment" placeholder=""}}
-  <button {{bind-attr disabled=isInvalid}} {{action "submitComment"}}>
+  <button disabled={{isInvalid}} {{action "submitComment"}}>
     <span class="ion-chevron-right"></span>
   </button>
 </div>

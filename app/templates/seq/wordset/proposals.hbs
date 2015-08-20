@@ -1,5 +1,5 @@
 <div class="proposals-word">
-  {{#each proposal in model}}
+  {{#each model as |proposal|}}
     {{render "seq/wordset/proposal" proposal}}
   {{/each}}
 </div>

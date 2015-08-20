@@ -6,16 +6,16 @@ export default Ember.Component.extend({
   notifier: Ember.inject.service(),
   deleted: false,
 
-  didClick: function() {
+  didClick: Ember.on("click", function() {
     if(!this.get("deleted")) {
       if(this.get("notification.route")) {
         this.get("targetObject").transitionToRoute.apply(this.get("targetObject"), this.get("notification.route"));
       }
       this.send("removeNotification");
     }
-  }.on("click"),
+  }),
 
-  didInsertElement: function() {
+  didInsertElement() {
     this._super();
     Ember.run.later(this, function() {
       this.send("removeNotification");
@@ -23,7 +23,7 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    removeNotification: function() {
+    removeNotification() {
       this.set("deleted", true);
       this.get("notifier").remove(this.get("notification"));
     }

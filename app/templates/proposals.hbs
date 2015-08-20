@@ -3,11 +3,11 @@
   <p>This is a list of all of the proposals in the system. If you want
     to vote on a proposal, (do it!) then click "Random Open Proposal"
     and we'll send you to one that you haven't voted on yet!</p>
-  <button {{action "randomProposal"}} class="randomOpenProposal">Random Open Proposal</button>
+  <button {{action "randomProposal"}} class="randomOpenProposal positive">Random Open Proposal</button>
   <div class="proposals">
-    {{#each proposal in controller}}
+    {{#each proposals as |proposal|}}
       {{#link-to "proposal" proposal.id}}
-        <div {{bind-attr class="proposal.state :item"}}>
+        <div class="{{proposal.state}} item">
           <div class="word">
             {{proposal.wordName}}
           </div>
@@ -17,17 +17,17 @@
             {{#if proposal.wordnet}}
               Wordnet
             {{else}}
-              {{proposal.user.id}}
+              {{proposal.userId}}
             {{/if}}
           </div>
           <div class="state-progress">
-            <div {{bind-attr class="proposal.state :state"}}>
+            <div class="{{proposal.state}} state">
               {{proposal.state}}
             </div>
             <div class="progress-bar">
               <div class="progress">
-                <div class="bar negative" {{bind-attr style="proposal.negativeTally"}}></div>
-                <div class="bar positive" {{bind-attr style="proposal.positiveTally"}}></div>
+                <div class="bar negative" style="{{proposal.negativeTally}}"></div>
+                <div class="bar positive" style="{{proposal.positiveTally}}"></div>
               </div>
             </div>
           </div>

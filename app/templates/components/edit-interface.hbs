@@ -1,0 +1,44 @@
+<h2>Spellings</h2>
+
+{{#each changes.seqs as |seq|}}
+  <div class="edit-seq">
+    {{edit-seq seq=seq lang=lang}}
+    {{edit-labels labels=lang.labels selectedLabels=seq.labels forSeq=true}}
+  </div>
+{{/each}}
+
+<button class="add-new-seq" {{action 'addNewSeq'}}>
+  <span class="ion-plus"></span>
+</button>
+
+<h2>Meanings</h2>
+
+{{#each changes.meanings as |meaning|}}
+  <div class="edit-meaning {{meaning.action}}">
+    {{edit-meaning meaning=meaning lang=lang}}
+    {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
+  </div>
+{{/each}}
+
+<button class="add-new-meaning" {{action 'addNewMeaning'}} disabled={{hasErrors}}>
+  <span class="ion-plus"></span>
+</button>
+
+
+<h2>Reasons</h2>
+
+<div class="edit-reason">
+  <label>
+    Explain the reason, with sources, for your improvement
+    {{textarea value=reason}}
+  </label>
+</div>
+
+<div class="bottom-errors">
+  {{#each errors.changes as |error|}}
+    <div class="error">
+      <span class="ion-alert-circled"></span>
+      {{error}}
+    </div>
+  {{/each}}
+</div>

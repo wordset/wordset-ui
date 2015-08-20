@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  winningResult: function() {
+  winningResult: Ember.computed("selections", "isComplete", function() {
     if(this.get("isComplete")) {
       var tally = Ember.Object.create();
       var selections = this.get("selections");
@@ -18,19 +18,19 @@ export default Ember.Controller.extend({
     } else {
       return null;
     }
-  }.property("selections", "isComplete"),
-  isComplete: function() {
+  }),
+  isComplete: Ember.computed("selections", function() {
     return Object.keys(this.get("selections")).length === this.get("model.questions").length;
-  }.property("selections"),
-  url: function() {
+  }),
+  url: Ember.computed(function() {
     return window.location;
-  }.property(),
-  tweet: function() {
+  }),
+  tweet: Ember.computed("winningResult", function() {
     var tweetText = "I got '" + this.get("winningResult.name") + "' on the '" + this.get("model.title") + "' quiz by @thewordset";
     return encodeURI(tweetText);
-  }.property("winningResult"),
+  }),
   actions: {
-    selectedAnswer: function(answer) {
+    selectedAnswer(answer) {
       answer = answer.split("-");
       var qid = answer[0];
       var aid = answer[1];

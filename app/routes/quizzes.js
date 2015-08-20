@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  afterModel: function(model) {
+  afterModel(model) {
     this._super(model);
     Ember.$(document).attr('title', 'Quizzes from Wordset');
   },
-  model: function() {
+  model() {
     return this.store.find('quiz');
   },
 });

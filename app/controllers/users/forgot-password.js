@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.Controller.extend( EmberValidations.Mixin, {
+export default Ember.Controller.extend( EmberValidations, {
   notifier: Ember.inject.service(),
   email: '',
   validations: {
@@ -14,7 +14,7 @@ export default Ember.Controller.extend( EmberValidations.Mixin, {
     },
   },
   actions: {
-    submit: function() {
+    submit() {
       var _this = this;
       var url = ENV.api + "/users/forgot_password";
       Ember.$.post(url, { email: this.get("email") },

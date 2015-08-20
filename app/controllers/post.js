@@ -2,14 +2,13 @@ import Ember from 'ember';
 /* global moment */
 
 export default Ember.Controller.extend({
-  needs: ['application'],
-  html: function() {
-    return Ember.String.htmlSafe(this.get("model.text"));
-  }.property("model.text"),
-  formattedDate: function() {
-    return moment(this.get('model.publishedAt')).format("LL");
-  }.property("model.publishedAt"),
-  //activeProject: Ember.computed.alias("currentLang.project"),
-  currentLang: Ember.computed.alias("controllers.application.currentLang"),
+  application: Ember.inject.controller("application"),
+  currentLang: Ember.computed.alias("application.currentLang"),
   postsSimple: Ember.computed.alias("currentLang.postsSimple"),
+  html: Ember.computed("model.text", function() {
+    return Ember.String.htmlSafe(this.get("model.text"));
+  }),
+  formattedDate: Ember.computed("model.publishedAt", function() {
+    return moment(this.get('model.publishedAt')).format("LL");
+  }),
 });

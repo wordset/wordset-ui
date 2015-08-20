@@ -1,6 +1,6 @@
 <div class="badges user-page">
   {{#if model.badges}}
-    {{#each badge in model.badges}}
+    {{#each model.badges as |badge|}}
       {{badge-box badge=badge}}
     {{/each}}
   {{else}}

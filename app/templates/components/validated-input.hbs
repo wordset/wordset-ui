@@ -1,7 +1,7 @@
+{{input value=value focus-out="showErrors" type=type insert-newline="sendAction" disabled=disabled class=(if anyErrors 'error-input')}}
 {{#if showError}}
   <div class="error">
     {{errors}}
     {{yield}}
   </div>
 {{/if}}
-{{input value=value focus-out="showErrors" type=type insert-newline="sendAction"}}

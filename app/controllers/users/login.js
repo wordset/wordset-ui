@@ -4,10 +4,10 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 export default Ember.Controller.extend(LoginControllerMixin, {
   authenticator: 'authenticator:api',
   actions: {
-    authenticate: function() {
+    authenticate() {
       var _this = this;
       this._super().then(function() {
-        _this.send("log", "account", "login");
+        _this.tracker.log("account", "login");
         // This transition to previous route is from http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-login
         var previousTransition = _this.get("previousTransition");
         var previousTarget = _this.get("previousTransition.targetName");

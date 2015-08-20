@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.Controller.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations, {
 
   validations: {
     "model.username": {
@@ -21,11 +21,11 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
     }
   },
   actions: {
-    cancel: function() {
+    cancel() {
       this.notifier.show("Signup cancelled");
       this.transitionToRoute("index");
     },
-    submit: function() {
+    submit() {
       var _this = this;
       Ember.$.post(ENV.apiHost + "/auth/" + this.get("model.provider") + "/create", this.get("model")).then(
         function(response) {

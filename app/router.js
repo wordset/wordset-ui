@@ -6,7 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource("index", {path: "/"});
+  this.route("index", {
+    path: "/",
+    resetNamespace: true
+  });
   this.route("redirector");
 
   this.route("login");
@@ -28,19 +31,30 @@ export default Router.map(function() {
     this.route("new");
     this.route("login");
   });
-  this.resource("words", {path: "/words/:lang"}, function() {
+  this.route("words", {
+    path: "/words/:lang",
+    resetNamespace: true
+  }, function() {
     this.route("index");
     this.route("new");
     this.route("random");
   });
-  this.resource("posts");
-  this.resource("post", {path: "/post/:post_id"});
-  this.resource("proposals", function() {
+  this.route("posts", {
+    resetNamespace: true
   });
-  this.resource("proposal", {path: "/proposal/:proposal_id"}, function() {
-    this.route("new-word");
-    this.route("new-meaning");
-    this.route("meaning-change");
+  this.route("post", {
+    path: "/post/:post_id",
+    resetNamespace: true
+  });
+  this.route("proposals", {
+    resetNamespace: true
+  }, function() {
+  });
+  this.route("proposal", {
+    path: "/proposal/:proposal_id",
+    resetNamespace: true
+  }, function() {
+    this.route("index");
   });
   this.route("projects");
   this.route("project", {path: "/project/:project_id"}, function() {
@@ -60,7 +74,10 @@ export default Router.map(function() {
   this.route("quizzes");
   this.route("quiz", {path: "/quiz/:id"});
 
-  this.resource("seq", {path: "/:lang/:seq"}, function() {
+  this.route("seq", {
+    path: "/:lang/:seq",
+    resetNamespace: true
+  }, function() {
     this.route("wordset", {path: "/"}, function() {
       this.route("proposals");
     });

@@ -3,17 +3,33 @@
        size gets below 800px width -->
 </div>
 
+
 <div class="wrapper">
-  <div class="wordWrap">
-    <div class="word">
-      {{model.text}}
-    </div>
-    <div class="tabs">
-      {{#link-to "seq.wordset.index" class="active"}}Definition{{/link-to}}
-      {{#link-to "seq.wordset.proposals"}}Proposals{{/link-to}}
-    </div>
-  </div>
 
-  {{outlet}}
+  {{#if isEditing}}
 
+    {{edit-interface changes=changeSet lang=model.lang errors=errors}}
+    <div class="edit-interface-buttons">
+      <button class="negative" {{action "cancel"}}>Cancel</button>
+      <button class="positive submit" {{action "submitProposal"}}>Submit</button>
+    </div>
+
+  {{else}}
+    <div class="wordWrap">
+      <div class="word">
+        {{model.text}}
+      </div>
+      <div class="tabs">
+        {{#link-to "seq.wordset.index"}}Definition{{/link-to}}
+        {{#link-to "seq.wordset.proposals"}}Proposals{{/link-to}}
+        {{#if model.wordset.pendingProposalId}}
+          {{#link-to "proposal" model.wordset.pendingProposalId class="button"}}Pending Proposal{{/link-to}}
+        {{else}}
+          <button class="propose" {{action "startEditing"}}>Propose an Improvement</button>
+        {{/if}}
+      </div>
+    </div>
+
+    {{outlet}}
+  {{/if}}
 </div>

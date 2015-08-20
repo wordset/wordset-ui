@@ -1,33 +1,31 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import ENV from '../config/environment';
-import Proposal from '../models/proposal';
 /* global ga */
 /* global NREUM */
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
   willTransitionAt: null,
-  model: function() {
-    return this.store.find("lang", "en");
+  model() {
+    return this.store.find('lang', "en");
   },
-  setupController: function(controller, model) {
-    this._super(controller, model);
+  setupController(controller, model) {
     controller.set("currentLang", model);
-    console.log(controller.get("currentRouteName"));
-    this.controllerFor("panel.messages").set("model", this.store.find('message'));
-    this.controllerFor("panel.notifications").set("model", this.store.all("notification"));
+    controller.set("messages", this.store.findAll('message'));
+    controller.set("activityNotifications", this.store.peekAll('notification'));
+    this._super(controller, model);
   },
 
   // This saves the previous transition for going back
   // to the user's original page when signing in
   // http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-login
-  beforeModel: function(transition) {
+  beforeModel(transition) {
     this._saveTransition(transition);
   },
 
   actions: {
-    willTransition: function(transition) {
+    willTransition(transition) {
       // Set the page to a default title
       Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
 
@@ -38,7 +36,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       // http://stackoverflow.com/questions/21122503/emberjs-return-to-current-route-after-logi
       this._saveTransition(transition);
     },
-    didTransition: function() {
+    didTransition() {
       this.hup.to();
       var _this = this;
       if (ENV.environment === 'production') {
@@ -53,47 +51,43 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
       }
       this.controller.set("showMenu", false);
     },
-    randomProposal: function(proposal_id) {
+    randomProposal(proposal_id) {
       var _this = this;
       this.intermediateTransitionTo('loading');
       if(this.get("controller.currentUser")) {
-        Proposal.random(proposal_id).then(function(data) {
+        var path = "/proposals/next";
+        if(proposal_id) {
+          path += "?proposal_id=" + proposal_id;
+        }
+        Ember.$.getJSON(ENV.api + path).then(function(data) {
           if(data.proposal !== undefined) {
-            _this.store.pushPayload("proposal", data);
+            _this.store.pushPayload('proposal', data);
             _this.transitionTo('proposal.index', data.proposal.id);
           } else {
             _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
             _this.transitionTo('proposals');
           }
-        }, function() {
-          //_this.send("randomProposal")
-        });
+        }, function() {});
       } else {
         _this.transitionTo('users.new');
       }
     },
-    log: function(category, name) {
-      if(ENV.environment === "production") {
-        Ember.run(function() {
-          ga('send', 'event', category, name);
-        });
-      }
-    },
-    openModal: function(modalName, model) {
+
+    openModal(modalName, model) {
       return this.render(modalName, {
         into: 'application',
         outlet: 'modal',
         model: model,
       });
     },
-    closeModal: function() {
+    closeModal() {
       return this.disconnectOutlet({
         outlet: 'modal',
         parentView: 'application'
       });
     },
   },
-  _saveTransition: function(transition) {
+  _saveTransition(transition) {
     if(transition.targetName !== ("users.login" || "users.new")) {
       this.controllerFor("users.login").set("previousTransition", transition);
     }

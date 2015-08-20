@@ -28,11 +28,14 @@
 
 @import "components/project-info";
 
+@import "components/edit-interface";
+@import "components/label-selection";
+
+@import "components/proposal-diff";
+
 @import "pages/loading";
 
 @import "modules/word-list";
-@import "modules/edit-definition";
-@import "modules/new-word";
 
 @import "pages/home";
 

@@ -20,9 +20,9 @@
       <div class="remaining">
         Projects Ends In:
         {{#if lessThanOneDay}}
-          {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins, {{liquid-bind secondsRemaining}}s
+          {{hoursRemaining}} hrs, {{minutesRemaining}} mins, {{secondsRemaining}}s
         {{else}}
-          {{liquid-bind daysRemaining}} days, {{liquid-bind hoursRemaining}} hrs, {{liquid-bind minutesRemaining}} mins
+          {{daysRemaining}} days, {{hoursRemaining}} hrs, {{minutesRemaining}} mins
         {{/if}}
       </div>
     {{else}}
@@ -49,7 +49,7 @@
     </div>
     {{#if complete}}{{else}}
       {{#if project.hasTimer}}
-      <div {{bind-attr class=":prog-num differenceIsNegative:negative:positive" }}>
+      <div class="prog-num {{if differenceIsNegative 'negative' 'positive'}}">
         <span class="metric">Difference:</span>
         {{#if differenceIsNegative}}
           {{differenceFromExpected}}

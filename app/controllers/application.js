@@ -8,39 +8,38 @@ export default Ember.Controller.extend(AppPusherMixin, {
   notifier: Ember.inject.service(),
   showPanel: false,
   chatReceived: Ember.computed.alias('pusher.chatReceived'),
-  notifications: function() {
+  notifications: Ember.computed("notifier.notifications.[]", function() {
     return this.get("notifier.notifications");
-  }.property("notifier.notifications.@each"),
-  hasChatAlert: function() {
+  }),
+  hasChatAlert: Ember.computed("showPanel", "chatReceived", function() {
     return (!this.get("showPanel")) && this.get("chatReceived");
-  }.property("showPanel", "chatReceived"),
-
-  username: function() {
+  }),
+  username: Ember.computed("session.username", function() {
     return this.get("session.username");
-  }.property("session.username"),
-  currentUser: function() {
+  }),
+  connectToPusher: Ember.observer("username", function() { // THIS IS SO SHITTY
+    this.pusher.set("username", this.get("username"));
+  }),
+  currentUser: Ember.computed("session.user", function() {
     return this.session.get("user");
-  }.property("session.user"),
-  loggedIn: function() {
-    return !Ember.isEmpty(this.get("username"))
-  }.property("username"),
-  init: function() {
+  }),
+  init() {
     this._super();
     if(localStorage.showPanel) {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
     }
   },
-  shouldShowBanner: function() {
+  shouldShowBanner: Ember.computed("username", "currentPath", function() {
     return (Ember.isEmpty(this.get("username")) &&
             (window.location.pathname.indexOf("/users") !== 0));
-  }.property("username", "currentPath"),
+  }),
   actions: {
-    toggleMenu: function() {
-      this.send("log", "nav", "menu_click");
+    toggleMenu() {
+      this.tracker.log("nav", "menu_click");
       this.toggleProperty("showMenu");
     },
-    togglePanel: function() {
-      this.send("log", "nav", "chat_click");
+    togglePanel() {
+      this.tracker.log("nav", "chat_click");
       this.toggleProperty("showPanel");
       localStorage.showPanel = this.get("showPanel");
       this.set("chatReceived", false);

@@ -5,20 +5,20 @@
 
   <div class="current-projects">
     <h2>Current Projects</h2>
-    {{#each project in activeProjects}}
+    {{#each activeProjects as |project|}}
       {{project-card project=project progress=true}}
     {{/each}}
   </div>
 
   <h3>Completed Projects</h3>
-  {{#each project in completedProjects}}
+  {{#each completedProjects as |project|}}
     {{project-card project=project complete=true}}
   {{/each}}
 
   <h3>Upcoming Projects</h3>
   {{#if upcomingProjects}}
     <ul>
-      {{#each project in upcomingProjects}}
+      {{#each upcomingProjects as |project|}}
         <li>{{project.name}}</li>
       {{/each}}
     </ul>

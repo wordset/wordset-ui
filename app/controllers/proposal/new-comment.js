@@ -2,7 +2,7 @@ import Ember from 'ember';
 import EmberValidations from 'ember-validations';
 import ENV from '../../config/environment';
 
-export default Ember.Controller.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations, {
   comment: "",
   validations: {
     comment: {
@@ -11,7 +11,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
     },
   },
   actions: {
-    submitComment: function() {
+    submitComment() {
       if (this.get("isInvalid")) {
         return false;
       }
@@ -27,7 +27,7 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       }).then(function() {
          _this.set("comment", "");
       }, function() { });
-      this.send("log", "proposal", "commented");
+      this.tracker.log("proposal", "commented");
     },
   }
 });

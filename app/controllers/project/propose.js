@@ -1,7 +1,7 @@
 import Ember from "ember";
 import EmberValidations from "ember-validations";
 
-export default Ember.Controller.extend(EmberValidations.Mixin, {
+export default Ember.Controller.extend(EmberValidations, {
   notifier: Ember.inject.service(),
   validations: {
     "model.def": {
@@ -14,14 +14,14 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
       sentencelike: true,
     }
   },
-  needs: ['project'],
+  application: Ember.inject.controller('project'),
 
-  htmlRules: function() {
+  htmlRules: Ember.computed("model.project.rules", function() {
     return Ember.String.htmlSafe(this.get("model.project.rules"));
-  }.property("model.project.rules"),
+  }),
 
   actions: {
-    submitProposal: function() {
+    submitProposal() {
       var _this = this;
       this.get("model").save().then(
         function() {
@@ -32,10 +32,10 @@ export default Ember.Controller.extend(EmberValidations.Mixin, {
         }
       );
     },
-    proposeMeaningRemoval: function() {
+    proposeMeaningRemoval() {
       var _this = this;
 
-      var proposal = this.store.createRecord("proposal", {
+      var proposal = this.store.createRecord('proposal', {
                             type: "MeaningRemoval",
                             meaning: this.get("meaning")
                         });
