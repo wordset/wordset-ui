@@ -14,11 +14,15 @@
         <div class="ionicon ion-ios-paper"></div>Guidelines {{/link-to}}
     </div>
 
-    {{#if activeProject}}
+    <!-- {{#if activeProject}}
       <h2>Current Community Project</h2>
       <p>We set projects to focus on a specific area of improving the dictionary. At the moment, we're fixing all the verbs so that they meet our standards. Come help out!</p>
       {{project-card project=activeProject progress=true}}
-    {{/if}}
+    {{/if}} -->
+
+    {{#link-to "words.random" 'en' class="randomWord button positive"}}
+     Give me a random word to improve!
+    {{/link-to}}
 
     <h2>About Wordset</h2>
 
@@ -62,7 +66,7 @@
       {{latest-blog-posts posts=topPostsSimple}}
     {{/if}}
 
-    <button {{action "randomProposal"}} class="randomOpenProposal positive">Vote on a Proposal</button>
+    <button {{action "randomProposal"}} class="randomOpenProposal negative">Vote on a Proposal</button>
 
     <h2>Recent Activity</h2>
     <div class="recent-activity">
