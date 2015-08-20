@@ -1,6 +1,12 @@
 {{#each seqs as |seq|}}
   <div class="word">
     {{seq.text}}
+    {{#if seq.original.meanings}}
+      <span class="clobbered-alert ion-alert-circled"></span>
+    {{/if}}
+  </div>
+  <div class="labels">
+    {{label-diff newLabelIds=seq.labels originalLabelIds=seq.original.labels}}
   </div>
 {{/each}}
 
@@ -27,4 +33,36 @@
     </div>
     {{/if}}
   </div>
+{{/each}}
+
+{{#each seqs as |seq|}}
+  {{#if seq.original.meanings}}
+    <div class="clobbered-wordset">
+      <p> <span class="ion-alert-circled"></span> The current wordset for "{{seq.text}}" will be removed if this proposal is accepted. </p>
+      {{#each seq.original.meanings as |meaning| }}
+        <div class="info">
+          <div class="labels">
+            {{label-diff newLabelIds=meaning.labels originalLabelIds=meaning.original.labels}}
+          </div>
+          <div class="definition">
+            <div class="def">
+              <span class="pos">
+                ({{meaning.pos}})
+              </span>
+              {{meaning.def}}
+            </div>
+          </div>
+          {{#if meaning.example}}
+          <div class="quoteWrap">
+            <div class="quote highlight">
+              <span class="quotemark"> “ </span>
+                {{meaning.example}}
+              <span class="quotemark"> ” </span>
+            </div>
+          </div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
 {{/each}}
