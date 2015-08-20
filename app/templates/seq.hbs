@@ -21,6 +21,7 @@
         {{#link-to "seq.wordset.index" class="active"}}Definition{{/link-to}}
         {{#link-to "seq.wordset.proposals"}}Proposals{{/link-to}}
         {{#if model.wordset.pendingProposalId}}
+          {{#link-to "proposal" model.wordset.pendingProposalId class="button"}}Pending Proposal{{/link-to}}
         {{else}}
           <button class="propose" {{action "startEditing"}}>Propose an Improvement</button>
         {{/if}}
