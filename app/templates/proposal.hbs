@@ -14,7 +14,7 @@
           {{#link-to "user" model.user}}
             {{model.user.id}}
           {{/link-to}}
-          proposed a change.
+          proposed a change for {{model.points}} points.
         {{else}}
           <img src="assets/images/square-logo.png" class="avatar" alt="" />
           <div class="detail-text">Wordset has automatically proposed this change.</div>
@@ -22,9 +22,7 @@
       {{/if}}
 
     </div>
-
-    <div>This is a {{model.points}} points proposal.</div>
-
+    
     {{#if isLoading}}
       Saving...
     {{else}}
