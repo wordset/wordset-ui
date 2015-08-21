@@ -53,8 +53,6 @@ export default Router.map(function() {
   this.route("proposal", {
     path: "/proposal/:proposal_id",
     resetNamespace: true
-  }, function() {
-    this.route("index", {path: "/"});
   });
   this.route("projects");
   this.route("project", {path: "/project/:project_id"}, function() {

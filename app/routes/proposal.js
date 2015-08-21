@@ -6,9 +6,11 @@ export default Ember.Route.extend({
   },
   afterModel(model) {
     if(Ember.isBlank(model.get("changes"))) {
-      model.reload();
+      model.reload().then((model) => this._super(model));
+    } else {
+      this._super(model);
     }
-    this._super(model);
+
     var word = this.modelFor('proposal').get('wordName');
     this.tracker.log("proposal", "viewed");
     Ember.$(document).attr('title', word + ' – proposal from Wordset');
