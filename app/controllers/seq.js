@@ -6,6 +6,10 @@ export default Ember.Controller.extend(EmberValidations, {
   showBanner: Ember.computed("session.isAuthenticated", function() {
     return !this.get("session").get("isAuthenticated");
   }),
+  altSpellings: Ember.computed("model.wordset.seqs", function() {
+    var otherSeqs = this.get("model.wordset.seqs");
+    return otherSeqs.removeObject(this.get("model"));
+  }),
   actions: {
     startEditing() {
       this.set("isEditing", true);
