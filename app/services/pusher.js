@@ -6,48 +6,43 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
   browserNotifier: Ember.inject.service(),
   search: Ember.inject.service(),
-  session: Ember.inject.service(),
   chatReceived: false,
-  connection: null,
   online: [],
-  connect(configPromise) {
-    var _this = this;
-    configPromise.then(function(config) {
-      var conn = new Pusher(config.key, config.connection);
-      _this.public = conn.subscribe('public');
-      _this.public.bind('push', (data) => _this.handlePayload(data));
-      _this.public.bind('reload', (data) => _this.handleReload(data));
-      _this.set("connection", conn);
-    }, function(err) {
-      console.warn("Error configuring pusher", err);
-    })
+  username: null,
+  connect(config) {
+    var conn = new Pusher(config.key, config.connection);
+    this.public = conn.subscribe('public');
+    this.public.bind('push', (data) => this.handlePayload(data));
+    this.public.bind('reload', (data) => this.handleReload(data));
+    this.set("connection", conn);
   },
-  connectPrivateChannel: Ember.observer("session.username", "connection", function() {
+  connectPrivateChannel: function() {
+    var username = this.get("username");
     var conn = this.get('connection');
     if(conn) {
       if(this.privateChannel) {
-        this.connection.unsubscribe(this.privateChannel.channelName);
+        conn.unsubscribe(this.privateChannel.channelName);
       }
       if(this.presenceChannel) {
-        this.connection.unsubscribe(this.presenceChannel.channelName);
+        conn.unsubscribe(this.presenceChannel.channelName);
       }
-      if(this.get("session.username")) {
+      if(username) {
         var authorizer = this.container.lookup('authorizer:api');
         conn.config.auth = {
           headers: {
             Authorization: authorizer.get("bearerKey")
           }
         };
-        this.privateChannel = conn.subscribe('private-' + this.get("session.username"));
+        this.privateChannel = conn.subscribe('private-' + username);
         this.privateChannel.bind('push', (data) => this.handlePayload(data));
         this.privateChannel.bind('notify', (data) => this.handleNotification(data));
-        this.presenceChannel = this.connection.subscribe('presence-en');
+        this.presenceChannel = conn.subscribe('presence-en');
         this.presenceChannel.bind('pusher:subscription_succeeded', (members) => this.set('online', Object.keys(members.members)));
         this.presenceChannel.bind('pusher:member_added', (member) => this.get("online").addObject(member.id));
         this.presenceChannel.bind('pusher:member_removed', (member) => this.get("online").removeObject(member.id));
       }
     }
-  }),
+  }.observes("connection", "username"),
   handlePayload(data) {
     if(data.meta) {
       delete data.meta;
