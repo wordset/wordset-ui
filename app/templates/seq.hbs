@@ -17,17 +17,17 @@
   {{else}}
     <div class="wordWrap">
       <div class="word">
-        {{model.text}}
+        {{#link-to "seq.wordset.index"}}{{model.text}}{{/link-to}}
       </div>
-      <div class="tabs">
-        {{#link-to "seq.wordset.index"}}Definition{{/link-to}}
-        {{#link-to "seq.wordset.proposals"}}Proposals{{/link-to}}
+      {{#each model.wordset.seqs as |seq|}}
+        {{seq.text}}
+        {{/each}}
+        {{#link-to "seq.wordset.proposals"}}History{{/link-to}}
         {{#if model.wordset.pendingProposalId}}
           {{#link-to "proposal" model.wordset.pendingProposalId class="button"}}Pending Proposal{{/link-to}}
         {{else}}
-          <button class="propose" {{action "startEditing"}}>Propose an Improvement</button>
+          <button class="propose" {{action "startEditing"}}>Edit</button>
         {{/if}}
-      </div>
     </div>
 
     {{outlet}}
