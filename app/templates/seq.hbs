@@ -21,7 +21,9 @@
           {{model.text}}
         {{/link-to}}
       </div>
-      {{label-display labels=model.labels}}
+      {{#if model.labels}}
+        {{label-display labels=model.labels}}
+      {{/if}}
       <div class="button-tabs">
         {{#link-to "seq.wordset.proposals" class="button"}}History{{/link-to}}
         {{#if model.wordset.pendingProposalId}}
@@ -30,6 +32,7 @@
           <button class="propose" {{action "startEditing"}}>Edit</button>
         {{/if}}
       </div>
+      {{#if altSpellings}}
       <div class="other-words">
         alt:
         {{#each altSpellings as |seq|}}
@@ -37,6 +40,7 @@
           {{label-display labels=seq.labels}}
         {{/each}}
       </div>
+      {{/if}}
     </div>
 
     {{outlet}}
