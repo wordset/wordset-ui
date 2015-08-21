@@ -1,7 +1,7 @@
 <div class="project">
   {{project-info project=model.project progress=true}}
 
-  {{edit-interface changes=proposal.changes lang=wordset.lang}}
+  {{edit-interface changes=proposal.changes reason=proposal.reason lang=wordset.lang}}
   <button class="submitProposal positive" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
   <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Word from Dictionary</button>
   <button class="negative" {{action "randomTarget"}}>Skip</button>
