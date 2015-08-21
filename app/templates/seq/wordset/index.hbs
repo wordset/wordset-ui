@@ -1,12 +1,10 @@
-<ol>
-{{#each sortedMeanings as |meaning|}}
-  <li>{{meaning.key}}</li>
+<div class="meanings">
+{{#each posListAndMeanings as |posAndMeanings|}}
+  <div class="pos">{{posAndMeanings.firstObject}}</div>
+  <ol>
+    {{#each posAndMeanings.lastObject as |meaning|}}
+      {{meaning-display meaning=meaning}}
+    {{/each}}
+  </ol>
 {{/each}}
-</ol>
-
-<ol class="meanings">
-
-  {{#each model.meanings as |meaning|}}
-    {{meaning-display meaning=meaning}}
-  {{/each}}
-</ol>
+</div>
