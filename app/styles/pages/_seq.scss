@@ -1,28 +1,47 @@
 .word {
   font-size: 30px;
-  margin-bottom: 10px;
 }
 
+// Does all the stuff at the top of the page
 .wordWrap {
   margin-bottom: 20px;
   position: relative;
-  .word, .tabs {
-    display: inline-block;
-    @media screen and (max-width: $medium) {
-      display: block;
-    }
-  }
   .word {
-    margin-bottom: 25px;
+    display: inline-block;
     @media screen and (min-width: $med-small) {
       margin-right: 60px;
     }
+    @media screen and (max-width: $medium) {
+      display: block;
+    }
+    a {
+      color: $black;
+      text-decoration: none;
+    }
   }
-}
-
-.propose {
-  display: inline-block;
-  margin-right: 20px;
+  .button-tabs {
+    position: absolute;
+      top: 0px;
+      right: 0px;
+    > *:not(:last-child) {
+      margin-right: 10px;
+    }
+    a.button {
+      &.active {
+        background: rgba(158,158,158,.3);
+      }
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .other-words {
+    font-size: 20px;
+    margin-top: 20px;
+    > div {
+      display: inline-block;
+    }
+  }
 }
 
 .pos {
@@ -100,14 +119,6 @@ span.quotemark {
   }
   &:last-of-type {
     margin-left: -4px;
-  }
-}
-
-.openProposal {
-  color: #666;
-  font-size: 14px;
-  a {
-    display: inline-block;
   }
 }
 
