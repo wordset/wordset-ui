@@ -10,29 +10,31 @@
   </div>
 {{/each}}
 
-{{#each meanings as |meaning|}}
-  <div class="info">
-    <div class="labels">
-      {{label-diff newLabelIds=meaning.labels originalLabelIds=meaning.original.labels}}
-    </div>
-    <div class="definition">
-      <div class="def">
-        <span class="pos">
-          ({{meaning.pos}})
-        </span>
-        {{diff-text meaning.original.def meaning.def}}
-      </div>
-    </div>
-    {{#if meaning.example}}
-    <div class="quoteWrap">
-      <div class="quote highlight">
-        <span class="quotemark"> “ </span>
-          {{diff-text meaning.original.example meaning.example}}
-        <span class="quotemark"> ” </span>
-      </div>
-    </div>
-    {{/if}}
-  </div>
+{{#each posListAndMeanings as |posAndMeanings|}}
+  <div class="pos">{{posAndMeanings.firstObject}}</div>
+  <ol>
+    {{#each posAndMeanings.lastObject as |meaning|}}
+      <li class="info">
+        <div class="labels">
+          {{label-diff newLabelIds=meaning.labels originalLabelIds=meaning.original.labels}}
+        </div>
+        <div class="definition">
+          <div class="def">
+            {{diff-text meaning.original.def meaning.def}}
+          </div>
+        </div>
+        {{#if meaning.example}}
+        <div class="quoteWrap">
+          <div class="quote highlight">
+            <span class="quotemark"> “ </span>
+              {{diff-text meaning.original.example meaning.example}}
+            <span class="quotemark"> ” </span>
+          </div>
+        </div>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
 {{/each}}
 
 {{#each seqs as |seq|}}

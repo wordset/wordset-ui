@@ -33,7 +33,6 @@
 }
 
 .proposal {
-  list-style-position: inside;
   margin-bottom: 30px;
   padding: 20px;
   word-wrap: break-word;
@@ -50,10 +49,7 @@
     text-decoration: none;
   }
   .pos {
-    margin-bottom: 20px;
-  }
-  .info {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .error {
     display: inline-block;
@@ -69,7 +65,7 @@
     text-transform: capitalize;
   }
   ol {
-    padding: 20px 0px;
+    padding: 20px;
   }
   .prevProposal {
     font-size: 14px;
@@ -78,9 +74,9 @@
     top: 28px;
   }
   .info {
-    display: block;
     left: 0px;
     line-height: 1.4em;
+    margin-bottom: 20px;
     position: relative;
     vertical-align: text-top;
     width: 93%;
