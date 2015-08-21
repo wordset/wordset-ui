@@ -26,7 +26,7 @@ export function definitionlike(text, pos) {
 
 export default Base.extend({
   call() {
-    var pos = (this.model.get("model.pos.pos") || this.model.get("model.meaning.pos"));
+    var pos = (this.model.get("model.pos") || this.model.get("meaning.pos"));
     var text = this.model.get(this.property);
     var error = definitionlike(text, pos);
     if(error) {
