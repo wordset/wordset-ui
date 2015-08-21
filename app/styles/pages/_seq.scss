@@ -8,21 +8,25 @@
   position: relative;
   .word {
     display: inline-block;
-    @media screen and (min-width: $med-small) {
-      margin-right: 60px;
-    }
-    @media screen and (max-width: $medium) {
-      display: block;
+    margin-right: 10px;
+    @media (max-width: $small) {
+      margin-bottom: 20px;
     }
     a {
       color: $black;
       text-decoration: none;
     }
+    // For the labels div
+    + div {
+      display: inline-block;
+    }
   }
   .button-tabs {
-    position: absolute;
-      top: 0px;
-      right: 0px;
+    @media (min-width: $small) {
+      position: absolute;
+        top: 0px;
+        right: 0px;
+    }
     > *:not(:last-child) {
       margin-right: 10px;
     }
