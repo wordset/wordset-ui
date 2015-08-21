@@ -23,7 +23,8 @@ export default Ember.Controller.extend(EmberValidations, {
       this.store.createRecord('proposal', {
         wordset: this.get("model.wordset"),
         lang: this.get("model.wordset.lang"),
-        changes: this.get("changeSet")
+        changes: this.get("changeSet"),
+        reason: this.get("reason"),
       }).save().then((proposal) => {
         _this.transitionTo("proposal.index", proposal.get("id"));
       });

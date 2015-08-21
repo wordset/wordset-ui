@@ -8,7 +8,7 @@
 
   {{#if isEditing}}
 
-    {{edit-interface changes=changeSet lang=model.lang errors=errors}}
+    {{edit-interface changes=changeSet reason=reason lang=model.lang errors=errors}}
     <div class="edit-interface-buttons">
       <button class="negative" {{action "cancel"}}>Cancel</button>
       <button class="positive submit" {{action "submitProposal"}}>Submit</button>
