@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   currentUser: Ember.computed.alias('application.currentUser'),
   justVoted: false,
   invalidEdit: false,
+  isLoading: false,
   isOpen: Ember.computed("model.state", function() {
     return (this.get("model.state") === "pending");
   }),
@@ -23,21 +24,26 @@ export default Ember.Controller.extend({
     submitEdit() {
       var _this = this;
       this.tracker.log("proposal", "edit");
-      _this.transitionToRoute("loading");
+      this.set("isLoading", true);
       this.get("model").save().then(
         function(model) {
           _this.set("isEditing", false);
-          _this.transitionToRoute("proposal", model.get("id"));
+          _this.set("isLoading", false);
         },
-        function() {}
+        function() {
+          _this.set("isLoading", false);
+          _this.set("isEditing", false);
+        }
       );
     },
     withdraw() {
       var _this = this;
+      this.set("isLoading", true);
       Ember.$.post(ENV.api + "/proposals/" + this.model.get("id") + "/withdraw",
       {}, function(data) {
         _this.store.pushPayload('proposal', data);
         _this.tracker.log("proposal", "withdraw");
+        _this.set("isLoading", false);
       });
     },
     cancelEdit() {

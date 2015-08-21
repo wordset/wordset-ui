@@ -18,12 +18,18 @@ export default Ember.Component.extend( EmberValidations, {
     },
   },
   initialValidate: function() {
+    if(this.get('meaning.action') === 'remove') {
+      this.set('meaning.def', this.get('meaning.original.def'));
+      this.set('meaning.example', this.get('meaning.original.example'));
+      this.set('meaning.labels', this.get('meaning.original.labels') || []);
+    }
+
     this.validate().then(function() {}, function() {});
   }.on("willInsertElement"),
   /* This is only required because ember-validations doesn't correctly observe child errors */
   hupHack: function() {
     this.hup.to();
-    this.initialValidate();
+    this.validate().then(function() {}, function() {});
   }.observes("meaning.example", "meaning.def", "meaning.action", "meaning.pos"),
   actions: {
     remove() {

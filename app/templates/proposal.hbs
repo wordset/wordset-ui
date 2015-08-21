@@ -23,25 +23,28 @@
 
     </div>
 
-    {{#if isEditing}}
-      {{edit-interface changes=model.changes lang=model.lang isInvalid=invalidEdit}}
-      <div class="edit-interface-buttons">
-        <button class="negative" {{action "cancelEdit"}}>Cancel</button>
-        <button class="submit positive" {{action "submitEdit"}} disabled={{model.changes.errors}}>Save</button>
-      </div>
+    <div>This is a {{model.points}} points proposal.</div>
+
+    {{#if isLoading}}
+      Saving...
     {{else}}
-      {{proposal-diff proposal=model}}
-    {{/if}}
-
-    {{#if canChange}}
       {{#if isEditing}}
-      {{else}}
-        <div class="proposal-change-buttons">
-          {{confirm-button action="withdraw" text="Delete Proposal" confirmText="Click to Confirm"}}
-
-          <button {{action "startEdit"}} class="edit positive">Edit</button>
-
+        {{edit-interface changes=model.changes lang=model.lang isInvalid=invalidEdit}}
+        <div class="edit-interface-buttons">
+          <button class="negative" {{action "cancelEdit"}}>Cancel</button>
+          <button class="submit positive" {{action "submitEdit"}} disabled={{model.changes.errors}}>Save</button>
         </div>
+      {{else}}
+        {{proposal-diff proposal=model}}
+
+        {{#if canChange}}
+          <div class="proposal-change-buttons">
+            {{confirm-button action="withdraw" text="Delete Proposal" confirmText="Click to Confirm"}}
+
+            <button {{action "startEdit"}} class="edit positive">Edit</button>
+
+          </div>
+        {{/if}}
       {{/if}}
     {{/if}}
   </div>

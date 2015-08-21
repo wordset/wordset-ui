@@ -5,6 +5,7 @@ import ENV from '../config/environment';
 export default Ember.Service.extend({
   store: Ember.inject.service(),
   browserNotifier: Ember.inject.service(),
+  search: Ember.inject.service(),
   chatReceived: false,
   connection: null,
   online: [],
@@ -32,6 +33,7 @@ export default Ember.Service.extend({
     var conn = new Pusher(key, options);
     this.public = conn.subscribe('public');
     this.public.bind('push', (data) => this.handlePayload(data));
+    this.public.bind('reload', (data) => this.handleReload(data));
     this.set("connection", conn);
   },
   connectPrivateChannel: Ember.observer("session.username", "connection", function() {
@@ -67,6 +69,16 @@ export default Ember.Service.extend({
     this.get("store").pushPayload(data);
     if(data.message) {
       this.handleMessage(data.message);
+    }
+  },
+  handleReload(data) {
+    if(data.target === "search") {
+      this.get("search").send("load", data.lang);
+    } else if(data.target === "model") {
+      var model = this.get("store").peekRecord(data.type, data.id);
+      if(model) {
+        model.reload();
+      }
     }
   },
   handleNotification(data) {
