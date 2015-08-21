@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     return Ember.$.getJSON(ENV.api + "/seqs/" + key).then(
       (data) => {
         _this.store.pushPayload('wordset', data);
-        return _this.store.getById('seq', key);
+        return _this.store.peekRecord('seq', key);
       }
     );
   },

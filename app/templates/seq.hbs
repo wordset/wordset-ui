@@ -33,13 +33,13 @@
         {{/if}}
       </div>
       {{#if altSpellings}}
-      <div class="other-words">
-        alt:
-        {{#each altSpellings as |seq|}}
-          {{seq.text}}
-          {{label-display labels=seq.labels}}
-        {{/each}}
-      </div>
+        <div class="other-words">
+          alt:
+          {{#each altSpellings as |seq|}}
+            {{seq.text}}
+            {{label-display labels=seq.labels}}
+          {{/each}}
+        </div>
       {{/if}}
     </div>
 

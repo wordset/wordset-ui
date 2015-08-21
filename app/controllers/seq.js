@@ -8,12 +8,12 @@ export default Ember.Controller.extend(EmberValidations, {
   }),
   altSpellings: Ember.computed("model.wordset.seqs", function() {
     var otherSeqs = this.get("model.wordset.seqs");
-    return otherSeqs.removeObject(this.get("model"));
+    return otherSeqs.rejectBy("id", this.get("model.id"));
   }),
   actions: {
     startEditing() {
-      this.set("isEditing", true);
       this.set("changeSet", this.get("model.wordset").generateInitialChangeSet());
+      this.set("isEditing", true);
     },
     cancel() {
       this.set("isEditing", false);

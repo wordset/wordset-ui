@@ -6,7 +6,6 @@ export default Ember.Component.extend({
 
   posListAndMeanings: Ember.computed("proposal.changes.meanings.[]", function() {
     var results = {};
-
     this.get("proposal.changes.meanings.[]").forEach( function(meaning) {
       var pos = meaning.pos;
       results[pos] = results[pos] || [];
@@ -18,5 +17,5 @@ export default Ember.Component.extend({
     })
     return posList;
   }),
-
+  
 });
