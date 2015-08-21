@@ -6,35 +6,21 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
   browserNotifier: Ember.inject.service(),
   search: Ember.inject.service(),
+  session: Ember.inject.service(),
   chatReceived: false,
   connection: null,
   online: [],
-  init() {
-    this._super();
-    var key = ENV.pusherConfig.key;
-
-    if(typeof key === 'undefined') {
-      var _this = this;
-      Ember.$.ajax({
-        dataType: "json",
-        url: (ENV.api + "/auth/pusher_configuration"),
-        success(data) {
-          _this.connect(data.key, data.connection);
-        },
-        failure(error) {
-          console.warn("Unable to load pusher configuration in time", error);
-        }
-      });
-    } else {
-      this.connect(ENV.pusherConfig.key, ENV.pusherConfig.connection);
-    }
-  },
-  connect(key, options) {
-    var conn = new Pusher(key, options);
-    this.public = conn.subscribe('public');
-    this.public.bind('push', (data) => this.handlePayload(data));
-    this.public.bind('reload', (data) => this.handleReload(data));
-    this.set("connection", conn);
+  connect(configPromise) {
+    var _this = this;
+    configPromise.then(function(config) {
+      var conn = new Pusher(config.key, config.connection);
+      _this.public = conn.subscribe('public');
+      _this.public.bind('push', (data) => _this.handlePayload(data));
+      _this.public.bind('reload', (data) => _this.handleReload(data));
+      _this.set("connection", conn);
+    }, function(err) {
+      console.warn("Error configuring pusher", err);
+    })
   },
   connectPrivateChannel: Ember.observer("session.username", "connection", function() {
     var conn = this.get('connection');
