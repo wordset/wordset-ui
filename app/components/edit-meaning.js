@@ -23,7 +23,8 @@ export default Ember.Component.extend( EmberValidations, {
   /* This is only required because ember-validations doesn't correctly observe child errors */
   hupHack: function() {
     this.hup.to();
-  }.observes("meaning.example", "meaning.def", "meaning.action"),
+    this.initialValidate();
+  }.observes("meaning.example", "meaning.def", "meaning.action", "meaning.pos"),
   actions: {
     remove() {
       if(this.get("meaning.action") === "add") {
