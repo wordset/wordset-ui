@@ -21,7 +21,7 @@ export function definitionlike(text, pos) {
   } else if (!Ember.isBlank(text) && text.indexOf(backtick) !== -1){
     return "No need for backticks.";
   }
-  return false
+  return false;
 }
 
 export default Base.extend({

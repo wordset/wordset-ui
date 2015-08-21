@@ -2,7 +2,7 @@ import Ember from 'ember';
 import Base from 'ember-validations/validators/base';
 import { definitionlike } from './definitionlike';
 import { generic } from './generic';
-import { sentencelike } from './sentencelike'
+import { sentencelike } from './sentencelike';
 
 export default Base.extend({
   call() {
@@ -25,9 +25,9 @@ export default Base.extend({
     if(Ember.isEmpty(changes.meanings)) {
       this.errors.addObject("Must have at least one valid meaning.");
     } else {
-      for(var i = 0; i < changes.meanings.length; i++) {
+      for(var j = 0; j < changes.meanings.length; j++) {
 
-        var meaning = changes.meanings[i];
+        var meaning = changes.meanings[j];
         if( (generic(meaning.def) !== false ) ||
             (definitionlike(meaning.def, meaning.pos) !== false)) {
           meaningError = true;
