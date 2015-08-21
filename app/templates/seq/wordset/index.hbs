@@ -1,1 +1,12 @@
-{{partial "seq/wordset/meanings"}}
+<ol>
+{{#each sortedMeanings as |meaning|}}
+  <li>{{meaning.key}}</li>
+{{/each}}
+</ol>
+
+<ol class="meanings">
+
+  {{#each model.meanings as |meaning|}}
+    {{meaning-display meaning=meaning}}
+  {{/each}}
+</ol>
