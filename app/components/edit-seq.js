@@ -17,7 +17,6 @@ export default Ember.Component.extend( EmberValidations, {
   checkExistingSeq: function() {
     var name = this.get("seq.text");
     if(this.get("seq.action") === "add") {
-      var _this = this;
       if(name && (name.length > 0)) {
         const url = ENV.api + "/proposals/new-word-status/" + this.get("lang.id") + "/" + name;
         Ember.$.getJSON(url).then((data) => this.set('status', data));

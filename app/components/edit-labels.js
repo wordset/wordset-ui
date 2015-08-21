@@ -18,7 +18,7 @@ export default Ember.Component.extend({
         return false;
       }
       return label;
-    })
+    });
   }),
   parentDialects: Ember.computed("applicableLabels", function() {
     return this.get("applicableLabels").filterBy("isDialect", true).filterBy("parent", null);

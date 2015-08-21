@@ -2,10 +2,8 @@
 // a new meaning proposal
 
 import Ember from "ember";
-import EmberValidations, {validator} from 'ember-validations';
-import ENV from '../../config/environment';
 
-export default Ember.Controller.extend(EmberValidations, {
+export default Ember.Controller.extend({
   actions: {
     submitProposal() {
       var _this = this;
