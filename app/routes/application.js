@@ -58,7 +58,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         Ember.$.getJSON(ENV.api + path).then(function(data) {
           if(data.proposal !== undefined) {
             _this.store.pushPayload('proposal', data);
-            _this.transitionTo('proposal.index', data.proposal.id);
+            _this.transitionTo('proposal', data.proposal.id);
           } else {
             _this.get("notifier").show("Yay! You voted on all open proposals!", {name: "Alert"});
             _this.transitionTo('proposals');
