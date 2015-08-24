@@ -17,6 +17,7 @@ export default DS.Model.extend({
   wordset: DS.belongsTo("wordset", {async: false}),
   changes: DS.attr(),
   activitiesSimple: DS.attr(),
+  wordName: DS.attr("string"), // We just use this for display purposes
   reason: DS.attr("string"),
   state: DS.attr("string"),
   createdAt: DS.attr("date"),
@@ -28,7 +29,6 @@ export default DS.Model.extend({
   flagged: DS.attr("boolean"),
   userVoteIds: DS.attr(),
 
-  wordName: Ember.computed.alias('changes.seqs.firstObject.text'),
 
   positiveTally: Ember.computed("tally", function() {
     if(this.get("tally") > 0 ) {
