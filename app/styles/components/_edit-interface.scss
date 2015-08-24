@@ -84,6 +84,13 @@
       background: inherit;
     }
   }
+  // Do not show errors if we are removing the meaning
+  .error {
+    display: none;
+  }
+  .textarea.error-input textarea {
+    border: 1px solid #EEE;
+  }
 }
 
 .edit-reason {
