@@ -1,0 +1,90 @@
+activity-list {
+  margin-bottom: 40px;
+  activity {
+    color: $text-color;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.4em;
+    margin-bottom: 2px;
+    padding: 10px;
+    text-decoration: none;
+    width: 90%;
+    word-wrap: break-word;
+    &:nth-child(even) {
+      background: #FDFDFD;
+    }
+    &:nth-child(odd) {
+      background: #F3F3F3;
+    }
+    &:hover {
+      background: #EEE;
+    }
+    &.accepted {
+      background: darken($positive-background, 5%);
+      .ionicon {
+        @extend .ion-checkmark-circled;
+      }
+    }
+    &.rejected {
+      background: lighten($negative-color, 50%);
+      .ionicon {
+        @extend .ion-close-circled;
+      }
+    }
+    &.withdrawn {
+      .ionicon {
+        @extend .ion-arrow-return-left;
+      }
+    }
+    &.vote.yae {
+      .ionicon {
+        @extend .ion-thumbsup;
+      }
+      .value {
+        color: $positive-color;
+      }
+    }
+    &.vote.nay {
+      .ionicon {
+        @extend .ion-thumbsdown;
+      }
+    }
+    &.edit-proposal {
+      .ionicon {
+        @extend .ion-edit;
+      }
+    }
+    &.new-proposal {
+      .ionicon {
+        @extend .ion-plus-circled;
+      }
+    }
+    &.proposal-comment {
+      .ionicon {
+        @extend .ion-chatbox;
+      }
+    }
+    &.user-badge {
+      .ionicon {
+        @extend .ion-ribbon-b;
+      }
+    }
+    &.user-promotion {
+      .ionicon {
+        @extend .ion-ribbon-b;
+      }
+    }
+    &.withdraw-vote {
+      .ionicon {
+        @extend .ion-arrow-return-left;
+      }
+    }
+    .ionicon {
+      color: #666;
+      margin-right: 10px;
+    }
+    .activity-word, .value {
+      font-weight: 500;
+    }
+  }
+}

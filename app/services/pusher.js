@@ -65,7 +65,6 @@ export default Ember.Service.extend({
   handleNotification(data) {
     this.handlePayload(data);
     var activity = data.activities[0];
-    Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");
     switch (activity.type) {
       case "ProposalComment":
         this.get("notifier").show("On your proposal for " + activity.wordName, {name: "New Comment", route: ["proposal", activity.proposalId]});

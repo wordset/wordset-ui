@@ -7,11 +7,13 @@ export default DS.Model.extend({
 
   createdAt: DS.attr("date"),
 
-  type: DS.attr("string"),
+  action: DS.attr("string"),
   comment: DS.attr("string"), // Vote or Comment
   voteValue: DS.attr("number"), // Vote
   finalState: DS.attr("string"), // ProposalClosed
   newLevel: DS.attr("string"), // UserPromotion
   badge: DS.attr(), // UserBadge
+
+  notification: DS.belongsTo("notification"), //only exists if this is MINE!
 
 });

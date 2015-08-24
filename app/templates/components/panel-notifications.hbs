@@ -1,5 +1,3 @@
 <div class="alert-list">
-  {{#each sortedNotifications as |notification|}}
-    {{render "dashboard.activity" notification.activity}}
-  {{/each}}
+  {{activity-list activities=sortedActivities}}
 </div>
