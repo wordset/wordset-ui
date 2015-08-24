@@ -25,5 +25,6 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
     controller.set("isEditing", false);
+    controller.set("reason", "");
   }
 });

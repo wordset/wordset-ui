@@ -13,6 +13,7 @@ export default Ember.Controller.extend(EmberValidations, {
   actions: {
     startEditing() {
       this.set("changeSet", this.get("model.wordset").generateInitialChangeSet());
+      this.set("reason", "");
       this.set("isEditing", true);
     },
     cancel() {
