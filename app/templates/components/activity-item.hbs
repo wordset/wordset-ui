@@ -1,0 +1,43 @@
+<span class="ionicon"></span>
+{{activity.userId}}
+{{#if (is-equal activity.action "vote")}}
+  voted
+  <span class="value">
+    {{#if isYae}}
+      yae
+    {{else}}
+      nay
+    {{/if}}
+    ({{activity.voteValue}})
+  </span>
+{{/if}}
+{{#if (is-equal activity.action "edit-proposal")}}
+  edited the proposal
+{{/if}}
+{{#if (is-equal activity.action "new-proposal")}}
+  created a proposal
+{{/if}}
+{{#if (is-equal activity.action "proposal-closed")}}
+  had their proposal
+{{/if}}
+{{#if (is-equal activity.action "proposal-comment")}}
+  commented on the proposal
+{{/if}}
+{{#if (is-equal activity.action "user-badge")}}
+  got the
+  <span class="badge">"{{activity.badge.display_name}}"</span>
+  badge{{#if activity.badge.level}} Level {{activity.badge.level}}{{/if}}!
+{{/if}}
+{{#if (is-equal activity.action "user-promotion")}}
+  was promoted to
+  <span class="activity-word">{{activity.newLevel}}</span>.
+{{/if}}
+{{#if (is-equal activity.action "withdraw-vote")}}
+  withdrew their vote
+{{/if}}
+{{#if activity.wordName}}
+  for <span class="activity-word">{{activity.wordName}}</span>
+{{/if}}
+{{#if activity.finalState}}
+  {{activity.finalState}}
+{{/if}}

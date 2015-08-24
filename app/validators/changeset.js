@@ -14,11 +14,13 @@ export default Base.extend({
     } else {
       for(var i = 0; i < changes.seqs.length; i++) {
         var seq = changes.seqs[i];
-        if(Ember.isBlank(seq.text) || (seq.text.length === 0)) {
-          seqError = true;
-        }
-        if(seq.proposal_id) {
-          seqError = true;
+        if(seq.action !== "remove") {
+          if(Ember.isBlank(seq.text) || (seq.text.length === 0)) {
+            seqError = true;
+          }
+          if(seq.proposal_id) {
+            seqError = true;
+          }
         }
       }
     }
@@ -28,12 +30,14 @@ export default Base.extend({
       for(var j = 0; j < changes.meanings.length; j++) {
 
         var meaning = changes.meanings[j];
-        if( (generic(meaning.def) !== false ) ||
-            (definitionlike(meaning.def, meaning.pos) !== false)) {
-          meaningError = true;
-        }
-        if(sentencelike(meaning.example) !== false) {
-          meaningError = true;
+        if(meaning.action !== "remove") {
+          if( (generic(meaning.def) !== false ) ||
+              (definitionlike(meaning.def, meaning.pos) !== false)) {
+            meaningError = true;
+          }
+          if(sentencelike(meaning.example) !== false) {
+            meaningError = true;
+          }
         }
       }
     }

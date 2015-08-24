@@ -26,69 +26,6 @@
   }
 }
 
-.recent-activity, .subpanel.alert {
-  margin-bottom: 40px;
-  .activity {
-    transition: all .5s;
-    margin-bottom: 2px;
-    &:nth-child(even) {
-      background: #FDFDFD;
-    }
-    &:nth-child(odd) {
-      background: #F3F3F3;
-    }
-    &:hover {
-      background: #EEE;
-    }
-    &.accepted {
-      background: darken($positive-background, 5%);
-      .ionicon {
-        @extend .ion-checkmark-circled;
-      }
-    }
-    &.rejected {
-      background: lighten($negative-color, 50%);
-      .ionicon {
-        @extend .ion-close-circled;
-      }
-    }
-    &.withdrawn {
-      .ionicon {
-        @extend .ion-arrow-return-left;
-      }
-    }
-    .ionicon {
-      color: #666;
-      margin-right: 10px;
-    }
-    .activity-word, .value {
-      font-weight: 500;
-    }
-    &.yae {
-      .ionicon {
-        @extend .ion-thumbsup;
-      }
-      .value {
-        color: $positive-color;
-      }
-    }
-    &.nay {
-      .ionicon {
-        @extend .ion-thumbsdown;
-      }
-    }
-  }
-  a {
-    color: $text-color;
-    display: inline-block;
-    line-height: 1.4em;
-    padding: 10px;
-    text-decoration: none;
-    width: 90%;
-    word-wrap: break-word;
-  }
-}
-
 a[name=more-posts] {
   margin-top: 20px;
 }

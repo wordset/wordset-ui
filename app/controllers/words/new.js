@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       this.tracker.log("propose", "new word");
       this.get("model").save().then(
         function(p) {
-          _this.transitionToRoute("proposal.index", p);
+          _this.transitionToRoute("proposal", p);
         },
         function() {}
         );

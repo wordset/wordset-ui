@@ -4,20 +4,20 @@ export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('proposal', params.proposal_id);
   },
-  afterModel(model) {
+  setupController(controller, model) {
+    this._super(controller, model);
+    controller.set("isEditing", false);
+    controller.set("isLoading", false);
+
     if(Ember.isBlank(model.get("changes"))) {
-      model.reload().then((model) => this._super(model));
-    } else {
-      this._super(model);
+      controller.set("isLoading", true);
+      model.reload().then((model) => {
+        controller.set("isLoading", false);
+      })
     }
 
     var word = this.modelFor('proposal').get('wordName');
     this.tracker.log("proposal", "viewed");
     Ember.$(document).attr('title', word + ' – proposal from Wordset');
-  },
-  setupController(controller, model) {
-    this._super(controller, model);
-    controller.set("isEditing", false);
-    controller.set("isLoading", false);
   }
 });
