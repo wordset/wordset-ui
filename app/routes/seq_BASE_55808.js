@@ -1,9 +1,7 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
-import ResetScrollMixin from '../mixins/reset_scroll';
 
-export default Ember.Route.extend(ResetScrollMixin, {
-  meta: Ember.inject.service(),
+export default Ember.Route.extend({
   model(params) {
     const key = params.lang + "-" + params.seq;
     const _this = this;
@@ -19,12 +17,14 @@ export default Ember.Route.extend(ResetScrollMixin, {
     if(Ember.isEmpty(model)) {
       this.notifier.error("No such word found!");
       this.transitionTo("application");
+    } else {
+      this.tracker.log("word", "viewed");
+      Ember.$(document).attr('title', 'What does \"' + model.get("text") + '\" mean?');
     }
   },
   setupController(controller, model) {
     this._super(controller, model);
     controller.set("isEditing", false);
     controller.set("reason", "");
-    this.set("meta.title", 'What does \"' + model.get("text") + '\" mean?');
   }
 });
