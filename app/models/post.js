@@ -4,5 +4,6 @@ export default DS.Model.extend({
   title: DS.attr("string"),
   text: DS.attr("string"),
   publishedAt: DS.attr("date"),
+  description: DS.attr("string"),
   authorName: DS.attr("string"),
 });

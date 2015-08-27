@@ -5,6 +5,7 @@ import ENV from '../config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin).extend({
   notifier: Ember.inject.service(),
+  meta: Ember.inject.service(),
   willTransitionAt: null,
   model() {
     return this.store.find('lang', "en");
@@ -26,7 +27,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
   actions: {
     willTransition(transition) {
       // Set the page to a default title
-      Ember.$(document).attr('title', 'Wordset – the Collaborative Dictionary');
+      this.get("meta").reset();
 
       this.set("willTransitionAt", (new Date()).getTime());
 

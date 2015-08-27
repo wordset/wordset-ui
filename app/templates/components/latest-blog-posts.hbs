@@ -5,7 +5,7 @@
     {{#each posts as |post|}}
       <li>{{#link-to "post" post.id}} {{post.title}} {{/link-to}}</li>
     {{/each}}
-    <li><a href="#more-posts">More posts</a></li>
+    <li>{{#link-to "posts"}}More posts{{/link-to}}</li>
   </ul>
 
 </div>
