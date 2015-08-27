@@ -14,8 +14,10 @@
         <button {{action "registerVote" "flag"}} class="flag"><span class="ion-flag"></span>Flag</button>
       </div>
     {{else}}
-      <div class="action-bar">
-        <button {{action "randomProposal"}} class="skip">Next</button>
+      <div class="action-bar three-buttons">
+        <button {{action "randomProposal"}} class="positive">Next Proposal</button>
+        <button {{action "randomWord"}} class="skip">Random Word</button>
+        <!-- {{#link-to "words.random" "en" class="skip button"}}Random Word{{/link-to}} -->
         <button {{action "withdrawVote"}} class='negative'>Withdraw Vote</button>
       </div>
     {{/if}}

@@ -37,6 +37,9 @@ export default Ember.Controller.extend({
         _this.store.pushPayload('proposal', data);
       });
     },
+    randomWord() {
+      this.transitionToRoute('words.random', "en");
+    },
   },
 
 
