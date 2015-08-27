@@ -17,6 +17,18 @@ export default Ember.Controller.extend({
   canChange: Ember.computed("isOpen", "isMine", function() {
     return (this.get("isOpen") && this.get("isMine"));
   }),
+  isDeletion: Ember.computed("model.changes", function() {
+    // This is a function to test whether all the changes are remove
+    // meanings. We create an array, push each change type to it,
+    // then remove all that are "removes". If there's nothing left,
+    // we know it's a total meaning removal.
+    var actions = [];
+    this.get("model.changes.meanings.[]").forEach( function(meaning) {
+      actions.push(meaning.action)
+    });
+    actions = actions.without("remove");
+    return Ember.isEmpty(actions);
+  }),
   actions: {
     startEdit() {
       this.set("isEditing", true);

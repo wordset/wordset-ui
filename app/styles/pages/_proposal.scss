@@ -96,6 +96,12 @@
     }
   }
 
+  .is-deletion {
+    border: 1px solid $red;
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
 
   .proposal-change-buttons {
     button {
