@@ -28,6 +28,7 @@ export default DS.Model.extend({
       return (this.get("totalTargetsCount") > (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
     }
   ),
+  
 
   hasTimer: Ember.computed("endsAt", "state", function() {
     return !!((this.get("state") === "active") && this.get("endsAt"));
