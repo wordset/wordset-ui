@@ -3,4 +3,10 @@
   border-radius: 2px;
   margin-bottom: 20px;
   padding: 10px;
+  .proposal & .pos {
+    border-bottom: none;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0px;
+  }
 }
