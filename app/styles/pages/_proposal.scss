@@ -54,7 +54,6 @@
   .error {
     display: inline-block;
     margin-bottom: 10px;
-    margin-top: -10px;
     margin-right: 5px;
     padding: 0px 5px;
     position: inherit;
@@ -97,6 +96,12 @@
     }
   }
 
+  .is-deletion {
+    border: 1px solid $red;
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
 
   .proposal-change-buttons {
     button {

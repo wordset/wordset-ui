@@ -27,7 +27,7 @@
   }
   // The voting buttons
   .action-bar {
-    button {
+    button, .button {
       display: inline-block;
       margin-bottom: 20px;
       min-width: 80px;
@@ -42,6 +42,17 @@
         width: 100%;
       }
 
+    }
+    &.three-buttons {
+      .positive {
+        width: 100%;
+      }
+      .button {
+        width: 47%;
+        @include media-max-width($large) {
+          width: 100%;
+        }
+      }
     }
   }
   .withdraw-vote {
