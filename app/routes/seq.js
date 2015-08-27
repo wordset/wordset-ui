@@ -1,7 +1,8 @@
 import Ember from 'ember';
 import ENV from '../config/environment';
+import ResetScrollMixin from '../mixins/reset_scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScrollMixin, {
   model(params) {
     const key = params.lang + "-" + params.seq;
     const _this = this;
