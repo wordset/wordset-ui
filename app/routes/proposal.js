@@ -14,7 +14,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
       controller.set("isLoading", true);
       model.reload().then((model) => {
         controller.set("isLoading", false);
-      })
+      });
     }
 
     var word = this.modelFor('proposal').get('wordName');

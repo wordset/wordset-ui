@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
     // we know it's a total meaning removal.
     var actions = [];
     this.get("model.changes.meanings.[]").forEach( function(meaning) {
-      actions.push(meaning.action)
+      actions.push(meaning.action);
     });
     actions = actions.without("remove");
     return Ember.isEmpty(actions);

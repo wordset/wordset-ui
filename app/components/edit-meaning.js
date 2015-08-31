@@ -19,7 +19,7 @@ export default Ember.Component.extend( EmberValidations, {
   },
   initialValidate: function() {
     if(!Ember.isBlank("meaning") && Ember.isBlank(this.get("meaning.pos"))) {
-      this.set("meaning.pos", "noun")
+      this.set("meaning.pos", "noun");
     }
     if(this.get('meaning.action') === 'remove') {
       this.set('meaning.def', this.get('meaning.original.def'));

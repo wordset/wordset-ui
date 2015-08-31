@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
     var posList = [];
     Object.keys(results).forEach(function(pos) {
       posList.pushObject([pos, results[pos]]);
-    })
+    });
     return posList;
   }),
 });
