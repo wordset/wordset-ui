@@ -66,12 +66,11 @@
     {{#if canHelpOut}}
     {{else}}
       {{#if currentUser}}
-        {{#if projectHasNoTargetsToPropose}}
+        {{!-- {{#if projectHasNoTargetsToPropose}} --}}
           <button class="positive" {{action "randomProposal"}}> Vote!</button>
         {{else}}
-          <button class="positive" {{action projectAction}}>Help Out!</button>
-        {{/if}}
-      {{else}}
+        {{!--   <button class="positive" {{action "projectAction"}}>Help Out!</button> --}}
+          {{!-- {{else}} --}}
         <button class="positive" {{action "signUp"}}>Help Out!</button>
       {{/if}}
     {{/if}}
