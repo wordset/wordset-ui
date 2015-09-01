@@ -8,7 +8,7 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
   activate: function() {
     this._super();
-    console.log("Scrolling back to top");
+    // console.log("Scrolling back to top");
     window.scrollTo(0,0);
   }
 });
