@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       this.tracker.log("proposal", "edit");
       this.set("isLoading", true);
       this.get("model").save().then(
-        function(model) {
+        function() {
           _this.set("isEditing", false);
           _this.set("isLoading", false);
         },

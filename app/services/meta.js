@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 export default Ember.Service.extend({
-  originalImage: "/assets/images/full-logo.png",
+  originalImage: ENV.uiHost + "/assets/images/full-logo.png",
   init: function() {
     this.domDescription = Ember.$("#meta-description");
     this.head = Ember.$("head");
@@ -10,7 +11,7 @@ export default Ember.Service.extend({
     this.fb = {};
     ["image", "title", "description"].forEach((name) => {
       this.head.append("<meta property='og:" + name + "'>");
-      this.fb[name] = Ember.$('head meta:last-child')
+      this.fb[name] = Ember.$('head meta:last-child');
     });
 
     this.set("description", this.domDescription.attr("content"));
@@ -23,13 +24,11 @@ export default Ember.Service.extend({
   updateHeader: Ember.observer('title', 'description', 'image', function() {
     this.domDescription.attr("content", this.get("description"));
     this.document.attr("title", this.get("title"));
-    console.log("updating");
     this.fb.image.attr("content", this.get("image"));
     this.fb.title.attr("content", this.get("title"));
     this.fb.description.attr("content", this.get("description"));
   }),
   reset: function() {
-    console.log("Reset!");
     this.set("description", this.get("originalDescription"));
     this.set("title", this.get("originalTitle"));
     this.set("image", this.get("originalImage"));

@@ -46,6 +46,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.pusherConfig = {};
     ENV.apiHost = 'http://localhost:3000';
+    ENV.uiHost = 'http://localhost:4200';
     ENV.contentSecurityPolicy['img-src'] += " http://localhost:3000"
     ENV.contentSecurityPolicy['connect-src'] += " http://localhost:3000 ws://127.0.0.1:* ws://ws.pusherapp.com";
     ENV.contentSecurityPolicy['script-src'] += "  http://stats.pusher.com http://js-agent.newrelic.com http://bam.nr-data.net";
@@ -64,6 +65,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.uiHost = 'https://www.wordset.org';
     ENV.apiHost = 'https://api.wordset.org';
     ENV.pusherConfig = {
       key: '89cac67060d4d835fe7c',
