@@ -5,9 +5,9 @@ export default DS.Model.extend({
     async: false
   }),
   title: DS.attr("string"),
-  image_url: DS.attr("string"),
-  image_citation: DS.attr("string"),
-  image_link: DS.attr("string"),
+  imageUrl: DS.attr("string"),
+  imageCitation: DS.attr("string"),
+  imageLink: DS.attr("string"),
   instructions: DS.attr("string"),
   questions: DS.attr(),
   results: DS.attr(),

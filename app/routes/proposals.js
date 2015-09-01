@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ResetScrollMixin from '../mixins/reset_scroll';
 
 export default Ember.Route.extend(ResetScrollMixin, {
+  meta: Ember.inject.service(),
   offset: 0,
   limit: 25,
   flagged: false,
@@ -28,12 +29,9 @@ export default Ember.Route.extend(ResetScrollMixin, {
             flagged: this.get('flagged')
           });
   },
-  afterModel(model) {
-    this._super(model);
-    Ember.$(document).attr('title', 'Proposals from Wordset');
-  },
   setupController(controller, model) {
     this._super(controller, model);
+    this.set("meta.title", 'Proposals from Wordset');
     controller.setProperties({
       offset: this.get('offset'),
       limit: this.get('limit')

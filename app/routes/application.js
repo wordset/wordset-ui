@@ -14,6 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
     controller.set("currentLang", model);
     controller.set("messages", this.store.findAll('message'));
     controller.set("activityNotifications", this.store.peekAll('notification'));
+    this.get("meta");
     this._super(controller, model);
   },
 

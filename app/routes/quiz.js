@@ -11,9 +11,11 @@ export default Ember.Route.extend({
     if(!Ember.isBlank(model.get('instructions'))) {
       this.set("meta.description", model.get("instructions"));
     }
+    this.set("meta.image", model.get("imageUrl"))
+    this.set("meta.title", model.get("title"));
   },
   afterModel(model) {
     this._super(model);
-    Ember.$(document).attr('title', 'Quiz: ' + model.get("title"));
+
   },
 });

@@ -2,6 +2,7 @@ import Ember from 'ember';
 import ResetScrollMixin from '../mixins/reset_scroll';
 
 export default Ember.Route.extend(ResetScrollMixin, {
+  meta: Ember.inject.service(),
   model(params) {
     return this.store.findRecord('proposal', params.proposal_id);
   },
@@ -19,6 +20,6 @@ export default Ember.Route.extend(ResetScrollMixin, {
 
     var word = this.modelFor('proposal').get('wordName');
     this.tracker.log("proposal", "viewed");
-    Ember.$(document).attr('title', word + ' – proposal from Wordset');
+    this.set('meta.title', word + ' – proposal from Wordset');
   }
 });
