@@ -7,6 +7,11 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
     controller.set("selections", {});
+
+    this.set("meta.title", 'Quiz: ' + model.get("title"));
+    if(!Ember.isBlank(model.get('instructions'))) {
+      this.set("meta.description", model.get("instructions"));
+    }
   },
   afterModel(model) {
     this._super(model);
