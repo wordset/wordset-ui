@@ -3,7 +3,7 @@ import EmberValidations from 'ember-validations';
 
 export default Ember.Controller.extend( EmberValidations, {
   validations: {
-    "model.id": {
+    "model.username": {
       presence: true,
       length: { minimum: 1,
                 maximum: 16 },

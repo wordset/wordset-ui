@@ -98,6 +98,11 @@ button, .button {
     color: rgba(0,0,0,.26);
     cursor: auto;
     background-color: transparent;
+    &:hover {
+      color: rgba(0,0,0,.26);
+      cursor: auto;
+      background-color: transparent;
+    }
   }
 }
 

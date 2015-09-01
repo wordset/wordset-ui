@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  activeProject: Ember.computed.alias("currentLang.project"),
+  featuredProject: Ember.computed.alias("currentLang.project"),
   application: Ember.inject.controller("application"),
   currentLang: Ember.computed.alias("application.currentLang"),
   postsSimple: Ember.computed.alias("currentLang.postsSimple"),

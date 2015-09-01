@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScrollMixin from '../mixins/reset_scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScrollMixin, {
   offset: 0,
   limit: 25,
   flagged: false,

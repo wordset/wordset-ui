@@ -7,7 +7,7 @@ export function initialize(application) {
     pusher.connect(ENV.pusherConfig);
   } else {
     Ember.$.getJSON(ENV.api + "/auth/pusher_configuration").then(function(config) {
-      pusher.connect(config)
+      pusher.connect(config);
     });
   }
 }

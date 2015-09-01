@@ -19,7 +19,7 @@
       {{#if errors.username}}
         <div class="error">Username is already taken! Try {{#link-to 'users.login'}} signing in{{/link-to}}.</div>
       {{/if}}
-      {{validated-input type="text" autofocus="autofocus" value=model.id errors=errors.model.id}}
+      {{validated-input type="text" autofocus="autofocus" value=model.username errors=errors.model.username}}
       </label>
     </div>
     <div class="email">

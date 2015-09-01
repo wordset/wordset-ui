@@ -17,5 +17,6 @@ export default DS.Model.extend({
   acceptTos: DS.attr("boolean"),
   password: DS.attr("string"),
   email: DS.attr("string"),
+  username: DS.attr("string"), // This is only used for registration because Ember doesn't want to send IDs
 
 });
