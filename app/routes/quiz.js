@@ -14,8 +14,4 @@ export default Ember.Route.extend({
     this.set("meta.image", model.get("imageUrl"))
     this.set("meta.title", model.get("title"));
   },
-  afterModel(model) {
-    this._super(model);
-
-  },
 });
