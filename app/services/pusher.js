@@ -73,10 +73,7 @@ export default Ember.Service.extend({
         this.get("notifier").show("Your proposal for " + activity.word_name + " was " + activity.finalState, {name: "Proposal", route: ["proposal", activity.proposal_id]});
         break;
       case "user-badge":
-        // Can't figure out the badge modal for now so putting an alert
-        // here instead.
-        this.get("notifier").show("Congratulations! You just earned the " + activity.badge.display_name + " badge", {name: "New Badge"});
-        //this.send('openModal', 'new-badge', data);
+        this.container.lookup("router:main").send('openModal', 'new-badge', data);
     }
   },
   handleMessage(message) {
