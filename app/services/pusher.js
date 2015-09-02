@@ -4,6 +4,7 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   store: Ember.inject.service(),
   browserNotifier: Ember.inject.service(),
+  notifier: Ember.inject.service(),
   search: Ember.inject.service(),
   chatReceived: false,
   online: [],
@@ -64,15 +65,18 @@ export default Ember.Service.extend({
   handleNotification(data) {
     this.handlePayload(data);
     var activity = data.activities[0];
-    switch (activity.type) {
-      case "ProposalComment":
-        this.get("notifier").show("On your proposal for " + activity.wordName, {name: "New Comment", route: ["proposal", activity.proposalId]});
+    switch (activity.action) {
+      case "proposal-comment":
+        this.get("notifier").show("On your proposal for " + activity.word_name, {name: "New Comment", route: ["proposal", activity.proposal_id]});
         break;
-      case "ProposalClosed":
-        this.get("notifier").show("Your proposal for " + activity.wordName + " was " + activity.finalState, {name: "Proposal", route: ["proposal", activity.proposalId]});
+      case "proposal-closed":
+        this.get("notifier").show("Your proposal for " + activity.word_name + " was " + activity.finalState, {name: "Proposal", route: ["proposal", activity.proposal_id]});
         break;
-      case "UserBadge":
-        this.send('openModal', 'new-badge', data);
+      case "user-badge":
+        // Can't figure out the badge modal for now so putting an alert
+        // here instead.
+        this.get("notifier").show("Congratulations! You just earned the " + activity.badge.display_name + " badge", {name: "New Badge"});
+        //this.send('openModal', 'new-badge', data);
     }
   },
   handleMessage(message) {
