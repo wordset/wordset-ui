@@ -65,12 +65,13 @@ export default Ember.Service.extend({
   handleNotification(data) {
     this.handlePayload(data);
     var activity = data.activities[0];
+    // console.log(activity)
     switch (activity.action) {
       case "proposal-comment":
         this.get("notifier").show("On your proposal for " + activity.word_name, {name: "New Comment", route: ["proposal", activity.proposal_id]});
         break;
       case "proposal-closed":
-        this.get("notifier").show("Your proposal for " + activity.word_name + " was " + activity.finalState, {name: "Proposal", route: ["proposal", activity.proposal_id]});
+        this.get("notifier").show("Your proposal for " + activity.word_name + " was " + activity.final_state, {name: "Proposal", route: ["proposal", activity.proposal_id]});
         break;
       case "user-badge":
         this.container.lookup("router:main").send('openModal', 'new-badge', data);
