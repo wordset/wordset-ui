@@ -36,7 +36,9 @@
         <div class="other-words">
           alt:
           {{#each altSpellings as |seq|}}
-            {{seq.text}}
+            {{#link-to "seq.wordset.index" seq.lang.id seq.text}}
+              {{seq.text}}
+            {{/link-to}}
             {{label-display labels=seq.labels}}
           {{/each}}
         </div>

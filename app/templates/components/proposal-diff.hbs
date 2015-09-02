@@ -1,6 +1,8 @@
 {{#each seqs as |seq|}}
   <div class="word">
-    {{seq.text}}
+    {{#link-to "seq.wordset.index" proposal.lang.id seq.text}}
+      {{seq.text}}
+    {{/link-to}}
     {{#if seq.original.meanings}}
       <span class="clobbered-alert ion-alert-circled"></span>
     {{/if}}
