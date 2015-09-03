@@ -101,23 +101,27 @@
       display: inline-block;
     }
   }
-  // The edit link should appear when you hover
-  // over the whole meaning (info class)
-  .info:hover, .info:focus {
-    .locked {
-      opacity: 1;
-    }
-  }
-  .locked:focus {
-    opacity: 1;
-  }
-
   .def {
     display: inline-block;
   }
   .quote {
     font-style: italic;
     margin-top: 5px;
+  }
+  .synonym-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .synonym {
+    color: #666;
+    font-style: italic;
+    text-decoration: none;
+    &:not(:last-of-type) {
+      &:after {
+        content: ","
+      }
+    }
   }
 }
 

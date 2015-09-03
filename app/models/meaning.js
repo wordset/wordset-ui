@@ -12,6 +12,7 @@ var Meaning = DS.Model.extend({
   labels: DS.hasMany('labels', {
     async: false
   }),
+  synonyms: DS.attr(),
 
   returnChangeSet() {
     return {

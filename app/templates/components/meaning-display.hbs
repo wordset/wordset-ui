@@ -17,6 +17,15 @@
         </div>
       </div>
       {{/if}}
+
+      {{#if meaning.synonyms}}
+        <span class="synonym-title">Synonyms:</span>
+        {{#each meaning.synonyms as |synonym|}}
+          {{#link-to "seq.wordset.index" meaning.wordset.lang.id synonym class="synonym"}}
+            {{synonym}}
+          {{/link-to}}
+        {{/each}}
+      {{/if}}
     </div> <!-- meaning div -->
   </div>
 </li>
