@@ -1,0 +1,44 @@
+<div class="meaning-labels">
+  {{#if sameSynonyms}}
+    <div class="label-grouping">
+      Existing Synonyms:
+      {{#each sameSynonyms as |synonym|}}
+        <div class="synonym">
+          {{#each synonym.seqs as |seq|}}
+            {{seq}}
+          {{/each}}
+          – {{synonym.def}}
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if addedSynonyms}}
+    <div class="label-grouping">
+      <ins>Added Synonyms:
+      {{#each addedSynonyms as |synonym|}}
+        <div class="synonym">
+          {{#each synonym.seqs as |seq|}}
+            {{seq}}
+          {{/each}}
+          ({{synonym.def}})
+        </div>
+      {{/each}}
+      </ins>
+    </div>
+  {{/if}}
+  {{#if removedSynonyms}}
+    <div class="label-grouping">
+      <del>Removed Synonyms:
+      {{#each removedSynonyms as |synonym|}}
+        <div class="synonym">
+          {{#each synonym.seqs as |seq|}}
+            {{seq}}
+          {{/each}}
+          ({{synonym.def}})
+        </div>
+      {{/each}}
+      </del>
+    </div>
+  {{/if}}
+
+</div>
