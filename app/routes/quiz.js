@@ -11,7 +11,7 @@ export default Ember.Route.extend({
     if(!Ember.isBlank(model.get('instructions'))) {
       this.set("meta.description", model.get("instructions"));
     }
-    this.set("meta.image", model.get("imageUrl"))
+    this.set("meta.image", model.get("imageUrl"));
     this.set("meta.title", model.get("title"));
   },
 });

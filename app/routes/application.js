@@ -60,7 +60,7 @@ export default Ember.Route.extend(ApplicationRouteMixin).extend({
         Ember.$.getJSON(ENV.api + path).then(function(data) {
           if(data.proposal !== undefined) {
             _this.store.pushPayload('proposal', data);
-            if(data.meta.isSkipped == true) {
+            if(data.meta.isSkipped === true) {
               _this.get("notifier").show("You've voted on all proposals. Here's one you previously skipped.", {name: "Alert"});
             }
             _this.transitionTo('proposal', data.proposal.id);

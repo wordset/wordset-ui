@@ -7,7 +7,7 @@ export default Ember.Mixin.create({
   actions: {
     notify(data) {
       this.store.pushPayload('notification', data);
-      console.log("Notify is running")
+      // console.log("Notify is running");
       var activity = data.activities[0];
       Ember.$.post(ENV.api + "/notifications/" + data.notification.id + "/ack");
       switch (activity.type) {
