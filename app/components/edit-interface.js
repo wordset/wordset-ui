@@ -14,7 +14,7 @@ export default Ember.Component.extend(EmberValidations, {
   }.observes("hup.at"),
   actions: {
     addNewMeaning() {
-      this.get("changes.meanings").pushObject(new Object({action: "add", def: "", example: "", labels: []}));
+      this.get("changes.meanings").pushObject(new Object({action: "add", def: "", example: "", labels: [], synonyms: []}));
       this.validate();
     },
     addNewSeq() {
