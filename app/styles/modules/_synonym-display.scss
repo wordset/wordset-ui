@@ -8,12 +8,22 @@
     color: #666;
     display: inline-block;
     font-style: italic;
+    margin-right: 5px;
     text-decoration: none;
     &:not(:last-of-type) {
       &:after {
         content: ",";
-        margin-left: -5px;
       }
     }
+  }
+  a.synonym:after {
+    margin-left: -5px;
+  }
+}
+
+.edit-meaning {
+  .synonym-display {
+    padding-left: 20px;
+    padding-bottom: 10px;
   }
 }
