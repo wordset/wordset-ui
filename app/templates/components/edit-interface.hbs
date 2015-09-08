@@ -16,7 +16,20 @@
 {{#each changes.meanings as |meaning|}}
   <div class="edit-meaning {{meaning.action}}">
     {{edit-meaning meaning=meaning lang=lang}}
+
+    {{#if meaning.synonyms}}
+      <div class="synonym-display">
+        <span class="synonym-title">Synonyms:</span>
+        {{#each meaning.synonyms as |synonym|}}
+          {{#each synonym.seqs as |seq|}}
+            <span class="synonym">{{seq}}</span>
+          {{/each}}
+        {{/each}}
+      </div>
+    {{/if}}
+
     {{edit-labels labels=lang.labels selectedLabels=meaning.labels forMeaning=true forPos=meaning.pos}}
+
   </div>
 {{/each}}
 
