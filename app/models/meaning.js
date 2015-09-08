@@ -22,6 +22,7 @@ var Meaning = DS.Model.extend({
       labels: this.get("labels").map((l) => l.get("id")),
       pos: this.get("pos"),
       meaning_id: this.get("id"),
+      synonyms: this.get("synonyms"),
       original: {
         def: this.get("def"),
         example: this.get("example"),
