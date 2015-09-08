@@ -1,13 +1,13 @@
 <div class="meaning-labels">
   {{#if sameSynonyms}}
-    <div class="label-grouping">
-      Existing Synonyms:
+    <div class="synonym-display">
+      <span class="synonym-title">Synonyms:</span>
       {{#each sameSynonyms as |synonym|}}
         <div class="synonym">
           {{#each synonym.seqs as |seq|}}
             {{seq}}
           {{/each}}
-          – {{synonym.def}}
+          ({{synonym.def}})
         </div>
       {{/each}}
     </div>
