@@ -1,0 +1,19 @@
+.synonym-display {
+  .synonym-title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .synonym {
+    color: #666;
+    display: inline-block;
+    font-style: italic;
+    text-decoration: none;
+    &:not(:last-of-type) {
+      &:after {
+        content: ",";
+        margin-left: -5px;
+      }
+    }
+  }
+}

@@ -108,22 +108,6 @@
     font-style: italic;
     margin-top: 5px;
   }
-  .synonym-title {
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  .synonym {
-    color: #666;
-    font-style: italic;
-    text-decoration: none;
-    &:not(:last-of-type) {
-      &:after {
-        content: ",";
-        margin-left: -5px;
-      }
-    }
-  }
 }
 
 span.quotemark {
