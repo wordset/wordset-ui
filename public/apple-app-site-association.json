@@ -1,0 +1,14 @@
+{"webcredentials": {
+       "apps": [    "Z7Z2G497TH.hamptoncatlin.dictionary",
+                    "Z7Z2G497TH.com.wordset" ]
+    },
+    "applinks": {
+      "apps": [],
+        "details": [
+            {
+                "appID": "Z7Z2G497TH.hamptoncatlin.dictionary",
+                "paths": [ "/en/*" ]
+            }
+        ]
+    }
+}

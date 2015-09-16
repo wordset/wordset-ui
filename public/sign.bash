@@ -1,0 +1,1 @@
+cat apple-app-site-association.json | openssl smime -sign -inkey ../../ssl/wordset.unencypted.key -signer ../../ssl/ServerCertificate.cer -certfile ../../ssl/certificate.pem -noattr -nodetach -outform DER > apple-app-site-association
