@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ResetScrollMixin from '../mixins/reset_scroll';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ResetScrollMixin, {
   meta: Ember.inject.service(),
   setupController(controller, model) {
     this._super(controller, model);
