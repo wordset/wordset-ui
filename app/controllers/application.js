@@ -28,8 +28,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
     this._super();
     if (window.innerWidth < this.get('mobileMaxWidth')) {
       localStorage.showPanel = false
-    }
-    if(localStorage.showPanel) {
+    } else if(localStorage.showPanel) {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
     }
   },
@@ -40,7 +39,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
   currentPathDidChange: function() {
     if (this.get("showPanel") && window.innerWidth < this.get('mobileMaxWidth')) {
       this.set("showPanel", false);
-      localStorage.showPanel = this.get("showPanel");
+      localStorage.showPanel = false;
       this.set("chatReceived", false);
     }
   }.observes('currentPath'),
