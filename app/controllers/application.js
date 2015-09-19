@@ -23,8 +23,12 @@ export default Ember.Controller.extend(AppPusherMixin, {
   currentUser: Ember.computed("session.user", function() {
     return this.session.get("user");
   }),
+  mobileMaxWidth: 550,
   init() {
     this._super();
+    if (window.innerWidth < this.get('mobileMaxWidth')) {
+      localStorage.showPanel = false
+    }
     if(localStorage.showPanel) {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
     }
@@ -33,6 +37,13 @@ export default Ember.Controller.extend(AppPusherMixin, {
     return (Ember.isEmpty(this.get("username")) &&
             (window.location.pathname.indexOf("/users") !== 0));
   }),
+  currentPathDidChange: function() {
+    if (this.get("showPanel") && window.innerWidth < this.get('mobileMaxWidth')) {
+      this.set("showPanel", false);
+      localStorage.showPanel = this.get("showPanel");
+      this.set("chatReceived", false);
+    }
+  }.observes('currentPath'),
   actions: {
     toggleMenu() {
       this.tracker.log("nav", "menu_click");
