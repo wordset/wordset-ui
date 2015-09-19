@@ -1,0 +1,11 @@
+{
+    "applinks": {
+      "apps": [],
+        "details": [
+            {
+                "appID": "Z7Z2G497TH.hamptoncatlin.dictionary",
+                "paths": [ "/en/*" ]
+            }
+        ]
+    }
+}

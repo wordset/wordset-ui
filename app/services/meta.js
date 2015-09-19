@@ -14,6 +14,9 @@ export default Ember.Service.extend({
       this.fb[name] = Ember.$('head meta:last-child');
     });
 
+    this.set("ios",
+      this.head.append("<meta property='al:ios:url' content='wordset:/" + window.location.pathname + "' />"))
+
     this.set("description", this.domDescription.attr("content"));
     this.set("originalDescription", this.get("description"));
     this.set("image", this.get("originalImage"));
@@ -25,6 +28,7 @@ export default Ember.Service.extend({
     this.domDescription.attr("content", this.get("description"));
     this.document.attr("title", this.get("title"));
     this.fb.image.attr("content", this.get("image"));
+    this.ios.attr("content", "wordset:/" + window.location.pathname)
     this.fb.title.attr("content", this.get("title"));
     this.fb.description.attr("content", this.get("description"));
   }),
