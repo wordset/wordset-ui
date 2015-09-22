@@ -10,19 +10,28 @@
   {{#if showSearchList}}
     <div class="wordListWrapper">
       <ul class='wordList'>
-        {{#each wordList as |word|}}
-          {{#search-result word=word selectedWord=selectedWord name="search-result-word"}}
-            <div {{action "clickWord" word}} tabIndex=0>
-              {{word}}
-            </div>
-          {{/search-result}}
+        {{#if wordCount}}
+          {{#each wordList as |word|}}
+            {{#search-result word=word selectedWord=selectedWord name="search-result-word"}}
+              <div {{action "clickWord" word}} tabIndex=0>
+                {{word}}
+              </div>
+            {{/search-result}}
+          {{/each}}
+          {{#if noExactWord}}
+            <li class="no-exact-result">
+              <div {{action "clickNewWord"}}>
+                Add word?
+              </div>
+            </li>
+          {{/if}}
         {{else}}
           <li class="no-results">
             <div {{action "clickNewWord"}}>
               No results found. Add word?
             </div>
           </li>
-        {{/each}}
+        {{/if}}
       </ul>
     </div>
   {{/if}}
