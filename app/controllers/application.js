@@ -27,7 +27,7 @@ export default Ember.Controller.extend(AppPusherMixin, {
   init() {
     this._super();
     if (window.innerWidth < this.get('mobileMaxWidth')) {
-      localStorage.showPanel = false
+      localStorage.showPanel = false;
     } else if(localStorage.showPanel) {
       this.set("showPanel", JSON.parse(localStorage.showPanel));
     }
