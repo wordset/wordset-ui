@@ -13,7 +13,9 @@ export default Ember.Route.extend(ResetScrollMixin, {
 
     if(Ember.isBlank(model.get("changes"))) {
       controller.set("isLoading", true);
-      model.reload().then((model) => {
+
+      // model.reload().then((model) => {
+      model.reload().then(() => {
         controller.set("isLoading", false);
       });
     }
