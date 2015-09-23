@@ -24,7 +24,7 @@ export default Ember.Component.extend({
     }
   }),
   noExactWord: Ember.computed("wordList", function() {
-    return this.get("wordList").indexOf(this.get("searchTerm").trim()) == -1;
+    return this.get("wordList").indexOf(this.get("searchTerm").trim()) === -1;
   }),
   wordCount: Ember.computed("wordList", function() {
     return this.get("wordList.length");
