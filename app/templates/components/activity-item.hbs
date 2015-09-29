@@ -18,7 +18,7 @@
   created a proposal
 {{/if}}
 {{#if (is-equal activity.action "proposal-closed")}}
-  had their proposal
+  withdrew their proposal
 {{/if}}
 {{#if (is-equal activity.action "proposal-comment")}}
   commented on the proposal
@@ -38,6 +38,8 @@
 {{#if activity.wordName}}
   for <span class="activity-word">{{activity.wordName}}</span>
 {{/if}}
-{{#if activity.finalState}}
+{{#if (is-equal activity.action "proposal-closed")}}
+ <!-- nothing happens -->
+{{else if activity.finalState}}
   {{activity.finalState}}
 {{/if}}
