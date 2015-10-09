@@ -24,8 +24,7 @@
     text-decoration: none;
   }
   .logo {
-    $full-logo-ratio: 810 / 150;
-    $logo-single-ratio: 188 / 150;
+    $full-logo-ratio: 810 / 191;
     float: left;
     background: no-repeat 0 0 url("/assets/images/full-logo.png");
     background-size: 100% 100%;
@@ -36,15 +35,15 @@
 
     @media (min-width: $header-medium) {
       background-image: url("/assets/images/logo-single.png");
-      height: 36px;
-      width: ceil(36px * $logo-single-ratio);
+      height: 45px;
+      width: 45px;
       margin-bottom: 20px;
-      margin-top: 10px;
+      margin-top: 6px;
     }
     @media (min-width: 1000px) {
       background-image: url("/assets/images/full-logo.png");
-      height: 36px;
-      width: ceil(36px * $full-logo-ratio);
+      height: 45px;
+      width: ceil(45px * $full-logo-ratio);
     }
   }
 

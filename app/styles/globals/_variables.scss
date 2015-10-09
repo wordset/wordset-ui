@@ -36,7 +36,7 @@ $dark-blue: #010D2A;
 // // New Colours
 //
 $blue-1: #00C9FC;
-$blue-2: #07738f;
+$blue-2: darken(#608FBF, 10%);
 $blue-3: #0f6f87;
 //
 
@@ -56,7 +56,7 @@ $menu-color: $blue-3;
 
 $body-background: #FFF;
 $text-color: $black;
-$h-color: $dark-green;
+$h-color: $black;
 
 $footer-color: $taupe;
 $footer-background: #FFF;
