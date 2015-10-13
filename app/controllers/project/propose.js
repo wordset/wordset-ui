@@ -1,4 +1,5 @@
 import Ember from "ember";
+import ENV from "../../config/environment";
 import EmberValidations from "ember-validations";
 
 export default Ember.Controller.extend(EmberValidations, {
@@ -16,39 +17,38 @@ export default Ember.Controller.extend(EmberValidations, {
   },
   application: Ember.inject.controller('project'),
 
-  htmlRules: Ember.computed("model.project.rules", function() {
-    return Ember.String.htmlSafe(this.get("model.project.rules"));
+  htmlRules: Ember.computed("project.rules", function() {
+    return Ember.String.htmlSafe(this.get("project.rules"));
   }),
 
   actions: {
     submitProposal() {
       var _this = this;
-      this.get("model").save().then(
+      this.get("proposal").save().then(
         function() {
-          _this.get("notifier").show("Thanks! Here's another meaning that needs cleaning up.", {name: "Alert"});
+          _this.get("notifier").show("Thanks! Here's another word that needs cleaning up.", {name: "Alert"});
           _this.send("randomTarget");
         }, function() {
           _this.send("randomTarget");
         }
       );
     },
-    proposeMeaningRemoval() {
+    randomTarget: function() {
       var _this = this;
-
-      var proposal = this.store.createRecord('proposal', {
-                            type: "MeaningRemoval",
-                            meaning: this.get("meaning")
-                        });
-      this.get("model").destroy();
-      proposal.save().then(
-        function() {
-          _this.get("notifier").show("Thanks! Here's another meaning that needs cleaning up.", {name: "Alert"});
-          _this.send("randomTarget");
-        }, function() {
-          _this.get("notifier").error("Something went wrong that time...");
-          _this.send("randomTarget");
-        }
+      var path = "/projects/" + this.get("project.id") + "/next";
+      Ember.$.getJSON(ENV.api + path).then(
+        function(data) {
+          _this.store.pushPayload('wordset', data);
+          _this.store.findRecord('wordset', data.wordset.id).then(function(wordset) {
+            _this.set("proposal", _this.store.createRecord('proposal', {
+              wordset: wordset,
+              changes: wordset.generateInitialChangeSet(),
+              lang: wordset.get('lang'),
+            }))
+          }, function() { })
+        }, function() { }
       );
+
     }
   }
 });
