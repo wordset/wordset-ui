@@ -44,8 +44,8 @@ export default Ember.Controller.extend(EmberValidations, {
               wordset: wordset,
               changes: wordset.generateInitialChangeSet(),
               lang: wordset.get('lang'),
-            }))
-          }, function() { })
+            }));
+          }, function() { });
         }, function() { }
       );
 

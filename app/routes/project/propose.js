@@ -1,5 +1,5 @@
 import Ember from "ember";
-import ENV from "../../config/environment"
+import ENV from "../../config/environment";
 
 export default Ember.Route.extend({
   loadNextTarget: function() {
@@ -13,24 +13,16 @@ export default Ember.Route.extend({
             wordset: wordset,
             changes: wordset.generateInitialChangeSet(),
             lang: wordset.get('lang'),
-          }))
-        }, function() { })
+          }));
+        }, function() { });
       }, function() { }
     );
   },
 
   setupController(controller, model) {
     this._super(controller, model);
-    var project = this.modelFor("project")
-    controller.set("project", project)
-    this.loadNextTarget()
+    var project = this.modelFor("project");
+    controller.set("project", project);
+    this.loadNextTarget();
   },
-  actions: {
-    refresh: function() {
-      this.transitionTo("project.random");
-    }
-  }
-
-
-
 });
