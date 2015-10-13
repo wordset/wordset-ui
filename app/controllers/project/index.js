@@ -17,12 +17,6 @@ export default Ember.Controller.extend( ProjectCountdown, {
     return (this.get("model.state") !== "completed");
   }),
 
-  projectAction: Ember.computed("model", function() {
-    if(this.get("model.name") === "Proper Noun Purge") {
-      return "randomProposal";
-    }
-    return "randomTarget";
-  }),
 
   // This figures out if there are no targets left to fix
   projectHasNoTargetsToPropose: Ember.computed(
@@ -36,6 +30,9 @@ export default Ember.Controller.extend( ProjectCountdown, {
   actions: {
     signUp() {
       this.transitionToRoute("users.new");
+    },
+    randomTarget() {
+      this.transitionToRoute("project.propose");
     }
   }
 });
