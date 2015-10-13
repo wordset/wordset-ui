@@ -9,8 +9,8 @@ export default Ember.Controller.extend({
     return this.get("postsSimple").slice(0, 2);
   }),
   featuredProject: Ember.computed("currentLang.project", function() {
-    if(this.get("currentLang.project.state") === "active") {
+    // if(this.get("currentLang.project.state") === "active") {
       return this.get("currentLang.project");
-    }
+    // }
   }),
 });
