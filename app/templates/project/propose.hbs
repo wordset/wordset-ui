@@ -1,13 +1,14 @@
 <div class="project">
-  {{project-info project=model.project progress=true}}
+  {{project-info project=project progress=true}}
 
-  {{edit-interface changes=proposal.changes reason=proposal.reason lang=wordset.lang}}
-  <button class="submitProposal positive" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
-  <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Word from Dictionary</button>
-  <button class="negative" {{action "randomTarget"}}>Skip</button>
+  {{#if proposal}}
+    {{edit-interface changes=proposal.changes reason=proposal.reason lang=proposal.lang}}
+    <button class="submitProposal positive" disabled={{isInvalid}} {{action "submitProposal"}}>Suggest</button>
+    <button class="flag" {{action "proposeMeaningRemoval"}}>Remove Word from Dictionary</button>
+    <button class="negative" {{action "randomTarget"}}>Skip</button>
 
-
-  <div class="rules">
-    {{htmlRules}}
-  </div>
+    <div class="rules">
+      {{htmlRules}}
+    </div>
+  {{/if}}
 </div>

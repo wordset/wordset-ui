@@ -57,7 +57,7 @@ export default Router.map(function() {
   this.route("projects");
   this.route("project", {path: "/project/:project_id"}, function() {
     this.route("random");
-    this.route("propose", {path: "/propose/:meaning_id"});
+    this.route("propose", {path: "/propose"});
   });
   this.route("info", function() {
     this.route("goals");

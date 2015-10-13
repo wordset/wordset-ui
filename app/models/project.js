@@ -15,6 +15,11 @@ export default DS.Model.extend({
   endsAt: DS.attr("date"),
   expectedFixed: DS.attr("number"),
 
+  lang: DS.belongsTo('lang', {
+    async: false,
+    inverse: 'projects'
+  }),
+
   percentageThrough: Ember.computed("percentageComplete", function() {
     var perc = this.get("percentageComplete");
     return "width: " + perc + "%;";
@@ -28,7 +33,7 @@ export default DS.Model.extend({
       return (this.get("totalTargetsCount") > (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
     }
   ),
-  
+
 
   hasTimer: Ember.computed("endsAt", "state", function() {
     return !!((this.get("state") === "active") && this.get("endsAt"));
