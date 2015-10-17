@@ -48,6 +48,9 @@ export default Ember.Mixin.create({
   }),
   percentageExpectedFixed: Ember.computed("expectedFixed", "project.totalTargetsCount", function() {
     var number = ( this.get("expectedFixed") / this.get("project.totalTargetsCount") ) * 100;
+    if(number > 100) {
+      number = 100;
+    }
     return "width: " + number + "%";
   }),
 });
