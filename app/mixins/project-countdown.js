@@ -19,13 +19,25 @@ export default Ember.Mixin.create({
   lessThanOneDay: Ember.computed("daysRemaining", function() {
     return this.get("daysRemaining") < 1;
   }),
+  targetsRemaining: Ember.computed(
+    "project.fixedTargetsCount",
+    "project.totalTargetsCount",
+    function() {
+      return this.get("totalTargetsCount") - this.get("fixedTargetsCount");
+    }
+  ),
   expectedFixed: Ember.computed(
     "timeRemaining",
     "project.startedAt",
+    "targetsRemaining",
     "project.spaceBetweenProposals",
     function() {
       var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
-      return Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
+      var calculated = Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
+      if(calculated > this.get("targetsRemaining")) {
+        calculated = this.get("targetsRemaining");
+      }
+      return calculated;
     }
   ),
   differenceFromExpected: Ember.computed("expectedFixed", "project.fixedTargetsCount", function() {

@@ -44,4 +44,7 @@ export default DS.Model.extend({
   spaceBetweenProposals: Ember.computed("hasTimer", "endsAt", "startedAt", "totalTargetsCount", function() {
     return ((this.get("endsAt") - this.get("startedAt")) / 1000) / this.get("totalTargetsCount");
   }),
+  todoTargetsCount: Ember.computed("totalTargetsCount", "pendingTargetsCount", "fixedTargetsCount", function() {
+    return ((this.get("totalTargetsCount")) - (this.get("pendingTargetsCount") + this.get("fixedTargetsCount")));
+  }),
 });
