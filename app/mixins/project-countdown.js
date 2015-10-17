@@ -23,7 +23,7 @@ export default Ember.Mixin.create({
     "project.fixedTargetsCount",
     "project.totalTargetsCount",
     function() {
-      return this.get("totalTargetsCount") - this.get("fixedTargetsCount");
+      return this.get("project.totalTargetsCount") - this.get("project.fixedTargetsCount");
     }
   ),
   expectedFixed: Ember.computed(
