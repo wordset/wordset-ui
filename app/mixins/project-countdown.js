@@ -35,8 +35,8 @@ export default Ember.Mixin.create({
     function() {
       var elapsedTime = ((new Date()) - this.get("project.startedAt")) / 1000;
       var calculated = Math.floor(elapsedTime / this.get("project.spaceBetweenProposals"));
-      if(calculated > (this.get("targetsRemaining") + this.get("project.fixedTargetsCount")) {
-        calculated = (this.get("targetsRemaining") + this.get("project.fixedTargetsCount");
+      if(calculated > (this.get("targetsRemaining") + this.get("project.fixedTargetsCount"))) {
+        calculated = (this.get("targetsRemaining") + this.get("project.fixedTargetsCount"));
       }
       return calculated;
   }),
