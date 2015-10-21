@@ -39,8 +39,7 @@ export default Ember.Mixin.create({
         calculated = (this.get("targetsRemaining") + this.get("project.fixedTargetsCount");
       }
       return calculated;
-    }
-  ),
+  }),
   differenceFromExpected: Ember.computed("expectedFixed", "project.fixedTargetsCount", function() {
     return this.get("project.fixedTargetsCount") - this.get("expectedFixed");
   }),
