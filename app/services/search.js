@@ -18,13 +18,15 @@ export default Ember.Service.extend({
 
   perform(lang, term) {
     var _this = this;
+    term = term.trim();
     return new Ember.RSVP.Promise(function(resolve) {
       var wordList = _this.get("langs." + lang);
+      var downcasedWordList = wordList.toLowerCase();
       var results = [];
       var searchTerm = ", " + term;
       var lastIndex = -1;
       for(var i = 0; i < 10; i++) {
-        lastIndex = wordList.indexOf(searchTerm, lastIndex+1);
+        lastIndex = downcasedWordList.indexOf(searchTerm, lastIndex+1);
         if(lastIndex >= 0) {
           var eowIndex = wordList.indexOf(", ", lastIndex +2);
           results.push(wordList.substring(lastIndex+2, eowIndex));
