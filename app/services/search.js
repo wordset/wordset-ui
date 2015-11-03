@@ -26,7 +26,7 @@ export default Ember.Service.extend({
       var searchTerm = ", " + term;
       var lastIndex = -1;
       for(var i = 0; i < 10; i++) {
-        lastIndex = downcasedWordList.indexOf(searchTerm, lastIndex+1);
+        lastIndex = downcasedWordList.indexOf(searchTerm.toLowerCase(), lastIndex+1);
         if(lastIndex >= 0) {
           var eowIndex = wordList.indexOf(", ", lastIndex +2);
           results.push(wordList.substring(lastIndex+2, eowIndex));
