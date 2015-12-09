@@ -44,7 +44,7 @@ export default Ember.Controller.extend({
         },
         function() {
           _this.set("isLoading", false);
-          _this.set("isEditing", false);
+          _this.set("isEditing", true);
         }
       );
     },
