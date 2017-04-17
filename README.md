@@ -22,12 +22,13 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* Install the [Wordset API](https://github.com/wordset/wordset-legacy)
 
 ## Running / Development
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Make sure the Rails back-end ([Wordset api](http://github.com/wordset/wordset-api)) is also running, or else you'll see no data.
+* Make sure the Rails back-end ([Wordset API](https://github.com/wordset/wordset-legacy)) is also running, or else you'll see no data.
 
 ### Code Generators
 
