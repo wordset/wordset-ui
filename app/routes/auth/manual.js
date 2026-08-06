@@ -7,7 +7,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
     this.get("session").authenticate('authenticator:api', model);
-    this.notifier.show("You successefully signed in as " + model.username);
+    this.notifier.show("You successfully signed in as " + model.username);
     this.replaceWith("user", model.username);
   }
 });
